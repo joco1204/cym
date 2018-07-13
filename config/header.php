@@ -66,7 +66,6 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
         <link rel="stylesheet" href="../../libs/plugins/datatables/jquery.dataTables.min.css">
         <link rel="stylesheet" href="../../libs/plugins/datatables/dataTables.bootstrap.css">
         <link rel="stylesheet" href="../../libs/plugins/sweetalert/dist/sweetalert.css">
-        <link rel="stylesheet" type="text/css" href="../../css/styles.css">
         <!--Select-->
         <link href="../../libs/plugins/select2/select2.min.css" rel="stylesheet"/>
         <script src="../../libs/plugins/select2/select2.min.js"></script>

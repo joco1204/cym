@@ -39,8 +39,8 @@ var pageContent = function(page, settings){
 		});
 	}
 }
-//Función para cerrar session de la aplicación
-var logout = function(){
+//Remove Session Storage 
+var removeSession = function(){
 	sessionStorage.removeItem('iduser');
 	sessionStorage.removeItem('idprofile');
 	sessionStorage.removeItem('userprofile');
@@ -56,6 +56,9 @@ var logout = function(){
 	sessionStorage.removeItem('position');
 	sessionStorage.removeItem('token');
 	sessionStorage.clear();
+}
+//Function to close session of the application
+var logout = function(){
 	$.ajax({
 		type: "POST", 
 		url: "../controller/ctrlogout.php",
@@ -65,12 +68,42 @@ var logout = function(){
 		dataType: 'json'
 	}).done(function(result){
 		if (result.bool){
-			location.href = "../../index.php";	
+			removeSession();
+			window.location.href = "../../";
 		} else {
-			swal("Error!",result.msg,"error");
+			console.log('Error: '+result.msg)
 		}
-		
 	});	
 };
 
+//Start timeout
+var timeout;
+function startTimeOut() {
+	timeout = setTimeout(function(){redirectTimeOut()}, 1200000);
+}
+
+//
+function stopTimeOut() {
+  clearTimeout(timeout);
+  timeout = setTimeout('location="../../"', 1200000);
+}
+
+//
+function redirectTimeOut(){
+	$.ajax({
+		type: "POST", 
+		url: "../controller/ctrlogout.php",
+		data: {
+			action: 'logout',
+		},
+		dataType: 'json'
+	}).done(function(result){
+		if (result.bool){
+			window.location.href = "../../";
+			removeSession();	
+		} else {
+			console.log('Error: '+result.msg)
+		}
+	});	
+}
 

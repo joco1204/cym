@@ -11,7 +11,7 @@ class Login{
 		//Validate the connection of db
 		if($conn){
 			$password = sha1($pass);
-			$query  = "SELECT id, password, empresa_id, estado FROM ".$db.".re_usuarios WHERE usuario = '".$user."' LIMIT 1;";
+			$query  = "SELECT id, password, empresa_id, estado FROM re_usuarios WHERE usuario = '".$user."' LIMIT 1;";
 			$result = $conn->query($query);
 			if($result){
 				if($result->rowCount() > 0){
@@ -20,7 +20,7 @@ class Login{
 							$bool = false;
 							$msg = 'Incorrect password';
 						} else {
-							if($row->estado == 'active'){
+							if($row->estado == 'activo'){
 								$getUser = array(
 									'iduser' => $row->id,
 									'idcompany' => $row->empresa_id,
@@ -59,15 +59,15 @@ class Login{
 		$session = $this->bsn->session;
 		if ($conn){
 			$query  = "SELECT a.id AS idusuario, e.id AS idperfil, e.perfil AS perfilusuario, b.nombre, b.apellido1 AS apellido, c.nit, c.razon_social AS empresa, c.web AS webempresa, c.logo AS logoempresa, g.sede AS sedeempresa, i.pais, h.ciudad, f.cargo ";
-			$query .= "FROM ".$db.".re_usuarios AS a ";
-			$query .= "INNER JOIN ".$db.".re_personas AS b ON a.id = b.id_usuario ";
-			$query .= "INNER JOIN ".$db.".re_empresa AS c ON a.empresa_id = c.id ";
-			$query .= "INNER JOIN ".$db.".re_usuario_perfil AS d ON a.id = d.id_usuario ";
-			$query .= "INNER JOIN ".$db.".pa_perfiles AS e ON d.id_perfil = e.id ";
-			$query .= "INNER JOIN ".$db.".re_cargo AS f ON b.cargo = f.id ";
-			$query .= "INNER JOIN ".$db.".re_sede_empresa AS g ON f.id_sede = g.id AND c.id = g.id_empresa ";
-			$query .= "INNER JOIN ".$db.".pa_ciudad AS h ON g.id_ciudad = g.id_empresa ";
-			$query .= "INNER JOIN ".$db.".pa_pais AS i ON g.id_pais = i.id ";
+			$query .= "FROM re_usuarios AS a ";
+			$query .= "INNER JOIN re_personas AS b ON a.id = b.id_usuario ";
+			$query .= "INNER JOIN re_empresa AS c ON a.empresa_id = c.id ";
+			$query .= "INNER JOIN re_usuario_perfil AS d ON a.id = d.id_usuario ";
+			$query .= "INNER JOIN pa_perfiles AS e ON d.id_perfil = e.id ";
+			$query .= "INNER JOIN re_cargo AS f ON b.cargo = f.id ";
+			$query .= "INNER JOIN re_sede_empresa AS g ON f.id_sede = g.id AND c.id = g.id_empresa ";
+			$query .= "INNER JOIN pa_ciudad AS h ON g.id_ciudad = g.id_empresa ";
+			$query .= "INNER JOIN pa_pais AS i ON g.id_pais = i.id ";
 			$query .= "WHERE a.id = '".$iduser."' AND a.empresa_id = '".$idcompany."' ";
 			$query .= "LIMIT 1; ";
 			$result = $conn->query($query);

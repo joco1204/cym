@@ -29,7 +29,7 @@ $(function(){
 				html += '<td>'+row.servicio+'</td>';
 				html += '<td>'+row.cliente+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td><button type="button" class="btn btn-success">Modificar</button></td>';
+				html += '<td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modifica_servicio_'+row.id+'">Modificar</button></td>';
 				html += '</tr>';
 			});
 			html += '</tbody>';
@@ -53,5 +53,25 @@ $(function(){
 			console.log('Error: '+result.msg);
 		}
 	});
-	
+
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrclientes.php',
+		data: {
+			action: 'clientes',
+		},
+		dataType: 'json',
+	}).done(function(result){
+		if(result.bool){
+			var data = $.parseJSON(result.msg);
+			var html = '';
+			html += '<option value=""></option>';
+			$.each(data, function(i, row){
+				html += '<option value="'+row.id+'">'+row.cliente+'</option>';
+			});
+			$('#id_cliente').html(html);
+		} else {
+			console.log('Error: '+result.msg);
+		}
+	});
 });
