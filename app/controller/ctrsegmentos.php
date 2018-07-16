@@ -10,6 +10,10 @@ if(isset($post->action)){
 			$result = $segmento->tabla_segmentos();
 			$business->return = $result;
 		break;
+		case 'crear_segmento':
+			$result = $segmento->crear_segmento($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

@@ -30,8 +30,8 @@
             <form id="form_crear_cliente" autocomplete="off">
                 <div class="modal-header bg-blue">
                     <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
-                        <h4 class="modal-title">CREAR CLIENTE</h4>
-                    <input type="hidden" id="action" name="action">
+                    <h4 class="modal-title">CREAR CLIENTE</h4>
+                    <input type="hidden" id="action" name="action" value="crear_cliente">
                 </div>
                 <div class="modal-body">
                     <div class="row">

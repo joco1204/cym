@@ -59,7 +59,7 @@ class Cliente{
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
-			$query  = "INSERT INTO ca_cliente (cliente, estado) VALUES ('".$data->nombre_cliente."','".$data->estado_cliente."'); ";
+			$query  = "INSERT INTO ca_cliente (cliente, estado) VALUES ('".$data->nombre_cliente."', '".$data->estado_cliente."'); ";
 			$result = $conn->query($query);
 			if($result){
 				$this->business->return->bool = true;

@@ -45,15 +45,15 @@ $(function(){
 			html += '</table>';
 
 			$.each(data, function(i, row){
-				html += '<div id="modifica_cliente" class="modal fade" role="dialog">';
+				html += '<div id="modifica_cliente_'+row.id+'" class="modal fade" role="dialog">';
 				html += '<div class="modal-dialog">';
 				html += '<div class="modal-content">';
 				html += '<form id="form_modifica_cliente_'+row.id+'" autocomplete="off">';
 				html += '<div class="modal-header bg-blue">';
 				html += '<button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>';
-				html += '<input type="hidden" id="id_cliente" name="id_cliente" class="form-control" valule="'+row.id+'">';
+				html += '<input type="hidden" id="id_cliente" name="id_cliente" valule="'+row.id+'">';
 				html += '<h4 class="modal-title">MODIFICA CLIENTE</h4>';
-				html += '<input type="hidden" id="action" name="action">';
+				html += '<input type="hidden" id="action" name="action" value="update_cliente">';
 				html += '</div>';
 				html += '<div class="modal-body">';
 				html += '<div class="row">';
@@ -100,7 +100,38 @@ $(function(){
 				html += '</form>';
 				html += '</div>';
 				html += '</div>';
-				html += '</div>';
+				html += '</div>'; 
+
+				//Actualiza cliente
+				$('#form_modifica_cliente_'+row.id).submit(function(e){
+					e.preventDefault();
+					var data = $('#form_modifica_cliente').serialize();
+					$.ajax({
+						type: 'post',
+						url: '../controller/ctrclientes.php',
+						data: data,
+						dataType: 'json',
+					}).done(function(result){
+						if(result.bool){
+							$('#crear_cliente').modal().hide();
+							$("#crear_cliente .close").click();
+							swal({
+								title: "¡Success!",
+								text: result.msg,
+								type: 'success',
+								showCancelButton: false,
+								confirmButtonClass: "btn-success",
+								confirmButtonText: "Aceptar",
+								closeOnConfirm: true,
+							},function(){
+								pageContent('administrador/clientes/index');
+							});
+						} else {
+							swal('Error!',result.msg,'error');
+							console.log('Error: '+result.msg);
+						}
+					});
+				});
 			});
 
 			$('#data_clientes').html(html);
@@ -116,7 +147,6 @@ $(function(){
 	//Crea cliente
 	$('#form_crear_cliente').submit(function(e){
 		e.preventDefault();
-		$('#action').val('crear_cliente');
 		var data = $('#form_crear_cliente').serialize();
 		$.ajax({
 			type: 'post',
@@ -128,7 +158,7 @@ $(function(){
 				$('#crear_cliente').modal().hide();
 				$("#crear_cliente .close").click();
 				swal({
-					title: "¡Success!",
+					title: "Correcto!",
 					text: result.msg,
 					type: 'success',
 					showCancelButton: false,
@@ -140,39 +170,6 @@ $(function(){
 				});
 			} else {
 
-				swal('Error!',result.msg,'error');
-				console.log('Error: '+result.msg);
-			}
-		});
-	});
-
-
-	//Actualiza cliente
-	$('#form_modifica_cliente').submit(function(e){
-		e.preventDefault();
-		$('#action').val('update_cliente');
-		var data = $('#form_modifica_cliente').serialize();
-		$.ajax({
-			type: 'post',
-			url: '../controller/ctrclientes.php',
-			data: data,
-			dataType: 'json',
-		}).done(function(result){
-			if(result.bool){
-				$('#crear_cliente').modal().hide();
-				$("#crear_cliente .close").click();
-				swal({
-					title: "¡Success!",
-					text: result.msg,
-					type: 'success',
-					showCancelButton: false,
-					confirmButtonClass: "btn-success",
-					confirmButtonText: "Aceptar",
-					closeOnConfirm: true,
-				},function(){
-					pageContent('administrador/clientes/index');
-				});
-			} else {
 				swal('Error!',result.msg,'error');
 				console.log('Error: '+result.msg);
 			}

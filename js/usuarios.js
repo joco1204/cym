@@ -25,7 +25,7 @@ $(function(){
 				html += '<tr>';
 				html += '<td>'+row.id+'</td>';
 				html += '<td>'+row.usuario+'</td>';
-				html += '<td><button type="button" class="btn btn-success">Modificar</button></td>';
+				html += '<td><button type="button" class="btn btn-success btn-xs">Modificar</button></td>';
 				html += '</tr>';
 			});
 			html += '</tbody>';

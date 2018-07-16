@@ -10,6 +10,14 @@ if(isset($post->action)){
 			$result = $servicio->tabla_servicios();
 			$business->return = $result;
 		break;
+		case 'servicios':
+			$result = $servicio->servicios();
+			$business->return = $result;
+		break;
+		case 'crear_servicio':
+			$result = $servicio->crear_servicio($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

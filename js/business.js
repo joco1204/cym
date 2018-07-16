@@ -81,8 +81,6 @@ var timeout;
 function startTimeOut() {
 	timeout = setTimeout(function(){redirectTimeOut()}, 1200000);
 }
-
-//
 function stopTimeOut() {
   clearTimeout(timeout);
   timeout = setTimeout('location="../../"', 1200000);

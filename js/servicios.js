@@ -74,4 +74,35 @@ $(function(){
 			console.log('Error: '+result.msg);
 		}
 	});
+
+	//Crea servicio
+	$('#form_crear_servicio').submit(function(e){
+		e.preventDefault();
+		var data = $('#form_crear_servicio').serialize();
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrservicios.php',
+			data: data,
+			dataType: 'json',
+		}).done(function(result){
+			if(result.bool){
+				$('#crear_servicio').modal().hide();
+				$("#crear_servicio .close").click();
+				swal({
+					title: "Correcto!",
+					text: result.msg,
+					type: 'success',
+					showCancelButton: false,
+					confirmButtonClass: "btn-success",
+					confirmButtonText: "Aceptar",
+					closeOnConfirm: true,
+				},function(){
+					pageContent('administrador/servicios/index');
+				});
+			} else {
+				swal('Error!',result.msg,'error');
+				console.log('Error: '+result.msg);
+			}
+		});
+	});
 });
