@@ -10,6 +10,10 @@ if(isset($post->action)){
 			$result = $usuario->tabla_usuarios();
 			$business->return = $result;
 		break;
+		case 'get_usuarios':
+			$result = $usuario->get_usuarios($post->iduser);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

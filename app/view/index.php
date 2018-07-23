@@ -87,7 +87,9 @@
                             </li>
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#perfil_modal">Perfil</button>
+                                    <input type="hidden" value="<?php echo $_SESSION['iduser'];?>"  id="userID"/>
+                                    <!--<a href="#" class="btn btn-default btn-flat">Perfil</a>-->
                                 </div>
                                 <div class="pull-right">
                                     <a href="#" onclick="javascript: logout();" class="btn btn-default btn-flat">Salir</a>
@@ -128,3 +130,27 @@
 <script type="text/javascript">
     pageContent('contenido');
 </script>
+
+
+<div id="perfil_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="form_crear_cliente" autocomplete="off">
+            <div class="modal-header bg-blue">
+                <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
+                <h4 class="modal-title">PERFIL</h4>
+                <input type="hidden" id="action" name="action" value="perfil_modal">
+            </div>
+            <div class="modal-body"  id="ctr_perfil">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success btn-sm" >GUARDAR</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">CERRAR</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/perfil.js"></script>
