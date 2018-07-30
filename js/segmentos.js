@@ -1,5 +1,4 @@
 $(function(){
-
 	//Ajax tabla servicios
 	$.ajax({
 		type: 'post',

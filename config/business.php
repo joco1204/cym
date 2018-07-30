@@ -8,6 +8,9 @@ include '../../app/model/clientes.php';
 include '../../app/model/servicios.php';
 include '../../app/model/segmentos.php';
 include '../../app/model/usuarios.php';
+include '../../app/model/tipoerror.php';
+include '../../app/model/puntos.php';
+include '../../app/model/calificacion.php';
 //Business class
 class Business{
 	public $return;
