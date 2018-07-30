@@ -28,7 +28,7 @@
                 <div class="icon">
                     <i class=""></i>
                 </div>
-                <a href="#" onclick="javascript: pageContent('administrador/Servicios/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="#" onclick="javascript: pageContent('administrador/servicios/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
 
@@ -51,23 +51,48 @@
             <div class="small-box bg-blue">
                 <div class="inner">
                     <h3>4</h3>
-                    <p>Matrices</p>
+                    <p>Tipo de Error</p>
                 </div>
                 <div class="icon">
                     <i class=""></i>
                 </div>
-                <a href="#" onclick="javascript: pageContent('administrador/matrices/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="#" onclick="javascript: pageContent('administrador/tipoerror/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
-    </div>
 
-    <!-- Small boxes (Stat box) -->
-    <div class="row">
         <div class="col-lg-3 col-xs-6">
             <!-- small box -->
             <div class="small-box bg-blue">
                 <div class="inner">
                     <h3>5</h3>
+                    <p>Puntos de Entrenamiento</p>
+                </div>
+                <div class="icon">
+                    <i class=""></i>
+                </div>
+                <a href="#" onclick="javascript: pageContent('administrador/puntos/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>6</h3>
+                    <p>Calificación</p>
+                </div>
+                <div class="icon">
+                    <i class=""></i>
+                </div>
+                <a href="#" onclick="javascript: pageContent('administrador/calificacion/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>7</h3>
                     <p>Usuarios</p>
                 </div>
                 <div class="icon">
