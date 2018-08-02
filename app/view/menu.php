@@ -16,10 +16,7 @@
         <ul class="treeview-menu">
             <li><a href="#" onclick="javascript: pageContent('administrador/clientes/index');"><i class="glyphicon glyphicon-paperclip"></i> Clientes</a></li>
             <li><a href="#" onclick="javascript: pageContent('administrador/servicios/index');"><i class="glyphicon glyphicon-briefcase"></i> Servicios</a></li>
-            <li><a href="#" onclick="javascript: pageContent('administrador/segmentos/index');"><i class="glyphicon glyphicon-th"></i> Segmentos</a></li>
-            <li><a href="#" onclick="javascript: pageContent('administrador/tipoerror/index');"><i class="glyphicon glyphicon-remove-circle"></i> Tipo de Error</a></li>
-            <li><a href="#" onclick="javascript: pageContent('administrador/puntos/index');"><i class="glyphicon glyphicon-list-alt"></i> Puntos de Entrenamiento</a></li>
-            <li><a href="#" onclick="javascript: pageContent('administrador/calificacion/index');"><i class="glyphicon glyphicon-ok-circle"></i> Calificación</a></li>
+            <li><a href="#" onclick="javascript: pageContent('administrador/matrices/index');"><i class="glyphicon glyphicon-list"></i> Matrices</a></li>
             <li><a href="#" onclick="javascript: pageContent('administrador/usuarios/index');"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>
         </ul>
     </li>
