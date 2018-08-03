@@ -10,16 +10,17 @@
             <section class='content'>
                 <div class="row">
                     <div class="col col-md-12 text-center">
-                        <button type="button" class='btn btn-primary' data-toggle="modal" data-target="#crear_servicio">Crear Servicio</button>
+                        <button type="button" class='btn btn-primary' onclick="javascript: pageContent('administrador/matrices/form');">Crear Matriz</button>
                         <button type="button" class='btn btn-primary' onclick="javascript: pageContent('administrador/administrador');">Volver</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col col-md-12">
-                        <div class="table-responsive" id="data_matrices" style="font-size: 12px;"></div>
+                        <div class="table-responsive" id="data_matriz" style="font-size: 11px;"></div>
                     </div>
                 </div>
             </section>
         </div>
     </div>
 </section>
+<script src="../../js/matriz/matriz.js"></script>

@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         localhost
--- Versión del servidor:         10.1.30-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.1.28-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win32
--- HeidiSQL Versión:             9.5.0.5196
+-- HeidiSQL Versión:             9.5.0.5229
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -30,21 +30,53 @@ DELETE FROM `ca_cliente`;
 /*!40000 ALTER TABLE `ca_cliente` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ca_cliente` ENABLE KEYS */;
 
--- Volcando estructura para tabla calidad.ca_segmento
-CREATE TABLE IF NOT EXISTS `ca_segmento` (
+-- Volcando estructura para tabla calidad.ca_error
+CREATE TABLE IF NOT EXISTS `ca_error` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `segmento` varchar(100) NOT NULL,
-  `id_cliente` int(11) NOT NULL,
-  `id_servicio` int(11) NOT NULL,
-  `estado` varchar(50) NOT NULL,
+  `id_ matriz` int(11) NOT NULL,
+  `tipo_error` varchar(100) NOT NULL,
+  `calculo_valor` varchar(100) NOT NULL,
+  `estado` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_segmento: ~0 rows (aproximadamente)
-DELETE FROM `ca_segmento`;
-/*!40000 ALTER TABLE `ca_segmento` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ca_segmento` ENABLE KEYS */;
+-- Volcando datos para la tabla calidad.ca_error: ~0 rows (aproximadamente)
+DELETE FROM `ca_error`;
+/*!40000 ALTER TABLE `ca_error` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_error` ENABLE KEYS */;
+
+-- Volcando estructura para tabla calidad.ca_item
+CREATE TABLE IF NOT EXISTS `ca_item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_matriz` int(11) NOT NULL,
+  `id_error` int(11) NOT NULL,
+  `item` varchar(100) NOT NULL,
+  `valor` varchar(100) NOT NULL,
+  `estado` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla calidad.ca_item: ~0 rows (aproximadamente)
+DELETE FROM `ca_item`;
+/*!40000 ALTER TABLE `ca_item` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_item` ENABLE KEYS */;
+
+-- Volcando estructura para tabla calidad.ca_matriz
+CREATE TABLE IF NOT EXISTS `ca_matriz` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(11) NOT NULL,
+  `id_servicio` int(11) NOT NULL,
+  `estado` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_matriz` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla calidad.ca_matriz: ~0 rows (aproximadamente)
+DELETE FROM `ca_matriz`;
+/*!40000 ALTER TABLE `ca_matriz` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_matriz` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_servicio
 CREATE TABLE IF NOT EXISTS `ca_servicio` (

@@ -35,7 +35,9 @@ class Cliente{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayTabla = array();
-			$query  = "SELECT id, cliente FROM ca_cliente WHERE estado = 'activo';";
+			$query  = "SELECT id, cliente ";
+			$query .= "FROM ca_cliente ";
+			$query .= "WHERE estado = 'activo' ";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){

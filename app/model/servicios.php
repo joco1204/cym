@@ -39,6 +39,7 @@ class Servicio{
 			$arrayTabla = array();
 			$query   = "SELECT id, servicio ";
 			$query  .= "FROM ca_servicio ";
+			$query  .= "WHERE estado = 'activo'; ";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
