@@ -11,7 +11,7 @@ if(isset($post->action)){
 			$business->return = $result;
 		break;
 		case 'servicios':
-			$result = $servicio->servicios();
+			$result = $servicio->servicios($post);
 			$business->return = $result;
 		break;
 		case 'crear_servicio':

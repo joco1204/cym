@@ -22,27 +22,33 @@ $(function(){
 		}
 	});
 
-	//Servicios
-	$.ajax({
-		type: 'post',
-		url: '../controller/ctrservicios.php',
-		data: {
-			action: 'servicios',
-		},
-		dataType: 'json',
-	}).done(function(result){
-		if(result.bool){
-			var data = $.parseJSON(result.msg);
-			var html = '';
-			html += '<option value=""></option>';
-			$.each(data, function(i, row){
-				html += '<option value="'+row.id+'">'+row.servicio+'</option>';
-			});
-			$('#servicio').html(html);
-		} else {
-			console.log('Error: '+result.msg);
-		}
+
+	$('#cliente').change(function(){
+		//Servicios
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrservicios.php',
+			data: {
+				action: 'servicios',
+				id_cliente: $(this).val(),
+			},
+			dataType: 'json',
+		}).done(function(result){
+			if(result.bool){
+				var data = $.parseJSON(result.msg);
+				var html = '';
+				html += '<option value=""></option>';
+				$.each(data, function(i, row){
+					html += '<option value="'+row.id+'">'+row.servicio+'</option>';
+				});
+				$('#servicio').html(html);
+			} else {
+				console.log('Error: '+result.msg);
+			}
+		});
 	});
+
+		
 
 	$('#matriz_form').submit(function(e){
 		e.preventDefault();
@@ -156,6 +162,7 @@ function addItem(error_n){
 	var class_error = '.error_n_'+error_n;
 	var count = ($(class_error).length)+1;
 	$('#item_error_'+error_n).val(count);
+
 	html += '<div class="panel panel-success error_n_'+error_n+'" id="item_error_'+error_n+'_'+count+'">';
 	html += '<div class="panel-heading bg-success">';
 	html += '</div>';

@@ -31,7 +31,7 @@ class Servicio{
 		return $this->business->return;
 	}
 
-	public function servicios(){
+	public function servicios($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//Valida conexión a base de datos
@@ -39,7 +39,8 @@ class Servicio{
 			$arrayTabla = array();
 			$query   = "SELECT id, servicio ";
 			$query  .= "FROM ca_servicio ";
-			$query  .= "WHERE estado = 'activo'; ";
+			$query  .= "WHERE estado = 'activo' ";
+			$query  .= "AND id_cliente = '".$data->id_cliente."'; ";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
