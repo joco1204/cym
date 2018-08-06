@@ -65,10 +65,11 @@ class Matriz{
 							//Variables item
 							$nombre_item_error = "nombre_item_error_".$i."_".$j;
 							$valor = "valor_".$i."_".$j;
+							$valor_no = "valor_no_".$i."_".$j;
 							$estado_item = "estado_item_".$i."_".$j;
 							
 							//Insert item
-							$query_item = "INSERT INTO ca_item (id_matriz, id_error, item, valor, estado) VALUES ('".$id_matriz."', '".$id_error."', '".$data->$nombre_item_error."', '".$data->$valor."', '".$data->$estado_item."'); ";
+							$query_item = "INSERT INTO ca_item (id_matriz, id_error, item, valor, valor_no, estado) VALUES ('".$id_matriz."', '".$id_error."', '".$data->$nombre_item_error."', '".$data->$valor."', '".$data->$valor_no."', '".$data->$estado_item."'); ";
 							$result_item = $conn->query($query_item);
 						}
 					}

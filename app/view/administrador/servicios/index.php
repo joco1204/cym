@@ -25,7 +25,7 @@
 </section>
 
 <div id="crear_servicio" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="form_crear_servicio" autocomplete="off">
                 <div class="modal-header bg-blue">
@@ -38,26 +38,27 @@
                         <div class="col col-md-6">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="nombre_servicio">SERVICIO:</label>
-                                <input type="text" id="nombre_servicio" name="nombre_servicio" class="form-control">
+                                <input type="text" id="nombre_servicio" name="nombre_servicio" class="form-control" required="" data-error="Debe ingresar servicio">
+                                <div class="help-block with-errors"></div>
                             </div>
                         </div>
-                        <div class="col col-md-6">
+                        <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="id_cliente">CLIENTE:</label>
-                                <select class="form-control" id="id_cliente" name="id_cliente" placeholder="[Seleccione]">
+                                <select class="form-control" id="id_cliente" name="id_cliente" placeholder="[Seleccione]" style="width: 100%;" required="" data-error="Debe seleccionar un cliente">
                                 </select>
+                                <div class="help-block with-errors"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-md-6">
+                        <div class="col col-md-2">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="estado_servicio">ESTADO:</label>
-                                <select class="form-control" id="estado_servicio" name="estado_servicio" placeholder="[Seleccione]">
+                                <select class="form-control" id="estado_servicio" name="estado_servicio" placeholder="[Seleccione]" style="width: 100%;" required="" data-error="Debe seccionar un estado">
                                     <option selected=""></option>
                                     <option value="activo">activo</option>
                                     <option value="inactivo">inactivo</option>
                                 </select>
+                                <div class="help-block with-errors"></div>
                             </div>
                         </div>
                     </div>
@@ -71,3 +72,8 @@
     </div>
 </div>
 <script src="../../js/servicios.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("select").select2();
+    });
+</script>

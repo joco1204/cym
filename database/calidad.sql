@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `ca_item` (
   `id_error` int(11) NOT NULL,
   `item` varchar(100) NOT NULL,
   `valor` varchar(100) NOT NULL,
+  `valor_no` varchar(100) NOT NULL,
   `estado` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)

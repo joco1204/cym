@@ -18,7 +18,6 @@ $(function(){
 			html += '<th>ID CLIENTE</th>';
 			html += '<th>NOMBRE CLIENTE</th>';
 			html += '<th>ESTADO</th>';
-			html += '<th>LOGO</th>';
 			html += '<th></th>';
 			html += '</tr>';
 			html += '</thead>';
@@ -28,7 +27,6 @@ $(function(){
 				html += '<td>'+row.id+'</td>';
 				html += '<td>'+row.cliente+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td></td>';
 				html += '<td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modifica_cliente_'+row.id+'">Modificar</button></td>';
 				html += '</tr>';
 			});
@@ -38,7 +36,6 @@ $(function(){
 			html += '<th>ID CLIENTE</th>';
 			html += '<th>NOMBRE CLIENTE</th>';
 			html += '<th>ESTADO</th>';
-			html += '<th>LOGO</th>';
 			html += '<th></th>';
 			html += '</tr>';
 			html += '</tfoot>';

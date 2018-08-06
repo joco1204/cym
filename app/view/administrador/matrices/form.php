@@ -8,7 +8,7 @@
         </div>
         <div class='box-body'>
             <section class='content'>
-                <form id="matriz_form">
+                <form id="matriz_form" autocomplete="off">
                     <div class="panel panel-primary">
                         <div class="panel-body">
                             <div class="row">

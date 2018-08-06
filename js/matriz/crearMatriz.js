@@ -54,8 +54,6 @@ $(function(){
 		e.preventDefault();
 		$('#action').val('crear_matriz')
 		var data = $(this).serialize();
-		alert(data);
-
 		$.ajax({
 			type: 'post',
 			url: '../controller/ctrmatriz.php',
@@ -110,12 +108,13 @@ function addError(){
 	$('#tipo_error').val(count);
 	html += '<div class="panel panel-danger error" id="tipo_error_'+count+'">';
 	html += '<div class="panel-heading bg-danger">';
+	html += '<p><b>Tipo error '+count+'</b></p>';
 	html += '</div>';
 	html += '<div class="panel-body">';
 	html += '<div class="row">';
 	html += '<div class="col col-md-3">';
 	html += '<div class="form-group">';
-	html += '<label for="tipo_error_'+count+'" class="control-label">Tipo error '+count+'</label>';
+	html += '<label for="tipo_error_'+count+'" class="control-label">Error</label>';
 	html += '<input type="text" name="tipo_error_'+count+'" id="tipo_error_'+count+'" class="form-control" required="">';
 	html += '</div>';
 	html += '</div>';
@@ -165,20 +164,25 @@ function addItem(error_n){
 
 	html += '<div class="panel panel-success error_n_'+error_n+'" id="item_error_'+error_n+'_'+count+'">';
 	html += '<div class="panel-heading bg-success">';
+	html += '<p><b>Item '+count+'</b></p>';
 	html += '</div>';
 	html += '<div class="panel-body">';
 	html += '<div class="row">';
 	html += '<div class="col col-md-3">';
 	html += '<div class="form-group">';
-	html += '<label for="nombre_item_error_'+error_n+'_'+count+'" class="control-label">Item '+count+'</label>';
+	html += '<label for="nombre_item_error_'+error_n+'_'+count+'" class="control-label">Item</label>';
 	html += '<input type="text" name="nombre_item_error_'+error_n+'_'+count+'" id="nombre_item_error_'+error_n+'_'+count+'" class="form-control" required="">';
 	html += '</div>';
 	html += '</div>';
 	html += '<div class="col col-md-3">';
-	html += '<label for="valor_'+error_n+'_'+count+'" class="control-label">Valor item</label>';
-	html += '<input type="text" name="valor_'+error_n+'_'+count+'" id="valor_'+error_n+'_'+count+'" class="form-control" required="">';
+	html += '<label for="valor_'+error_n+'_'+count+'" class="control-label">Valor cumplimiento item</label>';
+	html += '<input type="number" name="valor_'+error_n+'_'+count+'" id="valor_'+error_n+'_'+count+'" class="form-control" required="" min="0">';
 	html += '</div>';
 	html += '<div class="col col-md-3">';
+	html += '<label for="valor_no_'+error_n+'_'+count+'" class="control-label">Valor no cumplimiento item</label>';
+	html += '<input type="number" name="valor_no_'+error_n+'_'+count+'" id="valor_no_'+error_n+'_'+count+'" class="form-control" required="" min="0">';
+	html += '</div>';
+	html += '<div class="col col-md-2">';
 	html += '<div class="form-group">';
 	html += '<label for="estado_item_'+error_n+'_'+count+'" class="control-label">Estado</label>';
 	html += '<select name="estado_item_'+error_n+'_'+count+'" id="estado_item_'+error_n+'_'+count+'" class="form-control" required="">';
@@ -188,9 +192,9 @@ function addItem(error_n){
 	html += '</select>';
 	html += '</div>';
 	html += '</div>';
-	html += '<div class="col col-md-3">';
+	html += '<div class="col col-md-1">';
 	html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: puntoEntrenamiento('+error_n+', '+count+');">';
-	html += 'Punto de Entrenamiento <span class="glyphicon glyphicon-plus"></span>';
+	html += 'Punto <span class="glyphicon glyphicon-plus"></span>';
 	html += '</button>';
 	html += '<input type="hidden" id="punto_entrenamiento_'+error_n+'_'+count+'" name="punto_entrenamiento_'+error_n+'_'+count+'">';
 	html += '</div>';
@@ -213,13 +217,11 @@ function puntoEntrenamiento(error_n, item_n){
 	$('#punto_entrenamiento_'+error_n+'_'+item_n).val(count);
 	html += '<div class="panel panel-primary item_n_'+error_n+'_'+item_n+'" id="punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'">';
 	html += '<div class="panel-heading bg-primary">';
+	html += '<p><b>Punto Entrenamiento '+count+', Item '+item_n+'</b></p>';
 	html += '</div>';
 	html += '<div class="panel-body">';
 	html += '<div class="form-group">';
-	html += '<div class="col col-md-4">';
-	html += '<label for="desc_punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'" class="control-label">Punto Entrenamiento '+count+', Item '+item_n+'</label>';
-	html += '</div>';
-	html += '<div class="col col-md-8">';
+	html += '<div class="col col-md-12">';
 	html += '<input type="text" name="desc_punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'" id="punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'" class="form-control" required="">';
 	html += '</div>';
 	html += '</div>';
