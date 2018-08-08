@@ -1,23 +1,23 @@
 $(function(){
 
-	//Ajax tabla servicios
+	//Ajax tabla campanas
 	$.ajax({
 		type: 'post',
-		url: '../controller/ctrservicios.php',
+		url: '../controller/ctrcampanas.php',
 		data: {
-			action: 'tabla_servicios',
+			action: 'tabla_campanas',
 		},
 		dataType: 'json',
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
 			var html = '';
-			html += '<table class="table table-striped table-bordered display" id="tabla_servicios">';
+			html += '<table class="table table-striped table-bordered display" id="tabla_campanas">';
 			html += '<thead>';
 			html += '<tr>';
-			html += '<th>ID SERVICIOS</th>';
-			html += '<th>SERVICIO</th>';
-			html += '<th>CLIENTE</th>';
+			html += '<th>ID CAMPAÑAS</th>';
+			html += '<th>CAMPAÑA</th>';
+			html += '<th>EMPRESA</th>';
 			html += '<th>ESTADO</th>';
 			html += '<th></th>';
 			html += '</tr>';
@@ -26,26 +26,26 @@ $(function(){
 			$.each(data, function(i, row){
 				html += '<tr>';
 				html += '<td>'+row.id+'</td>';
-				html += '<td>'+row.servicio+'</td>';
-				html += '<td>'+row.cliente+'</td>';
+				html += '<td>'+row.campana+'</td>';
+				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modifica_servicio_'+row.id+'">Modificar</button></td>';
+				html += '<td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modifica_campana_'+row.id+'">Modificar</button></td>';
 				html += '</tr>';
 			});
 			html += '</tbody>';
 			html += '<tfoot>';
 			html += '<tr>';
-			html += '<th>ID SERVICIOS</th>';
-			html += '<th>SERVICIO</th>';
-			html += '<th>CLIENTE</th>';
+			html += '<th>ID CAMPAÑAS</th>';
+			html += '<th>CAMPAÑA</th>';
+			html += '<th>EMPRESA</th>';
 			html += '<th>ESTADO</th>';
 			html += '<th></th>';
 			html += '</tr>';
 			html += '</tfoot>';
 			html += '</table>';
 
-			$('#data_servicios').html(html);
-			$('#tabla_servicios').dataTable({
+			$('#data_campanas').html(html);
+			$('#tabla_campanas').dataTable({
 				"order": [ 0, "asc" ],
 				"pageLength": 25
 			});
@@ -56,9 +56,9 @@ $(function(){
 
 	$.ajax({
 		type: 'post',
-		url: '../controller/ctrclientes.php',
+		url: '../controller/ctrempresas.php',
 		data: {
-			action: 'clientes',
+			action: 'empresas',
 		},
 		dataType: 'json',
 	}).done(function(result){
@@ -67,27 +67,27 @@ $(function(){
 			var html = '';
 			html += '<option value=""></option>';
 			$.each(data, function(i, row){
-				html += '<option value="'+row.id+'">'+row.cliente+'</option>';
+				html += '<option value="'+row.id+'">'+row.empresa+'</option>';
 			});
-			$('#id_cliente').html(html);
+			$('#id_empresa').html(html);
 		} else {
 			console.log('Error: '+result.msg);
 		}
 	});
 
-	//Crea servicio
-	$('#form_crear_servicio').submit(function(e){
+	//Crea campana
+	$('#form_crear_campana').submit(function(e){
 		e.preventDefault();
-		var data = $('#form_crear_servicio').serialize();
+		var data = $('#form_crear_campana').serialize();
 		$.ajax({
 			type: 'post',
-			url: '../controller/ctrservicios.php',
+			url: '../controller/ctrcampanas.php',
 			data: data,
 			dataType: 'json',
 		}).done(function(result){
 			if(result.bool){
-				$('#crear_servicio').modal().hide();
-				$("#crear_servicio .close").click();
+				$('#crear_campana').modal().hide();
+				$("#crear_campana .close").click();
 				swal({
 					title: "Correcto!",
 					text: result.msg,
@@ -97,7 +97,7 @@ $(function(){
 					confirmButtonText: "Aceptar",
 					closeOnConfirm: true,
 				},function(){
-					pageContent('administrador/servicios/index');
+					pageContent('administrador/campanas/index');
 				});
 			} else {
 				swal('Error!',result.msg,'error');

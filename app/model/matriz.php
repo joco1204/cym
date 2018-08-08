@@ -10,10 +10,10 @@ class Matriz{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayTabla = array();
-			$query  = "SELECT a.id, b.cliente, c.servicio, a.estado ";
+			$query  = "SELECT a.id, b.empresa, c.campana, a.estado ";
 			$query .= "FROM ca_matriz AS a  ";
-			$query .= "JOIN ca_cliente AS b ON a.id_cliente = b.id  ";
-			$query .= "JOIN ca_servicio AS c ON a.id_servicio = c.id ";
+			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id  ";
+			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id ";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -38,7 +38,7 @@ class Matriz{
 		//Valida conexión a base de datos
 		if($conn){
 			//Insert matriz
-			$query  = "INSERT INTO ca_matriz (id_cliente, id_servicio, estado) VALUES ('".$data->cliente_form."', '".$data->servicio_form."', 'activo');";
+			$query  = "INSERT INTO ca_matriz (id_empresa, id_campana, estado) VALUES ('".$data->empresa_form."', '".$data->campana_form."', 'activo');";
 			$result = $conn->query($query);
 			if($result){
 				$id_matriz = $conn->lastInsertId();
@@ -65,11 +65,10 @@ class Matriz{
 							//Variables item
 							$nombre_item_error = "nombre_item_error_".$i."_".$j;
 							$valor = "valor_".$i."_".$j;
-							$valor_no = "valor_no_".$i."_".$j;
 							$estado_item = "estado_item_".$i."_".$j;
 							
 							//Insert item
-							$query_item = "INSERT INTO ca_item (id_matriz, id_error, item, valor, valor_no, estado) VALUES ('".$id_matriz."', '".$id_error."', '".$data->$nombre_item_error."', '".$data->$valor."', '".$data->$valor_no."', '".$data->$estado_item."'); ";
+							$query_item = "INSERT INTO ca_item (id_matriz, id_error, item, valor, estado) VALUES ('".$id_matriz."', '".$id_error."', '".$data->$nombre_item_error."', '".$data->$valor."', '".$data->$estado_item."'); ";
 							$result_item = $conn->query($query_item);
 						}
 					}

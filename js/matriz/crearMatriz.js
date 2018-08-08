@@ -1,11 +1,11 @@
 $(function(){
 
-	//Clientes
+	//empresas
 	$.ajax({
 		type: 'post',
-		url: '../controller/ctrclientes.php',
+		url: '../controller/ctrempresas.php',
 		data: {
-			action: 'clientes',
+			action: 'empresas',
 		},
 		dataType: 'json',
 	}).done(function(result){
@@ -14,23 +14,23 @@ $(function(){
 			var html = '';
 			html += '<option value=""></option>';
 			$.each(data, function(i, row){
-				html += '<option value="'+row.id+'">'+row.cliente+'</option>';
+				html += '<option value="'+row.id+'">'+row.empresa+'</option>';
 			});
-			$('#cliente').html(html);
+			$('#empresa').html(html);
 		} else {
 			console.log('Error: '+result.msg);
 		}
 	});
 
 
-	$('#cliente').change(function(){
-		//Servicios
+	$('#empresa').change(function(){
+		//campanas
 		$.ajax({
 			type: 'post',
-			url: '../controller/ctrservicios.php',
+			url: '../controller/ctrcampanas.php',
 			data: {
-				action: 'servicios',
-				id_cliente: $(this).val(),
+				action: 'campanas',
+				id_empresa: $(this).val(),
 			},
 			dataType: 'json',
 		}).done(function(result){
@@ -39,9 +39,9 @@ $(function(){
 				var html = '';
 				html += '<option value=""></option>';
 				$.each(data, function(i, row){
-					html += '<option value="'+row.id+'">'+row.servicio+'</option>';
+					html += '<option value="'+row.id+'">'+row.campana+'</option>';
 				});
-				$('#servicio').html(html);
+				$('#campana').html(html);
 			} else {
 				console.log('Error: '+result.msg);
 			}
@@ -82,22 +82,22 @@ $(function(){
 
 	
 function addMatriz(){
-	if($('#cliente').val() == '' && $('#servicio').val() == ''){
-		swal("Atención!","Debe seleccionar Cliente y Servicio","warning");
-	} else if($('#cliente').val() == '' && $('#servicio').val() != ''){
-		swal("Atención!","Debe seleccionar Cliente","warning");
-	} else if($('#cliente').val() != '' && $('#servicio').val() == ''){
-		swal("Atención!","Debe seleccionar Servicio","warning");
+	if($('#empresa').val() == '' && $('#campana').val() == ''){
+		swal("Atención!","Debe seleccionar empresa y campana","warning");
+	} else if($('#empresa').val() == '' && $('#campana').val() != ''){
+		swal("Atención!","Debe seleccionar empresa","warning");
+	} else if($('#empresa').val() != '' && $('#campana').val() == ''){
+		swal("Atención!","Debe seleccionar campana","warning");
 	} else {
-		var cliente = document.getElementById("cliente");
-  		var servicio = document.getElementById("servicio");
+		var empresa = document.getElementById("empresa");
+  		var campana = document.getElementById("campana");
   		$('#matriz_pannel').show();
-		$('#cliente_matriz').html(cliente.options[cliente.selectedIndex].text);
-		$('#servicio_matriz').html(servicio.options[servicio.selectedIndex].text);
-		$('#cliente_form').val(cliente.value);
-		$('#servicio_form').val(servicio.value);
-		$('#cliente').attr("disabled", true);
-		$('#servicio').attr("disabled", true);
+		$('#empresa_matriz').html(empresa.options[empresa.selectedIndex].text);
+		$('#campana_matriz').html(campana.options[campana.selectedIndex].text);
+		$('#empresa_form').val(empresa.value);
+		$('#campana_form').val(campana.value);
+		$('#empresa').attr("disabled", true);
+		$('#campana').attr("disabled", true);
 		$('#add_matriz').attr("disabled", true);
 	}
 }

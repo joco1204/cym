@@ -1,25 +1,21 @@
 <?php
 include '../../config/business.php';
 $business = new Business();
-$cliente = new Cliente();
+$campana = New Campana();
 $post = $business->post;
 //Validate the existence of the action
 if(isset($post->action)){
 	switch ($post->action){
-		case 'tabla_clientes':
-			$result = $cliente->tabla_clientes();
+		case 'tabla_campanas':
+			$result = $campana->tabla_campanas();
 			$business->return = $result;
 		break;
-		case 'clientes':
-			$result = $cliente->clientes();
+		case 'campanas':
+			$result = $campana->campanas($post);
 			$business->return = $result;
 		break;
-		case 'crear_cliente':
-			$result = $cliente->crear_cliente($post);
-			$business->return = $result;
-		break;
-		case 'update_cliente':
-			$result = $cliente->update_cliente($post);
+		case 'crear_campana':
+			$result = $campana->crear_campana($post);
 			$business->return = $result;
 		break;
 		default:

@@ -14,15 +14,15 @@
                             <div class="row">
                                 <div class="col col-md-3">
                                     <div class="form-group has-feedback">
-                                        <label for="cliente" class="control-label">Clientes</label>
-                                        <select name="cliente" id="cliente" class="form-control" style="width: 100%;" required data-error="Debe seleccionar cliente"></select>
+                                        <label for="empresa" class="control-label">Empresas</label>
+                                        <select name="empresa" id="empresa" class="form-control" style="width: 100%;" required data-error="Debe seleccionar empresa"></select>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col col-md-3">
                                     <div class="form-group has-feedback">
-                                        <label for="servicio" class="control-label">Servicios</label>
-                                        <select name="servicio" id="servicio" class="form-control" style="width: 100%;" required data-error="Debe seleccionar servicio"></select>
+                                        <label for="campana" class="control-label">Campañas</label>
+                                        <select name="campana" id="campana" class="form-control" style="width: 100%;" required data-error="Debe seleccionar campana"></select>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -39,21 +39,21 @@
                             <div class="row">
                                 <div class="col-md-3 text-left">
                                     <p>
-                                        <b>CLIENTE:</b>
+                                        <b>EMPRESA:</b>
                                     </p>
                                 </div>
                                 <div class="col-md-3 text-left">
-                                    <p id="cliente_matriz"></p>
-                                    <input type="hidden" id="cliente_form" name="cliente_form">
+                                    <p id="empresa_matriz"></p>
+                                    <input type="hidden" id="empresa_form" name="empresa_form">
                                 </div>
                                 <div class="col-md-3 text-left">
                                     <p>
-                                        <b>SERVICIO:</b>
+                                        <b>CAMPAÑA:</b>
                                     </p>
                                 </div>
                                 <div class="col-md-3 text-left">
-                                    <p id="servicio_matriz"></p>
-                                    <input type="hidden" id="servicio_form" name="servicio_form">
+                                    <p id="campana_matriz"></p>
+                                    <input type="hidden" id="campana_form" name="campana_form">
                                 </div>
                             </div>                            
                         </div>

@@ -14,8 +14,8 @@
             </span>
         </a>
         <ul class="treeview-menu">
-            <li><a href="#" onclick="javascript: pageContent('administrador/clientes/index');"><i class="glyphicon glyphicon-paperclip"></i> Clientes</a></li>
-            <li><a href="#" onclick="javascript: pageContent('administrador/servicios/index');"><i class="glyphicon glyphicon-briefcase"></i> Servicios</a></li>
+            <li><a href="#" onclick="javascript: pageContent('administrador/empresas/index');"><i class="glyphicon glyphicon-paperclip"></i> Empresas</a></li>
+            <li><a href="#" onclick="javascript: pageContent('administrador/campanas/index');"><i class="glyphicon glyphicon-briefcase"></i> Campañas</a></li>
             <li><a href="#" onclick="javascript: pageContent('administrador/matrices/index');"><i class="glyphicon glyphicon-list"></i> Matrices</a></li>
             <li><a href="#" onclick="javascript: pageContent('administrador/usuarios/index');"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>
         </ul>

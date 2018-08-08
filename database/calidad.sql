@@ -16,19 +16,35 @@
 CREATE DATABASE IF NOT EXISTS `calidad` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `calidad`;
 
--- Volcando estructura para tabla calidad.ca_cliente
-CREATE TABLE IF NOT EXISTS `ca_cliente` (
+-- Volcando estructura para tabla calidad.ca_campana
+CREATE TABLE IF NOT EXISTS `ca_campana` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cliente` varchar(100) NOT NULL,
+  `campana` varchar(100) NOT NULL,
+  `id_empresa` int(11) NOT NULL,
   `estado` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_cliente: ~0 rows (aproximadamente)
-DELETE FROM `ca_cliente`;
-/*!40000 ALTER TABLE `ca_cliente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ca_cliente` ENABLE KEYS */;
+-- Volcando datos para la tabla calidad.ca_campana: ~0 rows (aproximadamente)
+DELETE FROM `ca_campana`;
+/*!40000 ALTER TABLE `ca_campana` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_campana` ENABLE KEYS */;
+
+-- Volcando estructura para tabla calidad.ca_empresa
+CREATE TABLE IF NOT EXISTS `ca_empresa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `empresa` varchar(100) NOT NULL,
+  `imagen` varchar(250) NOT NULL,
+  `estado` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla calidad.ca_empresa: ~0 rows (aproximadamente)
+DELETE FROM `ca_empresa`;
+/*!40000 ALTER TABLE `ca_empresa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_empresa` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_error
 CREATE TABLE IF NOT EXISTS `ca_error` (
@@ -67,8 +83,8 @@ DELETE FROM `ca_item`;
 -- Volcando estructura para tabla calidad.ca_matriz
 CREATE TABLE IF NOT EXISTS `ca_matriz` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_cliente` int(11) NOT NULL,
-  `id_servicio` int(11) NOT NULL,
+  `id_empresa` int(11) NOT NULL,
+  `id_campana` int(11) NOT NULL,
   `estado` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_matriz` (`id`)
@@ -77,22 +93,11 @@ CREATE TABLE IF NOT EXISTS `ca_matriz` (
 -- Volcando datos para la tabla calidad.ca_matriz: ~0 rows (aproximadamente)
 DELETE FROM `ca_matriz`;
 /*!40000 ALTER TABLE `ca_matriz` DISABLE KEYS */;
+INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
+	(1, 1, 1, 'activo');
+INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
+	(2, 1, 1, 'activo');
 /*!40000 ALTER TABLE `ca_matriz` ENABLE KEYS */;
-
--- Volcando estructura para tabla calidad.ca_servicio
-CREATE TABLE IF NOT EXISTS `ca_servicio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `servicio` varchar(100) NOT NULL,
-  `id_cliente` int(11) NOT NULL,
-  `estado` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Volcando datos para la tabla calidad.ca_servicio: ~0 rows (aproximadamente)
-DELETE FROM `ca_servicio`;
-/*!40000 ALTER TABLE `ca_servicio` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ca_servicio` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.pa_ciudad
 CREATE TABLE IF NOT EXISTS `pa_ciudad` (

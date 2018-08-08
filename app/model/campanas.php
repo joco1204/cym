@@ -1,18 +1,18 @@
 <?php 
-class Servicio{
+class Campana{
 	function __construct(){
 		$this->business = new Business();
 	}
 	
-	public function tabla_servicios(){
+	public function tabla_campanas(){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayTabla = array();
-			$query   = "SELECT a.id, a.servicio, b.cliente, a.estado ";
-			$query  .= "FROM ca_servicio AS a ";
-			$query  .= "JOIN ca_cliente AS b ON a.id_cliente = b.id"; 
+			$query   = "SELECT a.id, a.campana, b.empresa, a.estado ";
+			$query  .= "FROM ca_campana AS a ";
+			$query  .= "JOIN ca_empresa AS b ON a.id_empresa = b.id"; 
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -31,16 +31,16 @@ class Servicio{
 		return $this->business->return;
 	}
 
-	public function servicios($data){
+	public function campanas($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayTabla = array();
-			$query   = "SELECT id, servicio ";
-			$query  .= "FROM ca_servicio ";
+			$query   = "SELECT id, campana ";
+			$query  .= "FROM ca_campana ";
 			$query  .= "WHERE estado = 'activo' ";
-			$query  .= "AND id_cliente = '".$data->id_cliente."'; ";
+			$query  .= "AND id_empresa = '".$data->id_empresa."'; ";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -59,16 +59,16 @@ class Servicio{
 		return $this->business->return;
 	}
 	
-	public function crear_servicio($data){
+	public function crear_campana($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
-			$query  = "INSERT INTO ca_servicio (servicio, id_cliente, estado) VALUES ('".$data->nombre_servicio."', '".$data->id_cliente."', '".$data->estado_servicio."')";
+			$query  = "INSERT INTO ca_campana (campana, id_empresa, estado) VALUES ('".$data->nombre_campana."', '".$data->id_empresa."', 'activo')";
 			$result = $conn->query($query);
 			if($result){
 				$this->business->return->bool = true;
-				$this->business->return->msg = 'Se ha creado el servicio '.$data->nombre_servicio.' correctamente';
+				$this->business->return->msg = 'Se ha creado el campana '.$data->nombre_campana.' correctamente';
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';

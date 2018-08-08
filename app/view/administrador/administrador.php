@@ -9,12 +9,12 @@
             <div class="small-box bg-blue">
                 <div class="inner">
                     <h3>1</h3>
-                    <p>Clientes</p>
+                    <p>Empresas</p>
                 </div>
                 <div class="icon">
                     <i class=""></i>
                 </div>
-                <a href="#" onclick="javascript: pageContent('administrador/clientes/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="#" onclick="javascript: pageContent('administrador/empresas/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
 
@@ -23,12 +23,12 @@
             <div class="small-box bg-blue">
                 <div class="inner">
                     <h3>2</h3>
-                    <p>Servicios</p>
+                    <p>Campañas</p>
                 </div>
                 <div class="icon">
                     <i class=""></i>
                 </div>
-                <a href="#" onclick="javascript: pageContent('administrador/servicios/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="#" onclick="javascript: pageContent('administrador/campanas/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
 

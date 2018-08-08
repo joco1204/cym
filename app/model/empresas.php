@@ -1,16 +1,16 @@
 <?php 
-class Cliente{
+class Empresa{
 	function __construct(){
 		$this->business = new Business();
 	}
 	
-	public function tabla_clientes(){
+	public function tabla_empresas(){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayTabla = array();
-			$query  = "SELECT id, cliente, estado FROM ca_cliente;";
+			$query  = "SELECT id, empresa, imagen, estado FROM ca_empresa;";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -29,14 +29,14 @@ class Cliente{
 		return $this->business->return;
 	}
 
-	public function clientes(){
+	public function empresas(){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayTabla = array();
-			$query  = "SELECT id, cliente ";
-			$query .= "FROM ca_cliente ";
+			$query  = "SELECT id, empresa, imagen ";
+			$query .= "FROM ca_empresa ";
 			$query .= "WHERE estado = 'activo' ";
 			$result = $conn->query($query);
 			if($result){
@@ -56,16 +56,16 @@ class Cliente{
 		return $this->business->return;
 	}
 
-	public function crear_cliente($data){
+	public function crear_empresa($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
-			$query  = "INSERT INTO ca_cliente (cliente, estado) VALUES ('".$data->nombre_cliente."', '".$data->estado_cliente."'); ";
+			$query  = "INSERT INTO ca_empresa (empresa, estado) VALUES ('".$data->nombre_empresa."', 'activo'); ";
 			$result = $conn->query($query);
 			if($result){
 				$this->business->return->bool = true;
-				$this->business->return->msg = 'Se ha creado el cliente '.$data->nombre_cliente.' correctamente';
+				$this->business->return->msg = 'Se ha creado el empresa '.$data->nombre_empresa.' correctamente';
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';
@@ -77,16 +77,16 @@ class Cliente{
 		return $this->business->return;
 	}
 
-	public function update_cliente($data){
+	public function update_empresa($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
-			$query  = "UPDATE ca_cliente SET cliente = '".$data->nombre_cliente."', estado = '".$data->estado_cliente."' WHERE id = '".$data->id_cliente."'; ";
+			$query  = "UPDATE ca_empresa SET empresa = '".$data->nombre_empresa."', estado = '".$data->estado_empresa."' WHERE id = '".$data->id_empresa."'; ";
 			$result = $conn->query($query);
 			if($result){
 				$this->business->return->bool = true;
-				$this->business->return->msg = 'Se ha actualizado el cliente '.$data->nombre_cliente.' correctamente';
+				$this->business->return->msg = 'Se ha actualizado el empresa '.$data->nombre_empresa.' correctamente';
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';

@@ -4,8 +4,8 @@ include 'connect.php';
 include 'session.php';
 include '../../app/model/login.php';
 include '../../app/model/logout.php';
-include '../../app/model/clientes.php';
-include '../../app/model/servicios.php';
+include '../../app/model/empresas.php';
+include '../../app/model/campanas.php';
 include '../../app/model/usuarios.php';
 include '../../app/model/matriz.php';
 //Business class

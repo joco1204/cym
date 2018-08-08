@@ -41,4 +41,4 @@
 <script src="libs/plugins/sweetalert/dist/sweetalert.min.js"></script>
 <script src="libs/plugins/sweetalert/dist/sweetalert-dev.js"></script>
 <!-- Titulo de aplicación -->
-<title>Cadena De Suministros</title>
+<title>CALIDAD</title>
