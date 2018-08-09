@@ -8,6 +8,7 @@ include '../../app/model/empresas.php';
 include '../../app/model/campanas.php';
 include '../../app/model/usuarios.php';
 include '../../app/model/matriz.php';
+include '../../app/model/asesor.php';
 //Business class
 class Business{
 	public $return;

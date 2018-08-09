@@ -16,6 +16,24 @@
 CREATE DATABASE IF NOT EXISTS `calidad` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `calidad`;
 
+-- Volcando estructura para tabla calidad.ca_asesores
+CREATE TABLE IF NOT EXISTS `ca_asesores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_empresa` int(11) NOT NULL,
+  `id_campana` int(11) NOT NULL,
+  `identificacion` varchar(100) NOT NULL,
+  `nombres` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
+  `estado` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla calidad.ca_asesores: ~0 rows (aproximadamente)
+DELETE FROM `ca_asesores`;
+/*!40000 ALTER TABLE `ca_asesores` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_asesores` ENABLE KEYS */;
+
 -- Volcando estructura para tabla calidad.ca_campana
 CREATE TABLE IF NOT EXISTS `ca_campana` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -49,7 +67,7 @@ DELETE FROM `ca_empresa`;
 -- Volcando estructura para tabla calidad.ca_error
 CREATE TABLE IF NOT EXISTS `ca_error` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_ matriz` int(11) NOT NULL,
+  `id_matriz` int(11) NOT NULL,
   `tipo_error` varchar(100) NOT NULL,
   `calculo_valor` varchar(100) NOT NULL,
   `estado` varchar(100) NOT NULL,
@@ -69,7 +87,6 @@ CREATE TABLE IF NOT EXISTS `ca_item` (
   `id_error` int(11) NOT NULL,
   `item` varchar(100) NOT NULL,
   `valor` varchar(100) NOT NULL,
-  `valor_no` varchar(100) NOT NULL,
   `estado` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
@@ -93,11 +110,21 @@ CREATE TABLE IF NOT EXISTS `ca_matriz` (
 -- Volcando datos para la tabla calidad.ca_matriz: ~0 rows (aproximadamente)
 DELETE FROM `ca_matriz`;
 /*!40000 ALTER TABLE `ca_matriz` DISABLE KEYS */;
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(1, 1, 1, 'activo');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(2, 1, 1, 'activo');
 /*!40000 ALTER TABLE `ca_matriz` ENABLE KEYS */;
+
+-- Volcando estructura para tabla calidad.ca_punto_entrenamiento
+CREATE TABLE IF NOT EXISTS `ca_punto_entrenamiento` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_item` int(11) NOT NULL,
+  `punto_entrenamiento` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~0 rows (aproximadamente)
+DELETE FROM `ca_punto_entrenamiento`;
+/*!40000 ALTER TABLE `ca_punto_entrenamiento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_punto_entrenamiento` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.pa_ciudad
 CREATE TABLE IF NOT EXISTS `pa_ciudad` (

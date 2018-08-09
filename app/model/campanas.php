@@ -78,7 +78,32 @@ class Campana{
 			$this->business->return->msg = 'Error de conexión de base de datos';
 		}
 		return $this->business->return;
-
 	}
+
+	public function campanas_analista($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayCampana = array();
+			$query   = "SELECT id, campana FROM ca_campana WHERE id_empresa = '".$data->id_empresa."'; "; 
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayCampana, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayCampana);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 }
 ?>
