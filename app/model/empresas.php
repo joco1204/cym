@@ -61,7 +61,7 @@ class Empresa{
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
-			$query  = "INSERT INTO ca_empresa (empresa, estado) VALUES ('".$data->nombre_empresa."', 'activo'); ";
+			$query  = "INSERT INTO ca_empresa (empresa, imagen, estado) VALUES ('".$data->nombre_empresa."', '', 'activo'); ";
 			$result = $conn->query($query);
 			if($result){
 				$this->business->return->bool = true;

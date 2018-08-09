@@ -70,8 +70,11 @@ $(function(){
 				html += '</div>';
 				html += '</div>';
 				html += '</div>';
-				
-				html += '<td><img src="'+row.imagen+'" class="img-fluid img-thumbnail" alt="'+row.empresa+'" style="width: 15px; height: 15px;"></td>';
+				html += '<td>';
+				if(row.imagen != ''){
+					html += '<img src="'+row.imagen+'" class="img-fluid img-thumbnail" alt="'+row.empresa+'" style="width: 15px; height: 15px;">';
+				}
+				html += '</td>';
 				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.estado+'</td>';
 				html += '<td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modifica_empresa_'+row.id+'">Modificar</button></td>';
@@ -103,7 +106,9 @@ $(function(){
 				html += '<div class="modal-body">';
 				html += '<div class="row">';
 				html += '<div class="col col-md-12 text-center">';
-				html += '<img src="'+row.imagen+'" class="img-fluid img-thumbnail" alt="'+row.empresa+'" style="height: 50px;">';
+				if(row.imagen != ''){
+					html += '<img src="'+row.imagen+'" class="img-fluid img-thumbnail" alt="'+row.empresa+'" style="height: 50px;">';	
+				}
 				html += '</div>';
 				html += '</div>';
 
@@ -122,7 +127,7 @@ $(function(){
 				html += '</div>';
 				html += '</div>';
 				html += '<div class="row">';
-				html += '<div class="col col-md-6">';
+				html += '<div class="col col-md-4">';
 				html += '<div class="form-group has-feedback">';
 				html += '<label class="control-label" for="estado_empresa">ESTADO:</label>';
 				html += '<select class="form-control" id="estado_empresa" name="estado_empresa" style="width: 100%;">';

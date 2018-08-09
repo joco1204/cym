@@ -45,14 +45,12 @@ class Matriz{
 				$n_error = $data->tipo_error;
 				
 				for($i = 1; $i <= $n_error; $i++){
-
 					//Variables error
 					$tipo_error = "tipo_error_".$i;
 					$calculo_porcentaje = "calculo_porcentaje_".$i;
-					$estado = "estado_".$i;
 
 					//Insert error
-					$query_error = "INSERT INTO ca_error (id_matriz, tipo_error, calculo_valor, estado) VALUES ('".$id_matriz."', '".$data->$tipo_error."', '".$data->$calculo_porcentaje."', '".$data->$estado."');";
+					$query_error = "INSERT INTO ca_error (id_matriz, tipo_error, calculo_valor, estado) VALUES ('".$id_matriz."', '".$data->$tipo_error."', '".$data->$calculo_porcentaje."', 'activo');";
 					$result_error = $conn->query($query_error);
 					
 					if($result_error){
@@ -61,15 +59,25 @@ class Matriz{
 						$n_item = $data->$item_error;
 						
 						for($j = 1; $j <= $n_item; $j++){
-
 							//Variables item
 							$nombre_item_error = "nombre_item_error_".$i."_".$j;
 							$valor = "valor_".$i."_".$j;
-							$estado_item = "estado_item_".$i."_".$j;
 							
 							//Insert item
-							$query_item = "INSERT INTO ca_item (id_matriz, id_error, item, valor, estado) VALUES ('".$id_matriz."', '".$id_error."', '".$data->$nombre_item_error."', '".$data->$valor."', '".$data->$estado_item."'); ";
+							$query_item = "INSERT INTO ca_item (id_matriz, id_error, item, valor, estado) VALUES ('".$id_matriz."', '".$id_error."', '".$data->$nombre_item_error."', '".$data->$valor."', 'activo'); ";
 							$result_item = $conn->query($query_item);
+
+							if($result_item){
+								$id_item = $conn->lastInsertId();
+								$punto_entrenamiento = "punto_entrenamiento_".$i."_".$j;
+
+								/*for($k = 1; $k <= $punto_entrenamiento; $k++){
+									$desc_punto_entrenamiento = "desc_punto_entrenamiento_".$i."_".$j."_".$k;
+
+									$query_punto = "INSERT INTO ca_punto_entrenamiento (id_item, punto_entrenamiento) VALUES ('".$id_item."', '".$data->$desc_punto_entrenamiento."');";
+									$result_punto = $conn->query($query_punto);
+								}*/
+							}
 						}
 					}
 				}
