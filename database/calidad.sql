@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         localhost
--- Versión del servidor:         10.1.28-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win32
--- HeidiSQL Versión:             9.5.0.5229
+-- Versión del servidor:         5.7.23-0ubuntu0.16.04.1 - (Ubuntu)
+-- SO del servidor:              Linux
+-- HeidiSQL Versión:             9.5.0.5196
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -49,7 +49,7 @@ DELETE FROM `ca_empresa`;
 -- Volcando estructura para tabla calidad.ca_error
 CREATE TABLE IF NOT EXISTS `ca_error` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_ matriz` int(11) NOT NULL,
+  `id_matriz` int(11) NOT NULL,
   `tipo_error` varchar(100) NOT NULL,
   `calculo_valor` varchar(100) NOT NULL,
   `estado` varchar(100) NOT NULL,
@@ -69,7 +69,6 @@ CREATE TABLE IF NOT EXISTS `ca_item` (
   `id_error` int(11) NOT NULL,
   `item` varchar(100) NOT NULL,
   `valor` varchar(100) NOT NULL,
-  `valor_no` varchar(100) NOT NULL,
   `estado` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
@@ -93,11 +92,21 @@ CREATE TABLE IF NOT EXISTS `ca_matriz` (
 -- Volcando datos para la tabla calidad.ca_matriz: ~0 rows (aproximadamente)
 DELETE FROM `ca_matriz`;
 /*!40000 ALTER TABLE `ca_matriz` DISABLE KEYS */;
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(1, 1, 1, 'activo');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(2, 1, 1, 'activo');
 /*!40000 ALTER TABLE `ca_matriz` ENABLE KEYS */;
+
+-- Volcando estructura para tabla calidad.ca_punto_entrenamiento
+CREATE TABLE IF NOT EXISTS `ca_punto_entrenamiento` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_item` int(11) NOT NULL,
+  `punto_entrenamiento` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~0 rows (aproximadamente)
+DELETE FROM `ca_punto_entrenamiento`;
+/*!40000 ALTER TABLE `ca_punto_entrenamiento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_punto_entrenamiento` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.pa_ciudad
 CREATE TABLE IF NOT EXISTS `pa_ciudad` (
@@ -106,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `pa_ciudad` (
   `ciudad` varchar(100) NOT NULL,
   `estado` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.pa_ciudad: ~32 rows (aproximadamente)
 DELETE FROM `pa_ciudad`;
@@ -185,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `pa_pais` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `pais_UNIQUE` (`pais`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.pa_pais: ~0 rows (aproximadamente)
 DELETE FROM `pa_pais`;
@@ -208,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `pa_perfiles` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `perfil_UNIQUE` (`perfil`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.pa_perfiles: ~4 rows (aproximadamente)
 DELETE FROM `pa_perfiles`;
@@ -229,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `pa_tipo_identificacion` (
   `tipo_identificacion` varchar(30) NOT NULL,
   `estado` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.pa_tipo_identificacion: ~3 rows (aproximadamente)
 DELETE FROM `pa_tipo_identificacion`;
@@ -256,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `re_cargo` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `cargo_UNIQUE` (`cargo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_cargo: ~4 rows (aproximadamente)
 DELETE FROM `re_cargo`;
@@ -289,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `re_empresa` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `nit_UNIQUE` (`nit`),
   UNIQUE KEY `razon_social_UNIQUE` (`razon_social`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_empresa: ~0 rows (aproximadamente)
 DELETE FROM `re_empresa`;
@@ -319,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `re_personas` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `identificacion_UNIQUE` (`identificacion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_personas: ~4 rows (aproximadamente)
 DELETE FROM `re_personas`;
@@ -354,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `re_sede_empresa` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `sede_UNIQUE` (`sede`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_sede_empresa: ~0 rows (aproximadamente)
 DELETE FROM `re_sede_empresa`;
@@ -378,7 +387,7 @@ CREATE TABLE IF NOT EXISTS `re_usuarios` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `usuario_UNIQUE` (`usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Usuarios del sistema';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Usuarios del sistema';
 
 -- Volcando datos para la tabla calidad.re_usuarios: ~4 rows (aproximadamente)
 DELETE FROM `re_usuarios`;
@@ -408,7 +417,7 @@ CREATE TABLE IF NOT EXISTS `re_usuario_perfil` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `id_perfil_UNIQUE` (`id_perfil`),
   UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_usuario_perfil: ~4 rows (aproximadamente)
 DELETE FROM `re_usuario_perfil`;
