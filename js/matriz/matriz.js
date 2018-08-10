@@ -44,7 +44,6 @@ $(function(){
 				html += '<div class="modal-header bg-blue text-center">';
 				html += '<button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>';
 				html += '<h4 class="modal-title"> <b>Matriz ID</b>: '+row.id+' - <b>Empresa:</b> '+row.empresa+' - <b>Campaña:</b> '+row.campana+' </h4>';
-				html += '<input type="hidden" id="action" name="action">';
 				html += '</div>';
 				html += '<div class="modal-body">';
 				html += '</div>';

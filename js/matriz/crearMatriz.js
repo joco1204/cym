@@ -22,7 +22,6 @@ $(function(){
 		}
 	});
 
-
 	$('#empresa').change(function(){
 		//campanas
 		$.ajax({
@@ -47,8 +46,6 @@ $(function(){
 			}
 		});
 	});
-
-		
 
 	$('#matriz_form').submit(function(e){
 		e.preventDefault();
@@ -80,7 +77,6 @@ $(function(){
 	});
 });
 
-	
 function addMatriz(){
 	if($('#empresa').val() == '' && $('#campana').val() == ''){
 		swal("Atención!","Debe seleccionar empresa y campana","warning");
@@ -106,7 +102,7 @@ function addError(){
 	var html = '';
 	var count = ($('.error').length)+1;
 	$('#tipo_error').val(count);
-	html += '<div class="panel panel-danger error" id="tipo_error_'+count+'">';
+	html += '<div class="panel panel-danger error" id="tipo_error">';
 	html += '<div class="panel-heading bg-danger">';
 	html += '<p><b>Tipo error '+count+'</b></p>';
 	html += '</div>';
@@ -115,13 +111,20 @@ function addError(){
 	html += '<div class="col col-md-6">';
 	html += '<div class="form-group">';
 	html += '<label for="tipo_error_'+count+'" class="control-label">Error</label>';
-	html += '<input type="text" name="tipo_error_'+count+'" id="tipo_error_'+count+'" class="form-control" required="">';
+	html += '<div class="input-group">';
+	html += '<select name="tipo_error_'+count+'" id="tipo_error_'+count+'" class="form-control" required=""></select> ';
+	html += '<span class="input-group-btn">';
+	html += '<button type="button" class="btn btn-danger btn-sm" >';
+	html += '<span class="glyphicon glyphicon-plus"></span>';
+	html += '</button>';
+	html += '</span>';
+	html += '</div>';
 	html += '</div>';
 	html += '</div>';
 	html += '<div class="col col-md-3">';
 	html += '<div class="form-group">';
 	html += '<label for="calculo_porcentaje_'+count+'" class="control-label">Calculo Valor</label>';
-	html += '<select name="calculo_porcentaje_'+count+'" id="calculo_porcentaje_'+count+'" class="form-control" required="">';
+	html += '<select name="calculo_porcentaje_'+count+'" id="calculo_porcentaje_'+count+'" class="form-control" required="" style="width:100%;">';
 	html += '<option></option>';
 	html += '<option value="por">Porcentual</option>';
 	html += '<option value="sum">Sumatorio</option>';
@@ -144,6 +147,27 @@ function addError(){
 	html += '</div>';
 	$('#canvas_matriz').append(html);
 	$("select").select2();
+
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrmatriz.php',
+		data: {
+			action: 'tipo_error',
+		},
+		dataType: 'json',
+	}).done(function(result){
+		if(result.bool){
+			var data = $.parseJSON(result.msg);
+			var html = '';
+			html += '<option value=""></option>';
+			$.each(data, function(i, row){
+				html += '<option value="'+row.id+'">'+row.error+'</option>';
+			});
+			$('#tipo_error_'+count).html(html);
+		} else {
+			console.log('Error: '+result.msg);
+		}
+	});
 }
 
 function addItem(error_n){
@@ -166,7 +190,7 @@ function addItem(error_n){
 	html += '</div>';
 	html += '<div class="col col-md-3">';
 	html += '<label for="valor_'+error_n+'_'+count+'" class="control-label">Valor cumplimiento item</label>';
-	html += '<input type="number" name="valor_'+error_n+'_'+count+'" id="valor_'+error_n+'_'+count+'" class="form-control" required="" min="1" max="99">';
+	html += '<input type="number" name="valor_'+error_n+'_'+count+'" id="valor_'+error_n+'_'+count+'" class="form-control" required="" min="1" max="100">';
 	html += '</div>';
 	html += '<div class="col col-md-3">';
 	html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: puntoEntrenamiento('+error_n+', '+count+');">';
@@ -183,7 +207,6 @@ function addItem(error_n){
 	html += '</div>';
 	$('#canvas_item_error_'+error_n).append(html);
 	$("select").select2();
-
 }
 
 function puntoEntrenamiento(error_n, item_n){

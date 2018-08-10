@@ -32,6 +32,32 @@ class Matriz{
 		return $this->business->return;
 	}
 
+	//Tipo de error
+	public function tipo_error(){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayError = array();
+			$query  = "SELECT id, tipo, error, siglas FROM pa_tipo_error WHERE estado = 'activo';";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayError, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayError);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 	public function crear_matriz($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
@@ -70,13 +96,12 @@ class Matriz{
 							if($result_item){
 								$id_item = $conn->lastInsertId();
 								$punto_entrenamiento = "punto_entrenamiento_".$i."_".$j;
-
-								/*for($k = 1; $k <= $punto_entrenamiento; $k++){
+								
+								for($k = 1; $k <= $data->$punto_entrenamiento; $k++){
 									$desc_punto_entrenamiento = "desc_punto_entrenamiento_".$i."_".$j."_".$k;
-
 									$query_punto = "INSERT INTO ca_punto_entrenamiento (id_item, punto_entrenamiento) VALUES ('".$id_item."', '".$data->$desc_punto_entrenamiento."');";
 									$result_punto = $conn->query($query_punto);
-								}*/
+								}
 							}
 						}
 					}

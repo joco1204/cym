@@ -267,6 +267,30 @@ INSERT INTO `pa_perfiles` (`id`, `perfil`, `descripcion`, `usuario_registro`, `f
 	(4, 'Lider', 'Lider', 1, '2017-05-11 12:00:24', 1, '2017-05-11 17:00:24', '200.119.116.109', 'activo');
 /*!40000 ALTER TABLE `pa_perfiles` ENABLE KEYS */;
 
+-- Volcando estructura para tabla calidad.pa_tipo_error
+CREATE TABLE IF NOT EXISTS `pa_tipo_error` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(50) NOT NULL,
+  `error` varchar(250) NOT NULL,
+  `siglas` varchar(250) NOT NULL,
+  `estado` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla calidad.pa_tipo_error: ~4 rows (aproximadamente)
+DELETE FROM `pa_tipo_error`;
+/*!40000 ALTER TABLE `pa_tipo_error` DISABLE KEYS */;
+INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
+	(1, 'CRITICO', 'ERROR CRITICO DE CUMPLIMIENTO', 'ECC', 'activo');
+INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
+	(2, 'CRITICO', 'ERROR CRITICO DE USAURIO FINAL', 'ECUF', 'activo');
+INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
+	(3, 'CRITICO', 'ERROR CRITICO DE NEGOCIO', 'ECN', 'activo');
+INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
+	(4, 'NO_CRITICO', 'ERROR NO CRITICO', 'ENC', 'activo');
+/*!40000 ALTER TABLE `pa_tipo_error` ENABLE KEYS */;
+
 -- Volcando estructura para tabla calidad.pa_tipo_identificacion
 CREATE TABLE IF NOT EXISTS `pa_tipo_identificacion` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

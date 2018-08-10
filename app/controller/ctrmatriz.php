@@ -10,6 +10,10 @@ if(isset($post->action)){
 			$result = $matriz->tabla_matriz();
 			$business->return = $result;
 		break;
+		case 'tipo_error':
+			$result = $matriz->tipo_error();
+			$business->return = $result;
+		break;
 		case 'crear_matriz':
 			$result = $matriz->crear_matriz($post);
 			$business->return = $result;
