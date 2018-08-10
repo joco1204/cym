@@ -1,5 +1,7 @@
 <?php
 $get = ((object) $_GET);
+isset($get->id_empresa) ? $id_empresa = $get->id_empresa : $id_empresa = '0';
+isset($get->id_campana) ? $id_campana = $get->id_campana : $id_campana = '0';
 isset($get->id_asesor) ? $id_asesor = $get->id_asesor : $id_asesor = '0';
 if($id_asesor == '0'){ ?>
 	<script type="text/javascript">
@@ -8,7 +10,11 @@ if($id_asesor == '0'){ ?>
 		});
 	</script>
 <?php } else { ?>
-	<input type="hidden" name="id_asesor" id="id_asesor" value="<?= $id_asesor; ?>">
+	<input type="hidden" name="id_empresa" id="id_empresa" value="<?= $id_empresa; ?>">
+    <input type="hidden" name="id_campana" id="id_campana" value="<?= $id_campana; ?>">
+    <input type="hidden" name="id_asesor" id="id_asesor" value="<?= $id_asesor; ?>">
+    <input type="hidden" name="mes" id="mes" value="<?= date('m'); ?>">
+    <input type="hidden" name="anio" id="anio" value="<?= date('Y'); ?>">
 <?php } ?>
 
 <section class="content-header">
@@ -51,17 +57,20 @@ if($id_asesor == '0'){ ?>
                 <br>
                 <div class="row">
                     <div class="col col-lg-12 text-center">
-                        <button type="button" class="btn btn-success">Añadir fecha</button>    
+                        <button type="button" class="btn btn-success" onclick="javascript: addFechaMonitoreo();">Añadir fecha</button>    
+                        <input type="hidden" name="count_fechas" id="count_fechas" value="0">
                     </div>
                 </div>
+                <br>
                 <div class="row">
                     <div class="col col-lg-12">
-                        <div id="consulta_fecha"></div>
+                        <div id=""></div>
                     </div>
                 </div>
+                <br>
                 <div class="row">
-                    <div class="col col-lg-12">
-                        <div id="add_fecha"></div>
+                    <div class="col col-md-6 col-md-offset-3">
+                        <div id="canvas_fechas"></div>
                     </div>
                 </div>
             </section>

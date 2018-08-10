@@ -10,6 +10,18 @@ if(isset($post->action)){
 			$result = $agendamonitoreo->info_asesor($post);
 			$business->return = $result;
 		break;
+		case 'monitoreos_asesor':
+			$result = $agendamonitoreo->monitoreos_asesor($post);
+			$business->return = $result;
+		break;
+		case 'count_monitoreos_asesor':
+			$result = $agendamonitoreo->count_monitoreos_asesor($post);
+			$business->return = $result;
+		break;
+		case 'guardar_fecha_monitoreo':
+			$result = $agendamonitoreo->guardar_fecha_monitoreo($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

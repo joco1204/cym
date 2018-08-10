@@ -44,8 +44,8 @@ class PlanMonitoreo{
 			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id ";
 			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id ";
 			$query .= "WHERE a.id_empresa = '".$data->id_empresa."' ";
-			$query .= "WHERE a.id_campana = '".$data->id_campana."' ";
-			$query .= "WHERE a.estado = 'activo' ";
+			$query .= "AND a.id_campana = '".$data->id_campana."' ";
+			$query .= "AND a.estado = 'activo' ";
 			$query .= "ORDER BY b.empresa, c.campana;";
 			$result = $conn->query($query);
 			if($result){

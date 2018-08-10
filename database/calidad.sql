@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         localhost
--- Versión del servidor:         5.7.23-0ubuntu0.16.04.1 - (Ubuntu)
--- SO del servidor:              Linux
--- HeidiSQL Versión:             9.5.0.5196
+-- Versión del servidor:         10.1.28-MariaDB - mariadb.org binary distribution
+-- SO del servidor:              Win32
+-- HeidiSQL Versión:             9.5.0.5229
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -15,6 +15,23 @@
 -- Volcando estructura de base de datos para calidad
 CREATE DATABASE IF NOT EXISTS `calidad` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `calidad`;
+
+-- Volcando estructura para tabla calidad.ca_agenda_monitoreo
+CREATE TABLE IF NOT EXISTS `ca_agenda_monitoreo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_empresa` int(11) NOT NULL,
+  `id_campana` int(11) NOT NULL,
+  `id_asesor` int(11) NOT NULL,
+  `fecha_monitoreo` date NOT NULL,
+  `estado` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla calidad.ca_agenda_monitoreo: ~0 rows (aproximadamente)
+DELETE FROM `ca_agenda_monitoreo`;
+/*!40000 ALTER TABLE `ca_agenda_monitoreo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_agenda_monitoreo` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_asesores
 CREATE TABLE IF NOT EXISTS `ca_asesores` (
@@ -133,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `pa_ciudad` (
   `ciudad` varchar(100) NOT NULL,
   `estado` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.pa_ciudad: ~32 rows (aproximadamente)
 DELETE FROM `pa_ciudad`;
@@ -212,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `pa_pais` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `pais_UNIQUE` (`pais`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.pa_pais: ~0 rows (aproximadamente)
 DELETE FROM `pa_pais`;
@@ -235,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `pa_perfiles` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `perfil_UNIQUE` (`perfil`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.pa_perfiles: ~4 rows (aproximadamente)
 DELETE FROM `pa_perfiles`;
@@ -256,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `pa_tipo_identificacion` (
   `tipo_identificacion` varchar(30) NOT NULL,
   `estado` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.pa_tipo_identificacion: ~3 rows (aproximadamente)
 DELETE FROM `pa_tipo_identificacion`;
@@ -283,7 +300,7 @@ CREATE TABLE IF NOT EXISTS `re_cargo` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `cargo_UNIQUE` (`cargo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_cargo: ~4 rows (aproximadamente)
 DELETE FROM `re_cargo`;
@@ -316,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `re_empresa` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `nit_UNIQUE` (`nit`),
   UNIQUE KEY `razon_social_UNIQUE` (`razon_social`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_empresa: ~0 rows (aproximadamente)
 DELETE FROM `re_empresa`;
@@ -346,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `re_personas` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `identificacion_UNIQUE` (`identificacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_personas: ~4 rows (aproximadamente)
 DELETE FROM `re_personas`;
@@ -381,7 +398,7 @@ CREATE TABLE IF NOT EXISTS `re_sede_empresa` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `sede_UNIQUE` (`sede`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_sede_empresa: ~0 rows (aproximadamente)
 DELETE FROM `re_sede_empresa`;
@@ -405,7 +422,7 @@ CREATE TABLE IF NOT EXISTS `re_usuarios` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `usuario_UNIQUE` (`usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Usuarios del sistema';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Usuarios del sistema';
 
 -- Volcando datos para la tabla calidad.re_usuarios: ~4 rows (aproximadamente)
 DELETE FROM `re_usuarios`;
@@ -435,7 +452,7 @@ CREATE TABLE IF NOT EXISTS `re_usuario_perfil` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `id_perfil_UNIQUE` (`id_perfil`),
   UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla calidad.re_usuario_perfil: ~4 rows (aproximadamente)
 DELETE FROM `re_usuario_perfil`;

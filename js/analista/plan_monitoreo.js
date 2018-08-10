@@ -24,7 +24,7 @@ $(function(){
 
 	$.ajax({
 		type: 'post',
-		url: '../controller/ctrasesor.php',
+		url: '../controller/ctrplanmonitoreo.php',
 		data: {
 			action: 'tabla_asesor',
 			id_empresa: $('#id_empresa').val(),
@@ -54,7 +54,7 @@ $(function(){
 				html += '<td>'+row.nombres+'</td>';
 				html += '<td>'+row.apellidos+'</td>';
 				html += '<td>'+row.empresa.toUpperCase()+' '+row.campana.toUpperCase()+'</td>';
-				html += '<td><button type="button" class="btn btn-success btn-sm" onclick="javascript: pageContent(\'analista/agenda_monitoreo\',\'id_asesor='+row.id+'\');">Plan Monitoreo</button></td>';
+				html += '<td><button type="button" class="btn btn-success btn-sm" onclick="javascript: pageContent(\'analista/agenda_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+row.id+'\');">Plan Monitoreo</button></td>';
 				html += '</tr>';
 			});
 			html += '</tbody>';

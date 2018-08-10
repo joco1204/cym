@@ -11,7 +11,7 @@ if(isset($post->action)){
 			$business->return = $result;
 		break;
 		case 'tabla_asesor':
-			$result = $asesor->tabla_asesor($post);
+			$result = $planmonitoreo->tabla_asesor($post);
 			$business->return = $result;
 		break;
 		default:
