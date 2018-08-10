@@ -97,5 +97,30 @@ class Empresa{
 		}
 		return $this->business->return;
 	}
+
+	public function empresa_analista(){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayEmpresa = array();
+			$query  = "SELECT id, empresa, imagen, estado FROM ca_empresa; ";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayEmpresa, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayEmpresa);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
 }
 ?>

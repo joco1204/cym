@@ -16,6 +16,24 @@
 CREATE DATABASE IF NOT EXISTS `calidad` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `calidad`;
 
+-- Volcando estructura para tabla calidad.ca_asesores
+CREATE TABLE IF NOT EXISTS `ca_asesores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_empresa` int(11) NOT NULL,
+  `id_campana` int(11) NOT NULL,
+  `identificacion` varchar(100) NOT NULL,
+  `nombres` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
+  `estado` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla calidad.ca_asesores: ~0 rows (aproximadamente)
+DELETE FROM `ca_asesores`;
+/*!40000 ALTER TABLE `ca_asesores` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ca_asesores` ENABLE KEYS */;
+
 -- Volcando estructura para tabla calidad.ca_campana
 CREATE TABLE IF NOT EXISTS `ca_campana` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

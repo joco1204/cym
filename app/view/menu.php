@@ -18,22 +18,13 @@
             <li><a href="#" onclick="javascript: pageContent('administrador/campanas/index');"><i class="glyphicon glyphicon-briefcase"></i> Campañas</a></li>
             <li><a href="#" onclick="javascript: pageContent('administrador/matrices/index');"><i class="glyphicon glyphicon-list"></i> Matrices</a></li>
             <li><a href="#" onclick="javascript: pageContent('administrador/usuarios/index');"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>
+            <li><a href="#" onclick="javascript: pageContent('administrador/asesores/index');"><i class="glyphicon glyphicon-earphone"></i> Asesores</a></li>
         </ul>
     </li>
-
-    <!--<li class="treeview">
+    <li class="treeview">
         <a href="#" onclick="javascript: pageContent('analista/analista');">
-            <i class="glyphicon glyphicon-file"></i> <span>ANALISTA</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <i class="glyphicon glyphicon-knight"></i>
+            <span>ANALISTA</span>
         </a>
-        <ul class="treeview-menu">
-            <li><a href="#" onclick="javascript: pageContent('analista/claro/index');"><img src="../../libs/dist/img/claro.png" class="img-rounded" alt="User Image" align="center" width="45" height="40"> Claro</a>
-            <li><a href="#" onclick="javascript: pageContent('analista/sic/index');"> <img src="../../libs/dist/img/sic.png" class="img-rounded" alt="User Image" align="center" width="45" height="40">    SIC</a>
-            <li><a href="#" onclick="javascript: pageContent('analista/cruz_verde/index');"><img src="../../libs/dist/img/cruz.png" class="img-rounded" alt="User Image" align="center" width="45" height="40"> Cruz Verde</a>
-        </ul>
-    </li>-->
-
-
+    </li>
 </ul>
