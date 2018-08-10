@@ -35,7 +35,7 @@ $(function(){
 				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.campana+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modificar_asesor_'+row.id+'">Modificar</button></td>';
+				html += '<td><button type="button" class="btn btn-success btn-xs">Modificar</button></td>';
 				html += '</tr>';
 			});
 			html += '</tbody>';
@@ -112,18 +112,19 @@ $(function(){
 	});
 
 	//Crea campana
-	$('#form_crear_campana').submit(function(e){
+	$('#form_crear_asesor').submit(function(e){
 		e.preventDefault();
-		var data = $('#form_crear_campana').serialize();
+		var data = $('#form_crear_asesor').serialize();
+		
 		$.ajax({
 			type: 'post',
-			url: '../controller/ctrcampanas.php',
+			url: '../controller/ctrasesor.php',
 			data: data,
 			dataType: 'json',
 		}).done(function(result){
 			if(result.bool){
-				$('#crear_campana').modal().hide();
-				$("#crear_campana .close").click();
+				$('#crear_asesor').modal().hide();
+				$("#crear_asesor .close").click();
 				swal({
 					title: "Correcto!",
 					text: result.msg,
@@ -133,7 +134,7 @@ $(function(){
 					confirmButtonText: "Aceptar",
 					closeOnConfirm: true,
 				},function(){
-					pageContent('administrador/campanas/index');
+					pageContent('administrador/asesores/index');
 				});
 			} else {
 				swal('Error!',result.msg,'error');

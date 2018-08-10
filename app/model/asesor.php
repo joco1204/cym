@@ -31,5 +31,26 @@ class Asesor{
 		}
 		return $this->business->return;
 	}
+
+	public function crear_asesor($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$query  = "INSERT INTO ca_asesores (id_empresa, id_campana, identificacion, nombres, apellidos, estado) VALUES ('".$data->empresa."', '".$data->campana."', '".$data->identificacion."', '".$data->nombres."', '".$data->apellidos."', 'activo'); ";
+			$result = $conn->query($query);
+			if($result){
+				$this->business->return->bool = true;
+				$this->business->return->msg = 'Se ha creado el asesor '.$data->nombres.' '.$data->apellidos.' correctamente';
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
 }
 ?>

@@ -5,7 +5,7 @@ class Connect extends PDO{
 	private $type = 'mysql';
 	private $host = 'localhost';
 	private $user = 'root';
-	private $pass = '12345';
+	private $pass = 'CortesHoyos1$';
 	private $base = 'calidad';
 	//Constructor de conexión a la pase de datos
 	public function __construct(){

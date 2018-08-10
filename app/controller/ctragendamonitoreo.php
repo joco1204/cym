@@ -1,17 +1,13 @@
 <?php
 include '../../config/business.php';
 $business = new Business();
-$planmonitoreo = New PlanMonitoreo();
+$agendamonitoreo = New AgendaMonitoreo();
 $post = $business->post;
 //Validate the existence of the action
 if(isset($post->action)){
 	switch ($post->action){
-		case 'empresa_campana':
-			$result = $planmonitoreo->empresa_campana($post);
-			$business->return = $result;
-		break;
-		case 'tabla_asesor':
-			$result = $asesor->tabla_asesor($post);
+		case 'info_asesor':
+			$result = $agendamonitoreo->info_asesor($post);
 			$business->return = $result;
 		break;
 		default:

@@ -9,6 +9,8 @@ include '../../app/model/campanas.php';
 include '../../app/model/usuarios.php';
 include '../../app/model/matriz.php';
 include '../../app/model/asesor.php';
+include '../../app/model/planmonitoreo.php';
+include '../../app/model/agendamonitoreo.php';
 //Business class
 class Business{
 	public $return;

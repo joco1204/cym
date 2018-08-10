@@ -20,7 +20,7 @@
                 </div>
                 <div class="row">
                     <div class="col col-md-12">
-                        <div class="table-responsive" id="data_asesores" style="font-size: 12px;"></div>
+                        <div class="table-responsive" id="data_asesor" style="font-size: 12px;"></div>
                     </div>
                 </div>
             </section>
@@ -89,7 +89,7 @@
 
 
 <div id="cargar_asesores" class="modal fade" role="dialog">
-    <form id="cargar_asesores_FORM">
+    <form id="cargar_asesores_form">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header text-center bg-blue">
