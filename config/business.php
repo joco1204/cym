@@ -11,6 +11,7 @@ include '../../app/model/matriz.php';
 include '../../app/model/asesor.php';
 include '../../app/model/planmonitoreo.php';
 include '../../app/model/agendamonitoreo.php';
+include '../../app/model/monitoreo.php';
 //Business class
 class Business{
 	public $return;
@@ -27,7 +28,7 @@ class Business{
 		$this->session = new Session();
 		$this->post = ((object) $_POST);
 		$this->get = ((object) $_GET);
-		$this->db = 'appdb';
+		$this->db = 'calidad';
  	}
 } 
 ?>
