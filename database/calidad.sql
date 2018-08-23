@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
--- Host:                         localhost
--- Versión del servidor:         10.1.28-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win32
+-- Host:                         192.168.100.143
+-- Versión del servidor:         5.6.37 - MySQL Community Server (GPL)
+-- SO del servidor:              Linux
 -- HeidiSQL Versión:             9.5.0.5229
 -- --------------------------------------------------------
 
