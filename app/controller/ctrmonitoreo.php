@@ -22,6 +22,14 @@ if(isset($post->action)){
 			$result = $monitoreo->punto_entrenamiento($post);
 			$business->return = $result;
 		break;
+		case 'data_monitoreo':
+			$result = $monitoreo->data_monitoreo($post);
+			$business->return = $result;
+		break;
+		case 'inserta_monitoreo':
+			$result = $monitoreo->inserta_monitoreo($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

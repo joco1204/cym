@@ -3,7 +3,7 @@ $get = ((object) $_GET);
 isset($get->id_empresa) ? $id_empresa = $get->id_empresa : $id_empresa = '0';
 isset($get->id_campana) ? $id_campana = $get->id_campana : $id_campana = '0';
 isset($get->id_asesor) ? $id_asesor = $get->id_asesor : $id_asesor = '0';
-
+isset($get->id_agenda) ? $id_agenda = $get->id_agenda : '0' ;
 if($id_empresa == '0'){ ?>
     <script type="text/javascript">
         $(function(){
@@ -11,10 +11,11 @@ if($id_empresa == '0'){ ?>
         });
     </script>
 <?php } else { ?>
-    <form id="monitoreo-form" role="form">
+    <form id="monitoreo_form" role="form">
         <input type="hidden" name="id_empresa" id="id_empresa" value="<?= $id_empresa; ?>">
         <input type="hidden" name="id_campana" id="id_campana" value="<?= $id_campana; ?>">
         <input type="hidden" name="id_asesor" id="id_asesor" value="<?= $id_asesor; ?>">
+        <input type="hidden" name="id_agenda" id="id_agenda" value="<?= $id_agenda; ?>">
         <section class="content-header">
             <h1>	
             	<b>MONITOREO </b>
@@ -41,7 +42,7 @@ if($id_empresa == '0'){ ?>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
                                         <div class="input-group date fechas_monitoreos" data-provide="datepicker" data-date-format="yyyy-mm-dd">
-                                            <input type="text" name="fechas_llamada" id="fechas_llamada" class="form-control" value="" readonly="">
+                                            <input type="text" name="fechas_llamada" id="fechas_llamada" class="form-control" value="">
                                             <div class="input-group-addon">
                                                 <span class="glyphicon glyphicon-th"></span>
                                             </div>
@@ -78,12 +79,12 @@ if($id_empresa == '0'){ ?>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <b>MONITOR:</b>
+                                    <b>ANALISTA:</b>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <input type="hidden" name="id_monitor" id="id_monitor" class="form-control" value="">
-                                        <input type="text" name="nombre_monitor" id="nombre_monitor" class="form-control" value="" readonly="">
+                                        <input type="hidden" name="id_analista" id="id_analista" class="form-control" value="">
+                                        <input type="text" name="nombre_analista" id="nombre_analista" class="form-control" value="" readonly="">
                                     </div>
                                 </div>
                             </div>

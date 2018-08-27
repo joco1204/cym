@@ -1,5 +1,6 @@
 $(function(){
 	$("select").select2();
+
 	//Datepicker de fechas
 	$.fn.datepicker.dates['es'] = {
 		days: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],
@@ -19,6 +20,35 @@ $(function(){
 		opens: "center"
 	});
 
+	//
+	$.ajax({
+		type: 'post', 
+		url: '../controller/ctrmonitoreo.php', 
+		data: {
+			action: 'data_monitoreo',
+			id_empresa: $('#id_empresa').val(),
+			id_campana: $('#id_campana').val(),
+			id_asesor: $('#id_asesor').val(),
+			id_agenda: $('#id_agenda').val(),
+		},
+		dataType: 'json',
+	}).done(function(result){
+		if(result.bool){
+			var data = $.parseJSON(result.msg);
+			$.each(data, function(i, row){
+				$('#id_monitoreo').val(row.id_monitoreo);
+				$('#fechas_llamada').val(row.fecha_monitoreo);
+				$('#cedula_asesor').val(row.identificacion);
+				$('#nombre_asesor').val(row.nombres+" "+row.apellidos);
+				$('#id_analista').val(sessionStorage.getItem('iduser'));
+				$('#nombre_analista').val(sessionStorage.getItem('username')+' '+sessionStorage.getItem('lastname'));
+			});
+		} else {
+			console.log('Error: '+result.msg);
+		}
+	});
+
+	//
 	$.ajax({
 		type: 'post', 
 		url: '../controller/ctrmonitoreo.php',
@@ -44,12 +74,14 @@ $(function(){
 					if(result2.bool){
 						var html = '';
 						var data2 = $.parseJSON(result2.msg);
+						var j = 0;
 						$.each(data2, function(j, row2){
+							j = j+1;
 							html += '<div class="panel panel-primary">';
-							html += '<div class="panel-heading text-center"><b>'+row2.tipo_error+'</b></div>';
+							html += '<div class="panel-heading text-center"><b>'+row2.tipo_error+'<input type="hidden" name="num_error" id="num_error" value="'+j+'"></b></div>';
 							html += '<div class="panel-body">';
-							html += '<div id="item_error_'+row2.id_error+'"></div>';
-							var item_error = '#item_error_'+row2.id_error;
+							html += '<div id="item_error_'+j+'"></div>';
+							var item_error = '#item_error_'+j;
 							$.ajax({
 								type: 'post',
 								url: '../controller/ctrmonitoreo.php',
@@ -62,26 +94,30 @@ $(function(){
 							}).done(function(result3){
 								var data3 = $.parseJSON(result3.msg);
 								var html2 = '';
+								var k = 0;
 								$.each(data3, function(k, row3){
+									k = k+1;
 									html2 += '<script type="text/javascript">$("select").select2();</script>';
 									html2 += '<div class="row">';
-									html2 += '<div class="col-md-4">'+row3.item+'</div>';
+									html2 += '<div class="col-md-4">'+row3.item+'<input type="hidden" name="num_item_'+j+'" id="num_item_'+j+'" value="'+k+'"></div>';
 									html2 += '<div class="col-md-2">';
-									html2 += '<select name="valor_cumplimiento_'+row2.id_error+'_'+row3.id+'" id="valor_cumplimiento_'+row2.id_error+'_'+row3.id+'" class="form-control">';
+									html2 += '<select name="valor_cumplimiento_'+j+'_'+k+'" id="valor_cumplimiento_'+j+'_'+k+'" class="form-control">';
 									html2 += '<option value="1" selected="">Cumple</option>';
 									html2 += '<option value="0">No Cumple</option>';
 									html2 += '</select>';
 									html2 += '</div>';
 									html2 += '<div class="col-md-2">';
-									html2 += '<input type="text" name="valor_porcentaje_cumplimiento_'+row2.id_error+'_'+row3.id+'" id="valor_porcentaje_cumplimiento_'+row2.id_error+'_'+row3.id+'" class="form-control" value="" readonly="">';
+									html2 += '<input type="text" name="valor_porcentaje_cumplimiento_'+j+'_'+k+'" id="valor_porcentaje_cumplimiento_'+j+'_'+k+'" class="form-control" value="" readonly="">';
 									html2 += '</div>';
-									html2 += '<div class="col-md-4" id="canvas_punto_entrenamiento_'+row2.id_error+'_'+row3.id+'" style="display: none;">';
-									html2 += '<select name="punto_item_'+row2.id_error+'_'+row3.id+'" id="punto_item_'+row2.id_error+'_'+row3.id+'" class="form-control" disabled="" style="width: 100%;"></select>';
+									html2 += '<div class="col-md-4" id="canvas_punto_entrenamiento_'+j+'_'+k+'" style="display: none;">';
+									html2 += '<select name="punto_item_'+j+'_'+k+'" id="punto_item_'+j+'_'+k+'" class="form-control" disabled="" style="width: 100%;"></select>';
 									html2 += '</div>';
-									var cumple_item = '#valor_cumplimiento_'+row2.id_error+'_'+row3.id;
-									var porcentaje_item = '#valor_porcentaje_cumplimiento_'+row2.id_error+'_'+row3.id;
-									var canvas = '#canvas_punto_entrenamiento_'+row2.id_error+'_'+row3.id;
-									var punto_item = '#punto_item_'+row2.id_error+'_'+row3.id;
+
+									var cumple_item = '#valor_cumplimiento_'+j+'_'+k;
+									var porcentaje_item = '#valor_porcentaje_cumplimiento_'+j+'_'+k;
+									var canvas = '#canvas_punto_entrenamiento_'+j+'_'+k;
+									var punto_item = '#punto_item_'+j+'_'+k;
+
 									$.ajax({
 										type: 'post',
 										url: '../controller/ctrmonitoreo.php',
@@ -136,4 +172,31 @@ $(function(){
 			console.log('Error: '+result.msg);
 		}
 	});
+
+	//Envío del formulario para guardar en la base de datos
+	$('#monitoreo_form').submit(function(e){
+		e.preventDefault();
+		var data = $('#monitoreo_form').serialize();
+		alert(data);
+		/*swal({
+			title: "Atención!",
+			text: "Confirma el envío de la evaluación",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonClass: "btn-primary",
+			confirmButtonText: "Aceptar",
+			closeOnConfirm: false,
+		},function(){
+			$.ajax({
+				type: 'post',
+				url: '../controller/ctrmonitoreo.php',
+				data: data,
+				dataType: 'json',
+			}).done(function(result){
+
+				
+			});
+		});*/
+	});
+
 });

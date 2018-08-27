@@ -88,8 +88,6 @@
                             <li class="user-footer">
                                 <div class="pull-left">
                                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#perfil_modal">Perfil</button>
-                                    <input type="hidden" value="<?php echo $_SESSION['iduser'];?>"  id="userID"/>
-                                    <!--<a href="#" class="btn btn-default btn-flat">Perfil</a>-->
                                 </div>
                                 <div class="pull-right">
                                     <a href="#" onclick="javascript: logout();" class="btn btn-default btn-flat">Salir</a>

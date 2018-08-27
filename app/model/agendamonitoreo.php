@@ -39,7 +39,7 @@ class AgendaMonitoreo{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayData = array();
-			$query  = "SELECT fecha_monitoreo, estado ";
+			$query  = "SELECT id, fecha_monitoreo, estado ";
 			$query .= "FROM ca_agenda_monitoreo ";
 			$query .= "WHERE id_empresa = '".$data->id_empresa."' AND id_campana = '".$data->id_campana."' AND id_asesor = '".$data->id_asesor."' ";
 			$query .= "AND fecha_monitoreo BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
