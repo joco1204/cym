@@ -164,7 +164,7 @@ class Monitoreo{
 					$item = 'num_item_'.$i;
 					$num_item = $data->$item;
 					for($j = 1; $j <= $num_item; $j++){
-						$query_item = ''
+						//$query_item = "INSERT INTO ca_monitoreo_asesor_detallado (id_monitoreo_asesor, id_error, id_item, id_punto_entrenamiento, cumplimiento, valor_cumplimiento) VALUES ('".$data->."', '".$data->."', '".$data->."', '".$data->."', '".$data->."', '".$data->."');";
 					}
 				}
 			} else {
