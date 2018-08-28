@@ -178,7 +178,7 @@ $(function(){
 		e.preventDefault();
 		var data = $('#monitoreo_form').serialize();
 		alert(data);
-		/*swal({
+		swal({
 			title: "Atención!",
 			text: "Confirma el envío de la evaluación",
 			type: 'warning',
@@ -196,7 +196,7 @@ $(function(){
 
 				
 			});
-		});*/
+		});
 	});
 
 });
