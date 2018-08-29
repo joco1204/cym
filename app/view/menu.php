@@ -16,9 +16,10 @@
         <ul class="treeview-menu">
             <li><a href="#" onclick="javascript: pageContent('administrador/empresas/index');"><i class="glyphicon glyphicon-paperclip"></i> Empresas</a></li>
             <li><a href="#" onclick="javascript: pageContent('administrador/campanas/index');"><i class="glyphicon glyphicon-briefcase"></i> Campañas</a></li>
-            <li><a href="#" onclick="javascript: pageContent('administrador/matrices/index');"><i class="glyphicon glyphicon-list"></i> Matrices</a></li>
+            <li><a href="#" onclick="javascript: pageContent('administrador/matrices/index');"><i class="glyphicon glyphicon-th"></i> Matrices</a></li>
             <li><a href="#" onclick="javascript: pageContent('administrador/usuarios/index');"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>
             <li><a href="#" onclick="javascript: pageContent('administrador/asesores/index');"><i class="glyphicon glyphicon-earphone"></i> Asesores</a></li>
+            <li><a href="#" onclick="javascript: pageContent('administrador/reportes/index');"><i class="glyphicon glyphicon-list-alt"></i> Reportes</a></li>
         </ul>
     </li>
     <li class="treeview">

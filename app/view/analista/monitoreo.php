@@ -3,7 +3,7 @@ $get = ((object) $_GET);
 isset($get->id_empresa) ? $id_empresa = $get->id_empresa : $id_empresa = '0';
 isset($get->id_campana) ? $id_campana = $get->id_campana : $id_campana = '0';
 isset($get->id_asesor) ? $id_asesor = $get->id_asesor : $id_asesor = '0';
-isset($get->id_agenda) ? $id_agenda = $get->id_agenda : '0' ;
+isset($get->id_agenda) ? $id_agenda = $get->id_agenda : $id_agenda = '0' ;
 if($id_empresa == '0'){ ?>
     <script type="text/javascript">
         $(function(){
@@ -74,7 +74,6 @@ if($id_empresa == '0'){ ?>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <input type="hidden" name="id_asesor" id="id_asesor" value="">
                                         <input type="text" name="nombre_asesor" id="nombre_asesor" class="form-control" value="" readonly="">
                                     </div>
                                 </div>

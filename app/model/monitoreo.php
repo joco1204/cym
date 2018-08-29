@@ -151,26 +151,44 @@ class Monitoreo{
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
-			//$query  = "INSERT INTO ca_monitoreo_asesor (id_agenda_monitoreo, id_asesor, id_analista, fecha_llamada, hora_llamada, observacion) VALUES ('".$data->id_agenda."', '".$data->id_asesor."', '".$data->id_analista."', '".$data->fechas_llamada."', '".$data->hora_llamada."', '".$data->observacion."'); ";
-			//$result = $conn->query($query);
+			$query  = "INSERT INTO ca_monitoreo_asesor (id_agenda_monitoreo, id_asesor, id_analista, fecha_llamada, hora_llamada, observacion) VALUES ('".$data->id_agenda."', '".$data->id_asesor."', '".$data->id_analista."', '".$data->fechas_llamada."', '".$data->hora_llamada."', '".$data->observacion."'); ";
+			$result = $conn->query($query);
+			
 			//Obtiene el id del último monitoreo insertado
-			//$id_monitoreo = $db->lastInsertId();
+			$id_monitoreo = $conn->lastInsertId();
+
 			//Actualiza el estado del monitoreo realizado
-			//$query_agenda = "UPDATE ca_agenda_monitoreo SET estado = '1' WHERE id = '".$data->id_agenda."';";
-			//$conn->query($query_agenda);
-			//if($result){
+			$query_agenda = "UPDATE ca_agenda_monitoreo SET estado = '1' WHERE id = '".$data->id_agenda."';";
+			$conn->query($query_agenda);
+			if($result){
 				$num_error = $data->num_error;
 				for($i = 1; $i <= $num_error; $i++){
-					$item = 'num_item_'.$i;
-					$num_item = $data->$item;
+					//
+					$item 		= 'num_item_'.$i;
+					$id_error 	= 'id_num_error_'.$i;
+					$num_item 	= $data->$item;
+					//
 					for($j = 1; $j <= $num_item; $j++){
-						//$query_item = "INSERT INTO ca_monitoreo_asesor_detallado (id_monitoreo_asesor, id_error, id_item, id_punto_entrenamiento, cumplimiento, valor_cumplimiento) VALUES ('".$data->."', '".$data->."', '".$data->."', '".$data->."', '".$data->."', '".$data->."');";
+						//
+						$id_num_item					= 'id_num_item_'.$i.'_'.$j;
+						$valor_cumplimiento 			= 'valor_cumplimiento_'.$i.'_'.$j;
+						$valor_porcentaje_cumplimiento 	= 'valor_porcentaje_cumplimiento_'.$i.'_'.$j;
+						$punto_item 					= 'punto_item_'.$i.'_'.$j;
+						//
+						isset($data->$valor_cumplimiento) ? $valor_cumplimiento = $data->$valor_cumplimiento : $valor_cumplimiento = '0';
+						isset($data->$valor_porcentaje_cumplimiento) ? $valor_porcentaje = $data->$valor_porcentaje_cumplimiento : $valor_porcentaje = '0';
+						isset($data->$punto_item) ? $punto_entrenamiento = $data->$punto_item : $punto_entrenamiento = '0';
+						//
+						$query_item = "INSERT INTO ca_monitoreo_asesor_detallado (id_monitoreo_asesor, id_error, id_item, valor_cumplimiento, valor_porcentaje_cumplimiento, id_punto_entrenamiento) VALUES ('".$id_monitoreo."', '".$data->$id_error."', '".$data->$id_num_item."', '".$valor_cumplimiento."', '".$valor_porcentaje."', '".$punto_entrenamiento."');";
+						$result_item = $conn->query($query_item);
 					}
 				}
-			//} else {
+				$this->business->return->bool = true;
+				$this->business->return->msg = $id_monitoreo;
+			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';
-			//}
+			}
 		} else {
 			$this->business->return->bool = false;
 			$this->business->return->msg = 'Error de conexión de base de datos';

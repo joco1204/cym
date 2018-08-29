@@ -171,7 +171,7 @@ function addFechaMonitoreo(){
 			swal("Atención!","La fecha se encuentra vacía","warning");
 		} else {
 			swal({
-				title: 'title: "Atención!",',
+				title: "¡Atención!",
 				text: "Confirma que desea agendar el monitoreo \n para el día "+fecha,
 				type: 'warning',
 				showCancelButton: true,
@@ -195,7 +195,7 @@ function addFechaMonitoreo(){
 				}).done(function(result){
 					if(result.bool){
 						swal({
-							title: "Correcto!",
+							title: "¡Correcto!",
 							text: "Se ha agendado el monitoreo corectamente",
 							type: 'success',
 							showCancelButton: false,

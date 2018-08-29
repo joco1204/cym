@@ -78,7 +78,10 @@ $(function(){
 						$.each(data2, function(j, row2){
 							j = j+1;
 							html += '<div class="panel panel-primary">';
-							html += '<div class="panel-heading text-center"><b>'+row2.tipo_error+'<input type="hidden" name="num_error" id="num_error" value="'+j+'"></b></div>';
+							html += '<div class="panel-heading text-center"><b>'+row2.tipo_error;
+							html += '<input type="hidden" name="num_error" id="num_error" value="'+j+'">';
+							html += '<input type="hidden" name="id_num_error_'+j+'" id="id_num_error_'+j+'" value="'+row2.id_error+'">';
+							html += '</b></div>';
 							html += '<div class="panel-body">';
 							html += '<div id="item_error_'+j+'"></div>';
 							var item_error = '#item_error_'+j;
@@ -99,7 +102,10 @@ $(function(){
 									k = k+1;
 									html2 += '<script type="text/javascript">$("select").select2();</script>';
 									html2 += '<div class="row">';
-									html2 += '<div class="col-md-4">'+row3.item+'<input type="hidden" name="num_item_'+j+'" id="num_item_'+j+'" value="'+k+'"></div>';
+									html2 += '<div class="col-md-4">'+row3.item;
+									html2 += '<input type="hidden" name="num_item_'+j+'" id="num_item_'+j+'" value="'+k+'">';
+									html2 += '<input type="hidden" name="id_num_item_'+j+'_'+k+'" id="id_num_item_'+j+'_'+k+'" value="'+row3.id+'">';
+									html2 += '</div>';
 									html2 += '<div class="col-md-2">';
 									html2 += '<select name="valor_cumplimiento_'+j+'_'+k+'" id="valor_cumplimiento_'+j+'_'+k+'" class="form-control">';
 									html2 += '<option value="1" selected="">Cumple</option>';
@@ -177,24 +183,43 @@ $(function(){
 	$('#monitoreo_form').submit(function(e){
 		e.preventDefault();
 		var data = $('#monitoreo_form').serialize();
-		alert(data);
 		swal({
-			title: "Atención!",
+			title: "¡Atención!",
 			text: "Confirma el envío de la evaluación",
 			type: 'warning',
 			showCancelButton: true,
 			confirmButtonClass: "btn-primary",
 			confirmButtonText: "Aceptar",
+			cancelButtonClass: "btn-danger",
+			cancelButtonText: "Cancelar",
 			closeOnConfirm: false,
-		},function(){
+		},function(rest1){
 			$.ajax({
 				type: 'post',
 				url: '../controller/ctrmonitoreo.php',
 				data: data,
 				dataType: 'json',
 			}).done(function(result){
-
-				
+				if(result.bool){
+					var monitoreo = result.msg;
+					if (monitoreo != ''){
+						swal({
+							title: "¡Correcto!",
+							text: "Monitoreo guardado con exito",
+							type: 'success',
+							showCancelButton: false,
+							confirmButtonClass: "btn-primary",
+							confirmButtonText: "Aceptar",
+							closeOnConfirm: true,
+						},function(rest2){
+							pageContent('analista/agenda_monitoreo','id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val());
+						});
+					} else {
+						console.log('Error: id monitoreo indefinido');
+					}
+				} else {
+					console.log('Error: '+result.msg);
+				}
 			});
 		});
 	});
