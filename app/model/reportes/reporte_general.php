@@ -1,6 +1,7 @@
 <?php
 include '../../../config/connect.php';
 $db = new Connect();
+$db2 = new Connect();
 //Header download file
 header("Content-type: application/vnd.ms-excel; charset=utf-8");
 header("Content-Disposition: attachment; filename=\"reporte calidad monitoreo.xls\"");
@@ -24,60 +25,61 @@ $query .= "LEFT JOIN re_personas AS e ON d.id = e.id_usuario ";
 $query .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = '1' AND a.fecha_monitoreo BETWEEN '".$_GET['desde_general']."' AND '".$_GET['hasta_general']."' ";
 $query .= "ORDER BY a.id; ";
 $result = $db->query($query);
-$result_h = $db->query($query);
-$i = 1;
 ?>
 <table border="1">
 	<thead>
-		<tr>
-			<th>ID MNITOREO</th>
-			<th>ASESOR</th>
-			<th>CEDULA</th>
-			<th>MONITOR</th>
-			<th>FECHA LLAMADA</th>
-			<th>HORA LLAMADA</th>
-			<th>ID REGISTRO</th>
-			<th>OBSERVACIONES</th>
-			<th>TIPIFICACIONES</th>
-			<th>SOLUCI&Oacute;N</th>
-			<th>AUDIO</th>
-			<?php 
-				while($row_h = $result_h->fetch(PDO::FETCH_OBJ)){
-					$id_h = $row_h->id_monitoreo;
-					
-					$query_th  = "SELECT id FROM ca_monitoreo_asesor_detallado WHERE id_monitoreo_asesor = '".$row_h->id_monitoreo."'; ";
-					var
-					$result_th = $db->query($query_th);
-					$j = 1;
-					
-					while($row_th = $result_th->fetch(PDO::FETCH_OBJ)){ 
-						$id_th = $row_th->id;
-					?>
-						<th>Item <?php echo $i.".".$j; ?></th>
-						<th>Porcentaje <?php echo $i.".".$j; ?></th>
-						<th>Punto Entrenamiento <?php echo $i.".".$j; ?></th>
-					<?php $j++; } ?>
-					<?php 
-					$i++; 
-				} 
-			?>
-		</tr>
+		<?php
+			echo "<tr>";
+			echo "<th>ID MNITOREO</th>";
+			echo "<th>ASESOR</th>";
+			echo "<th>CEDULA</th>";
+			echo "<th>MONITOR</th>";
+			echo "<th>FECHA LLAMADA</th>";
+			echo "<th>HORA LLAMADA</th>";
+			echo "<th>ID REGISTRO</th>";
+			echo "<th>OBSERVACIONES</th>";
+			echo "<th>TIPIFICACIONES</th>";
+			echo "<th>SOLUCI&Oacute;N</th>";
+			echo "<th>AUDIO</th>";
+
+			$query_h  = "SET @numero = 0; ";
+			$query_h .= "SELECT @numero := @numero+1 AS error_numero, b.id AS id_monitoreo ";
+			$query_h .= "FROM ca_agenda_monitoreo AS a ";
+			$query_h .= "LEFT JOIN ca_monitoreo_asesor AS b ON a.id = b.id_agenda_monitoreo ";
+			$query_h .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = '1' AND a.fecha_monitoreo BETWEEN '".$_GET['desde_general']."' AND '".$_GET['hasta_general']."' ";
+			$query_h .= "ORDER BY a.id;";
+			$result_h = $db2->query($query_h);
+			while($row_h = $result_h->fetch()){
+
+				$query_th  = "SELECT id FROM ca_monitoreo_asesor_detallado WHERE id_monitoreo_asesor = '".$row_h['id_monitoreo']."'; ";
+				/*$result_th = $db2->query($query_th);
+
+				while($row_th = $result_th->fetch()){*/
+
+					echo "<th>Item ".$row_h['error_numero']."</th>";
+					echo "<th>Porcentaje ".$row_h['error_numero']."</th>";
+					echo "<th>Punto Entrenamiento ".$row_h['error_numero']."</th>";
+
+				/*}*/
+
+			}
+			echo "</tr>";
+		?>
 	</thead>
 	<tbody>
-	<?php while($row = $result->fetch(PDO::FETCH_OBJ)){ ?>
-		<tr>
-			<td><?php echo utf8_decode($row->id_monitoreo); ?></td>
-			<td><?php echo utf8_decode($row->asesor); ?></td>
-			<td><?php echo utf8_decode($row->cedula); ?></td>
-			<td><?php echo utf8_decode($row->analista); ?></td>
-			<td><?php echo utf8_decode($row->fecha_llamada); ?></td>
-			<td><?php echo utf8_decode($row->hora_llamada); ?></td>
-			<td></td>
-			<td><?php echo utf8_decode($row->observacion); ?></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<?php 
+		<?php  while($row = $result->fetch(PDO::FETCH_OBJ)){
+			echo "<tr>";
+			echo "<td>".utf8_decode($row->id_monitoreo)."</td>";
+			echo "<td>".utf8_decode($row->asesor)."</td>";
+			echo "<td>".utf8_decode($row->cedula)."</td>";
+			echo "<td>".utf8_decode($row->analista)."</td>";
+			echo "<td>".utf8_decode($row->fecha_llamada)."</td>";
+			echo "<td>".utf8_decode($row->hora_llamada)."</td>";
+			echo "<td></td>";
+			echo "<td>".utf8_decode($row->observacion)."</td>";
+			echo "<td></td>";
+			echo "<td></td>";
+			echo "<td></td>";
 				$query_item  = 'SELECT ';
 				$query_item .= 'a.id AS id_detallado, ';
 				$query_item .= 'CASE ';
@@ -91,13 +93,11 @@ $i = 1;
 				$query_item .= 'WHERE a.id_monitoreo_asesor = "'.$row->id_monitoreo.'"; ';
 				$result_item = $db->query($query_item);
 				while($row_item = $result_item->fetch(PDO::FETCH_OBJ)){ 
-				?>
-					<td><?php echo utf8_decode($row_item->valor_cumplimiento); ?></td>
-					<td><?php echo utf8_decode($row_item->porcentaje); ?></td>
-					<td><?php echo utf8_decode($row_item->punto_entrenamiento); ?></td>
-				<?php } 
-			?>
-		</tr>
-	<?php } ?>
+					echo "<td>".utf8_decode($row_item->valor_cumplimiento)."</td>";
+					echo "<td>".utf8_decode($row_item->porcentaje)."</td>";
+					echo "<td>".utf8_decode($row_item->punto_entrenamiento)."</td>";
+				}
+			echo "</tr>";
+		} ?>
 	</tbody>
 </table>
