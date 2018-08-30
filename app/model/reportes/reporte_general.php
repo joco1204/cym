@@ -41,21 +41,24 @@ $i = 1;
 			<th>TIPIFICACIONES</th>
 			<th>SOLUCI&Oacute;N</th>
 			<th>AUDIO</th>
-
-			<?php while($row_h = $result_h->fetch(PDO::FETCH_OBJ)){
-				$id_h = $row_h->id_monitoreo;
-				$query_th  = "SELECT id FROM ca_monitoreo_asesor_detallado WHERE id_monitoreo_asesor = '".$row_h->id_monitoreo."'; ";
-				$result_th = $db->query($query_th);
-				$j = 1;
-				while($row_th = $result_th->fetch(PDO::FETCH_OBJ)){ 
-					$id_th = $row_th->id;
-				?>
-					<th>Item <?php echo $i.".".$j; ?></th>
-					<th>Porcentaje <?php echo $i.".".$j; ?></th>
-					<th>Punto Entrenamiento <?php echo $i.".".$j; ?></th>
-				<?php $j++; } ?>
 			<?php 
-				$i++; 
+				while($row_h = $result_h->fetch(PDO::FETCH_OBJ)){
+					$id_h = $row_h->id_monitoreo;
+					
+					$query_th  = "SELECT id FROM ca_monitoreo_asesor_detallado WHERE id_monitoreo_asesor = '".$row_h->id_monitoreo."'; ";
+					var
+					$result_th = $db->query($query_th);
+					$j = 1;
+					
+					while($row_th = $result_th->fetch(PDO::FETCH_OBJ)){ 
+						$id_th = $row_th->id;
+					?>
+						<th>Item <?php echo $i.".".$j; ?></th>
+						<th>Porcentaje <?php echo $i.".".$j; ?></th>
+						<th>Punto Entrenamiento <?php echo $i.".".$j; ?></th>
+					<?php $j++; } ?>
+					<?php 
+					$i++; 
 				} 
 			?>
 		</tr>
