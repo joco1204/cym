@@ -1,8 +1,7 @@
 <!-- definición de las metas para el sitio de Logistic SCM -->
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="author" content="Logistic SCM" />
-<meta name="description" content="Logistic SCM"/>
-<meta name="author" content="Logistic SCM"/>
+<meta name="author" content="Interactivo Contact Center S.A." />
+<meta name="description" content="Sistema de calidad y monitoreo ICC"/>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!-- definición de ícono de ventana -->
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
@@ -41,4 +40,4 @@
 <script src="libs/plugins/sweetalert/dist/sweetalert.min.js"></script>
 <script src="libs/plugins/sweetalert/dist/sweetalert-dev.js"></script>
 <!-- Titulo de aplicación -->
-<title>CALIDAD</title>
+<title>Calidad</title>
