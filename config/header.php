@@ -75,8 +75,8 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
             });
         </script>
         <!-- Titulo de aplicación -->
-        <title>CALIDAD ICC</title>
+        <title>Calidad</title>
         <!-- js globales -->
         <script src="../../js/business.js"></script>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini" onload="startTimeOut();" onkeypress="stopTimeOut();" onclick="stopTimeOut();">
+    <body class="hold-transition skin-blue sidebar-mini" onload="startTimeOut();" onkeypress="stopTimeOut();" onclick="stopTimeOut();" style="background-image: url('../../img/background.png'); background-repeat: no-repeat;">

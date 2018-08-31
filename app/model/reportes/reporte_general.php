@@ -16,12 +16,21 @@ $query .= "c.identificacion AS cedula, ";
 $query .= "CONCAT(e.nombre,' ',e.apellido1,' ',e.apellido2) AS analista, ";
 $query .= "b.fecha_llamada, ";
 $query .= "b.hora_llamada, ";
-$query .= "b.observacion ";
+$query .= "b.id_llamada, ";
+$query .= "f.nombre AS tipificacion,";
+$query .= "g.tipos AS solucion, ";
+$query .= "h.audio AS fallas_audio, ";
+$query .= "b.observacion, ";
+$query .= "b.fecha_registro, ";
+$query .= "b.fecha_modificaicon ";
 $query .= "FROM ca_agenda_monitoreo AS a ";
 $query .= "LEFT JOIN ca_monitoreo_asesor AS b ON a.id = b.id_agenda_monitoreo ";
 $query .= "LEFT JOIN ca_asesores AS c ON a.id_asesor = c.id ";
 $query .= "LEFT JOIN re_usuarios AS d ON b.id_analista = d.id ";
 $query .= "LEFT JOIN re_personas AS e ON d.id = e.id_usuario ";
+$query .= "LEFT JOIN ca_tipificacion AS f ON b.tipificacion = f.id ";
+$query .= "LEFT JOIN ca_solucion AS g ON b.solucion = g.id ";
+$query .= "LEFT JOIN ca_audio AS h ON b.fallas_audio = h.id ";
 $query .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = '1' AND a.fecha_monitoreo BETWEEN '".$_GET['desde_general']."' AND '".$_GET['hasta_general']."' ";
 $query .= "ORDER BY a.id; ";
 $result = $db->query($query);
@@ -40,7 +49,9 @@ $result = $db->query($query);
 			echo "<th>OBSERVACIONES</th>";
 			echo "<th>TIPIFICACIONES</th>";
 			echo "<th>SOLUCI&Oacute;N</th>";
-			echo "<th>AUDIO</th>";
+			echo "<th>FALLA AUDIO</th>";
+			echo "<th>FECHA Y HORA REGISTRO</th>";
+			echo "<th>FECHA Y HORA MODIFICACI&Oacute;N</th>";
 
 			$query_h  = "SET @numero = 0; ";
 			$query_h .= "SELECT @numero := @numero+1 AS error_numero, b.id AS id_monitoreo ";
@@ -68,6 +79,7 @@ $result = $db->query($query);
 	</thead>
 	<tbody>
 		<?php  while($row = $result->fetch(PDO::FETCH_OBJ)){
+
 			echo "<tr>";
 			echo "<td>".utf8_decode($row->id_monitoreo)."</td>";
 			echo "<td>".utf8_decode($row->asesor)."</td>";
@@ -75,11 +87,13 @@ $result = $db->query($query);
 			echo "<td>".utf8_decode($row->analista)."</td>";
 			echo "<td>".utf8_decode($row->fecha_llamada)."</td>";
 			echo "<td>".utf8_decode($row->hora_llamada)."</td>";
-			echo "<td></td>";
+			echo "<td>".utf8_decode($row->id_llamada)."</td>";
 			echo "<td>".utf8_decode($row->observacion)."</td>";
-			echo "<td></td>";
-			echo "<td></td>";
-			echo "<td></td>";
+			echo "<td>".utf8_decode($row->tipificacion)."</td>";
+			echo "<td>".utf8_decode($row->solucion)."</td>";
+			echo "<td>".utf8_decode($row->fallas_audio)."</td>";
+			echo "<td>".utf8_decode($row->fecha_registro)."</td>";
+			echo "<td>".utf8_decode($row->fecha_modificaicon)."</td>";
 				$query_item  = 'SELECT ';
 				$query_item .= 'a.id AS id_detallado, ';
 				$query_item .= 'CASE ';
@@ -98,6 +112,7 @@ $result = $db->query($query);
 					echo "<td>".utf8_decode($row_item->punto_entrenamiento)."</td>";
 				}
 			echo "</tr>";
+			
 		} ?>
 	</tbody>
 </table>

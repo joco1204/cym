@@ -22,7 +22,6 @@ $(function(){
 						data: {
 								action: 'session',
 								iduser: data.iduser,
-								idcompany: data.idcompany,
 								token: data.token
 							},
 						dataType: 'json'
@@ -35,46 +34,38 @@ $(function(){
 							sessionStorage.setItem('userprofile', data2.userprofile);
 							sessionStorage.setItem('username', data2.username);
 							sessionStorage.setItem('lastname', data2.lastname);
-							sessionStorage.setItem('ncompany', data2.ncompany);
-							sessionStorage.setItem('company', data2.company);
-							sessionStorage.setItem('companyweb', data2.companyweb);
-							sessionStorage.setItem('companylogo', data2.companylogo);
-							sessionStorage.setItem('headquarters', data2.headquarters);
-							sessionStorage.setItem('country', data2.country);
-							sessionStorage.setItem('city', data2.city);
-							sessionStorage.setItem('position', data2.position);
 							sessionStorage.setItem('token', data2.token);
 							//entry to the platform
 							window.location.href = "app/view/index.php";
 						} else {
-							$('#warning-login').fadeIn(1000);
 							$('#warning-login').css('display','block');
 							$('#warning-login').html(result2.msg);
-							$('#warning-login').fadeOut(7000);
 						}
 					});
 				} else {
-					$('#warning-login').fadeIn(1000);
 					$('#warning-login').css('display','block');
 					$('#warning-login').html(result.msg);
-					$('#warning-login').fadeOut(7000);
 				}
 			});
 		} else if ($('#user').val() != "" && $('#pass').val() == "") {
-			$('#warning-login').fadeIn(500);
 			$('#warning-login').css('display','block');
 			$('#warning-login').html("Contraseña Incorrecta");
-			$('#warning-login').fadeOut(6000);
 		} else if ($('#user').val() == "" && $('#pass').val() != ""){
-			$('#warning-login').fadeIn(500);
 			$('#warning-login').css('display','block');
 			$('#warning-login').html("Usuario Incorrecto");
-			$('#warning-login').fadeOut(6000);
 		} else {
-			$('#warning-login').fadeIn(500);
 			$('#warning-login').css('display','block');
 			$('#warning-login').html("Usuario y contraseña incorrectos");
-			$('#warning-login').fadeOut(6000);
+		}
+	});
+
+	$('#contrasena_form').submit(function(e){
+		e.preventDefault();
+		if($('#email').val() == ''){
+			swal("¡Atención!","Debe ingresar el email para recuperar su contraseña","warning");
+		} else {
+			var data = $('#contrasena_form').serialize();
+			alert(data);
 		}
 	});
 

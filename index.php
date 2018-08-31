@@ -5,7 +5,7 @@
         <?php include 'config/plugins.php'; ?>
         <script src="js/login.js"></script>
     </head>
-    <body class="hold-transition skin-blue layout-top-nav" onload="javascript: sessionStorage.removeItem('tockent');">
+    <body class="hold-transition skin-blue layout-top-nav" onload="javascript: sessionStorage.removeItem('tockent');" style="background-image: url('img/background.png'); background-repeat: no-repeat;">
         <div class="container">
             <div class="row">
                 <div style="height: 60px;"></div>
@@ -25,10 +25,10 @@
             <form id="login" autocomplete="off">
                 <div class="row">
                     <div class="col-lg-4 col-lg-offset-4">
-                        <div class="panel panel-default">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="text-center">
-                                    <b>CALIDAD</b>
+                                    <b>Sistema de Calidad y Monitoreo</b>
                                 </h4>
                             </div>
                             <div class="panel-body">
@@ -77,7 +77,7 @@
                             <label for="email" class="form-label">
                                 Ingrese su email para realizar la recuperación de su contraseña <small class="text-danger">(*)</small>: 
                             </label>
-                            <input type="text" name="email" id="email" class="form-control">
+                            <input type="email" name="email" id="email" class="form-control">
                             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                         </div>
                     </div>

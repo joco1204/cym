@@ -48,6 +48,57 @@ $(function(){
 		}
 	});
 
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrmonitoreo.php',
+		data: {
+			action: 'tipificacion',
+		},
+		dataType: 'json'
+	}).done(function(result){
+		var data = $.parseJSON(result.msg);
+		var html = '';
+		html += '<option>[Seleccione una opcion]</option>';
+		$.each(data, function(i, row){
+			html += '<option value="'+row.id+'">'+row.nombre+'</option>';
+		});
+		$('#tipificacion').html(html);
+	});
+
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrmonitoreo.php',
+		data: {
+			action: 'solucion',
+		},
+		dataType: 'json'
+	}).done(function(result){
+		var data = $.parseJSON(result.msg);
+		var html = '';
+		html += '<option>[Seleccione una opcion]</option>';
+		$.each(data, function(i, row){
+			html += '<option value="'+row.id+'">'+row.tipos+'</option>';
+		});
+		$('#solucion').html(html);
+	});
+
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrmonitoreo.php',
+		data: {
+			action: 'audio',
+		},
+		dataType: 'json'
+	}).done(function(result){
+		var data = $.parseJSON(result.msg);
+		var html = '';
+		html += '<option>[Seleccione una opcion]</option>';
+		$.each(data, function(i, row){
+			html += '<option value="'+row.id+'">'+row.audio+'</option>';
+		});
+		$('#audio').html(html);
+	});
+
 	//
 	$.ajax({
 		type: 'post', 
@@ -108,7 +159,8 @@ $(function(){
 									html2 += '</div>';
 									html2 += '<div class="col-md-2">';
 									html2 += '<select name="valor_cumplimiento_'+j+'_'+k+'" id="valor_cumplimiento_'+j+'_'+k+'" class="form-control">';
-									html2 += '<option value="1" selected="">Cumple</option>';
+									html2 += '<option selected="">[Seleccione una opcion]</option>';
+									html2 += '<option value="1">Cumple</option>';
 									html2 += '<option value="0">No Cumple</option>';
 									html2 += '</select>';
 									html2 += '</div>';
@@ -135,18 +187,23 @@ $(function(){
 									}).done(function(result4){
 										var data4 = $.parseJSON(result4.msg);
 										var html3 = '';
+										html3 += '<option selected="">[Seleccione una opcion]</option>';
 										$.each(data4, function(k, row4){
 											html3 += '<option value="'+row4.id+'">'+row4.punto_entrenamiento+'</option>';
 										});
 										$(punto_item).html(html3);
 									});
 									html2 += '<script type="text/javascript">';
+
 									html2 += 'if($(\''+cumple_item+'\').val() == "1"){';
 									html2 += '$(\''+porcentaje_item+'\').val(\''+row3.valor+'\');';
 									html2 += '$(\''+canvas+'\').hide();';
-									html2 += '} else {';
+									html2 += '} else if($(\''+cumple_item+'\').val() == "0"){';
 									html2 += '$(\''+porcentaje_item+'\').val("0");';
 									html2 += '$(\''+canvas+'\').show();';
+									html2 += '} else {';
+									html2 += '$(\''+porcentaje_item+'\').val("");';
+									html2 += '$(\''+canvas+'\').hide();';
 									html2 += '}';
 									html2 += '$(\''+cumple_item+'\').change(function(){';
 									html2 += 'if($(\''+cumple_item+'\').val() == "1"){';
@@ -157,6 +214,10 @@ $(function(){
 									html2 += '$(\''+porcentaje_item+'\').val("0");';
 									html2 += '$(\''+punto_item+'\').removeAttr("disabled");';
 									html2 += '$(\''+canvas+'\').show();';
+									html2 += '} else {';
+									html2 += '$(\''+porcentaje_item+'\').val("");';
+									html2 += '$(\''+punto_item+'\').attr("disabled","disabled");';
+									html2 += '$(\''+canvas+'\').hide();';
 									html2 += '}';
 									html2 += '});';
 									html2 += '</script>';

@@ -87,10 +87,10 @@
                             </li>
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#perfil_modal">Perfil</button>
+                                    <a href="#" class="btn btn-success btn-flat" data-toggle="modal" data-target="#modal_perfil">Perfil</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" onclick="javascript: logout();" class="btn btn-default btn-flat">Salir</a>
+                                    <a href="#" onclick="javascript: logout();" class="btn btn-info btn-flat">Salir</a>
                                 </div>
                             </li>
                         </ul>
@@ -130,17 +130,21 @@
 </script>
 
 
-<div id="perfil_modal" class="modal fade" role="dialog">
+<div id="modal_perfil" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form id="form_crear_cliente" autocomplete="off">
+            <form id="form_perfil">
             <div class="modal-header bg-blue">
                 <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
-                <h4 class="modal-title">PERFIL</h4>
-                <input type="hidden" id="action" name="action" value="perfil_modal">
+                <h4 class="modal-title">PERFIL USUARIO</h4>
             </div>
-            <div class="modal-body"  id="ctr_perfil">
-                
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col col">
+                        
+                    </div>
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-success btn-sm" >GUARDAR</button>

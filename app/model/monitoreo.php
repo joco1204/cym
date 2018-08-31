@@ -30,6 +30,81 @@ class Monitoreo{
 		return $this->business->return;
 	}
 
+	public function tipificacion(){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT id, nombre FROM ca_tipificacion WHERE estado = 'activo';";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function solucion(){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT id, tipos FROM ca_solucion WHERE estado = 'activo';";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function audio(){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT id, audio FROM ca_audio WHERE estado = 'activo';";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 	public function tipo_error($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
@@ -151,7 +226,7 @@ class Monitoreo{
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
-			$query  = "INSERT INTO ca_monitoreo_asesor (id_agenda_monitoreo, id_asesor, id_analista, fecha_llamada, hora_llamada, observacion) VALUES ('".$data->id_agenda."', '".$data->id_asesor."', '".$data->id_analista."', '".$data->fechas_llamada."', '".$data->hora_llamada."', '".$data->observacion."'); ";
+			$query  = "INSERT INTO ca_monitoreo_asesor (id_agenda_monitoreo, id_asesor, id_analista, fecha_llamada, hora_llamada, tipificacion, id_llamada, observacion, solucion, fallas_audio) VALUES ('".$data->id_agenda."', '".$data->id_asesor."', '".$data->id_analista."', '".$data->fechas_llamada."', '".$data->hora_llamada."', '".$data->tipificacion."', '".$data->id_llamada."', '".$data->observacion."', '".$data->solucion."', '".$data->audio."'); ";
 			$result = $conn->query($query);
 			
 			//Obtiene el id del último monitoreo insertado

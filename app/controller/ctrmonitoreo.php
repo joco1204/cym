@@ -10,6 +10,18 @@ if(isset($post->action)){
 			$result = $monitoreo->matriz_monitoreo($post);
 			$business->return = $result;
 		break;
+		case 'tipificacion':
+			$result = $monitoreo->tipificacion();
+			$business->return = $result;
+		break;
+		case 'solucion':
+			$result = $monitoreo->solucion();
+			$business->return = $result;
+		break;
+		case 'audio':
+			$result = $monitoreo->audio();
+			$business->return = $result;
+		break;
 		case 'tipo_error':
 			$result = $monitoreo->tipo_error($post);
 			$business->return = $result;
