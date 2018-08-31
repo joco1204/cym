@@ -61,6 +61,7 @@
         </div>
     </body>
 </html>
+<!-- Modal de recuperación de contraseña -->
 <div id="recuperar_contrasena" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
