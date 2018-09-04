@@ -57,12 +57,12 @@ class Login{
 		$db = $this->bsn->db;
 		$session = $this->bsn->session;
 		if ($conn){
-			$query  = "SELECT a.id AS idusuario, e.id AS idperfil, e.perfil AS perfilusuario, b.nombre, b.apellido1 AS apellido  ";
+			$query  = "SELECT a.id AS id_usuario, a.usuario, d.id AS id_perfil, d.perfil, a.nombre, a.apellido1, a.apellido2, b.tipo_identificacion, a.identificacion, a.email, a.estado ";
 			$query .= "FROM re_usuarios AS a ";
-			$query .= "INNER JOIN re_personas AS b ON a.id = b.id_usuario ";
-			$query .= "INNER JOIN re_usuario_perfil AS d ON a.id = d.id_usuario ";
-			$query .= "INNER JOIN pa_perfiles AS e ON d.id_perfil = e.id ";
-			$query .= "WHERE a.id = '".$iduser."' ";
+			$query .= "LEFT JOIN pa_tipo_identificacion AS b ON a.tipo_identificacion = b.id ";
+			$query .= "LEFT JOIN re_usuario_perfil AS c ON a.id = c.id_usuario ";
+			$query .= "LEFT JOIN pa_perfiles AS d ON c.id_perfil = d.id ";
+			$query .= "WHERE a.estado = 'activo' AND a.id = '".$iduser."' ";
 			$query .= "LIMIT 1; ";
 			$result = $conn->query($query);
 			if($result){
@@ -70,22 +70,36 @@ class Login{
 					while ($row = $result->fetch(PDO::FETCH_OBJ)){
 						$row->token = $token;
 						$session->start();
-						$session->setSession('iduser', $row->idusuario);
-						$session->setSession('idprofile', $row->idperfil);
-						$session->setSession('userprofile', $row->perfilusuario);
-						$session->setSession('username', $row->nombre);
-						$session->setSession('lastname', $row->apellido);
+						$session->setSession('id_usaurio', $row->id_usuario);
+						$session->setSession('usuario', $row->usuario);
+						$session->setSession('id_perfil', $row->id_perfil);
+						$session->setSession('perfil', $row->perfil);
+						$session->setSession('nombre', $row->nombre);
+						$session->setSession('apellido1', $row->apellido1);
+						$session->setSession('apellido2', $row->apellido2);
+						$session->setSession('tipo_identificacion', $row->tipo_identificacion);
+						$session->setSession('identificacion', $row->identificacion);
+						$session->setSession('email', $row->email);
+						$session->setSession('estado', $row->estado);
 						$session->setSession('token', $row->token);
 					}
+
 					//array get sessión
 					$getSession = array(
-						'iduser' => $session->getSession('iduser'),
-						'idprofile' => $session->getSession('idprofile'),
-						'userprofile' => $session->getSession('userprofile'),
-						'username' => $session->getSession('username'),
-						'lastname' => $session->getSession('lastname'),
+						'id_usaurio' => $session->getSession('id_usaurio'),
+						'usuario' => $session->getSession('usuario'),
+						'id_perfil' => $session->getSession('id_perfil'),
+						'perfil' => $session->getSession('perfil'),
+						'nombre' => $session->getSession('nombre'),
+						'apellido1' => $session->getSession('apellido1'),
+						'apellido2' => $session->getSession('apellido2'),
+						'tipo_identificacion' => $session->getSession('tipo_identificacion'),
+						'identificacion' => $session->getSession('identificacion'),
+						'email' => $session->getSession('email'),
+						'estado' => $session->getSession('estado'),
 						'token' => $session->getSession('token')
 					);
+
 					$bool = true;
 					$msg = json_encode($getSession);
 				} else {

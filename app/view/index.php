@@ -73,16 +73,16 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="../../libs/dist/img/avatar5.png" class="user-image" alt="User Image">
-                            <span class="hidden-xs"><?php echo $session->getSession('username')." ".$session->getSession('lastname'); ?></span>
+                            <span class="hidden-xs"><?php echo $session->getSession('nombre')." ".$session->getSession('apellido1'); ?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
                                 <img src="../../libs/dist/img/avatar5.png" class="img-circle" alt="User Image">
                                 <p>
-                                    <?php echo $session->getSession('username')." ".$session->getSession('lastname'); ?>
+                                    <?php echo $session->getSession('nombre')." ".$session->getSession('apellido1'); ?>
                                     <br>
-                                    <?php echo $session->getSession('userprofile');  ?>
+                                    <?php echo $session->getSession('perfil'); ?>
                                 </p>
                             </li>
                             <li class="user-footer">
@@ -109,7 +109,7 @@
                     <img src="../../libs/dist/img/avatar5.png" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p><?php echo $session->getSession('username')." ".$session->getSession('lastname'); ?></p>
+                    <p><?php echo $session->getSession('nombre')." ".$session->getSession('apellido1'); ?></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> En Linea</a>
                 </div>
             </div>
@@ -128,19 +128,33 @@
 <script type="text/javascript">
     pageContent('contenido');
 </script>
-
-
 <div id="modal_perfil" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <form id="form_perfil">
             <div class="modal-header bg-blue">
-                <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
+                <button type="button" class="close" data-dismiss="modal"><span style="color: #fff;">X</span></button>
                 <h4 class="modal-title">PERFIL USUARIO</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col col">
+                        <?php 
+
+                        $session->getSession('id_usaurio');
+                        $session->getSession('usuario');
+                        $session->getSession('id_perfil');
+                        $session->getSession('perfil');
+                        $session->getSession('nombre');
+                        $session->getSession('apellido1');
+                        $session->getSession('apellido2');
+                        $session->getSession('tipo_identificacion');
+                        $session->getSession('identificacion');
+                        $session->getSession('email');
+                        $session->getSession('estado');
+                        $session->getSession('token');
+
+                        ?>
                         
                     </div>
                 </div>

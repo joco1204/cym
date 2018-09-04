@@ -29,11 +29,17 @@ $(function(){
 						if(result2.bool){
 							var data2 = $.parseJSON(result2.msg);
 							//Session storage generator
-							sessionStorage.setItem('iduser', data2.iduser);
-							sessionStorage.setItem('idprofile', data2.idprofile);
-							sessionStorage.setItem('userprofile', data2.userprofile);
-							sessionStorage.setItem('username', data2.username);
-							sessionStorage.setItem('lastname', data2.lastname);
+							sessionStorage.setItem('id_usaurio', data2.id_usaurio);
+							sessionStorage.setItem('usuario', data2.usuario);
+							sessionStorage.setItem('id_perfil', data2.id_perfil);
+							sessionStorage.setItem('perfil', data2.perfil);
+							sessionStorage.setItem('nombre', data2.nombre);
+							sessionStorage.setItem('apellido1', data2.apellido1);
+							sessionStorage.setItem('apellido2', data2.apellido2);
+							sessionStorage.setItem('tipo_identificacion', data2.tipo_identificacion);
+							sessionStorage.setItem('identificacion', data2.identificacion);
+							sessionStorage.setItem('email', data2.email);
+							sessionStorage.setItem('estado', data2.estado);
 							sessionStorage.setItem('token', data2.token);
 							//entry to the platform
 							window.location.href = "app/view/index.php";

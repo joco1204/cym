@@ -1,5 +1,5 @@
 $(function(){
-	
+
 	$.ajax({
 		type: 'post', 
 		url: '../controller/ctragendamonitoreo.php',
@@ -137,13 +137,15 @@ function addFechaMonitoreo(){
 	html += '</div>';
 	html += '</div>';
 	html += '</form>';
+
 	$('#canvas_fechas').append(html);
 	$("select").select2();
 	var date = new Date();
-	var mm_ini = $('#mes').val()-1;
-	var mm_end = $('#mes').val();
+	var dd 		= date.getDate();
+	var mm_ini 	= $('#mes').val()-1;
+	var mm_end 	= $('#mes').val();
 	var yyyy = $('#anio').val();
-	var date_ini = new Date(yyyy, mm_ini, 1);
+	var date_ini = new Date(yyyy, mm_ini, dd);
 	var date_end = new Date(yyyy, mm_end, 0);
 	$.fn.datepicker.dates['es'] = {
 		days: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],

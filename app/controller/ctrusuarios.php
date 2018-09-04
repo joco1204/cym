@@ -10,8 +10,20 @@ if(isset($post->action)){
 			$result = $usuario->tabla_usuarios();
 			$business->return = $result;
 		break;
-		case 'get_usuarios':
-			$result = $usuario->get_usuarios($post->iduser);
+		case 'tipo_identificacion':
+			$result = $usuario->tipo_identificacion();
+			$business->return = $result;
+		break;
+		case 'perfil':
+			$result = $usuario->perfil();
+			$business->return = $result;
+		break;
+		case 'crear_usuario':
+			$result = $usuario->crear_usuario($post);
+			$business->return = $result;
+		break;
+		case 'usaurio':
+			$result = $usuario->usaurio($post);
 			$business->return = $result;
 		break;
 		default:

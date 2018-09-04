@@ -16,9 +16,8 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
     <head>
         <!-- definición de las metas para el sitio de SMART SOLUTION SERVICE-->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="author" content="SMART SOLUTION SERVICE"/>
-        <meta name="description" content="SMART SOLUTION SERVICE"/>
-        <meta name="author" content="SMART SOLUTION SERVICE"/>
+        <meta name="author" content="Interactivo Contact Center"/>
+        <meta name="description" content="Interactivo Contact Center"/>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- definición de ícono de ventana -->
         <link rel="shortcut icon" type="image/x-icon" href="" />
@@ -79,4 +78,4 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
         <!-- js globales -->
         <script src="../../js/business.js"></script>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini" onload="startTimeOut();" onkeypress="stopTimeOut();" onclick="stopTimeOut();" style="background-image: url('../../img/background.png'); background-repeat: no-repeat;">
+    <body class="hold-transition skin-blue sidebar-mini" onload="startTimeOut();" onkeypress="stopTimeOut();" onclick="stopTimeOut();">

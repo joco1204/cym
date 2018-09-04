@@ -1,4 +1,8 @@
 <?php
+$fecha_hoy = date('Y-m-d');
+$fecha_ini = date('Y-m-01');
+$fecha_fin = date('Y-m-08');
+
 $get = ((object) $_GET);
 isset($get->id_empresa) ? $id_empresa = $get->id_empresa : $id_empresa = '0';
 isset($get->id_campana) ? $id_campana = $get->id_campana : $id_campana = '0';
@@ -55,12 +59,14 @@ if($id_asesor == '0'){ ?>
                     </div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col col-lg-12 text-center">
-                        <button type="button" class="btn btn-success" onclick="javascript: addFechaMonitoreo();">Añadir fecha</button>    
-                        <input type="hidden" name="count_fechas" id="count_fechas" value="0">
+                <?php if(($fecha_hoy >= $fecha_ini) && ($fecha_hoy <= $fecha_fin)){ ?>
+                    <div class="row">
+                        <div class="col col-lg-12 text-center">
+                            <button type="button" class="btn btn-success" onclick="javascript: addFechaMonitoreo();">Añadir fecha</button> 
+                            <input type="hidden" name="count_fechas" id="count_fechas" value="0">
+                        </div>
                     </div>
-                </div>
+                <?php } ?>
                 <br>
                 <div class="row">
                     <div class="col col-lg-12">

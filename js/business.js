@@ -41,19 +41,18 @@ var pageContent = function(page, settings){
 }
 //Remove Session Storage 
 var removeSession = function(){
-	sessionStorage.removeItem('iduser');
-	sessionStorage.removeItem('idprofile');
-	sessionStorage.removeItem('userprofile');
-	sessionStorage.removeItem('username');
-	sessionStorage.removeItem('lastname');
-	sessionStorage.removeItem('ncompany');
-	sessionStorage.removeItem('company');
-	sessionStorage.removeItem('companyweb');
-	sessionStorage.removeItem('companylogo');
-	sessionStorage.removeItem('headquarters');
-	sessionStorage.removeItem('country');
-	sessionStorage.removeItem('city');
-	sessionStorage.removeItem('position');
+
+	sessionStorage.removeItem('id_usaurio');
+	sessionStorage.removeItem('usuario');
+	sessionStorage.removeItem('id_perfil');
+	sessionStorage.removeItem('perfil');
+	sessionStorage.removeItem('nombre');
+	sessionStorage.removeItem('apellido1');
+	sessionStorage.removeItem('apellido2');
+	sessionStorage.removeItem('tipo_identificacion');
+	sessionStorage.removeItem('identificacion');
+	sessionStorage.removeItem('email');
+	sessionStorage.removeItem('estado');
 	sessionStorage.removeItem('token');
 	sessionStorage.clear();
 }
