@@ -28,9 +28,13 @@ CREATE TABLE IF NOT EXISTS `ca_agenda_monitoreo` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_agenda_monitoreo: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_agenda_monitoreo: ~2 rows (aproximadamente)
 DELETE FROM `ca_agenda_monitoreo`;
 /*!40000 ALTER TABLE `ca_agenda_monitoreo` DISABLE KEYS */;
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(1, 1, 1, 1, '2018-09-03', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(2, 1, 1, 1, '2018-09-14', 0);
 /*!40000 ALTER TABLE `ca_agenda_monitoreo` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_asesores
@@ -49,6 +53,8 @@ CREATE TABLE IF NOT EXISTS `ca_asesores` (
 -- Volcando datos para la tabla calidad.ca_asesores: ~0 rows (aproximadamente)
 DELETE FROM `ca_asesores`;
 /*!40000 ALTER TABLE `ca_asesores` DISABLE KEYS */;
+INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
+	(1, 1, 1, '1023875261', 'Johan', 'Cortes', 'activo');
 /*!40000 ALTER TABLE `ca_asesores` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_audio
@@ -86,6 +92,8 @@ CREATE TABLE IF NOT EXISTS `ca_campana` (
 -- Volcando datos para la tabla calidad.ca_campana: ~0 rows (aproximadamente)
 DELETE FROM `ca_campana`;
 /*!40000 ALTER TABLE `ca_campana` DISABLE KEYS */;
+INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
+	(1, 'INBOUND', 1, 'activo');
 /*!40000 ALTER TABLE `ca_campana` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_empresa
@@ -101,6 +109,8 @@ CREATE TABLE IF NOT EXISTS `ca_empresa` (
 -- Volcando datos para la tabla calidad.ca_empresa: ~0 rows (aproximadamente)
 DELETE FROM `ca_empresa`;
 /*!40000 ALTER TABLE `ca_empresa` DISABLE KEYS */;
+INSERT INTO `ca_empresa` (`id`, `empresa`, `imagen`, `estado`) VALUES
+	(1, 'CRUZ VERDE', '', 'activo');
 /*!40000 ALTER TABLE `ca_empresa` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_error
@@ -114,9 +124,13 @@ CREATE TABLE IF NOT EXISTS `ca_error` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_error: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_error: ~2 rows (aproximadamente)
 DELETE FROM `ca_error`;
 /*!40000 ALTER TABLE `ca_error` DISABLE KEYS */;
+INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
+	(1, 1, '1', 'por', 'activo');
+INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
+	(2, 1, '4', 'sum', 'activo');
 /*!40000 ALTER TABLE `ca_error` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_item
@@ -131,9 +145,13 @@ CREATE TABLE IF NOT EXISTS `ca_item` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_item: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_item: ~2 rows (aproximadamente)
 DELETE FROM `ca_item`;
 /*!40000 ALTER TABLE `ca_item` DISABLE KEYS */;
+INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
+	(1, 1, 1, 'NO SIGUE LA ETIQUETA TELEFÓNICA', '100', 'activo');
+INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
+	(2, 1, 2, 'Cuelga la llamada', '100', 'activo');
 /*!40000 ALTER TABLE `ca_item` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_matriz
@@ -149,6 +167,8 @@ CREATE TABLE IF NOT EXISTS `ca_matriz` (
 -- Volcando datos para la tabla calidad.ca_matriz: ~0 rows (aproximadamente)
 DELETE FROM `ca_matriz`;
 /*!40000 ALTER TABLE `ca_matriz` DISABLE KEYS */;
+INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
+	(1, 1, 1, 'activo');
 /*!40000 ALTER TABLE `ca_matriz` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_monitoreo_asesor
@@ -173,6 +193,8 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor` (
 -- Volcando datos para la tabla calidad.ca_monitoreo_asesor: ~0 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` DISABLE KEYS */;
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(1, 1, 1, 2, '2018-09-03', '12:00:00', 1, '1234567890', 'Pruebas', 2, 2, '2018-09-03 12:01:09', '2018-09-03 12:01:09');
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_monitoreo_asesor_detallado
@@ -188,9 +210,13 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor_detallado` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~2 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor_detallado`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` DISABLE KEYS */;
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(1, 1, 1, 1, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2, 1, 2, 2, 0, 0, 2);
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_punto_entrenamiento
@@ -202,9 +228,13 @@ CREATE TABLE IF NOT EXISTS `ca_punto_entrenamiento` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~2 rows (aproximadamente)
 DELETE FROM `ca_punto_entrenamiento`;
 /*!40000 ALTER TABLE `ca_punto_entrenamiento` DISABLE KEYS */;
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(1, 1, 'No sigue el guión de bienvenida');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(2, 2, 'No tiene manejo de llamada');
 /*!40000 ALTER TABLE `ca_punto_entrenamiento` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_solucion
@@ -238,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `ca_tipificacion` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_tipificacion: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_tipificacion: ~2 rows (aproximadamente)
 DELETE FROM `ca_tipificacion`;
 /*!40000 ALTER TABLE `ca_tipificacion` DISABLE KEYS */;
 INSERT INTO `ca_tipificacion` (`id`, `nombre`, `estado`) VALUES
@@ -253,29 +283,23 @@ INSERT INTO `ca_tipificacion` (`id`, `nombre`, `estado`) VALUES
 CREATE TABLE IF NOT EXISTS `pa_perfiles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `perfil` varchar(100) NOT NULL,
-  `descripcion` text,
-  `usuario_registro` int(11) NOT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_modificacion` int(11) NOT NULL,
-  `fecha_modificacion` datetime NOT NULL,
-  `ip_registro` varchar(30) NOT NULL,
-  `estado` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `perfil_UNIQUE` (`perfil`)
+  KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.pa_perfiles: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.pa_perfiles: ~5 rows (aproximadamente)
 DELETE FROM `pa_perfiles`;
 /*!40000 ALTER TABLE `pa_perfiles` DISABLE KEYS */;
-INSERT INTO `pa_perfiles` (`id`, `perfil`, `descripcion`, `usuario_registro`, `fecha_registro`, `usuario_modificacion`, `fecha_modificacion`, `ip_registro`, `estado`) VALUES
-	(1, 'Super Administrador', 'Super Administrador', 1, '2017-05-09 09:11:15', 1, '2017-05-09 14:11:15', '200.119.116.109', 'activo');
-INSERT INTO `pa_perfiles` (`id`, `perfil`, `descripcion`, `usuario_registro`, `fecha_registro`, `usuario_modificacion`, `fecha_modificacion`, `ip_registro`, `estado`) VALUES
-	(2, 'Administrador', 'Administrador', 1, '2017-05-11 11:26:59', 1, '2017-05-11 16:26:59', '200.119.116.109', 'activo');
-INSERT INTO `pa_perfiles` (`id`, `perfil`, `descripcion`, `usuario_registro`, `fecha_registro`, `usuario_modificacion`, `fecha_modificacion`, `ip_registro`, `estado`) VALUES
-	(3, 'Analista', 'Analista', 1, '2017-05-11 11:59:23', 1, '2017-05-11 16:59:23', '200.119.116.109', 'activo');
-INSERT INTO `pa_perfiles` (`id`, `perfil`, `descripcion`, `usuario_registro`, `fecha_registro`, `usuario_modificacion`, `fecha_modificacion`, `ip_registro`, `estado`) VALUES
-	(4, 'Lider', 'Lider', 1, '2017-05-11 12:00:24', 1, '2017-05-11 17:00:24', '200.119.116.109', 'activo');
+INSERT INTO `pa_perfiles` (`id`, `perfil`) VALUES
+	(1, 'Super Administrador');
+INSERT INTO `pa_perfiles` (`id`, `perfil`) VALUES
+	(2, 'Administrador');
+INSERT INTO `pa_perfiles` (`id`, `perfil`) VALUES
+	(3, 'Analista');
+INSERT INTO `pa_perfiles` (`id`, `perfil`) VALUES
+	(4, 'Lider');
+INSERT INTO `pa_perfiles` (`id`, `perfil`) VALUES
+	(5, 'Creacion Usuario');
 /*!40000 ALTER TABLE `pa_perfiles` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.pa_tipo_error
@@ -321,68 +345,55 @@ INSERT INTO `pa_tipo_identificacion` (`id`, `tipo_identificacion`, `estado`) VAL
 	(3, 'NIT.', 'activo');
 /*!40000 ALTER TABLE `pa_tipo_identificacion` ENABLE KEYS */;
 
--- Volcando estructura para tabla calidad.re_personas
-CREATE TABLE IF NOT EXISTS `re_personas` (
+-- Volcando estructura para tabla calidad.re_usaurio_ec
+CREATE TABLE IF NOT EXISTS `re_usaurio_ec` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tipo_identificacion` int(11) NOT NULL,
-  `identificacion` varchar(30) NOT NULL,
-  `nombre` varchar(250) NOT NULL,
-  `apellido1` varchar(250) NOT NULL,
-  `apellido2` varchar(250) DEFAULT NULL,
-  `fecha_nacimiento` date NOT NULL,
-  `email` varchar(100) DEFAULT NULL,
   `id_usuario` int(11) NOT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_registro` int(11) NOT NULL,
-  `fecha_modificacion` datetime NOT NULL,
-  `usuario_modificacion` int(11) NOT NULL,
-  `ip_registro` varchar(30) NOT NULL,
-  `estado` varchar(30) NOT NULL,
+  `id_perfil` int(11) NOT NULL,
+  `id_empresa` int(11) NOT NULL,
+  `id_campana` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `identificacion_UNIQUE` (`identificacion`)
+  KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.re_personas: ~4 rows (aproximadamente)
-DELETE FROM `re_personas`;
-/*!40000 ALTER TABLE `re_personas` DISABLE KEYS */;
-INSERT INTO `re_personas` (`id`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `fecha_nacimiento`, `email`, `id_usuario`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(1, 1, '999999999', 'Super', 'Administrador', '', '0000-00-00', 'admin@admin.com', 1, '2017-05-09 10:07:41', 1, '2017-05-09 15:07:41', 1, '200.119.116.109', 'activo');
-INSERT INTO `re_personas` (`id`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `fecha_nacimiento`, `email`, `id_usuario`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(2, 1, '888888888', 'Administrador', 'Aplicacion', '', '0000-00-00', 'admin@logisticscm.com', 2, '2017-05-11 12:28:04', 1, '2017-05-11 17:28:04', 1, '200.119.116.109', 'activo');
-INSERT INTO `re_personas` (`id`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `fecha_nacimiento`, `email`, `id_usuario`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(3, 1, '777777777', 'Analista', 'Campana', '', '0000-00-00', 'coordinador@logisticscm.com', 3, '2017-05-11 12:28:04', 1, '2017-05-11 17:28:04', 1, '200.119.116.109', 'activo');
-INSERT INTO `re_personas` (`id`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `fecha_nacimiento`, `email`, `id_usuario`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(4, 1, '666666666', 'Lider', 'Campana', '', '0000-00-00', 'supervisor@logisticscm.com', 4, '2017-05-11 12:28:04', 1, '2017-05-11 17:28:04', 1, '200.119.116.109', 'activo');
-/*!40000 ALTER TABLE `re_personas` ENABLE KEYS */;
+-- Volcando datos para la tabla calidad.re_usaurio_ec: ~0 rows (aproximadamente)
+DELETE FROM `re_usaurio_ec`;
+/*!40000 ALTER TABLE `re_usaurio_ec` DISABLE KEYS */;
+/*!40000 ALTER TABLE `re_usaurio_ec` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.re_usuarios
 CREATE TABLE IF NOT EXISTS `re_usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(100) NOT NULL,
   `password` varchar(250) NOT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_registro` int(11) NOT NULL,
-  `fecha_modificacion` datetime NOT NULL,
-  `usuario_modificacion` int(11) NOT NULL,
-  `ip_registro` varchar(30) NOT NULL,
+  `tipo_identificacion` int(11) NOT NULL,
+  `identificacion` varchar(30) NOT NULL,
+  `nombre` varchar(250) NOT NULL,
+  `apellido1` varchar(250) NOT NULL,
+  `apellido2` varchar(250) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
   `estado` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `usuario_UNIQUE` (`usuario`)
+  KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Usuarios del sistema';
 
--- Volcando datos para la tabla calidad.re_usuarios: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.re_usuarios: ~7 rows (aproximadamente)
 DELETE FROM `re_usuarios`;
 /*!40000 ALTER TABLE `re_usuarios` DISABLE KEYS */;
-INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(1, 'admin', '8e34e1c6a02283d62e5d1b95986eeefbf5be6a8d', '2017-05-09 10:23:17', 1, '2017-05-09 15:23:17', 1, '200.119.116.109', 'activo');
-INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(2, 'administrador', '9dbf7c1488382487931d10235fc84a74bff5d2f4', '2017-05-11 12:18:46', 1, '2017-05-11 17:18:46', 1, '200.119.116.109', 'activo');
-INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(3, 'analista', '016442bc8a8d2e20bfd97fed8797d4d154811f8e', '2017-05-11 12:19:15', 1, '2017-05-11 17:19:15', 1, '200.119.116.109', 'activo');
-INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(4, 'lider', 'a374ab25015014aa0f2a40745ff9a82549b11149', '2017-05-11 12:19:56', 1, '2017-05-11 17:19:56', 1, '200.119.116.109', 'activo');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(1, 'admin', '8e34e1c6a02283d62e5d1b95986eeefbf5be6a8d', 1, '123456789', 'Superadministrador', 'Aplicacion', 'Interactivo', 'admin@interactivo.com.co', 'activo');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(2, 'administrador', '9dbf7c1488382487931d10235fc84a74bff5d2f4', 1, '987654321', 'Administrador', 'Aplicacion', 'Interactivo', 'administrador@interactivo.com.co', 'activo');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(3, 'analista', '016442bc8a8d2e20bfd97fed8797d4d154811f8e', 1, '147258369', 'Analista', 'Aplicacion', 'Interactivo', 'analista@interactivo.com.co', 'activo');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(4, 'lider', 'a374ab25015014aa0f2a40745ff9a82549b11149', 1, '963852741', 'Lider', 'Aplicacion', 'Interactivo', 'lider@interactivo.com.co', 'activo');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(5, 'usuarios', 'e6c6f0bd956e9147cc453a9708f4926f8e60e477', 1, '321654987', 'Creador', 'Usuarios', 'Interactivo', 'usuarios@interactivo.com.co', 'activo');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(6, 'jcortes', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 1, '1023875261', 'Johan', 'Cortes', 'Hoyos', 'joco1204@gmail.com', 'activo');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(7, 'amoyano', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 1, '123456789', 'Angie', 'Moyano', 'Yaya', 'angie.moyano@interactivo.com.co', 'activo');
 /*!40000 ALTER TABLE `re_usuarios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.re_usuario_perfil
@@ -390,47 +401,28 @@ CREATE TABLE IF NOT EXISTS `re_usuario_perfil` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_usuario` int(11) NOT NULL,
   `id_perfil` int(11) NOT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_registro` int(11) NOT NULL,
-  `fecha_modificacion` datetime NOT NULL,
-  `usuario_modificacion` int(11) NOT NULL,
-  `ip_registro` varchar(30) NOT NULL,
-  `estado` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `id_perfil_UNIQUE` (`id_perfil`),
-  UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`)
+  KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.re_usuario_perfil: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.re_usuario_perfil: ~7 rows (aproximadamente)
 DELETE FROM `re_usuario_perfil`;
 /*!40000 ALTER TABLE `re_usuario_perfil` DISABLE KEYS */;
-INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(1, 1, 1, '2017-05-09 10:20:58', 1, '2017-05-09 15:20:58', 1, '200.119.116.109', 'activo');
-INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(2, 2, 2, '2017-05-11 12:22:07', 1, '2017-05-09 15:20:58', 1, '200.119.116.109', 'activo');
-INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(3, 3, 3, '2017-05-11 12:22:34', 1, '2017-05-11 17:22:34', 1, '200.119.116.109', 'activo');
-INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`, `fecha_registro`, `usuario_registro`, `fecha_modificacion`, `usuario_modificacion`, `ip_registro`, `estado`) VALUES
-	(4, 4, 4, '2017-05-11 12:22:59', 1, '2017-05-11 17:22:59', 1, '200.119.116.109', 'activo');
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(1, 1, 1);
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(2, 2, 2);
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(3, 3, 3);
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(4, 4, 4);
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(5, 5, 5);
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(7, 6, 5);
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(8, 7, 3);
 /*!40000 ALTER TABLE `re_usuario_perfil` ENABLE KEYS */;
-
--- Volcando estructura para tabla calidad.session
-CREATE TABLE IF NOT EXISTS `session` (
-  `id_session` int(11) NOT NULL AUTO_INCREMENT,
-  `usuario_id` int(11) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `fecha_inicio` datetime NOT NULL,
-  `fecha_fin` datetime NOT NULL,
-  `ip_registro` varchar(30) NOT NULL,
-  `estado` int(11) NOT NULL,
-  PRIMARY KEY (`id_session`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Volcando datos para la tabla calidad.session: ~0 rows (aproximadamente)
-DELETE FROM `session`;
-/*!40000 ALTER TABLE `session` DISABLE KEYS */;
-/*!40000 ALTER TABLE `session` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
