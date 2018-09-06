@@ -115,20 +115,17 @@ class Usuario{
 		return $this->business->return;
 	}
 
-	public function usuario($data){
+	public function modificar_perfil($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
+		$password = sha1($data->cambiar_contrasena);
 		//Valida conexión a base de datos
 		if($conn){
-			$arrayTabla = array();
-			$query  = "";
+			$query  = "UPDATE re_usuarios SET password = '".$password."' WHERE id = '".$data->id_usuario."';";
 			$result = $conn->query($query);
 			if($result){
-				while($row = $result->fetch(PDO::FETCH_OBJ)){
-					array_push($arrayTabla, $row);
-				}
 				$this->business->return->bool = true;
-				$this->business->return->msg = json_encode($arrayTabla);
+				$this->business->return->msg = 'Perfil de usuario actualizado con éxito';
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';

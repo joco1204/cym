@@ -18,7 +18,6 @@
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Menu Principal</span>
             </a>
-
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <!-- Messages: style can be found in dropdown.less-->
@@ -129,41 +128,100 @@
     pageContent('contenido');
 </script>
 <div id="modal_perfil" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form id="form_perfil">
-            <div class="modal-header bg-blue">
-                <button type="button" class="close" data-dismiss="modal"><span style="color: #fff;">X</span></button>
-                <h4 class="modal-title">PERFIL USUARIO</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col col">
-                        <?php 
-
-                        $session->getSession('id_usaurio');
-                        $session->getSession('usuario');
-                        $session->getSession('id_perfil');
-                        $session->getSession('perfil');
-                        $session->getSession('nombre');
-                        $session->getSession('apellido1');
-                        $session->getSession('apellido2');
-                        $session->getSession('tipo_identificacion');
-                        $session->getSession('identificacion');
-                        $session->getSession('email');
-                        $session->getSession('estado');
-                        $session->getSession('token');
-
-                        ?>
-                        
+            <form id="form_perfil" autocomplete="off">
+                <div class="modal-header bg-blue">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center">PERFIL DE USUARIO</h4>
+                    <input type="hidden" name="action" id="action" value="modificar_perfil">
+                    <input type="hidden" name="id_usuario" id="id_usuario" value="<?php echo $session->getSession('id_usaurio'); ?>">
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="nombres">NOMBRE(S):</label>
+                                <input type="text" id="nombres" name="nombres" class="form-control" value="<?php echo $session->getSession('nombre'); ?>" disabled="">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="apellidos1">APELLIDO 1:</label>
+                                <input type="text" id="apellidos1" name="apellidos1" class="form-control" value="<?php echo $session->getSession('apellido1'); ?>"  disabled="">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="apellidos2">APELLIDO 2:</label>
+                                <input type="text" id="apellidos2" name="apellidos2" class="form-control" value="<?php echo $session->getSession('apellido2'); ?>"  disabled="">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="tipo_identificacion">TIPO IDENTIFICAICON:</label>
+                                <input type="text" id="tipo_identificacion" name="tipo_identificacion" class="form-control" value="<?php echo $session->getSession('tipo_identificacion'); ?>"  disabled="">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="identificacion">NÚMERO DE IDENTIFICACIÓN:</label>
+                                <input type="text" id="identificacion" name="identificacion" class="form-control" value="<?php echo $session->getSession('identificacion'); ?>"  disabled="">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="email">EMAIL:</label>
+                                <input type="email" id="email" name="email" class="form-control" value="<?php echo $session->getSession('email'); ?>"  disabled="">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col col-md-6">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="usaurio">USUARIO:</label>
+                                <input type="text" id="usaurio" name="usaurio" class="form-control" value="<?php echo $session->getSession('usuario'); ?>"  disabled="">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="perfil">PERFIL USAURIO:</label>
+                                <input type="text" id="perfil" name="perfil" class="form-control" required="" data-error="Debe ingresar perfil" value="<?php echo $session->getSession('perfil'); ?>"  disabled="">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-6">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="cambiar_contrasena">CAMBIAR CONTRASEÑA:</label>
+                                <input type="password" id="cambiar_contrasena" name="cambiar_contrasena" class="form-control">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="repetir_cambiar_contrasena">REPETIR CONTRASEÑA:</label>
+                                <input type="password" id="repetir_cambiar_contrasena" name="repetir_cambiar_contrasena" class="form-control">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-success btn-sm" >GUARDAR</button>
-                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">CERRAR</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
             </form>
         </div>
     </div>

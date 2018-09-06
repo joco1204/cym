@@ -31,7 +31,7 @@ $(function(){
 			id_asesor: $('#id_asesor').val(),
 			id_agenda: $('#id_agenda').val(),
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -108,7 +108,7 @@ $(function(){
 			id_empresa: $('#id_empresa').val(),
 			id_campana: $('#id_campana').val(),
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -120,7 +120,7 @@ $(function(){
 						action: 'tipo_error',
 						id_matriz: row.id,
 					},
-					dataType: 'json',
+					dataType: 'json'
 				}).done(function(result2){
 					if(result2.bool){
 						var html = '';
@@ -259,7 +259,7 @@ $(function(){
 				type: 'post',
 				url: '../controller/ctrmonitoreo.php',
 				data: data,
-				dataType: 'json',
+				dataType: 'json'
 			}).done(function(result){
 				if(result.bool){
 					var monitoreo = result.msg;

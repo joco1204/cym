@@ -7,7 +7,7 @@ $(function(){
 			action: 'info_asesor',
 			id_asesor: $('#id_asesor').val(),
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -30,7 +30,7 @@ $(function(){
 			id_campana: $('#id_campana').val(),
 			id_asesor: $('#id_asesor').val()
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -51,7 +51,7 @@ $(function(){
 			id_campana: $('#id_campana').val(),
 			id_asesor: $('#id_asesor').val()
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var html = '';
@@ -193,7 +193,7 @@ function addFechaMonitoreo(){
 						id_asesor: $('#id_asesor').val(),
 						fecha_monitoreo: $('#fecha_'+count).val()
 					},
-					dataType: 'json',
+					dataType: 'json'
 				}).done(function(result){
 					if(result.bool){
 						swal({

@@ -7,7 +7,7 @@ $(function(){
 		data: {
 			action: 'tabla_empresas',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -46,7 +46,7 @@ $(function(){
 						action: 'campanas',
 						id_empresa: row.id
 					},
-					dataType: 'json',
+					dataType: 'json'
 				}).done(function(result1){
 					var data1 = $.parseJSON(result1.msg);
 					var html1 = '';
@@ -163,7 +163,7 @@ $(function(){
 						type: 'post',
 						url: '../controller/ctrempresas.php',
 						data: data,
-						dataType: 'json',
+						dataType: 'json'
 					}).done(function(result){
 						if(result.bool){
 							$('#crear_empresa').modal().hide();
@@ -206,7 +206,7 @@ $(function(){
 			type: 'post',
 			url: '../controller/ctrempresas.php',
 			data: data,
-			dataType: 'json',
+			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
 				$('#crear_empresa').modal().hide();

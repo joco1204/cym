@@ -1,4 +1,9 @@
 $(function(){
+	$.ajax({
+
+	}).done(function(result){
+
+	});
 
 	$.ajax({
 		type: 'post', 
@@ -6,7 +11,7 @@ $(function(){
 		data: {
 			action: 'empresa_analista',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);

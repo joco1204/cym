@@ -7,7 +7,7 @@ $(function(){
 		data: {
 			action: 'tabla_campanas',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -60,7 +60,7 @@ $(function(){
 		data: {
 			action: 'empresas',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -83,7 +83,7 @@ $(function(){
 			type: 'post',
 			url: '../controller/ctrcampanas.php',
 			data: data,
-			dataType: 'json',
+			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
 				$('#crear_campana').modal().hide();

@@ -383,7 +383,7 @@ DELETE FROM `re_usuarios`;
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(1, 'admin', '8e34e1c6a02283d62e5d1b95986eeefbf5be6a8d', 1, '123456789', 'Superadministrador', 'Aplicacion', 'Interactivo', 'admin@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
-	(2, 'administrador', '9dbf7c1488382487931d10235fc84a74bff5d2f4', 1, '987654321', 'Administrador', 'Aplicacion', 'Interactivo', 'administrador@interactivo.com.co', 'activo');
+	(2, 'administrador', '171b04070233d26065b589d4f2b0f3c1b8d4bddf', 1, '987654321', 'Administrador', 'Aplicacion', 'Interactivo', 'administrador@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(3, 'analista', '016442bc8a8d2e20bfd97fed8797d4d154811f8e', 1, '147258369', 'Analista', 'Aplicacion', 'Interactivo', 'analista@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES

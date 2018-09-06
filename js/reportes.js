@@ -7,7 +7,7 @@ $(function(){
 		data: {
 			action: 'empresas',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -31,7 +31,7 @@ $(function(){
 				action: 'campanas',
 				id_empresa: $(this).val(),
 			},
-			dataType: 'json',
+			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
 				var data = $.parseJSON(result.msg);

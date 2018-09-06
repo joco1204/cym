@@ -8,7 +8,7 @@ $(function(){
 			id_empresa: $('#id_empresa').val(),
 			id_campana: $('#id_campana').val(),
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -30,7 +30,7 @@ $(function(){
 			id_empresa: $('#id_empresa').val(),
 			id_campana: $('#id_campana').val(),
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);

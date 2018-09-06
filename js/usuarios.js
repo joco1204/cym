@@ -7,7 +7,7 @@ $(function(){
 		data: {
 			action: 'tabla_usuarios',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -78,7 +78,7 @@ $(function(){
 		data: {
 			action: 'tipo_identificacion',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -99,7 +99,7 @@ $(function(){
 		data: {
 			action: 'perfil',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -127,7 +127,7 @@ $(function(){
 				data: {
 					action: 'empresas',
 				},
-				dataType: 'json',
+				dataType: 'json'
 			}).done(function(result){
 				if(result.bool){
 					var data = $.parseJSON(result.msg);
@@ -151,7 +151,7 @@ $(function(){
 						action: 'campanas',
 						id_empresa: $(this).val(),
 					},
-					dataType: 'json',
+					dataType: 'json'
 				}).done(function(result){
 					if(result.bool){
 						var data = $.parseJSON(result.msg);
@@ -181,7 +181,7 @@ $(function(){
 			type: 'post',
 			url: '../controller/ctrusuarios.php',
 			data: data,
-			dataType: 'json',
+			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
 				$('#modal_usuario').modal().hide();

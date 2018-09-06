@@ -7,7 +7,7 @@ $(function(){
 		data: {
 			action: 'empresas',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
@@ -31,7 +31,7 @@ $(function(){
 				action: 'campanas',
 				id_empresa: $(this).val(),
 			},
-			dataType: 'json',
+			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
 				var data = $.parseJSON(result.msg);
@@ -55,7 +55,7 @@ $(function(){
 			type: 'post',
 			url: '../controller/ctrmatriz.php',
 			data: data,
-			dataType: 'json',
+			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
 				swal({
@@ -154,7 +154,7 @@ function addError(){
 		data: {
 			action: 'tipo_error',
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);

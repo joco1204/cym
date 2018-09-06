@@ -7,7 +7,7 @@ $(function(){
 			action: 'campanas_analista',
 			id_empresa: $('#id_empresa').val(),
 		},
-		dataType: 'json',
+		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
