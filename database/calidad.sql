@@ -35,6 +35,8 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 	(1, 1, 1, 1, '2018-09-03', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(2, 1, 1, 1, '2018-09-14', 0);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(3, 1, 1, 5, '2018-09-07', 1);
 /*!40000 ALTER TABLE `ca_agenda_monitoreo` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_asesores
@@ -55,6 +57,16 @@ DELETE FROM `ca_asesores`;
 /*!40000 ALTER TABLE `ca_asesores` DISABLE KEYS */;
 INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
 	(1, 1, 1, '1023875261', 'Johan', 'Cortes', 'activo');
+INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
+	(2, 1, 1, '123456789', 'Pepe', 'Mojica', 'activo');
+INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
+	(3, 1, 1, '987654321', 'Juan', 'Gomez', 'activo');
+INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
+	(4, 1, 1, '147852369', 'Maria', 'Martinez', 'activo');
+INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
+	(5, 1, 1, '1019017114', 'Alexandra', 'Hernandez', 'activo');
+INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
+	(6, 1, 1, '1013645455', 'Angie', 'Moyano', 'activo');
 /*!40000 ALTER TABLE `ca_asesores` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_audio
@@ -195,6 +207,8 @@ DELETE FROM `ca_monitoreo_asesor`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` DISABLE KEYS */;
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(1, 1, 1, 2, '2018-09-03', '12:00:00', 1, '1234567890', 'Pruebas', 2, 2, '2018-09-03 12:01:09', '2018-09-03 12:01:09');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(2, 3, 5, 0, '2018-09-07', '10:39:00', 1, '123465798', 'Pruebas', 1, 1, '2018-09-07 10:39:41', '2018-09-07 10:39:41');
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_monitoreo_asesor_detallado
@@ -217,6 +231,10 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 	(1, 1, 1, 1, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(2, 1, 2, 2, 0, 0, 2);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(3, 2, 1, 1, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4, 2, 2, 2, 0, 0, 2);
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_punto_entrenamiento
@@ -394,6 +412,8 @@ INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `
 	(6, 'jcortes', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 1, '1023875261', 'Johan', 'Cortes', 'Hoyos', 'joco1204@gmail.com', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(7, 'amoyano', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 1, '123456789', 'Angie', 'Moyano', 'Yaya', 'angie.moyano@interactivo.com.co', 'activo');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(8, 'ahernandez', 'bfdcb30a11c56b413a51a6191c516ed819b33e46', 1, '1019017114', 'Alexandra', 'Hernandez', 'Lopez', 'alexandra.hernandez@interactivo.com.co', 'activo');
 /*!40000 ALTER TABLE `re_usuarios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.re_usuario_perfil
@@ -422,6 +442,8 @@ INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(7, 6, 5);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(8, 7, 3);
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(9, 8, 3);
 /*!40000 ALTER TABLE `re_usuario_perfil` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
