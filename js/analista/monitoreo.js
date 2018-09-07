@@ -263,31 +263,17 @@ $(function(){
 			}).done(function(result){
 				if(result.bool){
 					var monitoreo = result.msg;
-					if(monitoreo){
-						$.ajax({
-							type: 'post',
-							url: '../controller/ctrmonitoreo.php',
-							data: {
-								action: 'total_monitoreo'
-								id_monitoreo: monitoreo
-							},
-							dataType: 'json'
-						}).done(function(result2){
-							if(result2.bool){
-								swal({
-									title: "¡Correcto!",
-									text: result2.msg,
-									type: 'success',
-									showCancelButton: false,
-									confirmButtonClass: "btn-primary",
-									confirmButtonText: "Aceptar",
-									closeOnConfirm: true,
-								},function(rest2){
-									pageContent('analista/agenda_monitoreo','id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val());
-								});
-							} else {
-								console.log('Error: id monitoreo indefinido');
-							}
+					if (monitoreo != ''){
+						swal({
+							title: "¡Correcto!",
+							text: "Monitoreo guardado con exito",
+							type: 'success',
+							showCancelButton: false,
+							confirmButtonClass: "btn-primary",
+							confirmButtonText: "Aceptar",
+							closeOnConfirm: true,
+						},function(rest2){
+							pageContent('analista/agenda_monitoreo','id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val());
 						});
 					} else {
 						console.log('Error: id monitoreo indefinido');
@@ -296,7 +282,6 @@ $(function(){
 					console.log('Error: '+result.msg);
 				}
 			});
-
 		});
 	});
 
