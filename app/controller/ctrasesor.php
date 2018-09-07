@@ -3,6 +3,7 @@ include '../../config/business.php';
 $business = new Business();
 $asesor = New Asesor();
 $post = $business->post;
+$files = $business->files;
 //Validate the existence of the action
 if(isset($post->action)){
 	switch ($post->action){
@@ -14,6 +15,16 @@ if(isset($post->action)){
 			$result = $asesor->crear_asesor($post);
 			$business->return = $result;
 		break;
+		case 'cargar_asesores':
+			$file = ((object) $files->file);
+			$result = $asesor->cargar_asesores($file);
+			$business->return = $result;
+		break;
+		case 'crear_asesor':
+			$result = $asesor->crear_asesor($post);
+			$business->return = $result;
+		break;
+
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

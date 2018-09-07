@@ -52,5 +52,52 @@ class Asesor{
 		}
 		return $this->business->return;
 	}
+
+
+	public function cargar_asesores($file){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		if($conn){
+			$fname = $file->name;
+			$ext = explode(".",$fname);
+			if(strtolower(end($ext)) == "csv" || strtolower(end($ext)) == "txt"){
+				$file_tmp_name = $file->tmp_name;
+				$handle = fopen($file_tmp_name, "r");
+				while($data = fgetcsv($handle, 1000, ";")){
+					$query_existencia = "SELECT identificacion FROM ca_asesores WHERE identificacion = '".$data[2]."';";
+					$result_existencia = $conn->query($query_existencia);
+					if($result_existencia){
+						$num_asesor = $result_existencia->rowCount();
+						if($num_asesor == '0'){
+							$query  = "INSERT INTO ca_asesores (id_empresa, id_campana, identificacion, nombres, apellidos, estado) VALUES ( ";
+							$query .= "'".$data[0]."', ";
+							$query .= "'".$data[1]."', ";
+							$query .= "'".$data[2]."', ";
+							$query .= "'".$data[3]."', ";
+							$query .= "'".$data[4]."', ";
+							$query .= "'".$data[5]."'); ";
+							$result = $conn->query($query);
+						} else {
+							$query  = "UPDATE ca_asesores SET id_empresa = '".$data[0]."', id_campana = '".$data[1]."', nombres = '".$data[3]."', apellidos = '".$data[4]."', estado = '".$data[5]."' WHERE identificacion = '".$data[2]."'; ";
+							$result = $conn->query($query);
+						}
+					} else {
+						$this->business->return->bool = false;
+						$this->business->return->msg = 'Error query';
+					}
+				}
+				fclose($handle);
+				$this->business->return->bool = true;
+				$this->business->return->msg = "Se cargó los asesores con éxito";
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'La extensión del archivo debe ser csv o tx';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
 }
 ?>

@@ -42,6 +42,10 @@ if(isset($post->action)){
 			$result = $monitoreo->inserta_monitoreo($post);
 			$business->return = $result;
 		break;
+		case 'total_monitoreo':
+			$result = $monitoreo->total_monitoreo($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

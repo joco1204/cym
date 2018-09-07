@@ -271,6 +271,30 @@ class Monitoreo{
 		return $this->business->return;
 	}
 
+	public function total_monitoreo($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "";
+			$result = $conn->query($query);
+			if($result){
+				
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+
+	}
+
 	
 }
 ?>

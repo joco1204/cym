@@ -28,7 +28,9 @@ class Business{
 		$this->session = new Session();
 		$this->post = ((object) $_POST);
 		$this->get = ((object) $_GET);
+		$this->files = ((object) $_FILES);
 		$this->db = 'calidad';
+		$this->date = date('Y-m-d');
  	}
 } 
 ?>

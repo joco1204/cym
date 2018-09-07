@@ -35,8 +35,78 @@ $(function(){
 				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.campana+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td><button type="button" class="btn btn-success btn-xs">Modificar</button></td>';
+				html += '<td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modifica_asesor_'+row.id+'">Modificar</button></td>';
 				html += '</tr>';
+
+				html += '<div id="modifica_asesor_'+row.id+'" class="modal fade" role="dialog" >';
+				html += '<div class="modal-dialog modal-lg">';
+				html += '<div class="modal-content">';
+				html += '<form id="form_modifica_asesor" autocomplete="off">';
+				html += '<div class="modal-header bg-blue">';
+				html += '<button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>';
+				html += '<h4 class="modal-title">MODIFICAR ASESOR</h4>';
+				html += '<input type="hidden" id="action" name="action" value="modificar_asesor">';
+				html += '</div>';
+				html += '<div class="modal-body">';
+				html += '<div class="row">';
+				html += '<div class="col col-md-4">';
+				html += '<div class="form-group has-feedback">';
+				html += '<label class="control-label" for="empresa">EMPRESA:</label>';
+				html += '<select class="form-control" id="empresa" name="empresa" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
+				html += '<div class="help-block with-errors"></div>';
+				html += '</div>';
+				html += '</div>';
+				html += '<div class="col col-md-4">';
+				html += '<div class="form-group has-feedback">';
+				html += '<label class="control-label" for="campana">CAMPAÑA:</label>';
+				html += '<select class="form-control" id="campana" name="campana" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+				html += '<div class="help-block with-errors"></div>';
+				html += '</div>';
+				html += '</div>';
+				html += '<div class="col col-md-4">';
+				html += '<div class="form-group has-feedback">';
+				html += '<label class="control-label" for="identificacion">NÚMERO DE IDENTIFICACION:</label>';
+				html += '<input type="text" id="identificacion" name="identificacion" class="form-control" required="" data-error="Debe ingresar número de indentificación" value="'+row.identificacion+'">';
+				html += '<div class="help-block with-errors"></div>';
+				html += '</div>';
+				html += '</div>';
+				html += '</div>';
+				html += '<div class="row">';
+				html += '<div class="col col-md-6">';
+				html += '<div class="form-group has-feedback">';
+				html += '<label class="control-label" for="nombres">NOMBRE(S):</label>';
+				html += '<input type="text" id="nombres" name="nombres" class="form-control" required="" data-error="Debe ingresar nombre(s)" value="'+row.nombres+'">';
+				html += '<div class="help-block with-errors"></div>';
+				html += '</div>';
+				html += '</div>';
+				html += '<div class="col col-md-6">';
+				html += '<div class="form-group has-feedback">';
+				html += '<label class="control-label" for="apellidos">APELLIDO(S):</label>';
+				html += '<input type="text" id="apellidos" name="apellidos" class="form-control" required="" data-error="Debe ingresar apellidos(s)" value="'+row.apellidos+'">';
+				html += '<div class="help-block with-errors"></div>';
+				html += '</div>';
+				html += '</div>';
+				html += '</div>';
+
+				html += '<div class="row">';
+				html += '<div class="col col-md-4">';
+				html += '<div class="form-group has-feedback">';
+				html += '<label class="control-label" for="estado">ESTADO:</label>';
+				html += '<select class="form-control" id="estado" name="estado" style="width: 100%" required="" data-error="Debe seleccionar un estado"></select>';
+				html += '<div class="help-block with-errors"></div>';
+				html += '</div>';
+				html += '</div>';
+				html += '</div>';
+
+				html += '</div>';
+				html += '<div class="modal-footer">';
+				html += '<button type="submit" class="btn btn-success btn-sm" >GUARDAR</button>';
+				html += '<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">CERRAR</button>';
+				html += '</div>';
+				html += '</form>';
+				html += '</div>';
+				html += '</div>';
+				html += '</div>';
 			});
 			html += '</tbody>';
 			html += '<tfoot>';
@@ -58,6 +128,8 @@ $(function(){
 				"order": [ 0, "asc" ],
 				"pageLength": 25
 			});
+			$("select").select2();
+
 		} else {
 			console.log('Error: '+result.msg);
 		}
@@ -127,6 +199,41 @@ $(function(){
 				$("#crear_asesor .close").click();
 				swal({
 					title: "Correcto!",
+					text: result.msg,
+					type: 'success',
+					showCancelButton: false,
+					confirmButtonClass: "btn-success",
+					confirmButtonText: "Aceptar",
+					closeOnConfirm: true,
+				},function(){
+					pageContent('administrador/asesores/index');
+				});
+			} else {
+				swal('Error!',result.msg,'error');
+				console.log('Error: '+result.msg);
+			}
+		});
+	});
+
+	//Ajax upload file product
+	$('#cargar_asesores_form').submit(function(e){
+		e.preventDefault();
+		$('#cargar_asesores').modal('toggle');
+		var file = $('#archivo_asespres').prop('files')[0];
+		var data = new FormData();
+		data.append('action', 'cargar_asesores');
+		data.append('file', file);
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrasesor.php',
+			data: data,
+			processData: false,
+			contentType: false,
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				swal({
+					title: "Success!",
 					text: result.msg,
 					type: 'success',
 					showCancelButton: false,
