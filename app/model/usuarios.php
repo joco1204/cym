@@ -15,6 +15,7 @@ class Usuario{
 			$query .= "LEFT JOIN pa_tipo_identificacion AS b ON a.tipo_identificacion = b.id ";
 			$query .= "LEFT JOIN re_usuario_perfil AS c ON a.id = c.id_usuario ";
 			$query .= "LEFT JOIN pa_perfiles AS d ON c.id_perfil = d.id ";
+			$query .= "WHERE d.id <> '1'; ";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -64,7 +65,8 @@ class Usuario{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayData = array();
-			$query  = "SELECT id, perfil FROM pa_perfiles; ";
+			$query  = "SELECT id, perfil FROM pa_perfiles ";
+			$query .= "WHERE id <> '1'; ";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
