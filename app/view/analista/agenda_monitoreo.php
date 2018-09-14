@@ -20,7 +20,6 @@ if($id_asesor == '0'){ ?>
     <input type="hidden" name="mes" id="mes" value="<?= date('m'); ?>">
     <input type="hidden" name="anio" id="anio" value="<?= date('Y'); ?>">
 <?php } ?>
-
 <section class="content-header">
     <h1>AGENDA POR ASESOR</h1>
 </section>
@@ -59,14 +58,12 @@ if($id_asesor == '0'){ ?>
                     </div>
                 </div>
                 <br>
-                <?php if(($fecha_hoy >= $fecha_ini) && ($fecha_hoy <= $fecha_fin)){ ?>
-                    <div class="row">
-                        <div class="col col-lg-12 text-center">
-                            <button type="button" class="btn btn-success" onclick="javascript: addFechaMonitoreo();">Añadir fecha</button> 
-                            <input type="hidden" name="count_fechas" id="count_fechas" value="0">
-                        </div>
+                <div class="row">
+                    <div class="col col-lg-12 text-center">
+                        <button type="button" class="btn btn-success" onclick="javascript: addFechaMonitoreo();">Añadir fecha</button> 
+                        <input type="hidden" name="count_fechas" id="count_fechas" value="0">
                     </div>
-                <?php } ?>
+                </div>
                 <br>
                 <div class="row">
                     <div class="col col-lg-12">
