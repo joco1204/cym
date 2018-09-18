@@ -1,5 +1,9 @@
 <?php
+include '../../../config/session.php';
+$session = new Session();
+$session->start();
 $get = ((object) $_GET);
+
 isset($get->id_empresa) ? $id_empresa = $get->id_empresa : $id_empresa = '0';
 isset($get->id_campana) ? $id_campana = $get->id_campana : $id_campana = '0';
 isset($get->id_asesor) ? $id_asesor = $get->id_asesor : $id_asesor = '0';
@@ -82,8 +86,8 @@ if($id_empresa == '0'){ ?>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <input type="hidden" name="id_analista" id="id_analista" class="form-control" value="">
-                                        <input type="text" name="nombre_analista" id="nombre_analista" class="form-control" value="" readonly="">
+                                        <input type="hidden" name="id_analista" id="id_analista" class="form-control" value="<?php echo $session->getSession('id_usaurio'); ?>">
+                                        <input type="text" name="nombre_analista" id="nombre_analista" class="form-control" value="<?php echo $session->getSession('nombre').' '.$session->getSession('apellido1').' '.$session->getSession('apellido2'); ?>" readonly="">
                                     </div>
                                 </div>
                             </div>

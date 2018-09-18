@@ -1,4 +1,9 @@
 <?php
+include '../../../config/session.php';
+$session = new Session();
+$session->start();
+$get = ((object) $_GET);
+
 $fecha_hoy = date('Y-m-d');
 $fecha_ini = date('Y-m-01');
 $fecha_fin = date('Y-m-08');

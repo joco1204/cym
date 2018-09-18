@@ -40,8 +40,6 @@ $(function(){
 				$('#fechas_llamada').val(row.fecha_monitoreo);
 				$('#cedula_asesor').val(row.identificacion);
 				$('#nombre_asesor').val(row.nombres+" "+row.apellidos);
-				$('#id_analista').val(sessionStorage.getItem('id_usaurio'));
-				$('#nombre_analista').val(sessionStorage.getItem('nombre')+' '+sessionStorage.getItem('apellido1'));
 			});
 		} else {
 			console.log('Error: '+result.msg);

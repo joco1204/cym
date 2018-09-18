@@ -1,7 +1,8 @@
 <?php 
-include '../../../config/session.php'; 
+include '../../../config/session.php';
 $session = new Session();
 $session->start();
+$get = ((object) $_GET);
 
 if(!$session->getSession('token') || $session->getSession('token') == ''){
     $session->destroy();
