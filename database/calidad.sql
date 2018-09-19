@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
--- Host:                         192.168.100.143
--- Versión del servidor:         5.6.37 - MySQL Community Server (GPL)
--- SO del servidor:              Linux
+-- Host:                         localhost
+-- Versión del servidor:         10.1.28-MariaDB - mariadb.org binary distribution
+-- SO del servidor:              Win32
 -- HeidiSQL Versión:             9.5.0.5229
 -- --------------------------------------------------------
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `ca_asesores` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_asesores: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_asesores: ~0 rows (aproximadamente)
 DELETE FROM `ca_asesores`;
 /*!40000 ALTER TABLE `ca_asesores` DISABLE KEYS */;
 INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `ca_audio` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_audio: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_audio: ~2 rows (aproximadamente)
 DELETE FROM `ca_audio`;
 /*!40000 ALTER TABLE `ca_audio` DISABLE KEYS */;
 INSERT INTO `ca_audio` (`id`, `audio`, `estado`) VALUES
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `ca_campana` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_campana: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_campana: ~0 rows (aproximadamente)
 DELETE FROM `ca_campana`;
 /*!40000 ALTER TABLE `ca_campana` DISABLE KEYS */;
 INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `ca_empresa` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_empresa: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_empresa: ~0 rows (aproximadamente)
 DELETE FROM `ca_empresa`;
 /*!40000 ALTER TABLE `ca_empresa` DISABLE KEYS */;
 INSERT INTO `ca_empresa` (`id`, `empresa`, `imagen`, `estado`) VALUES
@@ -396,7 +396,7 @@ CREATE TABLE IF NOT EXISTS `pa_tipo_identificacion` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.pa_tipo_identificacion: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.pa_tipo_identificacion: ~0 rows (aproximadamente)
 DELETE FROM `pa_tipo_identificacion`;
 /*!40000 ALTER TABLE `pa_tipo_identificacion` DISABLE KEYS */;
 INSERT INTO `pa_tipo_identificacion` (`id`, `tipo_identificacion`, `estado`) VALUES
@@ -439,7 +439,7 @@ CREATE TABLE IF NOT EXISTS `re_usuarios` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Usuarios del sistema';
 
--- Volcando datos para la tabla calidad.re_usuarios: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.re_usuarios: ~0 rows (aproximadamente)
 DELETE FROM `re_usuarios`;
 /*!40000 ALTER TABLE `re_usuarios` DISABLE KEYS */;
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
@@ -457,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `re_usuario_perfil` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.re_usuario_perfil: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.re_usuario_perfil: ~0 rows (aproximadamente)
 DELETE FROM `re_usuario_perfil`;
 /*!40000 ALTER TABLE `re_usuario_perfil` DISABLE KEYS */;
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
