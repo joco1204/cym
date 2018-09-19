@@ -46,7 +46,7 @@ if($id_empresa == '0'){ ?>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
                                         <div class="input-group date fechas_monitoreos" data-provide="datepicker" data-date-format="yyyy-mm-dd">
-                                            <input type="text" name="fechas_llamada" id="fechas_llamada" class="form-control" value="">
+                                            <input type="text" name="fechas_llamada" id="fechas_llamada" class="form-control" value="" required="">
                                             <div class="input-group-addon">
                                                 <span class="glyphicon glyphicon-th"></span>
                                             </div>
@@ -68,7 +68,7 @@ if($id_empresa == '0'){ ?>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <input type="time" name="hora_llamada" id="hora_llamada" class="form-control" value="">
+                                        <input type="time" name="hora_llamada" id="hora_llamada" class="form-control" value="" required="">
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@ if($id_empresa == '0'){ ?>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <select name="tipificacion" id="tipificacion" class="form-control"></select>
+                                        <select name="tipificacion" id="tipificacion" class="form-control" required=""></select>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -105,7 +105,7 @@ if($id_empresa == '0'){ ?>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <input type="text" name="id_llamada" id="id_llamada" class="form-control" value="">
+                                        <input type="text" name="id_llamada" id="id_llamada" class="form-control" value="" required="">
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@ if($id_empresa == '0'){ ?>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <select name="solucion" id="solucion" class="form-control"></select>
+                                        <select name="solucion" id="solucion" class="form-control" required=""></select>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -131,7 +131,7 @@ if($id_empresa == '0'){ ?>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <select name="audio" id="audio" class="form-control"></select>
+                                        <select name="audio" id="audio" class="form-control" required=""></select>
                                     </div>
                                 </div>
                             </div>

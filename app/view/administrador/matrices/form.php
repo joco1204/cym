@@ -60,7 +60,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col col-md-12">
-                                    <button type="button" id="add_matriz" class="btn btn-primary btn-sm" onclick="javascript: addError();">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="javascript: addError();">
                                         Tipo de Error <span class="glyphicon glyphicon-plus"></span>
                                     </button>
                                     <input type="hidden" id="tipo_error" name="tipo_error">

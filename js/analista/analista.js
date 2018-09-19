@@ -1,11 +1,5 @@
 $(function(){
 	$.ajax({
-
-	}).done(function(result){
-
-	});
-
-	$.ajax({
 		type: 'post', 
 		url: '../controller/ctrempresas.php',
 		data: {

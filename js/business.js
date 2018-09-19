@@ -40,8 +40,7 @@ var pageContent = function(page, settings){
 	}
 }
 //Remove Session Storage 
-var removeSession = function(){
-
+/*var removeSession = function(){
 	sessionStorage.removeItem('id_usaurio');
 	sessionStorage.removeItem('usuario');
 	sessionStorage.removeItem('id_perfil');
@@ -55,7 +54,7 @@ var removeSession = function(){
 	sessionStorage.removeItem('estado');
 	sessionStorage.removeItem('token');
 	sessionStorage.clear();
-}
+}*/
 //Function to close session of the application
 var logout = function(){
 	$.ajax({
@@ -67,8 +66,8 @@ var logout = function(){
 		dataType: 'json'
 	}).done(function(result){
 		if (result.bool){
-			removeSession();
 			window.location.href = "../../";
+			//removeSession();
 		} else {
 			console.log('Error: '+result.msg)
 		}
@@ -76,10 +75,11 @@ var logout = function(){
 };
 
 //Start timeout
-var timeout;
+/*var timeout;
 function startTimeOut() {
 	timeout = setTimeout(function(){redirectTimeOut()}, 1200000);
 }
+
 function stopTimeOut() {
 	clearTimeout(timeout);
 	timeout = setTimeout('location="../../"', 1200000);
@@ -96,7 +96,7 @@ function stopTimeOut() {
 	sessionStorage.removeItem('estado');
 	sessionStorage.removeItem('token');
 	sessionStorage.clear();
-}
+}*/
 
 //
 function redirectTimeOut(){
@@ -110,7 +110,7 @@ function redirectTimeOut(){
 	}).done(function(result){
 		if (result.bool){
 			window.location.href = "../../";
-			removeSession();	
+			//removeSession();	
 		} else {
 			console.log('Error: '+result.msg)
 		}

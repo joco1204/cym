@@ -56,7 +56,7 @@ $(function(){
 	}).done(function(result){
 		var data = $.parseJSON(result.msg);
 		var html = '';
-		html += '<option>[Seleccione una opcion]</option>';
+		html += '<option></option>';
 		$.each(data, function(i, row){
 			html += '<option value="'+row.id+'">'+row.nombre+'</option>';
 		});
@@ -73,7 +73,7 @@ $(function(){
 	}).done(function(result){
 		var data = $.parseJSON(result.msg);
 		var html = '';
-		html += '<option>[Seleccione una opcion]</option>';
+		html += '<option></option>';
 		$.each(data, function(i, row){
 			html += '<option value="'+row.id+'">'+row.tipos+'</option>';
 		});
@@ -90,7 +90,7 @@ $(function(){
 	}).done(function(result){
 		var data = $.parseJSON(result.msg);
 		var html = '';
-		html += '<option>[Seleccione una opcion]</option>';
+		html += '<option></option>';
 		$.each(data, function(i, row){
 			html += '<option value="'+row.id+'">'+row.audio+'</option>';
 		});
@@ -156,14 +156,14 @@ $(function(){
 									html2 += '<input type="hidden" name="id_num_item_'+j+'_'+k+'" id="id_num_item_'+j+'_'+k+'" value="'+row3.id+'">';
 									html2 += '</div>';
 									html2 += '<div class="col-md-2">';
-									html2 += '<select name="valor_cumplimiento_'+j+'_'+k+'" id="valor_cumplimiento_'+j+'_'+k+'" class="form-control">';
-									html2 += '<option selected="">[Seleccione una opcion]</option>';
+									html2 += '<select name="valor_cumplimiento_'+j+'_'+k+'" id="valor_cumplimiento_'+j+'_'+k+'" class="form-control" required="">';
+									html2 += '<option></option>';
 									html2 += '<option value="1">Cumple</option>';
 									html2 += '<option value="0">No Cumple</option>';
 									html2 += '</select>';
 									html2 += '</div>';
 									html2 += '<div class="col-md-2">';
-									html2 += '<input type="text" name="valor_porcentaje_cumplimiento_'+j+'_'+k+'" id="valor_porcentaje_cumplimiento_'+j+'_'+k+'" class="form-control" value="" readonly="">';
+									html2 += '<input type="text" name="valor_porcentaje_cumplimiento_'+j+'_'+k+'" id="valor_porcentaje_cumplimiento_'+j+'_'+k+'" class="form-control" value="" readonly="" required="">';
 									html2 += '</div>';
 									html2 += '<div class="col-md-4" id="canvas_punto_entrenamiento_'+j+'_'+k+'" style="display: none;">';
 									html2 += '<select name="punto_item_'+j+'_'+k+'" id="punto_item_'+j+'_'+k+'" class="form-control" disabled="" style="width: 100%;"></select>';
@@ -185,7 +185,7 @@ $(function(){
 									}).done(function(result4){
 										var data4 = $.parseJSON(result4.msg);
 										var html3 = '';
-										html3 += '<option selected="">[Seleccione una opcion]</option>';
+										html3 += '<option></option>';
 										$.each(data4, function(k, row4){
 											html3 += '<option value="'+row4.id+'">'+row4.punto_entrenamiento+'</option>';
 										});
@@ -194,15 +194,26 @@ $(function(){
 									html2 += '<script type="text/javascript">';
 
 									html2 += 'if($(\''+cumple_item+'\').val() == "1"){';
+
 									html2 += '$(\''+porcentaje_item+'\').val(\''+row3.valor+'\');';
 									html2 += '$(\''+canvas+'\').hide();';
+									html2 += '$(\''+punto_item+'\').attr("required", "false");';
+									
 									html2 += '} else if($(\''+cumple_item+'\').val() == "0"){';
+									
 									html2 += '$(\''+porcentaje_item+'\').val("0");';
 									html2 += '$(\''+canvas+'\').show();';
+									html2 += '$(\''+punto_item+'\').attr("required", "true");';
+									
 									html2 += '} else {';
+									
 									html2 += '$(\''+porcentaje_item+'\').val("");';
 									html2 += '$(\''+canvas+'\').hide();';
+									html2 += '$(\''+punto_item+'\').attr("required", "false");';
+									
 									html2 += '}';
+									
+
 									html2 += '$(\''+cumple_item+'\').change(function(){';
 									html2 += 'if($(\''+cumple_item+'\').val() == "1"){';
 									html2 += '$(\''+porcentaje_item+'\').val(\''+row3.valor+'\');';
@@ -252,7 +263,7 @@ $(function(){
 			cancelButtonClass: "btn-danger",
 			cancelButtonText: "Cancelar",
 			closeOnConfirm: false,
-		},function(rest1){
+		},function(res){
 			$.ajax({
 				type: 'post',
 				url: '../controller/ctrmonitoreo.php',
@@ -260,19 +271,30 @@ $(function(){
 				dataType: 'json'
 			}).done(function(result){
 				if(result.bool){
-					var monitoreo = result.msg;
-					if (monitoreo != ''){
-						swal({
-							title: "¡Correcto!",
-							text: "Monitoreo guardado con exito",
-							type: 'success',
-							showCancelButton: false,
-							confirmButtonClass: "btn-primary",
-							confirmButtonText: "Aceptar",
-							closeOnConfirm: true,
-						},function(rest2){
-							pageContent('analista/agenda_monitoreo','id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val());
+					if (result.msg){
+
+						$.ajax({
+							type: 'post',
+							url: '../controller/ctrmonitoreo.php',
+							data: {
+								action: 'total_monitoreo',
+								id_mon: result.msg
+							},
+							dataType: 'json'
+						}).done(function(result){
+							swal({
+								title: "¡Correcto!",
+								text: "Monitoreo guardado con exito",
+								type: 'success',
+								showCancelButton: false,
+								confirmButtonClass: "btn-primary",
+								confirmButtonText: "Aceptar",
+								closeOnConfirm: true,
+							},function(){
+								pageContent('analista/agenda_monitoreo','id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val());
+							});
 						});
+						
 					} else {
 						console.log('Error: id monitoreo indefinido');
 					}

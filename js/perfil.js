@@ -16,15 +16,10 @@ $(function(){
 			},function(){
 				pageContent('contenido');
 			});
-
 		} else if($('#cambiar_contrasena').val() != '' && $('#repetir_cambiar_contrasena').val() == ''){
-
 			swal("¡Atención!","Debe repetir la contraseña","warning");
-
 		} else if($('#cambiar_contrasena').val() == '' && $('#repetir_cambiar_contrasena').val() != ''){
-
 			swal("¡Atención!","Debe ingresar la contraseña","warning");
-
 		} else {
 			if ($('#cambiar_contrasena').val() == $('#repetir_cambiar_contrasena').val()){
 				var data = $(this).serialize();
