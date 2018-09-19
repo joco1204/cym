@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `ca_agenda_monitoreo` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_agenda_monitoreo: ~19 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_agenda_monitoreo: ~0 rows (aproximadamente)
 DELETE FROM `ca_agenda_monitoreo`;
 /*!40000 ALTER TABLE `ca_agenda_monitoreo` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ca_agenda_monitoreo` ENABLE KEYS */;
@@ -46,11 +46,9 @@ CREATE TABLE IF NOT EXISTS `ca_asesores` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_asesores: ~22 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_asesores: ~0 rows (aproximadamente)
 DELETE FROM `ca_asesores`;
 /*!40000 ALTER TABLE `ca_asesores` DISABLE KEYS */;
-INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
-	(1, 1, 1, '1026586163', 'YESIKA JOHANA ', 'GARCIA DIAZ', 'activo');
 /*!40000 ALTER TABLE `ca_asesores` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_audio
@@ -85,11 +83,9 @@ CREATE TABLE IF NOT EXISTS `ca_campana` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_campana: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_campana: ~0 rows (aproximadamente)
 DELETE FROM `ca_campana`;
 /*!40000 ALTER TABLE `ca_campana` DISABLE KEYS */;
-INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
-	(1, 'Ventas', 1, 'activo');
 /*!40000 ALTER TABLE `ca_campana` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_empresa
@@ -102,11 +98,9 @@ CREATE TABLE IF NOT EXISTS `ca_empresa` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_empresa: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_empresa: ~0 rows (aproximadamente)
 DELETE FROM `ca_empresa`;
 /*!40000 ALTER TABLE `ca_empresa` DISABLE KEYS */;
-INSERT INTO `ca_empresa` (`id`, `empresa`, `imagen`, `estado`) VALUES
-	(1, 'Cruz Verde', '', 'activo');
 /*!40000 ALTER TABLE `ca_empresa` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_error
@@ -120,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `ca_error` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_error: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_error: ~0 rows (aproximadamente)
 DELETE FROM `ca_error`;
 /*!40000 ALTER TABLE `ca_error` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ca_error` ENABLE KEYS */;
@@ -137,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `ca_item` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_item: ~18 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_item: ~0 rows (aproximadamente)
 DELETE FROM `ca_item`;
 /*!40000 ALTER TABLE `ca_item` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ca_item` ENABLE KEYS */;
@@ -152,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `ca_matriz` (
   KEY `id_matriz` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_matriz: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_matriz: ~0 rows (aproximadamente)
 DELETE FROM `ca_matriz`;
 /*!40000 ALTER TABLE `ca_matriz` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ca_matriz` ENABLE KEYS */;
@@ -176,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_monitoreo_asesor: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_monitoreo_asesor: ~0 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` ENABLE KEYS */;
@@ -194,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor_detallado` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~103 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~0 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor_detallado`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` ENABLE KEYS */;
@@ -208,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `ca_punto_entrenamiento` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~18 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~0 rows (aproximadamente)
 DELETE FROM `ca_punto_entrenamiento`;
 /*!40000 ALTER TABLE `ca_punto_entrenamiento` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ca_punto_entrenamiento` ENABLE KEYS */;
@@ -289,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `pa_tipo_error` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.pa_tipo_error: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.pa_tipo_error: ~5 rows (aproximadamente)
 DELETE FROM `pa_tipo_error`;
 /*!40000 ALTER TABLE `pa_tipo_error` DISABLE KEYS */;
 INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
@@ -300,6 +294,8 @@ INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
 	(3, 'CRITICO', 'ERROR CRITICO DE NEGOCIO', 'ECN', 'activo');
 INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
 	(4, 'NO_CRITICO', 'ERROR NO CRITICO', 'ENC', 'activo');
+INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
+	(5, 'NO_CRITICO', 'DE PRUEBAS 1', 'DP', 'activo');
 /*!40000 ALTER TABLE `pa_tipo_error` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.pa_tipo_identificacion
