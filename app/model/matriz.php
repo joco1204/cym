@@ -58,6 +58,27 @@ class Matriz{
 		return $this->business->return;
 	}
 
+	public function guardar_error($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$query  = "INSERT INTO pa_tipo_error (tipo, error, siglas, estado) VALUES ('".$data->nuevo_tipo_error."', '".$data->nuevo_error."', '".$data->siglas_error."', '".$data->estado_tipo_error."'); ";
+			$result = $conn->query($query);
+			if($result){
+				$this->business->return->bool = true;
+				$this->business->return->msg = 'Se guardó el tipo de error con exito';
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 	public function crear_matriz($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;

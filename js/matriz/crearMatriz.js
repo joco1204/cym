@@ -75,6 +75,36 @@ $(function(){
 			}
 		});
 	});
+
+	$('#nuevo_error_form').submit(function(e){
+		e.preventDefault();
+		var data = $(this).serialize();
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrmatriz.php',
+			data: data,
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				$('#nuevo_error').modal().hide();
+				$("#nuevo_error .close").click();
+				swal({
+					title: "Correcto!",
+					text: result.msg,
+					type: 'success',
+					showCancelButton: false,
+					confirmButtonClass: "btn-success",
+					confirmButtonText: "Aceptar",
+					closeOnConfirm: true,
+				},function(){
+					pageContent('administrador/matrices/index');
+				});
+			} else {
+				swal('Error!',result.msg,'error');
+				console.log('Error: '+result.msg);
+			}
+		});
+	});
 });
 
 function addMatriz(){
@@ -114,7 +144,7 @@ function addError(){
 	html += '<div class="input-group">';
 	html += '<select name="tipo_error_'+count+'" id="tipo_error_'+count+'" class="form-control" required=""></select> ';
 	html += '<span class="input-group-btn">';
-	html += '<button type="button" class="btn btn-danger btn-sm" >';
+	html += '<button type="button" class="btn btn-danger btn-sm" style="border-radius: 5px;" onclick="javascript: nuevoError();">';
 	html += '<span class="glyphicon glyphicon-plus"></span>';
 	html += '</button>';
 	html += '</span>';
@@ -229,3 +259,8 @@ function puntoEntrenamiento(error_n, item_n){
 	$('#canvas_punto_entrenamiento_'+error_n+'_'+item_n).append(html);
 	$("select").select2();
 }
+
+function nuevoError(){
+	$("#nuevo_error").modal();
+}
+
