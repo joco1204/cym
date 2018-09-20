@@ -277,26 +277,26 @@ class Monitoreo{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayData = array();
-			$query  = "SELECT b.calculo_valor, c.error, MIN(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento ";
-			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
-			$query .= "JOIN ca_error AS b ON a.id_error = b.id ";
-			$query .= "JOIN pa_tipo_error AS c ON a.id_error = c.id ";
-			$query .= "WHERE a.id_monitoreo_asesor = '".$data->id_mon."' ";
-			$query .= "AND b.calculo_valor = 'por' ";
-			$query .= "UNION ";
-			$query .= "SELECT b.calculo_valor, c.error, SUM(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento ";
-			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
-			$query .= "JOIN ca_error AS b ON a.id_error = b.id ";
-			$query .= "JOIN pa_tipo_error AS c ON a.id_error = c.id ";
-			$query .= "WHERE a.id_monitoreo_asesor = '".$data->id_mon."' ";
-			$query .= "AND b.calculo_valor = 'sum' ";
-			$query .= "GROUP BY b.calculo_valor, c.error";
+			$query  = "SELECT c.error, MIN(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento 
+			FROM ca_monitoreo_asesor_detallado AS a 
+			JOIN ca_error AS b ON a.id_error = b.id 
+			JOIN pa_tipo_error AS c ON a.id_error = c.id 
+			WHERE a.id_monitoreo_asesor = '1' 
+			AND b.calculo_valor = 'por' 
+			GROUP BY c.error 
+			UNION
+			SELECT c.error, SUM(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento 
+			FROM ca_monitoreo_asesor_detallado AS a 
+			JOIN ca_error AS b ON a.id_error = b.id 
+			JOIN pa_tipo_error AS c ON a.id_error = c.id 
+			WHERE a.id_monitoreo_asesor = '1' 
+			AND b.calculo_valor = 'sum' 
+			GROUP BY c.error;";
 			$result = $conn->query($query);
 			if($result){
 				$resultado = "";
 				while ($row = $result->fetch(PDO::FETCH_OBJ)){
-					$resultado = $row->error." ".$row->valor_porcentaje_cumplimiento." % \n";
-					$resultado = $resultado.$row->error." ".$row->valor_porcentaje_cumplimiento." % \n";
+					$resultado .= $row->error." ".$row->valor_porcentaje_cumplimiento." % \n ";
 				}
 				$this->business->return->bool = true;
 				$this->business->return->msg = $resultado;
