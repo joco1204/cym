@@ -1,7 +1,6 @@
 <?php
 include '../../../config/connect.php';
 $db = new Connect();
-$db2 = new Connect();
 //Header download file
 header("Content-type: application/vnd.ms-excel; charset=utf-8");
 header("Content-Disposition: attachment; filename=\"reporte calidad monitoreo.xls\"");

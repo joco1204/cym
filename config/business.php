@@ -1,4 +1,5 @@
 <?php
+
 //Include models
 include 'connect.php';
 include 'session.php';
@@ -12,12 +13,14 @@ include '../../app/model/asesor.php';
 include '../../app/model/planmonitoreo.php';
 include '../../app/model/agendamonitoreo.php';
 include '../../app/model/monitoreo.php';
+
 //Business class
 class Business{
 	public $return;
 	public $conn;
 	public $db;
 	public $post;
+
  	//Business class builder
 	function __construct(){
 		//Definition response scheme
@@ -32,5 +35,5 @@ class Business{
 		$this->db = 'calidad';
 		$this->date = date('Y-m-d');
  	}
-} 
+}
 ?>

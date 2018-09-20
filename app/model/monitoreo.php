@@ -244,15 +244,18 @@ class Monitoreo{
 					$num_item 	= $data->$item;
 					//
 					for($j = 1; $j <= $num_item; $j++){
+						
 						//
 						$id_num_item					= 'id_num_item_'.$i.'_'.$j;
 						$valor_cumplimiento 			= 'valor_cumplimiento_'.$i.'_'.$j;
 						$valor_porcentaje_cumplimiento 	= 'valor_porcentaje_cumplimiento_'.$i.'_'.$j;
 						$punto_item 					= 'punto_item_'.$i.'_'.$j;
+						
 						//
 						isset($data->$valor_cumplimiento) ? $valor_cumplimiento = $data->$valor_cumplimiento : $valor_cumplimiento = '0';
 						isset($data->$valor_porcentaje_cumplimiento) ? $valor_porcentaje = $data->$valor_porcentaje_cumplimiento : $valor_porcentaje = '0';
 						isset($data->$punto_item) ? $punto_entrenamiento = $data->$punto_item : $punto_entrenamiento = '0';
+
 						//
 						$query_item = "INSERT INTO ca_monitoreo_asesor_detallado (id_monitoreo_asesor, id_error, id_item, valor_cumplimiento, valor_porcentaje_cumplimiento, id_punto_entrenamiento) VALUES ('".$id_monitoreo."', '".$data->$id_error."', '".$data->$id_num_item."', '".$valor_cumplimiento."', '".$valor_porcentaje."', '".$punto_entrenamiento."');";
 						$result_item = $conn->query($query_item);
@@ -277,21 +280,21 @@ class Monitoreo{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayData = array();
-			$query  = "SELECT c.error, MIN(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento 
-			FROM ca_monitoreo_asesor_detallado AS a 
-			JOIN ca_error AS b ON a.id_error = b.id 
-			JOIN pa_tipo_error AS c ON a.id_error = c.id 
-			WHERE a.id_monitoreo_asesor = '1' 
-			AND b.calculo_valor = 'por' 
-			GROUP BY c.error 
-			UNION
-			SELECT c.error, SUM(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento 
-			FROM ca_monitoreo_asesor_detallado AS a 
-			JOIN ca_error AS b ON a.id_error = b.id 
-			JOIN pa_tipo_error AS c ON a.id_error = c.id 
-			WHERE a.id_monitoreo_asesor = '1' 
-			AND b.calculo_valor = 'sum' 
-			GROUP BY c.error;";
+			$query  = "SELECT c.error, MIN(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento ";
+			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
+			$query .= "JOIN ca_error AS b ON a.id_error = b.id ";
+			$query .= "JOIN pa_tipo_error AS c ON a.id_error = c.id ";
+			$query .= "WHERE a.id_monitoreo_asesor = '1' ";
+			$query .= "AND b.calculo_valor = 'por' ";
+			$query .= "GROUP BY c.error ";
+			$query .= "UNION ";
+			$query .= "SELECT c.error, SUM(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento ";
+			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
+			$query .= "JOIN ca_error AS b ON a.id_error = b.id ";
+			$query .= "JOIN pa_tipo_error AS c ON a.id_error = c.id ";
+			$query .= "WHERE a.id_monitoreo_asesor = '1' ";
+			$query .= "AND b.calculo_valor = 'sum' ";
+			$query .= "GROUP BY c.error;";
 			$result = $conn->query($query);
 			if($result){
 				$resultado = "";

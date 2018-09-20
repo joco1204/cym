@@ -147,8 +147,10 @@ $(function(){
 								var data3 = $.parseJSON(result3.msg);
 								var html2 = '';
 								var k = 0;
+
 								$.each(data3, function(k, row3){
 									k = k+1;
+
 									html2 += '<script type="text/javascript">$("select").select2();</script>';
 									html2 += '<div class="row">';
 									html2 += '<div class="col-md-4">'+row3.item;
@@ -168,11 +170,13 @@ $(function(){
 									html2 += '<div class="col-md-4" id="canvas_punto_entrenamiento_'+j+'_'+k+'" style="display: none;">';
 									html2 += '<select name="punto_item_'+j+'_'+k+'" id="punto_item_'+j+'_'+k+'" class="form-control" disabled="" style="width: 100%;"></select>';
 									html2 += '</div>';
+									html2 += '</div>';
+									html2 += '</br>';
 
-									var cumple_item = '#valor_cumplimiento_'+j+'_'+k;
-									var porcentaje_item = '#valor_porcentaje_cumplimiento_'+j+'_'+k;
-									var canvas = '#canvas_punto_entrenamiento_'+j+'_'+k;
-									var punto_item = '#punto_item_'+j+'_'+k;
+									var cumple_item 	= '#valor_cumplimiento_'+j+'_'+k;
+									var porcentaje_item	= '#valor_porcentaje_cumplimiento_'+j+'_'+k;
+									var canvas 			= '#canvas_punto_entrenamiento_'+j+'_'+k;
+									var punto_item 		= '#punto_item_'+j+'_'+k;
 
 									$.ajax({
 										type: 'post',
@@ -191,47 +195,40 @@ $(function(){
 										});
 										$(punto_item).html(html3);
 									});
+
 									html2 += '<script type="text/javascript">';
+										
+										html2 += 'if($(\''+cumple_item+'\').val() == "1"){';
+											html2 += '$(\''+porcentaje_item+'\').val(\''+row3.valor+'\');';
+											html2 += '$(\''+canvas+'\').hide();';
+											html2 += '$(\''+punto_item+'\').attr("required", "false");';
+										html2 += '} else if($(\''+cumple_item+'\').val() == "0"){';
+											html2 += '$(\''+porcentaje_item+'\').val("0");';
+											html2 += '$(\''+canvas+'\').show();';
+											html2 += '$(\''+punto_item+'\').attr("required", "true");';
+										html2 += '} else {';
+											html2 += '$(\''+porcentaje_item+'\').val("");';
+											html2 += '$(\''+canvas+'\').hide();';
+											html2 += '$(\''+punto_item+'\').attr("required", "false");';
+										html2 += '}';
 
-									html2 += 'if($(\''+cumple_item+'\').val() == "1"){';
+										html2 += '$(\''+cumple_item+'\').change(function(){';
+											html2 += 'if($(\''+cumple_item+'\').val() == "1"){';
+												html2 += '$(\''+porcentaje_item+'\').val(\''+row3.valor+'\');';
+												html2 += '$(\''+punto_item+'\').attr("disabled","disabled");';
+												html2 += '$(\''+canvas+'\').hide();';
+											html2 += '} else if($(\''+cumple_item+'\').val() == "0"){';
+												html2 += '$(\''+porcentaje_item+'\').val("0");';
+												html2 += '$(\''+punto_item+'\').removeAttr("disabled");';
+												html2 += '$(\''+canvas+'\').show();';
+											html2 += '} else {';
+												html2 += '$(\''+porcentaje_item+'\').val("");';
+												html2 += '$(\''+punto_item+'\').attr("disabled","disabled");';
+												html2 += '$(\''+canvas+'\').hide();';
+											html2 += '}';
+										html2 += '});';
 
-									html2 += '$(\''+porcentaje_item+'\').val(\''+row3.valor+'\');';
-									html2 += '$(\''+canvas+'\').hide();';
-									html2 += '$(\''+punto_item+'\').attr("required", "false");';
-									
-									html2 += '} else if($(\''+cumple_item+'\').val() == "0"){';
-									
-									html2 += '$(\''+porcentaje_item+'\').val("0");';
-									html2 += '$(\''+canvas+'\').show();';
-									html2 += '$(\''+punto_item+'\').attr("required", "true");';
-									
-									html2 += '} else {';
-									
-									html2 += '$(\''+porcentaje_item+'\').val("");';
-									html2 += '$(\''+canvas+'\').hide();';
-									html2 += '$(\''+punto_item+'\').attr("required", "false");';
-									
-									html2 += '}';
-									
-
-									html2 += '$(\''+cumple_item+'\').change(function(){';
-									html2 += 'if($(\''+cumple_item+'\').val() == "1"){';
-									html2 += '$(\''+porcentaje_item+'\').val(\''+row3.valor+'\');';
-									html2 += '$(\''+punto_item+'\').attr("disabled","disabled");';
-									html2 += '$(\''+canvas+'\').hide();';
-									html2 += '} else if($(\''+cumple_item+'\').val() == "0"){';
-									html2 += '$(\''+porcentaje_item+'\').val("0");';
-									html2 += '$(\''+punto_item+'\').removeAttr("disabled");';
-									html2 += '$(\''+canvas+'\').show();';
-									html2 += '} else {';
-									html2 += '$(\''+porcentaje_item+'\').val("");';
-									html2 += '$(\''+punto_item+'\').attr("disabled","disabled");';
-									html2 += '$(\''+canvas+'\').hide();';
-									html2 += '}';
-									html2 += '});';
 									html2 += '</script>';
-									html2 += '</div>';
-									html2 += '</br>';
 								});
 								$(item_error).html(html2);
 							});
@@ -263,7 +260,7 @@ $(function(){
 			cancelButtonClass: "btn-danger",
 			cancelButtonText: "Cancelar",
 			closeOnConfirm: false,
-		},function(res){
+		},function(){
 			$.ajax({
 				type: 'post',
 				url: '../controller/ctrmonitoreo.php',
@@ -281,7 +278,7 @@ $(function(){
 							},
 							dataType: 'json'
 						}).done(function(result2){
-							if(result.bool){
+							if(result2.bool){
 								swal({
 									title: "¡Correcto!",
 									text: result2.msg,
@@ -294,7 +291,7 @@ $(function(){
 									pageContent('analista/agenda_monitoreo','id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val());
 								});
 							} else {
-								console.log('Error: '+result.msg);
+								console.log('Error: '+result2.msg);
 							}
 						});
 					} else {
