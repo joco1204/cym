@@ -59,6 +59,7 @@ $result = $db->query($query);
 			$queryh .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."';";
 			$resulth = $db->query($queryh);
 			$i = 1;
+
 			while($rowh = $resulth->fetch(PDO::FETCH_OBJ)){
 				$rowh->num_error = $i++;
 				$rowh->id_tipo_error;
@@ -71,7 +72,6 @@ $result = $db->query($query);
 				$queryh2 .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND b.tipo_error = '".$rowh->id_tipo_error."';";
 				$resulth2 = $db->query($queryh2);
 				$j = 1;
-
 				while($rowh2 = $resulth2->fetch(PDO::FETCH_OBJ)){
 					$rowh2->num_item = $j++;
 					$rowh2->id_item;
