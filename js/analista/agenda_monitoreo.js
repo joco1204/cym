@@ -77,7 +77,7 @@ $(function(){
 				if(row.estado == '0'){
 					html += '<button type="button" class="btn btn-warning btn-sm" onclick="javascript: pageContent(\'analista/monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val()+'&id_agenda='+row.id+'\');">Evaluar</button>';
 				} else {
-					html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: pageContent(\'analista/vista_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val()+'&id_agenda='+row.id+'\');">Ver</button>';
+					html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: pageContent(\'analista/vista_monitoreo\',\'id_agenda='+row.id+'&id_asesor='+$('#id_asesor').val()+'\');">Ver</button>';
 					if($('#id_perfil').val() == '1' || $('#id_perfil').val() == '2'){
 						html += '<button type="button" class="btn btn-info btn-sm">Modificar</button> ';
 					}
