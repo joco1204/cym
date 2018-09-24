@@ -327,19 +327,20 @@ class Monitoreo{
 			$query .= "a.hora_llamada, ";
 			$query .= "CONCAT(b.nombres,' ',b.apellidos) AS asesor, ";
 			$query .= "CONCAT(c.nombre,' ',c.apellido1,' ',c.apellido2) AS analista, ";
-			$query .= "a.tipificacion, ";
+			$query .= "f.nombre AS tipificacion, ";
 			$query .= "a.id_llamada, ";
 			$query .= "a.observacion, ";
 			$query .= "d.tipos AS solucion, ";
 			$query .= "e.audio AS fallas_audio, ";
 			$query .= "a.fecha_registro, ";
-			$query .= "a.fecha_modificaicon ";
+			$query .= "a.fecha_modificaicon AS fecha_modificacion ";
 			$query .= "FROM ca_monitoreo_asesor AS a ";
 			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
 			$query .= "LEFT JOIN re_usuarios AS c ON a.id_asesor = c.id ";
 			$query .= "LEFT JOIN ca_solucion AS d ON a.solucion = d.id ";
 			$query .= "LEFT JOIN ca_audio AS e ON a.fallas_audio = e.id ";
-			$query .= "WHERE a.id_agenda_monitoreo = '".$data->id_agenda."' AND a.id_analista = '".$data->id_analista."';";
+			$query .= "LEFT JOIN ca_tipificacion AS f ON a.tipificacion = f.id ";
+			$query .= "WHERE a.id_agenda_monitoreo = '".$data->id_agenda."' AND a.id_asesor = '".$data->id_asesor."';";
 			$result = $conn->query($query);
 			if($result){
 				while ($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -358,6 +359,109 @@ class Monitoreo{
 		return $this->business->return;
 	}
 
-	
+	public function vista_monitoreo_error($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT DISTINCT a.id_error, c.error AS tipo_error ";
+			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
+			$query .= "LEFT JOIN ca_error AS b ON a.id_error = b.id ";
+			$query .= "LEFT JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
+			$query .= "WHERE a.id_monitoreo_asesor = '".$data->id_monitoreo."';";
+			$result = $conn->query($query);
+			if($result){
+				while ($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+
+	}
+
+	public function vista_monitoreo_items($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT ";
+			$query .= "b.item AS item_error, ";
+			$query .= "a.valor_porcentaje_cumplimiento, ";
+			$query .= "CASE ";
+			$query .= "WHEN a.id_punto_entrenamiento = 0 THEN \"\" ";
+			$query .= "ELSE c.punto_entrenamiento ";
+			$query .= "END AS punto_entrenamiento ";
+			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
+			$query .= "LEFT JOIN ca_item AS b ON a.id_item = b.id ";
+			$query .= "LEFT JOIN ca_punto_entrenamiento AS c ON a.id_punto_entrenamiento = c.id ";
+			$query .= "WHERE a.id_monitoreo_asesor = '".$data->id_monitoreo."' AND a.id_error = '".$data->id_error."';";
+			$result = $conn->query($query);
+			if($result){
+				while ($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+
+	}
+
+	public function total_monitoreo_vista($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT c.error, MIN(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento ";
+			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
+			$query .= "JOIN ca_error AS b ON a.id_error = b.id ";
+			$query .= "JOIN pa_tipo_error AS c ON a.id_error = c.id ";
+			$query .= "WHERE a.id_monitoreo_asesor = '".$data->id_mon."' ";
+			$query .= "AND b.calculo_valor = 'por' ";
+			$query .= "GROUP BY c.error ";
+			$query .= "UNION ";
+			$query .= "SELECT c.error, SUM(a.valor_porcentaje_cumplimiento) AS valor_porcentaje_cumplimiento ";
+			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
+			$query .= "JOIN ca_error AS b ON a.id_error = b.id ";
+			$query .= "JOIN pa_tipo_error AS c ON a.id_error = c.id ";
+			$query .= "WHERE a.id_monitoreo_asesor = '".$data->id_mon."' ";
+			$query .= "AND b.calculo_valor = 'sum' ";
+			$query .= "GROUP BY c.error;";
+			$result = $conn->query($query);
+			if($result){
+				while ($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
 }
 ?>

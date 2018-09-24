@@ -38,6 +38,7 @@ if($id_asesor == '0'){ ?>
                                     </div>
                                     <div class="col-md-3">
                                         <span id="id_monitoreo"></span>
+                                        <input type="hidden" name="num_monitoreo" id="num_monitoreo">
                                     </div>
                                     <div class="col-md-3">
                                         <b>FECHA DE LLAMADA:</b>
@@ -88,7 +89,7 @@ if($id_asesor == '0'){ ?>
                                         <b>ID LLAMADA:</b>
                                     </div>
                                     <div class="col-md-3">
-                                        
+                                        <span id="id_llamada"></span>
                                     </div>
                                 </div>
                                 <br>
@@ -141,9 +142,25 @@ if($id_asesor == '0'){ ?>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col col-lg-12" id="detalle_monitoreo"></div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-6 col-md-offset-3">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading text-center"><b>TOTAL MONITOREO</b></div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" id="total_monitoreos"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </div>
 </section>
 <script src="../../js/analista/vista_monitoreo.js"></script>
 <?php } ?>
+

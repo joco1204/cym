@@ -47,7 +47,19 @@ if(isset($post->action)){
 			$business->return = $result;
 		break;
 		case 'vista_monitoreo':
-			$result = $monitoreo->total_monitoreo($post);
+			$result = $monitoreo->vista_monitoreo($post);
+			$business->return = $result;
+		break;
+		case 'vista_monitoreo_error':
+			$result = $monitoreo->vista_monitoreo_error($post);
+			$business->return = $result;
+		break;
+		case 'vista_monitoreo_items':
+			$result = $monitoreo->vista_monitoreo_items($post);
+			$business->return = $result;
+		break;
+		case 'total_monitoreo_vista':
+			$result = $monitoreo->total_monitoreo_vista($post);
 			$business->return = $result;
 		break;
 		default:
