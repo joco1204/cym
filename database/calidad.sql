@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
--- Host:                         localhost
--- Versión del servidor:         10.1.28-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win32
+-- Host:                         192.168.100.143
+-- Versión del servidor:         5.6.37 - MySQL Community Server (GPL)
+-- SO del servidor:              Linux
 -- HeidiSQL Versión:             9.5.0.5229
 -- --------------------------------------------------------
 
@@ -294,8 +294,6 @@ INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
 	(3, 'CRITICO', 'ERROR CRITICO DE NEGOCIO', 'ECN', 'activo');
 INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
 	(4, 'NO_CRITICO', 'ERROR NO CRITICO', 'ENC', 'activo');
-INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
-	(5, 'NO_CRITICO', 'DE PRUEBAS 1', 'DP', 'activo');
 /*!40000 ALTER TABLE `pa_tipo_error` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.pa_tipo_identificacion
