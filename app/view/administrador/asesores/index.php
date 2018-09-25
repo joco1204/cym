@@ -20,7 +20,7 @@
                 </div>
                 <div class="row">
                     <div class="col col-md-12">
-                        <div class="table-responsive" id="data_asesor" style="font-size: 12px;"></div>
+                        <div class="table-responsive" id="data_asesor" style="font-size: 11px;"></div>
                     </div>
                 </div>
             </section>

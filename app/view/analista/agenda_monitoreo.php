@@ -68,7 +68,7 @@ if($id_asesor == '0'){ ?>
                 <div class="row">
                     <div class="col col-lg-12 text-center">
                         <button type="button" class="btn btn-success" onclick="javascript: addFechaMonitoreo();">Añadir fecha</button> 
-                        <button type="button" class="btn btn-primary" onclick="javascript: pageContent('analista/plan_monitoreo','id_empresa=<?= $id_empresa; ?>&id_campana=<?= $id_campana; ?>');">Volver Atras</button>
+                        <button type="button" class="btn btn-danger" onclick="javascript: pageContent('analista/plan_monitoreo','id_empresa=<?= $id_empresa; ?>&id_campana=<?= $id_campana; ?>');">Volver Atras</button>
                         <input type="hidden" name="count_fechas" id="count_fechas" value="0">
                     </div>
                 </div>

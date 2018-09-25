@@ -139,6 +139,7 @@ function addError(){
 	html += '<div class="panel-body">';
 	html += '<div class="row">';
 	html += '<div class="col col-md-6">';
+	
 	html += '<div class="form-group">';
 	html += '<label for="tipo_error_'+count+'" class="control-label">Error</label>';
 	html += '<div class="input-group">';
@@ -150,6 +151,7 @@ function addError(){
 	html += '</span>';
 	html += '</div>';
 	html += '</div>';
+
 	html += '</div>';
 	html += '<div class="col col-md-3">';
 	html += '<div class="form-group">';
@@ -158,16 +160,21 @@ function addError(){
 	html += '<option></option>';
 	html += '<option value="por">Porcentual</option>';
 	html += '<option value="sum">Sumatorio</option>';
-	html += '<option value="mul">Multiplicativo</option>';
 	html += '</select>';
 	html += '</div>';
 	html += '</div>';
-	html += '<div class="col col-md-3">';
+
+	html += '<div class="col col-md-1">';
+	html += '<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" style="font-size: 30px;"></span>';
+	html += '</div>';
+
+	html += '<div class="col col-md-2">';
 	html += '<button type="button" class="btn btn-danger btn-sm" onclick="javascript: addItem('+count+');">';
 	html += 'Item Error <span class="glyphicon glyphicon-plus"></span>';
 	html += '</button>';
 	html += '<input type="hidden" id="item_error_'+count+'" name="item_error_'+count+'">';
 	html += '</div>';
+
 	html += '</div>';
 	html += '<br>';
 	html += '<div class="row">';
@@ -177,6 +184,10 @@ function addError(){
 	html += '</div>';
 	$('#canvas_matriz').append(html);
 	$("select").select2();
+	$('[data-toggle="tooltip"]').tooltip({
+		"container": "body", 
+		"title": "Se puede seleccionar entre valor porcentual y sumatorio. El valor porcentual determina el mismo valor para todos los items del error (0 o 100). El valor sumatorio es incremental para todos los items del error y se debe calcular de 0 a 100"
+	});
 
 	$.ajax({
 		type: 'post',

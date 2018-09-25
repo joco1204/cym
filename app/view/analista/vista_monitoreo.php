@@ -4,6 +4,8 @@ $session = new Session();
 $session->start();
 $get = ((object) $_GET);
 
+isset($get->id_empresa) ? $id_empresa = $get->id_empresa : $id_empresa = '0' ;
+isset($get->id_campana) ? $id_campana = $get->id_campana : $id_campana = '0' ;
 isset($get->id_agenda) ? $id_agenda = $get->id_agenda : $id_agenda = '0' ;
 isset($get->id_asesor) ? $id_asesor = $get->id_asesor : $id_asesor = '0';
 
@@ -20,6 +22,12 @@ if($id_asesor == '0'){ ?>
     <h1>
         <b>VISTA MONITOREO</b>
     </h1>
+    <div class="row">
+        <div class="col col-md-12 text-center">
+            <button type="button" class="btn btn-success">Modificar</button>
+            <button type="button" class="btn btn-danger" onclick="javascript: pageContent('analista/agenda_monitoreo','id_empresa=<?php echo $id_empresa; ?>&id_campana=<?php echo $id_campana; ?>&id_asesor=<?php echo $id_asesor; ?>');">Volver</button>
+        </div>
+    </div>
 </section>
 <section class="content">
 	<div class='box box-primary'>
