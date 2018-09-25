@@ -25,6 +25,7 @@ if($id_asesor == '0'){ ?>
     <input type="hidden" name="id_perfil" id="id_perfil" value="<?php echo $session->getSession('id_perfil'); ?>">
     <input type="hidden" name="mes" id="mes" value="<?= date('m'); ?>">
     <input type="hidden" name="anio" id="anio" value="<?= date('Y'); ?>">
+    <input type="hidden" name="date" id="date" value="<?= $fecha_hoy; ?>">
 <?php } ?>
 <section class="content-header">
     <h1>AGENDA POR ASESOR</h1>
