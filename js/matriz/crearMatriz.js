@@ -274,4 +274,3 @@ function puntoEntrenamiento(error_n, item_n){
 function nuevoError(){
 	$("#nuevo_error").modal();
 }
-
