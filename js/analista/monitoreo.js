@@ -37,7 +37,6 @@ $(function(){
 			var data = $.parseJSON(result.msg);
 			$.each(data, function(i, row){
 				$('#id_monitoreo').val(row.id_monitoreo);
-				$('#fechas_llamada').val(row.fecha_monitoreo);
 				$('#cedula_asesor').val(row.identificacion);
 				$('#nombre_asesor').val(row.nombres+" "+row.apellidos);
 			});
