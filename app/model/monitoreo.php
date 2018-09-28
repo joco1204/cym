@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class Monitoreo{
 	function __construct(){
 		$this->business = new Business();
@@ -334,7 +334,7 @@ class Monitoreo{
 			$query .= "a.fecha_modificaicon AS fecha_modificacion ";
 			$query .= "FROM ca_monitoreo_asesor AS a ";
 			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
-			$query .= "LEFT JOIN re_usuarios AS c ON a.id_asesor = c.id ";
+			$query .= "LEFT JOIN re_usuarios AS c ON a.id_analista = c.id ";
 			$query .= "LEFT JOIN ca_solucion AS d ON a.solucion = d.id ";
 			$query .= "LEFT JOIN ca_audio AS e ON a.fallas_audio = e.id ";
 			$query .= "LEFT JOIN ca_tipificacion AS f ON a.tipificacion = f.id ";
@@ -342,6 +342,7 @@ class Monitoreo{
 			$result = $conn->query($query);
 			if($result){
 				while ($row = $result->fetch(PDO::FETCH_OBJ)){
+					$row->analista = utf8_decode($row->analista);
 					array_push($arrayData, $row);
 				}
 				$this->business->return->bool = true;

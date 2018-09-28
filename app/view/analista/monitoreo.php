@@ -41,7 +41,7 @@ if($id_empresa == '0'){ ?>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <b>FECHA DE LLAMADA/REGISTRO:</b>
+                                    <b>FECHA DE LLAMADA:</b>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">

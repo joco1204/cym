@@ -63,7 +63,7 @@ $result = $db->query($query);
 				$queryh2 .= "";
 				$resulth2 = $db->query($queryh2);
 				while($rowh2 = $resulth2->fetch(PDO::FETCH_OBJ)){
-					echo "<th>".$rowh2->item."</th>";
+					echo "<th>".utf8_decode($rowh2->item)."</th>";
 					echo "<th>CALIFICACI&Oacute;N ID DE REGISTROS </th>";
 					echo "<th>PUNTO DE ENTRENAMIENTO</th>";
 				}
