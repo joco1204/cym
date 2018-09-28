@@ -51,38 +51,23 @@ $result = $db->query($query);
 			echo "<th>FALLA AUDIO</th>";
 			echo "<th>FECHA Y HORA REGISTRO</th>";
 			echo "<th>FECHA Y HORA MODIFICACI&Oacute;N</th>";
-
-			$queryh  = "SELECT b.tipo_error AS id_tipo_error, c.error AS tipo_error ";
+			$queryh  = "SELECT a.id_empresa, a.id_campana, b.id AS id_error ";
 			$queryh .= "FROM ca_matriz AS a ";
-			$queryh .= "JOIN ca_error AS b ON a.id = b.id_matriz ";
-			$queryh .= "JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
+			$queryh .= "LEFT JOIN ca_error AS b ON a.id = b.id_matriz ";
 			$queryh .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."';";
 			$resulth = $db->query($queryh);
-			$i = 1;
-
 			while($rowh = $resulth->fetch(PDO::FETCH_OBJ)){
-				$rowh->num_error = $i++;
-				$rowh->id_tipo_error;
-
-				$queryh2  = "SELECT d.id AS id_item ";
-				$queryh2 .= "FROM ca_matriz AS a ";
-				$queryh2 .= "JOIN ca_error AS b ON a.id = b.id_matriz ";
-				$queryh2 .= "JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
-				$queryh2 .= "JOIN ca_item AS d ON b.tipo_error = d.id_error ";
-				$queryh2 .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND b.tipo_error = '".$rowh->id_tipo_error."';";
+				$queryh2  = "SELECT a.item ";
+				$queryh2 .= "FROM ca_item AS a ";
+				$queryh2 .= "WHERE a.id_error = '".$rowh->id_error."';";
+				$queryh2 .= "";
 				$resulth2 = $db->query($queryh2);
-				$j = 1;
 				while($rowh2 = $resulth2->fetch(PDO::FETCH_OBJ)){
-					$rowh2->num_item = $j++;
-					$rowh2->id_item;
-
-					echo "<th>ITEM ".$rowh->num_error.".".$rowh2->num_item."</th>";
+					echo "<th>".$rowh2->item."</th>";
 					echo "<th>CALIFICACI&Oacute;N ID DE REGISTROS </th>";
 					echo "<th>PUNTO DE ENTRENAMIENTO</th>";
 				}
 			}
-
-
 			echo "</tr>";
 		?>
 	</thead>
