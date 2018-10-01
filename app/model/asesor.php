@@ -17,6 +17,11 @@ class Asesor{
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					$row->nombres = utf8_decode($row->nombres);
+					$row->apellidos = utf8_decode($row->apellidos);
+					$row->empresa = utf8_decode($row->empresa);
+					$row->campana = utf8_decode($row->campana);
+					$row->estado = utf8_decode($row->estado);
 					array_push($arrayTabla, $row);
 				}
 				$this->business->return->bool = true;

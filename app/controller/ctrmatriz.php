@@ -22,6 +22,10 @@ if(isset($post->action)){
 			$result = $matriz->guardar_error($post);
 			$business->return = $result;
 		break;
+		case 'tabla_error':
+			$result = $matriz->tabla_error();
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

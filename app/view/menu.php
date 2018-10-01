@@ -18,7 +18,13 @@
             <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2'){ ?>
                 <li><a href="#" onclick="javascript: pageContent('administrador/empresas/index');"><i class="glyphicon glyphicon-paperclip"></i> Empresas</a></li>
                 <li><a href="#" onclick="javascript: pageContent('administrador/campanas/index');"><i class="glyphicon glyphicon-briefcase"></i> Campañas</a></li>
-                <li><a href="#" onclick="javascript: pageContent('administrador/matrices/index');"><i class="glyphicon glyphicon-th"></i> Matrices</a></li>
+                <li class="treeview">
+                    <a href="#"><i class="glyphicon glyphicon-th"></i> Matrices</a>
+                    <ul class="treeview-menu">
+                        <li><a href="#" onclick="javascript: pageContent('administrador/matrices/index');"><i class="glyphicon glyphicon-th-list"></i> Matriz</a></li>
+                        <li><a href="#" onclick="javascript: pageContent('administrador/matrices/tipo_error');"><i class="glyphicon glyphicon-remove"></i> Tipo Error</a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '5'){ ?>
                 <li><a href="#" onclick="javascript: pageContent('administrador/usuarios/index');"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>

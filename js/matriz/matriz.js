@@ -62,7 +62,26 @@ $(function(){
 						$.each(data2, function(j, row2){
 							j = j+1;
 							html2 += '<div class="panel panel-primary">';
-							html2 += '<div class="panel-heading"><p><b>TIPO DE ERROR '+j+': </b> '+row2.tipo_error+'</p></div>';
+							html2 += '<div class="panel-heading">';
+							html2 += '<div class="row">';
+							html2 += '<div class="col col-md-6"><p><b>TIPO DE ERROR '+j+': </b> '+row2.tipo_error+'</p></div>';
+							html2 += '<div class="col col-md-6">';
+
+							html2 += '<p><b>CALCULO ERROR: </b> ';
+
+							var calculo_valor = "";
+							if(row2.calculo_valor == 'por'){
+								calculo_valor = "Porcentual";
+							} else {
+								calculo_valor = "Sumatorio";
+							}
+
+							html2 += calculo_valor+'</p>';
+							html2 += '</div>';
+							html2 += '</div>';
+							html2 += '</div>';
+
+							
 							html2 += '<div class="panel-body" id="vista_items_'+row2.id_error+'">';
 
 							$.ajax({

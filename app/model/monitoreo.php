@@ -111,10 +111,11 @@ class Monitoreo{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayData = array();
-			$query   = "SELECT a.id AS id_error, b.error AS tipo_error ";
+			$query   = "SELECT a.id AS id_error, b.error AS tipo_error, a.calculo_valor ";
 			$query  .= "FROM ca_error AS a ";
 			$query  .= "JOIN pa_tipo_error AS b ON a.tipo_error = b.id ";
 			$query  .= "WHERE a.id_matriz = '".$data->id_matriz."' AND a.estado = 'activo';";
+
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){

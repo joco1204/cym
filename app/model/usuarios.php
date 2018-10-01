@@ -90,25 +90,39 @@ class Usuario{
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
-			$pass = sha1($data->contrasena);
-			$query  = "INSERT INTO re_usuarios (usuario, password, tipo_identificacion, identificacion, nombre, apellido1, apellido2, email, estado) ";
-			$query .= "VALUES ('".$data->usaurio."', '".$pass."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombres."', '".$data->apellidos1."', '".$data->apellidos2."', '".$data->email."', 'activo');";
-			$result = $conn->query($query);
-			if($result){
-				$id_usaurio = $conn->lastInsertId();
-
-				$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '".$data->perfil."'); ";
-				$conn->query($query_perfil);
-				
-				if($data->perfil == '' || $data->perfil == ''){
-					$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '".$data->perfil."', '".$data->empresa."', '".$data->campana."');";
-					$conn->query($query_ec);
+			$ident = "SELECT COUNT(*) AS count_identificaicon FROM re_usuarios WHERE identificacion = '".$data->identificacion."';";
+			$res_ident = $conn->query($ident);
+			$row_ident = $res_ident->fetch(PDO::FETCH_OBJ);
+			$usua = "SELECT COUNT(*) AS count_usuario FROM re_usuarios WHERE usuario = '".$data->usaurio."';";
+			$res_usua = $conn->query($usua);
+			$row_usua = $res_usua->fetch(PDO::FETCH_OBJ);
+			if($row_ident->count_identificaicon == '0'){
+				if ($row_usua->count_usuario == '0'){
+					$pass = sha1($data->contrasena);
+					$query  = "INSERT INTO re_usuarios (usuario, password, tipo_identificacion, identificacion, nombre, apellido1, apellido2, email, estado) ";
+					$query .= "VALUES ('".$data->usaurio."', '".$pass."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombres."', '".$data->apellidos1."', '".$data->apellidos2."', '".$data->email."', 'activo');";
+					$result = $conn->query($query);
+					if($result){
+						$id_usaurio = $conn->lastInsertId();
+						$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '".$data->perfil."'); ";
+						$conn->query($query_perfil);
+						if($data->perfil == '' || $data->perfil == ''){
+							$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '".$data->perfil."', '".$data->empresa."', '".$data->campana."');";
+							$conn->query($query_ec);
+						}
+						$this->business->return->bool = true;
+						$this->business->return->msg = 'Se creó el usuario correctamente';
+					} else {
+						$this->business->return->bool = false;
+						$this->business->return->msg = 'Error query';
+					}
+				} else {
+					$this->business->return->bool = false;
+					$this->business->return->msg = 'El usuario ya fue creado';
 				}
-				$this->business->return->bool = true;
-				$this->business->return->msg = 'Se creó el usuario correctamente';
 			} else {
 				$this->business->return->bool = false;
-				$this->business->return->msg = 'Error query';
+				$this->business->return->msg = 'El número de identificación ya fue creado';
 			}
 		} else {
 			$this->business->return->bool = false;

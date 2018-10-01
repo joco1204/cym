@@ -14,6 +14,10 @@ if(isset($post->action)){
 			$result = $planmonitoreo->tabla_asesor($post);
 			$business->return = $result;
 		break;
+		case 'monitoreos_dia':
+			$result = $planmonitoreo->monitoreos_dia($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

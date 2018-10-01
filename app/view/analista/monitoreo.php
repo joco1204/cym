@@ -46,7 +46,7 @@ if($id_empresa == '0'){ ?>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
                                         <div class="input-group date fechas_monitoreos" data-provide="datepicker" data-date-format="yyyy-mm-dd">
-                                            <input type="text" name="fechas_llamada" id="fechas_llamada" class="form-control" value="" required="">
+                                            <input type="text" name="fechas_llamada" id="fechas_llamada" class="form-control" value="" required="" placeholder="aaaa-mm-dd">
                                             <div class="input-group-addon">
                                                 <span class="glyphicon glyphicon-th"></span>
                                             </div>

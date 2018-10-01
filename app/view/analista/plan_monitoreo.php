@@ -21,6 +21,23 @@ if($id_empresa == '0'){ ?>
 <section class="content-header">
     <h1>PLAN DE MONITOREO: <b><span id="empresa_nom"></span></b> - <b><span id="campana_nom"></span></b></h1>
 </section>
+
+<section class="content">
+    <div class='box box-warning'>
+        <div class='box-header with-border'>
+            <h3 class='box-title'>MONITOREOS DEL DÍA</h3>
+        </div>
+        <div class='box-body'>
+            <section class='content'>
+                <div class="row">
+                    <div class="col col-md-12">
+                        <div class="table-responsive" id="data_dia" style="font-size: 11px;"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
 <section class="content">
 	<div class='box box-primary'>
         <div class='box-header with-border'>
