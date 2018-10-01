@@ -26,6 +26,10 @@ if(isset($post->action)){
 			$result = $usuario->modificar_perfil($post);
 			$business->return = $result;
 		break;
+		case 'data_usuario':
+			$result = $usuario->data_usuario($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

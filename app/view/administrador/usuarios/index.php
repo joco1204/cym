@@ -130,6 +130,114 @@
         </div> 
     </div>
 </div>
+
+
+<div id="modal_usuario_modificar" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form id="usuario_form_modificar" autocomplete="off">
+                <div class="modal-header bg-blue">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center">Modificar Usuario id: <span id="id_usaurio"></span></h4>
+                    <input type="hidden" name="action" id="action" value="modifica_usuario">
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="nombres_m">NOMBRE(S):</label>
+                                <input type="text" id="nombres_m" name="nombres_m" class="form-control" required="" data-error="Debe ingresar nombre(s)">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="apellidos1_m">APELLIDO 1:</label>
+                                <input type="text" id="apellidos1_m" name="apellidos1_m" class="form-control" required="" data-error="Debe ingresar apellidos 1">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="apellidos2_m">APELLIDO 2:</label>
+                                <input type="text" id="apellidos2_m" name="apellidos2_m" class="form-control" required="" data-error="Debe ingresar apellidos 2">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="tipo_identificacion_m">TIPO IDENTIFICAICON:</label>
+                                <select class="form-control" id="tipo_identificacion_m" name="tipo_identificacion_m" style="width: 100%" required="" data-error="Debe seccionar tipo de identificaicón"></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="identificacion_m">NÚMERO DE IDENTIFICACIÓN:</label>
+                                <input type="text" id="identificacion_m" name="identificacion_m" class="form-control" required="" data-error="Debe ingresar número de identificación">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="email_m">EMAIL:</label>
+                                <input type="email" id="email_m" name="email_m" class="form-control" required="" data-error="Debe ingresar email">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="usaurio_m">USUARIO:</label>
+                                <input type="text" id="usaurio_m" name="usaurio_m" class="form-control" required="" data-error="Debe ingresar usaurio">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="contrasena_m">CONTRASEÑA:</label>
+                                <input type="password" id="contrasena_m" name="contrasena_m" class="form-control" required="" data-error="Debe ingresar contraseña">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="perfil_m">PERFIL USAURIO:</label>
+                                <select class="form-control" id="perfil_m" name="perfil_m" style="width: 100%" required="" data-error="Debe seccionar perfil"></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="empresa_campana" style="display: none;">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="empresa_m">EMPRESA:</label>
+                                <select class="form-control" id="empresa_m" name="empresa_m" style="width: 100%" required="" data-error="Debe seccionar una empresa" disabled=""></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="campana_m">CAMPAÑA:</label>
+                                <select class="form-control" id="campana_m" name="campana_m" style="width: 100%" required="" data-error="Debe seccionar una campaña" disabled=""></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
+        </div> 
+    </div>
+</div>
+
+
 <script type="text/javascript">
     $(function(){
         $("select").select2();

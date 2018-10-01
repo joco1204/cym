@@ -41,7 +41,7 @@ $(function(){
 				html += '<td>'+row.identificacion+'</td>';
 				html += '<td>'+row.email+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td><button type="button" class="btn btn-success btn-xs">Modificar</button></td>';
+				html += '<td><button type="button" class="btn btn-success btn-xs" onclick="javascript: modificar_usuario(\''+row.id_usuario+'\');">Modificar</button></td>';
 				html += '</tr>';
 			});
 			html += '</tbody>';
@@ -226,7 +226,67 @@ $(function(){
 				console.log('Error: '+result.msg);
 			}
 		});
-		
+	});
 
-	})
+
+	$('#usuario_form_modificar').submit(function(e){
+		e.preventDefault();
+		var data = $(this).serialize();
+
+		/*$.ajax({
+			type: 'post',
+			url: '../controller/ctrusuarios.php',
+			data: data,
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				$('#modal_usuario').modal().hide();
+				$("#modal_usuario .close").click();
+				swal({
+					title: "Correcto!",
+					text: result.msg,
+					type: 'success',
+					showCancelButton: false,
+					confirmButtonClass: "btn-success",
+					confirmButtonText: "Aceptar",
+					closeOnConfirm: true,
+				},function(){
+					pageContent('administrador/usuarios/index');
+				});
+			} else {
+				swal('Error!',result.msg,'error');
+				console.log('Error: '+result.msg);
+			}
+		});*/
+	});
 });
+
+function modificar_usuario(id_usuario){
+	$("#modal_usuario_modificar").modal();
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrusuarios.php',
+		data: {
+			action: 'data_usuario',
+			id_usuario: id_usuario,
+		},
+		dataType: 'json'
+	}).done(function(result){
+		if(result.bool){
+			var data = $.parseJSON(result.msg);
+			$.each(data, function(i, row){
+				$('#id_usaurio_m').html(row.id);
+				$('#nombres_m').val(row.nombre);
+				$('#apellidos1_m').val(row.apellido1);
+				$('#apellidos2_m').val(row.apellido2);
+				$('#identificacion_m').val(row.identificacion);
+				$('#email_m').val(row.email);
+				$('#usaurio_m').val(row.usuario);
+
+			});
+
+		} else {
+			console.log('Error: '+result.msg);
+		}
+	});
+}

@@ -152,5 +152,33 @@ class Usuario{
 		}
 		return $this->business->return;
 	}
+
+	public function data_usuario($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT a.id, a.usuario, a.tipo_identificacion, a.identificacion, a.nombre, a.apellido1, a.apellido2, a.email, a.estado ";
+			$query .= "FROM re_usuarios AS a ";
+			$query .= "WHERE a.id = '".$data->id_usuario."';";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 }
 ?>
