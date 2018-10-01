@@ -9,7 +9,7 @@
             </span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">
-                <b>Calidad</b>
+                <b>Calidad ICC</b>
             </span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
