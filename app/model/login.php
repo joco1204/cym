@@ -57,11 +57,12 @@ class Login{
 		$db = $this->bsn->db;
 		$session = $this->bsn->session;
 		if ($conn){
-			$query  = "SELECT a.id AS id_usuario, a.usuario, d.id AS id_perfil, d.perfil, a.nombre, a.apellido1, a.apellido2, b.tipo_identificacion, a.identificacion, a.email, a.estado ";
+			$query  = "SELECT a.id AS id_usuario, a.usuario, d.id AS id_perfil, d.perfil, a.nombre, a.apellido1, a.apellido2, b.tipo_identificacion, a.identificacion, a.email, a.estado , e.id_empresa AS empresa, e.id_campana AS campana ";
 			$query .= "FROM re_usuarios AS a ";
 			$query .= "LEFT JOIN pa_tipo_identificacion AS b ON a.tipo_identificacion = b.id ";
 			$query .= "LEFT JOIN re_usuario_perfil AS c ON a.id = c.id_usuario ";
 			$query .= "LEFT JOIN pa_perfiles AS d ON c.id_perfil = d.id ";
+			$query .= "LEFT JOIN re_usaurio_ec AS e ON c.id = e.id_usuario ";
 			$query .= "WHERE a.estado = 'activo' AND a.id = '".$iduser."' ";
 			$query .= "LIMIT 1; ";
 			$result = $conn->query($query);
@@ -81,6 +82,8 @@ class Login{
 						$session->setSession('identificacion', $row->identificacion);
 						$session->setSession('email', $row->email);
 						$session->setSession('estado', $row->estado);
+						$session->setSession('empresa', $row->empresa);
+						$session->setSession('campana', $row->campana);
 						$session->setSession('token', $row->token);
 					}
 
@@ -97,6 +100,8 @@ class Login{
 						'identificacion' => $session->getSession('identificacion'),
 						'email' => $session->getSession('email'),
 						'estado' => $session->getSession('estado'),
+						'empresa' => $session->getSession('empresa'),
+						'campana' => $session->getSession('campana'),
 						'token' => $session->getSession('token')
 					);
 

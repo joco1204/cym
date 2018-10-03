@@ -40,6 +40,8 @@ $(function(){
 							sessionStorage.setItem('identificacion', data2.identificacion);
 							sessionStorage.setItem('email', data2.email);
 							sessionStorage.setItem('estado', data2.estado);
+							sessionStorage.setItem('empresa', data2.empresa);
+							sessionStorage.setItem('campana', data2.campana);
 							sessionStorage.setItem('token', data2.token);
 							//entry to the platform
 							window.location.href = "app/view/index.php";

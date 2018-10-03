@@ -29,7 +29,7 @@ $(function(){
 				html += '<td>'+row.campana+'</td>';
 				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modifica_campana_'+row.id+'">Modificar</button></td>';
+				html += '<td><button type="button" class="btn btn-success btn-xs" onclick="javascript: modificar_campana(\''+row.id+'\');">Modificar</button></td>';
 				html += '</tr>';
 			});
 			html += '</tbody>';
@@ -45,6 +45,7 @@ $(function(){
 			html += '</table>';
 
 			$('#data_campanas').html(html);
+
 			$('#tabla_campanas').dataTable({
 				"order": [ 0, "asc" ],
 				"pageLength": 25, 
@@ -129,4 +130,112 @@ $(function(){
 			}
 		});
 	});
+
+	//Crea campana
+	$('#form_modificar_campana').submit(function(e){
+		e.preventDefault();
+		var data = $('#form_modificar_campana').serialize();
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrcampanas.php',
+			data: data,
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				$('#modificar_campana').modal().hide();
+				$("#modificar_campana .close").click();
+				swal({
+					title: "Correcto!",
+					text: result.msg,
+					type: 'success',
+					showCancelButton: false,
+					confirmButtonClass: "btn-success",
+					confirmButtonText: "Aceptar",
+					closeOnConfirm: true,
+				},function(){
+					pageContent('administrador/campanas/index');
+				});
+			} else {
+				swal('Error!',result.msg,'error');
+				console.log('Error: '+result.msg);
+			}
+		});
+	});
 });
+
+function modificar_campana(id_campana){
+	$("#modificar_campana").modal();
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrcampanas.php',
+		data: {
+			action: 'data_campana',
+			id: id_campana,
+		},
+		dataType: 'json'
+	}).done(function(result){
+		if(result.bool){
+			var data = $.parseJSON(result.msg);
+			$.each(data, function(i, row){
+				$('#id_campana').html(row.id);
+				$('#id_campana_m').val(row.id);
+
+				$('#empresa_m').empty();
+				$.ajax({
+					type: 'post',
+					url: '../controller/ctrempresas.php',
+					data: {
+						action: 'empresas',
+					},
+					dataType: 'json'
+				}).done(function(result2){
+					if(result2.bool){
+						var data2 = $.parseJSON(result2.msg);
+						$.each(data2, function(i, row2){
+							$('#id_empresa_m').append($('<option>', {
+								value: '',
+								text: '', 
+							}));
+							if (row.id_empresa = row2.id){
+								$('#id_empresa_m').append($('<option>', {
+									value: row2.id,
+									text: row2.empresa, 
+								}).attr("selected", true));
+							} else {
+								$('#id_empresa_m').append($('<option>', {
+									value: row2.id,
+									text: row2.empresa, 
+								}));
+							}
+						});
+					} else {
+						console.log('Error: '+result2.msg);
+					}
+				});
+				$('#nombre_campana_m').val(row.campana);
+				$('#estado_campana_m').empty();
+				if(row.estado == 'activo'){
+					$('#estado_campana_m').append($('<option>', {
+						value: 'activo',
+						text: 'activo',
+					}).attr("selected", true));
+					$('#estado_campana_m').append($('<option>', {
+						value: 'inactivo',
+						text: 'inactivo',
+					}));
+				} else {
+					$('#estado_campana_m').append($('<option>', {
+						value: 'inactivo',
+						text: 'inactivo',
+					}).attr("selected", true));
+					$('#estado_campana_m').append($('<option>', {
+						value: 'activo',
+						text: 'activo',
+					}));
+				}
+			});
+		} else {
+			console.log('Error: '+result.msg);
+		}
+	});
+}

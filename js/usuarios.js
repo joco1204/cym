@@ -332,7 +332,7 @@ function modificar_usuario(id_usuario){
 						if(result2.bool){
 							var data2 = $.parseJSON(result2.msg);
 							$.each(data2, function(i, row2){
-								if (row.id_campana == row2.id){
+								if (row.id == row2.id){
 									$('#campana_m').append($('<option>', {
 										value: row2.id,
 										text: row2.campana, 
@@ -427,13 +427,13 @@ function modificar_usuario(id_usuario){
 						text: 'activo',
 					}).attr("selected", true));
 					$('#estado_m').append($('<option>', {
-						value: 'inaction',
-						text: 'inaction',
+						value: 'inactivo',
+						text: 'inactivo',
 					}));
 				} else {
 					$('#estado_m').append($('<option>', {
-						value: 'inaction',
-						text: 'inaction',
+						value: 'inactivo',
+						text: 'inactivo',
 					}).attr("selected", true));
 					$('#estado_m').append($('<option>', {
 						value: 'activo',

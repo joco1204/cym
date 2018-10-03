@@ -105,5 +105,53 @@ class Campana{
 		return $this->business->return;
 	}
 
+	public function data_campana($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayTabla = array();
+			$query   = "SELECT id, campana, id_empresa, estado ";
+			$query  .= "FROM ca_campana ";
+			$query  .= "WHERE id = '".$data->id."'; ";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayTabla, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayTabla);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function modificar_campana($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$query = "UPDATE ca_campana SET campana = '".$data->nombre_campana_m."', id_empresa = '".$data->id_empresa_m."', estado = '".$data->estado_campana_m."' WHERE id = '".$data->id_empresa_m."'; ";
+			$result = $conn->query($query);
+			if($result){
+				$this->business->return->bool = true;
+				$this->business->return->msg = 'Se ha actualizado la campaña '.$data->nombre_campana_m.' correctamente';
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+
+	}
 }
 ?>

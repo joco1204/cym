@@ -105,10 +105,10 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="../../img/logo_img.jpg" class="img-circle" alt="User Image">
+                    <img src="../../img/logo_img.jpg" class="img-circle" alt="User Image" >
                 </div>
                 <div class="pull-left info">
-                    <p><?php echo $session->getSession('nombre')." ".$session->getSession('apellido1'); ?></p>
+                    <p><?php echo $session->getSession('nombre'); ?></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> En Linea</a>
                 </div>
             </div>
@@ -119,7 +119,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <section class="content-header">
-        <h1>INTERACTIVO CONTACT CENTER</h1>
+        <h1><img src="../../img/logo.png" class="img-responsive" alt="Logo compañía" width="150px;" height="150px;"></h1>
     </section>
     <section class="content" id="contenido-index"></section>
 </div>

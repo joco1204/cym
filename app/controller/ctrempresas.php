@@ -26,6 +26,14 @@ if(isset($post->action)){
 			$result = $empresa->empresa_analista();
 			$business->return = $result;
 		break;
+		case 'data_empresa':
+			$result = $empresa->data_empresa($post);
+			$business->return = $result;
+		break;
+		case 'modificar_empresa':
+			$result = $empresa->modificar_empresa($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

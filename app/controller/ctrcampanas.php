@@ -22,6 +22,14 @@ if(isset($post->action)){
 			$result = $campana->campanas_analista($post);
 			$business->return = $result;
 		break;
+		case 'data_campana':
+			$result = $campana->data_campana($post);
+			$business->return = $result;
+		break;
+		case 'modificar_campana':
+			$result = $campana->modificar_campana($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

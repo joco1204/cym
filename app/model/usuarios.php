@@ -195,21 +195,24 @@ class Usuario{
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//
-		isset($data->empresa) ? $empresa = $data->empresa : $empresa = '0';
-		isset($data->campana) ? $campana = $data->campana : $campana = '0';
+		isset($data->empresa_m) ? $empresa = $data->empresa_m : $empresa = '0';
+		isset($data->campana_m) ? $campana = $data->campana_m : $campana = '0';
 		//
 		isset($data->contrasena_m) ? $contrasena_m = $data->contrasena_m : $contrasena_m = '';
 		if($contrasena_m != ''){
-			$password = sha1($data->cambiar_contrasena);
+			$password = sha1($contrasena_m);
 		} else {
 			$password = '';
 		}
 		//Valida conexión a base de datos
 		if($conn){
-			$query  = "UPDATE re_usuarios SET usuario = '".$data->usaurio_m."', password = '".$password."', tipo_identificacion = '".$data->tipo_identificacion_m."', identificacion = '".$data->identificacion_m."', nombre = '".$data->nombres_m."', apellido1 = '".$data->apellidos1_m."', apellido2 = '".$data->apellidos2_m."', email = '".$data->email_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_usuario_m."'; ";
+			if ($password == '') {
+				$query  = "UPDATE re_usuarios SET usuario = '".$data->usaurio_m."', tipo_identificacion = '".$data->tipo_identificacion_m."', identificacion = '".$data->identificacion_m."', nombre = '".$data->nombres_m."', apellido1 = '".$data->apellidos1_m."', apellido2 = '".$data->apellidos2_m."', email = '".$data->email_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_usuario_m."'; ";
+			} else {
+				$query  = "UPDATE re_usuarios SET usuario = '".$data->usaurio_m."', password = '".$password."', tipo_identificacion = '".$data->tipo_identificacion_m."', identificacion = '".$data->identificacion_m."', nombre = '".$data->nombres_m."', apellido1 = '".$data->apellidos1_m."', apellido2 = '".$data->apellidos2_m."', email = '".$data->email_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_usuario_m."'; ";	
+			}
 			$result = $conn->query($query);
 			if($result){
-
 				$query_perfil = "UPDATE re_usuario_perfil SET id_perfil = '".$data->perfil_m."' WHERE id_usuario = '".$data->id_usuario_m."';";
 				$result_perfil = $conn->query($query_perfil);
 				if($result_perfil){
