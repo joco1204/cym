@@ -35,78 +35,8 @@ $(function(){
 				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.campana+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modifica_asesor_'+row.id+'">Modificar</button></td>';
+				html += '<td><button type="button" class="btn btn-success btn-xs" onclick="javascript: modificar_asesor(\''+row.id+'\');">Modificar</button></td>';
 				html += '</tr>';
-
-				html += '<div id="modifica_asesor_'+row.id+'" class="modal fade" role="dialog" >';
-				html += '<div class="modal-dialog modal-lg">';
-				html += '<div class="modal-content">';
-				html += '<form id="form_modifica_asesor" autocomplete="off">';
-				html += '<div class="modal-header bg-blue">';
-				html += '<button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>';
-				html += '<h4 class="modal-title">MODIFICAR ASESOR</h4>';
-				html += '<input type="hidden" id="action" name="action" value="modificar_asesor">';
-				html += '</div>';
-				html += '<div class="modal-body">';
-				html += '<div class="row">';
-				html += '<div class="col col-md-4">';
-				html += '<div class="form-group has-feedback">';
-				html += '<label class="control-label" for="empresa_'+row.id+'">EMPRESA:</label>';
-				html += '<select class="form-control" id="empresa_'+row.id+'" name="empresa_'+row.id+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
-				html += '<div class="help-block with-errors"></div>';
-				html += '</div>';
-				html += '</div>';
-				html += '<div class="col col-md-4">';
-				html += '<div class="form-group has-feedback">';
-				html += '<label class="control-label" for="campana_modificar">CAMPAÑA:</label>';
-				html += '<select class="form-control" id="campana_modificar" name="campana_modificar" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
-				html += '<div class="help-block with-errors"></div>';
-				html += '</div>';
-				html += '</div>';
-				html += '<div class="col col-md-4">';
-				html += '<div class="form-group has-feedback">';
-				html += '<label class="control-label" for="identificacion_modificar">NÚMERO DE IDENTIFICACION:</label>';
-				html += '<input type="text" id="identificacion_modificar" name="identificacion_modificar" class="form-control" required="" data-error="Debe ingresar número de indentificación" value="'+row.identificacion+'">';
-				html += '<div class="help-block with-errors"></div>';
-				html += '</div>';
-				html += '</div>';
-				html += '</div>';
-				html += '<div class="row">';
-				html += '<div class="col col-md-6">';
-				html += '<div class="form-group has-feedback">';
-				html += '<label class="control-label" for="nombres_modificar">NOMBRE(S):</label>';
-				html += '<input type="text" id="nombres_modificar" name="nombres_modificar" class="form-control" required="" data-error="Debe ingresar nombre(s)" value="'+row.nombres+'">';
-				html += '<div class="help-block with-errors"></div>';
-				html += '</div>';
-				html += '</div>';
-				html += '<div class="col col-md-6">';
-				html += '<div class="form-group has-feedback">';
-				html += '<label class="control-label" for="apellidos_modificar">APELLIDO(S):</label>';
-				html += '<input type="text" id="apellidos_modificar" name="apellidos_modificar" class="form-control" required="" data-error="Debe ingresar apellidos(s)" value="'+row.apellidos+'">';
-				html += '<div class="help-block with-errors"></div>';
-				html += '</div>';
-				html += '</div>';
-				html += '</div>';
-
-				html += '<div class="row">';
-				html += '<div class="col col-md-4">';
-				html += '<div class="form-group has-feedback">';
-				html += '<label class="control-label" for="estado_modificar">ESTADO:</label>';
-				html += '<select class="form-control" id="estado_modificar" name="estado_modificar" style="width: 100%" required="" data-error="Debe seleccionar un estado"></select>';
-				html += '<div class="help-block with-errors"></div>';
-				html += '</div>';
-				html += '</div>';
-				html += '</div>';
-
-				html += '</div>';
-				html += '<div class="modal-footer">';
-				html += '<button type="submit" class="btn btn-success btn-sm" >GUARDAR</button>';
-				html += '<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">CERRAR</button>';
-				html += '</div>';
-				html += '</form>';
-				html += '</div>';
-				html += '</div>';
-				html += '</div>';
 			});
 			html += '</tbody>';
 			html += '<tfoot>';
@@ -207,7 +137,7 @@ $(function(){
 		});
 	});
 
-	//Crea campana
+	//Crea asesor
 	$('#form_crear_asesor').submit(function(e){
 		e.preventDefault();
 		var data = $('#form_crear_asesor').serialize();
@@ -273,4 +203,177 @@ $(function(){
 			}
 		});
 	});
+
+	//Modificar asesor
+	$('#modificar_asesor').submit(function(e){
+		e.preventDefault();
+		var data = $('#form_modificar_asesor').serialize();
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrasesor.php',
+			data: data,
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				$('#modificar_asesor').modal().hide();
+				$("#modificar_asesor .close").click();
+				swal({
+					title: "Correcto!",
+					text: result.msg,
+					type: 'success',
+					showCancelButton: false,
+					confirmButtonClass: "btn-success",
+					confirmButtonText: "Aceptar",
+					closeOnConfirm: true,
+				},function(){
+					pageContent('administrador/asesores/index');
+				});
+			} else {
+				swal('Error!',result.msg,'error');
+				console.log('Error: '+result.msg);
+			}
+		});
+	});
 });
+
+function modificar_asesor(id_asesor){
+	$("#modificar_asesor").modal();
+
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrasesor.php',
+		data: {
+			action: 'data_asesor',
+			id: id_asesor,
+		},
+		dataType: 'json'
+	}).done(function(result){
+		if(result.bool){
+			var data = $.parseJSON(result.msg);
+			$.each(data, function(i, row){
+				$('#id_asesor').html(row.id);
+				$('#id_asesor_m').val(row.id);
+				$('#identificacion_m').val(row.identificacion);
+				$('#nombres_m').val(row.nombres);
+				$('#apellidos_m').val(row.apellidos);
+
+				//Ajax empresa
+				$('#empresa_m').empty();
+				$.ajax({
+					type: 'post',
+					url: '../controller/ctrempresas.php',
+					data: {
+						action: 'empresas',
+					},
+					dataType: 'json'
+				}).done(function(result2){
+					if(result2.bool){
+						var data2 = $.parseJSON(result2.msg);
+						$.each(data2, function(i, row2){
+							if (row.id_empresa == row2.id){
+								$('#empresa_m').append($('<option>', {
+									value: row2.id,
+									text: row2.empresa, 
+								}).attr("selected", true));
+							} else {	
+								$('#empresa_m').append($('<option>', {
+									value: row2.id,
+									text: row2.empresa, 
+								}));
+							}
+						});
+					} else {
+						console.log('Error: '+result2.msg);
+					}
+				});
+
+				//Ajax campañas
+				$('#campana_m').empty();
+				$.ajax({
+					type: 'post',
+					url: '../controller/ctrcampanas.php',
+					data: {
+						action: 'campanas',
+						id_empresa: row.id_empresa,
+					},
+					dataType: 'json'
+				}).done(function(result2){
+					if(result2.bool){
+						var data2 = $.parseJSON(result2.msg);
+						$.each(data2, function(i, row2){
+							if (row.id == row2.id){
+								$('#campana_m').append($('<option>', {
+									value: row2.id,
+									text: row2.campana, 
+								}).attr("selected", true));
+							} else {	
+								$('#campana_m').append($('<option>', {
+									value: row2.id,
+									text: row2.campana, 
+								}));
+							}
+						});
+					} else {
+						console.log('Error: '+result2.msg);
+					}
+				});
+
+				//Cuando cambia la empresa
+				$('#empresa_m').change(function(){
+					//Ajax campañas
+					$('#campana_m').empty();
+					$.ajax({
+						type: 'post',
+						url: '../controller/ctrcampanas.php',
+						data: {
+							action: 'campanas',
+							id_empresa: $('#empresa_m').val(),
+						},
+						dataType: 'json'
+					}).done(function(result2){
+						if(result2.bool){
+							var data2 = $.parseJSON(result2.msg);
+							$.each(data2, function(i, row2){
+								$('#campana_m').append($('<option>', {
+									value: '',
+									text: '', 
+								}));
+								$('#campana_m').append($('<option>', {
+									value: row2.id,
+									text: row2.campana, 
+								}));
+							});
+						} else {
+							console.log('Error: '+result2.msg);
+						}
+					});
+				});
+
+				//Muestra las opciones de activo e inactivo
+				$('#estado_m').empty();
+				if(row.estado == 'activo'){
+					$('#estado_m').append($('<option>', {
+						value: 'activo',
+						text: 'activo',
+					}).attr("selected", true));
+					$('#estado_m').append($('<option>', {
+						value: 'inactivo',
+						text: 'inactivo',
+					}));
+				} else {
+					$('#estado_m').append($('<option>', {
+						value: 'inactivo',
+						text: 'inactivo',
+					}).attr("selected", true));
+					$('#estado_m').append($('<option>', {
+						value: 'activo',
+						text: 'activo',
+					}));
+				}
+
+			});
+		} else {
+			console.log('Error: '+result.msg);
+		}
+	});
+}

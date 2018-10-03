@@ -24,7 +24,14 @@ if(isset($post->action)){
 			$result = $asesor->crear_asesor($post);
 			$business->return = $result;
 		break;
-
+		case 'data_asesor':
+			$result = $asesor->data_asesor($post);
+			$business->return = $result;
+		break;
+		case 'modificar_asesor':
+			$result = $asesor->modificar_asesor($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

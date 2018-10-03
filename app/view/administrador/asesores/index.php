@@ -87,7 +87,6 @@
     </div>
 </div>
 
-
 <div id="cargar_asesores" class="modal fade" role="dialog">
     <form id="cargar_asesores_form">
         <div class="modal-dialog">
@@ -114,7 +113,74 @@
         </div>
     </form>
 </div>
-
+<div id="modificar_asesor" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form id="form_modificar_asesor" autocomplete="off">
+                <div class="modal-header bg-blue text-center">
+                    <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
+                    <h4 class="modal-title">MODIFICAR ASESOR ID: <span id="id_asesor"></span></h4>
+                    <input type="hidden" name="action" id="action" value="modificar_asesor">
+                    <input type="hidden" name="id_asesor_m" id="id_asesor_m">
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="empresa_m">EMPRESA:</label>
+                                <select class="form-control" id="empresa_m" name="empresa_m" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="campana_m">CAMPAÑA:</label>
+                                <select class="form-control" id="campana_m" name="campana_m" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="identificacion_m">NÚMERO DE IDENTIFICACION:</label>
+                                <input type="text" id="identificacion_m" name="identificacion_m" class="form-control" required="" data-error="Debe ingresar número de indentificación">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-6">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="nombres_m">NOMBRE(S):</label>
+                                <input type="text" id="nombres_m" name="nombres_m" class="form-control" required="" data-error="Debe ingresar nombre(s)">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="apellidos_m">APELLIDO(S):</label>
+                                <input type="text" id="apellidos_m" name="apellidos_m" class="form-control" required="" data-error="Debe ingresar apellidos(s)">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="estado_m">ESTADO:</label>
+                                <select class="form-control" id="estado_m" name="estado_m" style="width: 100%" required="" data-error="Debe seccionar estado"></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success btn-sm" >GUARDAR</button>
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">CERRAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <script src="../../js/asesores.js"></script>
 <script type="text/javascript">
     $(function(){
