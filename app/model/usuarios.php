@@ -103,13 +103,17 @@ class Usuario{
 					$query .= "VALUES ('".$data->usaurio."', '".$pass."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombres."', '".$data->apellidos1."', '".$data->apellidos2."', '".$data->email."', 'activo');";
 					$result = $conn->query($query);
 					if($result){
+						//
+						isset($data->empresa) ? $empresa = $data->empresa : $empresa = '0';
+						isset($data->campana) ? $campana = $data->campana : $campana = '0';
+						//
 						$id_usaurio = $conn->lastInsertId();
 						$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '".$data->perfil."'); ";
 						$conn->query($query_perfil);
-						if($data->perfil == '' || $data->perfil == ''){
-							$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '".$data->perfil."', '".$data->empresa."', '".$data->campana."');";
-							$conn->query($query_ec);
-						}
+						//
+						$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '".$data->perfil."', '".$empresa."', '".$campana."');";
+						$conn->query($query_ec);
+						
 						$this->business->return->bool = true;
 						$this->business->return->msg = 'Se creó el usuario correctamente';
 					} else {
@@ -134,7 +138,12 @@ class Usuario{
 	public function modificar_perfil($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
-		$password = sha1($data->cambiar_contrasena);
+		isset($data->cambiar_contrasena) ? $cambiar_contrasena = $data->cambiar_contrasena : $cambiar_contrasena = '';
+		if($cambiar_contrasena != ''){
+			$password = sha1($data->cambiar_contrasena);
+		} else {
+			$password = '';
+		}
 		//Valida conexión a base de datos
 		if($conn){
 			$query  = "UPDATE re_usuarios SET password = '".$password."' WHERE id = '".$data->id_usuario."';";
@@ -159,8 +168,10 @@ class Usuario{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayData = array();
-			$query  = "SELECT a.id, a.usuario, a.tipo_identificacion, a.identificacion, a.nombre, a.apellido1, a.apellido2, a.email, a.estado ";
+			$query  = "SELECT a.id, a.usuario, a.tipo_identificacion, a.identificacion, a.nombre, a.apellido1, a.apellido2, b.id_perfil AS perfil, a.email, a.estado, c.id_empresa, c.id_campana ";
 			$query .= "FROM re_usuarios AS a ";
+			$query .= "LEFT JOIN re_usuario_perfil AS b ON a.id = b.id_usuario ";
+			$query .= "LEFT JOIN re_usaurio_ec AS c ON a.id = c.id_usuario ";
 			$query .= "WHERE a.id = '".$data->id_usuario."';";
 			$result = $conn->query($query);
 			if($result){
@@ -169,6 +180,54 @@ class Usuario{
 				}
 				$this->business->return->bool = true;
 				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function modificar_usuario($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//
+		isset($data->empresa) ? $empresa = $data->empresa : $empresa = '0';
+		isset($data->campana) ? $campana = $data->campana : $campana = '0';
+		//
+		isset($data->contrasena_m) ? $contrasena_m = $data->contrasena_m : $contrasena_m = '';
+		if($contrasena_m != ''){
+			$password = sha1($data->cambiar_contrasena);
+		} else {
+			$password = '';
+		}
+		//Valida conexión a base de datos
+		if($conn){
+			$query  = "UPDATE re_usuarios SET usuario = '".$data->usaurio_m."', password = '".$password."', tipo_identificacion = '".$data->tipo_identificacion_m."', identificacion = '".$data->identificacion_m."', nombre = '".$data->nombres_m."', apellido1 = '".$data->apellidos1_m."', apellido2 = '".$data->apellidos2_m."', email = '".$data->email_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_usuario_m."'; ";
+			$result = $conn->query($query);
+			if($result){
+
+				$query_perfil = "UPDATE re_usuario_perfil SET id_perfil = '".$data->perfil_m."' WHERE id_usuario = '".$data->id_usuario_m."';";
+				$result_perfil = $conn->query($query_perfil);
+				if($result_perfil){
+
+					$query_perfil_ec = "UPDATE re_usaurio_ec SET id_perfil  = '".$data->perfil_m."', id_empresa  = '".$empresa."', id_campana  = '".$campana."' where id_usuario = '".$data->id_usuario_m."';";
+					$result_perfil_ec = $conn->query($query_perfil_ec);
+					
+					if($result_perfil_ec){
+						$this->business->return->bool = true;
+						$this->business->return->msg = 'Perfil de usuario actualizado con éxito';
+					} else {
+						$this->business->return->bool = false;
+						$this->business->return->msg = 'Error al actualizar empresa y campaña';	
+					}
+				} else {
+					$this->business->return->bool = false;
+					$this->business->return->msg = 'Error actualización perfil';
+				}
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';

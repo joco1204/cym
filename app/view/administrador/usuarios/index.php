@@ -23,9 +23,6 @@
         </div>
     </div>
 </section>
-<script src="../../js/usuarios.js"></script>
-
-
 <div id="modal_usuario" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -130,16 +127,15 @@
         </div> 
     </div>
 </div>
-
-
 <div id="modal_usuario_modificar" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="usuario_form_modificar" autocomplete="off">
                 <div class="modal-header bg-blue">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center">Modificar Usuario id: <span id="id_usaurio"></span></h4>
-                    <input type="hidden" name="action" id="action" value="modifica_usuario">
+                    <h4 class="modal-title text-center">Modificar Usuario ID: <span id="id_usuario"></span></h4>
+                    <input type="hidden" name="action" id="action" value="modificar_usuario">
+                    <input type="hidden" name="id_usuario_m" id="id_usuario_m">
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -199,7 +195,7 @@
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="contrasena_m">CONTRASEÑA:</label>
-                                <input type="password" id="contrasena_m" name="contrasena_m" class="form-control" required="" data-error="Debe ingresar contraseña">
+                                <input type="password" id="contrasena_m" name="contrasena_m" class="form-control">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -211,7 +207,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" id="empresa_campana" style="display: none;">
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="estado_m">ESTADO:</label>
+                                <select class="form-control" id="estado_m" name="estado_m" style="width: 100%" required="" data-error="Debe seccionar estado"></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="empresa_campana_m" style="display: none;">
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="empresa_m">EMPRESA:</label>
@@ -236,8 +241,7 @@
         </div> 
     </div>
 </div>
-
-
+<script src="../../js/usuarios.js"></script>
 <script type="text/javascript">
     $(function(){
         $("select").select2();

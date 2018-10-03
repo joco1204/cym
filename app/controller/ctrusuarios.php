@@ -22,8 +22,16 @@ if(isset($post->action)){
 			$result = $usuario->crear_usuario($post);
 			$business->return = $result;
 		break;
+		case 'crear_usuario':
+			$result = $usuario->crear_usuario($post);
+			$business->return = $result;
+		break;
 		case 'modificar_perfil':
 			$result = $usuario->modificar_perfil($post);
+			$business->return = $result;
+		break;
+		case 'modificar_usuario':
+			$result = $usuario->modificar_usuario($post);
 			$business->return = $result;
 		break;
 		case 'data_usuario':
