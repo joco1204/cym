@@ -28,9 +28,9 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="form_crear_empresa" autocomplete="off">
-                <div class="modal-header bg-blue">
+                <div class="modal-header bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
-                    <h4 class="modal-title">CREAR EMPRESA</h4>
+                    <h4 class="modal-title"><b>CREAR EMPRESA</b></h4>
                     <input type="hidden" id="action" name="action" value="crear_empresa">
                 </div>
                 <div class="modal-body">
@@ -75,9 +75,9 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="form_modificar_empresa" autocomplete="off">
-                <div class="modal-header bg-blue">
+                <div class="modal-header bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
-                    <h4 class="modal-title">MODIFICAR EMPRESA ID: <span id="id_empresa"></span></h4>
+                    <h4 class="modal-title"><b>MODIFICAR EMPRESA ID:</b> <span id="id_empresa"></span></h4>
                     <input type="hidden" id="action" name="action" value="modificar_empresa">
                     <input type="hidden" name="id_empresa_m" id="id_empresa_m">
                 </div>

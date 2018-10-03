@@ -27,9 +27,9 @@
     <form id="nuevo_error_form">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-blue">
+                <div class="modal-header bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">NUEVO ERROR</h4>
+                    <h4 class="modal-title"><b>NUEVO ERROR</b></h4>
                     <input type="hidden" name="action" value="guardar_error">
                 </div>
                 <div class="modal-body">

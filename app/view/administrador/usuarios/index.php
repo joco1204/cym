@@ -27,9 +27,9 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="usuario_form" autocomplete="off">
-                <div class="modal-header bg-blue">
+                <div class="modal-header bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center">Crear Usuario</h4>
+                    <h4 class="modal-title text-center"><b>CREAR USAURIO</b></h4>
                     <input type="hidden" name="action" id="action" value="crear_usuario">
                 </div>
                 <div class="modal-body">
@@ -131,9 +131,9 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="usuario_form_modificar" autocomplete="off">
-                <div class="modal-header bg-blue">
+                <div class="modal-header bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center">Modificar Usuario ID: <span id="id_usuario"></span></h4>
+                    <h4 class="modal-title text-center"><b>MODIFICAR USUARIO ID:</b> <span id="id_usuario"></span></h4>
                     <input type="hidden" name="action" id="action" value="modificar_usuario">
                     <input type="hidden" name="id_usuario_m" id="id_usuario_m">
                 </div>

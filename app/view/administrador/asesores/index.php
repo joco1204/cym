@@ -27,14 +27,13 @@
         </div>
     </div>
 </section>
-
 <div id="crear_asesor" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="form_crear_asesor" autocomplete="off">
-                <div class="modal-header bg-blue">
+                <div class="modal-header bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
-                    <h4 class="modal-title">CREAR ASESOR</h4>
+                    <h4 class="modal-title"><b>CREAR ASESOR</b></h4>
                     <input type="hidden" id="action" name="action" value="crear_asesor">
                 </div>
                 <div class="modal-body">
@@ -91,7 +90,7 @@
     <form id="cargar_asesores_form">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header text-center bg-blue">
+                <div class="modal-header text-center bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title text-center"><b>GARGUE MASIVO DE ASESORES</b></h4>
                 </div>
@@ -119,7 +118,7 @@
             <form id="form_modificar_asesor" autocomplete="off">
                 <div class="modal-header bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
-                    <h4 class="modal-title">MODIFICAR ASESOR ID: <span id="id_asesor"></span></h4>
+                    <h4 class="modal-title"><b>MODIFICAR ASESOR ID:</b> <span id="id_asesor"></span></h4>
                     <input type="hidden" name="action" id="action" value="modificar_asesor">
                     <input type="hidden" name="id_asesor_m" id="id_asesor_m">
                 </div>

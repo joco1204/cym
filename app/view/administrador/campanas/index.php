@@ -27,9 +27,9 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="form_crear_campana" autocomplete="off">
-                <div class="modal-header bg-blue">
+                <div class="modal-header bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
-                        <h4 class="modal-title">CREAR CAMPAÑA</h4>
+                        <h4 class="modal-title"><b>CREAR CAMPAÑA</b></h4>
                     <input type="hidden" id="action" name="action" value="crear_campana">
                 </div>
                 <div class="modal-body">
@@ -76,7 +76,7 @@
             <form id="form_modificar_campana" autocomplete="off">
                 <div class="modal-header bg-blue text-center">
                     <button type="button" class="close" data-dismiss="modal"><span style="color: #fff">X</span></button>
-                    <h4 class="modal-title">ACTUALIZAR CAMPAÑA ID: <span id="id_campana"></span></h4>
+                    <h4 class="modal-title"><b>MODIFICAR CAMPAÑA ID:</b> <span id="id_campana"></span></h4>
                     <input type="hidden" id="action" name="action" value="modificar_campana">
                     <input type="hidden" name="id_campana_m" id="id_campana_m">
                 </div>
