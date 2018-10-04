@@ -19,8 +19,6 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
         <meta name="author" content="Interactivo Contact Center"/>
         <meta name="description" content="Interactivo Contact Center"/>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <!-- definición de ícono de ventana -->
-        <link rel="shortcut icon" type="image/x-icon" href="" />
         <!-- librerías js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>

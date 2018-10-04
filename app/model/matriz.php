@@ -14,6 +14,7 @@ class Matriz{
 			$query .= "FROM ca_matriz AS a  ";
 			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id  ";
 			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id ";
+			$query .= "WHERE a.estado = 'activo' OR a.estado = 'inactivo' OR a.estado = 'anulado'; ";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -21,6 +22,36 @@ class Matriz{
 				}
 				$this->business->return->bool = true;
 				$this->business->return->msg = json_encode($arrayTabla);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	//Información por matriz
+	public function data_matriz($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT a.id, b.empresa, c.campana, a.estado ";
+			$query .= "FROM ca_matriz AS a  ";
+			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id  ";
+			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id ";
+			$query .= "WHERE a.id = '".$data->id."'; ";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';
