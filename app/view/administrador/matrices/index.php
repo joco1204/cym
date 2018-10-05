@@ -23,9 +23,6 @@
         </div>
     </div>
 </section>
-<script src="../../js/matriz/matriz.js"></script>
-
-
 <div id="info_matriz" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -41,5 +38,4 @@
         </div>
     </div>
 </div>
-
-
+<script src="../../js/matriz/matriz.js"></script>

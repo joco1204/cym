@@ -35,15 +35,15 @@ $(function(){
 					html += '<span class="glyphicon glyphicon-eye-open"></span>';
 					html += '</button>';
 					html += ' ';
-					html += '<button type="button" class="btn btn-success btn-sm" data-toggle="tooltip" title="Modificar">';
+					html += '<button type="button" class="btn btn-success btn-sm" data-toggle="tooltip" title="Modificar" onclick="javascript: modificar_matriz(\''+row.id+'\');">';
 					html += '<span class="glyphicon glyphicon-pencil"></span>';
 					html += '</button>';
 					html += ' ';
-					html += '<button type="button" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Anular">';
+					html += '<button type="button" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Anular" onclick="javascript: estado_matriz(\''+row.id+'\',\'anulado\');">';
 					html += '<span class="glyphicon glyphicon-ban-circle"></span>';
 					html += '</button>';
 					html += ' ';
-					html += '<button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Eliminar">';
+					html += '<button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Eliminar" onclick="javascript: estado_matriz(\''+row.id+'\',\'eliminado\');">';
 					html += '<span class="glyphicon glyphicon-remove"></span>';
 					html += '</button>';
 				}
@@ -214,8 +214,27 @@ function ver_matriz(id){
 			console.log('Error: '+result.msg);
 		}
 	});
+}
+
+function estado_matriz(id, estado){
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrmonitoreo.php',
+		data: {
+			action: 'monitoreos_matriz',
+			id_matriz: id,
+		},
+		dataType: 'json',
+	}).done(function(result){
+		if(result.bool){
 
 
-				
+		} else {
+			console.log('Error: '+result.msg);
+		}
+	});
+}
+
+function modificar_matriz(id){
 
 }
