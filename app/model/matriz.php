@@ -63,6 +63,29 @@ class Matriz{
 		return $this->business->return;
 	}
 
+	//Validación matriz por empresa y campaña
+	public function matriz_empresa_campana($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$query  = "SELECT COUNT(*) AS num_matriz FROM ca_matriz WHERE id_empresa = '".$data->empresa."' AND id_campana = '".$data->campana."' AND estado = 'activo'; ";
+			$result = $conn->query($query);
+			if($result){
+				$row = $result->fetch(PDO::FETCH_OBJ);
+				$this->business->return->bool = true;
+				$this->business->return->msg = $row->num_matriz;
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 	//Tipo de error
 	public function tipo_error(){
 		$conn = $this->business->conn;
@@ -185,6 +208,52 @@ class Matriz{
 				}
 				$this->business->return->bool = true;
 				$this->business->return->msg = json_encode($arrayTabla);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function monitoreos_matriz($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$query  = "SELECT COUNT(*) AS num_monitoreo ";
+			$query .= "FROM ca_matriz AS a ";
+			$query .= "LEFT JOIN ca_agenda_monitoreo AS b ON a.id_empresa =b.id_empresa ";
+			$query .= "WHERE a.id = '".$data->id_matriz."' AND b.estado = '1';";
+			$result = $conn->query($query);
+			if($result){
+				$row = $result->fetch(PDO::FETCH_OBJ);
+				$this->business->return->bool = true;
+				$this->business->return->msg = $row->num_monitoreo ;
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function estado_matriz($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$query  = "UPDATE ca_matriz SET estado = '".$data->estado."' WHERE id = '".$data->id."';";
+			$result = $conn->query($query);
+			if($result){
+				$this->business->return->bool = true;
+				$this->business->return->msg = "";
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';

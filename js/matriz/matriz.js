@@ -219,7 +219,7 @@ function ver_matriz(id){
 function estado_matriz(id, estado){
 	$.ajax({
 		type: 'post',
-		url: '../controller/ctrmonitoreo.php',
+		url: '../controller/ctrmatriz.php',
 		data: {
 			action: 'monitoreos_matriz',
 			id_matriz: id,
@@ -227,8 +227,112 @@ function estado_matriz(id, estado){
 		dataType: 'json',
 	}).done(function(result){
 		if(result.bool){
-
-
+			switch(estado){
+				case 'anulado':
+					if(result.msg == '0'){
+						$.ajax({
+							type: 'post',
+							url: '../controller/ctrmatriz.php',
+							data: {
+								action: 'estado_matriz',
+								id: id,
+								estado: estado
+							},
+							dataType: 'json'
+						}).done(function(result3){
+							if(result3.bool){
+								swal({
+									title: "Correcto!",
+									text: result3.msg,
+									type: 'success',
+									showCancelButton: false,
+									confirmButtonClass: "btn-success",
+									confirmButtonText: "Aceptar",
+									closeOnConfirm: true,
+								},function(){
+									pageContent('administrador/matrices/index');
+								});
+							} else {
+								swal('Error!',result3.msg,'error');
+								console.log('Error: '+result3.msg);
+							}
+						});
+					} else {
+						swal({
+							title: "¡Atención!",
+							text: "La matriz tiene monitores asignados y realizados \n Desea continuar?",
+							type: 'warning',
+							showCancelButton: true,
+							confirmButtonColor: 'btn-primary',
+							cancelButtonColor: 'btn-danger',
+							confirmButtonText: 'Aceptar',
+							cancelButtonText: "Cancelar",
+							closeOnConfirm: false,
+						},function(result2){
+							$.ajax({
+								type: 'post',
+								url: '../controller/ctrmatriz.php',
+								data: {
+									action: 'estado_matriz',
+									id: id,
+									estado: estado
+								},
+								dataType: 'json'
+							}).done(function(result3){
+								if(result3.bool){
+									swal({
+										title: "Correcto!",
+										text: result3.msg,
+										type: 'success',
+										showCancelButton: false,
+										confirmButtonClass: "btn-success",
+										confirmButtonText: "Aceptar",
+										closeOnConfirm: true,
+									},function(){
+										pageContent('administrador/matrices/index');
+									});
+								} else {
+									swal('Error!',result3.msg,'error');
+									console.log('Error: '+result3.msg);
+								}
+							});
+						});	
+					}
+				break;
+				case 'eliminado':
+					if(result.msg == '0'){
+						$.ajax({
+							type: 'post',
+							url: '../controller/ctrmatriz.php',
+							data: {
+								action: 'estado_matriz',
+								id: id,
+								estado: estado
+							},
+							dataType: 'json'
+						}).done(function(result3){
+							if(result3.bool){
+								swal({
+									title: "Correcto!",
+									text: result3.msg,
+									type: 'success',
+									showCancelButton: false,
+									confirmButtonClass: "btn-success",
+									confirmButtonText: "Aceptar",
+									closeOnConfirm: true,
+								},function(){
+									pageContent('administrador/matrices/index');
+								});
+							} else {
+								swal('Error!',result3.msg,'error');
+								console.log('Error: '+result3.msg);
+							}
+						});
+					} else {
+						swal("Atención!","La matriz tiene monitoreos realizados\n No puede ser eliminada","warning");
+					}
+				break;
+			}
 		} else {
 			console.log('Error: '+result.msg);
 		}

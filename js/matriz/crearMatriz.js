@@ -87,14 +87,34 @@ function addMatriz(){
 	} else {
 		var empresa = document.getElementById("empresa");
   		var campana = document.getElementById("campana");
-  		$('#matriz_pannel').show();
-		$('#empresa_matriz').html(empresa.options[empresa.selectedIndex].text);
-		$('#campana_matriz').html(campana.options[campana.selectedIndex].text);
-		$('#empresa_form').val(empresa.value);
-		$('#campana_form').val(campana.value);
-		$('#empresa').attr("disabled", true);
-		$('#campana').attr("disabled", true);
-		$('#add_matriz').attr("disabled", true);
+  		$.ajax({
+  			type: 'post',
+			url: '../controller/ctrmatriz.php',
+			data: {
+				action: 'matriz_empresa_campana',
+				empresa: $('#empresa').val(),
+				campana: $('#campana').val(),
+			},
+			dataType: 'json'
+  		}).done(function(result){
+  			if(result.bool){
+  				if(result.msg == 0){
+  					$('#matriz_pannel').show();
+					$('#empresa_matriz').html(empresa.options[empresa.selectedIndex].text);
+					$('#campana_matriz').html(campana.options[campana.selectedIndex].text);
+					$('#empresa_form').val(empresa.value);
+					$('#campana_form').val(campana.value);
+					$('#empresa').attr("disabled", true);
+					$('#campana').attr("disabled", true);
+					$('#add_matriz').attr("disabled", true);
+  				} else {
+  					swal("Atención!","Ya existe una matriz para la empresa y campaña seleccionadas","warning");
+  					console.log('Error: '+result.msg);
+  				}
+  			} else {
+  				console.log('Error: '+result.msg);
+  			}
+  		});	
 	}
 }
 

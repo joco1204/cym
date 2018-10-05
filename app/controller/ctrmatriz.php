@@ -14,6 +14,10 @@ if(isset($post->action)){
 			$result = $matriz->data_matriz($post);
 			$business->return = $result;
 		break;
+		case 'matriz_empresa_campana':
+			$result = $matriz->matriz_empresa_campana($post);
+			$business->return = $result;
+		break;
 		case 'tipo_error':
 			$result = $matriz->tipo_error();
 			$business->return = $result;
@@ -28,6 +32,14 @@ if(isset($post->action)){
 		break;
 		case 'tabla_error':
 			$result = $matriz->tabla_error();
+			$business->return = $result;
+		break;
+		case 'monitoreos_matriz':
+			$result = $matriz->monitoreos_matriz($post);
+			$business->return = $result;
+		break;
+		case 'estado_matriz':
+			$result = $matriz->estado_matriz($post);
 			$business->return = $result;
 		break;
 		default:
