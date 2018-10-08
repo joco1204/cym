@@ -10,7 +10,7 @@
             <section class='content'>
                 <div class="row">
                     <div class="col col-md-12 text-center">
-                        <button type="button" class='btn btn-success' onclick="javascript: pageContent('administrador/matrices/form');">Crear Matriz</button>
+                        <button type="button" class='btn btn-success' onclick="javascript: pageContent('administrador/matrices/form','accion_matriz=crear');">Crear Matriz</button>
                         <button type="button" class='btn btn-danger' onclick="javascript: pageContent('administrador/administrador');">Volver</button>
                     </div>
                 </div>

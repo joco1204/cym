@@ -35,7 +35,7 @@ $(function(){
 					html += '<span class="glyphicon glyphicon-eye-open"></span>';
 					html += '</button>';
 					html += ' ';
-					html += '<button type="button" class="btn btn-success btn-sm" data-toggle="tooltip" title="Modificar" onclick="javascript: modificar_matriz(\''+row.id+'\');">';
+					html += '<button type="button" class="btn btn-success btn-sm" data-toggle="tooltip" title="Modificar" onclick="javascript: pageContent(\'administrador/matrices/form\',\'accion_matriz=modificar&id_matriz='+row.id+'\');">';
 					html += '<span class="glyphicon glyphicon-pencil"></span>';
 					html += '</button>';
 					html += ' ';
@@ -337,8 +337,4 @@ function estado_matriz(id, estado){
 			console.log('Error: '+result.msg);
 		}
 	});
-}
-
-function modificar_matriz(id){
-
 }

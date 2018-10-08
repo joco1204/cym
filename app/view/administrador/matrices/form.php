@@ -1,14 +1,21 @@
+<?php
+include '../../../../config/session.php';
+$session = new Session();
+$session->start();
+$get = ((object) $_GET);
+
+?>
 <section class="content-header">
     <h1>MATRICES</h1>
 </section>
-<section class="content">
-    <div class='box box-primary'>
-        <div class='box-header with-border'>
-            <h3 class='box-title'>AÑADIR MATRIZ</h3>
-        </div>
-        <div class='box-body'>
-            <section class='content'>
-                <form id="matriz_form" autocomplete="off">
+<form id="matriz_form" autocomplete="off">
+    <section class="content">
+        <div class='box box-primary'>
+            <div class='box-header with-border'>
+                <h3 class='box-title'>AÑADIR MATRIZ</h3>
+            </div>
+            <div class='box-body'>
+                <section class='content'>
                     <div class="panel panel-primary">
                         <div class="panel-body">
                             <div class="row">
@@ -80,11 +87,11 @@
                             </div>
                         </div>
                     </div>
-                </form>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</form>
 <script src="../../js/matriz/crearMatriz.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
