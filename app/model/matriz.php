@@ -40,7 +40,7 @@ class Matriz{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayData = array();
-			$query  = "SELECT a.id, b.empresa, c.campana, a.estado ";
+			$query  = "SELECT a.id, a.id_empresa, b.empresa, a.id_campana, c.campana, a.estado ";
 			$query .= "FROM ca_matriz AS a  ";
 			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id  ";
 			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id ";
@@ -194,6 +194,27 @@ class Matriz{
 		return $this->business->return;
 	}
 
+	public function modificar_matriz($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$query  = "UPDATE ca_matriz SET estado = '".$data->estado."' WHERE id = '".$data->id_matriz."';";
+			$result = $conn->query($query);
+			if($result){
+				$this->business->return->bool = true;
+				$this->business->return->msg = "La matriz se ha actualizado";
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 	public function tabla_error(){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
@@ -253,7 +274,7 @@ class Matriz{
 			$result = $conn->query($query);
 			if($result){
 				$this->business->return->bool = true;
-				$this->business->return->msg = "";
+				$this->business->return->msg = "La matriz se ha actualizado";
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';

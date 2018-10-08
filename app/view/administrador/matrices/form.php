@@ -4,6 +4,16 @@ $session = new Session();
 $session->start();
 $get = ((object) $_GET);
 
+if(isset($get->accion_matriz)){
+    if($get->accion_matriz == 'modificar'){
+        isset($get->id_matriz) ? $id_matriz = $get->id_matriz : $id_matriz = '0';
+    } else {
+        $id_matriz = '0';
+    }
+} else {
+    header('location: ../../index.php');
+}
+
 ?>
 <section class="content-header">
     <h1>MATRICES</h1>
@@ -11,37 +21,61 @@ $get = ((object) $_GET);
 <form id="matriz_form" autocomplete="off">
     <section class="content">
         <div class='box box-primary'>
-            <div class='box-header with-border'>
-                <h3 class='box-title'>AÑADIR MATRIZ</h3>
-            </div>
-            <div class='box-body'>
-                <section class='content'>
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col col-md-3">
-                                    <div class="form-group has-feedback">
-                                        <label for="empresa" class="control-label">Empresas</label>
-                                        <select name="empresa" id="empresa" class="form-control" style="width: 100%;" required data-error="Debe seleccionar empresa"></select>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col col-md-3">
-                                    <div class="form-group has-feedback">
-                                        <label for="campana" class="control-label">Campañas</label>
-                                        <select name="campana" id="campana" class="form-control" style="width: 100%;" required data-error="Debe seleccionar campana"></select>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col col-md-3">
-                                    <button type="button" id="add_matriz" class="btn btn-primary btn-sm" onclick="javascript: addMatriz();">
-                                        Crear Matriz <span class="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                </div>
+            <?php if($id_matriz == '0'){ ?>
+                <div class='box-header with-border'>
+                    <h3 class='box-title'>AÑADIR MATRIZ</h3>
+                </div>
+            <?php } else { ?>
+                <div class='box-header with-border'>
+                    <div class="row">
+                        <div class="col col-md-3">
+                            <input type="hidden" name="id_matriz" id="id_matriz" value="<?php echo $id_matriz; ?>">
+                            <h3 class='box-title'>MATRIZ ID : <span id="id"></span></h3>    
+                        </div>
+                        <div class="col col-md-1">
+                            <h3 class='box-title'>ESTADO :</h3>    
+                        </div>
+                        <div class="col col-md-3">
+                            <div class="form-group has-feedback">
+                                <select name="estado" id="estado" class="form-control" style="width: 100%;" required data-error="Debe seleccionar estado de la matriz"></select>
+                                <div class="help-block with-errors"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-primary" id="matriz_pannel" style="display: none;">
+                </div>
+            <?php } ?>
+            <div class='box-body'>
+                <section class='content'>
+                    <?php if($id_matriz == '0'){ ?>
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col col-md-3">
+                                        <div class="form-group has-feedback">
+                                            <label for="empresa" class="control-label">Empresas</label>
+                                            <select name="empresa" id="empresa" class="form-control" style="width: 100%;" required data-error="Debe seleccionar empresa"></select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-md-3">
+                                        <div class="form-group has-feedback">
+                                            <label for="campana" class="control-label">Campañas</label>
+                                            <select name="campana" id="campana" class="form-control" style="width: 100%;" required data-error="Debe seleccionar campana"></select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-md-3">
+                                        <button type="button" id="add_matriz" class="btn btn-primary btn-sm" onclick="javascript: addMatriz();">
+                                            Crear Matriz <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-primary" id="matriz_pannel" style="display: none;">
+                    <?php } else { ?>
+                        <div class="panel panel-primary" id="matriz_pannel">
+                    <?php } ?>
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-md-3 text-left">
@@ -92,7 +126,11 @@ $get = ((object) $_GET);
         </div>
     </section>
 </form>
-<script src="../../js/matriz/crearMatriz.js"></script>
+<?php if($id_matriz == '0'){ ?>
+    <script src="../../js/matriz/crearMatriz.js"></script>
+<?php } else { ?>
+    <script src="../../js/matriz/modificarMatriz.js"></script>
+<?php } ?>
 <script type="text/javascript">
     $(document).ready(function(){
         $("select").select2();
