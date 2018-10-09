@@ -83,13 +83,15 @@ CREATE TABLE IF NOT EXISTS `ca_campana` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_campana: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_campana: ~3 rows (aproximadamente)
 DELETE FROM `ca_campana`;
 /*!40000 ALTER TABLE `ca_campana` DISABLE KEYS */;
 INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
 	(1, 'VENTAS', 1, 'activo');
 INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
 	(2, 'INBOUND', 2, 'activo');
+INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
+	(3, 'SAC', 3, 'activo');
 /*!40000 ALTER TABLE `ca_campana` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_empresa
@@ -102,13 +104,15 @@ CREATE TABLE IF NOT EXISTS `ca_empresa` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_empresa: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_empresa: ~3 rows (aproximadamente)
 DELETE FROM `ca_empresa`;
 /*!40000 ALTER TABLE `ca_empresa` DISABLE KEYS */;
 INSERT INTO `ca_empresa` (`id`, `empresa`, `imagen`, `estado`) VALUES
 	(1, 'CRUZ VERDE', '', 'activo');
 INSERT INTO `ca_empresa` (`id`, `empresa`, `imagen`, `estado`) VALUES
 	(2, 'CLARO', '', 'activo');
+INSERT INTO `ca_empresa` (`id`, `empresa`, `imagen`, `estado`) VALUES
+	(3, 'UNILEVER', '', 'activo');
 /*!40000 ALTER TABLE `ca_empresa` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_error
@@ -147,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `ca_item` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_item: ~10 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_item: ~8 rows (aproximadamente)
 DELETE FROM `ca_item`;
 /*!40000 ALTER TABLE `ca_item` DISABLE KEYS */;
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
@@ -343,13 +347,15 @@ CREATE TABLE IF NOT EXISTS `pa_tipo_error` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.pa_tipo_error: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.pa_tipo_error: ~3 rows (aproximadamente)
 DELETE FROM `pa_tipo_error`;
 /*!40000 ALTER TABLE `pa_tipo_error` DISABLE KEYS */;
 INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
 	(1, 'CRITICO', 'ERROR CRÍTICO', 'EC', 'activo');
 INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
 	(2, 'NO_CRITICO', 'ERROR NO CRÍTICO', 'ENC', 'activo');
+INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
+	(3, 'CRITICO', 'ERRO CRITICO DE CUMPLIMIENTO', 'ECDC', 'activo');
 /*!40000 ALTER TABLE `pa_tipo_error` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.pa_tipo_identificacion
@@ -382,7 +388,7 @@ CREATE TABLE IF NOT EXISTS `re_usaurio_ec` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.re_usaurio_ec: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.re_usaurio_ec: ~5 rows (aproximadamente)
 DELETE FROM `re_usaurio_ec`;
 /*!40000 ALTER TABLE `re_usaurio_ec` DISABLE KEYS */;
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
@@ -393,6 +399,8 @@ INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_
 	(3, 3, 4, 1, 1);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
 	(4, 4, 2, 0, 0);
+INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
+	(5, 5, 2, 0, 0);
 /*!40000 ALTER TABLE `re_usaurio_ec` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.re_usuarios
@@ -422,6 +430,8 @@ INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `
 	(3, 'acortes', '', 1, '1111111111', 'Alexis', 'Cortes', 'Hoyos', 'joco1204@gmail.com', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(4, 'ahoyos', '', 1, '99988887777', 'Johan Alexis', 'Cortes', 'Hoyos', 'joco_1204@hotmail.com', 'inaction');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(5, 'lhernandez', '5bf1b980681283feaee19f2656f330ace4461dcd', 1, '1019017114', 'Alexandra', 'Hernandez', 'Lopez', 'alexandra.hernandez@interactivo.com.co', 'activo');
 /*!40000 ALTER TABLE `re_usuarios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.re_usuario_perfil
@@ -444,6 +454,8 @@ INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(3, 3, 4);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(4, 4, 2);
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(5, 5, 2);
 /*!40000 ALTER TABLE `re_usuario_perfil` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
