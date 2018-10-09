@@ -4,6 +4,7 @@ class Matriz{
 		$this->business = new Business();
 	}
 
+	//Data tabla de matrices
 	public function tabla_matriz(){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
@@ -33,7 +34,33 @@ class Matriz{
 		return $this->business->return;
 	}
 
-	//Información por matriz
+	//Data tabla error 
+	public function tabla_error(){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayTabla = array();
+			$query  = "SELECT id, tipo, error, siglas, estado FROM pa_tipo_error;";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayTabla, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayTabla);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	//Data información por matriz
 	public function data_matriz($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
@@ -63,7 +90,37 @@ class Matriz{
 		return $this->business->return;
 	}
 
-	//Validación matriz por empresa y campaña
+	//Data información error matriz
+	public function data_matriz_error($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT a.id, a.id_matriz, a.tipo_error, a.calculo_valor, b.error, a.estado ";
+			$query .= "FROM ca_error AS a ";
+			$query .= "LEFT JOIN  pa_tipo_error AS b ON a.tipo_error = b.id ";
+			$query .= "WHERE a.id_matriz = '".$data->id_matriz."';";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+
+	}
+
+	//Data numero para validación matriz por empresa y campaña
 	public function matriz_empresa_campana($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
@@ -86,7 +143,33 @@ class Matriz{
 		return $this->business->return;
 	}
 
-	//Tipo de error
+	//Data monitoreos matriz activos
+	public function monitoreos_matriz($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$query  = "SELECT COUNT(*) AS num_monitoreo ";
+			$query .= "FROM ca_matriz AS a ";
+			$query .= "LEFT JOIN ca_agenda_monitoreo AS b ON a.id_empresa =b.id_empresa ";
+			$query .= "WHERE a.id = '".$data->id_matriz."' AND b.estado = '1';";
+			$result = $conn->query($query);
+			if($result){
+				$row = $result->fetch(PDO::FETCH_OBJ);
+				$this->business->return->bool = true;
+				$this->business->return->msg = $row->num_monitoreo ;
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	//Data tipo de error
 	public function tipo_error(){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
@@ -112,27 +195,7 @@ class Matriz{
 		return $this->business->return;
 	}
 
-	public function guardar_error($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
-		//Valida conexión a base de datos
-		if($conn){
-			$query  = "INSERT INTO pa_tipo_error (tipo, error, siglas, estado) VALUES ('".$data->nuevo_tipo_error."', '".$data->nuevo_error."', '".$data->siglas_error."', '".$data->estado_tipo_error."'); ";
-			$result = $conn->query($query);
-			if($result){
-				$this->business->return->bool = true;
-				$this->business->return->msg = 'Se guardó el tipo de error con exito';
-			} else {
-				$this->business->return->bool = false;
-				$this->business->return->msg = 'Error query';
-			}
-		} else {
-			$this->business->return->bool = false;
-			$this->business->return->msg = 'Error de conexión de base de datos';
-		}
-		return $this->business->return;
-	}
-
+	//Crera matriz
 	public function crear_matriz($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
@@ -194,11 +257,34 @@ class Matriz{
 		return $this->business->return;
 	}
 
-	public function modificar_matriz($data){
+	//Crear tipo de error
+	public function guardar_error($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		//Valida conexión a base de datos
 		if($conn){
+			$query  = "INSERT INTO pa_tipo_error (tipo, error, siglas, estado) VALUES ('".$data->nuevo_tipo_error."', '".$data->nuevo_error."', '".$data->siglas_error."', '".$data->estado_tipo_error."'); ";
+			$result = $conn->query($query);
+			if($result){
+				$this->business->return->bool = true;
+				$this->business->return->msg = 'Se guardó el tipo de error con exito';
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	//Modifica toda la matriz
+	public function modificar_matriz($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){ 
 			$query  = "UPDATE ca_matriz SET estado = '".$data->estado."' WHERE id = '".$data->id_matriz."';";
 			$result = $conn->query($query);
 			if($result){
@@ -215,56 +301,7 @@ class Matriz{
 		return $this->business->return;
 	}
 
-	public function tabla_error(){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
-		//Valida conexión a base de datos
-		if($conn){
-			$arrayTabla = array();
-			$query  = "SELECT id, tipo, error, siglas, estado FROM pa_tipo_error;";
-			$result = $conn->query($query);
-			if($result){
-				while($row = $result->fetch(PDO::FETCH_OBJ)){
-					array_push($arrayTabla, $row);
-				}
-				$this->business->return->bool = true;
-				$this->business->return->msg = json_encode($arrayTabla);
-			} else {
-				$this->business->return->bool = false;
-				$this->business->return->msg = 'Error query';
-			}
-		} else {
-			$this->business->return->bool = false;
-			$this->business->return->msg = 'Error de conexión de base de datos';
-		}
-		return $this->business->return;
-	}
-
-	public function monitoreos_matriz($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
-		//Valida conexión a base de datos
-		if($conn){
-			$query  = "SELECT COUNT(*) AS num_monitoreo ";
-			$query .= "FROM ca_matriz AS a ";
-			$query .= "LEFT JOIN ca_agenda_monitoreo AS b ON a.id_empresa =b.id_empresa ";
-			$query .= "WHERE a.id = '".$data->id_matriz."' AND b.estado = '1';";
-			$result = $conn->query($query);
-			if($result){
-				$row = $result->fetch(PDO::FETCH_OBJ);
-				$this->business->return->bool = true;
-				$this->business->return->msg = $row->num_monitoreo ;
-			} else {
-				$this->business->return->bool = false;
-				$this->business->return->msg = 'Error query';
-			}
-		} else {
-			$this->business->return->bool = false;
-			$this->business->return->msg = 'Error de conexión de base de datos';
-		}
-		return $this->business->return;
-	}
-
+	//Cambia el estado de la matriz
 	public function estado_matriz($data){
 		$conn = $this->business->conn;
 		$db = $this->business->db;

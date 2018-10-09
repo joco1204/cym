@@ -46,6 +46,10 @@ if(isset($post->action)){
 			$result = $matriz->modificar_matriz($post);
 			$business->return = $result;
 		break;
+		case 'data_matriz_error':
+			$result = $matriz->data_matriz_error($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

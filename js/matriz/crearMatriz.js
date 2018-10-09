@@ -123,49 +123,45 @@ function addError(){
 	var count = ($('.error').length)+1;
 	$('#tipo_error').val(count);
 	html += '<div class="panel panel-danger error" id="tipo_error">';
-	html += '<div class="panel-heading bg-danger">';
-	html += '<p><b>Tipo error '+count+'</b></p>';
-	html += '</div>';
-	html += '<div class="panel-body">';
-	html += '<div class="row">';
-	html += '<div class="col col-md-6">';
-	
-	html += '<div class="form-group">';
-	html += '<label for="tipo_error_'+count+'" class="control-label">Error</label>';
-	html += '<select name="tipo_error_'+count+'" id="tipo_error_'+count+'" class="form-control" required=""></select> ';
-	html += '</div>';
-
-	html += '</div>';
-	html += '<div class="col col-md-3">';
-	html += '<div class="form-group">';
-	html += '<label for="calculo_porcentaje_'+count+'" class="control-label">Calculo Valor</label>';
-	html += '<select name="calculo_porcentaje_'+count+'" id="calculo_porcentaje_'+count+'" class="form-control" required="" style="width:100%;">';
-	html += '<option></option>';
-	html += '<option value="por">Porcentual</option>';
-	html += '<option value="sum">Sumatorio</option>';
-	html += '</select>';
-	html += '</div>';
-	html += '</div>';
-
-	html += '<div class="col col-md-1">';
-	html += '<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" style="font-size: 30px;"></span>';
-	html += '</div>';
-
-	html += '<div class="col col-md-2">';
-	html += '<button type="button" class="btn btn-danger btn-sm" onclick="javascript: addItem('+count+');">';
-	html += 'Item Error <span class="glyphicon glyphicon-plus"></span>';
-	html += '</button>';
-	html += '<input type="hidden" id="item_error_'+count+'" name="item_error_'+count+'">';
-	html += '</div>';
-
-	html += '</div>';
-	html += '<br>';
-	html += '<div class="row">';
-	html += '<div class="col col-md-12" id="canvas_item_error_'+count+'"></div>';
-	html += '</div>';
-	html += '</div>';
+		html += '<div class="panel-heading bg-danger">';
+			html += '<p><b>Tipo error '+count+'</b></p>';
+		html += '</div>';
+		html += '<div class="panel-body">';
+			html += '<div class="row">';
+				html += '<div class="col col-md-6">';
+					html += '<div class="form-group">';
+						html += '<label for="tipo_error_'+count+'" class="control-label">Error</label>';
+						html += '<select name="tipo_error_'+count+'" id="tipo_error_'+count+'" class="form-control" required=""></select> ';
+					html += '</div>';
+				html += '</div>';
+				html += '<div class="col col-md-2">';
+					html += '<div class="form-group">';
+						html += '<label for="calculo_porcentaje_'+count+'" class="control-label">Calculo Valor</label>';
+						html += '<select name="calculo_porcentaje_'+count+'" id="calculo_porcentaje_'+count+'" class="form-control" required="" style="width:100%;">';
+							html += '<option></option>';
+							html += '<option value="por">Porcentual</option>';
+							html += '<option value="sum">Sumatorio</option>';
+						html += '</select>';
+					html += '</div>';
+				html += '</div>';
+				html += '<div class="col col-md-2">';
+					html += '<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" style="font-size: 30px;"></span>';
+				html += '</div>';
+				html += '<div class="col col-md-2">';
+					html += '<button type="button" class="btn btn-danger btn-sm" onclick="javascript: addItem('+count+');">';
+						html += 'Item Error <span class="glyphicon glyphicon-plus"></span>';
+					html += '</button>';
+					html += '<input type="hidden" id="item_error_'+count+'" name="item_error_'+count+'">';
+				html += '</div>';
+			html += '</div>';
+			html += '<br>';
+			html += '<div class="row">';
+				html += '<div class="col col-md-12" id="canvas_item_error_'+count+'"></div>';
+			html += '</div>';
+		html += '</div>';
 	html += '</div>';
 	$('#canvas_matriz').append(html);
+
 	$("select").select2();
 	$('[data-toggle="tooltip"]').tooltip({
 		"container": "body", 
@@ -199,7 +195,6 @@ function addItem(error_n){
 	var class_error = '.error_n_'+error_n;
 	var count = ($(class_error).length)+1;
 	$('#item_error_'+error_n).val(count);
-
 	html += '<div class="panel panel-success error_n_'+error_n+'" id="item_error_'+error_n+'_'+count+'">';
 	html += '<div class="panel-heading bg-success">';
 	html += '<p><b>Item '+count+'</b></p>';
