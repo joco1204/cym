@@ -103,14 +103,17 @@ class Usuario{
 					$query .= "VALUES ('".$data->usaurio."', '".$pass."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombres."', '".$data->apellidos1."', '".$data->apellidos2."', '".$data->email."', 'activo');";
 					$result = $conn->query($query);
 					if($result){
-						//
+
+						//Valida el id de la empresa y la campaña
 						isset($data->empresa) ? $empresa = $data->empresa : $empresa = '0';
 						isset($data->campana) ? $campana = $data->campana : $campana = '0';
-						//
+						
+						//Inserta en usuarios perfil
 						$id_usaurio = $conn->lastInsertId();
 						$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '".$data->perfil."'); ";
 						$conn->query($query_perfil);
-						//
+						
+						//Inserta en usuarios empresa campaña
 						$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '".$data->perfil."', '".$empresa."', '".$campana."');";
 						$conn->query($query_ec);
 						
