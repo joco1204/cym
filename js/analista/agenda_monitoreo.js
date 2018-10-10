@@ -1,5 +1,4 @@
 $(function(){
-
 	$.ajax({
 		type: 'post', 
 		url: '../controller/ctragendamonitoreo.php',
