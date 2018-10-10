@@ -117,7 +117,61 @@ class Matriz{
 			$this->business->return->msg = 'Error de conexión de base de datos';
 		}
 		return $this->business->return;
+	}
 
+	//Data información item error matriz
+	public function data_matriz_item($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT id, id_matriz, id_error, item, valor, estado ";
+			$query .= "FROM ca_item ";
+			$query .= "WHERE id_matriz = '".$data->id_matriz."' AND id_error = '".$data->id_error."';";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function data_matriz_punto($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT id, id_item, punto_entrenamiento ";
+			$query .= "FROM ca_punto_entrenamiento ";
+			$query .= "WHERE id_item = '".$data->id_item."';";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
 	}
 
 	//Data numero para validación matriz por empresa y campaña

@@ -75,13 +75,35 @@ $(function(){
 				html += '<div class="col col-md-3">';
 				if(row.estado == '0'){
 					if(row.fecha_monitoreo == $('#date').val()){
-						html += ' <button type="button" class="btn btn-warning btn-sm" onclick="javascript: pageContent(\'analista/monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val()+'&id_agenda='+row.id+'\');">Evaluar</button>';
+						html += ' ';
+						html += '<button type="button" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Evaluar" onclick="javascript: pageContent(\'analista/monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val()+'&id_agenda='+row.id+'\');">';
+						html += '<span class="glyphicon glyphicon-ok"></span>';
+						html += '</button>';
 					}
-				} else {
-					html += ' <button type="button" class="btn btn-success btn-sm" onclick="javascript: pageContent(\'analista/vista_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_agenda='+row.id+'&id_asesor='+$('#id_asesor').val()+'\');">Ver</button>';
 					if($('#id_perfil').val() == '1' || $('#id_perfil').val() == '2'){
-						html += ' <button type="button" class="btn btn-info btn-sm">Modificar</button> ';
+						html += ' ';
+						html += '<button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Anular" onclick="javascript: anular_monitoreo(\''+row.id+'\');">';
+						html += '<span class="glyphicon glyphicon-ban-circle"></span>';
+						html += '</button>';	
 					}
+				} else if(row.estado == '1'){
+					html += ' ';
+					html += '<button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Ver" onclick="javascript: pageContent(\'analista/vista_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_agenda='+row.id+'&id_asesor='+$('#id_asesor').val()+'\');">';
+					html += '<span class="glyphicon glyphicon-eye-open"></span>';
+					html += '</button>';
+					if($('#id_perfil').val() == '1' || $('#id_perfil').val() == '2'){
+						html += ' ';
+						html += '<button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Anular" onclick="javascript: anular_monitoreo(\''+row.id+'\');">';
+						html += '<span class="glyphicon glyphicon-ban-circle"></span>';
+						html += '</button>';
+						
+					}
+				} else if (row.estado == '2'){
+					html += ' ';
+					html += '<h3><b>ANULADO</b></h3>';
+				} else {
+					html += ' ';
+					html += '<h3><b>NO DEFINIDO</b></h3>';
 				}
 				html += '</div>';
 				html += '</div>';
@@ -94,6 +116,10 @@ $(function(){
 			});
 
 			$('#canvas_fechas').append(html);
+
+			$('[data-toggle="tooltip"]').tooltip({
+				"container": "body", 
+			});
 
 		} else {
 			console.log('Error: '+result.msg);
@@ -131,7 +157,9 @@ function addFechaMonitoreo(){
 	html += '</div>';
 	html += '</div>';
 	html += '<div class="col col-md-3">';
-	html += '<button type="submit" class="btn btn-success btn-sm">Guardar</button>';
+	html += '<button type="submit" class="btn btn-success btn-sm" data-toggle="tooltip" title="Guardar">';
+	html += '<span class="glyphicon glyphicon-floppy-disk"></span>';
+	html += '</button>';	
 	html += '</div>';
 	html += '</div>';
 	html += '<br>';
@@ -218,4 +246,45 @@ function addFechaMonitoreo(){
 			});		
 		}
 	});
+}
+
+function anular_monitoreo(id){
+	swal({
+		title: "¡Atención!",
+		text: "Comfirma anular este monitoreo?",
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: 'btn-primary',
+		cancelButtonColor: 'btn-danger',
+		confirmButtonText: 'Aceptar',
+		cancelButtonText: "Cancelar",
+		closeOnConfirm: false,
+	},function(){
+		$.ajax({
+			type: 'post', 
+			url: '../controller/ctragendamonitoreo.php',
+			data: {
+				action: 'anular_monitoreo',
+				id_genda: id
+			},
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				swal({
+					title: "¡Correcto!",
+					text: result.msg,
+					type: 'success',
+					showCancelButton: false,
+					confirmButtonClass: "btn-success",
+					confirmButtonText: "Aceptar",
+					closeOnConfirm: true,
+				},function(){
+					pageContent('analista/agenda_monitoreo','id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val());
+				});
+			} else {
+				console.log('Error: '+result.msg);
+			}
+		});
+	});	
+
 }

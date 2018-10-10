@@ -127,7 +127,7 @@ $(function(){
 
 						});
 					} else {
-						console.log('Error: '+result.msg);
+						console.log('Error: '+result2.msg);
 					}
 				});
 				$('#calculo_porcentaje_'+count).empty();
@@ -170,6 +170,133 @@ $(function(){
 						text: 'activo',
 					}));
 				}
+
+				var canvas_item_error = '#canvas_item_error_'+count;
+
+				$.ajax({
+					type: 'post',
+					url: '../controller/ctrmatriz.php',
+					data: {
+						action: 'data_matriz_item',
+						id_matriz: $('#id_matriz').val(),
+						id_error: row.id,
+					},
+					dataType: 'json'
+				}).done(function(result2){
+					if(result2.bool){
+						var data2 = $.parseJSON(result2.msg);
+						var html2 = ''
+						
+						$.each(data2, function(j, row2){
+							var count2 = j+1;
+							$('#item_error_'+count).val(count2);
+							html2 += '<div class="panel panel-success error_n_'+count+'" id="item_error_'+count+'_'+count2+'">';
+								html2 += '<div class="panel-heading bg-success">';
+									html2 += '<p><b>Item '+count2+'</b></p>';
+									html2 += '<input type="hidden" name="id_item_error_'+count+'_'+count2+'" id="id_item_error_'+count+'_'+count2+'" value="'+row2.id+'">';
+								html2 += '</div>';
+								html2 += '<div class="panel-body">';
+									html2 += '<div class="row">';
+										html2 += '<div class="col col-md-6">';
+											html2 += '<div class="form-group">';
+												html2 += '<label for="nombre_item_error_'+count+'_'+count2+'" class="control-label">Item</label>';
+												html2 += '<input type="text" name="nombre_item_error_'+count+'_'+count2+'" id="nombre_item_error_'+count+'_'+count2+'" class="form-control" required="" value="'+row2.item+'">';
+											html2 += '</div>';
+										html2 += '</div>';
+										html2 += '<div class="col col-md-2">';
+											html2 += '<label for="valor_'+count+'_'+count2+'" class="control-label">Valor cumplimiento item</label>';
+											html2 += '<input type="number" name="valor_'+count+'_'+count2+'" id="valor_'+count+'_'+count2+'" class="form-control" required="" min="1" max="100" value="'+row2.valor+'">';
+										html2 += '</div>';
+
+										html2 += '<div class="col col-md-2">';
+											html2 += '<div class="form-group">';
+												html2 += '<label for="estado_item_'+count+'_'+count2+'" class="control-label">Estado</label>';
+												html2 += '<select name="estado_item_'+count+'_'+count2+'" id="estado_item_'+count+'_'+count2+'" class="form-control" required="" style="width:100%;"></select>';
+											html2 += '</div>';
+										html2 += '</div>';
+
+										html2 += '<div class="col col-md-2">';
+											html2 += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: puntoEntrenamiento('+count+', '+count2+');">';
+												html2 += 'Punto <span class="glyphicon glyphicon-plus"></span>';
+											html2 += '</button>';
+											html2 += '<input type="hidden" id="punto_entrenamiento_'+count+'_'+count2+'" name="punto_entrenamiento_'+count+'_'+count2+'">';
+										html2 += '</div>';
+									html2 += '</div>';
+									html2 += '<br>';
+									html2 += '<div class="row">';
+										html2 += '<div class="col col-md-12" id="canvas_punto_entrenamiento_'+count+'_'+count2+'"></div>';
+									html2 += '</div>';
+								html2 += '</div>';
+							html2 += '</div>';
+						});
+
+						$(canvas_item_error).html(html2);
+						$("select").select2();
+
+						$.each(data2, function(j, row2){
+							var count2 = j+1;
+							$('#estado_item_'+count+'_'+count2).empty();
+							if(row2.estado == 'activo'){
+								$('#estado_item_'+count+'_'+count2).append($('<option>', {
+									value: 'activo',
+									text: 'activo',
+								}).attr("selected", true));
+								$('#estado_item_'+count+'_'+count2).append($('<option>', {
+									value: 'inactivo',
+									text: 'inactivo',
+								}));
+							} else {
+								$('#estado_item_'+count+'_'+count2).append($('<option>', {
+									value: 'inactivo',
+									text: 'inactivo',
+								}).attr("selected", true));
+								$('#estado_item_'+count+'_'+count2).append($('<option>', {
+									value: 'activo',
+									text: 'activo',
+								}));
+							}
+
+							var canvas_punto_entrenamiento = '#canvas_punto_entrenamiento_'+count+'_'+count2;
+
+							$.ajax({
+								type: 'post',
+								url: '../controller/ctrmatriz.php',
+								data: {
+									action: 'data_matriz_punto',
+									id_item: row2.id,
+								},
+								dataType: 'json'
+							}).done(function(result3){
+								if(result3.bool){
+									var data3 = $.parseJSON(result3.msg);
+									var html3 = '';
+									$.each(data3, function(k, row3){
+										var count3 = k+1;
+										$('#punto_entrenamiento_'+count+'_'+count2).val(count3);	
+										html3 += '<div class="panel panel-primary item_n_'+count+'_'+count2+'" id="punto_entrenamiento_'+count+'_'+count2+'_'+count3+'">';
+											html3 += '<div class="panel-heading bg-primary">';
+												html3 += '<p><b>Punto Entrenamiento '+count3+', Item '+count2+'</b></p>';
+											html3 += '</div>';
+											html3 += '<div class="panel-body">';
+												html3 += '<div class="form-group">';
+													html3 += '<div class="col col-md-12">';
+														html3 += '<input type="hidden" name="id_punto_entrenamiento_'+count+'_'+count2+'_'+count3+'" id="id_punto_entrenamiento_'+count+'_'+count2+'_'+count3+'" value="'+row3.id+'">';
+														html3 += '<input type="text" name="desc_punto_entrenamiento_'+count+'_'+count2+'_'+count3+'" id="punto_entrenamiento_'+count+'_'+count2+'_'+count+'" class="form-control" required="" value="'+row3.punto_entrenamiento+'">';
+													html3 += '</div>';
+												html3 += '</div>';
+											html3 += '</div>';
+										html3 += '</div>';
+									});
+									$(canvas_punto_entrenamiento).html(html3);
+								} else {
+									console.log('Error: '+result3.msg);
+								}
+							});
+						});
+					} else {
+						console.log('Error: '+result2.msg);
+					}
+				});
 			});
 		} else {
 			console.log('Error: '+result.msg);
@@ -286,33 +413,33 @@ function addItem(error_n){
 	var count = ($(class_error).length)+1;
 	$('#item_error_'+error_n).val(count);
 	html += '<div class="panel panel-success error_n_'+error_n+'" id="item_error_'+error_n+'_'+count+'">';
-	html += '<div class="panel-heading bg-success">';
-	html += '<p><b>Item '+count+'</b></p>';
-	html += '</div>';
-	html += '<div class="panel-body">';
-	html += '<div class="row">';
-	html += '<div class="col col-md-6">';
-	html += '<div class="form-group">';
-	html += '<label for="nombre_item_error_'+error_n+'_'+count+'" class="control-label">Item</label>';
-	html += '<input type="text" name="nombre_item_error_'+error_n+'_'+count+'" id="nombre_item_error_'+error_n+'_'+count+'" class="form-control" required="">';
-	html += '</div>';
-	html += '</div>';
-	html += '<div class="col col-md-3">';
-	html += '<label for="valor_'+error_n+'_'+count+'" class="control-label">Valor cumplimiento item</label>';
-	html += '<input type="number" name="valor_'+error_n+'_'+count+'" id="valor_'+error_n+'_'+count+'" class="form-control" required="" min="1" max="100">';
-	html += '</div>';
-	html += '<div class="col col-md-3">';
-	html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: puntoEntrenamiento('+error_n+', '+count+');">';
-	html += 'Punto <span class="glyphicon glyphicon-plus"></span>';
-	html += '</button>';
-	html += '<input type="hidden" id="punto_entrenamiento_'+error_n+'_'+count+'" name="punto_entrenamiento_'+error_n+'_'+count+'">';
-	html += '</div>';
-	html += '</div>';
-	html += '<br>';
-	html += '<div class="row">';
-	html += '<div class="col col-md-12" id="canvas_punto_entrenamiento_'+error_n+'_'+count+'"></div>';
-	html += '</div>';
-	html += '</div>';
+		html += '<div class="panel-heading bg-success">';
+			html += '<p><b>Item '+count+'</b></p>';
+		html += '</div>';
+		html += '<div class="panel-body">';
+			html += '<div class="row">';
+				html += '<div class="col col-md-6">';
+					html += '<div class="form-group">';
+						html += '<label for="nombre_item_error_'+error_n+'_'+count+'" class="control-label">Item</label>';
+						html += '<input type="text" name="nombre_item_error_'+error_n+'_'+count+'" id="nombre_item_error_'+error_n+'_'+count+'" class="form-control" required="">';
+					html += '</div>';
+				html += '</div>';
+				html += '<div class="col col-md-3">';
+					html += '<label for="valor_'+error_n+'_'+count+'" class="control-label">Valor cumplimiento item</label>';
+					html += '<input type="number" name="valor_'+error_n+'_'+count+'" id="valor_'+error_n+'_'+count+'" class="form-control" required="" min="1" max="100">';
+				html += '</div>';
+				html += '<div class="col col-md-3">';
+					html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: puntoEntrenamiento('+error_n+', '+count+');">';
+						html += 'Punto <span class="glyphicon glyphicon-plus"></span>';
+					html += '</button>';
+					html += '<input type="hidden" id="punto_entrenamiento_'+error_n+'_'+count+'" name="punto_entrenamiento_'+error_n+'_'+count+'">';
+				html += '</div>';
+			html += '</div>';
+			html += '<br>';
+			html += '<div class="row">';
+				html += '<div class="col col-md-12" id="canvas_punto_entrenamiento_'+error_n+'_'+count+'"></div>';
+			html += '</div>';
+		html += '</div>';
 	html += '</div>';
 	$('#canvas_item_error_'+error_n).append(html);
 	$("select").select2();
@@ -324,16 +451,16 @@ function puntoEntrenamiento(error_n, item_n){
 	var count = ($(class_item).length)+1;
 	$('#punto_entrenamiento_'+error_n+'_'+item_n).val(count);	
 	html += '<div class="panel panel-primary item_n_'+error_n+'_'+item_n+'" id="punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'">';
-	html += '<div class="panel-heading bg-primary">';
-	html += '<p><b>Punto Entrenamiento '+count+', Item '+item_n+'</b></p>';
-	html += '</div>';
-	html += '<div class="panel-body">';
-	html += '<div class="form-group">';
-	html += '<div class="col col-md-12">';
-	html += '<input type="text" name="desc_punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'" id="punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'" class="form-control" required="">';
-	html += '</div>';
-	html += '</div>';
-	html += '</div>';
+		html += '<div class="panel-heading bg-primary">';
+			html += '<p><b>Punto Entrenamiento '+count+', Item '+item_n+'</b></p>';
+		html += '</div>';
+		html += '<div class="panel-body">';
+			html += '<div class="form-group">';
+				html += '<div class="col col-md-12">';
+					html += '<input type="text" name="desc_punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'" id="punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'" class="form-control" required="">';
+				html += '</div>';
+			html += '</div>';
+		html += '</div>';
 	html += '</div>';
 	$('#canvas_punto_entrenamiento_'+error_n+'_'+item_n).append(html);
 	$("select").select2();

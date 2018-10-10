@@ -50,6 +50,14 @@ if(isset($post->action)){
 			$result = $matriz->data_matriz_error($post);
 			$business->return = $result;
 		break;
+		case 'data_matriz_item':
+			$result = $matriz->data_matriz_item($post);
+			$business->return = $result;
+		break;
+		case 'data_matriz_punto':
+			$result = $matriz->data_matriz_punto($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

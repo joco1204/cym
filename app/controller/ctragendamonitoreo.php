@@ -22,6 +22,10 @@ if(isset($post->action)){
 			$result = $agendamonitoreo->guardar_fecha_monitoreo($post);
 			$business->return = $result;
 		break;
+		case 'anular_monitoreo':
+			$result = $agendamonitoreo->anular_monitoreo($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

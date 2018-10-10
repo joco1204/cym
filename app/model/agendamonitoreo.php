@@ -124,5 +124,27 @@ class AgendaMonitoreo{
 		$day = date("d", mktime(0,0,0, $month+1, 0, $year));
 		return date('Y-m-d', mktime(0,0,0, $month, $day, $year));
 	}
+
+	public function anular_monitoreo($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$query  = "UPDATE ca_agenda_monitoreo SET estado = '2' WHERE id = '".$data->id_genda."'; ";
+			$result = $conn->query($query);
+			if($result){
+				$this->business->return->bool = true;
+				$this->business->return->msg = 'Se anuló monitoreo correctamente';
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+
+	}
 }
 ?>
