@@ -108,8 +108,10 @@ class Usuario{
 						isset($data->empresa) ? $empresa = $data->empresa : $empresa = '0';
 						isset($data->campana) ? $campana = $data->campana : $campana = '0';
 						
-						//Inserta en usuarios perfil
+						//Id de usuario
 						$id_usaurio = $conn->lastInsertId();
+						
+						//Inserta en usuarios perfil
 						$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '".$data->perfil."'); ";
 						$conn->query($query_perfil);
 						
