@@ -1,3 +1,4 @@
+﻿<?php header("Content-Type: text/html;charset=utf-8"); ?>
 <section class="content-header">
     <h1>ASESORES</h1>
 </section>
@@ -180,7 +181,7 @@
         </div>
     </div>
 </div>
-<script src="../../js/asesores.js"></script>
+<script src="../../js/asesores.js" charset="UTF-8"></script>
 <script type="text/javascript">
     $(function(){
         $("select").select2();

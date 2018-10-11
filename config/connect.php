@@ -7,10 +7,11 @@ class Connect extends PDO{
 	private $user = 'root';
 	private $pass = '12345';
 	private $base = 'calidad';
+	private $cset = 'utf8';
 	//Constructor de conexión a la pase de datos
 	public function __construct(){
 		//Definicion del string de conexión a la base de datos
-		$strc = $this->type.':host='.$this->host.';dbname='.$this->base;
+		$strc = $this->type.':host='.$this->host.';dbname='.$this->base.';charset='.$this->cset;
 		$user = $this->user;
 		$pass = $this->pass; 
 		//conexión a la base de datos
