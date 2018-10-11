@@ -1,5 +1,4 @@
-﻿<?php header("Content-Type: text/html;charset=utf-8"); ?>
-<section class="content-header">
+﻿<section class="content-header">
     <h1>ASESORES</h1>
 </section>
 <section class="content">

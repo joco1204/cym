@@ -99,10 +99,10 @@ $(function(){
 					}
 				} else if (row.estado == '2'){
 					html += ' ';
-					html += '<h3><b>ANULADO</b></h3>';
+					html += '<p><b>ANULADO</b></p>';
 				} else {
 					html += ' ';
-					html += '<h3><b>NO DEFINIDO</b></h3>';
+					html += '<p><b>NO DEFINIDO</b></p>';
 				}
 				html += '</div>';
 				html += '</div>';
