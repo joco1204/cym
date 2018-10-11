@@ -42,7 +42,7 @@ class AgendaMonitoreo{
 			$query  = "SELECT id, fecha_monitoreo, estado ";
 			$query .= "FROM ca_agenda_monitoreo ";
 			$query .= "WHERE id_empresa = '".$data->id_empresa."' AND id_campana = '".$data->id_campana."' AND id_asesor = '".$data->id_asesor."' ";
-			$query .= "AND fecha_monitoreo BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
+			$query .= "AND fecha_monitoreo BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' AND estado IN ('0', '1') ";
 			$query .= "ORDER BY fecha_monitoreo, estado;";
 			$result = $conn->query($query);
 			if($result){

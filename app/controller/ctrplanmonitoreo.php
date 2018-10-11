@@ -18,6 +18,10 @@ if(isset($post->action)){
 			$result = $planmonitoreo->monitoreos_dia($post);
 			$business->return = $result;
 		break;
+		case 'monitoreos_mes':
+			$result = $planmonitoreo->monitoreos_mes($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

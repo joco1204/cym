@@ -75,24 +75,24 @@ $(function(){
 				if(row.estado == '0'){
 					if(row.fecha_monitoreo == $('#date').val()){
 						html += ' ';
-						html += '<button type="button" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Evaluar" onclick="javascript: pageContent(\'analista/monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val()+'&id_agenda='+row.id+'\');">';
+						html += '<button type="button" class="btn btn-warning btn-sm" title="Evaluar" onclick="javascript: pageContent(\'analista/monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val()+'&id_agenda='+row.id+'\');">';
 						html += '<span class="glyphicon glyphicon-ok"></span>';
 						html += '</button>';
 					}
 					if($('#id_perfil').val() == '1' || $('#id_perfil').val() == '2'){
 						html += ' ';
-						html += '<button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Anular" onclick="javascript: anular_monitoreo(\''+row.id+'\');">';
+						html += '<button type="button" class="btn btn-danger btn-sm" title="Anular" onclick="javascript: anular_monitoreo(\''+row.id+'\');">';
 						html += '<span class="glyphicon glyphicon-ban-circle"></span>';
 						html += '</button>';	
 					}
 				} else if(row.estado == '1'){
 					html += ' ';
-					html += '<button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Ver" onclick="javascript: pageContent(\'analista/vista_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_agenda='+row.id+'&id_asesor='+$('#id_asesor').val()+'\');">';
+					html += '<button type="button" class="btn btn-primary btn-sm" title="Ver" onclick="javascript: pageContent(\'analista/vista_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_agenda='+row.id+'&id_asesor='+$('#id_asesor').val()+'\');">';
 					html += '<span class="glyphicon glyphicon-eye-open"></span>';
 					html += '</button>';
 					if($('#id_perfil').val() == '1' || $('#id_perfil').val() == '2'){
 						html += ' ';
-						html += '<button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Anular" onclick="javascript: anular_monitoreo(\''+row.id+'\');">';
+						html += '<button type="button" class="btn btn-danger btn-sm" title="Anular" onclick="javascript: anular_monitoreo(\''+row.id+'\');">';
 						html += '<span class="glyphicon glyphicon-ban-circle"></span>';
 						html += '</button>';
 						
@@ -115,11 +115,6 @@ $(function(){
 			});
 
 			$('#canvas_fechas').append(html);
-
-			$('[data-toggle="tooltip"]').tooltip({
-				"container": "body", 
-			});
-
 		} else {
 			console.log('Error: '+result.msg);
 		}
@@ -156,7 +151,7 @@ function addFechaMonitoreo(){
 	html += '</div>';
 	html += '</div>';
 	html += '<div class="col col-md-3">';
-	html += '<button type="submit" class="btn btn-success btn-sm" data-toggle="tooltip" title="Guardar">';
+	html += '<button type="submit" class="btn btn-success btn-sm" title="Guardar">';
 	html += '<span class="glyphicon glyphicon-floppy-disk"></span>';
 	html += '</button>';	
 	html += '</div>';
