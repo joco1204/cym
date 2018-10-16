@@ -55,9 +55,8 @@ $(function(){
 			var html = '';
 			$.each(data, function(i, row){
 				var count = i+1;
-
-				$('#tipo_error').val(count);
-				html += '<div class="panel panel-danger error" id="tipo_error">';
+				$('.error').val(count);
+				html += '<div class="panel panel-danger error" id="tipo_error_canvas_'+count+'">';
 					html += '<div class="panel-heading bg-danger">';
 						html += '<p><b>Tipo error '+count+'</b></p>';
 					html += '</div>';
@@ -189,8 +188,8 @@ $(function(){
 						
 						$.each(data2, function(j, row2){
 							var count2 = j+1;
-							$('#item_error_'+count).val(count2);
-							html2 += '<div class="panel panel-success error_n_'+count+'" id="item_error_'+count+'_'+count2+'">';
+							$('.item_n_'+count).val(count2);
+							html2 += '<div class="panel panel-success item_n_'+count+'" id="item_error_'+count+'_'+count2+'">';
 								html2 += '<div class="panel-heading bg-success">';
 									html2 += '<p><b>Item '+count2+'</b></p>';
 									html2 += '<input type="hidden" name="id_item_error_'+count+'_'+count2+'" id="id_item_error_'+count+'_'+count2+'" value="'+row2.id+'">';
@@ -272,8 +271,8 @@ $(function(){
 									var html3 = '';
 									$.each(data3, function(k, row3){
 										var count3 = k+1;
-										$('#punto_entrenamiento_'+count+'_'+count2).val(count3);	
-										html3 += '<div class="panel panel-primary item_n_'+count+'_'+count2+'" id="punto_entrenamiento_'+count+'_'+count2+'_'+count3+'">';
+										$('.punto_n_'+count+'_'+count2).val(count3);
+										html3 += '<div class="panel panel-primary punto_n_'+count+'_'+count2+'" id="punto_entrenamiento_'+count+'_'+count2+'_'+count3+'">';
 											html3 += '<div class="panel-heading bg-primary">';
 												html3 += '<p><b>Punto Entrenamiento '+count3+', Item '+count2+'</b></p>';
 											html3 += '</div>';
@@ -281,7 +280,7 @@ $(function(){
 												html3 += '<div class="form-group">';
 													html3 += '<div class="col col-md-12">';
 														html3 += '<input type="hidden" name="id_punto_entrenamiento_'+count+'_'+count2+'_'+count3+'" id="id_punto_entrenamiento_'+count+'_'+count2+'_'+count3+'" value="'+row3.id+'">';
-														html3 += '<input type="text" name="desc_punto_entrenamiento_'+count+'_'+count2+'_'+count3+'" id="punto_entrenamiento_'+count+'_'+count2+'_'+count+'" class="form-control" required="" value="'+row3.punto_entrenamiento+'">';
+														html3 += '<input type="text" name="desc_punto_entrenamiento_'+count+'_'+count2+'_'+count3+'" id="punto_entrenamiento_'+count+'_'+count2+'_'+count3+'" class="form-control" required="" value="'+row3.punto_entrenamiento+'">';
 													html3 += '</div>';
 												html3 += '</div>';
 											html3 += '</div>';
@@ -338,8 +337,8 @@ $(function(){
 function addError(){
 	var html = '';
 	var count = ($('.error').length)+1;
-	$('#tipo_error').val(count);
-	html += '<div class="panel panel-danger error" id="tipo_error">';
+	$('.error').val(count);
+	html += '<div class="panel panel-danger error" id="tipo_error_canvas_'+count+'">';
 		html += '<div class="panel-heading bg-danger">';
 			html += '<p><b>Tipo error '+count+'</b></p>';
 		html += '</div>';
@@ -409,10 +408,10 @@ function addError(){
 
 function addItem(error_n){
 	var html = '';
-	var class_error = '.error_n_'+error_n;
+	var class_error = '.item_n_'+error_n;
 	var count = ($(class_error).length)+1;
-	$('#item_error_'+error_n).val(count);
-	html += '<div class="panel panel-success error_n_'+error_n+'" id="item_error_'+error_n+'_'+count+'">';
+	$('.item_n_'+error_n).val(count);
+	html += '<div class="panel panel-success item_n_'+error_n+'" id="item_error_'+error_n+'_'+count+'">';
 		html += '<div class="panel-heading bg-success">';
 			html += '<p><b>Item '+count+'</b></p>';
 		html += '</div>';
@@ -447,10 +446,10 @@ function addItem(error_n){
 
 function puntoEntrenamiento(error_n, item_n){
 	var html = '';
-	var class_item = '.item_n_'+error_n+'_'+item_n;
+	var class_item = '.punto_n_'+error_n+'_'+item_n;
 	var count = ($(class_item).length)+1;
-	$('#punto_entrenamiento_'+error_n+'_'+item_n).val(count);	
-	html += '<div class="panel panel-primary item_n_'+error_n+'_'+item_n+'" id="punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'">';
+	$('.punto_n_'+error_n+'_'+item_n).val(count);
+	html += '<div class="panel panel-primary punto_n_'+error_n+'_'+item_n+'" id="punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'">';
 		html += '<div class="panel-heading bg-primary">';
 			html += '<p><b>Punto Entrenamiento '+count+', Item '+item_n+'</b></p>';
 		html += '</div>';
