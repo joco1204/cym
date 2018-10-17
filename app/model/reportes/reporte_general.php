@@ -54,7 +54,7 @@ $result = $db->query($query);
 			$queryh  = "SELECT a.id_empresa, a.id_campana, b.id AS id_error ";
 			$queryh .= "FROM ca_matriz AS a ";
 			$queryh .= "LEFT JOIN ca_error AS b ON a.id = b.id_matriz ";
-			$queryh .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."';";
+			$queryh .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = 'activo';";
 			$resulth = $db->query($queryh);
 			while($rowh = $resulth->fetch(PDO::FETCH_OBJ)){
 				$queryh2  = "SELECT a.item ";
@@ -73,7 +73,6 @@ $result = $db->query($query);
 	</thead>
 	<tbody>
 		<?php  while($row = $result->fetch(PDO::FETCH_OBJ)){
-
 			echo "<tr>";
 			echo "<td>".utf8_decode($row->id_monitoreo)."</td>";
 			echo "<td>".utf8_decode($row->asesor)."</td>";

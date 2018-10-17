@@ -260,14 +260,10 @@ function deleteError(num_error){
 	var error = '.error';
 	var tipo_error_canvas = '#tipo_error_canvas_'+num_error;
 	var canvas_matriz = '#canvas_matriz';
-	
 	var error_actual = $(error).length;
-
 	$('#tipo_error_'+num_error).remove();
 	$('#calculo_porcentaje_1'+num_error).remove();
 	$(tipo_error_canvas).remove();
-	
-
 	var count = $(error).length;
 	$('.error').val(count);
 }
