@@ -16,7 +16,7 @@ $query .= "CONCAT(d.nombre,' ',d.apellido1,' ',d.apellido2) AS analista, ";
 $query .= "b.fecha_llamada, ";
 $query .= "b.hora_llamada, ";
 $query .= "b.id_llamada, ";
-$query .= "f.nombre AS tipificacion,";
+$query .= "f.nombre AS tipificacion, ";
 $query .= "g.tipos AS solucion, ";
 $query .= "h.audio AS fallas_audio, ";
 $query .= "b.observacion, ";
@@ -105,7 +105,6 @@ $result = $db->query($query);
 					echo "<td>".utf8_decode($row_item->punto_entrenamiento)."</td>";
 				}
 			echo "</tr>";
-			
 		} ?>
 	</tbody>
 </table>
