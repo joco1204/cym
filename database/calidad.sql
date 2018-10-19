@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `ca_agenda_monitoreo` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_agenda_monitoreo: ~386 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_agenda_monitoreo: ~413 rows (aproximadamente)
 DELETE FROM `ca_agenda_monitoreo`;
 /*!40000 ALTER TABLE `ca_agenda_monitoreo` DISABLE KEYS */;
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -304,7 +304,7 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(136, 1, 1, 21, '2018-10-12', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(137, 1, 1, 21, '2018-10-19', 0);
+	(137, 1, 1, 21, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(138, 1, 1, 21, '2018-10-26', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -328,7 +328,7 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(148, 1, 1, 25, '2018-10-12', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(149, 1, 1, 25, '2018-10-19', 0);
+	(149, 1, 1, 25, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(150, 1, 1, 25, '2018-10-26', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -346,7 +346,7 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(157, 1, 1, 28, '2018-10-12', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(158, 1, 1, 28, '2018-10-19', 0);
+	(158, 1, 1, 28, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(159, 1, 1, 28, '2018-10-26', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -358,7 +358,7 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(163, 1, 1, 30, '2018-10-12', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(164, 1, 1, 30, '2018-10-19', 0);
+	(164, 1, 1, 30, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(165, 1, 1, 30, '2018-10-26', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -512,13 +512,13 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(240, 1, 1, 6, '2018-10-18', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(241, 1, 1, 7, '2018-10-18', 0);
+	(241, 1, 1, 7, '2018-10-18', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(242, 1, 1, 9, '2018-10-18', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(243, 1, 1, 11, '2018-10-18', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(244, 1, 1, 14, '2018-10-18', 0);
+	(244, 1, 1, 14, '2018-10-18', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(245, 1, 1, 15, '2018-10-18', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -672,17 +672,17 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(320, 4, 4, 101, '2018-10-16', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(321, 4, 4, 113, '2018-10-18', 0);
+	(321, 4, 4, 113, '2018-10-18', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(322, 4, 4, 106, '2018-10-18', 0);
+	(322, 4, 4, 106, '2018-10-18', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(323, 4, 4, 114, '2018-10-18', 0);
+	(323, 4, 4, 114, '2018-10-18', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(324, 4, 4, 111, '2018-10-18', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(325, 4, 4, 107, '2018-10-19', 0);
+	(325, 4, 4, 107, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(326, 4, 4, 117, '2018-10-19', 0);
+	(326, 4, 4, 117, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(327, 4, 4, 115, '2018-10-19', 0);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -792,17 +792,71 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(380, 2, 2, 82, '2018-10-17', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(381, 2, 2, 78, '2018-10-17', 0);
+	(381, 2, 2, 78, '2018-10-17', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(382, 2, 2, 67, '2018-10-17', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(383, 2, 2, 61, '2018-10-17', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(384, 2, 2, 62, '2018-10-17', 0);
+	(384, 2, 2, 62, '2018-10-17', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(385, 2, 2, 74, '2018-10-17', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(386, 2, 2, 81, '2018-10-17', 0);
+	(386, 2, 2, 81, '2018-10-17', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(387, 3, 3, 99, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(388, 3, 3, 89, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(389, 3, 3, 98, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(390, 3, 3, 87, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(391, 3, 3, 84, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(392, 3, 3, 96, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(393, 2, 2, 54, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(394, 2, 2, 64, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(395, 2, 2, 80, '2018-10-18', 0);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(396, 2, 2, 73, '2018-10-18', 0);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(397, 2, 2, 60, '2018-10-18', 0);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(398, 2, 2, 69, '2018-10-18', 0);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(399, 3, 3, 94, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(400, 3, 3, 93, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(401, 3, 3, 91, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(402, 3, 3, 97, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(403, 3, 3, 90, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(404, 3, 3, 95, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(405, 3, 3, 86, '2018-10-18', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(406, 2, 2, 80, '2018-10-19', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(407, 2, 2, 73, '2018-10-19', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(408, 2, 2, 60, '2018-10-19', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(409, 2, 2, 69, '2018-10-19', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(410, 2, 2, 77, '2018-10-19', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(411, 2, 2, 56, '2018-10-19', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(412, 2, 2, 76, '2018-10-19', 0);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(413, 2, 2, 59, '2018-10-19', 0);
 /*!40000 ALTER TABLE `ca_agenda_monitoreo` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_asesores
@@ -1148,7 +1202,7 @@ CREATE TABLE IF NOT EXISTS `ca_error` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_error: ~44 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_error: ~17 rows (aproximadamente)
 DELETE FROM `ca_error`;
 /*!40000 ALTER TABLE `ca_error` DISABLE KEYS */;
 INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
@@ -1182,65 +1236,9 @@ INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estad
 INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
 	(15, 7, '4', 'sum', 'activo');
 INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(16, 8, '4', 'sum', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(17, 12, '4', 'sum', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(18, 9, '4', 'sum', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(19, 10, '4', 'sum', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(20, 11, '4', 'sum', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
 	(21, 7, '2', 'por', 'activo');
 INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(22, 8, '2', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(23, 11, '2', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(24, 9, '2', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(25, 12, '2', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(26, 10, '2', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
 	(27, 7, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(28, 8, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(29, 12, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(30, 9, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(31, 11, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(32, 10, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(33, 13, '4', 'sum', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(34, 14, '4', 'sum', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(35, 15, '4', 'sum', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(36, 13, '2', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(37, 14, '2', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(38, 15, '2', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(39, 16, '4', 'sum', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(40, 13, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(41, 14, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(42, 15, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(43, 16, '2', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(44, 16, '3', 'por', 'activo');
-INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(45, 17, '4', 'sum', 'activo');
 /*!40000 ALTER TABLE `ca_error` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_item
@@ -1255,7 +1253,7 @@ CREATE TABLE IF NOT EXISTS `ca_item` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_item: ~142 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_item: ~70 rows (aproximadamente)
 DELETE FROM `ca_item`;
 /*!40000 ALTER TABLE `ca_item` DISABLE KEYS */;
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
@@ -1365,189 +1363,21 @@ INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`)
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(53, 7, 15, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(54, 8, 16, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(55, 9, 18, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(56, 11, 20, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(57, 12, 17, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(58, 7, 15, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(59, 8, 16, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(60, 10, 19, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(61, 7, 15, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(62, 8, 16, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(63, 9, 18, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(64, 11, 20, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(65, 12, 17, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(66, 10, 19, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(67, 9, 18, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(68, 12, 17, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(69, 11, 20, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(70, 7, 15, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(71, 8, 16, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(72, 10, 19, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(73, 7, 21, '2.1 Amabilidad y Cortesía', '100', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(74, 12, 17, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(75, 11, 20, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(76, 9, 18, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(77, 8, 22, '2.1 Amabilidad y Cortesía', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(78, 10, 19, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(79, 7, 21, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(80, 11, 23, '2.1 Amabilidad y Cortesía', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(81, 12, 25, '2.1 Amabilidad y Cortesía', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(82, 9, 24, '2.1 Amabilidad y Cortesía', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(83, 8, 22, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(84, 10, 26, '2.1 Amabilidad y Cortesía', '100', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(85, 7, 21, '2.3 Direccionamiento al usuario final', '100', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(86, 11, 23, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(87, 8, 22, '2.3 Direccionamiento al usuario final', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(88, 9, 24, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(89, 12, 25, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(90, 7, 27, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(91, 10, 26, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(92, 9, 24, '2.3 Direccionamiento al usuario final', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(93, 8, 28, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(94, 12, 25, '2.3 Direccionamiento al usuario final', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(95, 11, 23, '2.3 Direccionamiento al usuario final', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(96, 7, 27, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(97, 10, 26, '2.3 Direccionamiento al usuario final', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(98, 12, 29, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(99, 9, 30, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(100, 8, 28, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(101, 11, 31, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(102, 10, 32, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(103, 12, 29, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(104, 11, 31, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(105, 9, 30, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(106, 10, 32, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(107, 13, 33, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(108, 14, 34, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(109, 15, 35, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(110, 13, 33, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(111, 14, 34, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(112, 13, 33, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(113, 14, 34, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(114, 15, 35, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(115, 15, 35, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(116, 13, 33, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(117, 14, 34, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(118, 13, 36, '2.1 Amabilidad y Cortesía', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(119, 15, 35, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(120, 14, 37, '2.1 Amabilidad y Cortesía', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(121, 15, 38, '2.1 Amabilidad y Cortesía', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(122, 16, 39, '1.1 Es cordial y empático durante la llamada, demuestra seguridad y escucha activa ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(123, 13, 36, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(124, 14, 37, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(125, 15, 38, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(126, 13, 36, '2.3 Direccionamiento al usuario final', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(127, 14, 37, '2.3 Direccionamiento al usuario final', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(128, 16, 39, '1.2 Identifica el requerimiento / conformidad del usuario final', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(129, 15, 38, '2.3 Direccionamiento al usuario final', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(130, 13, 40, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(131, 16, 39, '1.3 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito) ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(132, 14, 41, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(133, 13, 40, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(134, 15, 42, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(135, 14, 41, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(136, 16, 39, '1.4 Su vocalización, articulación y ritmo son adecuados ', '25', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(137, 15, 42, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(138, 16, 43, '2.1 Amabilidad y Cortesía', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(139, 16, 43, '2.2 Suministra información correcta y completa.', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(140, 16, 43, '2.3 Direccionamiento al usuario final', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(141, 16, 44, '3.1 Abandono o cuelgue de llamada', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(142, 16, 44, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(143, 17, 45, '1.1 Es cordial y empático durante la llamada, demuestra seguridad', '20', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(144, 17, 45, '1.2 Identifica el requerimiento / inconformidad del usuario final', '20', 'activo');
-INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(145, 17, 45, '1.3 Escucha activa', '20', 'activo');
 /*!40000 ALTER TABLE `ca_item` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_matriz
@@ -1560,7 +1390,7 @@ CREATE TABLE IF NOT EXISTS `ca_matriz` (
   KEY `id_matriz` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_matriz: ~16 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_matriz: ~7 rows (aproximadamente)
 DELETE FROM `ca_matriz`;
 /*!40000 ALTER TABLE `ca_matriz` DISABLE KEYS */;
 INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
@@ -1577,26 +1407,6 @@ INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
 	(6, 5, 5, 'activo');
 INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
 	(7, 6, 6, 'activo');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(8, 6, 6, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(9, 6, 6, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(10, 6, 6, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(11, 6, 6, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(12, 6, 6, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(13, 6, 6, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(14, 6, 6, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(15, 6, 6, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(16, 6, 6, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(17, 7, 7, 'activo');
 /*!40000 ALTER TABLE `ca_matriz` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_monitoreo_asesor
@@ -1618,7 +1428,7 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_monitoreo_asesor: ~163 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_monitoreo_asesor: ~179 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` DISABLE KEYS */;
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
@@ -1730,15 +1540,11 @@ INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(54, 250, 56, 5, '2018-10-05', '09:02:00', 1, '42109954', 'ANGELA GIMENA ESCOBAR ARBOLEDA (Base con baja contactabilidad), al iniciar la sr. pide tiempo de espera, cuando retoman, se presenta de forma correcta y cumple indicando el guion legal, oferta la linea de crédito, pero de inmediato la cliente interrumpe indicando no le sirve la tasa, y solo busca terminar la llamada, la asesora es persuasiva buscando que la cliente le permita hablar y logra brindar beneficios que despiertan el interés de la cliente, sin embargo, para validar, pide ser contactada nuevamente, se agenda de forma correcta, hacer seguimiento del contacto.\r\n', 1, 4, '2018-10-05 11:31:33', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(55, 250, 56, 5, '2018-10-05', '09:02:00', 1, '42109954', 'ANGELA GIMENA ESCOBAR ARBOLEDA (Base con baja contactabilidad), al iniciar la sr. pide tiempo de espera, cuando retoman, se presenta de forma correcta y cumple indicando el guion legal, oferta la linea de crédito, pero de inmediato la cliente interrumpe indicando no le sirve la tasa, y solo busca terminar la llamada, la asesora es persuasiva buscando que la cliente le permita hablar y logra brindar beneficios que despiertan el interés de la cliente, sin embargo, para validar, pide ser contactada nuevamente, se agenda de forma correcta, hacer seguimiento del contacto.\r\n', 1, 4, '2018-10-05 11:31:33', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(56, 252, 60, 5, '2018-10-05', '10:40:00', 1, '51697144', 'OLGA LUCIA BERNAL PALACIOS\r\nResalto la energía con la que inicia la llamada, cumple con protocolo inicial, y pronuncia de forma correcta el nombre del banco, inicia la oferta nombrando la tasa de interés, cuando indaga a cerca de deudas que tenga actualmente, la cliente manifiesta una inconformidad con respecto a el crédito rotativo, e indica esta interesada es en un crédito con un monto mayor y para comprar el mismo crédito con nuestra entidad, proceso que nosotros no podemos realizar, asesor a escucha de forma respetuosa a la cliente e intenta dar solución, ante esto la Sra. manifiesta que esa tc la va a entregar por el cobro de cuota de manejo y una mala atención en la linea de atención,  al no poder concluir la venta asesora despide a la cliente formalmente, y l a cliente queda agradecida por ser escuchada. ', 1, 4, '2018-10-05 14:15:42', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(57, 253, 75, 5, '2018-10-05', '10:12:00', 1, '80052623', 'ALVARO ANDRES GONZALEZ BARRERA, inicia de forma correcta la llamada, cumple indicando el guion legal, le cuenta la cliente lo que es Balcon tc, muestra conocimiento y seguridad al hablar,  pregunta al cliente si tiene deudas, cliente manifiesta que solo con nuestra entidad, el asesor se queda con la respuesta y termina la llamada, recuerda la importancia de indagar y realizar preguntas acertadas, obteniendo información de parte del cliente, esto te ayudara a dar un mayor manejo de la situación y ser mas efectivo , ten presente que los clientes que se encuentran en esta base, tienen deuda de TC y CR con otras entidades, pues fue algo que el banco tuvo en cuenta para asignarlos a la misma, así que da mas opciones y realiza mas preguntas, no te quedes con la primera respuesta del cliente', 3, 4, '2018-10-05 14:36:21', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(58, 251, 57, 5, '2018-10-05', '10:09:00', 1, '1014226212', 'HUGO ENRIQUE TORRES MARTINEZ, se presenta de forma correcta, cumple indicando guion legal, brinda la oferta hablando de una linea de crédito extrafinanciamiento ya aprobada, no solo se trata de nombrar características, debes recrear los beneficios del producto llevar al cliente a una situación real donde pueda hacer uso del dinero ofertado, despierta su atención, permite mas su interacción , hace falta indagar, identifica una necesidad real, no llenes al cliente de información cuando al parecer ni entiende de que estas hablando, recomiendo mas energía y dinamismo en la gestión, no ofertas producto adicional\r\n', 3, 4, '2018-10-05 14:53:31', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(59, 251, 57, 5, '2018-10-05', '10:09:00', 1, '1014226212', 'HUGO ENRIQUE TORRES MARTINEZ, se presenta de forma correcta, cumple indicando guion legal, brinda la oferta hablando de una linea de crédito extrafinanciamiento ya aprobada, no solo se trata de nombrar características, debes recrear los beneficios del producto llevar al cliente a una situación real donde pueda hacer uso del dinero ofertado, despierta su atención, permite mas su interacción , hace falta indagar, identifica una necesidad real, no llenes al cliente de información cuando al parecer ni entiende de que estas hablando, recomiendo mas energía y dinamismo en la gestión, no ofertas producto adicional\r\n', 3, 4, '2018-10-05 14:53:31', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(60, 255, 61, 5, '2018-10-06', '08:38:00', 1, '52530149', 'DAISY RIVERA CUARTAS, inicia de forma correcta la llamada, diciendo bien el nombre del banco, resalta la baja de la tasa de  interés, explica muy bien el beneficio del rediferido, hace pregunta filtro para no afectar la cliente, lleva un buen ritmo, y transmite seguridad al hablar,  las características las transforma en beneficios para la cliente, llevándola a la aceptación, dentro de reformulación se acuerda la aplicación del servicio de forma correcta adicional se asegura de que la cliente se encuentre al día con el banco, oferta y da manejo del producto adicional\r\n', 1, 4, '2018-10-07 13:32:45', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
@@ -1754,15 +1560,9 @@ INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(66, 267, 79, 5, '2018-10-08', '17:35:00', 1, '39759164', 'NANCY EDITH VERA RODRIGUEZ, es empatico desde un inicio y cumple protocolo inicial, al iniciar la oferta primero habla de la tasa de interés resaltandola, nombra 2 características del producto, haciéndolo ver como beneficio, sin embargo al momento de indagar por deudas pendientes por consolidar, la cliente manifiesta no tener ninguna, el da manejo brindando diferentes opciones e intentando indagar a la cliente, pero ella con tono fuerte, vuelve a indicar no tiene ninguna, asi que se termina la llamada, aplica la etiqueta telefónica.', 2, 4, '2018-10-09 15:53:50', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(67, 267, 79, 5, '2018-10-08', '17:35:00', 1, '39759164', 'NANCY EDITH VERA RODRIGUEZ, es empatico desde un inicio y cumple protocolo inicial, al iniciar la oferta primero habla de la tasa de interés resaltandola, nombra 2 características del producto, haciéndolo ver como beneficio, sin embargo al momento de indagar por deudas pendientes por consolidar, la cliente manifiesta no tener ninguna, el da manejo brindando diferentes opciones e intentando indagar a la cliente, pero ella con tono fuerte, vuelve a indicar no tiene ninguna, asi que se termina la llamada, aplica la etiqueta telefónica.', 2, 4, '2018-10-09 15:53:50', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(68, 267, 79, 5, '2018-10-08', '17:35:00', 1, '39759164', 'NANCY EDITH VERA RODRIGUEZ, es empatico desde un inicio y cumple protocolo inicial, al iniciar la oferta primero habla de la tasa de interés resaltandola, nombra 2 características del producto, haciéndolo ver como beneficio, sin embargo al momento de indagar por deudas pendientes por consolidar, la cliente manifiesta no tener ninguna, el da manejo brindando diferentes opciones e intentando indagar a la cliente, pero ella con tono fuerte, vuelve a indicar no tiene ninguna, asi que se termina la llamada, aplica la etiqueta telefónica.', 2, 4, '2018-10-09 15:53:50', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(69, 273, 93, 8, '2018-10-08', '13:48:00', 1, '26355636', '', 1, 4, '2018-10-09 16:54:32', '2018-10-09 16:54:32');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(70, 268, 58, 5, '2018-10-08', '11:27:00', 1, '80179085', 'JOHN EDUARDO RAMIREZ FONSECA, inicia de forma correcta, indicando el guion legal, habla de la deuda de las 2 tarjetas crédito de los clientes, y realiza pregunta filtro, continua resaltando la baja de la tasa de interés, y hace simulación de pagos al mismo plazo que ya tiene el cliente por el fixed! brinda beneficios de aceptar el rediferido y lleva al cliente a la aceptación, inicia reformulacion y allí se asegura que el cliente no se encuentra en mora, continua y reformula de forma correcta, oferta el servicio adicional, pero ante la negativa del cliente, se recomienda dar un mayor manejo. Mantuvo un buen ritmo dentro de su gestión y la información fue clara para el cliente\r\n', 1, 4, '2018-10-09 17:00:22', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(71, 268, 58, 5, '2018-10-08', '11:27:00', 1, '80179085', 'JOHN EDUARDO RAMIREZ FONSECA, inicia de forma correcta, indicando el guion legal, habla de la deuda de las 2 tarjetas crédito de los clientes, y realiza pregunta filtro, continua resaltando la baja de la tasa de interés, y hace simulación de pagos al mismo plazo que ya tiene el cliente por el fixed! brinda beneficios de aceptar el rediferido y lleva al cliente a la aceptación, inicia reformulacion y allí se asegura que el cliente no se encuentra en mora, continua y reformula de forma correcta, oferta el servicio adicional, pero ante la negativa del cliente, se recomienda dar un mayor manejo. Mantuvo un buen ritmo dentro de su gestión y la información fue clara para el cliente\r\n', 1, 4, '2018-10-09 17:00:22', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(72, 274, 78, 5, '2018-10-08', '09:31:00', 1, '79576250', 'JAIBER JAIRO MORENO OLAYA, al iniciar la llamada saluda formalmente e indica el guion legal,  aborda de manera positiva al cliente indicándole que es un cliente importante para el banco razón por la que la que se quiere entregar el beneficio de consolidar deudas a través de su tc, con tasa del 0.99%, capta la atención del cliente despertando su interés, pero el audio presenta interferencia, así que se genera un nuevo contacto , cumple presentándose e indicando el guion nuevamente lo coloca en contexto e indaga acerca de las deudas del cliente, responde ante las inquietudes del cliente de forma correcta, el cliente manifiesta esta atento a la respuesta de un tramite de crédito con nuestra misma entidad, así que propone un nuevo contacto para validar si se puede  cerrar la venta. hacer seguimiento al nuevo contacto', 1, 3, '2018-10-09 17:16:39', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
@@ -1770,13 +1570,9 @@ INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(74, 276, 82, 5, '2018-10-08', '10:03:00', 1, '79243720', 'LUIS FERNANDO QUIROGA PUERTA, inicia de forma correcta la llamada, indicando el guion legal, brinda la oferta de forma creativa resaltando la tasa de interés,, indaga acerca de las deudas pero el cliente manifiesta lo único que tiene es un crédito de libranza y una deuda de Colpatria con tarjeta Cencosud, explica la forma en la cual puede consolidar las deudas, directa e indirecta, pero el cliente asume que entregándole solo un numero de obligación que aplique se le va desembolsar el dinero para que el pague incluso la deuda con colpatria, efectivamente ese movimiento puede hacerse pero la asesora aclara que no es posible comprar la cartera a la misma entidad, actua de forma transparente, cliente indica entonces no esta interesado y se da por terminada la llamada\r\n', 2, 4, '2018-10-09 19:19:45', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(75, 276, 82, 5, '2018-10-08', '10:03:00', 1, '79243720', 'LUIS FERNANDO QUIROGA PUERTA, inicia de forma correcta la llamada, indicando el guion legal, brinda la oferta de forma creativa resaltando la tasa de interés,, indaga acerca de las deudas pero el cliente manifiesta lo único que tiene es un crédito de libranza y una deuda de Colpatria con tarjeta Cencosud, explica la forma en la cual puede consolidar las deudas, directa e indirecta, pero el cliente asume que entregándole solo un numero de obligación que aplique se le va desembolsar el dinero para que el pague incluso la deuda con colpatria, efectivamente ese movimiento puede hacerse pero la asesora aclara que no es posible comprar la cartera a la misma entidad, actua de forma transparente, cliente indica entonces no esta interesado y se da por terminada la llamada\r\n', 2, 4, '2018-10-09 19:19:45', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(76, 270, 99, 8, '2018-10-09', '17:50:00', 1, '26431454', 'Se comunica consumidor porque el producto SKIP LIQ DILUIDO DOYP 4X3000ML (Retail) salió con consistencia aguada, son dos productos.', 1, 4, '2018-10-10 08:21:22', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(77, 272, 98, 8, '2018-10-09', '16:41:00', 1, '26427128', 'Consumidora indica que ha comprado un KNORR SSA POMAROLA TRAD 24X340G y al abrirlo percibe que tiene que tiene un hongo con una textura como si fuera un cerebro pequeño como rugoso.', 2, 4, '2018-10-10 09:32:40', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(78, 272, 98, 8, '2018-10-09', '16:41:00', 1, '26427128', 'Consumidora indica que ha comprado un KNORR SSA POMAROLA TRAD 24X340G y al abrirlo percibe que tiene que tiene un hongo con una textura como si fuera un cerebro pequeño como rugoso.', 2, 4, '2018-10-10 09:32:40', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(79, 271, 89, 8, '2018-10-02', '07:13:00', 1, '26112413', 'Consumidora adquirio desodorante Dove pero el actuador dejo de funcionar. ', 1, 4, '2018-10-10 09:55:08', '2018-10-10 09:55:08');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
@@ -1784,33 +1580,17 @@ INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(81, 269, 91, 8, '2018-10-09', '11:54:00', 1, '26402327', 'Consumidora indica que siempre consume caldo de gallina de y de costilla de nuestra marca. En esta oportunidad compró una caja de caldos de gallina desmenuzado que vienen 12 y pagó 10 (promoción). Indica que abrió dos sobres, y ella conoce el color que es como cafesito y el olor, porque los utiliza siempre, pero esta vez vino de color blanco y no huele, ni sabe a nada. ', 1, 4, '2018-10-10 11:37:41', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(82, 269, 91, 8, '2018-10-09', '11:54:00', 1, '26402327', 'Consumidora indica que siempre consume caldo de gallina de y de costilla de nuestra marca. En esta oportunidad compró una caja de caldos de gallina desmenuzado que vienen 12 y pagó 10 (promoción). Indica que abrió dos sobres, y ella conoce el color que es como cafesito y el olor, porque los utiliza siempre, pero esta vez vino de color blanco y no huele, ni sabe a nada. ', 1, 4, '2018-10-10 11:37:41', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(83, 283, 90, 8, '2018-10-09', '09:24:00', 1, '26388637', 'Consumidora manifiesta que siempre utiliza nuestro FAB JAB MULTIUSOS LIMON NSD 48X300G, menciona que hace ya bastante tiempo atrás identifica cada que utiliza una barra después de usar la mitad se desborona se parte en pedazos,', 1, 4, '2018-10-10 12:02:54', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(84, 284, 97, 8, '2018-10-09', '16:22:00', 1, '26425714', 'Se comunica consumidora y desea conocer información sobre el estado de su pedido realizado el día de ayer por medio de la pagina del Club Ponds. Comparte que no recibió algún numero de guía para realizar seguimiento. ', 1, 4, '2018-10-10 13:28:39', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(85, 282, 81, 5, '2018-10-09', '09:40:00', 1, '32707809', 'NAYIBE MARIA LASCAR DE LA HOZ, se presenta, es cordial y cumple indicando el guion legal, brindando la oferta resalto su conocimiento y manejo de producto (teniendo en cuenta que es nueva) utiliza los términos adecuados y da ejemplos de como puede utilizar el dinero, debe permitir mas la interacción del cliente, y evitar brindar toda la información de una, ya que después puede quedarse sin argumento, se recomienda hacer preguntas filtro, que le permitan conocer mas a su cliente, cuando deja hablar la cliente ella manifiesta no lo necesita, se da manejo hablando de las cuotas decrecientes y la opción de realizar abonos, pero la cliente se mantiene firme en que no lo necesita, por que ya saco un crédito rotativo, la asesora es persuasiva y mientras continua convenciendo a la cliente se corta la llamada, se hacen 4 remarcaciones pero la cliente no vuelve a contestar', 1, 4, '2018-10-10 17:07:46', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(86, 282, 81, 5, '2018-10-09', '09:40:00', 1, '32707809', 'NAYIBE MARIA LASCAR DE LA HOZ, se presenta, es cordial y cumple indicando el guion legal, brindando la oferta resalto su conocimiento y manejo de producto (teniendo en cuenta que es nueva) utiliza los términos adecuados y da ejemplos de como puede utilizar el dinero, debe permitir mas la interacción del cliente, y evitar brindar toda la información de una, ya que después puede quedarse sin argumento, se recomienda hacer preguntas filtro, que le permitan conocer mas a su cliente, cuando deja hablar la cliente ella manifiesta no lo necesita, se da manejo hablando de las cuotas decrecientes y la opción de realizar abonos, pero la cliente se mantiene firme en que no lo necesita, por que ya saco un crédito rotativo, la asesora es persuasiva y mientras continua convenciendo a la cliente se corta la llamada, se hacen 4 remarcaciones pero la cliente no vuelve a contestar', 1, 4, '2018-10-10 17:07:46', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(87, 282, 81, 5, '2018-10-09', '09:40:00', 1, '32707809', 'NAYIBE MARIA LASCAR DE LA HOZ, se presenta, es cordial y cumple indicando el guion legal, brindando la oferta resalto su conocimiento y manejo de producto (teniendo en cuenta que es nueva) utiliza los términos adecuados y da ejemplos de como puede utilizar el dinero, debe permitir mas la interacción del cliente, y evitar brindar toda la información de una, ya que después puede quedarse sin argumento, se recomienda hacer preguntas filtro, que le permitan conocer mas a su cliente, cuando deja hablar la cliente ella manifiesta no lo necesita, se da manejo hablando de las cuotas decrecientes y la opción de realizar abonos, pero la cliente se mantiene firme en que no lo necesita, por que ya saco un crédito rotativo, la asesora es persuasiva y mientras continua convenciendo a la cliente se corta la llamada, se hacen 4 remarcaciones pero la cliente no vuelve a contestar', 1, 4, '2018-10-10 17:07:46', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(88, 282, 81, 5, '2018-10-09', '09:40:00', 1, '32707809', 'NAYIBE MARIA LASCAR DE LA HOZ, se presenta, es cordial y cumple indicando el guion legal, brindando la oferta resalto su conocimiento y manejo de producto (teniendo en cuenta que es nueva) utiliza los términos adecuados y da ejemplos de como puede utilizar el dinero, debe permitir mas la interacción del cliente, y evitar brindar toda la información de una, ya que después puede quedarse sin argumento, se recomienda hacer preguntas filtro, que le permitan conocer mas a su cliente, cuando deja hablar la cliente ella manifiesta no lo necesita, se da manejo hablando de las cuotas decrecientes y la opción de realizar abonos, pero la cliente se mantiene firme en que no lo necesita, por que ya saco un crédito rotativo, la asesora es persuasiva y mientras continua convenciendo a la cliente se corta la llamada, se hacen 4 remarcaciones pero la cliente no vuelve a contestar', 1, 4, '2018-10-10 17:07:46', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(89, 282, 81, 5, '2018-10-09', '09:40:00', 1, '32707809', 'NAYIBE MARIA LASCAR DE LA HOZ, se presenta, es cordial y cumple indicando el guion legal, brindando la oferta resalto su conocimiento y manejo de producto (teniendo en cuenta que es nueva) utiliza los términos adecuados y da ejemplos de como puede utilizar el dinero, debe permitir mas la interacción del cliente, y evitar brindar toda la información de una, ya que después puede quedarse sin argumento, se recomienda hacer preguntas filtro, que le permitan conocer mas a su cliente, cuando deja hablar la cliente ella manifiesta no lo necesita, se da manejo hablando de las cuotas decrecientes y la opción de realizar abonos, pero la cliente se mantiene firme en que no lo necesita, por que ya saco un crédito rotativo, la asesora es persuasiva y mientras continua convenciendo a la cliente se corta la llamada, se hacen 4 remarcaciones pero la cliente no vuelve a contestar', 1, 4, '2018-10-10 17:07:46', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(90, 279, 62, 5, '2018-10-09', '11:31:00', 1, '1018452420', 'LAURA INES SANDOVAL RODRIGUEZ,  es bastante cordial desde el inicio y cumple con el protocolo inicial, indica que a través de su tc se le aprobó una linea de crédito para uso en efectivo y con una tasa de interés preferencial, cliente interrumpe indicando no le interesa, asesora intenta indagar para poder identificar la necesidad, pero cliente no se lo permite indicando con tono fuerte que realmente no lo necesita y que debe de colgar, se termina la llamada garantizando una correcta tipificacion\r\n', 4, 4, '2018-10-10 17:15:45', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(91, 281, 55, 5, '2018-10-09', '09:42:00', 1, '42879543', 'ELIZABETH DEL SOCO ISAZA GUTIERREZ, al inicio cumple indicando el guion legal, resalta la tasa preferencial y aclara que se utilizaría el dinero del RC, Indaga acerca del uso del crédito, para saber que dinero está disponible para este uso, y procede a explicar las formas de consolidación, consulta acerca de las deudas que tiene la cliente, pero esta manifiesta no le interesa por el comportamiento de ese producto y la forma en que cobra intereses, el asesor da manejo con argumentos validos y despierta el interés de la cliente, pero ella manifiesta querer revisar sus obligaciones así que se propone un nuevo contacto para cerrar la venta, hacer seguimiento.\r\n', 1, 4, '2018-10-10 17:34:55', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(92, 278, 67, 5, '2018-10-09', '11:56:00', 1, '16918446', 'JUAN ESTEBAN RODRIGUEZ CASTANO, se presenta indica el guion legal, inicia hablando de la baja de la tasa de interés, y realizando pregunta filtro, teniendo la información da la opción de unificar la deuda, es clara con la información y lleva al cliente al cierre, este no muestra mayor objeción, y se procede a reformular, se asegura que el cliente no tenga mora en sus productos y seguido oferta el fixed combotizando al cliente, adicional oferta afiliada pero cliente se niega, a esta no da manejo y se termina la llamada\r\n', 1, 4, '2018-10-10 18:21:28', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(93, 278, 67, 5, '2018-10-09', '11:56:00', 1, '16918446', 'JUAN ESTEBAN RODRIGUEZ CASTANO, se presenta indica el guion legal, inicia hablando de la baja de la tasa de interés, y realizando pregunta filtro, teniendo la información da la opción de unificar la deuda, es clara con la información y lleva al cliente al cierre, este no muestra mayor objeción, y se procede a reformular, se asegura que el cliente no tenga mora en sus productos y seguido oferta el fixed combotizando al cliente, adicional oferta afiliada pero cliente se niega, a esta no da manejo y se termina la llamada\r\n', 1, 4, '2018-10-10 18:21:28', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(94, 278, 67, 5, '2018-10-09', '11:56:00', 1, '16918446', 'JUAN ESTEBAN RODRIGUEZ CASTANO, se presenta indica el guion legal, inicia hablando de la baja de la tasa de interés, y realizando pregunta filtro, teniendo la información da la opción de unificar la deuda, es clara con la información y lleva al cliente al cierre, este no muestra mayor objeción, y se procede a reformular, se asegura que el cliente no tenga mora en sus productos y seguido oferta el fixed combotizando al cliente, adicional oferta afiliada pero cliente se niega, a esta no da manejo y se termina la llamada\r\n', 1, 4, '2018-10-10 18:21:28', '2018-10-12 13:37:47');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(95, 278, 67, 5, '2018-10-09', '11:56:00', 1, '16918446', 'JUAN ESTEBAN RODRIGUEZ CASTANO, se presenta indica el guion legal, inicia hablando de la baja de la tasa de interés, y realizando pregunta filtro, teniendo la información da la opción de unificar la deuda, es clara con la información y lleva al cliente al cierre, este no muestra mayor objeción, y se procede a reformular, se asegura que el cliente no tenga mora en sus productos y seguido oferta el fixed combotizando al cliente, adicional oferta afiliada pero cliente se niega, a esta no da manejo y se termina la llamada\r\n', 1, 4, '2018-10-10 18:21:28', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(96, 280, 74, 5, '2018-10-09', '14:33:00', 1, '80124404', 'RODRIGO ANDRES MARIN GIL, desde el inicio de la llamada es muy cordial,e indica el guion legal, su volumen de voz es muy bueno , resalta el buen manejo de los productos, y da la opción de unificar la deuda con la tasa de interés mas baja teniendo en cuenta que bajo, realiza la pregunta filtro, cliente indica maneja tasa preferencial motivo por el cual no ve viable rediferir. así que el asesor continua con el ofrecimiento de la tc afiliada, pero el cliente conoce el producto y dice nunca le ha interesado por la cuota de manejo, asesor intenta rebatir pero cliente se niega y termina la llamada.\r\n', 1, 4, '2018-10-10 18:40:24', '2018-10-12 13:37:47');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
@@ -1882,8 +1662,6 @@ INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(130, 352, 80, 5, '2018-10-10', '08:23:00', 1, '16791495', 'HERNANDO DIAZ SOLIS, \r\nSe presenta en forma cordial y cumple indicando el guion legal, el cliente es bastante afanado y le pide le diga rápido que necesita, el no se deja contagiar y de forma tranquila inicia brindando la oferta resaltando la tasa preferencial para su tc Master, con el fin de consolidar deudas con tarjeta crédito y créditos rotativos, cliente inmediatamente interrumpe indicando que no tiene deudas, solo con nuestra entidad y Bogotá, pero en la tc del Bogotá, tiene una deuda mínima así que no lo necesita, el asesor intenta dar manejo pregunta por deudas con tarjetas de marca compartida o créditos pero el Sr, indica que no y quiere terminar la llamada, el asesor maneja protocolo para despedida, indicando quería que tomara el excelente beneficio con el fin de tenerlo con nosotros como su única entidad financiera. ', 4, 4, '2018-10-12 15:59:23', '2018-10-12 15:59:23');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(131, 352, 80, 5, '2018-10-10', '08:23:00', 1, '16791495', 'HERNANDO DIAZ SOLIS, \r\nSe presenta en forma cordial y cumple indicando el guion legal, el cliente es bastante afanado y le pide le diga rápido que necesita, el no se deja contagiar y de forma tranquila inicia brindando la oferta resaltando la tasa preferencial para su tc Master, con el fin de consolidar deudas con tarjeta crédito y créditos rotativos, cliente inmediatamente interrumpe indicando que no tiene deudas, solo con nuestra entidad y Bogotá, pero en la tc del Bogotá, tiene una deuda mínima así que no lo necesita, el asesor intenta dar manejo pregunta por deudas con tarjetas de marca compartida o créditos pero el Sr, indica que no y quiere terminar la llamada, el asesor maneja protocolo para despedida, indicando quería que tomara el excelente beneficio con el fin de tenerlo con nosotros como su única entidad financiera. ', 4, 4, '2018-10-12 15:59:23', '2018-10-12 15:59:23');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(132, 354, 77, 5, '2018-10-10', '13:04:00', 1, '80311942', 'JUAN CARLOS SALGADO BOBADILLA, se presenta y es cordial en el saludo, indica el guion legal, procede a brindar la oferta indicando que puede usar el disponible de su tc con una tasa preferencial, economizando en tasas, genera primer cierre, cliente muestra interés y pregunta cuanto es el monto a utilizar se le confirma que son $5.540.000 y explica los métodos de consolidación, directo e indirecto, genera otro cierre pero el cliente indica su deuda tiene un monto mas alto , así que brinda la opción de que realice una compra parcial y hace simulaciones de pagos buscando su aceptación, cliente indica desea validar antes con la otra entidad temas de tasa y demás, asesora indaga que tipo de crédito tiene identificando que es de libre inversión, por condiciones del banco no podemos comprar ese tipo de crédito, así que de forma respetuosa notifica al cliente y termina la llamada\r\n', 4, 4, '2018-10-12 16:13:25', '2018-10-12 16:13:25');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(133, 353, 69, 5, '2018-10-12', '11:30:00', 1, '390057', 'CARLOS EDUARDO LOPEZ PACANINS, inicia de forma enérgica, cumple protocolo inicial india que tiene  una linea de crédito adicional con un monto de $6.700.000 y una tasa preferencial del 1.85%, resalta características principales y genera primer cierre, teniendo una respuesta positiva del cliente, así que confirma el plazo y cierra la venta confirmando a que cuenta realizara el desembolso del dinero, se inicia reformulacion de acuerdos, el asesor se asegura que el cliente no se encuentre en mora, y re formula de forma correcta , cumpliendo con los parámetros cliente se encuentra de acuerdo con todas las políticas y condiciones de desembolso\r\n', 1, 4, '2018-10-12 17:49:39', '2018-10-12 17:49:39');
@@ -1938,17 +1716,83 @@ INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(158, 380, 82, 5, '2018-10-16', '16:39:00', 1, '42076198', 'CONSUELO ESTRADA ESCOBAR,es enérgica en el saludo e indicando el guion legal, al brindar la oferta lo hace con dinamismo resaltando la tasa de interés preferencial, siendo útil para la consolidación de deudas con otras entidades, la cliente manifiesta hace poco consolido su única deuda significativa con banco de occidente  y no recuerda muy bien con que tasa lo hizo, frente  a esto la asesor a la invita a revisar la tasa ya que la que le ofrece nuestra entidad es bastante atractiva, la cliente entonces propone nuevamente ser contactada, antes de ceder la asesora indaga el valor de la deuda para hacer una simulación de como quedarían sus pagos, su gestión es muy buena sin embargo hago la recomendación de como brinda la info a la cliente, recordando que no debe comprometerse ni asegurar info, hacer seguimiento del nuevo contacto.\r\n', 1, 4, '2018-10-17 10:08:52', '2018-10-17 10:08:52');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(159, 380, 82, 5, '2018-10-16', '16:39:00', 1, '42076198', 'CONSUELO ESTRADA ESCOBAR,es enérgica en el saludo e indicando el guion legal, al brindar la oferta lo hace con dinamismo resaltando la tasa de interés preferencial, siendo útil para la consolidación de deudas con otras entidades, la cliente manifiesta hace poco consolido su única deuda significativa con banco de occidente  y no recuerda muy bien con que tasa lo hizo, frente  a esto la asesor a la invita a revisar la tasa ya que la que le ofrece nuestra entidad es bastante atractiva, la cliente entonces propone nuevamente ser contactada, antes de ceder la asesora indaga el valor de la deuda para hacer una simulación de como quedarían sus pagos, su gestión es muy buena sin embargo hago la recomendación de como brinda la info a la cliente, recordando que no debe comprometerse ni asegurar info, hacer seguimiento del nuevo contacto.\r\n', 1, 4, '2018-10-17 10:08:52', '2018-10-17 10:08:52');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(160, 385, 74, 5, '2018-10-17', '08:40:00', 1, '79466058', 'CARLOS ALFREDO MEDINA VALBUENA, maneja un buen volumen de voz, enérgico, saluda correctamente e indica el guion legal, resalta el buen manejo de su producto, habla de unificar la deuda a un mismo plazo mas cómodo y la tasa actual que es mas baja, para no afectar al cliente realiza la pregunta filtro y explica el porque, cliente interrumpe indicando tiene una deuda muy pequeña, el asesor da manejo tomando como gancho el plazo y explica de tal manera que convence al cliente de aceptar y cierra la venta, re formula de forma clara y correcta, cuando el cliente realiza una pregunta, titubea un poco antes de responder, pues le interrumpe la reformulacion, sin embargo se organiza termina de reformular y responde de forma correcta sin comprometerse con una fecha, direccionando a la  linea de atención. oferta producto adicional, a pesar de su manejo cliente se rehúsa a aceptar\r\n', 1, 4, '2018-10-17 10:30:31', '2018-10-17 10:30:31');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(161, 383, 61, 5, '2018-10-17', '10:12:00', 1, '79757496', 'FABIO ALEJANDRO CRUZ CÁRDENAS, se presenta de forma correcta, cumple con el guion legal, su argumento mas fuerte es la baja de la tasa de interés, realiza pregunta filtro identificando que el cliente tiene tasa de interés preferencial, explica al cliente por que no es viable para el la oferta, y continua con el ofrecimiento de la tarjeta crédito afiliada, ante este producto cliente muestra interés, hace preguntas que la asesora responde de forma acertada, sin embargo el cliente necesita que la tarjeta brinde vida crediticia a su esposa, y al explicarle que no es así, apesar del manejo se niega a aceptarla. Resalto su conocimiento frente  los diferentes productos\r\n', 1, 4, '2018-10-17 12:31:31', '2018-10-17 12:31:31');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
-	(162, 383, 61, 5, '2018-10-17', '10:12:00', 1, '79757496', 'FABIO ALEJANDRO CRUZ CÁRDENAS, se presenta de forma correcta, cumple con el guion legal, su argumento mas fuerte es la baja de la tasa de interés, realiza pregunta filtro identificando que el cliente tiene tasa de interés preferencial, explica al cliente por que no es viable para el la oferta, y continua con el ofrecimiento de la tarjeta crédito afiliada, ante este producto cliente muestra interés, hace preguntas que la asesora responde de forma acertada, sin embargo el cliente necesita que la tarjeta brinde vida crediticia a su esposa, y al explicarle que no es así, apesar del manejo se niega a aceptarla. Resalto su conocimiento frente  los diferentes productos\r\n', 1, 4, '2018-10-17 12:31:31', '2018-10-17 12:31:31');
-INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(163, 382, 67, 5, '2018-10-17', '07:31:00', 1, '51767841', 'MARIA CRISTINA DURAN SANCHEZ, ella es cordial pero bastante seria, cumple con el guion legal, para iniciar la oferta indica se tiene un beneficio para el saldo ya utilizado de su tarjeta crédito, unficandolo a un mismo  plazo y una misma tasa, resaltando  que para este mes la tasa bajo en comparación a meses anteriores, realiza pregunta filtro asegurándose de que no va a afectar al cliente, hace simulación al mayor plazo de 36 meses, y genera primer cierre, oferta el servicio para la 2da tarjeta, cliente lo ve viable y acepta, se cierra la venta y la asesora reformula de forma correcta, lleva un buen ritmo y no hay interrupciones dentro de la misma, ya que se aseguro de explicar bien el servicio.\r\n', 1, 4, '2018-10-17 12:51:20', '2018-10-17 12:51:20');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(164, 328, 108, 9, '2018-10-17', '10:45:00', 1, '26721674', '', 1, 1, '2018-10-17 14:54:35', '2018-10-17 14:54:35');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(165, 384, 62, 5, '2018-10-17', '09:55:00', 1, '1032436887', 'INGRID LISSETH CASTANEDA  CANCHON, inicia la llamada de forma enérgica, en cuanto se presenta en nombre de Scotiabank colpatria la cliente interrumpe indicando que ya la llamaron, asesora indaga que información le  brindaron, y la cliente manifiesta que tenia un crédito asociado a su tarjeta, y que ya dejo claro que no lo necesita, se termina llamada indicando se dejara la notificación, tipiifca de forma correcta dejando comentario de que que ya había contactado otro vendor a la asesora \r\n', 4, 4, '2018-10-17 16:09:27', '2018-10-17 16:09:27');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(168, 386, 81, 5, '2018-10-17', '08:18:00', 1, '55233876', 'GRACE JUDITH MARQUEZ CORONEL, al iniciar la llamada se presenta de forma correcta, (puede subir un poco mas el volumen de su voz, pues eso la hace sonar algo insegura) brinda la oferta como una linea de crédito fácil, indaga haciendo preguntas sondeo, para identificar en que puede utilizar el dinero, la cliente se niega de inmediato, y no responde a las preguntas de la asesora, sin embargo ella continua dando opciones de uso y resaltando los beneficios de aceptar el dinero en el momento, la cliente solo se niega e indica que cuando lo necesite ella se acercara al banco, no optimiza el contacto ofertando el producto adicional\r\n', 4, 4, '2018-10-17 16:17:59', '2018-10-17 16:17:59');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(169, 381, 78, 5, '2018-10-17', '11:18:00', 1, '31201722', 'MARIA EUGENIA GOMEZ GORDILLO, es una llamada agendada, se presenta de forma correcta pero no indica el guion legal, pone en contexto a la cliente y esta manifiesta que por temas de salud, no ha podido realizar el  avance para que le compren esa cartera con davivienda, se propone un nuevo contacto para el día viernes, hacer seguimiento de la agenda y garantizar el contacto.\r\n', 2, 4, '2018-10-17 16:28:24', '2018-10-17 16:28:24');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(170, 387, 99, 8, '2018-10-17', '09:15:00', 1, '26711566', 'Consumdiora adquirió una caja sde Te Emblem de 75 unidades pero cinco unidades no traián bolsita y dos estaban humendas como con moho. ', 1, 4, '2018-10-18 08:41:54', '2018-10-18 08:41:54');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(171, 322, 106, 9, '2018-10-18', '07:11:00', 1, '26773354', '', 1, 4, '2018-10-18 08:43:56', '2018-10-18 08:43:56');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(172, 388, 89, 8, '2018-10-17', '14:58:00', 1, '26748611', '', 1, 4, '2018-10-18 08:59:38', '2018-10-18 08:59:38');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(173, 323, 114, 9, '2018-10-18', '20:05:00', 1, '26775353', '', 1, 4, '2018-10-18 09:36:23', '2018-10-18 09:36:23');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(175, 389, 98, 8, '2018-10-17', '17:25:00', 1, '26763993', 'Consumidora indica que hoy a comprado una MAIZENA ALMIDON DE MAIZ 32X520G y cuando lo estaba tamizando para hacer unos alfajores ha encontrado una mosca en el almidón.', 1, 4, '2018-10-18 10:00:38', '2018-10-18 10:00:38');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(176, 390, 87, 8, '2018-10-18', '07:40:00', 1, '26774225', 'consumidor se comunica indicando que compro dos frascos de mayonesa y noto que el sabor esta muy amargo esta como pasada y estan preocupados y abrieron los productos y tienen el mismo sabor amargo y a todos les pasa lo mismo ', 1, 4, '2018-10-18 10:22:35', '2018-10-18 10:22:35');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(177, 391, 84, 8, '2018-10-17', '11:00:00', 1, '26723621', 'Consumidor adquirió una salsa, lo dejó en la alacena un poco mas de un mes, y al antes de ayer estaba hinchado a punto de explotar. \r\n', 1, 4, '2018-10-18 10:31:31', '2018-10-18 10:31:31');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(178, 321, 113, 9, '2018-10-18', '09:12:00', 1, '26780460', '', 1, 4, '2018-10-18 11:36:43', '2018-10-18 11:36:43');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(179, 392, 96, 8, '2018-10-18', '09:52:00', 1, '26784309', 'Consumidora se comunica ya que compro dos productos SEDAL SH BOMBA ARGAN 12X650ML (Retail) y y SEDAL AC PUR REFRESC 12X650ML son solo agua, la consistencia es muy aguada nunca le había pasado antes', 1, 4, '2018-10-18 11:50:21', '2018-10-18 11:50:21');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(180, 393, 54, 5, '2018-10-18', '10:58:00', 1, '70098142', 'CELSO MARTINEZ RUIZ, se presenta de forma correcta y cumple indicando el guion legal, el ofrecimiento es el mismo,  indica que la tarjeta es vinculada de la principal y diseñada para compartir con un tercero (eso lo sumo a su gestión), cliente no manifiesta interés en la tarjeta, el asesor da manejo indicando que puede darla a manera de gratitud o para educar financieramente pero el Sr. continua negándose, así que el asesor le indica que se la va enviar a su nombre  para que no se pierda el programa (esto es valido, pero ante la afirmación del cliente debe al menos explicar dos beneficios de aceptar esto, como por ejemplo que teniéndola para el mismo va a poder hacer utilizaciones por Internet sin arriesgar la totalidad de su cupo, o incluso para que no exponga su tarjeta principal a clonaciones en los establecimientos en que la utilice) pero no lo hace y de inmediato empieza a reformular, dentro de reformulacion de forma muy rápida dice cosas importantes que debería explicar mas a fondo y que considero deben ser desglosadas en el ofrecimiento para así evitar que el cliente después genere una reclamación, como dejar claridad  que en las dos tarjetas va tener disponibilidad del mismo cupo, y que si la esta dejando para el mismo lo mas conveniente es que designe un cupo menor usándola a manera de seguridad, pues en este caso el cliente dice que la quiere con el cupo de los 6MM(dejando un si sabor si de verdad entendió lo que esta aceptando) por que a la final nunca se le suplió una necesidad, ni tampoco se le especifico que tendría un beneficio.\r\n', 3, 4, '2018-10-18 12:45:52', '2018-10-18 12:45:52');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(181, 241, 7, 4, '2018-10-17', '11:22:00', 3, '26726399', 'Se comunica la Sra, NORA RESTREPO con Cc. 31466096, solicitando una caja de Carbonato de Litio - Teralite, Asesor toma pedido de forma adecuada, es cortes y amable, brinda promoción del día, realiza correcta confirmación de pedido. OM: Realizar gestión comercial de OAI, Terminar con el guion de despedida establecido. ', 1, 4, '2018-10-18 14:18:42', '2018-10-18 14:18:42');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(182, 244, 14, 4, '2018-10-17', '11:47:00', 1, '26729622', 'Se comunica la Sra. Nataly Macana  con Cc 1019024896, Solicitando Gestavit DHA. Asesor es cordial, ágil, brinda valores de descuento. Hace gestión OAI, Confirma medio de pago, confirma pedido, brinda recomendaciones pertinentes. Excelente Gestión.', 1, 3, '2018-10-18 14:32:34', '2018-10-18 14:32:34');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(183, 399, 94, 8, '2018-10-17', '11:35:00', 1, '26727966', 'Consumidora adquirio un desodorante Dove, pero el actuador dejo de funcionar. Asesor brinda procedimiento errado para la recoleccion d ela muestra, puesto que el empaque no se debe marcar. Eso procedimiento es para manchado de prendas en Chile. ', 1, 4, '2018-10-18 15:08:03', '2018-10-18 15:08:03');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(184, 400, 93, 8, '2018-10-16', '15:49:00', 1, '26688094', 'Consumidor adquirió gel Ego, pero le ocasiono reacción adversa. ', 1, 4, '2018-10-18 15:18:57', '2018-10-18 15:18:57');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(185, 401, 91, 8, '2018-10-16', '09:47:00', 1, '26653811', 'Consumidora desea realizar una solicitud de patrocinio. ', 1, 4, '2018-10-18 15:20:41', '2018-10-18 15:20:41');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(186, 402, 97, 8, '2018-10-16', '12:48:00', 1, '26672785', 'Consumidora adquirió una crema Ponds Clarant B3 pero la co nsistencia estaba grumosa. ', 1, 4, '2018-10-18 15:22:32', '2018-10-18 15:22:32');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(187, 403, 90, 8, '2018-10-17', '10:10:00', 1, '26717905', 'Desodorante Rexona Invisible deja residuos en las prendas. ', 1, 4, '2018-10-18 15:24:26', '2018-10-18 15:24:26');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(188, 404, 95, 8, '2018-10-18', '12:17:00', 1, '26797069', 'Gestión Foods Solutions', 1, 4, '2018-10-18 15:34:06', '2018-10-18 15:34:06');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(189, 405, 86, 8, '2018-10-17', '16:04:00', 1, '26756185', 'Consumdiora adquirio un desodorante Rexona Clinical pero el actuador estaba dañado. ', 1, 4, '2018-10-18 15:47:28', '2018-10-18 15:47:28');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(190, 394, 64, 5, '2018-10-18', '17:50:00', 1, '98762406', 'JONATHAN MACIAS GOMEZ, saluda de forma enérgica y correcta, cumple indicando el guion legal, para brindar la oferta empieza realizando pregunta filtro, cuando identifica que no se tienen tasa preferenciales, da la opción de un plan de ahorro eliminado tasa de meses anteriores y dejándolo todo a la actual masa baja y a un mismo plazo, hace simulaciones de cuotas a pagar con el plazo mínimo, ante el primer cierre cliente manifiesta el maneja todo máximo a 3 meses motivo por el cual no le interesa, la asesora da manejo recordandole que va a poder realizar pagos en cualquier momento pero aprovechando la baja de la tasa, sobre este comentario cliente indica que esa tasa no le parece nada beneficiosa, así que la asesora ya procede a ofertar la tc afiliada, cliente se niega asesora da manejo nuevamente a la negativa ofertandola para el mismo, pero ya algo indispuesto por la insistencia indica nuevamente que no, resalto que su gestión es persuasiva  y no se queda con la negativa del cliente\r\n', 1, 4, '2018-10-19 09:53:22', '2018-10-19 09:53:22');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(191, 406, 80, 5, '2018-10-18', '08:30:00', 1, '1022347479', 'CARLOS ALBERTO MUNOZ JIMENEZ, se presenta bien y cumple con el guion legal, (había hablado con el asesor respecto a su gestión, ya que a los clientes  se les dificultaba entender para lo que el estaba llamando, así que le di una forma diferente de iniciar y realizar su gestión) dentro de esta interacción lo aplica totalmente y la información es clara de inmediato para el cliente, realiza pregunta filtro y escucha atentamente lo que el cliente tiene por decir, al generar el cierre el cliente indica no le interesa, se da manejo con un buen argumento, el cliente continua negandose y el asesor es persuasivo buscando su aceptación y convenciéndolo de que es un beneficio para el, logra cerrar la venta y reformula de forma correcta asegurándose de que el cliente no esta en mora, muy buena gestión cierra ofertando la afiliada pero ante esto el cliente indica que no le interesa y debe colgar \r\n', 1, 4, '2018-10-19 10:25:36', '2018-10-19 10:25:36');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(194, 326, 117, 9, '2018-10-19', '10:07:00', 1, '26841947', '', 1, 4, '2018-10-19 10:58:29', '2018-10-19 10:58:29');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(196, 407, 73, 5, '2018-10-18', '09:40:00', 1, '52447335', 'ERICA MARTINEZ MARROQUIN, se presenta es cordial desde el inicio y cumple indicando el guion legal,  oferta el rediferido iniciando con la pregunta filtro, continua indicando que se da la opción de unificar la deuda teniendo en cuenta que la tasa de interés bajo en comparación a la manejada en meses anteriores, hace simulación de cuotas a pagar con los distintos plazos, genera el primer cierre, la cliente indica no esta interesada se indaga el motivo y algo molesta indica que ella maneja sus pagos a menos cuotas, se continua la gestión y allí se evidencia que la cliente si maneja una tasa preferencial, razón por la que continua ofertando los productos adicionales, a los cuales la cliente también se niega a aceptar, a pesar del manejo de la asesora. Resalto su conocimiento en producto y fluidez verbal', 1, 4, '2018-10-19 11:37:26', '2018-10-19 11:37:26');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(198, 409, 69, 5, '2018-10-18', '09:45:00', 1, '39086606', 'HERCILIA ISABEL CAMARGO DE ESCOBAR, saluda y se presenta de forma correcta, indica el guion legal, ofreciendo el rediferido indica la deuda actual y realiza pregunta filtro, habla de la opción de unificar todo a un mismo plazo y una mejor tasa de interés, eliminando las de meses anteriores dejando todo a la actual, la cliente interrumpe algo molesta indicando a esos plazos tan largos no le gusta,  que por favor no le modifique nada, el asesor intenta dar manejo pero la Sra, no lo deja hablar y pide por favor terminar de inmediato la llamada. Ante la actitud de la cliente el asesor mantiene la calma y finaliza con un correcto protocolo.\r\n', 4, 4, '2018-10-19 11:51:57', '2018-10-19 11:51:57');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(199, 325, 107, 9, '2018-10-19', '11:42:00', 1, '26854626', '', 1, 4, '2018-10-19 12:07:33', '2018-10-19 12:07:33');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(200, 408, 60, 5, '2018-10-18', '18:49:00', 1, '52249201', 'LILIANA SILVA MIGUEZ, maneja un buen volumen de voz en su presentación y dentro de ofrecimiento, cumple con el guion legal, realiza pregunta filtro desde un inicio, resalta la baja de la tasa de interés y habla de anular tasas mas altas de meses anteriores, da la opción con los distintos plazos y la cliente indica que se encuentra en mora , se da la opción de realizar un pasa pago, asesora lo explica correctamente pero la cliente no muestra interés ya que tiene un acuerdo de pago con el pago para el día lunes, por presentar mora no puede ofertar demas productos, finaliza con el protocolo correcto.\r\n', 1, 4, '2018-10-19 12:29:24', '2018-10-19 12:29:24');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(201, 158, 28, 4, '2018-10-17', '11:59:00', 3, '26731154', 'Se comunica Sra. Maria Clauida Torres, Con Cc 19398551 del Sr. Gyula Sshmidt Bartha. Solicitando Keppra 100mg/ml Fco de 300ml - 1 frasco. Asesor es cordial, brinda información correspondiente, toma adecuadamente el pedido. OM: Se recomienda realizar gestión comercial de OAI, Utilizar el guion de despedida establecido. Ofrecer bolsa plástica.', 1, 4, '2018-10-19 13:08:38', '2018-10-19 13:08:38');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(202, 137, 21, 4, '2018-10-17', '11:25:00', 1, '26726679', 'Se comunica la Sra. Pilar Cc 1018446675, Solicitando Minot 100mg 10 unidades 1 caja. Se realiza correcta actualización de datos, asesor es amable y brinda buena atención al usuario. OM: Se recomienda confirmar el pedido a manera de resumen, ofrecer bolsa plástica, terminar con el guion de llamada establecido.', 1, 4, '2018-10-19 15:00:40', '2018-10-19 15:00:40');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(203, 149, 25, 4, '2018-10-17', '11:52:00', 1, '26730331', 'Se comunica Sr. Miguel Martinez, con Cc. 51579484 solicitando Yodora Platinum en crema desodorante, asesora es cordial, informa de los costos adicionales. OM: agradecer tiempos de espera, Finalizar con guion de llamada establecido', 1, 4, '2018-10-19 15:11:06', '2018-10-19 15:11:06');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(204, 410, 77, 5, '2018-10-19', '08:55:00', 1, '52225743', 'ANGELICA CATALINA BARRAGAN NUNEZ, se presenta, se recomienda ser mas empatica la cliente le pregunta como estas?, ella no le responde nada y continua con el guion legal, al brindar la oferta indica que puede tomar su crédito rotativo y darle utilidad en consolidación de deudas, con una tasa de interés preferencial, con un monto de 7MM y da ejemplos de las deudas que puede consolidar, pero la cliente interrumpe indicando que 7MM no son nada y no le sirve, asesora da manejo indicando que puede realizar compra parcial de cualquier deuda pero la cliente solo indica que no le sirve, no escucha a la asesora y da por terminada la llamada. se entiende que la asesora esta congestionada y por eso el volumen de su voz, pero puede hacer mas dinámicas y empaticas sus llamadas.\r\n', 1, 4, '2018-10-19 15:12:48', '2018-10-19 15:12:48');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(205, 164, 30, 4, '2018-10-17', '11:52:00', 3, '26724839', 'Catalina Soler con Cc 52646745,  Roxicaina 2% Jal tub 30 ml 3 tubos, Cloruro de NA Suero fisiol 0.9% BOL X 1000ML una bolsa, Fitoestimoline 5%+1% Gel Tub 32g 1 tubo, Nessucar Polv Tarro  550g 1 tarro; asesor confirma datos de forma correcta, es amable con el usuario, confirma el pedido de forma correcta. OM: Se recomienda realizar gestión comercial de OAI, Terminar con el guion establecido de llamada.', 1, 4, '2018-10-19 15:28:42', '2018-10-19 15:28:42');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(206, 411, 56, 5, '2018-10-19', '10:13:00', 1, '79609863', 'OSCAR GIOVANNY BARRERA FANDINO, se presenta de forma correcta, se escucha mucha interferencia, indica el guion legal, habla de la aprobación de un cupo de extrafinanciamiento adicional a su tarjeta crédito con una tasa preferencial, despierta el interés del cliente, quien indaga sobre la tasa ofertada, dentro de su gestión hace comparaciones de la tasa anual ofertada VS la actual donde se ve un real beneficio, cliente pide tiempo para pensarlo y consultar en lo que necesita usarlo, asesora accede, y explica lo que necesitaría para realizar el desembolso y propone contacto para hoy mismo, pero el cliente indica que sea el lunes en la tarde, hacer seguimiento del nuevo contacto y cierre de la venta. \r\n', 1, 1, '2018-10-19 15:30:06', '2018-10-19 15:30:06');
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_monitoreo_asesor_detallado
@@ -1964,7 +1808,7 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor_detallado` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~2.005 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~2.216 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor_detallado`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` DISABLE KEYS */;
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -3860,39 +3704,21 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(946, 54, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(947, 55, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(948, 54, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(949, 55, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(950, 54, 5, 21, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(951, 55, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(952, 54, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(953, 55, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(954, 54, 5, 23, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(955, 55, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(956, 54, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(957, 55, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(958, 54, 6, 25, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(959, 55, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(960, 54, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(961, 55, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(962, 54, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(963, 55, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(964, 56, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -3932,39 +3758,21 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(982, 58, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(983, 59, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(984, 58, 5, 20, 0, 0, 23);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(985, 59, 5, 20, 0, 0, 23);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(986, 58, 5, 21, 0, 0, 33);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(987, 59, 5, 21, 0, 0, 33);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(988, 58, 5, 22, 0, 0, 35);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(989, 59, 5, 22, 0, 0, 35);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(990, 58, 5, 23, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(991, 59, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(992, 58, 5, 24, 0, 0, 40);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(993, 59, 5, 24, 0, 0, 40);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(994, 58, 6, 25, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(995, 59, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(996, 58, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(997, 59, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(998, 58, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(999, 59, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1000, 60, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -4076,57 +3884,21 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1054, 66, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1055, 67, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1056, 66, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1057, 67, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1058, 66, 5, 21, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1059, 67, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1060, 66, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1061, 68, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1062, 67, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1063, 68, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1064, 66, 5, 23, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1065, 67, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1066, 68, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1067, 66, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1068, 67, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1069, 66, 6, 25, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1070, 68, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1071, 67, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1072, 66, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1073, 68, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1074, 67, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1075, 68, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1076, 66, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1077, 67, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1078, 68, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1079, 68, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1080, 68, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1081, 69, 8, 32, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -4150,37 +3922,19 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1091, 69, 10, 42, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1092, 71, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1093, 71, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1094, 70, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1095, 71, 5, 21, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1096, 70, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1097, 71, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1098, 70, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1099, 71, 5, 23, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1100, 70, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1101, 71, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1102, 70, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1103, 71, 6, 25, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1104, 70, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1105, 71, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1106, 70, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1107, 71, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1108, 70, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -4222,39 +3976,21 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1127, 73, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1128, 75, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1129, 74, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1130, 75, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1131, 74, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1132, 75, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1133, 74, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1134, 75, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1135, 74, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1136, 75, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1137, 74, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1138, 75, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1139, 74, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1140, 75, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1141, 74, 6, 25, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1142, 75, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1143, 74, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1144, 75, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1145, 74, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -4282,47 +4018,25 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1157, 77, 8, 32, 0, 0, 70);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1158, 78, 8, 32, 0, 0, 70);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1159, 77, 8, 33, 1, 20, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1160, 78, 8, 33, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1161, 77, 8, 34, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1162, 78, 8, 34, 1, 20, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1163, 77, 8, 35, 1, 20, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1164, 78, 8, 35, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1165, 77, 8, 36, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1166, 78, 8, 36, 1, 20, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1167, 77, 9, 37, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1168, 78, 9, 37, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1169, 77, 9, 38, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1170, 78, 9, 38, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1171, 77, 10, 39, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1172, 78, 10, 39, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1173, 77, 10, 40, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1174, 78, 10, 40, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1175, 77, 10, 41, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1176, 78, 10, 41, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1177, 77, 10, 42, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1178, 78, 10, 42, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1179, 79, 8, 32, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -4366,47 +4080,25 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1199, 81, 8, 32, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1200, 82, 8, 32, 1, 20, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1201, 81, 8, 33, 1, 20, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1202, 82, 8, 33, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1203, 81, 8, 34, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1204, 82, 8, 34, 1, 20, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1205, 81, 8, 35, 1, 20, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1206, 82, 8, 35, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1207, 81, 8, 36, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1208, 82, 8, 36, 1, 20, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1209, 81, 9, 37, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1210, 82, 9, 37, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1211, 81, 9, 38, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1212, 82, 9, 38, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1213, 81, 10, 39, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1214, 82, 10, 39, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1215, 81, 10, 40, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1216, 82, 10, 40, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1217, 81, 10, 41, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1218, 82, 10, 41, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1219, 81, 10, 42, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1220, 82, 10, 42, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1221, 83, 8, 32, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -4452,95 +4144,23 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1242, 84, 10, 42, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1243, 86, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1244, 85, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1245, 86, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1246, 85, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1247, 87, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1248, 88, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1249, 89, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1250, 86, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1251, 87, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1252, 88, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1253, 85, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1254, 89, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1255, 86, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1256, 87, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1257, 89, 5, 21, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1258, 85, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1259, 88, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1260, 86, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1261, 87, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1262, 89, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1263, 88, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1264, 85, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1265, 86, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1266, 88, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1267, 89, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1268, 87, 5, 23, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1269, 85, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1270, 86, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1271, 88, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1272, 89, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1273, 87, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1274, 85, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1275, 86, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1276, 89, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1277, 88, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1278, 87, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1279, 86, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1280, 85, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1281, 89, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1282, 88, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1283, 87, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1284, 85, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1285, 88, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1286, 87, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1287, 89, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1288, 90, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -4578,77 +4198,23 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1305, 91, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1306, 93, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1307, 94, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1308, 92, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1309, 93, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1310, 94, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1311, 92, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1312, 93, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1313, 92, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1314, 94, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1315, 93, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1316, 92, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1317, 94, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1318, 93, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1319, 94, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1320, 92, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1321, 93, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1322, 94, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1323, 92, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1324, 93, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1325, 92, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1326, 94, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1327, 93, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1328, 92, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1329, 94, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1330, 93, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1331, 95, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1332, 92, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1333, 94, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1334, 95, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1335, 95, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1336, 95, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1337, 95, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1338, 95, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1339, 95, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1340, 95, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1341, 95, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1342, 96, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -5300,39 +4866,21 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1666, 130, 6, 25, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1667, 131, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1668, 130, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1669, 131, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1670, 130, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1671, 131, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1672, 130, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1673, 131, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1674, 130, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1675, 131, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1676, 130, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1677, 131, 5, 21, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1678, 130, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1679, 131, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1680, 130, 5, 23, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1681, 131, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1682, 130, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1683, 131, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1684, 132, 6, 25, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -5872,39 +5420,21 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1952, 158, 6, 25, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1953, 159, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1954, 158, 6, 26, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1955, 159, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1956, 158, 6, 27, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1957, 159, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1958, 158, 5, 19, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1959, 159, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1960, 158, 5, 20, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1961, 159, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1962, 158, 5, 21, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1963, 159, 5, 21, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1964, 158, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1965, 159, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1966, 158, 5, 23, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1967, 159, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1968, 158, 5, 24, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1969, 159, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1970, 160, 6, 25, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -5924,39 +5454,21 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1978, 160, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1979, 162, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1980, 161, 6, 25, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1981, 162, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1982, 161, 6, 26, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1983, 162, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1984, 161, 6, 27, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1985, 162, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1986, 161, 5, 19, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1987, 162, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1988, 161, 5, 20, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1989, 162, 5, 21, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1990, 161, 5, 21, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1991, 162, 5, 22, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1992, 161, 5, 22, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1993, 162, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1994, 161, 5, 23, 1, 100, 0);
-INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
-	(1995, 162, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(1996, 161, 5, 24, 1, 100, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -5995,6 +5507,796 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 	(2013, 164, 11, 46, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(2014, 164, 11, 47, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2015, 165, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2017, 165, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2019, 165, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2021, 165, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2023, 165, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2025, 165, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2027, 165, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2029, 165, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2031, 165, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2042, 168, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2043, 168, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2044, 168, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2045, 168, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2046, 168, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2047, 168, 5, 21, 0, 0, 33);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2048, 168, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2049, 168, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2050, 168, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2051, 169, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2052, 169, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2053, 169, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2054, 169, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2055, 169, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2056, 169, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2057, 169, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2058, 169, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2059, 169, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2060, 170, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2061, 170, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2062, 170, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2063, 170, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2064, 170, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2065, 170, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2066, 170, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2067, 170, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2068, 170, 8, 34, 0, 0, 75);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2069, 170, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2070, 170, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2071, 171, 12, 48, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2072, 171, 12, 49, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2073, 171, 13, 50, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2074, 171, 13, 51, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2075, 171, 11, 43, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2076, 171, 11, 44, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2077, 171, 11, 45, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2078, 171, 11, 46, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2079, 171, 11, 47, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2080, 172, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2081, 172, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2082, 172, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2083, 172, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2084, 172, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2085, 172, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2086, 172, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2087, 172, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2088, 172, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2089, 172, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2090, 172, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2091, 173, 12, 48, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2093, 173, 12, 49, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2095, 173, 13, 50, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2097, 173, 13, 51, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2099, 173, 11, 43, 0, 0, 115);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2101, 173, 11, 44, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2103, 173, 11, 45, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2105, 173, 11, 46, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2107, 173, 11, 47, 0, 0, 137);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2109, 175, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2110, 175, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2111, 175, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2112, 175, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2113, 175, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2114, 175, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2115, 175, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2116, 175, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2117, 175, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2118, 175, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2119, 175, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2120, 176, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2121, 176, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2122, 176, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2123, 176, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2124, 176, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2125, 176, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2126, 176, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2127, 176, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2128, 176, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2129, 176, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2130, 176, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2131, 177, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2132, 177, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2133, 177, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2134, 177, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2135, 177, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2136, 177, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2137, 177, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2138, 177, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2139, 177, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2140, 177, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2141, 177, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2142, 178, 12, 48, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2143, 178, 12, 49, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2144, 178, 13, 50, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2145, 178, 13, 51, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2146, 178, 11, 43, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2147, 178, 11, 44, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2148, 178, 11, 45, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2149, 178, 11, 46, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2150, 178, 11, 47, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2151, 179, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2152, 179, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2153, 179, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2154, 179, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2155, 179, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2156, 179, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2157, 179, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2158, 179, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2159, 179, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2160, 179, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2161, 179, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2162, 180, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2163, 180, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2164, 180, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2165, 180, 5, 19, 0, 0, 22);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2166, 180, 5, 20, 0, 0, 23);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2167, 180, 5, 21, 0, 0, 28);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2168, 180, 5, 22, 0, 0, 37);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2169, 180, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2170, 180, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2171, 181, 4, 16, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2172, 181, 4, 17, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2173, 181, 4, 18, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2174, 181, 1, 1, 0, 0, 1);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2175, 181, 1, 2, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2176, 181, 1, 3, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2177, 181, 1, 4, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2178, 181, 1, 5, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2179, 181, 2, 6, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2180, 181, 2, 7, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2181, 181, 2, 8, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2182, 181, 2, 9, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2183, 181, 3, 10, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2184, 181, 3, 11, 0, 0, 11);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2185, 181, 3, 12, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2186, 181, 3, 13, 0, 0, 13);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2187, 181, 3, 14, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2188, 181, 3, 15, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2189, 182, 4, 16, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2190, 182, 4, 17, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2191, 182, 4, 18, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2192, 182, 1, 1, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2193, 182, 1, 2, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2194, 182, 1, 3, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2195, 182, 1, 4, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2196, 182, 1, 5, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2197, 182, 2, 6, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2198, 182, 2, 7, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2199, 182, 2, 8, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2200, 182, 2, 9, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2201, 182, 3, 10, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2202, 182, 3, 11, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2203, 182, 3, 12, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2204, 182, 3, 13, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2205, 182, 3, 14, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2206, 182, 3, 15, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2207, 183, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2208, 183, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2209, 183, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2210, 183, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2211, 183, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2212, 183, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2213, 183, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2214, 183, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2215, 183, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2216, 183, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2217, 183, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2218, 184, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2219, 184, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2220, 184, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2221, 184, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2222, 184, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2223, 184, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2224, 184, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2225, 184, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2226, 184, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2227, 184, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2228, 184, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2229, 185, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2230, 185, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2231, 185, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2232, 185, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2233, 185, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2234, 185, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2235, 185, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2236, 185, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2237, 185, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2238, 185, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2239, 185, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2240, 186, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2241, 186, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2242, 186, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2243, 186, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2244, 186, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2245, 186, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2246, 186, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2247, 186, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2248, 186, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2249, 186, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2250, 186, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2251, 187, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2252, 187, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2253, 187, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2254, 187, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2255, 187, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2256, 187, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2257, 187, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2258, 187, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2259, 187, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2260, 187, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2261, 187, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2262, 188, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2263, 188, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2264, 188, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2265, 188, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2266, 188, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2267, 188, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2268, 188, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2269, 188, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2270, 188, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2271, 188, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2272, 188, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2273, 189, 9, 37, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2274, 189, 9, 38, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2275, 189, 10, 39, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2276, 189, 10, 40, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2277, 189, 10, 41, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2278, 189, 10, 42, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2279, 189, 8, 32, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2280, 189, 8, 33, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2281, 189, 8, 34, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2282, 189, 8, 35, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2283, 189, 8, 36, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2284, 190, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2285, 190, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2286, 190, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2287, 190, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2288, 190, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2289, 190, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2290, 190, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2291, 190, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2292, 190, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2293, 191, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2295, 191, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2299, 191, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2302, 191, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2305, 191, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2308, 191, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2310, 191, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2314, 191, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2316, 191, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2320, 194, 12, 48, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2322, 194, 12, 49, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2324, 194, 13, 50, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2326, 194, 13, 51, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2328, 194, 11, 43, 0, 0, 115);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2330, 194, 11, 44, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2332, 194, 11, 45, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2334, 194, 11, 46, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2336, 194, 11, 47, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2338, 196, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2340, 196, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2342, 196, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2344, 196, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2346, 196, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2348, 196, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2350, 196, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2352, 196, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2354, 196, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2356, 198, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2357, 198, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2358, 198, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2359, 198, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2360, 198, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2361, 198, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2362, 198, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2363, 198, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2364, 198, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2365, 199, 12, 48, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2366, 199, 12, 49, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2367, 199, 13, 50, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2368, 199, 13, 51, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2369, 199, 11, 43, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2370, 199, 11, 44, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2371, 199, 11, 45, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2372, 199, 11, 46, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2373, 199, 11, 47, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2374, 200, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2375, 200, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2376, 200, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2377, 200, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2378, 200, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2379, 200, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2380, 200, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2381, 200, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2382, 200, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2383, 201, 4, 16, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2384, 201, 4, 17, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2385, 201, 4, 18, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2386, 201, 1, 1, 0, 0, 1);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2387, 201, 1, 2, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2388, 201, 1, 3, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2389, 201, 1, 4, 0, 0, 4);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2390, 201, 1, 5, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2391, 201, 2, 6, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2392, 201, 2, 7, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2393, 201, 2, 8, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2394, 201, 2, 9, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2395, 201, 3, 10, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2396, 201, 3, 11, 0, 0, 11);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2397, 201, 3, 12, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2398, 201, 3, 13, 0, 0, 13);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2399, 201, 3, 14, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2400, 201, 3, 15, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2401, 202, 4, 16, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2402, 202, 4, 17, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2403, 202, 4, 18, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2404, 202, 1, 1, 0, 0, 1);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2405, 202, 1, 2, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2406, 202, 1, 3, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2407, 202, 1, 4, 0, 0, 4);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2408, 202, 1, 5, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2409, 202, 2, 6, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2410, 202, 2, 7, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2411, 202, 2, 8, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2412, 202, 2, 9, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2413, 202, 3, 10, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2414, 202, 3, 11, 0, 0, 11);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2415, 202, 3, 12, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2416, 202, 3, 13, 0, 0, 13);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2417, 202, 3, 14, 0, 0, 14);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2418, 202, 3, 15, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2419, 203, 4, 16, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2420, 203, 4, 17, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2421, 203, 4, 18, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2422, 203, 1, 1, 0, 0, 1);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2423, 203, 1, 2, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2424, 203, 1, 3, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2425, 203, 1, 4, 0, 0, 4);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2426, 203, 1, 5, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2427, 203, 2, 6, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2428, 203, 2, 7, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2429, 203, 2, 8, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2430, 203, 2, 9, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2431, 203, 3, 10, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2432, 203, 3, 11, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2433, 203, 3, 12, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2434, 203, 3, 13, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2435, 203, 3, 14, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2436, 203, 3, 15, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2437, 204, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2438, 204, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2439, 204, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2440, 204, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2441, 204, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2442, 204, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2443, 204, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2444, 204, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2445, 204, 5, 24, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2446, 205, 4, 16, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2447, 205, 4, 17, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2448, 205, 4, 18, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2449, 205, 1, 1, 0, 0, 1);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2450, 205, 1, 2, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2451, 205, 1, 3, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2452, 205, 1, 4, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2453, 205, 1, 5, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2454, 205, 2, 6, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2455, 205, 2, 7, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2456, 205, 2, 8, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2457, 205, 2, 9, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2458, 205, 3, 10, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2459, 205, 3, 11, 0, 0, 11);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2460, 205, 3, 12, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2461, 205, 3, 13, 0, 0, 13);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2462, 205, 3, 14, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2463, 205, 3, 15, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2464, 206, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2465, 206, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2466, 206, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2467, 206, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2468, 206, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2469, 206, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2470, 206, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2471, 206, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(2472, 206, 5, 24, 1, 100, 0);
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_punto_entrenamiento
@@ -6006,7 +6308,7 @@ CREATE TABLE IF NOT EXISTS `ca_punto_entrenamiento` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~464 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~216 rows (aproximadamente)
 DELETE FROM `ca_punto_entrenamiento`;
 /*!40000 ALTER TABLE `ca_punto_entrenamiento` DISABLE KEYS */;
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
@@ -6320,647 +6622,65 @@ INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VA
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(155, 53, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(156, 54, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(157, 53, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(158, 54, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(159, 53, '1.1.3 Transmite seguridad al suministrar la información');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(160, 54, '1.1.3 Transmite seguridad al suministrar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(161, 53, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(162, 54, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(163, 53, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(164, 54, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(165, 56, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(166, 55, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(167, 57, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(168, 55, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(169, 56, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(170, 58, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(171, 57, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(172, 59, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(173, 56, '1.1.3 Transmite seguridad al suministrar la información');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(174, 58, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(175, 55, '1.1.3 Transmite seguridad al suministrar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(176, 57, '1.1.3 Transmite seguridad al suministrar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(177, 56, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(178, 60, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(179, 59, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(180, 55, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(181, 57, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(182, 61, '1.3.1 Utiliza tecnicismos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(183, 60, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(184, 56, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(185, 55, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(186, 57, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(187, 61, '1.3.2 Se adapta al lenguaje del ciudadano ');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(188, 62, '1.3.1 Utiliza tecnicismos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(189, 60, '1.1.3 Transmite seguridad al suministrar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(190, 61, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(191, 63, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(192, 62, '1.3.2 Se adapta al lenguaje del ciudadano ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(193, 60, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(194, 65, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(195, 64, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(196, 61, '1.3.4 Utiliza fórmulas de cortesía');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(197, 60, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(198, 62, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(199, 63, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(200, 65, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(201, 64, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(202, 61, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(203, 62, '1.3.4 Utiliza fórmulas de cortesía');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(204, 62, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(205, 66, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(206, 67, '1.3.1 Utiliza tecnicismos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(207, 69, '1.3.1 Utiliza tecnicismos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(208, 68, '1.3.1 Utiliza tecnicismos');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(209, 70, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(210, 66, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(211, 69, '1.3.2 Se adapta al lenguaje del ciudadano ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(212, 67, '1.3.2 Se adapta al lenguaje del ciudadano ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(213, 68, '1.3.2 Se adapta al lenguaje del ciudadano ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(214, 70, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(215, 71, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(216, 69, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(217, 67, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(218, 68, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(219, 72, '1.3.1 Utiliza tecnicismos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(220, 71, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(221, 69, '1.3.4 Utiliza fórmulas de cortesía');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(222, 68, '1.3.4 Utiliza fórmulas de cortesía');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(223, 67, '1.3.4 Utiliza fórmulas de cortesía');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(224, 72, '1.3.2 Se adapta al lenguaje del ciudadano ');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(225, 73, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(226, 68, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(227, 69, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(228, 72, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(229, 67, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(230, 73, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(231, 72, '1.3.4 Utiliza fórmulas de cortesía');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(232, 73, '2.1.3 El agente pierde la calma en la llamada');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(233, 72, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(234, 74, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(235, 75, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(236, 76, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(237, 77, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(238, 73, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(239, 76, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(240, 75, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(241, 77, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(242, 74, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(243, 78, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(244, 77, '2.1.3 El agente pierde la calma en la llamada');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(245, 79, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(246, 78, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(247, 77, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(248, 79, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(249, 80, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(250, 81, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(251, 82, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(252, 79, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(253, 81, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(254, 80, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(255, 82, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(256, 83, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(257, 80, '2.1.3 El agente pierde la calma en la llamada');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(258, 81, '2.1.3 El agente pierde la calma en la llamada');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(259, 83, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(260, 84, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(261, 82, '2.1.3 El agente pierde la calma en la llamada');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(262, 85, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(263, 83, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(264, 80, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(265, 84, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(266, 81, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(267, 82, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(268, 85, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(269, 84, '2.1.3 El agente pierde la calma en la llamada');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(270, 84, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(271, 86, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(272, 89, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(273, 87, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(274, 88, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(275, 86, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(276, 88, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(277, 89, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(278, 87, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(279, 90, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(280, 91, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(281, 88, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(282, 89, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(283, 86, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(284, 90, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(285, 91, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(286, 90, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(287, 92, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(288, 93, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(289, 91, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(290, 94, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(291, 95, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(292, 93, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(293, 94, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(294, 92, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(295, 95, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(296, 96, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(297, 93, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(298, 97, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(299, 96, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(300, 97, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(301, 96, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(302, 99, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(303, 98, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(304, 100, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(305, 101, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(306, 96, '3.2.4 Realiza actualización de datos demograficos');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(307, 99, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(308, 98, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(309, 100, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(310, 101, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(311, 96, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(312, 98, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(313, 100, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(314, 99, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(315, 102, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(316, 101, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(317, 102, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(318, 100, '3.2.4 Realiza actualización de datos demograficos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(319, 103, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(320, 102, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(321, 100, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(322, 104, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(323, 105, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(324, 103, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(325, 104, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(326, 105, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(327, 103, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(328, 106, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(329, 105, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(330, 104, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(331, 103, '3.2.4 Realiza actualización de datos demograficos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(332, 106, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(333, 104, '3.2.4 Realiza actualización de datos demograficos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(334, 105, '3.2.4 Realiza actualización de datos demograficos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(335, 103, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(336, 106, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(337, 104, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(338, 105, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(339, 106, '3.2.4 Realiza actualización de datos demograficos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(340, 106, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(341, 107, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(342, 108, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(343, 107, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(344, 108, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(345, 107, '1.1.3 Transmite seguridad al suministrar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(346, 108, '1.1.3 Transmite seguridad al suministrar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(347, 107, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(348, 108, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(349, 109, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(350, 107, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(351, 108, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(352, 109, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(353, 109, '1.1.3 Transmite seguridad al suministrar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(354, 110, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(355, 111, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(356, 109, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(357, 110, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(358, 111, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(359, 109, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(360, 112, '1.3.1 Utiliza tecnicismos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(361, 114, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(362, 113, '1.3.1 Utiliza tecnicismos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(363, 112, '1.3.2 Se adapta al lenguaje del ciudadano ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(364, 114, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(365, 113, '1.3.2 Se adapta al lenguaje del ciudadano ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(366, 112, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(367, 113, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(368, 112, '1.3.4 Utiliza fórmulas de cortesía');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(369, 113, '1.3.4 Utiliza fórmulas de cortesía');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(370, 115, '1.3.1 Utiliza tecnicismos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(371, 112, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(372, 113, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(373, 115, '1.3.2 Se adapta al lenguaje del ciudadano ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(374, 115, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(375, 116, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(376, 117, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(377, 115, '1.3.4 Utiliza fórmulas de cortesía');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(378, 116, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(379, 117, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(380, 115, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(381, 119, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(382, 118, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(383, 120, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(384, 119, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(385, 118, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(386, 120, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(387, 118, '2.1.3 El agente pierde la calma en la llamada');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(388, 120, '2.1.3 El agente pierde la calma en la llamada');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(389, 118, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(390, 120, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(391, 122, '1.1.1 Informa Guión de bienvenida, despedida de manera correcta');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(392, 121, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(393, 121, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(394, 122, '1.1.2 Personaliza la llamada al menos 3 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(395, 123, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(396, 124, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(397, 121, '2.1.3 El agente pierde la calma en la llamada');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(398, 123, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(399, 122, '1.1.3 Transmite seguridad al suministrar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(400, 124, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(401, 123, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(402, 121, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(403, 122, '1.1.4 El agente entiende de inmediato, dedicando completa atención al usuario');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(404, 124, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(405, 122, '1.1.5 Escucha al usuario final, no se anticipa y  no presupone');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(406, 125, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(407, 126, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(408, 127, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(409, 125, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(410, 126, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(411, 128, '1.2.1 Realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(412, 127, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(413, 125, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(414, 128, '1.2.2 Confirma la información suministrada por el ciudadano para responder puntualmente su requerimiento');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(415, 130, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(416, 129, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(417, 131, '1.3.1 Utiliza tecnicismos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(418, 132, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(419, 129, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(420, 130, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(421, 131, '1.3.2 Se adapta al lenguaje del ciudadano ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(422, 132, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(423, 130, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(424, 131, '1.3.3 Emplea muletillas (más de 3 veces durante un contacto promedio de 2 minutos)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(425, 132, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(426, 131, '1.3.4 Utiliza fórmulas de cortesía');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(427, 134, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(428, 133, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(429, 131, '1.3.5 Es flexible en su comunicación siendo coherente con el requerimiento y perfil del ciudadano');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(430, 135, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(431, 134, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(432, 133, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(433, 135, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(434, 134, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(435, 133, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(436, 136, '1.4.1 Mantiene un ritmo, volumen y tono de voz adecuado en su comunicación');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(437, 135, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(438, 133, '3.2.4 Realiza actualización de datos demograficos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(439, 136, '1.4.2 Articula correctamente, hay claridad en el mensaje (vocalización)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(440, 135, '3.2.4 Realiza actualización de datos demograficos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(441, 137, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(442, 133, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(443, 135, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(444, 137, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(445, 137, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(446, 138, '2.1.1 El agente es respetuoso y  escucha con paciencia al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(447, 137, '3.2.4 Realiza actualización de datos demograficos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(448, 138, '2.1.2 El agente interrumpe de manera abrupta y reiteradamente al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(449, 137, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(450, 138, '2.1.3 El agente pierde la calma en la llamada');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(451, 138, '2.1.4 El agente utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(452, 139, '2.2.1 Suministra la información completa necesaria para dar solución al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(453, 139, '2.2.2 Se hace cargo de la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(454, 139, '2.2.3 Sigue el flujo de la llamada según la solicitud del usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(455, 140, '2.3.1 Informa al usuario final el proceso a seguir en caso de requerir re direccionamiento para dar respuesta ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(456, 140, '2.3.2 Direcciona correctamente al usuario,  suministrando  información completa y necesaria');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(457, 141, '3.1.1 Cortar la llamada de manera intencional al usuario final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(458, 141, '3.1.2 Inducir a cortar la llamada al usuario final (Esperas prolongadas o mal acuerdo de espera)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(459, 141, '3.1.3 Contesta la llamada dentro de los 3 segundos establecidos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(460, 142, '3.2.1 Ingresa los datos requeridos de manera correcta en los sistemas de información ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(461, 142, '3.2.2 La tipificación corresponde al caso ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(462, 142, '3.2.3 Ingresa el requerimiento y es puntual con la información suministrada por el Usuario Final ( No omite información)');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(463, 142, '3.2.4 Realiza actualización de datos demograficos');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(464, 142, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(465, 143, '1.1.1 Solicita datos de forma imperativa');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(466, 143, '1.1.2 No personaliza la llamada al menos 1 vez durante el contacto');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(467, 143, '1.1.3 Interrumpe al usuario final de manera inadecuada');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(468, 143, '1.1.4 Usa expresiones como "mmm" "no sé" "no creo" "probablemente"');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(469, 143, '1.1.5 Explica el tiempo solicitado, respeta el minuto en línea y agradece la espera');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(470, 144, '1.2.1 No identifica la solicitud del usuario desde el inicio para generar transferencia');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(471, 144, '1.2.2 No confirma datos del usuario final ');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(472, 144, '1.2.3 No realiza preguntas de sondeo para clarificar la información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(473, 145, '1.3.1 No dedica completa atención al usuario final, habla con el compañero (sin usar mute).');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(474, 145, '1.3.2 No escucha al usuario final, se anticipa y presupone.');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(475, 145, '1.3.3 Hace repetir al usuario final varias veces la misma información');
-INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(476, 145, '1.3.4 El agente no atiende al usuario final de manera inmediata coloca en hold la llamada sin identificar la necesidad del usuario final ');
 /*!40000 ALTER TABLE `ca_punto_entrenamiento` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_solucion
