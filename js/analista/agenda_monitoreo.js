@@ -217,6 +217,8 @@ function addFechaMonitoreo(){
 						id_empresa: $('#id_empresa').val(),
 						id_campana: $('#id_campana').val(),
 						id_asesor: $('#id_asesor').val(),
+						nombre: sessionStorage.getItem('nombre')+" "+sessionStorage.getItem('apellido1'), 
+						email: sessionStorage.getItem('email'), 
 						fecha_monitoreo: $('#fecha_'+count).val()
 					},
 					dataType: 'json'

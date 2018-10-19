@@ -1,8 +1,9 @@
 <?php
-
 //Include models
 include 'connect.php';
 include 'session.php';
+include 'cookie.php';
+include 'email.php';
 include '../../app/model/login.php';
 include '../../app/model/logout.php';
 include '../../app/model/empresas.php';
@@ -19,7 +20,12 @@ class Business{
 	public $return;
 	public $conn;
 	public $db;
+	public $session;
+	public $cookie;
 	public $post;
+	public $get;
+	public $files;
+	public $email;
 
  	//Business class builder
 	function __construct(){
@@ -29,11 +35,13 @@ class Business{
 		$this->return->msg = 'Respuesta no ha sido asignada';
 		$this->conn = new Connect();
 		$this->session = new Session();
+		$this->cookie = new Cookie();
 		$this->post = ((object) $_POST);
 		$this->get = ((object) $_GET);
 		$this->files = ((object) $_FILES);
 		$this->db = 'calidad';
 		$this->date = date('Y-m-d');
+		$this->email = new Email();
  	}
 }
 ?>
