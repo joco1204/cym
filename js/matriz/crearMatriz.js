@@ -98,7 +98,7 @@ function addMatriz(){
 			dataType: 'json'
   		}).done(function(result){
   			if(result.bool){
-  				if(result.msg == 0){
+  				if(result.msg == '0'){
   					$('#matriz_pannel').show();
 					$('#empresa_matriz').html(empresa.options[empresa.selectedIndex].text);
 					$('#campana_matriz').html(campana.options[campana.selectedIndex].text);
