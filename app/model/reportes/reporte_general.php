@@ -51,11 +51,13 @@ $result = $db->query($query);
 			echo "<th>FALLA AUDIO</th>";
 			echo "<th>FECHA Y HORA REGISTRO</th>";
 			echo "<th>FECHA Y HORA MODIFICACI&Oacute;N</th>";
+
 			$queryh  = "SELECT a.id_empresa, a.id_campana, b.id AS id_error ";
 			$queryh .= "FROM ca_matriz AS a ";
 			$queryh .= "LEFT JOIN ca_error AS b ON a.id = b.id_matriz ";
 			$queryh .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = 'activo';";
 			$resulth = $db->query($queryh);
+			
 			while($rowh = $resulth->fetch(PDO::FETCH_OBJ)){
 				$queryh2  = "SELECT a.item ";
 				$queryh2 .= "FROM ca_item AS a ";
@@ -63,9 +65,11 @@ $result = $db->query($query);
 				$queryh2 .= "";
 				$resulth2 = $db->query($queryh2);
 				while($rowh2 = $resulth2->fetch(PDO::FETCH_OBJ)){
+					
 					echo "<th>".utf8_decode($rowh2->item)."</th>";
 					echo "<th>CALIFICACI&Oacute;N ID DE REGISTROS </th>";
 					echo "<th>PUNTO DE ENTRENAMIENTO</th>";
+
 				}
 			}
 			echo "</tr>";
@@ -87,6 +91,7 @@ $result = $db->query($query);
 			echo "<td>".utf8_decode($row->fallas_audio)."</td>";
 			echo "<td>".utf8_decode($row->fecha_registro)."</td>";
 			echo "<td>".utf8_decode($row->fecha_modificaicon)."</td>";
+
 				$query_item  = 'SELECT ';
 				$query_item .= 'a.id AS id_detallado, ';
 				$query_item .= 'CASE ';
@@ -99,6 +104,7 @@ $result = $db->query($query);
 				$query_item .= 'LEFT JOIN ca_punto_entrenamiento AS b ON a.id_punto_entrenamiento = b.id ';
 				$query_item .= 'WHERE a.id_monitoreo_asesor = "'.$row->id_monitoreo.'"; ';
 				$result_item = $db->query($query_item);
+				
 				while($row_item = $result_item->fetch(PDO::FETCH_OBJ)){ 
 					echo "<td>".utf8_decode($row_item->valor_cumplimiento)."</td>";
 					echo "<td>".utf8_decode($row_item->porcentaje)."</td>";
