@@ -126,12 +126,12 @@ function addError(){
 	html += '<div class="panel panel-danger error" id="tipo_error_canvas_'+count+'">';
 		html += '<div class="panel-heading bg-danger">';
 			html += '<div class="row">';
-			html += '<div class="col col-md-6 text-left"><p><b>Tipo error '+count+'</b></p></div>';
-			html += '<div class="col col-md-6 text-right">';
-			html += '<button type="button" class="btn btn-default" id="boton_delete_error_'+count+'" onclick="javascript: deleteError(\''+count+'\');">';
-			html += '<span class="glyphicon glyphicon-remove"></span>';
-			html += '</button>';
-			html += '</div>';
+				html += '<div class="col col-md-6 text-left"><p><b>Tipo error '+count+'</b></p></div>';
+				html += '<div class="col col-md-6 text-right">';
+					html += '<button type="button" class="btn btn-default" id="boton_delete_error_'+count+'" onclick="javascript: deleteError(\''+count+'\');">';
+						html += '<span class="glyphicon glyphicon-remove"></span>';
+					html += '</button>';
+				html += '</div>';
 			html += '</div>';
 		html += '</div>';
 		html += '<div class="panel-body">';
@@ -204,7 +204,14 @@ function addItem(error_n){
 	$('#item_error_'+error_n).val(count);
 	html += '<div class="panel panel-success item_n_'+error_n+'" id="item_error_'+error_n+'_'+count+'">';
 		html += '<div class="panel-heading bg-success">';
-			html += '<p><b>Item '+count+'</b></p>';
+			html += '<div class="row">';
+				html += '<div class="col col-md-6 text-left"><p><b>Item '+count+'</b></p></div>';
+				html += '<div class="col col-md-6 text-right">';
+					html += '<button type="button" class="btn btn-default" id="boton_delete_item_'+error_n+'_'+count+'" onclick="javascript: deleteItem(\''+error_n+'\',\''+count+'\');">';
+						html += '<span class="glyphicon glyphicon-remove"></span>';
+					html += '</button>';
+				html += '</div>';
+			html += '</div>';
 		html += '</div>';
 		html += '<div class="panel-body">';
 			html += '<div class="row">';
@@ -241,9 +248,17 @@ function puntoEntrenamiento(error_n, item_n){
 	var count = ($(class_item).length)+1;
 	$('.punto_n_'+error_n+'_'+item_n).val(count);
 	$('#punto_entrenamiento_'+error_n+'_'+item_n).val(count);
+
 	html += '<div class="panel panel-primary punto_n_'+error_n+'_'+item_n+'" id="punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'">';
 		html += '<div class="panel-heading bg-primary">';
-			html += '<p><b>Punto Entrenamiento '+count+', Item '+item_n+'</b></p>';
+			html += '<div class="row">';
+				html += '<div class="col col-md-6 text-left"><p><b>Punto Entrenamiento '+count+', Item '+item_n+'</b></p></div>';
+				html += '<div class="col col-md-6 text-right">';
+					html += '<button type="button" class="btn btn-default" id="boton_delete_punto_'+error_n+'_'+item_n+'_'+count+'" onclick="javascript: deletePuntos(\''+error_n+'\',\''+item_n+'\',\''+count+'\');">';
+						html += '<span class="glyphicon glyphicon-remove"></span>';
+					html += '</button>';
+				html += '</div>';
+			html += '</div>';
 		html += '</div>';
 		html += '<div class="panel-body">';
 			html += '<div class="form-group">';
@@ -253,6 +268,7 @@ function puntoEntrenamiento(error_n, item_n){
 			html += '</div>';
 		html += '</div>';
 	html += '</div>';
+
 	$('#canvas_punto_entrenamiento_'+error_n+'_'+item_n).append(html);
 	$("select").select2();
 }
@@ -260,11 +276,35 @@ function puntoEntrenamiento(error_n, item_n){
 function deleteError(num_error){
 	var error = '.error';
 	var tipo_error_canvas = '#tipo_error_canvas_'+num_error;
-	var canvas_matriz = '#canvas_matriz';
 	var error_actual = $(error).length;
 	$('#tipo_error_'+num_error).remove();
-	$('#calculo_porcentaje_1'+num_error).remove();
+	$('#calculo_porcentaje_'+num_error).remove();
 	$(tipo_error_canvas).remove();
 	var count = $(error).length;
 	$('.error').val(count);
+	$('#tipo_error').val(count);
 }
+
+function deleteItem(num_error, num_item){
+	var item = '.item_n_'+num_error;
+	var item_error = '#item_error_'+num_error+'_'+num_item;
+	var item_actual = $(item).length;
+	$('#nombre_item_error_'+num_error+'_'+num_item).remove();
+	$('#valor_'+num_error+'_'+num_item).remove();
+	$(item_error).remove();
+	var count = $(item).length;
+	$('.item_n_'+num_error).val(count);
+	$('#item_error_'+num_error).val(count);
+}
+
+function deletePuntos(error_n, item_n, punto_n){
+	var punto = '.punto_n_'+error_n+'_'+item_n;
+	var punto_entrenamiento = '#punto_entrenamiento_'+error_n+'_'+item_n+'_'+punto_n;
+	var punto_actual = $(punto).length;
+	$('#desc_punto_entrenamiento_'+error_n+'_'+item_n+'_'+punto_n).remove();
+	$(punto_entrenamiento).remove();
+	var count = $(punto).length;
+	$('.punto_n_'+error_n+'_'+item_n).val(count);
+	$('#punto_entrenamiento_'+error_n+'_'+item_n).val(count);
+}
+
