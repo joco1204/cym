@@ -122,6 +122,7 @@ function addError(){
 	var html = '';
 	var count = ($('.error').length)+1;
 	$('.error').val(count);
+	$('#tipo_error').val(count);
 	html += '<div class="panel panel-danger error" id="tipo_error_canvas_'+count+'">';
 		html += '<div class="panel-heading bg-danger">';
 			html += '<div class="row">';
@@ -168,13 +169,11 @@ function addError(){
 		html += '</div>';
 	html += '</div>';
 	$('#canvas_matriz').append(html);
-
 	$("select").select2();
 	$('[data-toggle="tooltip"]').tooltip({
 		"container": "body", 
 		"title": "Se puede seleccionar entre valor porcentual y sumatorio. El valor porcentual determina el mismo valor para todos los items del error (0 o 100). El valor sumatorio es incremental para todos los items del error y se debe calcular de 0 a 100"
 	});
-
 	$.ajax({
 		type: 'post',
 		url: '../controller/ctrmatriz.php',
@@ -202,6 +201,7 @@ function addItem(error_n){
 	var class_error = '.item_n_'+error_n;
 	var count = ($(class_error).length)+1;
 	$('.item_n_'+error_n).val(count);
+	$('#item_error_'+error_n).val(count);
 	html += '<div class="panel panel-success item_n_'+error_n+'" id="item_error_'+error_n+'_'+count+'">';
 		html += '<div class="panel-heading bg-success">';
 			html += '<p><b>Item '+count+'</b></p>';
@@ -240,6 +240,7 @@ function puntoEntrenamiento(error_n, item_n){
 	var class_item = '.punto_n_'+error_n+'_'+item_n;
 	var count = ($(class_item).length)+1;
 	$('.punto_n_'+error_n+'_'+item_n).val(count);
+	$('#punto_entrenamiento_'+error_n+'_'+item_n).val(count);
 	html += '<div class="panel panel-primary punto_n_'+error_n+'_'+item_n+'" id="punto_entrenamiento_'+error_n+'_'+item_n+'_'+count+'">';
 		html += '<div class="panel-heading bg-primary">';
 			html += '<p><b>Punto Entrenamiento '+count+', Item '+item_n+'</b></p>';
