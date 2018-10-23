@@ -89,6 +89,7 @@ class Usuario{
 		$conn = $this->business->conn;
 		$db = $this->business->db;
 		$email = $this->business->email;
+		$url = $this->business->url;
 		//Valida conexión a base de datos
 		if($conn){
 			$ident = "SELECT COUNT(*) AS count_identificaicon FROM re_usuarios WHERE identificacion = '".$data->identificacion."';";
@@ -104,7 +105,7 @@ class Usuario{
 					$query .= "VALUES ('".$data->usaurio."', '".$pass."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombres."', '".$data->apellidos1."', '".$data->apellidos2."', '".$data->email."', 'activo');";
 					$result = $conn->query($query);
 					if($result){
-
+						
 						//Valida el id de la empresa y la campaña
 						isset($data->empresa) ? $empresa = $data->empresa : $empresa = '0';
 						isset($data->campana) ? $campana = $data->campana : $campana = '0';
@@ -120,37 +121,43 @@ class Usuario{
 						$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '".$data->perfil."', '".$empresa."', '".$campana."');";
 						$conn->query($query_ec);
 
-						$html  = '
-						<!DOCTYPE html>
-						<html>
-							<head>
-								<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-								<meta name="author" content="Interactivo Contact Center"/>
-								<meta name="description" content="Interactivo Contact Center"/>
-								<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-								<title>Creaci&oacute;n de Usuario</title>
-							</head>
-							<body>
-								<h2>Buen d&iacute;a</h2>
-								<p>Usted ha sido registrado en el portal de calidad de Interactivo Contact Center.</p>
-								<p>A continuaci&oacute;n se indicar&aacute;n las credenciales de acceso:</p>
-								<ul>
-									<li>Link de acceso: <a href="http://192.168.100.143/calidad">http://192.168.100.143/calidad</a></li>
-									<li>Usuario: '.$data->usaurio.'</li>
-									<li>Contrase&ntilde;a: '.$data->contrasena.'</li>
-								</ul>
-								<p>Se recomienda al usuario hacer cambio de contrase&ntilde;a al iniciar sessi&oacute;n</p>
-								<table>
-									<tr>
-										<td><img src="https://www.interactivo.com.co/logo.png"></td>
-										<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co">www.interctivo.com.co</a></p></td>
-									</tr>
-								</table>
-								<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
-								<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
-							</body>
-						</html>';
-						$email->send($data->email, $data->apellidos1." ".$data->apellidos2, 'Creación de Usuario. Portal Calidad', $html, '');
+						//Datos de email
+						$correo  = $data->email;
+						$nombre  = $data->nombres.' '.$data->apellidos1.' '.$data->apellidos2;
+						$archivo = '';
+						$subject = 'Creación de Usuario - Portal Calidad';
+						$body  	 = '<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Creaci&oacute;n de Usuario</title>
+										</head>
+										<body>
+											<h2>Buen d&iacute;a</h2>
+											<p>Usted ha sido registrado en el portal de calidad de Interactivo Contact Center.</p>
+											<p>A continuaci&oacute;n se indicar&aacute;n las credenciales de acceso:</p>
+											<ul>
+												<li>Link de acceso: <a href="'.$url.'">'.$url.'</a></li>
+												<li>Usuario: '.$data->usaurio.'</li>
+												<li>Contrase&ntilde;a: '.$data->contrasena.'</li>
+											</ul>
+											<p>Se recomienda al usuario hacer cambio de contrase&ntilde;a al iniciar sessi&oacute;n</p>
+											<table>
+												<tr>
+													<td><img src="https://www.interactivo.com.co/logo.png"></td>
+													<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co">www.interctivo.com.co</a></p></td>
+												</tr>
+											</table>
+											<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+											<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+										</body>
+									</html>';
+						//Envío de email
+						$email->send($correo, $nombre, $subject, $body, $archivo);
+
 						$this->business->return->bool = true;
 						$this->business->return->msg = 'Se creó el usuario correctamente';
 					} else {

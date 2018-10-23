@@ -1,4 +1,5 @@
 <?php
+require_once 'config.php';
 require '../../libs/phpmailer/src/Exception.php';
 require '../../libs/phpmailer/src/PHPMailer.php';
 require '../../libs/phpmailer/src/SMTP.php';
@@ -16,13 +17,13 @@ class Email{
     private $name;
 
     function __construct(){
-        $this->host = 'correo.interactivo.com.co';
-        $this->smtp_auth = true;
-        $this->username = 'aplicativo.calidad@interactivo.com.co';
-        $this->password = '1Nt3r4ct1v0';
-        $this->port = 25;
-        $this->from = 'aplicativo.calidad@interactivo.com.co';
-        $this->name = 'Aplicativo Calidad';
+        $this->host = HOST_EMAIL;
+        $this->smtp_auth = SMTP_AUTH;
+        $this->username = USER_EMAIL;
+        $this->password = PASS_EMAIL;
+        $this->port = PORT_EMAIL;
+        $this->from = USER_EMAIL;
+        $this->name = NAME_EMAIL;
     }
 
     public function send($email, $name, $subject, $body, $file){
@@ -35,7 +36,7 @@ class Email{
         $mail->Port = $this->port;
         $mail->setFrom($this->from, $this->name);
         $mail->addAddress($email, $name);
-        if(isset($file) && $file != '' ){
+        if(isset($file) && $file != ''){
             $mail->addAttachment($file);
         }
         $mail->isHTML(true);
@@ -44,6 +45,4 @@ class Email{
         $mail->send();
     }
 }
-
-        
 ?>
