@@ -62,7 +62,7 @@ $result = $db->query($query);
 				$queryh2  = "SELECT a.item ";
 				$queryh2 .= "FROM ca_item AS a ";
 				$queryh2 .= "WHERE a.id_error = '".$rowh->id_error."';";
-				$queryh2 .= "";
+
 				$resulth2 = $db->query($queryh2);
 				while($rowh2 = $resulth2->fetch(PDO::FETCH_OBJ)){
 					
@@ -102,7 +102,7 @@ $result = $db->query($query);
 				$query_item .= 'b.punto_entrenamiento ';
 				$query_item .= 'FROM ca_monitoreo_asesor_detallado AS a ';
 				$query_item .= 'LEFT JOIN ca_punto_entrenamiento AS b ON a.id_punto_entrenamiento = b.id ';
-				$query_item .= 'WHERE a.id_monitoreo_asesor = "'.$row->id_monitoreo.'"; ';
+				$query_item .= 'WHERE a.id_monitoreo_asesor = \''.$row->id_monitoreo.'\'; ';
 				$result_item = $db->query($query_item);
 				
 				while($row_item = $result_item->fetch(PDO::FETCH_OBJ)){ 
