@@ -1,3 +1,14 @@
+<?php 
+include '../../../../config/session.php';
+$session = new Session();
+$session->start();
+$get = ((object) $_GET);
+
+if(!$session->getSession('token') || $session->getSession('token') == ''){
+    $session->destroy();
+    header('location: ../../index.php');
+}
+?>
 <section class="content-header">
     <h1>CAMPAÑAS</h1>
 </section>
@@ -10,7 +21,9 @@
             <section class='content'>
                 <div class="row">
                     <div class="col col-md-12 text-center">
-                        <button type="button" class='btn btn-primary' data-toggle="modal" data-target="#crear_campana">Crear Campaña</button>
+                        <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2'){ ?>
+                            <button type="button" class='btn btn-primary' data-toggle="modal" data-target="#crear_campana">Crear Campaña</button>
+                        <?php } ?>
                         <button type="button" class='btn btn-primary' onclick="javascript: pageContent('administrador/administrador');">Volver</button>
                     </div>
                 </div>

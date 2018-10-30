@@ -1,3 +1,14 @@
+<?php 
+include '../../../../config/session.php';
+$session = new Session();
+$session->start();
+$get = ((object) $_GET);
+
+if(!$session->getSession('token') || $session->getSession('token') == ''){
+    $session->destroy();
+    header('location: ../../index.php');
+}
+?>
 <section class="content-header">
     <h1>MATRICES</h1>
 </section>

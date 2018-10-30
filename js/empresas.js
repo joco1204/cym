@@ -1,4 +1,5 @@
 $(function(){
+	var id_perfil = sessionStorage.getItem('id_perfil');
 
 	//Ajax tabla empresa
 	$.ajax({
@@ -19,7 +20,9 @@ $(function(){
 			html += '<th>LOGO</th>';
 			html += '<th>NOMBRE EMPRESA</th>';
 			html += '<th>ESTADO</th>';
-			html += '<th></th>';
+			if(id_perfil == '1' || id_perfil == '2'){
+				html += '<th></th>';
+			}
 			html += '</tr>';
 			html += '</thead>';
 			html += '<tbody>';
@@ -36,7 +39,9 @@ $(function(){
 				html += '</td>';
 				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td><button type="button" class="btn btn-success btn-xs" onclick="javascript: modificar_empresa(\''+row.id+'\');">Modificar</button></td>';
+				if(id_perfil == '1' || id_perfil == '2'){
+					html += '<td><button type="button" class="btn btn-success btn-xs" onclick="javascript: modificar_empresa(\''+row.id+'\');">Modificar</button></td>';
+				}				
 				html += '</tr>';
 			});
 
@@ -47,7 +52,9 @@ $(function(){
 			html += '<th>LOGO</th>';
 			html += '<th>NOMBRE EMPRESA</th>';
 			html += '<th>ESTADO</th>';
-			html += '<th></th>';
+			if(id_perfil == '1' || id_perfil == '2'){
+				html += '<th></th>';
+			}
 			html += '</tr>';
 			html += '</tfoot>';
 			html += '</table>';

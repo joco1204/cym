@@ -15,9 +15,11 @@
             </span>
         </a>
         <ul class="treeview-menu">
-            <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2'){ ?>
+            <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '5'){ ?>
                 <li><a href="#" onclick="javascript: pageContent('administrador/empresas/index');"><i class="glyphicon glyphicon-paperclip"></i> Empresas</a></li>
                 <li><a href="#" onclick="javascript: pageContent('administrador/campanas/index');"><i class="glyphicon glyphicon-briefcase"></i> Campañas</a></li>
+            <?php } ?>
+            <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2'){ ?>
                 <li class="treeview">
                     <a href="#"><i class="glyphicon glyphicon-th"></i> Matrices</a>
                     <ul class="treeview-menu">

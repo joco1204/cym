@@ -1,4 +1,5 @@
 $(function(){
+	var id_perfil = sessionStorage.getItem('id_perfil');
 
 	//Ajax tabla campanas
 	$.ajax({
@@ -19,7 +20,9 @@ $(function(){
 			html += '<th>CAMPAÑA</th>';
 			html += '<th>EMPRESA</th>';
 			html += '<th>ESTADO</th>';
-			html += '<th></th>';
+			if(id_perfil == '1' || id_perfil == '2'){
+				html += '<th></th>';
+			}
 			html += '</tr>';
 			html += '</thead>';
 			html += '<tbody>';
@@ -29,7 +32,9 @@ $(function(){
 				html += '<td>'+row.campana+'</td>';
 				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.estado+'</td>';
-				html += '<td><button type="button" class="btn btn-success btn-xs" onclick="javascript: modificar_campana(\''+row.id+'\');">Modificar</button></td>';
+				if(id_perfil == '1' || id_perfil == '2'){
+					html += '<td><button type="button" class="btn btn-success btn-xs" onclick="javascript: modificar_campana(\''+row.id+'\');">Modificar</button></td>';
+				}
 				html += '</tr>';
 			});
 			html += '</tbody>';
@@ -39,7 +44,9 @@ $(function(){
 			html += '<th>CAMPAÑA</th>';
 			html += '<th>EMPRESA</th>';
 			html += '<th>ESTADO</th>';
-			html += '<th></th>';
+			if(id_perfil == '1' || id_perfil == '2'){
+				html += '<th></th>';
+			}
 			html += '</tr>';
 			html += '</tfoot>';
 			html += '</table>';
