@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `ca_agenda_monitoreo` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_agenda_monitoreo: ~519 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_agenda_monitoreo: ~522 rows (aproximadamente)
 DELETE FROM `ca_agenda_monitoreo`;
 /*!40000 ALTER TABLE `ca_agenda_monitoreo` DISABLE KEYS */;
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -1068,7 +1068,13 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(518, 2, 2, 59, '2018-10-30', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(519, 2, 2, 56, '2018-10-30', 0);
+	(519, 2, 2, 56, '2018-10-30', 1);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(520, 2, 2, 68, '2018-10-31', 0);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(521, 2, 2, 54, '2018-10-31', 0);
+INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
+	(522, 2, 2, 57, '2018-10-31', 0);
 /*!40000 ALTER TABLE `ca_agenda_monitoreo` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_asesores
@@ -1367,7 +1373,7 @@ CREATE TABLE IF NOT EXISTS `ca_campana` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_campana: ~10 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_campana: ~9 rows (aproximadamente)
 DELETE FROM `ca_campana`;
 /*!40000 ALTER TABLE `ca_campana` DISABLE KEYS */;
 INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
@@ -1387,9 +1393,7 @@ INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
 INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
 	(8, 'SAC', 8, 'activo');
 INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
-	(9, 'Servicio', 7, 'activo');
-INSERT INTO `ca_campana` (`id`, `campana`, `id_empresa`, `estado`) VALUES
-	(10, 'WHATSAPP', 1, 'activo');
+	(9, 'WHATSAPP', 1, 'activo');
 /*!40000 ALTER TABLE `ca_campana` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_empresa
@@ -1432,7 +1436,7 @@ CREATE TABLE IF NOT EXISTS `ca_error` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_error: ~20 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_error: ~17 rows (aproximadamente)
 DELETE FROM `ca_error`;
 /*!40000 ALTER TABLE `ca_error` DISABLE KEYS */;
 INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
@@ -1472,9 +1476,9 @@ INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estad
 INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
 	(28, 8, '4', 'sum', 'activo');
 INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(29, 9, '4', 'sum', 'activo');
+	(29, 8, '2', 'por', 'activo');
 INSERT INTO `ca_error` (`id`, `id_matriz`, `tipo_error`, `calculo_valor`, `estado`) VALUES
-	(30, 10, '4', 'sum', 'activo');
+	(30, 8, '3', 'por', 'activo');
 /*!40000 ALTER TABLE `ca_error` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_item
@@ -1489,7 +1493,7 @@ CREATE TABLE IF NOT EXISTS `ca_item` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_item: ~64 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_item: ~62 rows (aproximadamente)
 DELETE FROM `ca_item`;
 /*!40000 ALTER TABLE `ca_item` DISABLE KEYS */;
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
@@ -1615,11 +1619,25 @@ INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`)
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
 	(96, 7, 27, '3.2 Consulta y/o gestiona el registro en los aplicativos acorde a la llamada en calidad y tiempo', '100', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(101, 8, 28, '1 ', '100', 'activo');
+	(97, 8, 28, '1.1 Es cordial y empático durante la llamada, demuestra seguridad', '20', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(102, 9, 29, '1.1 Es cordial y empático durante la llamada, demuestra seguridad', '20', 'activo');
+	(98, 8, 28, '1.2 Identifica el requerimiento / inconformidad del usuario final', '20', 'activo');
 INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
-	(103, 10, 30, '1.1 Guion de bienvenida/despedida', '20', 'activo');
+	(99, 8, 28, '1.3 Escucha activa', '20', 'activo');
+INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
+	(100, 8, 28, '1.4 Mantiene un lenguaje adecuado y fluido (verbal y/o escrito)', '20', 'activo');
+INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
+	(101, 8, 28, '1.5 Su vocalización, articulación y ritmo son adecuados', '20', 'activo');
+INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
+	(102, 8, 29, '2.1 Amabilidad y Cortesía', '100', 'activo');
+INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
+	(103, 8, 29, '2.2 Suministra información correcta y completa.', '100', 'activo');
+INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
+	(104, 8, 29, '2.3 Direccionamiento al usuario final', '100', 'activo');
+INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
+	(105, 8, 30, '2.4 Abandono o cuelgue de llamada', '100', 'activo');
+INSERT INTO `ca_item` (`id`, `id_matriz`, `id_error`, `item`, `valor`, `estado`) VALUES
+	(106, 8, 30, '2.5 Gestiona los registros en calidad y tiempo', '100', 'activo');
 /*!40000 ALTER TABLE `ca_item` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_matriz
@@ -1632,7 +1650,7 @@ CREATE TABLE IF NOT EXISTS `ca_matriz` (
   KEY `id_matriz` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_matriz: ~10 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_matriz: ~7 rows (aproximadamente)
 DELETE FROM `ca_matriz`;
 /*!40000 ALTER TABLE `ca_matriz` DISABLE KEYS */;
 INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
@@ -1650,11 +1668,7 @@ INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
 INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
 	(7, 6, 6, 'activo');
 INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(8, 7, 9, 'eliminado');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(9, 7, 9, 'activo');
-INSERT INTO `ca_matriz` (`id`, `id_empresa`, `id_campana`, `estado`) VALUES
-	(10, 1, 10, 'anulado');
+	(8, 7, 7, 'activo');
 /*!40000 ALTER TABLE `ca_matriz` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_monitoreo_asesor
@@ -1676,7 +1690,7 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_monitoreo_asesor: ~306 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_monitoreo_asesor: ~301 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` DISABLE KEYS */;
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
@@ -2279,6 +2293,8 @@ INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id
 	(336, 518, 59, 5, '2018-10-30', '13:04:00', 1, '79428902', 'DELIO IGNACIO ROMERO PARDO, se presenta y brinda guion legal, es claro brindando la información del beneficio, da saldos de las tarjetas y hace pregunta filtro, cliente indica no se acuerda así que el asesor le explica que necesita saber para no llegar a afectarlo, indaga si puede consultar y le explica cual es el foco de rediferir, pero el cliente a la final manifiesta que si tiene tasa preferncial y va a realizar el pago total de lo que debe, se oferta la tarjeta crédito afiliada pero el sr. se niega, se da un buen manejo y se termina la llamada\r\n', 1, 4, '2018-10-30 13:30:23', '2018-10-30 13:30:23');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(337, 477, 102, 9, '2018-10-30', '12:32:00', 1, '27352134', 'NA', 1, 2, '2018-10-30 13:53:06', '2018-10-30 13:53:06');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(339, 519, 56, 5, '2018-10-30', '08:40:00', 1, '19085886', 'LUIS ANTONIO SANCHEZ BUITRAGO, se presenta de forma correcta e indica el guion legal, oferta el producto brindando 2 características principales, e inicia con una pregunta sondeo, cliente responde manifestando interés, pero desea consultar en que usarlo así que se propone un nuevo contacto para el día viernes, hacer seguimiento de que lo realice.\r\n', 1, 4, '2018-10-30 16:19:34', '2018-10-30 16:19:34');
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_monitoreo_asesor_detallado
@@ -2294,7 +2310,7 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor_detallado` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~3.721 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~3.676 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor_detallado`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` DISABLE KEYS */;
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -9631,6 +9647,24 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 	(4013, 337, 11, 46, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(4015, 337, 11, 47, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4016, 339, 6, 25, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4019, 339, 6, 26, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4021, 339, 6, 27, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4025, 339, 5, 19, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4027, 339, 5, 20, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4030, 339, 5, 21, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4033, 339, 5, 22, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4036, 339, 5, 23, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4039, 339, 5, 24, 1, 100, 0);
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_punto_entrenamiento
@@ -9642,7 +9676,7 @@ CREATE TABLE IF NOT EXISTS `ca_punto_entrenamiento` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~193 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_punto_entrenamiento: ~185 rows (aproximadamente)
 DELETE FROM `ca_punto_entrenamiento`;
 /*!40000 ALTER TABLE `ca_punto_entrenamiento` DISABLE KEYS */;
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
@@ -10016,21 +10050,81 @@ INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VA
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
 	(311, 96, '3.2.5 Consulta los aplicativos necesarios para darle resolución al Usuario Final');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(322, 101, '1.1');
+	(312, 97, 'Solicita datos de forma imperativa');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(323, 102, '1.1.1 Solicita datos de forma imperativa');
+	(313, 97, 'No personaliza la llamada al menos 1 vez durante el contacto');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(324, 102, '1.1.2 No personaliza la llamada al menos 1 vez durante el contacto');
+	(314, 97, 'Interrumpe al usuario final de manera inadecuada');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(325, 102, '1.1.3 Interrumpe al usuario final de manera inadecuada');
+	(315, 97, 'Usa expresiones como "mmm" "no sé" "no creo" "probablemente"');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(326, 102, '1.1.4 Usa expresiones como "mmm" "no sé" "no creo" "probablemente"');
+	(316, 97, 'Explica el tiempo solicitado, respeta el minuto en línea y agradece la espera');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(327, 102, '1.1.5 Explica el tiempo solicitado, respeta el minuto en línea y agradece la espera');
+	(317, 98, 'No identifica la solicitud del usuario desde el inicio para generar transferencia');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(328, 103, '1.1.1  El asesor  utiliza guion de saludo/despedida establecido, se presenta como funcionario de Cruz Verde, con su nombre y primer apellido.');
+	(318, 98, 'No confirma datos del usuario final');
 INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
-	(329, 103, '1.1.2 El asesor toma los datos ya expresados por el usuario final sin  correjir de manera repetitiva ');
+	(319, 98, 'No realiza preguntas de sondeo para clarificar la información');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(320, 99, 'No dedica completa atención al usuario final, habla con el compañero (sin usar mute).');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(321, 99, 'No escucha al usuario final, se anticipa y presupone.');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(322, 99, 'Hace repetir al usuario final varias veces la misma información');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(323, 99, 'El agente no atiende al usuario final de manera inmediata coloca en hold la llamada sin identificar la necesidad del usuario final ');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(324, 100, 'Utiliza tecnicismos');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(325, 100, 'Tutea al usuario final');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(326, 100, 'Emplea muletillas (más de 5 veces durante un contacto promedio de 2 minutos)');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(327, 100, 'Utiliza frases coloquiales');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(328, 100, 'No utiliza fórmulas de cortesía');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(329, 100, 'Presenta errores de ortografía en información registrada en el sistema (más de 3 errores ortográficos)');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(330, 101, 'El usuario final manifiesta necesidad de comunicación más lenta - Tiene un ritmo inadecuado - muy lento,muy rápido');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(331, 101, 'El usuario final manifiesta necesidad de repetir la información porque no entendió - Tiene un ritmo inadecuado - muy rápido - Utiliza un volumen muy alto');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(332, 102, 'El asesor no respetuoso y no escucha con paciencia al usuario');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(333, 102, 'El asesor interrumpe abrupta y reiteradamente al usuario');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(334, 102, 'El asesor pierde la calma en la llamada');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(335, 102, 'El asesor utiliza frases ofensivas, irónicos, sarcásticos o burlonas');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(336, 103, 'Se hace cargo de la solicitud del usuario, cumpliendo todos los acuerdos generados');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(337, 103, 'Sigue el flujo de la llamada según la solicitud del usuario final');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(338, 104, 'No informa al usuario final proceso a seguir en caso de requerir redireccionamiento para dar respuesta ');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(339, 104, 'Direcciona incorrectamente al usuario, sin consultar al usuario información necesaria');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(340, 105, 'El agente induce al usuario final a cortar llamada');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(341, 105, 'La llamada se corta debido a tiempos de espera prolongados o mal acuerdo de espera');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(342, 105, 'La llamada se corta sin explicación');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(343, 105, 'El agente induce al usuario final a cortar llamada');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(344, 105, 'El agente bloquea el canal');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(345, 105, 'El agente no contesta en los primeros 5 segundos del contacto');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(346, 106, 'No realiza los intentos de contacto según el proceso establecido');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(347, 106, 'No ingresa los datos requeridos en los sistemas de información ');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(348, 106, 'Transfiere la llamada al área encargada, según solicitud del usuario');
+INSERT INTO `ca_punto_entrenamiento` (`id`, `id_item`, `punto_entrenamiento`) VALUES
+	(349, 106, 'La tipificación no corresponde al caso ');
 /*!40000 ALTER TABLE `ca_punto_entrenamiento` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_solucion
@@ -10083,7 +10177,7 @@ CREATE TABLE IF NOT EXISTS `pa_perfiles` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.pa_perfiles: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.pa_perfiles: ~6 rows (aproximadamente)
 DELETE FROM `pa_perfiles`;
 /*!40000 ALTER TABLE `pa_perfiles` DISABLE KEYS */;
 INSERT INTO `pa_perfiles` (`id`, `perfil`) VALUES
@@ -10096,6 +10190,8 @@ INSERT INTO `pa_perfiles` (`id`, `perfil`) VALUES
 	(4, 'Lider');
 INSERT INTO `pa_perfiles` (`id`, `perfil`) VALUES
 	(5, 'Creacion Usuario');
+INSERT INTO `pa_perfiles` (`id`, `perfil`) VALUES
+	(6, 'Entrenador');
 /*!40000 ALTER TABLE `pa_perfiles` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.pa_tipo_error
@@ -10115,7 +10211,7 @@ DELETE FROM `pa_tipo_error`;
 INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
 	(1, 'CRITICO', 'ERROR CRITICO DE CUMPLIMIENTO', 'ECC', 'activo');
 INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
-	(2, 'CRITICO', 'ERROR CRITICO DE USAURIO FINAL', 'ECUF', 'activo');
+	(2, 'CRITICO', 'ERROR CRITICO DE USUARIO FINAL', 'ECUF', 'activo');
 INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
 	(3, 'CRITICO', 'ERROR CRITICO DE NEGOCIO', 'ECN', 'activo');
 INSERT INTO `pa_tipo_error` (`id`, `tipo`, `error`, `siglas`, `estado`) VALUES
@@ -10172,7 +10268,7 @@ INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
 	(5, 5, 3, 2, 2);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
-	(6, 6, 3, 4, 4);
+	(6, 6, 5, 0, 0);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
 	(7, 7, 5, 0, 0);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
@@ -10219,7 +10315,7 @@ INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(5, '1010199873', '28b914eb839572bc9e8399aea7dc1bf20c33b1e6', 1, ' 1010199873', 'CHRISTI GERALDINE', 'CONTRERAS', 'ORTEGON', 'christi.contreras@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
-	(6, 'prueba', '961472eb4d6e8303cd9fe19d348b779296a90c93', 1, '10101010', 'prueba', 'prueba', 'prueba', 'prueba@interactivo.com.co', 'activo');
+	(6, 'prueba', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 1, '10101010', 'prueba', 'prueba', 'prueba', 'prueba@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(7, 'Scardenas', '85f924730be3e1c59a5402874520427c2eafd356', 1, '1057783669', 'SAMUEL RUBEN', 'CARDENAS', 'TORO', 'samuel.cardenas@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
@@ -10259,7 +10355,7 @@ INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(5, 5, 3);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
-	(6, 6, 3);
+	(6, 6, 5);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(7, 7, 5);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES

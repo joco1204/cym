@@ -46,4 +46,12 @@
             </a>
         </li>
     <?php } ?>
+    <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '6'){ ?>
+        <li class="treeview">
+            <a href="#" onclick="javascript: pageContent('analista/analista');">
+                <i class="glyphicon glyphicon-dashboard"></i>
+                <span>ENTRENADOR</span>
+            </a>
+        </li>
+    <?php } ?>
 </ul>

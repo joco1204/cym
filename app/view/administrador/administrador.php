@@ -14,7 +14,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
 <section class="content">
     <!-- Small boxes (Stat box) -->
     <div class="row">
-        <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '3'){ ?>
+        <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '5'){ ?>
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-blue">
@@ -41,6 +41,8 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <a href="#" onclick="javascript: pageContent('administrador/campanas/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+        <?php } ?>
+        <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2'){ ?>
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-blue">

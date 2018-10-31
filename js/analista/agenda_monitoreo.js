@@ -72,24 +72,31 @@ $(function(){
 				html += '<input type="text" id="fecha_'+i+'" name="fecha_'+i+'" class="form-control" value="'+row.fecha_monitoreo+'" disabled="">';
 				html += '</div>';
 				html += '<div class="col col-md-3">';
+
+
 				if(row.estado == '0'){
+					
 					if(row.fecha_monitoreo == $('#date').val()){
 						html += ' ';
 						html += '<button type="button" class="btn btn-warning btn-sm" title="Evaluar" onclick="javascript: pageContent(\'analista/monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val()+'&id_agenda='+row.id+'\');">';
 						html += '<span class="glyphicon glyphicon-ok"></span>';
 						html += '</button>';
 					}
+
 					if($('#id_perfil').val() == '1' || $('#id_perfil').val() == '2'){
 						html += ' ';
 						html += '<button type="button" class="btn btn-danger btn-sm" title="Anular" onclick="javascript: anular_monitoreo(\''+row.id+'\');">';
 						html += '<span class="glyphicon glyphicon-ban-circle"></span>';
 						html += '</button>';	
 					}
+
 				} else if(row.estado == '1'){
+					
 					html += ' ';
 					html += '<button type="button" class="btn btn-primary btn-sm" title="Ver" onclick="javascript: pageContent(\'analista/vista_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_agenda='+row.id+'&id_asesor='+$('#id_asesor').val()+'\');">';
 					html += '<span class="glyphicon glyphicon-eye-open"></span>';
 					html += '</button>';
+
 					if($('#id_perfil').val() == '1' || $('#id_perfil').val() == '2'){
 						html += ' ';
 						html += '<button type="button" class="btn btn-danger btn-sm" title="Anular" onclick="javascript: anular_monitoreo(\''+row.id+'\');">';
@@ -97,6 +104,7 @@ $(function(){
 						html += '</button>';
 						
 					}
+
 				} else if (row.estado == '2'){
 					html += ' ';
 					html += '<p><b>ANULADO</b></p>';
@@ -104,6 +112,7 @@ $(function(){
 					html += ' ';
 					html += '<p><b>NO DEFINIDO</b></p>';
 				}
+
 				html += '</div>';
 				html += '</div>';
 				html += '<br>';

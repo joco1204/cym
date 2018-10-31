@@ -140,7 +140,7 @@ $(function(){
 
 
 	$('#perfil').change(function(e){
-		if($(this).val() == '3' || $(this).val() == '4'){
+		if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6'){
 			$('#empresa_campana').show();
 			$('#empresa').prop('disabled', false);
 			$('#campana').prop('disabled', false);
@@ -282,7 +282,7 @@ function modificar_usuario(id_usuario){
 				$('#email_m').val(row.email);
 				$('#usaurio_m').val(row.usuario);
 				//Valida si el perfil es analista o lider
-				if (row.perfil == '3' || row.perfil == '4'){
+				if (row.perfil == '3' || row.perfil == '4' || row.perfil == '6'){
 					$('#empresa_campana_m').show();
 					$('#empresa_m').prop('disabled', false);
 					$('#campana_m').prop('disabled', false);
@@ -444,7 +444,7 @@ function modificar_usuario(id_usuario){
 				//CUando hay un campio en el perfil
 				$('#perfil_m').change(function(e){
 					//Cuando el perfil es de analista o lider
-					if($(this).val() == '3' || $(this).val() == '4'){
+					if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6'){
 						$('#empresa_campana_m').show();
 						$('#empresa_m').prop('disabled', false);
 						$('#campana_m').prop('disabled', false);
