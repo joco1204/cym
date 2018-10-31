@@ -5,7 +5,7 @@ $db = new Connect();
 header("Content-type: application/vnd.ms-excel; charset=utf-8");
 header("Content-Disposition: attachment; filename=\"reporte calidad monitoreo.xls\"");
 header("Expires: 0");
-header("Cache-Control: must-revalidate, post-check=0,pre-check=0");
+header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 header("Pragma: public");
 //Query
 $query  = "SELECT ";
@@ -23,7 +23,7 @@ $query .= "b.observacion, ";
 $query .= "b.fecha_registro, ";
 $query .= "b.fecha_modificaicon ";
 $query .= "FROM ca_agenda_monitoreo AS a ";
-$query .= "LEFT JOIN ca_monitoreo_asesor AS b ON a.id = b.id_agenda_monitoreo ";
+$query .= "INNER JOIN ca_monitoreo_asesor AS b ON a.id = b.id_agenda_monitoreo ";
 $query .= "LEFT JOIN ca_asesores AS c ON a.id_asesor = c.id ";
 $query .= "LEFT JOIN re_usuarios AS d ON b.id_analista = d.id ";
 $query .= "LEFT JOIN ca_tipificacion AS f ON b.tipificacion = f.id ";
@@ -101,8 +101,9 @@ $result = $db->query($query);
 				$query_item .= 'a.valor_porcentaje_cumplimiento AS porcentaje, ';
 				$query_item .= 'b.punto_entrenamiento ';
 				$query_item .= 'FROM ca_monitoreo_asesor_detallado AS a ';
-				$query_item .= 'LEFT JOIN ca_punto_entrenamiento AS b ON a.id_punto_entrenamiento = b.id ';
+				$query_item .= 'INNER JOIN ca_punto_entrenamiento AS b ON a.id_punto_entrenamiento = b.id ';
 				$query_item .= 'WHERE a.id_monitoreo_asesor = \''.$row->id_monitoreo.'\'; ';
+
 				$result_item = $db->query($query_item);
 				
 				while($row_item = $result_item->fetch(PDO::FETCH_OBJ)){ 
