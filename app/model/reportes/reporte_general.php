@@ -1,9 +1,16 @@
 <?php
 include '../../../config/connect.php';
 $db = new Connect();
+
+$query_ec  = "SELECT b.empresa, a.campana ";
+$query_ec .= "FROM ca_campana AS a ";
+$query_ec .= "JOIN ca_empresa AS b ON a.id_empresa = a.id ";
+$query_ec .= "WHERE b.id = '".$_GET['empresa']."' AND a.id = '".$_GET['campana']."';";
+$result_ec = $db->query($query_ec);
+$row_ec = $result_ec->fetch(PDO::FETCH_OBJ);
 //Header download file
 header("Content-type: application/vnd.ms-excel; charset=utf-8");
-header("Content-Disposition: attachment; filename=\"reporte calidad monitoreo.xls\"");
+header("Content-Disposition: attachment; filename=\"Reporte calidad monitoreo Empresa ".utf8_decode($row_ec->empresa).", Campaña ".utf8_decode($row_ec->campana)." desde el día ".$_GET['desde_general']." hasta el día ".$_GET['hasta_general'].".xls\"");
 header("Expires: 0");
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 header("Pragma: public");
@@ -32,7 +39,6 @@ $query .= "LEFT JOIN ca_audio AS h ON b.fallas_audio = h.id ";
 $query .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = '1' AND a.fecha_monitoreo BETWEEN '".$_GET['desde_general']."' AND '".$_GET['hasta_general']."' ";
 $query .= "ORDER BY a.id; ";
 $result = $db->query($query);
-
 ?>
 <table border="1">
 	<thead>
@@ -51,25 +57,21 @@ $result = $db->query($query);
 			echo "<th>FALLA AUDIO</th>";
 			echo "<th>FECHA Y HORA REGISTRO</th>";
 			echo "<th>FECHA Y HORA MODIFICACI&Oacute;N</th>";
-
 			$queryh  = "SELECT a.id_empresa, a.id_campana, b.id AS id_error ";
 			$queryh .= "FROM ca_matriz AS a ";
 			$queryh .= "LEFT JOIN ca_error AS b ON a.id = b.id_matriz ";
 			$queryh .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = 'activo';";
 			$resulth = $db->query($queryh);
-			
 			while($rowh = $resulth->fetch(PDO::FETCH_OBJ)){
 				$queryh2  = "SELECT a.item ";
 				$queryh2 .= "FROM ca_item AS a ";
-				$queryh2 .= "WHERE a.id_error = '".$rowh->id_error."';";
-
+				$queryh2 .= "WHERE a.id_error = '".$rowh->id_error."' ";
+				$queryh2 .= "ORDER BY a.id;";
 				$resulth2 = $db->query($queryh2);
 				while($rowh2 = $resulth2->fetch(PDO::FETCH_OBJ)){
-					
 					echo "<th>".utf8_decode($rowh2->item)."</th>";
 					echo "<th>CALIFICACI&Oacute;N ID DE REGISTROS </th>";
 					echo "<th>PUNTO DE ENTRENAMIENTO</th>";
-
 				}
 			}
 			echo "</tr>";
@@ -91,7 +93,6 @@ $result = $db->query($query);
 			echo "<td>".utf8_decode($row->fallas_audio)."</td>";
 			echo "<td>".utf8_decode($row->fecha_registro)."</td>";
 			echo "<td>".utf8_decode($row->fecha_modificaicon)."</td>";
-
 				$query_item  = 'SELECT ';
 				$query_item .= 'a.id AS id_detallado, ';
 				$query_item .= 'CASE ';
@@ -101,11 +102,10 @@ $result = $db->query($query);
 				$query_item .= 'a.valor_porcentaje_cumplimiento AS porcentaje, ';
 				$query_item .= 'b.punto_entrenamiento ';
 				$query_item .= 'FROM ca_monitoreo_asesor_detallado AS a ';
-				$query_item .= 'INNER JOIN ca_punto_entrenamiento AS b ON a.id_punto_entrenamiento = b.id ';
-				$query_item .= 'WHERE a.id_monitoreo_asesor = \''.$row->id_monitoreo.'\'; ';
-
+				$query_item .= 'LEFT JOIN ca_punto_entrenamiento AS b ON a.id_punto_entrenamiento = b.id ';
+				$query_item .= 'WHERE a.id_monitoreo_asesor = \''.$row->id_monitoreo.'\' ';
+				$query_item .= 'ORDER BY a.id_item; ';
 				$result_item = $db->query($query_item);
-				
 				while($row_item = $result_item->fetch(PDO::FETCH_OBJ)){ 
 					echo "<td>".utf8_decode($row_item->valor_cumplimiento)."</td>";
 					echo "<td>".utf8_decode($row_item->porcentaje)."</td>";
