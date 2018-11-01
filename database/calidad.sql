@@ -138,397 +138,397 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(53, 1, 1, 1, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(54, 1, 1, 2, '2018-10-02', 0);
+	(54, 1, 1, 2, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(55, 1, 1, 4, '2018-10-02', 0);
+	(55, 1, 1, 4, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(56, 1, 1, 5, '2018-10-02', 0);
+	(56, 1, 1, 5, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(57, 1, 1, 6, '2018-10-02', 0);
+	(57, 1, 1, 6, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(58, 1, 1, 7, '2018-10-02', 0);
+	(58, 1, 1, 7, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(59, 1, 1, 9, '2018-10-02', 0);
+	(59, 1, 1, 9, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(60, 1, 1, 11, '2018-10-02', 0);
+	(60, 1, 1, 11, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(61, 1, 1, 14, '2018-10-02', 0);
+	(61, 1, 1, 14, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(62, 1, 1, 15, '2018-10-02', 0);
+	(62, 1, 1, 15, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(63, 1, 1, 16, '2018-10-02', 0);
+	(63, 1, 1, 16, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(64, 1, 1, 17, '2018-10-02', 0);
+	(64, 1, 1, 17, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(65, 1, 1, 18, '2018-10-04', 0);
+	(65, 1, 1, 18, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(66, 1, 1, 19, '2018-10-04', 0);
+	(66, 1, 1, 19, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(67, 1, 1, 20, '2018-10-04', 0);
+	(67, 1, 1, 20, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(68, 1, 1, 21, '2018-10-04', 0);
+	(68, 1, 1, 21, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(69, 1, 1, 22, '2018-10-04', 0);
+	(69, 1, 1, 22, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(70, 1, 1, 23, '2018-10-04', 0);
+	(70, 1, 1, 23, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(71, 1, 1, 24, '2018-10-04', 0);
+	(71, 1, 1, 24, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(72, 1, 1, 25, '2018-10-04', 0);
+	(72, 1, 1, 25, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(73, 1, 1, 26, '2018-10-04', 0);
+	(73, 1, 1, 26, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(74, 2, 2, 54, '2018-10-02', 0);
+	(74, 2, 2, 54, '2018-10-02', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(75, 1, 1, 27, '2018-10-04', 0);
+	(75, 1, 1, 27, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(76, 1, 1, 28, '2018-10-04', 0);
+	(76, 1, 1, 28, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(77, 1, 1, 29, '2018-10-04', 0);
+	(77, 1, 1, 29, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(78, 1, 1, 30, '2018-10-04', 0);
+	(78, 1, 1, 30, '2018-10-04', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(79, 1, 1, 31, '2018-10-05', 0);
+	(79, 1, 1, 31, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(80, 1, 1, 32, '2018-10-05', 0);
+	(80, 1, 1, 32, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(81, 1, 1, 33, '2018-10-05', 0);
+	(81, 1, 1, 33, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(82, 1, 1, 34, '2018-10-05', 0);
+	(82, 1, 1, 34, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(83, 1, 1, 35, '2018-10-05', 0);
+	(83, 1, 1, 35, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(84, 1, 1, 37, '2018-10-05', 0);
+	(84, 1, 1, 37, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(85, 1, 1, 38, '2018-10-05', 0);
+	(85, 1, 1, 38, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(86, 1, 1, 39, '2018-10-05', 0);
+	(86, 1, 1, 39, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(87, 1, 1, 40, '2018-10-05', 0);
+	(87, 1, 1, 40, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(88, 1, 1, 41, '2018-10-05', 0);
+	(88, 1, 1, 41, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(89, 1, 1, 42, '2018-10-05', 0);
+	(89, 1, 1, 42, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(90, 1, 1, 43, '2018-10-05', 0);
+	(90, 1, 1, 43, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(91, 1, 1, 44, '2018-10-08', 0);
+	(91, 1, 1, 44, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(92, 1, 1, 45, '2018-10-08', 0);
+	(92, 1, 1, 45, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(93, 1, 1, 46, '2018-10-08', 0);
+	(93, 1, 1, 46, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(94, 1, 1, 47, '2018-10-08', 0);
+	(94, 1, 1, 47, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(95, 1, 1, 48, '2018-10-08', 0);
+	(95, 1, 1, 48, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(96, 1, 1, 49, '2018-10-08', 0);
+	(96, 1, 1, 49, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(97, 1, 1, 50, '2018-10-08', 0);
+	(97, 1, 1, 50, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(98, 1, 1, 51, '2018-10-08', 0);
+	(98, 1, 1, 51, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(99, 1, 1, 52, '2018-10-08', 0);
+	(99, 1, 1, 52, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(100, 1, 1, 53, '2018-10-08', 0);
+	(100, 1, 1, 53, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(101, 1, 1, 36, '2018-10-08', 0);
+	(101, 1, 1, 36, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(102, 1, 1, 13, '2018-10-08', 0);
+	(102, 1, 1, 13, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(103, 1, 1, 1, '2018-10-11', 0);
+	(103, 1, 1, 1, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(104, 1, 1, 1, '2018-10-25', 0);
+	(104, 1, 1, 1, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(105, 1, 1, 2, '2018-10-11', 0);
+	(105, 1, 1, 2, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(106, 1, 1, 2, '2018-10-25', 0);
+	(106, 1, 1, 2, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(107, 1, 1, 4, '2018-10-11', 0);
+	(107, 1, 1, 4, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(108, 1, 1, 4, '2018-10-25', 0);
+	(108, 1, 1, 4, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(109, 1, 1, 5, '2018-10-11', 0);
+	(109, 1, 1, 5, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(110, 1, 1, 5, '2018-10-25', 0);
+	(110, 1, 1, 5, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(111, 1, 1, 6, '2018-10-11', 0);
+	(111, 1, 1, 6, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(112, 1, 1, 6, '2018-10-25', 0);
+	(112, 1, 1, 6, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(113, 1, 1, 7, '2018-10-11', 0);
+	(113, 1, 1, 7, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(114, 1, 1, 7, '2018-10-25', 0);
+	(114, 1, 1, 7, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(115, 1, 1, 9, '2018-10-11', 0);
+	(115, 1, 1, 9, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(116, 1, 1, 9, '2018-10-25', 0);
+	(116, 1, 1, 9, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(117, 1, 1, 11, '2018-10-11', 0);
+	(117, 1, 1, 11, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(118, 1, 1, 11, '2018-10-25', 0);
+	(118, 1, 1, 11, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(119, 1, 1, 14, '2018-10-11', 0);
+	(119, 1, 1, 14, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(120, 1, 1, 14, '2018-10-25', 0);
+	(120, 1, 1, 14, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(121, 1, 1, 15, '2018-10-11', 0);
+	(121, 1, 1, 15, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(122, 1, 1, 15, '2018-10-25', 0);
+	(122, 1, 1, 15, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(123, 1, 1, 16, '2018-10-11', 0);
+	(123, 1, 1, 16, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(124, 1, 1, 16, '2018-10-25', 0);
+	(124, 1, 1, 16, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(125, 1, 1, 17, '2018-10-11', 0);
+	(125, 1, 1, 17, '2018-10-11', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(126, 1, 1, 17, '2018-10-25', 0);
+	(126, 1, 1, 17, '2018-10-25', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(127, 1, 1, 18, '2018-10-12', 0);
+	(127, 1, 1, 18, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(128, 1, 1, 18, '2018-10-26', 0);
+	(128, 1, 1, 18, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(129, 1, 1, 18, '2018-10-19', 0);
+	(129, 1, 1, 18, '2018-10-19', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(130, 1, 1, 19, '2018-10-12', 0);
+	(130, 1, 1, 19, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(131, 1, 1, 19, '2018-10-19', 0);
+	(131, 1, 1, 19, '2018-10-19', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(132, 1, 1, 19, '2018-10-26', 0);
+	(132, 1, 1, 19, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(133, 1, 1, 20, '2018-10-12', 0);
+	(133, 1, 1, 20, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(134, 1, 1, 20, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(135, 1, 1, 20, '2018-10-26', 0);
+	(135, 1, 1, 20, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(136, 1, 1, 21, '2018-10-12', 0);
+	(136, 1, 1, 21, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(137, 1, 1, 21, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(138, 1, 1, 21, '2018-10-26', 0);
+	(138, 1, 1, 21, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(139, 1, 1, 22, '2018-10-12', 0);
+	(139, 1, 1, 22, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(140, 1, 1, 22, '2018-10-19', 0);
+	(140, 1, 1, 22, '2018-10-19', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(141, 1, 1, 22, '2018-10-26', 0);
+	(141, 1, 1, 22, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(142, 1, 1, 23, '2018-10-12', 0);
+	(142, 1, 1, 23, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(143, 1, 1, 23, '2018-10-19', 0);
+	(143, 1, 1, 23, '2018-10-19', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(144, 1, 1, 23, '2018-10-26', 0);
+	(144, 1, 1, 23, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(145, 1, 1, 24, '2018-10-12', 0);
+	(145, 1, 1, 24, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(146, 1, 1, 24, '2018-10-19', 0);
+	(146, 1, 1, 24, '2018-10-19', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(147, 1, 1, 24, '2018-10-26', 0);
+	(147, 1, 1, 24, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(148, 1, 1, 25, '2018-10-12', 0);
+	(148, 1, 1, 25, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(149, 1, 1, 25, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(150, 1, 1, 25, '2018-10-26', 0);
+	(150, 1, 1, 25, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(151, 1, 1, 26, '2018-10-12', 0);
+	(151, 1, 1, 26, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(152, 1, 1, 26, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(153, 1, 1, 26, '2018-10-26', 0);
+	(153, 1, 1, 26, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(154, 1, 1, 27, '2018-10-12', 0);
+	(154, 1, 1, 27, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(155, 1, 1, 27, '2018-10-19', 0);
+	(155, 1, 1, 27, '2018-10-19', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(156, 1, 1, 27, '2018-10-26', 0);
+	(156, 1, 1, 27, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(157, 1, 1, 28, '2018-10-12', 0);
+	(157, 1, 1, 28, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(158, 1, 1, 28, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(159, 1, 1, 28, '2018-10-26', 0);
+	(159, 1, 1, 28, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(160, 1, 1, 29, '2018-10-12', 0);
+	(160, 1, 1, 29, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(161, 1, 1, 29, '2018-10-19', 0);
+	(161, 1, 1, 29, '2018-10-19', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(162, 1, 1, 29, '2018-10-26', 0);
+	(162, 1, 1, 29, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(163, 1, 1, 30, '2018-10-12', 0);
+	(163, 1, 1, 30, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(164, 1, 1, 30, '2018-10-19', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(165, 1, 1, 30, '2018-10-26', 0);
+	(165, 1, 1, 30, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(166, 1, 1, 31, '2018-10-12', 0);
+	(166, 1, 1, 31, '2018-10-12', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(167, 1, 1, 31, '2018-10-13', 0);
+	(167, 1, 1, 31, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(168, 1, 1, 31, '2018-10-22', 0);
+	(168, 1, 1, 31, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(169, 1, 1, 31, '2018-10-27', 0);
+	(169, 1, 1, 31, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(170, 1, 1, 32, '2018-10-13', 0);
+	(170, 1, 1, 32, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(171, 1, 1, 32, '2018-10-22', 0);
+	(171, 1, 1, 32, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(172, 1, 1, 32, '2018-10-27', 0);
+	(172, 1, 1, 32, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(173, 1, 1, 33, '2018-10-13', 0);
+	(173, 1, 1, 33, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(174, 1, 1, 33, '2018-10-22', 0);
+	(174, 1, 1, 33, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(175, 1, 1, 33, '2018-10-27', 0);
+	(175, 1, 1, 33, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(176, 1, 1, 34, '2018-10-13', 0);
+	(176, 1, 1, 34, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(177, 1, 1, 34, '2018-10-22', 0);
+	(177, 1, 1, 34, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(178, 1, 1, 34, '2018-10-27', 0);
+	(178, 1, 1, 34, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(179, 1, 1, 35, '2018-10-13', 0);
+	(179, 1, 1, 35, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(180, 1, 1, 35, '2018-10-22', 0);
+	(180, 1, 1, 35, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(181, 1, 1, 35, '2018-10-27', 0);
+	(181, 1, 1, 35, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(182, 1, 1, 37, '2018-10-13', 0);
+	(182, 1, 1, 37, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(183, 1, 1, 37, '2018-10-22', 0);
+	(183, 1, 1, 37, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(184, 1, 1, 37, '2018-10-27', 0);
+	(184, 1, 1, 37, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(185, 1, 1, 38, '2018-10-13', 0);
+	(185, 1, 1, 38, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(186, 1, 1, 38, '2018-10-22', 0);
+	(186, 1, 1, 38, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(187, 1, 1, 38, '2018-10-27', 0);
+	(187, 1, 1, 38, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(188, 1, 1, 39, '2018-10-13', 0);
+	(188, 1, 1, 39, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(189, 1, 1, 39, '2018-10-22', 0);
+	(189, 1, 1, 39, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(190, 1, 1, 39, '2018-10-27', 0);
+	(190, 1, 1, 39, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(191, 1, 1, 40, '2018-10-13', 0);
+	(191, 1, 1, 40, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(192, 1, 1, 40, '2018-10-22', 0);
+	(192, 1, 1, 40, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(193, 1, 1, 40, '2018-10-27', 0);
+	(193, 1, 1, 40, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(194, 1, 1, 41, '2018-10-13', 0);
+	(194, 1, 1, 41, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(195, 1, 1, 41, '2018-10-22', 0);
+	(195, 1, 1, 41, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(196, 1, 1, 41, '2018-10-27', 0);
+	(196, 1, 1, 41, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(197, 1, 1, 42, '2018-10-13', 0);
+	(197, 1, 1, 42, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(198, 1, 1, 42, '2018-10-22', 0);
+	(198, 1, 1, 42, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(199, 1, 1, 42, '2018-10-27', 0);
+	(199, 1, 1, 42, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(200, 1, 1, 43, '2018-10-13', 0);
+	(200, 1, 1, 43, '2018-10-13', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(201, 1, 1, 43, '2018-10-22', 0);
+	(201, 1, 1, 43, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(202, 1, 1, 43, '2018-10-27', 0);
+	(202, 1, 1, 43, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(203, 1, 1, 44, '2018-10-16', 0);
+	(203, 1, 1, 44, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(204, 1, 1, 44, '2018-10-23', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(205, 1, 1, 44, '2018-10-30', 0);
+	(205, 1, 1, 44, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(206, 1, 1, 45, '2018-10-16', 0);
+	(206, 1, 1, 45, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(207, 1, 1, 45, '2018-10-23', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(208, 1, 1, 45, '2018-10-30', 0);
+	(208, 1, 1, 45, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(209, 1, 1, 46, '2018-10-16', 0);
+	(209, 1, 1, 46, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(210, 1, 1, 46, '2018-10-23', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(211, 1, 1, 46, '2018-10-30', 0);
+	(211, 1, 1, 46, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(212, 1, 1, 47, '2018-10-16', 0);
+	(212, 1, 1, 47, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(213, 1, 1, 47, '2018-10-23', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(214, 1, 1, 47, '2018-10-30', 0);
+	(214, 1, 1, 47, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(215, 1, 1, 49, '2018-10-16', 0);
+	(215, 1, 1, 49, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(216, 1, 1, 49, '2018-10-23', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(217, 1, 1, 49, '2018-10-30', 0);
+	(217, 1, 1, 49, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(218, 1, 1, 50, '2018-10-16', 0);
+	(218, 1, 1, 50, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(219, 1, 1, 50, '2018-10-23', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(220, 1, 1, 50, '2018-10-30', 0);
+	(220, 1, 1, 50, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(221, 1, 1, 51, '2018-10-16', 0);
+	(221, 1, 1, 51, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(222, 1, 1, 51, '2018-10-26', 0);
+	(222, 1, 1, 51, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(223, 1, 1, 51, '2018-10-30', 0);
+	(223, 1, 1, 51, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(224, 1, 1, 52, '2018-10-16', 0);
+	(224, 1, 1, 52, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(225, 1, 1, 52, '2018-10-26', 0);
+	(225, 1, 1, 52, '2018-10-26', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(226, 1, 1, 52, '2018-10-30', 0);
+	(226, 1, 1, 52, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(227, 1, 1, 53, '2018-10-16', 0);
+	(227, 1, 1, 53, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(228, 1, 1, 53, '2018-10-23', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(229, 1, 1, 53, '2018-10-30', 0);
+	(229, 1, 1, 53, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(230, 1, 1, 36, '2018-10-16', 0);
+	(230, 1, 1, 36, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(231, 1, 1, 36, '2018-10-23', 0);
+	(231, 1, 1, 36, '2018-10-23', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(232, 1, 1, 36, '2018-10-30', 0);
+	(232, 1, 1, 36, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(233, 1, 1, 13, '2018-10-16', 0);
+	(233, 1, 1, 13, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(234, 1, 1, 13, '2018-10-23', 0);
+	(234, 1, 1, 13, '2018-10-23', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(235, 1, 1, 13, '2018-10-30', 0);
+	(235, 1, 1, 13, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(236, 1, 1, 1, '2018-10-18', 0);
+	(236, 1, 1, 1, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(237, 1, 1, 2, '2018-10-18', 0);
+	(237, 1, 1, 2, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(238, 1, 1, 4, '2018-10-18', 0);
+	(238, 1, 1, 4, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(239, 1, 1, 5, '2018-10-18', 0);
+	(239, 1, 1, 5, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(240, 1, 1, 6, '2018-10-18', 0);
+	(240, 1, 1, 6, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(241, 1, 1, 7, '2018-10-18', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(242, 1, 1, 9, '2018-10-18', 0);
+	(242, 1, 1, 9, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(243, 1, 1, 11, '2018-10-18', 0);
+	(243, 1, 1, 11, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(244, 1, 1, 14, '2018-10-18', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(245, 1, 1, 15, '2018-10-18', 0);
+	(245, 1, 1, 15, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(246, 1, 1, 15, '2018-10-18', 0);
+	(246, 1, 1, 15, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(247, 1, 1, 17, '2018-10-18', 0);
+	(247, 1, 1, 17, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(248, 2, 2, 54, '2018-10-05', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(249, 2, 2, 55, '2018-10-05', 0);
+	(249, 2, 2, 55, '2018-10-05', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(250, 2, 2, 56, '2018-10-05', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -550,15 +550,15 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(259, 2, 2, 71, '2018-10-07', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(260, 2, 2, 79, '2018-10-08', 0);
+	(260, 2, 2, 79, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(261, 2, 2, 82, '2018-10-08', 0);
+	(261, 2, 2, 82, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(262, 2, 2, 68, '2018-10-08', 0);
+	(262, 2, 2, 68, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(263, 2, 2, 58, '2018-10-08', 0);
+	(263, 2, 2, 58, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(264, 2, 2, 63, '2018-10-08', 0);
+	(264, 2, 2, 63, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(265, 2, 2, 78, '2018-10-08', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -744,7 +744,7 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(356, 2, 2, 72, '2018-10-12', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(357, 3, 3, 89, '2018-10-16', 0);
+	(357, 3, 3, 89, '2018-10-16', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(358, 3, 3, 91, '2018-10-16', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -820,13 +820,13 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(394, 2, 2, 64, '2018-10-18', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(395, 2, 2, 80, '2018-10-18', 0);
+	(395, 2, 2, 80, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(396, 2, 2, 73, '2018-10-18', 0);
+	(396, 2, 2, 73, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(397, 2, 2, 60, '2018-10-18', 0);
+	(397, 2, 2, 60, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(398, 2, 2, 69, '2018-10-18', 0);
+	(398, 2, 2, 69, '2018-10-18', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(399, 3, 3, 94, '2018-10-18', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -866,7 +866,7 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(417, 2, 2, 58, '2018-10-22', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(418, 2, 2, 79, '2018-10-22', 0);
+	(418, 2, 2, 79, '2018-10-22', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(419, 2, 2, 75, '2018-10-22', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -960,7 +960,7 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(464, 2, 2, 62, '2018-10-27', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(465, 2, 2, 74, '2018-10-27', 0);
+	(465, 2, 2, 74, '2018-10-27', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(466, 2, 2, 81, '2018-10-27', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -992,7 +992,7 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(480, 4, 4, 105, '2018-10-30', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(481, 4, 4, 105, '2018-10-31', 0);
+	(481, 4, 4, 105, '2018-10-31', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(482, 4, 4, 111, '2018-10-31', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -1004,15 +1004,15 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(486, 2, 2, 77, '2018-10-29', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(487, 2, 2, 76, '2018-10-29', 0);
+	(487, 2, 2, 76, '2018-10-29', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(488, 2, 2, 59, '2018-10-29', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(489, 3, 3, 96, '2018-10-29', 1);
+	(489, 3, 3, 96, '2018-10-29', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(490, 3, 3, 96, '2018-10-29', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(491, 3, 3, 95, '2018-10-29', 1);
+	(491, 3, 3, 95, '2018-10-29', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(492, 3, 3, 95, '2018-10-29', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -1060,7 +1060,7 @@ INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(516, 4, 4, 117, '2018-10-31', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
-	(517, 2, 2, 77, '2018-10-30', 0);
+	(517, 2, 2, 77, '2018-10-30', 2);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
 	(518, 2, 2, 59, '2018-10-30', 1);
 INSERT INTO `ca_agenda_monitoreo` (`id`, `id_empresa`, `id_campana`, `id_asesor`, `fecha_monitoreo`, `estado`) VALUES
@@ -1332,9 +1332,9 @@ INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `
 INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
 	(121, 1, 1, '1018511925', 'GERALDINE ', 'SANCHEZ DIAZ', 'activo');
 INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
-	(122, 7, 7, 'prueba', 'prueba', 'prueba', 'activo');
+	(122, 5, 5, 'prueba', 'prueba', 'prueba', 'activo');
 INSERT INTO `ca_asesores` (`id`, `id_empresa`, `id_campana`, `identificacion`, `nombres`, `apellidos`, `estado`) VALUES
-	(123, 7, 9, 'prueba', 'prueba', 'prueba', 'activo');
+	(123, 5, 5, 'prueba', 'prueba', 'prueba', 'activo');
 /*!40000 ALTER TABLE `ca_asesores` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_audio
@@ -1686,7 +1686,7 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_monitoreo_asesor: ~307 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_monitoreo_asesor: ~308 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` DISABLE KEYS */;
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
@@ -2303,6 +2303,8 @@ INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id
 	(349, 520, 68, 5, '2018-10-31', '11:02:00', 1, '5606546', 'EUDOCIO PINZON MANRIQUE, se presenta de forma enérgica y muy cordial, cumple con el guion legal, brinda la oferta realizando inicialmente pregunta filtro, continua resaltando la baja de la tasa de interés y la opción de dejar su deuda a un mismo plazo y fijada a la tasa actual, cliente no interactua mucho, esta muy disperso la gestión es muy buen a y se explica muy bien cierra la venta pero identifica que el cliente se encuentra en mora, y el cliente no puede realizar ningún acuerdo d pago debido a su estado de salud, así que la asesora entiende es empatica en la despedida y finaliza la llamada\r\n', 1, 4, '2018-10-31 12:24:07', '2018-10-31 12:24:07');
 INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
 	(351, 516, 117, 9, '2018-10-31', '07:29:00', 1, '27384588', 'NA', 1, 4, '2018-10-31 12:38:13', '2018-10-31 12:38:13');
+INSERT INTO `ca_monitoreo_asesor` (`id`, `id_agenda_monitoreo`, `id_asesor`, `id_analista`, `fecha_llamada`, `hora_llamada`, `tipificacion`, `id_llamada`, `observacion`, `solucion`, `fallas_audio`, `fecha_registro`, `fecha_modificaicon`) VALUES
+	(352, 481, 105, 9, '2018-10-31', '13:22:00', 1, '27419542', 'NA', 1, 4, '2018-10-31 14:03:01', '2018-10-31 14:03:01');
 /*!40000 ALTER TABLE `ca_monitoreo_asesor` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_monitoreo_asesor_detallado
@@ -2318,7 +2320,7 @@ CREATE TABLE IF NOT EXISTS `ca_monitoreo_asesor_detallado` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~3.730 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.ca_monitoreo_asesor_detallado: ~3.739 rows (aproximadamente)
 DELETE FROM `ca_monitoreo_asesor_detallado`;
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` DISABLE KEYS */;
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
@@ -9781,6 +9783,24 @@ INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_er
 	(4131, 351, 11, 46, 1, 20, 0);
 INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
 	(4132, 351, 11, 47, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4133, 352, 12, 48, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4134, 352, 12, 49, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4135, 352, 13, 50, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4136, 352, 13, 51, 1, 100, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4137, 352, 11, 43, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4138, 352, 11, 44, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4139, 352, 11, 45, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4140, 352, 11, 46, 1, 20, 0);
+INSERT INTO `ca_monitoreo_asesor_detallado` (`id`, `id_monitoreo_asesor`, `id_error`, `id_item`, `valor_cumplimiento`, `valor_porcentaje_cumplimiento`, `id_punto_entrenamiento`) VALUES
+	(4141, 352, 11, 47, 1, 20, 0);
 /*!40000 ALTER TABLE `ca_monitoreo_asesor_detallado` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.ca_punto_entrenamiento
@@ -10384,7 +10404,7 @@ INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
 	(5, 5, 3, 2, 2);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
-	(6, 6, 5, 0, 0);
+	(6, 6, 6, 1, 1);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
 	(7, 7, 5, 0, 0);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
@@ -10398,7 +10418,7 @@ INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
 	(12, 12, 3, 7, 7);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
-	(13, 13, 3, 1, 1);
+	(13, 13, 6, 1, 1);
 /*!40000 ALTER TABLE `re_usaurio_ec` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.re_usuarios
@@ -10431,7 +10451,7 @@ INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(5, '1010199873', '28b914eb839572bc9e8399aea7dc1bf20c33b1e6', 1, ' 1010199873', 'CHRISTI GERALDINE', 'CONTRERAS', 'ORTEGON', 'christi.contreras@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
-	(6, 'prueba', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 1, '10101010', 'prueba', 'prueba', 'prueba', 'prueba@interactivo.com.co', 'activo');
+	(6, 'prueba', '711383a59fda05336fd2ccf70c8059d1523eb41a', 1, '10101010', 'prueba', 'prueba', 'prueba', 'prueba@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(7, 'Scardenas', '85f924730be3e1c59a5402874520427c2eafd356', 1, '1057783669', 'SAMUEL RUBEN', 'CARDENAS', 'TORO', 'samuel.cardenas@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
@@ -10443,9 +10463,9 @@ INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(11, '79787555', '84031860d33a86384f15de808fd1eab146b06fb4', 1, '79787555', 'CESAR AUGUSTO', 'GONZALEZ ', 'N/A', 'cesar.gonzalez@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
-	(12, 'prueba2', 'd8c7468774962290ed594c33e79c2c219b2c2f42', 1, '00000000000', 'Prueba 2', 'prueba 2', 'prueba 2', 'alexa.hlop@gmail.com', 'activo');
+	(12, 'prueba2', 'd8c7468774962290ed594c33e79c2c219b2c2f42', 1, '00000000000', 'Prueba 2', 'prueba 2', 'prueba 2', 'alexa.hlop@gmail.com', 'inactivo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
-	(13, '40031664', '350c28a267480fa099a0f63d7ff58e59ecd5f73f', 1, '40031664', 'PATRICIA', 'GARCÍA ', 'POVEDA', 'patricia.garcia@interactivo.com.co', 'activo');
+	(13, '40031664', '0429e7069149217081cef5d5888dbece23b89b38', 1, '40031664', 'PATRICIA', 'GARCÍA ', 'POVEDA', 'patricia.garcia@interactivo.com.co', 'activo');
 /*!40000 ALTER TABLE `re_usuarios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.re_usuario_perfil
@@ -10471,7 +10491,7 @@ INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(5, 5, 3);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
-	(6, 6, 5);
+	(6, 6, 6);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(7, 7, 5);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
@@ -10485,7 +10505,7 @@ INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(12, 12, 3);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
-	(13, 13, 3);
+	(13, 13, 6);
 /*!40000 ALTER TABLE `re_usuario_perfil` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
