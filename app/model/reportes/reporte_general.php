@@ -38,8 +38,7 @@ $query .= "LEFT JOIN ca_solucion AS g ON b.solucion = g.id ";
 $query .= "LEFT JOIN ca_audio AS h ON b.fallas_audio = h.id ";
 $query .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = '1' AND a.fecha_monitoreo BETWEEN '".$_GET['desde_general']."' AND '".$_GET['hasta_general']."' ";
 $query .= "ORDER BY a.id; ";
-$result = $db->query($query);
-?>
+$result = $db->query($query); ?>
 <table border="1">
 	<thead>
 		<?php
