@@ -15,7 +15,7 @@ $(function(){
 			$.each(data, function(i, row){
 				var i=i+1;
 				html += '<div class="col-lg-3 text-center">';
-				html += '<div class="small-box bg-blue" onclick="javascript: pageContent(\'analista/plan_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+row.id+'\');" style="cursor:pointer; height: 150px;">';
+				html += '<div class="small-box bg-blue" onclick="javascript: pageContent(\'\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+row.id+'\');" style="cursor:pointer; height: 150px;">';
 				html += '<div class="inner">';
 				html += '<h2>'+i+'</h2>';
 				html += '<p><b>'+row.campana.toUpperCase()+'</b></p>';
