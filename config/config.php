@@ -1,26 +1,26 @@
 <?php
-define('URL_ACCESS', 'http://192.168.100.143/calidad');
+define('URL_ACCESS', 'http://localhost/calidad');
 //Motor de la base de datos
 define('MOTOR_DB', 'mysql');
 //Host de la base de datos
 define('HOST_DB', 'localhost');
 //Usuario de la base de datos
 define('USER_DB', 'root');
-//ContraseÃ±a de base de datos
-define('PASS_DB', '1nt3r4ct1v02017*');
+//Contraseña de base de datos
+define('PASS_DB', '12345');
 //Nombre de la base de datos
 define('DATABASE', 'calidad');
 //Cotejamiento de caracteres
 define('CHARSET', 'utf8');
 //Host de correo
 define('HOST_EMAIL', 'correo.interactivo.com.co');
-//AutenticaciÃ³n por SMTP
+//Autenticación por SMTP
 define('SMTP_AUTH', true);
-//Correo electrÃ³nico
+//Correo electrónico
 define('USER_EMAIL', 'aplicativo.calidad@interactivo.com.co');
-//Usuario correo electrÃ³nico
+//Usuario correo electrónico
 define('PASS_EMAIL', '1Nt3r4ct1v0');
-//Puerto salida correo electrÃ³nico
+//Puerto salida correo electrónico
 define('PORT_EMAIL', 25);
 //Nombre de propietario email
 define('NAME_EMAIL', 'Aplicativo Calidad');
