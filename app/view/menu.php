@@ -1,4 +1,3 @@
-<!-- sidebar menu: : style can be found in sidebar.less -->
 <ul class="sidebar-menu">
     <li class="header">MENU PRINCIPAL</li>
     <li class="active treeview">
@@ -34,6 +33,7 @@
             <?php } ?>
             <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2'){ ?>
                 <li><a href="#" onclick="javascript: pageContent('administrador/reportes/index');"><i class="glyphicon glyphicon-list-alt"></i> Reportes</a></li>
+                <li><a href="#" onclick="javascript: pageContent('administrador/agenda/index');"><i class="glyphicon glyphicon-calendar"></i> Agenda</a></li>
             <?php } ?>
         </ul>
     </li>

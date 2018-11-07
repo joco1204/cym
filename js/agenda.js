@@ -1,30 +1,33 @@
 $(function(){
 	$.ajax({
 		type: 'post', 
-		url: '../controller/ctrcampanas.php',
+		url: '../controller/ctrempresas.php',
 		data: {
-			action: 'campanas_analista',
-			id_empresa: $('#id_empresa').val(),
+			action: 'empresa_analista',
 		},
 		dataType: 'json'
 	}).done(function(result){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
 			var html = "";
+
 			html += '<div class="row text-center">';
 			$.each(data, function(i, row){
 				var i=i+1;
 				html += '<div class="col-lg-3 text-center">';
-				html += '<div class="small-box bg-blue" onclick="javascript: pageContent(\'analista/plan_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+row.id+'\');" style="cursor:pointer; height: 150px;">';
+				html += '<div class="small-box bg-blue" onclick="javascript: pageContent(\'administrador/agenda/agenda_campana\',  \'id_empresa='+row.id+'&empresa='+row.empresa+'\');" style="cursor:pointer; height: 250px;">';
 				html += '<div class="inner">';
 				html += '<h2>'+i+'</h2>';
-				html += '<p><b>'+row.campana.toUpperCase()+'</b></p>';
+				html += '<p><b>'+row.empresa.toUpperCase()+'</b></p>';
+				if(row.imagen != ''){
+					html += '<center><img src="'+row.imagen+'" class="img-responsive img-rounded" alt="'+row.empresa+'" style="width: 130px; height: 130px;"></center>';
+				}
 				html += '</div>';
 				html += '</div>';
 				html += '</div>';
 				if(i%4 == 0){
 					html += '</div><div class="row">';
-				}
+				}			
 			});
 			html += '</div>';
 			$('#container_panel').html(html);
