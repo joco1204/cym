@@ -1,5 +1,5 @@
 <?php
-define('URL_ACCESS', 'http://10.222.0.10/calidad');
+define('URL_ACCESS', 'http://localhost/calidad');
 //Motor de la base de datos
 define('MOTOR_DB', 'mysql');
 //Host de la base de datos
@@ -7,7 +7,7 @@ define('HOST_DB', 'localhost');
 //Usuario de la base de datos
 define('USER_DB', 'root');
 //Contraseña de base de datos
-define('PASS_DB', '12345');
+define('PASS_DB', '');
 //Nombre de la base de datos
 define('DATABASE', 'calidad');
 //Cotejamiento de caracteres
