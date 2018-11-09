@@ -44,7 +44,7 @@ if(isset($post->action)){
 		break;
 	}
 } else {
-	$business->return->bolean = false;
+	$business->return->bool = false;
 	$business->return->msg = 'Acción No Encontrada';		
 }
 echo json_encode((array) $business->return);

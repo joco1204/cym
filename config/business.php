@@ -17,6 +17,7 @@ include '../../'.PATH_MODEL.'/asesor.php';
 include '../../'.PATH_MODEL.'/planmonitoreo.php';
 include '../../'.PATH_MODEL.'/agendamonitoreo.php';
 include '../../'.PATH_MODEL.'/monitoreo.php';
+include '../../'.PATH_MODEL.'/validacion.php';
 
 //Business class
 class Business{
