@@ -187,15 +187,15 @@ class Validacion{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayData = array();
-			$query  = "SELECT a.id as id,b.estado as estado,a.fecha_venta as fecha_venta,a.fecha_validacion as fecha_validacion,j.agent_matriz as agent_matriz,concat (k.nombres,' ',k.apellidos) as nombre_asesor,a.cedula_cliente as cedula_cliente,d.tipo_servicio as tipo_servicio,c.motivo as motivo,e.usuario as usuario,a.observaciones as observaciones "; 
+			$query  = "SELECT a.id, b.estado, a.fecha_venta, a.fecha_validacion, j.agent_matriz, concat(k.nombres,' ',k.apellidos) as nombre_asesor, a.cedula_cliente, d.tipo_servicio, c.motivo, e.usuario, a.observaciones "; 
 			$query .= "FROM va_validador as a "; 
-			$query .= "LEFT JOIN va_estado as b ON a.id_estado=b.id "; 
-			$query .= "LEFT JOIN va_motivo_principal as c ON  a.id_estado=c.id "; 
-			$query .= "LEFT JOIN va_tipo_servicio as d ON  a.id_estado=d.id ";
-			$query .= "LEFT JOIN re_usuarios as e ON a.id_validador=e.id ";
-			$query .= "LEFT JOIN va_usuarios_agent as j ON a.id_asesor=j.id ";
-			$query .= "LEFT JOIN ca_asesores as k ON j.id_asesor=k.id ";
-			$query .= "where a.id= '".$data->id_declinada."';";
+			$query .= "INNER JOIN va_estado as b ON a.id_estado=b.id "; 
+			$query .= "INNER JOIN va_motivo_principal as c ON  a.id_estado=c.id "; 
+			$query .= "INNER JOIN va_tipo_servicio as d ON  a.id_estado=d.id ";
+			$query .= "INNER JOIN re_usuarios as e ON a.id_validador=e.id ";
+			$query .= "INNER JOIN va_usuarios_agent as j ON a.id_asesor=j.id ";
+			$query .= "INNER JOIN ca_asesores as k ON j.id_asesor=k.id ";
+			$query .= "WHERE a.id= '".$data->id_declinada."'; ";
 			$result = $conn->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){

@@ -15,11 +15,14 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
 
 <section class="content">
     <div class='box box-primary'>
+        <div class='box-header with-border'>
+            <h3 class='box-title'>VENTAS DECLINADAS</h3>
+        </div>
         <div class='box-body'>
             <section class='content'>
                 <form id="validacion_form" role="form" autocomplete="off">
                     <div class="row">                        
-                        <div class="col-lg-10  col-lg-offset-1 text-center">
+                        <div class="col-lg-10  col-lg-offset-1">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <b>
@@ -37,11 +40,10 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-
                                             <div class="form-group has-feedback">
                                                 <span class="input-group-text"><label for="fecha_venta">Fecha venta:</label></span>
                                                 <div class="input-group date fecha_venta" data-provide="datepicker" data-date-format="yyyy-mm-dd">
-                                                    <input type="text" name="fecha_venta" id="fecha_venta" class="form-control" value="" required="" placeholder="aaaa-mm-dd">
+                                                    <input type="text" name="fecha_venta" id="fecha_venta" class="form-control" required="" placeholder="aaaa-mm-dd" value="<?php echo date('Y-m-d'); ?>">
                                                     <div class="input-group-addon">
                                                         <span class="glyphicon glyphicon-th"></span>
                                                     </div>
