@@ -33,6 +33,10 @@ if(isset($post->action)){
 			$result = $validacion->guardar_validacion($post);
 			$business->return = $result;
 		break;
+		case 'vista_validacion':
+			$result = $validacion->vista_validacion($post);
+			$business->return = $result;
+		break;
 	}
 
 }else{

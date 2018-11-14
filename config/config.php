@@ -1,5 +1,5 @@
 <?php
-define('URL_ACCESS', 'http://localhost/calidad');
+define('URL_ACCESS', 'http://localhost/calidad/');
 //Motor de la base de datos
 define('MOTOR_DB', 'mysql');
 //Host de la base de datos

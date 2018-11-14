@@ -14,7 +14,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
 </section>
 
 <section class="content">
-    <div class='box box-success'>
+    <div class='box box-primary'>
         <div class='box-body'>
             <section class='content'>
                 <form id="validacion_form" role="form" autocomplete="off">
@@ -32,7 +32,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                             <div class="form-group">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><label for="Estado">Estado:</label></span>
-                                                    <select name="estado" id="estado" class="form-control"></select>
+                                                    <select name="estado" id="estado" class="form-control" required=""></select>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                         <div class="col-md-6">
                                             <div class="form-group has-feedback">
                                                     <span class="input-group-text"><label for="agent_asesor">Agent Asesor:</label></span>
-                                                    <select name="agent_asesor" id="agent_asesor" class="form-control"></select>
+                                                    <select name="agent_asesor" id="agent_asesor" class="form-control" required=""></select>
                                             </div>                                                
                                         </div>
                                     </div>
@@ -76,16 +76,16 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                                 <div class="form-group">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text"><label for="nombre_agent">Nombre Asesor:</label></span>
-                                                        <input type="text" class="form-control" name="nombre_asesor" id="nombre_asesor" placeholder="Nombre Asesor" readonly="">
+                                                        <input type="text" class="form-control" name="nombre_asesor" id="nombre_asesor" placeholder="Nombre Asesor" readonly="" required="">
                                                         <input type="hidden"  name="id_asesor" id="id_asesor">
                                                     </div>                                                
                                                 </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <div class="orm-group has-feedback">
+                                                <div class="form-group has-feedback">
                                                     <span class="input-group-text"><label for="cedula">Cedula o ID Cliente:</label></span>
-                                                    <input type="text-center" class="form-control" name="cedula" id="cedula" placeholder="Cedula o ID Cliente">
+                                                    <input type="text-center" class="form-control" name="cedula" id="cedula" placeholder="Cedula o ID Cliente" required="">
                                                 </div>                                                
                                             </div>
                                         </div>
@@ -95,7 +95,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                             <div class="form-group">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><label for="tipo_servicio">Tipo De Servicio:</label></span>
-                                                    <select name="tipo_servicio" id="tipo_servicio" class="form-control"></select>
+                                                    <select name="tipo_servicio" id="tipo_servicio" class="form-control" required=""></select>
                                                 </div>
                                             </div>
                                         </div>                                                 
@@ -103,7 +103,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                             <div class="form-group">
                                                 <div class="input-group-append">                                            
                                                 <span class="input-group-text"><label for="motivo_servicio">Motivo Principal:</label></span>
-                                                <select name="motivo_principal" id="motivo_principal" class="form-control"></select>
+                                                <select name="motivo_principal" id="motivo_principal" class="form-control" required=""></select>
                                                 </div>
                                             </div>
                                         </div>    
@@ -111,9 +111,9 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                     <div class="row">      
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <div class="orm-group has-feedback">
+                                                <div class="form-group has-feedback">
                                                     <span class="input-group-text"><label for="validador">Validador:</label></span>
-                                                    <select name="validador" id="validador" class="form-control"></select>
+                                                    <select name="validador" id="validador" class="form-control" required=""></select>
                                                 </div>
                                             </div>
                                         </div> 
@@ -123,7 +123,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                             <div class="form-group">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><label for="observaciones">Observaciones:</label></span>
-                                                    <textarea class="form-control" name="observaciones" id="observaciones"></textarea>
+                                                    <textarea class="form-control" name="observaciones" id="observaciones" required=""></textarea>
                                                 </div>                                                
                                             </div>
                                         </div>            
