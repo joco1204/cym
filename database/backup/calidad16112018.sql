@@ -6912,13 +6912,6 @@ CREATE TABLE IF NOT EXISTS `va_validador` (
 
 -- Volcando datos para la tabla calidad.va_validador: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `va_validador` DISABLE KEYS */;
-INSERT INTO `va_validador` (`id`, `id_estado`, `fecha_venta`, `fecha_validacion`, `id_asesor`, `cedula_cliente`, `id_tipo_servicio`, `id_motivo`, `id_validador`, `observaciones`, `fecha_ingreso`, `fecha_actualizacion`) VALUES
-	(1, 1, '2018-11-14', '2018-11-21', 3, '11111111111', 2, 3, 16, 'wewewqeqwewqe', '2018-11-14 10:48:08', '2018-11-14 10:48:08'),
-	(2, 1, '2018-11-14', '2018-11-17', 4, '12312312', 1, 3, 16, 'dasdasdasdasdasdas', '2018-11-14 11:26:41', '2018-11-14 11:26:41'),
-	(3, 1, '2018-11-14', '2018-11-29', 4, '123132123', 3, 3, 19, 'dqweqw2e3q12we3qwe1', '2018-11-14 11:38:02', '2018-11-14 11:38:02'),
-	(4, 1, '2018-11-14', '2018-11-23', 3, '55555555555', 3, 3, 17, '2123333333333333333333333333333333333333333333333333333333333333333333', '2018-11-14 14:47:10', '2018-11-14 14:47:10'),
-	(5, 1, '2018-11-14', '2018-11-29', 10, '12132123123', 4, 2, 19, '6565+656+5+', '2018-11-14 15:20:08', '2018-11-14 15:20:08'),
-	(6, 1, '2018-11-16', '2018-11-28', 4, '15999999', 5, 3, 18, 'Pruebas', '2018-11-16 08:42:04', '2018-11-16 08:42:04');
 /*!40000 ALTER TABLE `va_validador` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

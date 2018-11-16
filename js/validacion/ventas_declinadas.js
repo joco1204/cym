@@ -3,7 +3,7 @@ $(function(){
 	//Ajax tabla matrices
 	$.ajax({
 		type: 'post',
-		url: '../controller/ctrmatriz.php',
+		url: '../controller/ctrvalidacion.php',
 		data: {
 			action: 'tabla_declinadas',
 		},
@@ -26,15 +26,24 @@ $(function(){
 			html += '<tbody>';
 			$.each(data, function(i, row){
 				html += '<tr>';
-				html += '<td></td>';
-				html += '<td></td>';
-				html += '<td></td>';
-				html += '<td></td>';
-				html += '<td></td>';
-				html += '<td></td>';
+				html += '<td>'+row.id+'</td>';
+				html += '<td>'+row.tipo_servicio+'</td>';
+				html += '<td>'+row.agent+'</td>';
+				html += '<td>'+row.fecha_validacion+'</td>';
+				html += '<td>'+row.estado+'</td>';
+				html += '<td>';
+				html += '<button type="button" class="btn btn-primary btn-sm" title="Ver" onclick="javascript: pageContent(\'validacion/consultar_declinadas/consultar_declinadas\',\'id_declinada='+row.id+'\');">';
+				html += '<span class="glyphicon glyphicon-eye-open"></span>';
+				html += '</button>';
+				html += ' ';
+				html += '<button type="button" class="btn btn-primary btn-sm" title="Modificar" onclick="javascript: pageContent(\'validacion/agregar_declinadas/\',\'id_declinada='+row.id+'\');">';
+				html += '<span class="glyphicon glyphicon-pencil"></span>';
+				html += '</button>';					
+				html += '</td>';
 				html += '</tr>';
 			});
 			html += '</tbody>';
+			html += '<tfoot>';
 			html += '<tr>';
 			html += '<th>ID VALIDACIÓN</th>';
 			html += '<th>SERVICIO</th>';

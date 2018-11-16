@@ -214,6 +214,39 @@ class Validacion{
 		return $this->business->return;
 	}
 
+	public function tabla_declinadas(){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayData = array();
+			$query  = "SELECT a.id, d.tipo_servicio, concat (j.agent_matriz,' - ',k.nombres,' ',k.apellidos) as agent, a.fecha_validacion, b.estado "; 
+			$query .= "FROM va_validador as a "; 
+			$query .= "INNER JOIN va_estado as b ON a.id_estado=b.id "; 
+			$query .= "INNER JOIN va_motivo_principal as c ON  a.id_estado=c.id "; 
+			$query .= "INNER JOIN va_tipo_servicio as d ON  a.id_tipo_servicio=d.id ";
+			$query .= "INNER JOIN re_usuarios as e ON a.id_validador=e.id ";
+			$query .= "INNER JOIN va_usuarios_agent as j ON a.id_asesor=j.id ";
+			$query .= "INNER JOIN ca_asesores as k ON j.id_asesor=k.id ";
+			$query .= "WHERE a.id_estado='1'; ";
+			$result = $conn->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 
 
 

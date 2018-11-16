@@ -37,6 +37,10 @@ if(isset($post->action)){
 			$result = $validacion->vista_validacion($post);
 			$business->return = $result;
 		break;
+		case 'tabla_declinadas':
+			$result = $validacion->tabla_declinadas();
+			$business->return = $result;
+		break;
 	}
 
 }else{
