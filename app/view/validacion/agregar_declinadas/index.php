@@ -14,7 +14,6 @@ isset($get->id_declinada) ? $id_declinada = $get->id_declinada : $id_declinada =
 <section class="content-header">
     <h1>AGREGAR DECLINADAS</h1>
 </section>
-
 <section class="content">
     <div class='box box-primary'>        
             <div class='box-header with-border'>
@@ -23,12 +22,20 @@ isset($get->id_declinada) ? $id_declinada = $get->id_declinada : $id_declinada =
             <div class='box-body'>
                 <section class='content'>
                     <form id="validacion_form" role="form" autocomplete="off">
+                        <?php if($id_declinada != '0'){ ?>
+                            <input type="hidden" name="id_declinada" id="id_declinada" value="<?php echo $id_declinada; ?>">
+                        <?php } ?>
                         <div class="row">                        
                             <div class="col-lg-10  col-lg-offset-1">
                                 <div class="panel panel-primary">                                    
                                         <div class="panel-heading">
                                             <b>
-                                                FORMULARIO DECLINADAS
+                                                <?php if($id_declinada == '0'){ ?>
+                                                    FORMULARIO DECLINADAS
+                                                <?php } else { ?>
+                                                    MODIFICAR VENTA DECLINADA
+                                                <?php } ?>
+                                                
                                             </b>
                                         </div>                                    
                                     <div class="panel-body">
@@ -77,13 +84,13 @@ isset($get->id_declinada) ? $id_declinada = $get->id_declinada : $id_declinada =
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">   
-                                                    <div class="form-group">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text"><label for="nombre_agent">Nombre Asesor:</label></span>
-                                                            <input type="text" class="form-control" name="nombre_asesor" id="nombre_asesor" placeholder="Nombre Asesor" readonly="" required="">
-                                                            <input type="hidden"  name="id_asesor" id="id_asesor">
-                                                        </div>                                                
-                                                    </div>
+                                                <div class="form-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text"><label for="nombre_agent">Nombre Asesor:</label></span>
+                                                        <input type="text" class="form-control" name="nombre_asesor" id="nombre_asesor" placeholder="Nombre Asesor" readonly="" required="">
+                                                        <input type="hidden"  name="id_asesor" id="id_asesor">
+                                                    </div>                                                
+                                                </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -135,8 +142,12 @@ isset($get->id_declinada) ? $id_declinada = $get->id_declinada : $id_declinada =
                                        <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <div class="input-group-append">                                                        
-                                                        <input type="hidden" name="action" id="action">                                      
+                                                    <div class="input-group-append">
+                                                        <?php if($id_declinada == '0'){ ?>
+                                                            <input type="hidden" name="action" id="action" value="guardar_validacion">
+                                                        <?php } else { ?>
+                                                            <input type="hidden" name="action" id="action" value="modificar_validacion">
+                                                        <?php } ?>                                                 
                                                         <button type="submit" class="btn btn-primary">Guardar</button>                    
                                                     </div>
                                                  </div>
@@ -151,10 +162,14 @@ isset($get->id_declinada) ? $id_declinada = $get->id_declinada : $id_declinada =
             </div>
         </div>
     </section>    
-                       
-<script src="../../js/validacion/agregar_validacion.js"></script>   
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("select").select2();
-        });
-    </script>
+<?php if($id_declinada == '0'){ ?>
+    <script src="../../js/validacion/agregar_validacion.js"></script>
+<?php } else { ?>
+    <script src="../../js/validacion/modificar_validacion.js"></script>
+<?php } ?>
+    
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select").select2();
+    });
+</script>

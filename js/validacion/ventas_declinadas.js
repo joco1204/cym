@@ -36,7 +36,7 @@ $(function(){
 				html += '<span class="glyphicon glyphicon-eye-open"></span>';
 				html += '</button>';
 				html += ' ';
-				html += '<button type="button" class="btn btn-primary btn-sm" title="Modificar" onclick="javascript: pageContent(\'validacion/agregar_declinadas/\',\'id_declinada='+row.id+'\');">';
+				html += '<button type="button" class="btn btn-success btn-sm" title="Modificar" onclick="javascript: pageContent(\'validacion/agregar_declinadas/index\',\'id_declinada='+row.id+'\');">';
 				html += '<span class="glyphicon glyphicon-pencil"></span>';
 				html += '</button>';					
 				html += '</td>';
