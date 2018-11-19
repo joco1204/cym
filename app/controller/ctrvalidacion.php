@@ -41,6 +41,10 @@ if(isset($post->action)){
 			$result = $validacion->tabla_declinadas();
 			$business->return = $result;
 		break;
+		case 'modificar_validacion':
+			$result = $validacion->modificar_validacion($post);
+			$business->return = $result;
+		break;
 	}
 
 }else{

@@ -187,7 +187,7 @@ class Validacion{
 		//Valida conexión a base de datos
 		if($conn){
 			$arrayData = array();
-			$query  = "SELECT a.id, b.estado, a.fecha_venta, a.fecha_validacion, j.agent_matriz, concat(k.nombres,' ',k.apellidos) as nombre_asesor, a.cedula_cliente, d.tipo_servicio, c.motivo, e.usuario, a.observaciones "; 
+			$query  = "SELECT a.id, b.id as id_estado, b.estado, a.fecha_venta, a.fecha_validacion, j.id as id_agent, j.agent_matriz, concat(k.nombres,' ',k.apellidos) as nombre_asesor, a.cedula_cliente, d.id as id_tipo_servicio, d.tipo_servicio, c.id as id_motivo, c.motivo, e.id as id_usuario, e.usuario, a.observaciones "; 
 			$query .= "FROM va_validador as a "; 
 			$query .= "INNER JOIN va_estado as b ON a.id_estado=b.id "; 
 			$query .= "INNER JOIN va_motivo_principal as c ON  a.id_estado=c.id "; 
@@ -236,6 +236,27 @@ class Validacion{
 				}
 				$this->business->return->bool = true;
 				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function modificar_validacion($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){ 
+			$query  = "UPDATE va_validador SET id_estado = '".$data->estado."' WHERE id = '".$data->id_declinada."';";
+			$result = $conn->query($query);
+			if($result){
+				$this->business->return->bool = true;
+				$this->business->return->msg = "Actualizado";
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';
