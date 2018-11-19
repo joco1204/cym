@@ -12,6 +12,18 @@ define('PASS_DB', '12345');
 define('DATABASE', 'calidad');
 //Cotejamiento de caracteres
 define('CHARSET', 'utf8');
+//Respuesta valor por defecto
+define('MENSSAGE_BOOL', false);
+//Mensaje por defecto
+define('MENSSAGE_DEFAULT', 'Respuesta no ha sido asignada');
+//Raiz de vistas
+define('PATH_VIEW', 'app/view');
+//Raiz de modelos
+define('PATH_MODEL', 'app/model');
+//Raiz de controladores
+define('PATH_CONTROLLER', 'app/controller');
+//Envío de email
+define('SEND_EMAIL', true);
 //Host de correo
 define('HOST_EMAIL', 'correo.interactivo.com.co');
 //Autenticación por SMTP
@@ -24,14 +36,4 @@ define('PASS_EMAIL', '1Nt3r4ct1v0');
 define('PORT_EMAIL', 25);
 //Nombre de propietario email
 define('NAME_EMAIL', 'Aplicativo Calidad');
-//Respuesta valor por defecto
-define('MENSSAGE_BOOL', false);
-//Mensaje por defecto
-define('MENSSAGE_DEFAULT', 'Respuesta no ha sido asignada');
-//Raiz de vistas
-define('PATH_VIEW', 'app/view');
-//Raiz de modelos
-define('PATH_MODEL', 'app/model');
-//Raiz de controladores
-define('PATH_CONTROLLER', 'app/controller');
 ?>
