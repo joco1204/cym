@@ -129,7 +129,6 @@ $(function(){
 
 	$('#validacion_form').submit(function(e){
 		e.preventDefault();
-		$('#action').val('guardar_validacion');
 		var data=$(this).serialize();
 		$.ajax({
 			type:'post',
