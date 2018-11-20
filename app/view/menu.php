@@ -62,4 +62,10 @@
             </a>
         </li>
     <?php } ?>
+    <li class="treeview">
+        <a href="#" onclick="javascript: pageContent('asesor/asesor');">
+            <i class="glyphicon glyphicon-earphone"></i>
+            <span>ASESOR</span>
+        </a>
+    </li>
 </ul>

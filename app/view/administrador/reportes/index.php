@@ -65,51 +65,47 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                             </div>
                         </div>
                     </div>
+                    <br>
                     <div class="col-md-2">
-                        <br>
                         <button type="button" class="btn btn-success text-center" id="descargar_general">Descargar</button>
                     </div>
                 </div>
                 <hr>
-                <div class='box-body'>
-                    <section class='content'>
-                         <div class="row">
-                            <div class="col-md-3" align="left">                    
-                                <lu>
-                                    <li>
-                                        <b>REPORTE VENTAS DECLINADAS:</b>
-                                    </li>
-                                </lu>                            
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group has-feedback">
-                                    <label for="desde_declinada" class="control-label">Desde:</label>
-                                    <div class="input-group date fecha_general" data-provide="datepicker" data-date-format="yyyy-mm-dd">
-                                        <input type="text" name="desde_declinada" id="desde_declinada" class="form-control" value="<?= date('Y-m-d'); ?>">
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-th"></span>
-                                        </div>
-                                    </div>
+                 <div class="row">
+                    <div class="col-md-6">
+                        <lu>
+                            <li>
+                                <b>REPORTE VENTAS DECLINADAS:</b>
+                            </li>
+                        </lu>                            
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group has-feedback">
+                            <label for="desde_declinada" class="control-label">Desde:</label>
+                            <div class="input-group date fecha_general" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                                <input type="text" name="desde_declinada" id="desde_declinada" class="form-control" value="<?= date('Y-m-d'); ?>">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group has-feedback">
-                                    <label for="hasta_declinada" class="control-label">Hasta:</label>
-                                        <div class="input-group date fecha_general" data-provide="datepicker" data-date-format="yyyy-mm-dd">
-                                             <input type="text" name="hasta_declinada" id="hasta_declinada" class="form-control" value="<?= date('Y-m-d'); ?>">
-                                            <div class="input-group-addon">
-                                                <span class="glyphicon glyphicon-th"></span>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <br>
-                                <button type="button" class="btn btn-success text-center" id="descargar_declinada">Descargar</button>
                             </div>
                         </div>
-                    </section>
-                </div>            
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group has-feedback">
+                            <label for="hasta_declinada" class="control-label">Hasta:</label>
+                            <div class="input-group date fecha_general" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                                 <input type="text" name="hasta_declinada" id="hasta_declinada" class="form-control" value="<?= date('Y-m-d'); ?>">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-success text-center" id="descargar_declinada">Descargar</button>
+                    </div>
+                </div>
             </section>
         </div>
     </div>

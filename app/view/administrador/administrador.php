@@ -9,7 +9,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
 }
 ?>
 <section class="content-header">
-    <h1>ADMINISTRADOR</h1>
+    <h1><b>ADMINISTRADOR</b></h1>
 </section>
 <section class="content">
     <!-- Small boxes (Stat box) -->
