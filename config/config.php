@@ -7,7 +7,7 @@ define('HOST_DB', 'localhost');
 //Usuario de la base de datos
 define('USER_DB', 'root');
 //Contraseña de base de datos
-define('PASS_DB', '');
+define('PASS_DB', '12345');
 //Nombre de la base de datos
 define('DATABASE', 'calidad');
 //Cotejamiento de caracteres

@@ -49,43 +49,62 @@ isset($get->id_declinada) ? $id_declinada = $get->id_declinada : $id_declinada =
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group has-feedback">
-                                                    <span class="input-group-text"><label for="fecha_venta">Fecha venta:</label></span>
-                                                    <div class="input-group date fecha_venta" data-provide="datepicker" data-date-format="yyyy-mm-dd">
-                                                        <input type="text" name="fecha_venta" id="fecha_venta" class="form-control" required="" placeholder="aaaa-mm-dd" value="<?php echo date('Y-m-d'); ?>">
-                                                        <div class="input-group-addon">
-                                                            <span class="glyphicon glyphicon-th"></span>
+                                                <?php if($id_declinada == '0'){ ?>
+                                                    <div class="form-group has-feedback">
+                                                        <span class="input-group-text"><label for="fecha_venta">Fecha venta:</label></span>
+                                                        <div class="input-group date fecha_venta" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                                                            <input type="text" name="fecha_venta" id="fecha_venta" class="form-control" required="" placeholder="aaaa-mm-dd" value="<?php echo date('Y-m-d'); ?>">
+                                                            <div class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-th"></span>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-
+                                                <?php } else { ?>
+                                                    <div class="form-group">
+                                                        <div class="form-group has-feedback">
+                                                            <span class="input-group-text"><label for="fecha_venta">Fecha venta:</label></span>
+                                                            <input type="text" name="fecha_venta" id="fecha_venta" class="form-control" placeholder="aaaa-mm-dd">
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">                                    
-                                                <div class="form-group">
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text"><label for="fecha_validacion">Fecha De Validación:</label></span>
-                                                        <div class="input-group date fecha_validacion" data-provide="datepicker" data-date-format="yyyy-mm-dd">
-                                                          <input type="text" name="fecha_validacion" id="fecha_validacion" class="form-control" value="" required="" placeholder="aaaa-mm-dd">
-                                                            <div class="input-group-addon">
-                                                                <span class="glyphicon glyphicon-th"></span>
-                                                            </div>  
+                                                <?php if($id_declinada == '0'){ ?>
+                                                    <div class="form-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><label for="fecha_validacion">Fecha De Validación:</label></span>
+                                                            <div class="input-group date fecha_validacion" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                                                              <input type="text" name="fecha_validacion" id="fecha_validacion" class="form-control" value="" required="" placeholder="aaaa-mm-dd">
+                                                                <div class="input-group-addon">
+                                                                    <span class="glyphicon glyphicon-th"></span>
+                                                                </div>  
+                                                            </div>
+                                                        </div>
+                                                     </div>
+                                                <?php } else { ?>
+                                                    <div class="form-group">
+                                                        <div class="form-group has-feedback">
+                                                            <span class="input-group-text"><label for="fecha_validacion">Fecha De Validación:</label></span>
+                                                            <input type="text" name="fecha_validacion" id="fecha_validacion" class="form-control" placeholder="aaaa-mm-dd">
                                                         </div>
                                                     </div>
-                                                 </div> 
+                                                <?php } ?>
                                             </div>        
                                             <div class="col-md-6">
-                                                <div class="form-group has-feedback">
+                                                <div class="form-group">
+                                                    <div class="form-group has-feedback">
                                                         <span class="input-group-text"><label for="agent_asesor">Agent Asesor:</label></span>
                                                         <select name="agent_asesor" id="agent_asesor" class="form-control" required=""></select>
-                                                </div>                                                
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">   
+                                            <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <div class="input-group-append">
+                                                    <div class="form-group has-feedback">
                                                         <span class="input-group-text"><label for="nombre_agent">Nombre Asesor:</label></span>
                                                         <input type="text" class="form-control" name="nombre_asesor" id="nombre_asesor" placeholder="Nombre Asesor" readonly="" required="">
                                                         <input type="hidden"  name="id_asesor" id="id_asesor">

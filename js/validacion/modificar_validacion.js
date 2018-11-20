@@ -63,8 +63,8 @@ $(function(){
 					}
 				});
 			});
-			$('#fecha_venta').prop("readonly", true );
-			$('#fecha_validacion').prop( "readonly", true );
+			$('#fecha_venta').attr("disabled", true);
+			$('#fecha_validacion').attr("disabled", true);
 			$('#agent_asesor').prop( "disabled", true );
 			$('#nombre_asesor').prop( "disabled", true );
 			$('#cedula').attr( "disabled", true );
@@ -72,6 +72,8 @@ $(function(){
 			$('#motivo_principal').prop( "disabled", true );
 			$('#validador').prop( "disabled", true );
 			$('#observaciones').attr( "disabled", true );
+			$('.input-group-addon').hide();
+
 
 		} else {
 			console.log('Error: '+result.msg);
