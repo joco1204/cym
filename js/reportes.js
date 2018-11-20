@@ -68,4 +68,13 @@ $(function(){
 					
 	});
 
+	$('#descargar_declinada').click(function(){
+		var desde_declinada = $('#desde_declinada').val();
+		var hasta_declinada = $('#hasta_declinada').val();		
+		if (desde_declinada > hasta_declinada){
+			swal("Atención!","La fecha inicial no puede ser mayor a la fecha final","warning");
+		} else {
+			window.location.href = "../model/reportes/reporte_declinada.php?desde_declinada="+desde_declinada+"&hasta_declinada="+hasta_declinada;
+		}					
+	});
 });
