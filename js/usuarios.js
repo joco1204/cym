@@ -140,7 +140,7 @@ $(function(){
 
 
 	$('#perfil').change(function(e){
-		if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6'){
+		if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6' || $(this).val() == '8'){
 			$('#empresa_campana').show();
 			$('#empresa').prop('disabled', false);
 			$('#campana').prop('disabled', false);
@@ -444,7 +444,7 @@ function modificar_usuario(id_usuario){
 				//CUando hay un campio en el perfil
 				$('#perfil_m').change(function(e){
 					//Cuando el perfil es de analista o lider
-					if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6'){
+					if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6' || $(this).val() == '8'){
 						$('#empresa_campana_m').show();
 						$('#empresa_m').prop('disabled', false);
 						$('#campana_m').prop('disabled', false);
