@@ -16,7 +16,7 @@
             </div>
         </div> 
     </div>
-    <hr>
+    <!--<hr>
     <div class="row">
         <div class="col-md-3">
             <div class="form-group">
@@ -88,7 +88,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 </section>
 <script type="text/javascript">
     //Reporte general
