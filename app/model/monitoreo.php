@@ -343,7 +343,7 @@ class Monitoreo{
 			$result = $conn->query($query);
 			if($result){
 				while ($row = $result->fetch(PDO::FETCH_OBJ)){
-					$row->analista = utf8_decode($row->analista);
+					$row->analista = $row->analista;
 					array_push($arrayData, $row);
 				}
 				$this->business->return->bool = true;
