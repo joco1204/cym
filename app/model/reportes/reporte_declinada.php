@@ -52,17 +52,17 @@ $result = $db->query($query); ?>
 	<tbody>
 		<?php  while($row = $result->fetch(PDO::FETCH_OBJ)){
 			echo "<tr>";
-			echo "<td>".utf8_decode($row->id)."</td>";
-			echo "<td>".utf8_decode($row->estado)."</td>";
-			echo "<td>".utf8_decode($row->fecha_venta)."</td>";
-			echo "<td>".utf8_decode($row->fecha_validacion)."</td>";
-			echo "<td>".utf8_decode($row->agent_matriz)."</td>";
-			echo "<td>".utf8_decode($row->nombre_asesor)."</td>";
-			echo "<td>".utf8_decode($row->cedula_cliente)."</td>";
-			echo "<td>".utf8_decode($row->tipo_servicio)."</td>";
-			echo "<td>".utf8_decode($row->motivo)."</td>";
-			echo "<td>".utf8_decode($row->observaciones)."</td>";
-			echo "<td>".utf8_decode($row->usuario)."</td>";			
+			echo "<td>".$row->id."</td>";
+			echo "<td>".$row->estado."</td>";
+			echo "<td>".$row->fecha_venta."</td>";
+			echo "<td>".$row->fecha_validacion."</td>";
+			echo "<td>".$row->agent_matriz."</td>";
+			echo "<td>".$row->nombre_asesor."</td>";
+			echo "<td>".$row->cedula_cliente."</td>";
+			echo "<td>".$row->tipo_servicio."</td>";
+			echo "<td>".$row->motivo."</td>";
+			echo "<td>".$row->observaciones."</td>";
+			echo "<td>".$row->usuario."</td>";			
 			echo "</tr>";
 		} ?>
 	</tbody>

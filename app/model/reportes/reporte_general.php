@@ -10,7 +10,7 @@ $result_ec = $db->query($query_ec);
 $row_ec = $result_ec->fetch(PDO::FETCH_OBJ);
 //Header download file
 header("Content-type: application/vnd.ms-excel; charset=utf-8");
-header("Content-Disposition: attachment; filename=\"Reporte calidad monitoreo Empresa ".utf8_decode($row_ec->empresa).", Campaña ".utf8_decode($row_ec->campana)." desde el día ".$_GET['desde_general']." hasta el día ".$_GET['hasta_general'].".xls\"");
+header("Content-Disposition: attachment; filename=\"Reporte calidad monitoreo Empresa ".$row_ec->empresa.", Campaña ".$row_ec->campana." desde el día ".$_GET['desde_general']." hasta el día ".$_GET['hasta_general'].".xls\"");
 header("Expires: 0");
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 header("Pragma: public");
@@ -68,7 +68,7 @@ $result = $db->query($query); ?>
 				$queryh2 .= "ORDER BY a.id;";
 				$resulth2 = $db->query($queryh2);
 				while($rowh2 = $resulth2->fetch(PDO::FETCH_OBJ)){
-					echo "<th>".utf8_decode($rowh2->item)."</th>";
+					echo "<th>".$rowh2->item."</th>";
 					echo "<th>CALIFICACI&Oacute;N ID DE REGISTROS </th>";
 					echo "<th>PUNTO DE ENTRENAMIENTO</th>";
 				}
@@ -79,19 +79,19 @@ $result = $db->query($query); ?>
 	<tbody>
 		<?php  while($row = $result->fetch(PDO::FETCH_OBJ)){
 			echo "<tr>";
-			echo "<td>".utf8_decode($row->id_monitoreo)."</td>";
-			echo "<td>".utf8_decode($row->asesor)."</td>";
-			echo "<td>".utf8_decode($row->cedula)."</td>";
-			echo "<td>".utf8_decode($row->analista)."</td>";
-			echo "<td>".utf8_decode($row->fecha_llamada)."</td>";
-			echo "<td>".utf8_decode($row->hora_llamada)."</td>";
-			echo "<td>".utf8_decode($row->id_llamada)."</td>";
-			echo "<td>".utf8_decode($row->observacion)."</td>";
-			echo "<td>".utf8_decode($row->tipificacion)."</td>";
-			echo "<td>".utf8_decode($row->solucion)."</td>";
-			echo "<td>".utf8_decode($row->fallas_audio)."</td>";
-			echo "<td>".utf8_decode($row->fecha_registro)."</td>";
-			echo "<td>".utf8_decode($row->fecha_modificaicon)."</td>";
+			echo "<td>".$row->id_monitoreo."</td>";
+			echo "<td>".$row->asesor."</td>";
+			echo "<td>".$row->cedula."</td>";
+			echo "<td>".$row->analista."</td>";
+			echo "<td>".$row->fecha_llamada."</td>";
+			echo "<td>".$row->hora_llamada."</td>";
+			echo "<td>".$row->id_llamada."</td>";
+			echo "<td>".$row->observacion."</td>";
+			echo "<td>".$row->tipificacion."</td>";
+			echo "<td>".$row->solucion."</td>";
+			echo "<td>".$row->fallas_audio."</td>";
+			echo "<td>".$row->fecha_registro."</td>";
+			echo "<td>".$row->fecha_modificaicon."</td>";
 				$query_item  = 'SELECT ';
 				$query_item .= 'a.id AS id_detallado, ';
 				$query_item .= 'CASE ';
@@ -106,9 +106,9 @@ $result = $db->query($query); ?>
 				$query_item .= 'ORDER BY a.id_item; ';
 				$result_item = $db->query($query_item);
 				while($row_item = $result_item->fetch(PDO::FETCH_OBJ)){ 
-					echo "<td>".utf8_decode($row_item->valor_cumplimiento)."</td>";
-					echo "<td>".utf8_decode($row_item->porcentaje)."</td>";
-					echo "<td>".utf8_decode($row_item->punto_entrenamiento)."</td>";
+					echo "<td>".$row_item->valor_cumplimiento."</td>";
+					echo "<td>".$row_item->porcentaje."</td>";
+					echo "<td>".$row_item->punto_entrenamiento."</td>";
 				}
 			echo "</tr>";
 		} ?>
