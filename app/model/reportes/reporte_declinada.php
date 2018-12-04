@@ -31,39 +31,51 @@ $query .= "INNER JOIN ca_asesores as k ON j.id_asesor=k.id ";
 $query .= "WHERE a.fecha_venta BETWEEN '".$_GET['desde_declinada']."' AND '".$_GET['hasta_declinada']."' ";
 $query .= "ORDER BY a.id; ";
 $result = $db->query($query); ?>
-<table border="1">
-	<thead>
-		<?php
-			echo "<tr>";
-			echo "<th>ID</th>";
-			echo "<th>ESTADO</th>";
-			echo "<th>FECHA DE LA VENTA</th>";
-			echo "<th>FECHA DE VALIDACION</th>";
-			echo "<th>AGENT ASESOR</th>";
-			echo "<th>NOMBRE_ASESOR</th>";
-			echo "<th>CEDULA O ID ATENEA CLIENTE</th>";
-			echo "<th>TIPO DE SERVICIO</th>";
-			echo "<th>MOTIVO PRINCIPAL</th>";
-			echo "<th>OBSERVACIONES</th>";
-			echo "<th>VALIDADOR</th>";
-			echo "</tr>";
-		?>
-	</thead>
-	<tbody>
-		<?php  while($row = $result->fetch(PDO::FETCH_OBJ)){
-			echo "<tr>";
-			echo "<td>".$row->id."</td>";
-			echo "<td>".$row->estado."</td>";
-			echo "<td>".$row->fecha_venta."</td>";
-			echo "<td>".$row->fecha_validacion."</td>";
-			echo "<td>".$row->agent_matriz."</td>";
-			echo "<td>".$row->nombre_asesor."</td>";
-			echo "<td>".$row->cedula_cliente."</td>";
-			echo "<td>".$row->tipo_servicio."</td>";
-			echo "<td>".$row->motivo."</td>";
-			echo "<td>".$row->observaciones."</td>";
-			echo "<td>".$row->usuario."</td>";			
-			echo "</tr>";
-		} ?>
-	</tbody>
-</table>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="author" content="Interactivo Contact Center"/>
+        <meta name="description" content="Interactivo Contact Center"/>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>Calidad</title>
+    </head>
+    <body>
+		<table border="1">
+			<thead>
+				<?php
+					echo "<tr>";
+					echo "<th>ID</th>";
+					echo "<th>ESTADO</th>";
+					echo "<th>FECHA DE LA VENTA</th>";
+					echo "<th>FECHA DE VALIDACION</th>";
+					echo "<th>AGENT ASESOR</th>";
+					echo "<th>NOMBRE_ASESOR</th>";
+					echo "<th>CEDULA O ID ATENEA CLIENTE</th>";
+					echo "<th>TIPO DE SERVICIO</th>";
+					echo "<th>MOTIVO PRINCIPAL</th>";
+					echo "<th>OBSERVACIONES</th>";
+					echo "<th>VALIDADOR</th>";
+					echo "</tr>";
+				?>
+			</thead>
+			<tbody>
+				<?php  while($row = $result->fetch(PDO::FETCH_OBJ)){
+					echo "<tr>";
+					echo "<td>".$row->id."</td>";
+					echo "<td>".$row->estado."</td>";
+					echo "<td>".$row->fecha_venta."</td>";
+					echo "<td>".$row->fecha_validacion."</td>";
+					echo "<td>".$row->agent_matriz."</td>";
+					echo "<td>".$row->nombre_asesor."</td>";
+					echo "<td>".$row->cedula_cliente."</td>";
+					echo "<td>".$row->tipo_servicio."</td>";
+					echo "<td>".$row->motivo."</td>";
+					echo "<td>".$row->observaciones."</td>";
+					echo "<td>".$row->usuario."</td>";			
+					echo "</tr>";
+				} ?>
+			</tbody>
+		</table>
+	</body>
+</html>
