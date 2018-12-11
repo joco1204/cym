@@ -18,7 +18,7 @@ $(function(){
 					//Ajax building the session
 					$.ajax({
 						type: 'POST',
-						url: 'app/controller/ctrlogin2.php',
+						url: 'app/controller/ctrlogin.php',
 						data: {
 								action: 'session',
 								iduser: data.iduser,
