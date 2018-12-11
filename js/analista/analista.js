@@ -20,7 +20,7 @@ $(function(){
 					html += '<div class="info-box bg-blue" onclick="javascript: pageContent(\'analista/campanas\',  \'id_empresa='+row.id+'&empresa='+row.empresa+'\');" style="cursor:pointer;">';
 					html += '<span class="info-box-icon">';
 					if(row.imagen != ''){
-						html += '<center><img src="'+row.imagen+'" class="img-responsive img-rounded" alt="'+row.empresa+'"></center>';
+						html += '<center><img src="'+row.imagen+'" class="img-responsive" alt="'+row.empresa+'" style="width: 90px; height: 90px;"></center>';
 					}
 					html += '</span>';
 					html += '<div class="info-box-content">';
@@ -39,7 +39,7 @@ $(function(){
 						html += '<div class="info-box bg-blue" onclick="javascript: pageContent(\'analista/campanas\',  \'id_empresa='+row.id+'&empresa='+row.empresa+'\');" style="cursor:pointer;">';
 						html += '<span class="info-box-icon">';
 						if(row.imagen != ''){
-							html += '<center><img src="'+row.imagen+'" class="img-responsive img-rounded" alt="'+row.empresa+'"></center>';
+							html += '<center><img src="'+row.imagen+'" class="img-responsive" alt="'+row.empresa+'" style="width: 90px; height: 90px;"></center>';
 						}
 						html += '</span>';
 						html += '<div class="info-box-content">';

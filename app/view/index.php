@@ -3,10 +3,10 @@
         <header class="main-header">
             <a href="#" onclick="pageContent('contenido');" class="logo">
                 <span class="logo-mini">
-                    <b>C</b>
+                    <b><!-- Aqui va nombre y logo del aplicativo abreviado --></b>
                 </span>
                 <span class="logo-lg">
-                    <b>Calidad</b>
+                    <b><!-- Aqui va nombre y logo del aplicativo --></b>
                 </span>
             </a>
             <nav class="navbar navbar-static-top">
@@ -87,7 +87,7 @@
             <section class="sidebar">
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="../../img/logo_img.jpg" class="img-circle" alt="User Image" >
+                        <img src="../../img/logo_img.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
                         <p>
@@ -102,11 +102,7 @@
             </section>
         </aside>
         <div class="content-wrapper">
-            <section class="content-header">
-                <h1>
-                    <img src="../../img/logo.png" class="img-responsive" alt="Logo compañía" width="150px;" height="150px;">
-                </h1>
-            </section>
+            <section class="content-header"></section>
             <section class="content" id="contenido-index"></section>
         </div>
         <?php include '../../config/footer.php'; ?>
