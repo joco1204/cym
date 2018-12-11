@@ -15,31 +15,36 @@ $(function(){
 				var i=i+1;
 				var empresa = $('#empresa').val();
 				if(empresa == 0){
-					html += '<div class="col-lg-3 text-center">';
-					html += '<div class="small-box bg-blue" onclick="javascript: pageContent(\'analista/campanas\',  \'id_empresa='+row.id+'&empresa='+row.empresa+'\');" style="cursor:pointer; height: 250px;">';
-					html += '<div class="inner">';
-					html += '<h2>'+i+'</h2>';
-					html += '<p><b>'+row.empresa.toUpperCase()+'</b></p>';
+
+					html += '<div class="col-md-3">';
+					html += '<div class="info-box bg-blue" onclick="javascript: pageContent(\'analista/campanas\',  \'id_empresa='+row.id+'&empresa='+row.empresa+'\');" style="cursor:pointer;">';
+					html += '<span class="info-box-icon">';
 					if(row.imagen != ''){
-						html += '<center><img src="'+row.imagen+'" class="img-responsive img-rounded" alt="'+row.empresa+'" style="width: 130px; height: 130px;"></center>';
+						html += '<center><img src="'+row.imagen+'" class="img-responsive img-rounded" alt="'+row.empresa+'"></center>';
 					}
+					html += '</span>';
+					html += '<div class="info-box-content">';
+					html += '<center><p><b>'+row.empresa.toUpperCase()+'</b></p></center>';
+					html += '<span class="info-box-number"></span>';
 					html += '</div>';
 					html += '</div>';
 					html += '</div>';
-					if(i%4 == 0){
+					if(i%3 == 0){
 						html += '</div><div class="row">';
 					}
 				} else {
 					if(empresa == row.id){
 						$('#nombre_empresa').html(row.empresa.toUpperCase());
-						html += '<div class="col-lg-3 text-center">';
-						html += '<div class="small-box bg-blue" onclick="javascript: pageContent(\'analista/campanas\',  \'id_empresa='+row.id+'&empresa='+row.empresa+'\');" style="cursor:pointer; height: 250px;">';
-						html += '<div class="inner">';
-						html += '<h2>'+i+'</h2>';
-						html += '<p><b>'+row.empresa.toUpperCase()+'</b></p>';
+						html += '<div class="col-md-3">';
+						html += '<div class="info-box bg-blue" onclick="javascript: pageContent(\'analista/campanas\',  \'id_empresa='+row.id+'&empresa='+row.empresa+'\');" style="cursor:pointer;">';
+						html += '<span class="info-box-icon">';
 						if(row.imagen != ''){
-							html += '<center><img src="'+row.imagen+'" class="img-responsive img-rounded" alt="'+row.empresa+'" style="width: 130px; height: 130px;"></center>';
+							html += '<center><img src="'+row.imagen+'" class="img-responsive img-rounded" alt="'+row.empresa+'"></center>';
 						}
+						html += '</span>';
+						html += '<div class="info-box-content">';
+						html += '<center><p><b>'+row.empresa.toUpperCase()+'</b></p></center>';
+						html += '<span class="info-box-number"></span>';
 						html += '</div>';
 						html += '</div>';
 						html += '</div>';
