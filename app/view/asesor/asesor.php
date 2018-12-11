@@ -2,21 +2,6 @@
     <h1><b>ASESOR: </b></h1>
 </section>
 <section class="content">
-	<div class="row">
-        <div class="col-lg-3 col-xs-6">
-            <div class="small-box bg-blue">
-                <div class="inner">
-                    <h3>1</h3>
-                    <p>Consultar Declinadas</p>
-                </div>
-                <div class="icon">
-                    <i class=""></i>
-                </div>
-                <a href="#"  onclick="javascript: pageContent('validacion/consultar_declinadas/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div> 
-    </div>
-    <!--<hr>
     <div class="row">
         <div class="col-md-3">
             <div class="form-group">
@@ -88,7 +73,7 @@
 				</div>
 			</div>
 		</div>
-	</div>-->
+	</div>
 </section>
 <script type="text/javascript">
     //Reporte general

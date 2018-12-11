@@ -76,4 +76,5 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
         <!-- js globales -->
         <script src="../../js/business.js"></script>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini" onload="startTimeOut();" onkeypress="stopTimeOut();" onclick="stopTimeOut();">
+    <!--<body class="hold-transition skin-blue sidebar-mini" onload="startTimeOut();" onkeypress="stopTimeOut();" onclick="stopTimeOut();">-->
+    <body class="hold-transition skin-blue sidebar-mini">
