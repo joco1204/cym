@@ -34,6 +34,8 @@ $(function(){
 				
 				if(row.imagen != ''){
 					html += '<img src="'+row.imagen+'" class="img-fluid img-thumbnail" alt="'+row.empresa+'" style="width: 60px; height: 60px;">';
+				} else {
+					html += '<img src="../../img/logo.png" class="img-fluid img-thumbnail" alt="'+row.empresa+'" style="width: 60px; height: 60px;">';
 				}
 
 				html += '</td>';
