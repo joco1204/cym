@@ -33,7 +33,7 @@ $(function(){
 				html += '<td>';
 				
 				if(row.imagen != ''){
-					html += '<img src="'+row.imagen+'" class="img-fluid img-thumbnail" alt="'+row.empresa+'" style="width: 15px; height: 15px;">';
+					html += '<img src="'+row.imagen+'" class="img-fluid img-thumbnail" alt="'+row.empresa+'" style="width: 60px; height: 60px;">';
 				}
 
 				html += '</td>';

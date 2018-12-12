@@ -43,23 +43,53 @@
             </button>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Reporte General (Nov 2018)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body chart-responsive">
+
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <input type="text" class="knob" value="30" data-width="150" data-height="150" data-bgColor="#e6e6e6" data-fgColor="#00a65a" readonly="">
+                            <div class="knob-label">ERROR CRÍTICO</div>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3 text-center">
+                            <input type="text" class="knob" value="50" data-width="150" data-height="150" data-bgColor="#e6e6e6" data-fgColor="#f39c12" readonly="">
+                            <div class="knob-label">ERROR NO CRÍTICO</div>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <input type="text" class="knob" value="30" data-width="150" data-height="150" data-bgColor="#e6e6e6" data-fgColor="#dd4b39" readonly="">
+                            <div class="knob-label">ERROR CRÍTICO</div>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3 text-center">
+                            <input type="text" class="knob" value="50" data-width="150" data-height="150" data-bgColor="#e6e6e6" data-fgColor="#3c8dbc" readonly="">
+                            <div class="knob-label">ERROR NO CRÍTICO</div>
+                        </div>
+                    </div>
+                        
+
+                    
+                </div>
+            </div>
+        </div>
+
+
+                    
+        
+    </div>
     <hr>
 	<div class="row">
-		<div class="col-md-6">
-			<div class="box box-primary">
-				<div class="box-header with-border">
-					<h3 class="box-title">Reporte General (Nov 2018)</h3>
-					<div class="box-tools pull-right">
-						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-						<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-					</div>
-				</div>
-				<div class="box-body chart-responsive">
-					<div class="chart" id="repo_general"></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<div class="box box-primary">
 				<div class="box-header with-border">
 					<h3 class="box-title">Reporte Detallado (Nov 2018)</h3>
@@ -75,20 +105,9 @@
 		</div>
 	</div>
 </section>
+<script src="../../libs/plugins/knob/knob.js"></script>
+<script src="../../js/asesor/asesor.js"></script>
 <script type="text/javascript">
-    //Reporte general
-    var donut = new Morris.Donut({
-      element: 'repo_general',
-      resize: true,
-      colors: ["#00a65a", "#f39c12", "#dd4b39", "#3c8dbc"],
-      data: [
-        {label: "ERROR NO CRITICO: %", value: 95},
-        {label: "ERROR CRITICO DE SERVICIO: %", value: 90},
-        {label: "ERROR CRITICO DE OPERACION: %", value: 85},
-        {label: "ERROR CRITICO DE CUMPLIMIENTO: %", value: 100}
-      ],
-      hideHover: 'auto'
-    });
     //Reporte detallado
     var bar = new Morris.Bar({
       element: 'repo_detallado',
