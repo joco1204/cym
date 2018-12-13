@@ -9,7 +9,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
 }
 ?>
 <section class="content-header">
-    <h1><b>VALIDACIÓN REVENTA</b></h1>
+    <h1><b>VALIDACIÓN REDIFERIDOS</b></h1>
 </section>
 <section class="content">
     <!-- Small boxes (Stat box) -->
@@ -20,12 +20,12 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                 <div class="small-box bg-blue">
                     <div class="inner">
                         <h3>1</h3>
-                        <p>VALIDACIÓN REVENTA</p>
+                        <p>VALIDACIÓN REDIFERIDOS</p>
                     </div>
                     <div class="icon">
                         <i class=""></i>
                     </div>
-                    <a href="#" onclick="javascript: pageContent('validacion_citi/validacion_reventa/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         <?php } ?>

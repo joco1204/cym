@@ -10,7 +10,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
 }
 ?>
 <section class="content-header">
-    <h1>VALIDACIÓN REVENTA</h1>
+    <h1>VALIDACIÓN REDIFERIDOS</h1>
 </section>
 <section class="content">
     <div class='box box-primary'>
@@ -22,7 +22,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                 <div class="row">
                     <div class="col col-md-12 text-center">
                         
-                        <button type="button" class="btn btn-primary btn-sm" onclick="javascript: pageContent('validacion_citi/validacion_reventa');">Volver</button>
+                        <button type="button" class="btn btn-primary btn-sm" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos');">Volver</button>
                     </div>
                 </div>
                 <div class="row">
