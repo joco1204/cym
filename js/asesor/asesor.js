@@ -31,7 +31,7 @@ $(function(){
 			{x: 'ENC', y: 80},
 			{x: 'ECS', y: 100},
 			{x: 'ECO', y: 100},
-			{x: 'ECC', y: 90},
+			{x: 'ECC', y: 100},
 		],
 		xkey: 'x',
 		ykeys: ['y'],
