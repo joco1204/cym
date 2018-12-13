@@ -114,6 +114,16 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         </div>
                     </div>
                     <br>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Tipo de error:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <span>ERROR NO CRÍTICO (ENC)</span>
+                        </div>
+                    </div>
+                    <br>
                     <div class="row">
                         <div class="col-md-12">
                             <label>Puntos de entrenamiento:</label>
@@ -128,6 +138,8 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <br>
                 </div>
             </div>
         </div>
