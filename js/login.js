@@ -66,15 +66,4 @@ $(function(){
 			$('#warning-login').html("Usuario y contraseña incorrectos");
 		}
 	});
-
-	$('#contrasena_form').submit(function(e){
-		e.preventDefault();
-		if($('#email').val() == ''){
-			swal("¡Atención!","Debe ingresar el email para recuperar su contraseña","warning");
-		} else {
-			var data = $('#contrasena_form').serialize();
-			alert(data);
-		}
-	});
-
 });

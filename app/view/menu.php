@@ -63,12 +63,12 @@
         </li>
     <?php } ?>
     <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '8'){ ?>
-    <li class="treeview">
-        <a href="#" onclick="javascript: pageContent('asesor/asesor');">
-            <i class="glyphicon glyphicon-earphone"></i>
-            <span>ASESOR</span>
-        </a>
-    </li>
+        <li class="treeview">
+            <a href="#" onclick="javascript: pageContent('asesor/asesor');">
+                <i class="glyphicon glyphicon-earphone"></i>
+                <span>ASESOR</span>
+            </a>
+        </li>
     <?php } ?>
     <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'){ ?>
         <li class="treeview">

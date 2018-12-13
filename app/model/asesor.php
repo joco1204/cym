@@ -145,5 +145,41 @@ class Asesor{
 		}
 		return $this->business->return;
 	}
+
+	public function informe_general_asesor($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayTabla = array();
+			$query_asesor  = "SELECT id FROM ca_asesores WHERE identificacion = '".$data->identificacion."' AND id_empresa = '".$data->empresa."' AND id_campana = '".$data->campana."'; ";
+			$result_asesor = $conn->query($query_asesor);
+			if($result_asesor){
+				while($row_asesor = $result_asesor->fetch(PDO::FETCH_OBJ)){
+					$query_num = "SELECT COUNT(*) AS num_monitoreos FROM ca_monitoreo_asesor WHERE id_asesor = '".$row_asesor->id."' AND fecha_registro BETWEEN '".$data->desde."' AND '".$data->hasta."';";
+					$result_num = $conn->query($query_num);
+					while($row_num = $result_num->fetch(PDO::FETCH_OBJ)){
+						$query_total  = "SELECT a.id_asesor,  b.id_error, d.error, c.calculo_valor, FORMAT(SUM(b.valor_porcentaje_cumplimiento)/".$row_num->num_monitoreos.",0) AS valor_porcentaje_cumplimiento ";
+						$query_total .= "FROM ca_monitoreo_asesor AS a ";
+						$query_total .= "INNER JOIN ca_monitoreo_asesor_detallado AS b ON a.id = b.id_monitoreo_asesor ";
+						$query_total .= "INNER JOIN ca_error AS c ON b.id_error = c.id ";
+						$query_total .= "INNER JOIN pa_tipo_error AS d ON c.tipo_error = d.id ";
+						$query_total .= "WHERE a.id_asesor = '".$row_asesor->id."' AND a.fecha_registro BETWEEN '".$data->desde."' AND '".$data->hasta."' AND c.calculo_valor = 'sum' ";
+						$query_total .= "GROUP BY a.id_asesor,  b.id_error, d.error, c.calculo_valor; ";
+
+					}
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayTabla);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
 }
 ?>

@@ -39,6 +39,7 @@ var pageContent = function(page, settings){
 		});
 	}
 }
+
 //Remove Session Storage 
 var removeSession = function(){
 	sessionStorage.removeItem('id_usaurio');
@@ -55,6 +56,7 @@ var removeSession = function(){
 	sessionStorage.removeItem('token');
 	sessionStorage.clear();
 }
+
 //Function to close session of the application
 var logout = function(){
 	$.ajax({
@@ -110,7 +112,6 @@ function redirectTimeOut(){
 	}).done(function(result){
 		if (result.bool){
 			window.location.href = "../../";
-			//removeSession();	
 		} else {
 			console.log('Error: '+result.msg)
 		}

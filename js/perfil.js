@@ -1,5 +1,4 @@
 $(function(){
-
 	$('#form_perfil').submit(function(e){
 		e.preventDefault();
 		if($('#cambiar_contrasena').val() == '' && $('#repetir_cambiar_contrasena').val() == ''){
