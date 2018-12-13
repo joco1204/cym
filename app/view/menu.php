@@ -54,7 +54,7 @@
             </a>
         </li>
     <?php } ?>
-    <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'){ ?>
+    <?php if($session->getSession('id_perfil') == '1' /*|| $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'*/){ ?>
         <li class="treeview">
             <a href="#" onclick="javascript: pageContent('validacion/validacion');">
                 <i class="glyphicon glyphicon-ok-circle"></i>
