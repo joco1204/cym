@@ -15,7 +15,6 @@ $(function(){
 				var i=i+1;
 				var empresa = $('#empresa').val();
 				if(empresa == 0){
-
 					html += '<div class="col-md-3">';
 					html += '<div class="info-box bg-blue" onclick="javascript: pageContent(\'analista/campanas\',  \'id_empresa='+row.id+'&empresa='+row.empresa+'\');" style="cursor:pointer;">';
 					html += '<span class="info-box-icon">';

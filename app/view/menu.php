@@ -33,7 +33,7 @@
             <?php } ?>
             <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2'){ ?>
                 <li><a href="#" onclick="javascript: pageContent('administrador/reportes/index');"><i class="glyphicon glyphicon-list-alt"></i> Reportes</a></li>
-                <li><a href="#" onclick="javascript: pageContent('administrador/agenda/index');"><i class="glyphicon glyphicon-calendar"></i> Agenda</a></li>
+                <!--<li><a href="#" onclick="javascript: pageContent('administrador/agenda/index');"><i class="glyphicon glyphicon-calendar"></i> Agenda</a></li>-->
             <?php } ?>
         </ul>
     </li>
@@ -70,19 +70,19 @@
             </a>
         </li>
     <?php } ?>
-    <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'){ ?>
+    <?php if($session->getSession('id_perfil') == '1' /*|| $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'*/){ ?>
         <li class="treeview">
-        <a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos');">
-            <i class="glyphicon glyphicon-ok-circle"></i> <span>VALIDACIÓN CITI</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-        </a>
-        <ul class="treeview-menu">
-            <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'){ ?>
-                <li><a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos/index');"><i class="glyphicon glyphicon-ok-circle"></i> Validacion rediferidos</a></li>
-            <?php } ?>
-        </ul>
+            <a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos');">
+                <i class="glyphicon glyphicon-ok-circle"></i> <span>VALIDACIÓN CITI</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'){ ?>
+                    <li><a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos/index');"><i class="glyphicon glyphicon-ok-circle"></i> Validacion rediferidos</a></li>
+                <?php } ?>
+            </ul>
         </li>
     <?php } ?>
 </ul>
