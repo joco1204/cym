@@ -28,14 +28,15 @@ $(function(){
 		element: 'repo_detallado',
 		resize: true,
 		data: [
-			{x: 'ERROR NO CRITICO', y: 80},
-			{x: 'ERROR CRIRICO DE SERVICIO', y: 100},
-			{x: 'ERROR CRITICO DE OPERACION', y: 100},
-			{x: 'ERROR CRITICO DE CUMPLIMIENTO', y: 90},
+			{x: 'ENC', y: 80},
+			{x: 'ECS', y: 100},
+			{x: 'ECO', y: 100},
+			{x: 'ECC', y: 90},
 		],
 		xkey: 'x',
 		ykeys: ['y'],
-		labels: ['Y'],
+		labels: ['%'],
+		gridTextSize: 12,
 		barColors: function (row, series, type) {
 		if(type === 'bar'){
 			if(row.x == 0){
@@ -53,7 +54,7 @@ $(function(){
 			} else {
 				return '#fff';
 			}
-		}
+		},
 	});
 });
 

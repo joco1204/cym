@@ -21,11 +21,11 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Reporte General (Nov 2018)</h3>
-                    <div class="box-tools pull-right">
+                    <h3 class="box-title">Reporte General (Dic 2018)</h3>
+                    <!--<div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="box-body chart-responsive">
                     <div class="row">
@@ -36,7 +36,6 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                     <select name="anio" id="anio" class="form-control">
                                         <option value="">2018</option>
                                         <option value="">2017</option>
-                                        <option value="">2016</option>
                                     </select>
                                 </div>
                             </div>
@@ -46,18 +45,18 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                 <div class="form-group has-feedback">
                                     <span class="input-group-text"><label for="mes">Mes:</label></span>
                                     <select name="mes" id="mes" class="form-control">
-                                        <option value="">Enero</option>
-                                        <option value="">Febrero</option>
-                                        <option value="">Marzo</option>
-                                        <option value="">Abril</option>
-                                        <option value="">Mayo</option>
-                                        <option value="">Junio</option>
-                                        <option value="">Julio</option>
-                                        <option value="">Agosto</option>
-                                        <option value="">Septiembre</option>
-                                        <option value="">Octubre</option>
-                                        <option value="">Noviembre</option>
                                         <option value="">Diciembre</option>
+                                        <option value="">Noviembre</option>
+                                        <option value="">Octubre</option>
+                                        <option value="">Septiembre</option>
+                                        <option value="">Agosto</option>
+                                        <option value="">Julio</option>
+                                        <option value="">Junio</option>
+                                        <option value="">Mayo</option>
+                                        <option value="">Abril</option>
+                                        <option value="">Marzo</option>
+                                        <option value="">Febrero</option>
+                                        <option value="">Enero</option>
                                     </select>
                                 </div>
                             </div>
@@ -73,21 +72,21 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <div class="row">
                         <div class="col-md-3 text-center">
                             <input type="text" class="knob" value="80" data-width="150" data-height="150" data-bgColor="#e6e6e6" data-fgColor="#00a65a" readonly="">
-                            <div class="knob-label">ERROR CRÍTICO</div>
+                            <div class="knob-label">ERRO NO CRÍTICO</div>
                         </div>
                         <div class="col-xs-6 col-md-3 text-center">
                             <input type="text" class="knob" value="100" data-width="150" data-height="150" data-bgColor="#e6e6e6" data-fgColor="#f39c12" readonly="">
-                            <div class="knob-label">ERROR NO CRÍTICO</div>
+                            <div class="knob-label">ERROR CRÍTICO DE SERVICIO</div>
                         </div>
 
                         <div class="col-md-3 text-center">
                             <input type="text" class="knob" value="100" data-width="150" data-height="150" data-bgColor="#e6e6e6" data-fgColor="#dd4b39" readonly="">
-                            <div class="knob-label">ERROR CRÍTICO</div>
+                            <div class="knob-label">ERROR CRÍTICO DE OPERACIÓN</div>
                         </div>
 
                         <div class="col-xs-6 col-md-3 text-center">
                             <input type="text" class="knob" value="90" data-width="150" data-height="150" data-bgColor="#e6e6e6" data-fgColor="#3c8dbc" readonly="">
-                            <div class="knob-label">ERROR NO CRÍTICO</div>
+                            <div class="knob-label">ERROR CRÍTICO DE CUMPLIMIENTO</div>
                         </div>
                     </div>
 
@@ -99,14 +98,34 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
 
 
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-8 col-md-offset-2">
 			<div class="box box-primary">
 				<div class="box-header with-border">
-                    <h3 class="box-title">Reporte Detallado (Nov 2018)</h3>
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3 class="box-title">Reporte Detallado (Dic 2018)</h3>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="input-group-text"><label for="anio">Día:</label></span>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="form-group has-feedback">
+                                    <select name="anio" id="anio" class="form-control">
+                                        <option value="">10</option>
+                                        <option value="">04</option>
+                                        <option value="">01</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <!--<div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>-->
+                        </div>
+                    </div>    
 				</div>
                 <hr>
 				<div class="box-body chart-responsive">
