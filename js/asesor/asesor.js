@@ -22,27 +22,39 @@ $(function(){
 		}
 	});
 
-	
-	var bar = new Morris.Bar({
+
+
+	Morris.Bar({
 		element: 'repo_detallado',
 		resize: true,
 		data: [
-			{y: '01', a: 100, b: 100, c: 100, d: 100},
-			{y: '05', a: 100, b: 100, c: 100, d: 100},
-			{y: '08', a: 80, b: 100, c: 100, d: 0},
-			{y: '08', a: 100, b: 0, c: 100, d: 100},
-			{y: '10', a: 100, b: 100, c: 100, d: 0},
-			{y: '15', a: 100, b: 100, c: 0, d: 100},
-			{y: '16', a: 40, b: 0, c: 100, d: 100},
-			{y: '19', a: 40, b: 0, c: 100, d: 100}
+			{x: 'ERROR NO CRITICO', y: 80},
+			{x: 'ERROR CRIRICO DE SERVICIO', y: 100},
+			{x: 'ERROR CRITICO DE OPERACION', y: 100},
+			{x: 'ERROR CRITICO DE CUMPLIMIENTO', y: 90},
 		],
-		barColors: ["#00a65a", "#f39c12", "#dd4b39", "#3c8dbc"],
-		xkey: 'y',
-		ykeys: ['a', 'b', 'c', 'd'],
-		labels: ['ENC', 'ECS', 'ECO', 'ECC'],
-		hideHover: 'auto'
+		xkey: 'x',
+		ykeys: ['y'],
+		labels: ['Y'],
+		barColors: function (row, series, type) {
+		if(type === 'bar'){
+			if(row.x == 0){
+				return '#00a65a';
+			}
+				if(row.x == 1){
+					return '#f39c12';
+				}
+				if(row.x == 2){
+					return '#dd4b39';
+				}
+				if(row.x == 3){
+					return '#3c8dbc';
+				}
+			} else {
+				return '#fff';
+			}
+		}
 	});
-
 });
 
 	
