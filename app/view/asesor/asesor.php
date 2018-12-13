@@ -1,5 +1,19 @@
+<?php 
+include '../../../config/session.php';
+$session = new Session();
+$session->start();
+$get = ((object) $_GET);
+
+if(!$session->getSession('token') || $session->getSession('token') == ''){
+    $session->destroy();
+    header('location: ../../index.php');
+}
+?>
 <section class="content-header">
-    <h1><b>ASESOR: </b></h1>
+    <input type="hidden" name="id_usaurio"      id="id_usaurio"     value="<?= $session->getSession('id_usaurio'); ?>">
+    <input type="hidden" name="identificacion"  id="identificacion" value="<?= $session->getSession('identificacion'); ?>">
+    <input type="hidden" name="empresa"         id="empresa"        value="<?= $session->getSession('empresa'); ?>">
+    <input type="hidden" name="campana"         id="campana"        value="<?= $session->getSession('campana'); ?>">
 </section>
 <section class="content">
     <div class="row">
@@ -85,9 +99,11 @@
 
 
                     
-        
+    
     </div>
-    <hr>
+    
+
+
 	<div class="row">
 		<div class="col-md-12">
 			<div class="box box-primary">
@@ -104,31 +120,11 @@
 			</div>
 		</div>
 	</div>
+
+
 </section>
 <script src="../../libs/plugins/knob/knob.js"></script>
 <script src="../../js/asesor/asesor.js"></script>
-<script type="text/javascript">
-    //Reporte detallado
-    var bar = new Morris.Bar({
-      element: 'repo_detallado',
-      resize: true,
-      data: [
-      	{y: '01', a: 100, b: 100, c: 100, d: 100},
-        {y: '05', a: 100, b: 100, c: 100, d: 100},
-        {y: '08', a: 80, b: 100, c: 100, d: 0},
-        {y: '08', a: 100, b: 0, c: 100, d: 100},
-        {y: '10', a: 100, b: 100, c: 100, d: 0},
-        {y: '15', a: 100, b: 100, c: 0, d: 100},
-        {y: '16', a: 40, b: 0, c: 100, d: 100},
-        {y: '19', a: 40, b: 0, c: 100, d: 100}
-      ],
-      barColors: ["#00a65a", "#f39c12", "#dd4b39", "#3c8dbc"],
-      xkey: 'y',
-      ykeys: ['a', 'b', 'c', 'd'],
-      labels: ['ENC', 'ECS', 'ECO', 'ECC'],
-      hideHover: 'auto'
-    });
-</script>
 <script type="text/javascript">
     $(document).ready(function(){
         $("select").select2();

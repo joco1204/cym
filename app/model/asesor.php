@@ -145,5 +145,37 @@ class Asesor{
 		}
 		return $this->business->return;
 	}
+
+	public function informe_general_asesor($data){
+		$conn = $this->business->conn;
+		$db = $this->business->db;
+		//Valida conexión a base de datos
+		if($conn){
+			$arrayTabla = array();
+			$query_asesor  = "SELECT id FROM ca_asesores WHERE identificacion = '".$data->identificacion."' AND id_empresa = '".$data->empresa."' AND id_campana = '".$data->campana."'; ";
+			$result_asesor = $conn->query($query_asesor);
+			if($result_asesor){
+				while($row_asesor = $result_asesor->fetch(PDO::FETCH_OBJ)){
+					$query_num = "SELECT COUNT(*) AS num_monitoreos FROM ca_monitoreo_asesor WHERE id_asesor = '".$row_asesor->id."' AND fecha_registro BETWEEN '".$data->desde."' AND '".$data->hasta."';";
+					$result_num = $conn->query($query_num);
+
+
+
+
+
+					
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayTabla);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
 }
 ?>

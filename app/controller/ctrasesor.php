@@ -32,6 +32,10 @@ if(isset($post->action)){
 			$result = $asesor->modificar_asesor($post);
 			$business->return = $result;
 		break;
+		case 'informe_general_asesor':
+			$result = $asesor->informe_general_asesor($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';
