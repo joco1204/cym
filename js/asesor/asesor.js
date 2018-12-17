@@ -21,9 +21,7 @@ $(function(){
 			console.log('Error: '+result.msg);
 		}
 	});
-
-
-
+	
 	Morris.Bar({
 		element: 'repo_detallado',
 		resize: true,
