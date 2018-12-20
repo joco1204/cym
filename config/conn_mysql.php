@@ -1,14 +1,14 @@
 <?php
 require_once 'config.php';
 //Clase de conexión a MySQL 
-class Connect extends PDO{
+class MySQL extends PDO{
 	//Parametros de conexión a la base de datos
-	private $type = MOTOR_DB;
-	private $host = HOST_DB;
-	private $user = USER_DB;
-	private $pass = PASS_DB;
-	private $base = DATABASE;
-	private $cset = CHARSET;
+	private $type = MOTOR_MYSQL;
+	private $host = HOST_MYSQL;
+	private $user = USER_MYSQL;
+	private $pass = PASS_MYSQL;
+	private $base = DB_MYSQL;
+	private $cset = CS_MYSQL;
 	//Constructor de conexión a la pase de datos
 	public function __construct(){
 		//Definicion del string de conexión a la base de datos

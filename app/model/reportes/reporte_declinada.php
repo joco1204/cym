@@ -1,6 +1,6 @@
 <?php
-include '../../../config/connect.php';
-$db = new Connect();
+include '../../../config/conn_mysql.php';
+$mysql = new MySQL();
 
 header("Content-type: application/vnd.ms-excel; charset=utf-8");
 header("Content-Disposition: attachment; filename=\"Reporte Ventas Declinadas "." desde el día ".$_GET['desde_declinada']." hasta el día ".$_GET['hasta_declinada'].".xls\"");
@@ -30,7 +30,7 @@ $query .= "INNER JOIN va_usuarios_agent as j ON a.id_asesor=j.id ";
 $query .= "INNER JOIN ca_asesores as k ON j.id_asesor=k.id ";
 $query .= "WHERE a.fecha_venta BETWEEN '".$_GET['desde_declinada']."' AND '".$_GET['hasta_declinada']."' ";
 $query .= "ORDER BY a.id; ";
-$result = $db->query($query); ?>
+$result = $mysql->query($query); ?>
 
 <html>
     <head>

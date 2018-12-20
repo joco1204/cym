@@ -1,7 +1,8 @@
 <?php
 //Inclusión de archivos de configuración
 require 'config.php';
-include 'connect.php';
+include 'conn_mysql.php';
+include 'conn_sqlsrv.php';
 include 'session.php';
 include 'cookie.php';
 include 'email.php';
@@ -23,13 +24,14 @@ include '../../'.PATH_MODEL.'/validacion.php';
 class Business{
 	public $return;
 	public $url;
-	public $conn;
+	public $mysql;
+	public $sqlsrv;
 	public $session;
 	public $cookie;
 	public $post;
 	public $get;
 	public $files;
-	public $db;
+	public $db_mysql;
 	public $date;
 	public $email;
 
@@ -40,13 +42,15 @@ class Business{
 		$this->return->bool = MENSSAGE_BOOL;
 		$this->return->msg = MENSSAGE_DEFAULT;
 		$this->url = URL_ACCESS;
-		$this->conn = new Connect();
+		$this->mysql = new MySQL();
+		$this->sqlsrv = new SQLSRV();
 		$this->session = new Session();
 		$this->cookie = new Cookie();
 		$this->post = ((object) $_POST);
 		$this->get = ((object) $_GET);
 		$this->files = ((object) $_FILES);
-		$this->db = DATABASE;
+		$this->db_mysql = DB_MYSQL;
+		$this->db_sqlsrv = DB_SQLSRV;
 		$this->date = date('Y-m-d');
 		$this->email = new Email();
  	}

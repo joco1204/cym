@@ -5,17 +5,17 @@ class PlanMonitoreo{
 	}
 	
 	public function empresa_campana($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayData = array();
 			$query   = "SELECT b.empresa, a.campana ";
 			$query  .= "FROM ca_campana AS a ";
 			$query  .= "JOIN ca_empresa AS b ON a.id_empresa = b.id ";
 			$query  .= "WHERE b.id = '".$data->id_empresa."' ";
 			$query  .= "AND a.id = '".$data->id_campana."';";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayData, $row);
@@ -34,10 +34,10 @@ class PlanMonitoreo{
 	}
 
 	public function tabla_asesor($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayTabla = array();
 			$query  = "SELECT a.id, a.identificacion, a.nombres, a.apellidos, b.empresa, c.campana, a.estado ";
 			$query .= "FROM ca_asesores AS a ";
@@ -47,7 +47,7 @@ class PlanMonitoreo{
 			$query .= "AND a.id_campana = '".$data->id_campana."' ";
 			$query .= "AND a.estado = 'activo' ";
 			$query .= "ORDER BY b.empresa, c.campana;";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayTabla, $row);
@@ -66,10 +66,10 @@ class PlanMonitoreo{
 	}
 
 	public function monitoreos_dia($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayTabla = array();
 			$query  = "SELECT a.id_empresa, a.id_campana, a.id_asesor, a.id AS id_agenda, b.identificacion, b.nombres, b.apellidos, c.empresa, d.campana, a.fecha_monitoreo ";
 			$query .= "FROM ca_agenda_monitoreo AS a ";
@@ -77,7 +77,7 @@ class PlanMonitoreo{
 			$query .= "LEFT JOIN ca_empresa AS c ON a.id_empresa = c.id ";
 			$query .= "LEFT JOIN ca_campana AS d ON a.id_campana = d.id ";
 			$query .= "WHERE a.id_empresa = '".$data->id_empresa."' AND a.id_campana = '".$data->id_campana."' AND a.fecha_monitoreo = '".date('Y-m-d')."' AND a.estado = '0'; ";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayTabla, $row);
@@ -96,10 +96,10 @@ class PlanMonitoreo{
 	}
 
 	public function monitoreos_mes($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayTabla = array();
 			$query  = "SELECT a.id_empresa, a.id_campana, a.id_asesor, a.id AS id_agenda, b.identificacion, b.nombres, b.apellidos, c.empresa, d.campana, a.fecha_monitoreo ";
 			$query .= "FROM ca_agenda_monitoreo AS a ";
@@ -107,7 +107,7 @@ class PlanMonitoreo{
 			$query .= "LEFT JOIN ca_empresa AS c ON a.id_empresa = c.id ";
 			$query .= "LEFT JOIN ca_campana AS d ON a.id_campana = d.id ";
 			$query .= "WHERE a.id_empresa = '".$data->id_empresa."' AND a.id_campana = '".$data->id_campana."' AND a.fecha_monitoreo BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' AND a.estado = '1'; ";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayTabla, $row);

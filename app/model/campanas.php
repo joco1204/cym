@@ -5,15 +5,15 @@ class Campana{
 	}
 	
 	public function tabla_campanas(){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayTabla = array();
 			$query   = "SELECT a.id, a.campana, b.empresa, a.estado ";
 			$query  .= "FROM ca_campana AS a ";
 			$query  .= "JOIN ca_empresa AS b ON a.id_empresa = b.id"; 
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayTabla, $row);
@@ -32,16 +32,16 @@ class Campana{
 	}
 
 	public function campanas($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayTabla = array();
 			$query   = "SELECT id, campana ";
 			$query  .= "FROM ca_campana ";
 			$query  .= "WHERE estado = 'activo' ";
 			$query  .= "AND id_empresa = '".$data->id_empresa."'; ";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayTabla, $row);
@@ -60,12 +60,12 @@ class Campana{
 	}
 	
 	public function crear_campana($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$query  = "INSERT INTO ca_campana (campana, id_empresa, estado) VALUES ('".$data->nombre_campana."', '".$data->id_empresa."', 'activo')";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				$this->business->return->bool = true;
 				$this->business->return->msg = 'Se ha creado el campana '.$data->nombre_campana.' correctamente';
@@ -81,13 +81,13 @@ class Campana{
 	}
 
 	public function campanas_analista($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayCampana = array();
 			$query   = "SELECT id, campana FROM ca_campana WHERE id_empresa = '".$data->id_empresa."'; "; 
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayCampana, $row);
@@ -106,15 +106,15 @@ class Campana{
 	}
 
 	public function data_campana($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayTabla = array();
 			$query   = "SELECT id, campana, id_empresa, estado ";
 			$query  .= "FROM ca_campana ";
 			$query  .= "WHERE id = '".$data->id."'; ";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayTabla, $row);
@@ -133,12 +133,12 @@ class Campana{
 	}
 
 	public function modificar_campana($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$query = "UPDATE ca_campana SET campana = '".$data->nombre_campana_m."', id_empresa = '".$data->id_empresa_m."', estado = '".$data->estado_campana_m."' WHERE id = '".$data->id_empresa_m."'; ";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				$this->business->return->bool = true;
 				$this->business->return->msg = 'Se ha actualizado la campaña '.$data->nombre_campana_m.' correctamente';

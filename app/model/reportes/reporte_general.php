@@ -1,12 +1,12 @@
 <?php
-include '../../../config/connect.php';
-$db = new Connect();
+include '../../../config/conn_mysql.php';
+$mysql = new MySQL();
 
 $query_ec  = "SELECT b.empresa, a.campana ";
 $query_ec .= "FROM ca_campana AS a ";
 $query_ec .= "JOIN ca_empresa AS b ON a.id_empresa = a.id ";
 $query_ec .= "WHERE b.id = '".$_GET['empresa']."' AND a.id = '".$_GET['campana']."';";
-$result_ec = $db->query($query_ec);
+$result_ec = $mysql->query($query_ec);
 $row_ec = $result_ec->fetch(PDO::FETCH_OBJ);
 //Header download file
 header("Content-type: application/vnd.ms-excel; charset=utf-8");
@@ -38,7 +38,7 @@ $query .= "LEFT JOIN ca_solucion AS g ON b.solucion = g.id ";
 $query .= "LEFT JOIN ca_audio AS h ON b.fallas_audio = h.id ";
 $query .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = '1' AND a.fecha_monitoreo BETWEEN '".$_GET['desde_general']."' AND '".$_GET['hasta_general']."' ";
 $query .= "ORDER BY a.id; ";
-$result = $db->query($query); ?>
+$result = $mysql->query($query); ?>
 
 <html>
     <head>
@@ -70,13 +70,13 @@ $result = $db->query($query); ?>
 					$queryh .= "FROM ca_matriz AS a ";
 					$queryh .= "LEFT JOIN ca_error AS b ON a.id = b.id_matriz ";
 					$queryh .= "WHERE a.id_empresa = '".$_GET['empresa']."' AND a.id_campana = '".$_GET['campana']."' AND a.estado = 'activo';";
-					$resulth = $db->query($queryh);
+					$resulth = $mysql->query($queryh);
 					while($rowh = $resulth->fetch(PDO::FETCH_OBJ)){
 						$queryh2  = "SELECT a.item ";
 						$queryh2 .= "FROM ca_item AS a ";
 						$queryh2 .= "WHERE a.id_error = '".$rowh->id_error."' ";
 						$queryh2 .= "ORDER BY a.id;";
-						$resulth2 = $db->query($queryh2);
+						$resulth2 = $mysql->query($queryh2);
 						while($rowh2 = $resulth2->fetch(PDO::FETCH_OBJ)){
 							echo "<th>".$rowh2->item."</th>";
 							echo "<th>CALIFICACI&Oacute;N ID DE REGISTROS </th>";
@@ -114,7 +114,7 @@ $result = $db->query($query); ?>
 						$query_item .= 'LEFT JOIN ca_punto_entrenamiento AS b ON a.id_punto_entrenamiento = b.id ';
 						$query_item .= 'WHERE a.id_monitoreo_asesor = \''.$row->id_monitoreo.'\' ';
 						$query_item .= 'ORDER BY a.id_item; ';
-						$result_item = $db->query($query_item);
+						$result_item = $mysql->query($query_item);
 						while($row_item = $result_item->fetch(PDO::FETCH_OBJ)){ 
 							echo "<td>".$row_item->valor_cumplimiento."</td>";
 							echo "<td>".$row_item->porcentaje."</td>";

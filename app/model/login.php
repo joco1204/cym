@@ -5,14 +5,14 @@ class Login{
 	}
 	//Login method
 	public function login($user, $pass){
-		$conn = $this->bsn->conn;
-		$db = $this->bsn->db;
+		$mysql = $this->bsn->mysql;
+		$db_mysql = $this->bsn->db_mysql;
 		$session = $this->bsn->session;
-		//Validate the connection of db
-		if($conn){
+		//Validate the mysqlection of db_mysql
+		if($mysql){
 			$password = sha1($pass);
 			$query  = "SELECT id, password, estado FROM re_usuarios WHERE usuario = '".$user."' LIMIT 1;";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				if($result->rowCount() > 0){
 					while($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -53,10 +53,10 @@ class Login{
 	}
 	//Session method
 	public function session($iduser, $token){
-		$conn = $this->bsn->conn;
-		$db = $this->bsn->db;
+		$mysql = $this->bsn->mysql;
+		$db_mysql = $this->bsn->db_mysql;
 		$session = $this->bsn->session;
-		if ($conn){
+		if ($mysql){
 			$query  = "SELECT a.id AS id_usuario, a.usuario, d.id AS id_perfil, d.perfil, a.nombre, a.apellido1, a.apellido2, b.tipo_identificacion, a.identificacion, a.email, a.estado , e.id_empresa AS empresa, e.id_campana AS campana ";
 			$query .= "FROM re_usuarios AS a ";
 			$query .= "LEFT JOIN pa_tipo_identificacion AS b ON a.tipo_identificacion = b.id ";
@@ -65,7 +65,7 @@ class Login{
 			$query .= "LEFT JOIN re_usaurio_ec AS e ON c.id = e.id_usuario ";
 			$query .= "WHERE a.estado = 'activo' AND a.id = '".$iduser."' ";
 			$query .= "LIMIT 1; ";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				if($result->rowCount() > 0){
 					while ($row = $result->fetch(PDO::FETCH_OBJ)){

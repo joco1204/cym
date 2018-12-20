@@ -1,17 +1,32 @@
 <?php
 define('URL_ACCESS', 'http://localhost/calidad/');
+/************************************************/
+/* Datos de conexión a MySQL */
 //Motor de la base de datos
-define('MOTOR_DB', 'mysql');
+define('MOTOR_MYSQL', 'mysql');
 //Host de la base de datos
-define('HOST_DB', 'localhost');
+define('HOST_MYSQL', 'localhost');
 //Usuario de la base de datos
-define('USER_DB', 'root');
+define('USER_MYSQL', 'root');
 //Contraseña de base de datos
-define('PASS_DB', '');
+define('PASS_MYSQL', '12345');
 //Nombre de la base de datos
-define('DATABASE', 'calidad');
+define('DB_MYSQL', 'calidad');
 //Cotejamiento de caracteres
-define('CHARSET', 'utf8');
+define('CS_MYSQL', 'utf8');
+/************************************************/
+/* Datos de conexión a MS SQL Server */
+//Motor de la base de datos
+define('MOTOR_SQLSRV', 'sqlsrv');
+//Host de la base de datos
+define('HOST_SQLSRV', '192.168.100.168\BI_ICC, 51473');
+//Usuario de la base de datos
+define('USER_SQLSRV', 'sa');
+//Contraseña de base de datos
+define('PASS_SQLSRV', 'Quilontes$$2');
+//Nombre de la base de datos
+define('DB_SQLSRV', 'BOD_TARIFICADOR_PBA');
+/************************************************/
 //Respuesta valor por defecto
 define('MENSSAGE_BOOL', false);
 //Mensaje por defecto

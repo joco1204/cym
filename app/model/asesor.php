@@ -5,16 +5,16 @@ class Asesor{
 	}
 
 	public function tabla_asesor(){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayTabla = array();
 			$query  = "SELECT a.id, a.identificacion, a.nombres, a.apellidos, b.empresa, c.campana, a.estado ";
 			$query .= "FROM ca_asesores AS a ";
 			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id ";
 			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id;";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayTabla, $row);
@@ -33,12 +33,12 @@ class Asesor{
 	}
 
 	public function crear_asesor($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$query  = "INSERT INTO ca_asesores (id_empresa, id_campana, identificacion, nombres, apellidos, estado) VALUES ('".$data->empresa."', '".$data->campana."', '".$data->identificacion."', '".$data->nombres."', '".$data->apellidos."', 'activo'); ";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				$this->business->return->bool = true;
 				$this->business->return->msg = 'Se ha creado el asesor '.$data->nombres.' '.$data->apellidos.' correctamente';
@@ -55,9 +55,9 @@ class Asesor{
 
 
 	public function cargar_asesores($file){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
-		if($conn){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		if($mysql){
 			$fname = $file->name;
 			$ext = explode(".",$fname);
 			if(strtolower(end($ext)) == "csv" || strtolower(end($ext)) == "txt"){
@@ -65,7 +65,7 @@ class Asesor{
 				$handle = fopen($file_tmp_name, "r");
 				while($data = fgetcsv($handle, 1000, ";")){
 					$query_existencia = "SELECT identificacion FROM ca_asesores WHERE identificacion = '".$data[2]."';";
-					$result_existencia = $conn->query($query_existencia);
+					$result_existencia = $mysql->query($query_existencia);
 					if($result_existencia){
 						$num_asesor = $result_existencia->rowCount();
 						if($num_asesor == '0'){
@@ -76,10 +76,10 @@ class Asesor{
 							$query .= "'".$data[3]."', ";
 							$query .= "'".$data[4]."', ";
 							$query .= "'".$data[5]."'); ";
-							$result = $conn->query($query);
+							$result = $mysql->query($query);
 						} else {
 							$query  = "UPDATE ca_asesores SET id_empresa = '".$data[0]."', id_campana = '".$data[1]."', nombres = '".$data[3]."', apellidos = '".$data[4]."', estado = '".$data[5]."' WHERE identificacion = '".$data[2]."'; ";
-							$result = $conn->query($query);
+							$result = $mysql->query($query);
 						}
 					} else {
 						$this->business->return->bool = false;
@@ -101,13 +101,13 @@ class Asesor{
 	}
 
 	public function data_asesor($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayTabla = array();
 			$query  = "SELECT id, id_empresa, id_campana, identificacion, nombres, apellidos, estado FROM ca_asesores WHERE id = '".$data->id."';";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
 					array_push($arrayTabla, $row);
@@ -126,12 +126,12 @@ class Asesor{
 	}
 
 	public function modificar_asesor($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$query  = "UPDATE ca_asesores SET id_empresa = '".$data->empresa_m."', id_campana = '".$data->campana_m."', nombres = '".$data->nombres_m."', apellidos = '".$data->apellidos_m."', identificacion = '".$data->identificacion_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_asesor_m."'; ";
-			$result = $conn->query($query);
+			$result = $mysql->query($query);
 			if($result){
 				$this->business->return->bool = true;
 				$this->business->return->msg = 'Se ha modificado al asesor '.$data->nombres_m.' '.$data->apellidos_m.' correctamente';
@@ -147,17 +147,17 @@ class Asesor{
 	}
 
 	public function informe_general_asesor($data){
-		$conn = $this->business->conn;
-		$db = $this->business->db;
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
-		if($conn){
+		if($mysql){
 			$arrayTabla = array();
 			$query_asesor  = "SELECT id FROM ca_asesores WHERE identificacion = '".$data->identificacion."' AND id_empresa = '".$data->empresa."' AND id_campana = '".$data->campana."'; ";
-			$result_asesor = $conn->query($query_asesor);
+			$result_asesor = $mysql->query($query_asesor);
 			if($result_asesor){
 				while($row_asesor = $result_asesor->fetch(PDO::FETCH_OBJ)){
 					$query_num = "SELECT COUNT(*) AS num_monitoreos FROM ca_monitoreo_asesor WHERE id_asesor = '".$row_asesor->id."' AND fecha_registro BETWEEN '".$data->desde."' AND '".$data->hasta."';";
-					$result_num = $conn->query($query_num);
+					$result_num = $mysql->query($query_num);
 					while($row_num = $result_num->fetch(PDO::FETCH_OBJ)){
 						$query_total  = "SELECT a.id_asesor,  b.id_error, d.error, c.calculo_valor, FORMAT(SUM(b.valor_porcentaje_cumplimiento)/".$row_num->num_monitoreos.",0) AS valor_porcentaje_cumplimiento ";
 						$query_total .= "FROM ca_monitoreo_asesor AS a ";
