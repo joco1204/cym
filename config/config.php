@@ -1,6 +1,12 @@
 <?php
 define('URL_ACCESS', 'http://localhost/calidad/');
 /************************************************/
+/* Conexión al directorio activo */
+//Dominio ldap
+define('LDAP_DOMINIO', 'interactivo.com.co');
+//DN de ldap
+define('LDAP_DN', 'dc=interactivo,dc=com,dc=co');
+/************************************************/
 /* Datos de conexión a MySQL */
 //Motor de la base de datos
 define('MOTOR_MYSQL', 'mysql');
