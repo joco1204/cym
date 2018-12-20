@@ -32,6 +32,7 @@ class Business{
 	public $get;
 	public $files;
 	public $db_mysql;
+	public $db_sqlsrv;
 	public $date;
 	public $email;
 
