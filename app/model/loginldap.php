@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 class Loginldap{
 	function __construct(){
 		$this->business = new Business();
@@ -10,8 +11,8 @@ class Loginldap{
 		$db_mysql = $this->business->db_mysql;
 		$session = $this->business->session;
 		if($ldap){
-			$login = $ldap->userldap($user, $pass);
-			if($login){
+			$login_user = $ldap->userldap($user, $pass);
+			if($login_user){
 				if($mysql){
 					$query  = "SELECT id, estado FROM re_usuarios WHERE usuario_red = '".$user."';";
 					$result = $mysql->query($query);
@@ -34,7 +35,7 @@ class Loginldap{
 							$response = $msg;
 						} else {
 							$bool = false;
-							$response = 'Usuario incorrecto';
+							$response = 'Usuario no registrado en la plataforma';
 						}
 						$this->business->return->bool = $bool;
 						$this->business->return->msg = $response;

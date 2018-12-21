@@ -20,12 +20,14 @@ class Ldap{
 	}
 	//Método de login 
 	public function userldap($user, $pass){
-		try {
-			$login = ldap_bind($this->conn, "{$user}@{$this->host}", $pass);	
-		} catch (Exception $e) {
-			$login = 0;
-		}
-		return $login;
-	}
+		$msg = false;
+		$login = ldap_bind($this->conn, "{$user}@{$this->host}", $pass);
+		if($login){
+	        $msg = true;
+	    } else {
+	        $msg = false;
+	    }
+	    return $msg;
+	}	
 }
 ?>
