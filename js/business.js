@@ -68,8 +68,8 @@ var logout = function(){
 		dataType: 'json'
 	}).done(function(result){
 		if (result.bool){
+			removeSession();
 			window.location.href = "../../";
-			//removeSession();
 		} else {
 			console.log('Error: '+result.msg)
 		}
@@ -82,7 +82,7 @@ function startTimeOut() {
 	timeout = setTimeout(function(){redirectTimeOut()}, 1200000);
 }
 
-function stopTimeOut() {
+function stopTimeOut(){
 	clearTimeout(timeout);
 	timeout = setTimeout('location="../../"', 1200000);
 	sessionStorage.removeItem('id_usaurio');

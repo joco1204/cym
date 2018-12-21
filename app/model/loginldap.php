@@ -11,8 +11,6 @@ class Loginldap{
 		$session = $this->business->session;
 		if($ldap){
 			$login = $ldap->userldap($user, $pass);
-			var_dump($login);
-
 			if($login){
 				if($mysql){
 					$query  = "SELECT id, estado FROM re_usuarios WHERE usuario_red = '".$user."';";

@@ -6,7 +6,6 @@ class Ldap{
 	private $host = LDAP_HOST;
 	private $dn = LDAP_DN;
 	private $conn;
-	
 	//Constructor de la conexión a base de datos
 	function __construct(){
 		try{
@@ -19,16 +18,14 @@ class Ldap{
 		}
 		return $this->conn;
 	}
-
 	//Método de login 
 	public function userldap($user, $pass){
-		$login = ldap_bind($this->conn, "{$user}@{$this->host}", $pass);
-		if($login == '1'){
-			$msg = 'true';
-		} else {
-			$msg = 'false';
+		try {
+			$login = ldap_bind($this->conn, "{$user}@{$this->host}", $pass);	
+		} catch (Exception $e) {
+			$login = 0;
 		}
-		return $msg;
+		return $login;
 	}
 }
 ?>
