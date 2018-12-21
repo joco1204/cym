@@ -11,12 +11,13 @@ class Loginldap{
 		$session = $this->business->session;
 		if($ldap){
 			$login = $ldap->userldap($user, $pass);
+			var_dump($login);
+
 			if($login){
 				if($mysql){
 					$query  = "SELECT id, estado FROM re_usuarios WHERE usuario_red = '".$user."';";
 					$result = $mysql->query($query);
 					if($result){
-
 						if($result->rowCount() > 0){
 							while($row = $result->fetch(PDO::FETCH_OBJ)){
 								if($row->estado == 'activo'){
@@ -52,6 +53,7 @@ class Loginldap{
 				$bool = false;
 				$response = 'Usuario y/o contraseña incorrecto';
 			}
+
 			$this->business->return->bool = $bool;
 			$this->business->return->msg = $response;
 		} else {

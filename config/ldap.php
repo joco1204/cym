@@ -23,10 +23,10 @@ class Ldap{
 	//Método de login 
 	public function userldap($user, $pass){
 		$login = ldap_bind($this->conn, "{$user}@{$this->host}", $pass);
-		if($login){
-			$msg = true;
+		if($login == '1'){
+			$msg = 'true';
 		} else {
-			$msg = false;
+			$msg = 'false';
 		}
 		return $msg;
 	}
