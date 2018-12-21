@@ -3,19 +3,32 @@ require_once 'config.php';
 //Clase de conexión al directorio activo LDAP
 class Ldap{
 	//Parametros de conexión al directorio activo
-	private $dominio = LDAP_DOMINIO;
+	private $host = LDAP_HOST;
 	private $dn = LDAP_DN;
-	//
+	private $conn;
+	
+	//Constructor de la conexión a base de datos
 	function __construct(){
-		$this->dominio;
-		$this->dn;
 		try{
-			$conn = ldap_connect("ldap://{this->$dominio}");
+			$this->conn = ldap_connect("ldap://".$this->host);
+			ldap_set_option($this->conn, LDAP_OPT_PROTOCOL_VERSION, 3);
+			ldap_set_option($this->conn, LDAP_OPT_REFERRALS, 0);
+			ldap_set_option($this->conn, LDAP_OPT_SIZELIMIT, 50);
 		} catch(Exception $e){
-			$conn = "Error al conectar : ".$e->getMessage()."<br>";
+			$this->conn = "Error al conectar : ".$e->getMessage()."<br>";
 		}
+		return $this->conn;
+	}
 
-		return $conn;
+	//Método de login 
+	public function userldap($user, $pass){
+		$login = ldap_bind($this->conn, "{$user}@{$this->host}", $pass);
+		if($login){
+			$msg = true;
+		} else {
+			$msg = false;
+		}
+		return $msg;
 	}
 }
 ?>

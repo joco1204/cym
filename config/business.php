@@ -3,12 +3,14 @@
 require 'config.php';
 include 'conn_mysql.php';
 include 'conn_sqlsrv.php';
+include 'ldap.php';
 include 'session.php';
 include 'cookie.php';
 include 'email.php';
 
 //Inclusión de modelos
 include '../../'.PATH_MODEL.'/login.php';
+include '../../'.PATH_MODEL.'/loginldap.php';
 include '../../'.PATH_MODEL.'/logout.php';
 include '../../'.PATH_MODEL.'/empresas.php';
 include '../../'.PATH_MODEL.'/campanas.php';
@@ -26,6 +28,7 @@ class Business{
 	public $url;
 	public $mysql;
 	public $sqlsrv;
+	public $ldap;
 	public $session;
 	public $cookie;
 	public $post;
@@ -45,6 +48,7 @@ class Business{
 		$this->url = URL_ACCESS;
 		$this->mysql = new MySQL();
 		$this->sqlsrv = new SQLSRV();
+		$this->ldap = new Ldap();
 		$this->session = new Session();
 		$this->cookie = new Cookie();
 		$this->post = ((object) $_POST);

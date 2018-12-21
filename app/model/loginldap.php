@@ -1,53 +1,62 @@
 <?php
-class Login{
+class Loginldap{
 	function __construct(){
 		$this->business = new Business();
 	}
 	//Login method
 	public function login($user, $pass){
+		$ldap = $this->business->ldap;
 		$mysql = $this->business->mysql;
 		$db_mysql = $this->business->db_mysql;
 		$session = $this->business->session;
-		//Validate the connection of db_mysql
-		if($mysql){
-			$password = sha1($pass);
-			$query  = "SELECT id, password, estado FROM re_usuarios WHERE usuario = '".$user."' LIMIT 1;";
-			$result = $mysql->query($query);
-			if($result){
-				if($result->rowCount() > 0){
-					while($row = $result->fetch(PDO::FETCH_OBJ)){
-						if($row->password != $password){
-							$bool = false;
-							$msg = 'Contraseña incorrecta';
-						} else {
-							if($row->estado == 'activo'){
-								$getUser = array(
-									'iduser' => $row->id,
-									'token' => $session->token()
-								);
-								$bool = true;
-								$msg = json_encode($getUser);
-							} else {
-								$bool = false;
-								$msg = 'El usuario está inactivo';
+		if($ldap){
+			$login = $ldap->userldap($user, $pass);
+			if($login){
+				if($mysql){
+					$query  = "SELECT id, estado FROM re_usuarios WHERE usuario_red = '".$user."';";
+					$result = $mysql->query($query);
+					if($result){
+
+						if($result->rowCount() > 0){
+							while($row = $result->fetch(PDO::FETCH_OBJ)){
+								if($row->estado == 'activo'){
+									$getUser = array(
+										'iduser' => $row->id,
+										'token' => $session->token()
+									);
+									$bool = true;
+									$msg = json_encode($getUser);
+								} else {
+									$bool = false;
+									$msg = 'El usuario está inactivo';
+								}
 							}
+							$bool = $bool;
+							$response = $msg;
+						} else {
+							$bool = false;
+							$response = 'Usuario incorrecto';
 						}
+						$this->business->return->bool = $bool;
+						$this->business->return->msg = $response;
+
+					} else {
+						$this->business->return->bool = false;
+						$this->business->return->msg = 'Error de consulta (Comuníquese con el área de desarrollo)';
 					}
-					$bool = $bool;
-					$response = $msg;
 				} else {
-					$bool = false;
-					$response = 'Usuario incorrecto';
+					$this->business->return->bool = false;
+					$this->business->return->msg = 'Error de conexión de base de datos (Comuníquese con el área de desarrollo)';
 				}
-				$this->business->return->bool = $bool;
-				$this->business->return->msg = $response;
 			} else {
-				$this->business->return->bool = false;
-				$this->business->return->msg = 'Error de consulta (Comuníquese con el área de desarrollo)';
+				$bool = false;
+				$response = 'Usuario y/o contraseña incorrecto';
 			}
+			$this->business->return->bool = $bool;
+			$this->business->return->msg = $response;
 		} else {
 			$this->business->return->bool = false;
-			$this->business->return->msg = 'Error de conexión de base de datos (Comuníquese con el área de desarrollo)';
+			$this->business->return->msg = 'Error de conexión con el directorio activo (Comuníquese con el área de desarrollo)';
 		}
 		return $this->business->return;
 	}
@@ -57,7 +66,7 @@ class Login{
 		$db_mysql = $this->business->db_mysql;
 		$session = $this->business->session;
 		if ($mysql){
-			$query  = "SELECT a.id AS id_usuario, a.usuario, d.id AS id_perfil, d.perfil, a.nombre, a.apellido1, a.apellido2, b.tipo_identificacion, a.identificacion, a.email, a.estado , e.id_empresa AS empresa, e.id_campana AS campana ";
+			$query  = "SELECT a.id AS id_usuario, a.usuario_red AS usuario, d.id AS id_perfil, d.perfil, a.nombre, a.apellido1, a.apellido2, b.tipo_identificacion, a.identificacion, a.email, a.estado , e.id_empresa AS empresa, e.id_campana AS campana ";
 			$query .= "FROM re_usuarios AS a ";
 			$query .= "LEFT JOIN pa_tipo_identificacion AS b ON a.tipo_identificacion = b.id ";
 			$query .= "LEFT JOIN re_usuario_perfil AS c ON a.id = c.id_usuario ";

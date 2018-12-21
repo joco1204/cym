@@ -62,8 +62,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="apellidos2">APELLIDO 2:</label>
-                                <input type="text" id="apellidos2" name="apellidos2" class="form-control" required="" data-error="Debe ingresar apellidos 2">
-                                <div class="help-block with-errors"></div>
+                                <input type="text" id="apellidos2" name="apellidos2" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -85,23 +84,15 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="email">EMAIL:</label>
-                                <input type="email" id="email" name="email" class="form-control" required="" data-error="Debe ingresar email">
-                                <div class="help-block with-errors"></div>
+                                <input type="email" id="email" name="email" class="form-control">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="usaurio">USUARIO:</label>
+                                <label class="control-label" for="usaurio">USUARIO DE RED:</label>
                                 <input type="text" id="usaurio" name="usaurio" class="form-control" required="" data-error="Debe ingresar usaurio">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                        <div class="col col-md-4">
-                            <div class="form-group has-feedback">
-                                <label class="control-label" for="contrasena">CONTRASEÑA:</label>
-                                <input type="password" id="contrasena" name="contrasena" class="form-control" required="" data-error="Debe ingresar contraseña">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -160,15 +151,14 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="apellidos1_m">APELLIDO 1:</label>
-                                <input type="text" id="apellidos1_m" name="apellidos1_m" class="form-control" required="" data-error="Debe ingresar apellidos 1">
+                                <input type="text" id="apellidos1_m" name="apellidos1_m" class="form-control" required="" data-error="Debe ingresar apellidos">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="apellidos2_m">APELLIDO 2:</label>
-                                <input type="text" id="apellidos2_m" name="apellidos2_m" class="form-control" required="" data-error="Debe ingresar apellidos 2">
-                                <div class="help-block with-errors"></div>
+                                <input type="text" id="apellidos2_m" name="apellidos2_m" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -190,8 +180,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="email_m">EMAIL:</label>
-                                <input type="email" id="email_m" name="email_m" class="form-control" required="" data-error="Debe ingresar email">
-                                <div class="help-block with-errors"></div>
+                                <input type="email" id="email_m" name="email_m" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -205,20 +194,11 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="contrasena_m">CONTRASEÑA:</label>
-                                <input type="password" id="contrasena_m" name="contrasena_m" class="form-control">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                        <div class="col col-md-4">
-                            <div class="form-group has-feedback">
                                 <label class="control-label" for="perfil_m">PERFIL USAURIO:</label>
                                 <select class="form-control" id="perfil_m" name="perfil_m" style="width: 100%" required="" data-error="Debe seccionar perfil"></select>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="estado_m">ESTADO:</label>

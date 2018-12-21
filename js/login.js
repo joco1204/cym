@@ -5,7 +5,7 @@ $(function(){
 		if ($('#user').val() != "" && $('#pass').val() != ""){
 			$.ajax({
 				type: 'POST',
-				url: 'app/controller/ctrlogin.php',
+				url: 'app/controller/ctrloginldap.php',
 				data: {
 						action: 'login',
 						user: $('#user').val(), 
@@ -18,7 +18,7 @@ $(function(){
 					//Ajax building the session
 					$.ajax({
 						type: 'POST',
-						url: 'app/controller/ctrlogin.php',
+						url: 'app/controller/ctrloginldap.php',
 						data: {
 								action: 'session',
 								iduser: data.iduser,

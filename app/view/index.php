@@ -110,7 +110,6 @@
         <script type="text/javascript">
             pageContent('contenido');
         </script>
-        <script src="../../js/perfil.js"></script>
         <div id="modal_perfil" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -185,25 +184,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col col-md-6">
-                                    <div class="form-group has-feedback">
-                                        <label class="control-label" for="cambiar_contrasena">CAMBIAR CONTRASEÑA:</label>
-                                        <input type="password" id="cambiar_contrasena" name="cambiar_contrasena" class="form-control">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col col-md-6">
-                                    <div class="form-group has-feedback">
-                                        <label class="control-label" for="repetir_cambiar_contrasena">REPETIR CONTRASEÑA:</label>
-                                        <input type="password" id="repetir_cambiar_contrasena" name="repetir_cambiar_contrasena" class="form-control">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">Guardar</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                         </div>
                     </form>

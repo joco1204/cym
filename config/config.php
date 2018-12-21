@@ -3,7 +3,7 @@ define('URL_ACCESS', 'http://localhost/calidad/');
 /************************************************/
 /* Conexión al directorio activo */
 //Dominio ldap
-define('LDAP_DOMINIO', 'interactivo.com.co');
+define('LDAP_HOST', 'interactivo.com.co');
 //DN de ldap
 define('LDAP_DN', 'dc=interactivo,dc=com,dc=co');
 /************************************************/
