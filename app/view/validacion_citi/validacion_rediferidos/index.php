@@ -116,7 +116,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="documento_r">NUM. DOCUMENTO:</label>
+                                <label class="control-label" for="documento_r">NUMERO DOCUMENTO:</label>
                                 <input type="text" id="documento_r" name="documento_r" class="form-control" required="">
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -133,21 +133,21 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <div class="row">
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="telefono1_r">TELEFONO 1:</label>
+                                <label class="control-label" for="telefono1_r">TELÉFONO 1:</label>
                                 <input type="text" id="telefono1_r" name="telefono1_r" class="form-control" required="">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="telefono2_r">TELEFONO 2:</label>
+                                <label class="control-label" for="telefono2_r">TELÉFONO 2:</label>
                                 <input type="text" id="telefono2_r" name="telefono2_r" class="form-control" required="">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="telefono3_r">TELEFONO 3:</label>
+                                <label class="control-label" for="telefono3_r">TELÉFONO 3:</label>
                                 <input type="text" id="telefono3_r" name="telefono3_r" class="form-control" required="">
                                 <div class="help-block with-errors"></div>
                             </div>
