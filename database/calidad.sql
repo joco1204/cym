@@ -13151,7 +13151,7 @@ INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
 	(5, 5, 3, 2, 2);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
-	(6, 6, 6, 1, 1);
+	(6, 6, 8, 1, 1);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
 	(7, 7, 5, 0, 0);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
@@ -13182,6 +13182,8 @@ INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_
 	(20, 20, 8, 2, 2);
 INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
 	(21, 21, 8, 1, 1);
+INSERT INTO `re_usaurio_ec` (`id`, `id_usuario`, `id_perfil`, `id_empresa`, `id_campana`) VALUES
+	(22, 22, 2, 0, 0);
 /*!40000 ALTER TABLE `re_usaurio_ec` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.re_usuarios
@@ -13201,7 +13203,7 @@ CREATE TABLE IF NOT EXISTS `re_usuarios` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Usuarios del sistema';
 
--- Volcando datos para la tabla calidad.re_usuarios: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla calidad.re_usuarios: ~21 rows (aproximadamente)
 /*!40000 ALTER TABLE `re_usuarios` DISABLE KEYS */;
 INSERT INTO `re_usuarios` (`id`, `usuario`, `usuario_red`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(1, 'administrator', 'jcortes', '8e34e1c6a02283d62e5d1b95986eeefbf5be6a8d', 1, '123456789', 'Superadministrador', 'Aplicacion', 'Interactivo', 'johan.cortes@interactivo.com.co', 'activo');
@@ -13214,7 +13216,7 @@ INSERT INTO `re_usuarios` (`id`, `usuario`, `usuario_red`, `password`, `tipo_ide
 INSERT INTO `re_usuarios` (`id`, `usuario`, `usuario_red`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(5, '1010199873', '', '28b914eb839572bc9e8399aea7dc1bf20c33b1e6', 1, ' 1010199873', 'CHRISTI GERALDINE', 'CONTRERAS', 'ORTEGON', 'christi.contreras@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `usuario_red`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
-	(6, 'prueba', '', '711383a59fda05336fd2ccf70c8059d1523eb41a', 1, '10101010', 'prueba', 'prueba', 'prueba', 'prueba@interactivo.com.co', 'activo');
+	(6, 'prueba', 'oquinche', '711383a59fda05336fd2ccf70c8059d1523eb41a', 1, '10101010', 'Camilo', 'Díaz', 'prueba', 'prueba@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `usuario_red`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(7, 'Scardenas', '', '85f924730be3e1c59a5402874520427c2eafd356', 1, '1057783669', 'SAMUEL RUBEN', 'CARDENAS', 'TORO', 'samuel.cardenas@interactivo.com.co', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `usuario_red`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
@@ -13245,6 +13247,8 @@ INSERT INTO `re_usuarios` (`id`, `usuario`, `usuario_red`, `password`, `tipo_ide
 	(20, 'ppp', '', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 1, '111111111111', 'pruebas', 'apellido', 'apellido', 'a@b.c', 'activo');
 INSERT INTO `re_usuarios` (`id`, `usuario`, `usuario_red`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
 	(21, '1022416598', '', '0a17eb2ef5870072fc6d9d10f534918397ab558a', 1, '1022416598', 'CAMILO ANDRES', 'ROJAS', 'AGUILAR', 'desarrollo@interactivo.com.co', 'activo');
+INSERT INTO `re_usuarios` (`id`, `usuario`, `usuario_red`, `password`, `tipo_identificacion`, `identificacion`, `nombre`, `apellido1`, `apellido2`, `email`, `estado`) VALUES
+	(22, '', 'wchaves', '', 1, '9999999999', 'Wilson Fernando', 'Chaves', 'Garay', 'wilson.chaves@interactivo.com.co', 'activo');
 /*!40000 ALTER TABLE `re_usuarios` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.re_usuario_perfil
@@ -13269,7 +13273,7 @@ INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(5, 5, 3);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
-	(6, 6, 6);
+	(6, 6, 8);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(7, 7, 5);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
@@ -13300,6 +13304,8 @@ INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(20, 20, 8);
 INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
 	(21, 21, 8);
+INSERT INTO `re_usuario_perfil` (`id`, `id_usuario`, `id_perfil`) VALUES
+	(22, 22, 2);
 /*!40000 ALTER TABLE `re_usuario_perfil` ENABLE KEYS */;
 
 -- Volcando estructura para tabla calidad.va_estado
