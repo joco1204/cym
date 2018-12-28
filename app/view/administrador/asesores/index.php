@@ -51,15 +51,32 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <div class="row">
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="empresa">EMPRESA:</label>
-                                <select class="form-control" id="empresa" name="empresa" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
+                                <label class="control-label" for="nombre">NOMBRE(S):</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required="" data-error="Debe ingresar nombre(s)">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="campana">CAMPAÑA:</label>
-                                <select class="form-control" id="campana" name="campana" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
+                                <label class="control-label" for="apellido1">APELLIDO 1:</label>
+                                <input type="text" id="apellido1" name="apellido1" class="form-control" required="" data-error="Debe ingresar apellido 2">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="apellido2">APELLIDO 2:</label>
+                                <input type="text" id="apellido2" name="apellido2" class="form-control" data-error="Debe ingresar apellido 2">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="tipo_identificacion">TIPO IDENTIFICACIÓN:</label>
+                                <select class="form-control" id="tipo_identificacion" name="tipo_identificacion" style="width: 100%" required="" data-error="Debe seccionar el tipo de identificación"></select>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -70,19 +87,26 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-md-6">
+                        <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="nombres">NOMBRE(S):</label>
-                                <input type="text" id="nombres" name="nombres" class="form-control" required="" data-error="Debe ingresar nombre(s)">
+                                <label class="control-label" for="usuario">USUARIO DE RED:</label>
+                                <input type="text" id="usuario" name="usuario" class="form-control" required="" data-error="Debe ingresar usuario de red">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
-                        <div class="col col-md-6">
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="apellidos">APELLIDO(S):</label>
-                                <input type="text" id="apellidos" name="apellidos" class="form-control" required="" data-error="Debe ingresar apellidos(s)">
+                                <label class="control-label" for="empresa">EMPRESA:</label>
+                                <select class="form-control" id="empresa" name="empresa" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="campana">CAMPAÑA:</label>
+                                <select class="form-control" id="campana" name="campana" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -123,6 +147,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
         </div>
     </form>
 </div>
+
 <div id="modificar_asesor" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -151,24 +176,8 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="identificacion_m">NÚMERO DE IDENTIFICACION:</label>
-                                <input type="text" id="identificacion_m" name="identificacion_m" class="form-control" required="" data-error="Debe ingresar número de indentificación">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-md-6">
-                            <div class="form-group has-feedback">
-                                <label class="control-label" for="nombres_m">NOMBRE(S):</label>
-                                <input type="text" id="nombres_m" name="nombres_m" class="form-control" required="" data-error="Debe ingresar nombre(s)">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                        <div class="col col-md-6">
-                            <div class="form-group has-feedback">
-                                <label class="control-label" for="apellidos_m">APELLIDO(S):</label>
-                                <input type="text" id="apellidos_m" name="apellidos_m" class="form-control" required="" data-error="Debe ingresar apellidos(s)">
+                                <label class="control-label" for="usuario_m">USUARIO DE RED:</label>
+                                <input type="text" id="usuario_m" name="usuario_m" class="form-control" required="" data-error="Debe ingresar usuario de red">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -176,8 +185,45 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <div class="row">
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
+                                <label class="control-label" for="tipo_identificacion_m">TIPO IDENTIFICACIÓN:</label>
+                                <select class="form-control" id="tipo_identificacion_m" name="tipo_identificacion_m" style="width: 100%" required="" data-error="Debe seccionar el tipo de identificación"></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="identificacion_m">NÚMERO DE IDENTIFICACION:</label>
+                                <input type="text" id="identificacion_m" name="identificacion_m" class="form-control" required="" data-error="Debe ingresar número de indentificación">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
                                 <label class="control-label" for="estado_m">ESTADO:</label>
                                 <select class="form-control" id="estado_m" name="estado_m" style="width: 100%" required="" data-error="Debe seccionar estado"></select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="nombre_m">NOMBRE(S):</label>
+                                <input type="text" id="nombre_m" name="nombre_m" class="form-control" required="" data-error="Debe ingresar nombre(s)">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="apellido1_m">APELLIDO 1:</label>
+                                <input type="text" id="apellido1_m" name="apellido1_m" class="form-control" required="" data-error="Debe ingresar apellido 1">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="apellido2_m">APELLIDO 2:</label>
+                                <input type="text" id="apellido2_m" name="apellido2_m" class="form-control" required="" data-error="Debe ingresar apellido 2">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>

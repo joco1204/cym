@@ -16,9 +16,12 @@
 			html += '<thead>';
 			html += '<tr>';
 			html += '<th>ID ASESOR</th>';
+			html += '<th>TIPO IDENTIFICACIÓN</th>';
 			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
-			html += '<th>APELLIDO(S)</th>';
+			html += '<th>PRIMER APELLIDO</th>';
+			html += '<th>SEGUNDO APELLIDO</th>';
+			html += '<th>USUARIO RED</th>';
 			html += '<th>EMPRESA</th>';
 			html += '<th>CAMPAÑA</th>';
 			html += '<th>ESTADO</th>';
@@ -29,9 +32,12 @@
 			$.each(data, function(i, row){
 				html += '<tr>';
 				html += '<td>'+row.id+'</td>';
+				html += '<td>'+row.tipo_identificacion+'</td>';
 				html += '<td>'+row.identificacion+'</td>';
-				html += '<td>'+row.nombres+'</td>';
-				html += '<td>'+row.apellidos+'</td>';
+				html += '<td>'+row.nombre+'</td>';
+				html += '<td>'+row.apellido1+'</td>';
+				html += '<td>'+row.apellido2+'</td>';
+				html += '<td>'+row.usuario+'</td>';
 				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.campana+'</td>';
 				html += '<td>'+row.estado+'</td>';
@@ -42,9 +48,12 @@
 			html += '<tfoot>';
 			html += '<tr>';
 			html += '<th>ID ASESOR</th>';
+			html += '<th>TIPO IDENTIFICACIÓN</th>';
 			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
-			html += '<th>APELLIDO(S)</th>';
+			html += '<th>PRIMER APELLIDO</th>';
+			html += '<th>SEGUNDO APELLIDO</th>';
+			html += '<th>USUARIO RED</th>';
 			html += '<th>EMPRESA</th>';
 			html += '<th>CAMPAÑA</th>';
 			html += '<th>ESTADO</th>';
@@ -254,8 +263,9 @@ function modificar_asesor(id_asesor){
 				$('#id_asesor').html(row.id);
 				$('#id_asesor_m').val(row.id);
 				$('#identificacion_m').val(row.identificacion);
-				$('#nombres_m').val(row.nombres);
-				$('#apellidos_m').val(row.apellidos);
+				$('#nombre_m').val(row.nombre);
+				$('#apellido1_m').val(row.apellido1);
+				$('#apellido2_m').val(row.apellido2);
 
 				//Ajax empresa
 				$('#empresa_m').empty();

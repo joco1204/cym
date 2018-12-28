@@ -10,10 +10,12 @@ class Asesor{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query  = "SELECT a.id, a.identificacion, a.nombres, a.apellidos, b.empresa, c.campana, a.estado ";
+			$query  = "SELECT a.id, e.tipo_identificacion, a.identificacion, a.nombre, a.apellido1, a.apellido2, d.usuario_red AS usuario, b.empresa, c.campana, a.estado ";
 			$query .= "FROM ca_asesores AS a ";
-			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id ";
-			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id;";
+			$query .= "LEFT JOIN ca_empresa AS b ON a.id_empresa = b.id ";
+			$query .= "LEFT JOIN ca_campana AS c ON a.id_campana = c.id ";
+			$query .= "LEFT JOIN re_usuarios AS d ON a.identificacion = d.identificacion ";
+			$query .= "LEFT JOIN pa_tipo_identificacion AS e ON d.tipo_identificacion = e.id;";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -37,11 +39,11 @@ class Asesor{
 		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
 		if($mysql){
-			$query  = "INSERT INTO ca_asesores (id_empresa, id_campana, identificacion, nombres, apellidos, estado) VALUES ('".$data->empresa."', '".$data->campana."', '".$data->identificacion."', '".$data->nombres."', '".$data->apellidos."', 'activo'); ";
+			$query  = "INSERT INTO ca_asesores (id_empresa, id_campana, identificacion, nombre, apellido1, apellido2, estado) VALUES ('".$data->empresa."', '".$data->campana."', '".$data->identificacion."', '".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', 'activo'); ";
 			$result = $mysql->query($query);
 			if($result){
 				$this->business->return->bool = true;
-				$this->business->return->msg = 'Se ha creado el asesor '.$data->nombres.' '.$data->apellidos.' correctamente';
+				$this->business->return->msg = 'Se ha creado el asesor '.$data->nombre.' '.$data->apellido1.' correctamente';
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';
@@ -69,16 +71,17 @@ class Asesor{
 					if($result_existencia){
 						$num_asesor = $result_existencia->rowCount();
 						if($num_asesor == '0'){
-							$query  = "INSERT INTO ca_asesores (id_empresa, id_campana, identificacion, nombres, apellidos, estado) VALUES ( ";
+							$query  = "INSERT INTO ca_asesores (id_empresa, id_campana, identificacion, nombre, apellido1, apellido2, estado) VALUES ( ";
 							$query .= "'".$data[0]."', ";
 							$query .= "'".$data[1]."', ";
 							$query .= "'".$data[2]."', ";
 							$query .= "'".$data[3]."', ";
 							$query .= "'".$data[4]."', ";
-							$query .= "'".$data[5]."'); ";
+							$query .= "'".$data[5]."', ";
+							$query .= "'".$data[6]."'); ";
 							$result = $mysql->query($query);
 						} else {
-							$query  = "UPDATE ca_asesores SET id_empresa = '".$data[0]."', id_campana = '".$data[1]."', nombres = '".$data[3]."', apellidos = '".$data[4]."', estado = '".$data[5]."' WHERE identificacion = '".$data[2]."'; ";
+							$query  = "UPDATE ca_asesores SET id_empresa = '".$data[0]."', id_campana = '".$data[1]."', nombre = '".$data[3]."', apellido1 = '".$data[4]."', apellido2 = '".$data[5]."', estado = '".$data[6]."' WHERE identificacion = '".$data[2]."'; ";
 							$result = $mysql->query($query);
 						}
 					} else {
@@ -106,7 +109,7 @@ class Asesor{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query  = "SELECT id, id_empresa, id_campana, identificacion, nombres, apellidos, estado FROM ca_asesores WHERE id = '".$data->id."';";
+			$query  = "SELECT id, id_empresa, id_campana, identificacion, nombre, apellido1, apellido2, estado FROM ca_asesores WHERE id = '".$data->id."';";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
@@ -130,11 +133,11 @@ class Asesor{
 		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
 		if($mysql){
-			$query  = "UPDATE ca_asesores SET id_empresa = '".$data->empresa_m."', id_campana = '".$data->campana_m."', nombres = '".$data->nombres_m."', apellidos = '".$data->apellidos_m."', identificacion = '".$data->identificacion_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_asesor_m."'; ";
+			$query  = "UPDATE ca_asesores SET id_empresa = '".$data->empresa_m."', id_campana = '".$data->campana_m."', nombre = '".$data->nombre_m."', apellido1 = '".$data->apellido1_m."', apellido2 = '".$data->apellido2_m."', identificacion = '".$data->identificacion_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_asesor_m."'; ";
 			$result = $mysql->query($query);
 			if($result){
 				$this->business->return->bool = true;
-				$this->business->return->msg = 'Se ha modificado al asesor '.$data->nombres_m.' '.$data->apellidos_m.' correctamente';
+				$this->business->return->msg = 'Se ha modificado al asesor '.$data->nombre_m.' '.$data->apellido1_m.' correctamente';
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';

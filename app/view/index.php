@@ -3,10 +3,10 @@
         <header class="main-header">
             <a href="#" onclick="pageContent('contenido');" class="logo">
                 <span class="logo-mini">
-                    <b><!-- Aqui va nombre y logo del aplicativo abreviado --></b>
+                    <b>CA</b>
                 </span>
                 <span class="logo-lg">
-                    <b><!-- Aqui va nombre y logo del aplicativo --></b>
+                    <b>CIBERACTIVO</b>
                 </span>
             </a>
             <nav class="navbar navbar-static-top">
