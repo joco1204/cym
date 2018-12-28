@@ -16,11 +16,11 @@
 			html += '<thead>';
 			html += '<tr>';
 			html += '<th>ID ASESOR</th>';
-			html += '<th>TIPO IDENTIFICACIÓN</th>';
-			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
 			html += '<th>PRIMER APELLIDO</th>';
 			html += '<th>SEGUNDO APELLIDO</th>';
+			html += '<th>TIPO IDENTIFICACIÓN</th>';
+			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>USUARIO RED</th>';
 			html += '<th>EMPRESA</th>';
 			html += '<th>CAMPAÑA</th>';
@@ -32,11 +32,11 @@
 			$.each(data, function(i, row){
 				html += '<tr>';
 				html += '<td>'+row.id+'</td>';
-				html += '<td>'+row.tipo_identificacion+'</td>';
-				html += '<td>'+row.identificacion+'</td>';
 				html += '<td>'+row.nombre+'</td>';
 				html += '<td>'+row.apellido1+'</td>';
 				html += '<td>'+row.apellido2+'</td>';
+				html += '<td>'+row.tipo_identificacion+'</td>';
+				html += '<td>'+row.identificacion+'</td>';
 				html += '<td>'+row.usuario+'</td>';
 				html += '<td>'+row.empresa+'</td>';
 				html += '<td>'+row.campana+'</td>';
@@ -48,11 +48,11 @@
 			html += '<tfoot>';
 			html += '<tr>';
 			html += '<th>ID ASESOR</th>';
-			html += '<th>TIPO IDENTIFICACIÓN</th>';
-			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
 			html += '<th>PRIMER APELLIDO</th>';
 			html += '<th>SEGUNDO APELLIDO</th>';
+			html += '<th>TIPO IDENTIFICACIÓN</th>';
+			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>USUARIO RED</th>';
 			html += '<th>EMPRESA</th>';
 			html += '<th>CAMPAÑA</th>';
@@ -93,6 +93,27 @@
 			});
 			$("select").select2();
 
+		} else {
+			console.log('Error: '+result.msg);
+		}
+	});
+
+	$.ajax({
+		type: 'post',
+		url: '../controller/ctrusuarios.php',
+		data: {
+			action: 'tipo_identificacion',
+		},
+		dataType: 'json'
+	}).done(function(result){
+		if(result.bool){
+			var data = $.parseJSON(result.msg);
+			var html = '';
+			html += '<option value=""></option>';
+			$.each(data, function(i, row){
+				html += '<option value="'+row.id+'">'+row.tipo_identificacion+'</option>';
+			});
+			$('#tipo_identificacion').html(html);
 		} else {
 			console.log('Error: '+result.msg);
 		}
@@ -262,10 +283,41 @@ function modificar_asesor(id_asesor){
 			$.each(data, function(i, row){
 				$('#id_asesor').html(row.id);
 				$('#id_asesor_m').val(row.id);
-				$('#identificacion_m').val(row.identificacion);
 				$('#nombre_m').val(row.nombre);
 				$('#apellido1_m').val(row.apellido1);
 				$('#apellido2_m').val(row.apellido2);
+				$('#identificacion_m').val(row.identificacion);
+				$('#usuario_m').val(row.usuario);
+
+				//Ajax de identificacion
+				$('#tipo_identificacion_m').empty();
+				$.ajax({
+					type: 'post',
+					url: '../controller/ctrusuarios.php',
+					data: {
+						action: 'tipo_identificacion',
+					},
+					dataType: 'json',
+				}).done(function(result2){
+					if(result2.bool){
+						var data2 = $.parseJSON(result2.msg);
+						$.each(data2, function(i, row2){
+							if (row.tipo_identificacion == row2.id){
+								$('#tipo_identificacion_m').append($('<option>', {
+									value: row2.id,
+									text: row2.tipo_identificacion, 
+								}).attr("selected", true));
+							} else {	
+								$('#tipo_identificacion_m').append($('<option>', {
+									value: row2.id,
+									text: row2.tipo_identificacion, 
+								}));
+							}
+						});
+					} else {
+						console.log('Error: '+result2.msg);
+					}
+				});
 
 				//Ajax empresa
 				$('#empresa_m').empty();
@@ -380,7 +432,6 @@ function modificar_asesor(id_asesor){
 						text: 'activo',
 					}));
 				}
-
 			});
 		} else {
 			console.log('Error: '+result.msg);

@@ -162,22 +162,22 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <div class="row">
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="empresa_m">EMPRESA:</label>
-                                <select class="form-control" id="empresa_m" name="empresa_m" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
+                                <label class="control-label" for="nombre_m">NOMBRE(S):</label>
+                                <input type="text" id="nombre_m" name="nombre_m" class="form-control" required="" data-error="Debe ingresar nombre(s)">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="campana_m">CAMPAÑA:</label>
-                                <select class="form-control" id="campana_m" name="campana_m" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
+                                <label class="control-label" for="apellido1_m">APELLIDO 1:</label>
+                                <input type="text" id="apellido1_m" name="apellido1_m" class="form-control" required="" data-error="Debe ingresar apellido 1">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="usuario_m">USUARIO DE RED:</label>
-                                <input type="text" id="usuario_m" name="usuario_m" class="form-control" required="" data-error="Debe ingresar usuario de red">
+                                <label class="control-label" for="apellido2_m">APELLIDO 2:</label>
+                                <input type="text" id="apellido2_m" name="apellido2_m" class="form-control" required="" data-error="Debe ingresar apellido 2">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -199,8 +199,8 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="estado_m">ESTADO:</label>
-                                <select class="form-control" id="estado_m" name="estado_m" style="width: 100%" required="" data-error="Debe seccionar estado"></select>
+                                <label class="control-label" for="usuario_m">USUARIO DE RED:</label>
+                                <input type="text" id="usuario_m" name="usuario_m" class="form-control" required="" data-error="Debe ingresar usuario de red">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -208,22 +208,22 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <div class="row">
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="nombre_m">NOMBRE(S):</label>
-                                <input type="text" id="nombre_m" name="nombre_m" class="form-control" required="" data-error="Debe ingresar nombre(s)">
+                                <label class="control-label" for="empresa_m">EMPRESA:</label>
+                                <select class="form-control" id="empresa_m" name="empresa_m" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="apellido1_m">APELLIDO 1:</label>
-                                <input type="text" id="apellido1_m" name="apellido1_m" class="form-control" required="" data-error="Debe ingresar apellido 1">
+                                <label class="control-label" for="campana_m">CAMPAÑA:</label>
+                                <select class="form-control" id="campana_m" name="campana_m" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
-                                <label class="control-label" for="apellido2_m">APELLIDO 2:</label>
-                                <input type="text" id="apellido2_m" name="apellido2_m" class="form-control" required="" data-error="Debe ingresar apellido 2">
+                                <label class="control-label" for="estado_m">ESTADO:</label>
+                                <select class="form-control" id="estado_m" name="estado_m" style="width: 100%" required="" data-error="Debe seccionar estado"></select>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
