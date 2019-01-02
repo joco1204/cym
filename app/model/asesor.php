@@ -148,7 +148,7 @@ class Asesor{
 									$query_id_usuario = "SELECT id FROM re_usuarios WHERE identificacion = '".$data[4]."';";
 									$result_id_usuario = $mysql->query($query_id_usuario);
 									if($result_id_usuario){
-										$row = $result->fetch(PDO::FETCH_OBJ)
+										$row = $result->fetch(PDO::FETCH_OBJ);
 										$query_perfil_ec = "UPDATE re_usaurio_ec SET id_empresa = '".$data[6]."', id_campana = '".$data[7]."' where id_usuario = '".$row->id."';";
 										$result_perfil_ec = $mysql->query($query_perfil_ec);
 										if($result_perfil_ec){
