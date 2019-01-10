@@ -64,6 +64,7 @@
 
 			$('#data_asesor').html(html);
 			$('#tabla_asesor').dataTable({
+				"dom": 'Blfrtip',
 				"order": [ 0, "asc" ],
 				"pageLength": 25, 
 				"language": {
@@ -90,9 +91,8 @@
 						"sSortDescending": ": Activar para ordenar la columna de manera descendente"
 				    }
 				},
-				dom: 'Bfrtip',
-				buttons: [
-					'copy', 'csv', 'excel', 'pdf', 'print'
+				"buttons": [
+					'excel',
 				]
 			});
 			$("select").select2();
