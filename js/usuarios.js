@@ -64,6 +64,7 @@ $(function(){
 
 			$('#data_usuarios').html(html);
 			$('#tabla_usuarios').dataTable({
+				"dom": 'Blfrtip',
 				"order": [ 0, "asc" ],
 				"pageLength": 25, 
 				"language": {
@@ -89,7 +90,11 @@ $(function(){
 						"sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
 						"sSortDescending": ": Activar para ordenar la columna de manera descendente"
 				    }
-				}
+				},
+				"buttons": [
+					'excel',
+				],
+				"ordering":  true,
 			});
 		} else {
 			console.log('Error: '+result.msg);

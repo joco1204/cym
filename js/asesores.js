@@ -93,7 +93,8 @@
 				},
 				"buttons": [
 					'excel',
-				]
+				],
+				"ordering":  true,
 			});
 			$("select").select2();
 
