@@ -6,7 +6,7 @@
                     <b>CA</b>
                 </span>
                 <span class="logo-lg">
-                    <b>CIBERACTIVO</b>
+                    <b>CYBERACTIVO</b>
                 </span>
             </a>
             <nav class="navbar navbar-static-top">

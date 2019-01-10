@@ -72,7 +72,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
             });
         </script>
         <!-- Titulo de aplicación -->
-        <title>Calidad</title>
+        <title>CYBERACTIVO</title>
         <!-- js globales -->
         <script src="../../js/business.js"></script>
     </head>

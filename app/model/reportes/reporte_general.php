@@ -17,7 +17,7 @@ header("Pragma: public");
 //Query
 $query  = "SELECT ";
 $query .= "b.id AS id_monitoreo, ";
-$query .= "CONCAT(c.nombres,' ',c.apellidos) AS asesor, ";
+$query .= "CONCAT(c.nombre,' ',c.apellido1,' ',c.apellido2) AS asesor, ";
 $query .= "c.identificacion AS cedula, ";
 $query .= "CONCAT(d.nombre,' ',d.apellido1,' ',d.apellido2) AS analista, ";
 $query .= "b.fecha_llamada, ";

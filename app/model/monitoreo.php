@@ -190,7 +190,7 @@ class Monitoreo{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT a.id AS id_asesor, b.id AS id_agenda, a.identificacion, a.nombres, a.apellidos, b.fecha_monitoreo ";
+			$query  = "SELECT a.id AS id_asesor, b.id AS id_agenda, a.identificacion, a.nombre, a.apellido1, a.apellido2, b.fecha_monitoreo ";
 			$query .= "FROM ca_asesores AS a ";
 			$query .= "JOIN ca_agenda_monitoreo AS b ON a.id = b.id_asesor ";
 			$query .= "WHERE b.id = '".$data->id_agenda."' AND b.id_empresa = '".$data->id_empresa."' AND b.id_campana = '".$data->id_campana."' AND b.id_asesor = '".$data->id_asesor."'; ";
@@ -324,7 +324,7 @@ class Monitoreo{
 			$query .= "a.fecha_llamada, ";
 			$query .= "b.identificacion, ";
 			$query .= "a.hora_llamada, ";
-			$query .= "CONCAT(b.nombres,' ',b.apellidos) AS asesor, ";
+			$query .= "CONCAT(b.nombre,' ',b.apellido1,' ',b.apellido2) AS asesor, ";
 			$query .= "CONCAT(c.nombre,' ',c.apellido1,' ',c.apellido2) AS analista, ";
 			$query .= "f.nombre AS tipificacion, ";
 			$query .= "a.id_llamada, ";

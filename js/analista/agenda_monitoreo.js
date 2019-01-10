@@ -11,7 +11,7 @@ $(function(){
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
 			$.each(data, function(i, row){
-				$('#nombre_asesor').html(row.nombres+' '+row.apellidos);
+				$('#nombre_asesor').html(row.nombre+' '+row.apellido1);
 				$('#identificacion_asesor').html(row.identificacion);
 				$('#campana_asesor').html(row.empresa.toUpperCase()+' - '+row.campana.toUpperCase());
 			});

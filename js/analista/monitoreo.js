@@ -38,7 +38,7 @@ $(function(){
 			$.each(data, function(i, row){
 				$('#id_monitoreo').val(row.id_monitoreo);
 				$('#cedula_asesor').val(row.identificacion);
-				$('#nombre_asesor').val(row.nombres+" "+row.apellidos);
+				$('#nombre_asesor').val(row.nombre+" "+row.apellido1+" "+row.apellido2);
 			});
 		} else {
 			console.log('Error: '+result.msg);

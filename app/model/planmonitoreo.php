@@ -39,7 +39,7 @@ class PlanMonitoreo{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query  = "SELECT a.id, a.identificacion, a.nombres, a.apellidos, b.empresa, c.campana, a.estado ";
+			$query  = "SELECT a.id, a.identificacion, a.nombre, a.apellido1, a.apellido2, b.empresa, c.campana, a.estado ";
 			$query .= "FROM ca_asesores AS a ";
 			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id ";
 			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id ";
@@ -71,7 +71,7 @@ class PlanMonitoreo{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query  = "SELECT a.id_empresa, a.id_campana, a.id_asesor, a.id AS id_agenda, b.identificacion, b.nombres, b.apellidos, c.empresa, d.campana, a.fecha_monitoreo ";
+			$query  = "SELECT a.id_empresa, a.id_campana, a.id_asesor, a.id AS id_agenda, b.identificacion, b.nombre, b.apellido1, b.apellido2, c.empresa, d.campana, a.fecha_monitoreo ";
 			$query .= "FROM ca_agenda_monitoreo AS a ";
 			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
 			$query .= "LEFT JOIN ca_empresa AS c ON a.id_empresa = c.id ";
@@ -101,7 +101,7 @@ class PlanMonitoreo{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query  = "SELECT a.id_empresa, a.id_campana, a.id_asesor, a.id AS id_agenda, b.identificacion, b.nombres, b.apellidos, c.empresa, d.campana, a.fecha_monitoreo ";
+			$query  = "SELECT a.id_empresa, a.id_campana, a.id_asesor, a.id AS id_agenda, b.identificacion, b.nombre, b.apellido1, b.apellido2, c.empresa, d.campana, a.fecha_monitoreo ";
 			$query .= "FROM ca_agenda_monitoreo AS a ";
 			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
 			$query .= "LEFT JOIN ca_empresa AS c ON a.id_empresa = c.id ";

@@ -38,7 +38,8 @@ $(function(){
 			html += '<tr>';
 			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
-			html += '<th>APELLIDO(S)</th>';
+			html += '<th>PRIMER APELLIDO</th>';
+			html += '<th>SEGUNDO APELLIDO</th>';
 			html += '<th>CAMPAÑA</th>';
 			html += '<th>FECHA MONITOREO</th>';
 			html += '<th>EVALUAR</th>';
@@ -48,8 +49,9 @@ $(function(){
 			$.each(data, function(i, row){
 				html += '<tr>';
 				html += '<td>'+row.identificacion+'</td>';
-				html += '<td>'+row.nombres+'</td>';
-				html += '<td>'+row.apellidos+'</td>';
+				html += '<td>'+row.nombre+'</td>';
+				html += '<td>'+row.apellido1+'</td>';
+				html += '<td>'+row.apellido2+'</td>';
 				html += '<td>'+row.empresa+' '+row.campana+'</td>';
 				html += '<td>'+row.fecha_monitoreo+'</td>';
 				html += '<td class="text-center">';
@@ -64,7 +66,8 @@ $(function(){
 			html += '<tr>';
 			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
-			html += '<th>APELLIDO(S)</th>';
+			html += '<th>PRIMER APELLIDO</th>';
+			html += '<th>SEGUNDO APELLIDO</th>';
 			html += '<th>CAMPAÑA</th>';
 			html += '<th>FECHA MONITOREO</th>';
 			html += '<th></th>';
@@ -123,7 +126,8 @@ $(function(){
 			html += '<tr>';
 			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
-			html += '<th>APELLIDO(S)</th>';
+			html += '<th>PRIMER APELLIDO</th>';
+			html += '<th>SEGUNDO APELLIDO</th>';
 			html += '<th>CAMPAÑA</th>';
 			html += '<th>FECHA MONITOREO</th>';
 			html += '<th>VER MONITOREO</th>';
@@ -133,8 +137,9 @@ $(function(){
 			$.each(data, function(i, row){
 				html += '<tr>';
 				html += '<td>'+row.identificacion+'</td>';
-				html += '<td>'+row.nombres+'</td>';
-				html += '<td>'+row.apellidos+'</td>';
+				html += '<td>'+row.nombre+'</td>';
+				html += '<td>'+row.apellido1+'</td>';
+				html += '<td>'+row.apellido2+'</td>';
 				html += '<td>'+row.empresa+' '+row.campana+'</td>';
 				html += '<td>'+row.fecha_monitoreo+'</td>';
 				html += '<td class="text-center">';
@@ -149,7 +154,8 @@ $(function(){
 			html += '<tr>';
 			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
-			html += '<th>APELLIDO(S)</th>';
+			html += '<th>PRIMER APELLIDO</th>';
+			html += '<th>SEGUNDO APELLIDO</th>';
 			html += '<th>CAMPAÑA</th>';
 			html += '<th>FECHA MONITOREO</th>';
 			html += '<th></th>';
@@ -209,7 +215,8 @@ $(function(){
 			html += '<th>ID ASESOR</th>';
 			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
-			html += '<th>APELLIDO(S)</th>';
+			html += '<th>PRIMER APELLIDO</th>';
+			html += '<th>SEGUNDO APELLIDO</th>';
 			html += '<th>CAMPAÑA</th>';
 			html += '<th>PLAN MONITOREO</th>';
 			html += '</tr>';
@@ -219,8 +226,9 @@ $(function(){
 				html += '<tr>';
 				html += '<td>'+row.id+'</td>';
 				html += '<td>'+row.identificacion+'</td>';
-				html += '<td>'+row.nombres+'</td>';
-				html += '<td>'+row.apellidos+'</td>';
+				html += '<td>'+row.nombre+'</td>';
+				html += '<td>'+row.apellido1+'</td>';
+				html += '<td>'+row.apellido2+'</td>';
 				html += '<td>'+row.empresa.toUpperCase()+' '+row.campana.toUpperCase()+'</td>';
 				html += '<td class="text-center">';
 				html += '<button type="button" class="btn btn-success btn-md" title="Plan Monitoreo" onclick="javascript: pageContent(\'analista/agenda_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+row.id+'\');">';
@@ -235,7 +243,8 @@ $(function(){
 			html += '<th>ID ASESOR</th>';
 			html += '<th>IDENTIFICACIÓN</th>';
 			html += '<th>NOMBRE(S)</th>';
-			html += '<th>APELLIDO(S)</th>';
+			html += '<th>PRIMER APELLIDO</th>';
+			html += '<th>SEGUNDO APELLIDO</th>';
 			html += '<th>CAMPAÑA</th>';
 			html += '<th></th>';
 			html += '</tr>';

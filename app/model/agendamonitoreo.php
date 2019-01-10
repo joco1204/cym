@@ -10,7 +10,7 @@ class AgendaMonitoreo{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT a.id, a.identificacion, a.nombres, a.apellidos, b.empresa, c.campana ";
+			$query  = "SELECT a.id, a.identificacion, a.nombre, a.apellido1, a.apellido2, b.empresa, c.campana ";
 			$query .= "FROM ca_asesores AS a ";
 			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id ";
 			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id ";
@@ -102,7 +102,7 @@ class AgendaMonitoreo{
 			$result = $mysql->query($query);
 			if($result){
 				$id_agenda = $mysql->lastInsertId();
-				$query_agenda  = "SELECT a.id, b.empresa, c.campana, d.identificacion, d.nombres, d.apellidos, a.fecha_monitoreo ";
+				$query_agenda  = "SELECT a.id, b.empresa, c.campana, d.identificacion, d.nombre, d.apellido1, a.fecha_monitoreo ";
 				$query_agenda .= "FROM ca_agenda_monitoreo AS a ";
 				$query_agenda .= "LEFT JOIN ca_empresa AS b ON a.id_empresa = b.id ";
 				$query_agenda .= "LEFT JOIN ca_campana AS c ON a.id_campana = c.id ";
@@ -130,7 +130,7 @@ class AgendaMonitoreo{
 							<h2>Buen d&iacute;a</h2>
 							<p>Usted ha agendado el siguiente monitoreo: </p>
 							<ul>
-								<li>Nombre Asesor: '.$row_agenda->nombres.' '.$row_agenda->apellidos.'</li>
+								<li>Nombre Asesor: '.$row_agenda->nombre.' '.$row_agenda->apellido1.'</li>
 								<li>Empresa: '.$row_agenda->empresa.'</li>
 								<li>Campa&ntilde;a: '.$row_agenda->campana.'</li>
 								<li>Fecha monitoreo: '.$row_agenda->fecha_monitoreo.'</li>

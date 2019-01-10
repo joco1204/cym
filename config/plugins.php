@@ -34,4 +34,4 @@
 <script src="libs/plugins/sweetalert/dist/sweetalert.min.js"></script>
 <script src="libs/plugins/sweetalert/dist/sweetalert-dev.js"></script>
 <!-- Titulo de aplicación -->
-<title>Calidad</title>
+<title>CYBERACTIVO</title>
