@@ -85,6 +85,32 @@ class Usuario{
 		return $this->business->return;
 	}
 
+	public function perfil_usuario(){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayData = array();
+			$query  = "SELECT id, perfil FROM pa_perfiles ";
+			$query .= "WHERE id NOT IN ('1', '8'); ";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 	public function crear_usuario($data){
 		$mysql = $this->business->mysql;
 		$db_mysql = $this->business->db_mysql;

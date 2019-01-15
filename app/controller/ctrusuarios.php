@@ -18,6 +18,10 @@ if(isset($post->action)){
 			$result = $usuario->perfil();
 			$business->return = $result;
 		break;
+		case 'perfil_usuario':
+			$result = $usuario->perfil_usuario();
+			$business->return = $result;
+		break;
 		case 'crear_usuario':
 			$result = $usuario->crear_usuario($post);
 			$business->return = $result;

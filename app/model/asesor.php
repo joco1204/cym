@@ -43,7 +43,7 @@ class Asesor{
 			$result = $mysql->query($query);
 			if($result){
 				$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, estado) ";
-				$query_usuario .= "VALUES ('".$data->usaurio."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', 'activo');";
+				$query_usuario .= "VALUES ('".$data->usuario."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', 'activo');";
 				$result_usuario = $mysql->query($query_usuario);
 				if($result_usuario){
 					$id_usaurio = $mysql->lastInsertId();
