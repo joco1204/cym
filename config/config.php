@@ -56,5 +56,5 @@ define('PASS_EMAIL', '1Nt3r4ct1v0');
 //Puerto salida correo electrónico
 define('PORT_EMAIL', 25);
 //Nombre de propietario email
-define('NAME_EMAIL', 'Aplicativo Calidad');
+define('NAME_EMAIL', 'Portal Cyberactivo');
 ?>

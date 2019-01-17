@@ -126,7 +126,7 @@ $(function(){
 		type: 'post',
 		url: '../controller/ctrusuarios.php',
 		data: {
-			action: 'perfil',
+			action: 'perfil_usuario',
 		},
 		dataType: 'json'
 	}).done(function(result){

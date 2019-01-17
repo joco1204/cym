@@ -85,6 +85,32 @@ class Usuario{
 		return $this->business->return;
 	}
 
+	public function perfil_usuario(){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayData = array();
+			$query  = "SELECT id, perfil FROM pa_perfiles ";
+			$query .= "WHERE id NOT IN ('1', '8'); ";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 	public function crear_usuario($data){
 		$mysql = $this->business->mysql;
 		$db_mysql = $this->business->db_mysql;
@@ -124,7 +150,7 @@ class Usuario{
 						$correo  = $data->email;
 						$nombre  = $data->nombres.' '.$data->apellidos1.' '.$data->apellidos2;
 						$archivo = '';
-						$subject = 'Creación de Usuario - Portal Calidad';
+						$subject = 'Creación de Usuario - Portal Cyberactivo';
 						$body  	 = '<!DOCTYPE html>
 									<html>
 										<head>
@@ -136,14 +162,14 @@ class Usuario{
 										</head>
 										<body>
 											<h2>Buen d&iacute;a</h2>
-											<p>Usted ha sido registrado en el portal de calidad de Interactivo Contact Center.</p>
+											<p>Usted ha sido registrado en el portal de Ciberactivo de Interactivo Contact Center.</p>
 											<p>A continuaci&oacute;n se indicar&aacute;n las credenciales de acceso:</p>
 											<ul>
 												<li>Link de acceso: <a href="'.$url.'">'.$url.'</a></li>
-												<li>Usuario: '.$data->usaurio.'</li>
-												<li>Contrase&ntilde;a: '.$data->contrasena.'</li>
+												<li>Nombre: '.$data->nombres.' '.$data->apellidos1.' '.$data->apellidos2.'</li>
+												<li>Usuario de acceso: '.$data->usaurio.'</li>
 											</ul>
-											<p>Se recomienda al usuario hacer cambio de contrase&ntilde;a al iniciar sessi&oacute;n</p>
+											<p>El usuario y la contraseña de acceso a la plataforma es el mismo usuario y contraseña de red asignado.</p>
 											<table>
 												<tr>
 													<td><img src="https://www.interactivo.com.co/logo.png"></td>
