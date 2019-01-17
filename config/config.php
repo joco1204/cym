@@ -15,7 +15,7 @@ define('HOST_MYSQL', 'localhost');
 //Usuario de la base de datos
 define('USER_MYSQL', 'root');
 //Contraseña de base de datos
-define('PASS_MYSQL', '12345');
+define('PASS_MYSQL', '');
 //Nombre de la base de datos
 define('DB_MYSQL', 'calidad');
 //Cotejamiento de caracteres

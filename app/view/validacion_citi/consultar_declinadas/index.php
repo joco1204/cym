@@ -10,12 +10,12 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
 }
 ?>
 <section class="content-header">
-    <h1>VENTAS</h1>
+    <h1>VENTAS DECLINADAS</h1>
 </section>
 <section class="content">
     <div class='box box-primary'>
         <div class='box-header with-border'>
-            <h3 class='box-title'>LISTA DE DE VENTAS</h3>
+            <h3 class='box-title'>LISTA DE DE VENTAS DECLINADAS</h3>
         </div>
         <div class='box-body'>
             <section class='content'>
