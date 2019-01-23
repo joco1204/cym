@@ -28,7 +28,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h5 class="text-center">
-                                    <b>CYBERACTIVO ICC</b>
+                                    <b>CYBERACTIVO</b>
                                 </h5>
                             </div>
                             <div class="panel-body">
