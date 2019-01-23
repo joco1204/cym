@@ -25,12 +25,9 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <div class="icon">
                         <i class=""></i>
                     </div>
-                    <a href="#" onclick="javascript: pageContent('validacion/consultar_declinadas/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         <?php } ?>
     </div>
 </section>
-
-
-
