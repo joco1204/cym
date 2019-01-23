@@ -1,5 +1,5 @@
 <?php
-define('URL_ACCESS', 'http://localhost/calidad/');
+define('URL_ACCESS', 'http://localhost/cyberactivo/');
 /************************************************/
 /* Conexión al directorio activo */
 //Dominio ldap
@@ -17,7 +17,7 @@ define('USER_MYSQL', 'root');
 //Contraseña de base de datos
 define('PASS_MYSQL', '12345');
 //Nombre de la base de datos
-define('DB_MYSQL', 'calidad');
+define('DB_MYSQL', 'cyberactivo');
 //Cotejamiento de caracteres
 define('CS_MYSQL', 'utf8');
 /************************************************/
