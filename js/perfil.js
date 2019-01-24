@@ -2,7 +2,7 @@ $(function(){
 	$('#form_perfil').submit(function(e){
 		e.preventDefault();
 		if($('#cambiar_contrasena').val() == '' && $('#repetir_cambiar_contrasena').val() == ''){
-			$('#modal_perfil').modal().hide();
+			$('#modal_perfil').modal('toggle');
 			$("#modal_perfil .close").click();
 			swal({
 				title: "¡Correcto!",
@@ -29,7 +29,7 @@ $(function(){
 					dataType: 'json'
 				}).done(function(result){
 					if(result.bool){
-						$('#modal_perfil').modal().hide();
+						$('#modal_perfil').modal('toggle');
 						$("#modal_perfil .close").click();
 						swal({
 							title: "¡Correcto!",

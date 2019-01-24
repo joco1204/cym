@@ -148,4 +148,31 @@ if($id_empresa == '0'){ ?>
         </section>
     </form>
     <script src="../../js/analista/monitoreo.js"></script>
+    <div id="confirma_monitoreo" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 style="color: #f39c12;">Atención!</h1>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h4 id="mensaje_confirmacion"></h4>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button type="button" class="btn btn-success btn-lg" id="acepta_monitoreo">Aceptar</button>
+                            <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Cerrar</button>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php } ?>

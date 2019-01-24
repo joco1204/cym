@@ -92,7 +92,7 @@ $(function(){
 			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
-				$('#nuevo_error').modal().hide();
+				$('#nuevo_error').modal('toggle'); 
 				$("#nuevo_error .close").click();
 				swal({
 					title: "Correcto!",

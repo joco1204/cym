@@ -184,7 +184,7 @@
 			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
-				$('#crear_asesor').modal().hide();
+				$('#crear_asesor').modal('toggle');
 				$("#crear_asesor .close").click();
 				swal({
 					title: "Correcto!",
@@ -250,7 +250,7 @@
 			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
-				$('#modificar_asesor').modal().hide();
+				$('#modificar_asesor').modal('toggle');
 				$("#modificar_asesor .close").click();
 				swal({
 					title: "Correcto!",

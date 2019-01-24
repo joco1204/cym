@@ -118,7 +118,7 @@ $(function(){
 			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
-				$('#crear_campana').modal().hide();
+				$('#crear_campana').modal('toggle');
 				$("#crear_campana .close").click();
 				swal({
 					title: "Correcto!",
@@ -149,7 +149,7 @@ $(function(){
 			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
-				$('#modificar_campana').modal().hide();
+				$('#modificar_campana').modal('toggle');
 				$("#modificar_campana .close").click();
 				swal({
 					title: "Correcto!",

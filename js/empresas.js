@@ -108,7 +108,7 @@ $(function(){
 			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
-				$('#crear_empresa').modal().hide();
+				$('#crear_empresa').modal('toggle');
 				$("#crear_empresa .close").click();
 				swal({
 					title: "Correcto!",
@@ -140,7 +140,7 @@ $(function(){
 			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
-				$('#modificar_empresa').modal().hide();
+				$('#modificar_empresa').modal('toggle');
 				$("#modificar_empresa .close").click();
 				swal({
 					title: "Correcto!",

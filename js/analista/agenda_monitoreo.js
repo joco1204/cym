@@ -139,7 +139,6 @@ function addFechaMonitoreo(){
 		var count = parseInt($('#count_fechas').val())+1;
 	}
 	$('#count_fechas').val(count);
-	html += '<form id="form_fechas_monitoreo_'+count+'" autocomplete="off">';
 	html += '<div class="panel panel-primary fecha_mon">';
 	html += '<div class="panel-heading">';
 	html += '<p><b>Fecha # '+count+'</b></p>';
@@ -160,7 +159,7 @@ function addFechaMonitoreo(){
 	html += '</div>';
 	html += '</div>';
 	html += '<div class="col col-md-3">';
-	html += '<button type="submit" class="btn btn-success btn-sm" title="Guardar">';
+	html += '<button id="form_fechas_monitoreo_'+count+'" type="button" class="btn btn-success btn-sm" title="Guardar">';
 	html += '<span class="glyphicon glyphicon-floppy-disk"></span>';
 	html += '</button>';	
 	html += '</div>';
@@ -171,7 +170,6 @@ function addFechaMonitoreo(){
 	html += '</div>';
 	html += '</div>';
 	html += '</div>';
-	html += '</form>';
 
 	$('#canvas_fechas').append(html);
 	$("select").select2();
@@ -182,6 +180,7 @@ function addFechaMonitoreo(){
 	var yyyy = $('#anio').val();
 	var date_ini = new Date(yyyy, mm_ini, dd);
 	var date_end = new Date(yyyy, mm_end, 0);
+
 	$.fn.datepicker.dates['es'] = {
 		days: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],
 		daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
@@ -193,6 +192,7 @@ function addFechaMonitoreo(){
 		format: "yyyy-mm-dd",
 		titleFormat: "MM yyyy",
 	};
+	
 	$('.fecha_monitoreo').datepicker({
 		pickTime: true,
 		autoclose: true,
@@ -201,55 +201,50 @@ function addFechaMonitoreo(){
 		startDate: date_ini,
 		endDate: date_end,
 	});
-	$('#form_fechas_monitoreo_'+count).submit(function(e){
-		e.preventDefault();
+
+	$('#form_fechas_monitoreo_'+count).click(function(){	
 		var fecha = $('#fecha_'+count).val();
 		if(fecha == ''){
 			swal("Atención!","La fecha se encuentra vacía","warning");
 		} else {
-			swal({
-				title: "¡Atención!",
-				text: "Confirma que desea agendar el monitoreo \n para el día "+fecha,
-				type: 'warning',
-				showCancelButton: true,
-				confirmButtonColor: 'btn-primary',
-				cancelButtonColor: 'btn-danger',
-				confirmButtonText: 'Aceptar',
-				cancelButtonText: "Cancelar",
-				closeOnConfirm: false,
-			},function(){
-				$.ajax({
-					type: 'post', 
-					url: '../controller/ctragendamonitoreo.php',
-					data: {
-						action: 'guardar_fecha_monitoreo',
-						id_empresa: $('#id_empresa').val(),
-						id_campana: $('#id_campana').val(),
-						id_asesor: $('#id_asesor').val(),
-						nombre: sessionStorage.getItem('nombre')+" "+sessionStorage.getItem('apellido1'), 
-						email: sessionStorage.getItem('email'), 
-						fecha_monitoreo: $('#fecha_'+count).val()
-					},
-					dataType: 'json'
-				}).done(function(result){
-					if(result.bool){
-						swal({
-							title: "¡Correcto!",
-							text: "Se ha agendado el monitoreo corectamente",
-							type: 'success',
-							showCancelButton: false,
-							confirmButtonClass: "btn-success",
-							confirmButtonText: "Aceptar",
-							closeOnConfirm: true,
-						},function(){
-							pageContent('analista/agenda_monitoreo','id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val());
-						});
-					} else {
-						console.log('Error: '+result.msg);
-					}
-				});
-			});		
+			$('#confirma_monitoreo').modal();
+			$('#mensaje_confirmacion').html('Confirma agendar monitoreo para el día '+fecha);
 		}
+	});
+
+	$('#acepta_agenda').click(function(){
+		$('#confirma_monitoreo').modal('toggle'); 
+		$('#confirma_monitoreo .close').click();
+		$.ajax({
+			type: 'post', 
+			url: '../controller/ctragendamonitoreo.php',
+			data: {
+				action: 'guardar_fecha_monitoreo',
+				id_empresa: $('#id_empresa').val(),
+				id_campana: $('#id_campana').val(),
+				id_asesor: $('#id_asesor').val(),
+				nombre: sessionStorage.getItem('nombre')+" "+sessionStorage.getItem('apellido1'), 
+				email: sessionStorage.getItem('email'), 
+				fecha_monitoreo: $('#fecha_'+count).val()
+			},
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				swal({
+					title: "¡Correcto!",
+					text: "Se ha agendado el monitoreo corectamente",
+					type: 'success',
+					showCancelButton: false,
+					confirmButtonClass: "btn-success",
+					confirmButtonText: "Aceptar",
+					closeOnConfirm: true,
+				},function(){
+					pageContent('analista/agenda_monitoreo','id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val());
+				});
+			} else {
+				console.log('Error: '+result.msg);
+			}
+		});
 	});
 }
 
@@ -290,6 +285,5 @@ function anular_monitoreo(id){
 				console.log('Error: '+result.msg);
 			}
 		});
-	});	
-
+	});
 }

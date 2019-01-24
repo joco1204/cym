@@ -213,7 +213,7 @@ $(function(){
 			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
-				$('#modal_usuario').modal().hide();
+				$('#modal_usuario').modal('toggle');
 				$("#modal_usuario .close").click();
 				swal({
 					title: "Correcto!",
@@ -243,7 +243,7 @@ $(function(){
 			dataType: 'json'
 		}).done(function(result){
 			if(result.bool){
-				$('#modal_usuario_modificar').modal().hide();
+				$('#modal_usuario_modificar').modal('toggle');
 				$("#modal_usuario_modificar .close").click();
 				swal({
 					title: "Correcto!",
