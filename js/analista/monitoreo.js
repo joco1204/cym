@@ -260,7 +260,6 @@ $(function(){
 	});
 
 });
-
 function guardar_monitoreo(data){
 	$.ajax({
 		type: 'post',
