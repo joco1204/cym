@@ -81,6 +81,8 @@ $(function(){
 						html += '<button type="button" class="btn btn-warning btn-sm" title="Evaluar" onclick="javascript: pageContent(\'analista/monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+$('#id_campana').val()+'&id_asesor='+$('#id_asesor').val()+'&id_agenda='+row.id+'\');">';
 						html += '<span class="glyphicon glyphicon-ok"></span>';
 						html += '</button>';
+					} else if (row.fecha_monitoreo < $('#date').val()){
+
 					}
 
 					if($('#id_perfil').val() == '1' || $('#id_perfil').val() == '2'){

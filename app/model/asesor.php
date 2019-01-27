@@ -10,10 +10,8 @@ class Asesor{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query  = "SELECT a.id, e.tipo_identificacion, a.identificacion, a.nombre, a.apellido1, a.apellido2, d.usuario_red AS usuario, b.empresa, c.campana, a.estado ";
+			$query  = "SELECT a.id, e.tipo_identificacion, a.identificacion, a.nombre, a.apellido1, a.apellido2, d.usuario_red AS usuario, a.estado ";
 			$query .= "FROM ca_asesores AS a ";
-			$query .= "LEFT JOIN ca_empresa AS b ON a.id_empresa = b.id ";
-			$query .= "LEFT JOIN ca_campana AS c ON a.id_campana = c.id ";
 			$query .= "LEFT JOIN re_usuarios AS d ON a.identificacion = d.identificacion ";
 			$query .= "LEFT JOIN pa_tipo_identificacion AS e ON d.tipo_identificacion = e.id;";
 			$result = $mysql->query($query);
@@ -197,10 +195,10 @@ class Asesor{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query  = "SELECT a.id, a.nombre, a.apellido1, a.apellido2, b.tipo_identificacion, a.identificacion, b.usuario_red AS usuario, a.id_empresa, a.id_campana, a.estado ";
+			$query  = "SELECT a.id, a.nombre, a.apellido1, a.apellido2, b.tipo_identificacion, a.identificacion, b.usuario_red AS usuario, a.estado ";
 			$query .= "FROM ca_asesores AS a ";
 			$query .= "LEFT JOIN re_usuarios AS b ON a.identificacion = b.identificacion ";
-			$query .= "WHERE a.id = '".$data->id."';";
+			$query .= "WHERE a.id = '".$data->id."'; ";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
