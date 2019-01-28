@@ -117,3 +117,31 @@ if($id_asesor == '0'){ ?>
         </div>
     </div>
 </div>
+
+<div id="confirma_monitoreo_m" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 style="color: #f39c12;">Atención!</h1>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 id="mensaje_confirmacion_m"></h4>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <button type="button" class="btn btn-success btn-lg" id="acepta_agenda_m">Aceptar</button>
+                        <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Cerrar</button>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

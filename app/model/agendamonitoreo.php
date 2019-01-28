@@ -90,7 +90,6 @@ class AgendaMonitoreo{
 		return $this->business->return;
 	}
 
-	//
 	public function guardar_fecha_monitoreo($data){	
 		$mysql = $this->business->mysql;
 		$db_mysql = $this->business->db_mysql;
@@ -151,6 +150,29 @@ class AgendaMonitoreo{
 
 				$this->business->return->bool = true;
 				$this->business->return->msg = 'Se agendó el monitoreo para la fecha '.$data->fecha_monitoreo;
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function modifica_fecha_monitoreo($data){	
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		$email = $this->business->email;
+		$session = $this->business->session;
+		//Valida conexión a base de datos
+		if($mysql){
+			$query  = "UPDATE ca_agenda_monitoreo SET fecha_monitoreo = '".$data->fecha_monitoreo."', estado = '0' WHERE id = '".$data->id_agenda."';";
+			$result = $mysql->query($query);
+			if($result){
+				$this->business->return->bool = true;
+				$this->business->return->msg = 'Se agendó el monitoreo para el día '.$data->fecha_monitoreo;
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';

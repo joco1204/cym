@@ -22,8 +22,12 @@ if(isset($post->action)){
 			$result = $agendamonitoreo->guardar_fecha_monitoreo($post);
 			$business->return = $result;
 		break;
-		case 'anular_monitoreo':
-			$result = $agendamonitoreo->anular_monitoreo($post);
+		case 'guardar_fecha_monitoreo':
+			$result = $agendamonitoreo->guardar_fecha_monitoreo($post);
+			$business->return = $result;
+		break;
+		case 'modifica_fecha_monitoreo':
+			$result = $agendamonitoreo->modifica_fecha_monitoreo($post);
 			$business->return = $result;
 		break;
 		default:
