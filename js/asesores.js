@@ -180,7 +180,6 @@
 	$('#form_crear_asesor').submit(function(e){
 		e.preventDefault();
 		var data = $('#form_crear_asesor').serialize();
-		
 		$.ajax({
 			type: 'post',
 			url: '../controller/ctrasesor.php',

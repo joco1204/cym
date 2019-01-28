@@ -37,9 +37,18 @@ class Asesor{
 		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
 		if($mysql){
-			$query  = "INSERT INTO ca_asesores (nombre, apellido1, apellido2, identificacion, id_empresa, id_campana, estado) VALUES ('".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', '".$data->identificacion."', '".$data->empresa."', '".$data->campana."', 'activo'); ";
-			$result = $mysql->query($query);
-			if($result){
+			$query_asesor  = "INSERT INTO ca_asesores (nombre, apellido1, apellido2, identificacion, estado) VALUES ('".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', '".$data->identificacion."', 'activo'); ";
+			$result_asesor = $mysql->query($query_asesor);
+			if($result_asesor){
+				$id_asesor = $mysql->lastInsertId();
+				for ($i=1; $i <= $data->numero_campanas; $i++){
+					$empresa = 'empresa_'.$i;
+					$campana = 'campana_'.$i;
+					$estado = 'estado_campana_'.$i;
+					//Inserta en asesor empresa campaña
+					$query_asesor_ec = "INSERT INTO ca_asesores_ec (id_asesor, id_empresa, id_campana, estado) VALUES ('".$id_asesor."', '".$data->$empresa."', '".$data->$campana."', '".$data->$estado."');";
+					$mysql->query($query_asesor_ec);
+				}
 				$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, email, estado) ";
 				$query_usuario .= "VALUES ('".$data->usuario."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', '', 'activo');";
 				$result_usuario = $mysql->query($query_usuario);
@@ -49,9 +58,13 @@ class Asesor{
 					$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '8'); ";
 					$result_perfil = $mysql->query($query_perfil);
 					if($result_perfil){
-						//Inserta en usuarios empresa campaña
-						$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '8', '".$data->empresa."', '".$data->campana."');";
-						$result_ec = $mysql->query($query_ec);
+						for ($i=1; $i <= $data->numero_campanas; $i++){
+							$empresa = 'empresa_'.$i;
+							$campana = 'campana_'.$i;
+							//Inserta en usuarios empresa campaña
+							$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '8', '".$data->$empresa."', '".$data->$campana."');";
+							$result_ec = $mysql->query($query_ec);
+						}
 						if($result_ec){
 							$this->business->return->bool = true;
 							$this->business->return->msg = 'Se ha creado el asesor '.$data->nombre.' '.$data->apellido1.' correctamente';
