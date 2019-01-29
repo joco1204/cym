@@ -130,62 +130,68 @@ class Usuario{
 					$query .= "VALUES ('".$data->usaurio."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombres."', '".$data->apellidos1."', '".$data->apellidos2."', '".$data->email."', 'activo');";
 					$result = $mysql->query($query);
 					if($result){
-						
-						//Valida el id de la empresa y la campaña
-						isset($data->empresa) ? $empresa = $data->empresa : $empresa = '0';
-						isset($data->campana) ? $campana = $data->campana : $campana = '0';
-						
 						//Id de usuario
 						$id_usaurio = $mysql->lastInsertId();
-						
 						//Inserta en usuarios perfil
 						$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '".$data->perfil."'); ";
-						$mysql->query($query_perfil);
-						
-						//Inserta en usuarios empresa campaña
-						$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '".$data->perfil."', '".$empresa."', '".$campana."');";
-						$mysql->query($query_ec);
-
-						//Datos de email
-						$correo  = $data->email;
-						$nombre  = $data->nombres.' '.$data->apellidos1.' '.$data->apellidos2;
-						$archivo = '';
-						$subject = 'Creación de Usuario - Portal Cyberactivo';
-						$body  	 = '<!DOCTYPE html>
-									<html>
-										<head>
-											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-											<meta name="author" content="Interactivo Contact Center"/>
-											<meta name="description" content="Interactivo Contact Center"/>
-											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-											<title>Creaci&oacute;n de Usuario</title>
-										</head>
-										<body>
-											<h2>Buen d&iacute;a</h2>
-											<p>Usted ha sido registrado en el portal de Ciberactivo de Interactivo Contact Center.</p>
-											<p>A continuaci&oacute;n se indicar&aacute;n las credenciales de acceso:</p>
-											<ul>
-												<li>Link de acceso: <a href="'.$url.'">'.$url.'</a></li>
-												<li>Nombre: '.$data->nombres.' '.$data->apellidos1.' '.$data->apellidos2.'</li>
-												<li>Usuario de acceso: '.$data->usaurio.'</li>
-											</ul>
-											<p>El usuario y la contraseña de acceso a la plataforma es el mismo usuario y contraseña de red asignado.</p>
-											<table>
-												<tr>
-													<td><img src="https://www.interactivo.com.co/logo.png"></td>
-													<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co">www.interctivo.com.co</a></p></td>
-												</tr>
-											</table>
-											<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
-											<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
-										</body>
-									</html>';
-						//Envío de email
-						if($correo != ''){
-							$email->send($correo, $nombre, $subject, $body, $archivo);
+						$result_perfil = $mysql->query($query_perfil);
+						if($result_perfil){
+							if ($data->numero_campanas == '0'){
+								$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '".$data->perfil."', '0', '0');";
+								$mysql->query($query_ec);
+							} else {
+								for ($i=1; $i <= $data->numero_campanas; $i++){
+									$empresa = 'empresa_'.$i;
+									$campana = 'campana_'.$i;
+									$estado = 'estado_campana_'.$i;
+									$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana, estado) VALUES ('".$id_usaurio."', '".$data->perfil."', '".$data->$empresa."', '".$data->$campana."', '".$data->$estado."');";
+									$mysql->query($query_ec);
+								}
+							}
+							//Datos de email
+							$correo  = $data->email;
+							$nombre  = $data->nombres.' '.$data->apellidos1.' '.$data->apellidos2;
+							$archivo = '';
+							$subject = 'Creación de Usuario - Portal Cyberactivo';
+							$body  	 = '<!DOCTYPE html>
+										<html>
+											<head>
+												<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+												<meta name="author" content="Interactivo Contact Center"/>
+												<meta name="description" content="Interactivo Contact Center"/>
+												<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+												<title>Creaci&oacute;n de Usuario</title>
+											</head>
+											<body>
+												<h2>Buen d&iacute;a</h2>
+												<p>Usted ha sido registrado en el portal de Ciberactivo de Interactivo Contact Center.</p>
+												<p>A continuaci&oacute;n se indicar&aacute;n las credenciales de acceso:</p>
+												<ul>
+													<li>Link de acceso: <a href="'.$url.'">'.$url.'</a></li>
+													<li>Nombre: '.$data->nombres.' '.$data->apellidos1.' '.$data->apellidos2.'</li>
+													<li>Usuario de acceso: '.$data->usaurio.'</li>
+												</ul>
+												<p>El usuario y la contraseña de acceso a la plataforma es el mismo usuario y contraseña de red asignado.</p>
+												<table>
+													<tr>
+														<td><img src="https://www.interactivo.com.co/logo.png"></td>
+														<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co">www.interctivo.com.co</a></p></td>
+													</tr>
+												</table>
+												<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+												<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+											</body>
+										</html>';
+							//Envío de email
+							if($correo != ''){
+								$email->send($correo, $nombre, $subject, $body, $archivo);
+							}
+							$this->business->return->bool = true;
+							$this->business->return->msg = 'Se creó el usuario correctamente';
+						} else {
+							$this->business->return->bool = false;
+							$this->business->return->msg = 'Error en la creación del perfil';
 						}
-						$this->business->return->bool = true;
-						$this->business->return->msg = 'Se creó el usuario correctamente';
 					} else {
 						$this->business->return->bool = false;
 						$this->business->return->msg = 'Error query';

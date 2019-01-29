@@ -168,9 +168,13 @@
 
 	//Estado campaña
 	$('#estado_campana_1').append($('<option>', {
+		value: '',
+		text: '',
+	}).attr("selected", true));
+	$('#estado_campana_1').append($('<option>', {
 		value: 'activo',
 		text: 'activo',
-	}).attr("selected", true));
+	}));
 	$('#estado_campana_1').append($('<option>', {
 		value: 'inactivo',
 		text: 'inactivo',
@@ -531,9 +535,13 @@ function addCampana(){
 	});
 	//Estado campaña
 	$('#estado_campana_'+count).append($('<option>', {
+		value: '',
+		text: '',
+	}).attr("selected", true));
+	$('#estado_campana_'+count).append($('<option>', {
 		value: 'activo',
 		text: 'activo',
-	}).attr("selected", true));
+	}));
 	$('#estado_campana_'+count).append($('<option>', {
 		value: 'inactivo',
 		text: 'inactivo',

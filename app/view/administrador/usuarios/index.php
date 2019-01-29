@@ -104,39 +104,9 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" id="numero_campanas" name="numero_campanas" value="0">
                     <div id="empresa_campana" style="display: none;">
-                        <div id="canvas_empresa_campana">
-                            <input type="hidden" id="numero_campanas" name="numero_campanas">
-                            <div class="row campanas">
-                                <div class="col col-md-3">
-                                    <div class="form-group has-feedback">
-                                        <label class="control-label" for="empresa_1">EMPRESA:</label>
-                                        <select class="form-control" id="empresa_1" name="empresa_1" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col col-md-3">
-                                    <div class="form-group has-feedback">
-                                        <label class="control-label" for="campana_1">CAMPAÑA:</label>
-                                        <select class="form-control" id="campana_1" name="campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col col-md-3">
-                                    <div class="form-group has-feedback">
-                                        <label class="control-label" for="estado_campana_1">ESTADO:</label>
-                                        <select class="form-control" id="estado_campana_1" name="estado_campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col col-md-3">
-                                    <br>
-                                    <button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampana();" title="Añadir Campaña">
-                                        <span class="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="canvas_empresa_campana"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -225,9 +195,9 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" id="numero_campanas_m" name="numero_campanas_m" value="0">
                     <div id="empresa_campana_m" style="display: none;">
                         <div id="canvas_empresa_campana_m">
-                            <input type="hidden" id="numero_campanas_m" name="numero_campanas_m">
                             <div class="row campanas_m">
                                 <div class="col col-md-3">
                                     <div class="form-group has-feedback">

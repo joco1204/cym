@@ -101,6 +101,8 @@ $(function(){
 		}
 	});
 
+	$('#canvas_empresa_campana').empty();
+
 	$.ajax({
 		type: 'post',
 		url: '../controller/ctrusuarios.php',
@@ -144,11 +146,47 @@ $(function(){
 	});
 
 
-	$('#perfil').change(function(e){
-		if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6' || $(this).val() == '8'){
+	$('#perfil').change(function(){
+		$('#empresa_campana').hide();
+		$('#numero_campanas').val('0')
+		if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6' || $(this).val() == '7'){
 			$('#empresa_campana').show();
-			$('#empresa').prop('disabled', false);
-			$('#campana').prop('disabled', false);
+			$('#numero_campanas').val('1');
+			$('#canvas_empresa_campana').empty();
+
+			var html = '';
+			html += '<div class="row campanas">';
+                html += '<div class="col col-md-3">';
+                    html += '<div class="form-group has-feedback">';
+                        html += '<label class="control-label" for="empresa_1">EMPRESA:</label>';
+                        html += '<select class="form-control" id="empresa_1" name="empresa_1" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
+                        html += '<div class="help-block with-errors"></div>';
+                    html += '</div>';
+                html += '</div>';
+                html += '<div class="col col-md-3">';
+                    html += '<div class="form-group has-feedback">';
+                        html += '<label class="control-label" for="campana_1">CAMPAÑA:</label>';
+                        html += '<select class="form-control" id="campana_1" name="campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+                        html += '<div class="help-block with-errors"></div>';
+                    html += '</div>';
+                html += '</div>';
+                html += '<div class="col col-md-3">';
+                    html += '<div class="form-group has-feedback">';
+                        html += '<label class="control-label" for="estado_campana_1">ESTADO:</label>';
+                        html += '<select class="form-control" id="estado_campana_1" name="estado_campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+                        html += '<div class="help-block with-errors"></div>';
+                    html += '</div>';
+                html += '</div>';
+                html += '<div class="col col-md-3">';
+                    html += '<br>';
+                    html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampana();" title="Añadir Campaña">';
+                        html += '<span class="glyphicon glyphicon-plus"></span>';
+                    html += '</button>';
+                html += '</div>';
+            html += '</div>';
+            $('#canvas_empresa_campana').html(html);
+            $("select").select2();
+
 			//empresas
 			$.ajax({
 				type: 'post',
@@ -198,18 +236,18 @@ $(function(){
 
 			//Estado campaña
 			$('#estado_campana_1').append($('<option>', {
+				value: '',
+				text: '',
+			}).attr("selected", true));
+			$('#estado_campana_1').append($('<option>', {
 				value: 'activo',
 				text: 'activo',
-			}).attr("selected", true));
+			}));
 			$('#estado_campana_1').append($('<option>', {
 				value: 'inactivo',
 				text: 'inactivo',
 			}));
-
 		} else {
-			$('#empresa_1').prop('disabled', true);
-			$('#campana_1').prop('disabled', true);
-			$('#estado_campana_1').prop('disabled', true);
 			$('#empresa_campana').hide();
 		}
 	});
@@ -217,7 +255,6 @@ $(function(){
 	$('#usuario_form').submit(function(e){
 		e.preventDefault();
 		var data = $(this).serialize();
-
 		$.ajax({
 			type: 'post',
 			url: '../controller/ctrusuarios.php',
@@ -631,9 +668,13 @@ function addCampana(){
 	});
 	//Estado campaña
 	$('#estado_campana_'+count).append($('<option>', {
+		value: '',
+		text: '',
+	}).attr("selected", true));
+	$('#estado_campana_'+count).append($('<option>', {
 		value: 'activo',
 		text: 'activo',
-	}).attr("selected", true));
+	}));
 	$('#estado_campana_'+count).append($('<option>', {
 		value: 'inactivo',
 		text: 'inactivo',
