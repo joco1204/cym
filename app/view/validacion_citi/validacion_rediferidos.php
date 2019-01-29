@@ -12,11 +12,10 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
     <h1><b>VALIDACIÓN REDIFERIDOS</b></h1>
 </section>
 <section class="content">
-    <!-- Small boxes (Stat box) -->
+
     <div class="row">
         <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'){ ?>
             <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
                 <div class="small-box bg-blue">
                     <div class="inner">
                         <h3>1</h3>
@@ -30,7 +29,12 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
             </div>
         <?php } ?>
     </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12" id="pruebasconst"></div>
+    </div>
 </section>
+<script src="../../js/pruebassqlsrv.js"></script>
 
 
 

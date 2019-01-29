@@ -28,22 +28,12 @@ define('CS_MYSQL', 'utf8');
 define('MOTOR_SQLSRV', 'sqlsrv');
 //Host de la base de datos
 define('HOST_SQLSRV', '192.168.100.168\BI_ICC, 51473');
-
-/******* Conexión a la BD de validación ********/
 //Usuario de la base de datos
 define('USER_SQLSRV_VAL', 'SWCITIVALVENTA');
 //Contraseña de base de datos
-define('PASS_SQLSRV_VAL', '*ValidaV3nt4Sc0ti4$2019*');
+define('PASS_SQLSRV_VAL', 'ValidaV3nt4Sc0ti4$2019');
 //Nombre de la base de datos
 define('DB_SQLSRV_VAL', 'DATA_CITIBANK');
-
-/******** Conexión a la BD de calidad *********/
-//Usuario de la base de datos
-define('USER_SQLSRV_CAL', '');
-//Contraseña de base de datos
-define('PASS_SQLSRV_CAL', '');
-//Nombre de la base de datos
-define('DB_SQLSRV_CAL', '');
 
 /************************************************/
 //Respuesta valor por defecto
