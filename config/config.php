@@ -21,17 +21,30 @@ define('DB_MYSQL', 'cyberactivo');
 //Cotejamiento de caracteres
 define('CS_MYSQL', 'utf8');
 /************************************************/
-/* Datos de conexión a MS SQL Server */
+/****** Datos de conexión a MS SQL Server ******/
+
+/***** String de conexión a MS SQL Server ******/
 //Motor de la base de datos
 define('MOTOR_SQLSRV', 'sqlsrv');
 //Host de la base de datos
 define('HOST_SQLSRV', '192.168.100.168\BI_ICC, 51473');
+
+/******* Conexión a la BD de validación ********/
 //Usuario de la base de datos
-define('USER_SQLSRV', 'sa');
+define('USER_SQLSRV_VAL', 'SWCITIVALVENTA');
 //Contraseña de base de datos
-define('PASS_SQLSRV', 'Quilontes$$2');
+define('PASS_SQLSRV_VAL', '*ValidaV3nt4Sc0ti4$2019*');
 //Nombre de la base de datos
-define('DB_SQLSRV', 'BOD_TARIFICADOR_PBA');
+define('DB_SQLSRV_VAL', 'DATA_CITIBANK');
+
+/******** Conexión a la BD de calidad *********/
+//Usuario de la base de datos
+define('USER_SQLSRV_CAL', '');
+//Contraseña de base de datos
+define('PASS_SQLSRV_CAL', '');
+//Nombre de la base de datos
+define('DB_SQLSRV_CAL', '');
+
 /************************************************/
 //Respuesta valor por defecto
 define('MENSSAGE_BOOL', false);
