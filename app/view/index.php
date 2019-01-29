@@ -105,7 +105,9 @@
             <section class="content-header">
                 <!-- Título de contenido principal -->
             </section>
+            <!---->
             <section class="content" id="contenido-index"></section>
+            <!---->
         </div>
         <script type="text/javascript">
             pageContent('contenido');

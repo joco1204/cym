@@ -229,6 +229,7 @@ class Validacion{
 			$query .= "INNER JOIN va_usuarios_agent as j ON a.id_asesor=j.id ";
 			$query .= "INNER JOIN ca_asesores as k ON j.id_asesor=k.id ";
 			$query .= "WHERE a.id_estado='1'; ";
+			//var_dump($query);
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){
