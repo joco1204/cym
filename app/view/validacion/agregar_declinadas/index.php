@@ -20,6 +20,11 @@ isset($get->id_declinada) ? $id_declinada = $get->id_declinada : $id_declinada =
                 <h3 class='box-title'>VENTAS DECLINADAS</h3>
             </div>           
             <div class='box-body'>
+                <div class="row">
+                    <div class="col col-md-12 text-center">
+                        <button type="button" class="btn btn-danger" onclick="javascript: pageContent('validacion/consultar_declinadas/index'); ">Volver</button>
+                    </div>
+                </div>
                 <section class='content'>
                     <form id="validacion_form" role="form" autocomplete="off">
                         <?php if($id_declinada != '0'){ ?>

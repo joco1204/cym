@@ -187,7 +187,7 @@ class Validacion{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT a.id, b.id as id_estado, b.estado, a.fecha_venta, a.fecha_validacion, j.id as id_agent, j.agent_matriz, concat(k.nombres,' ',k.apellidos) as nombre_asesor, a.cedula_cliente, d.id as id_tipo_servicio, d.tipo_servicio, c.id as id_motivo, c.motivo, e.id as id_usuario, e.usuario, a.observaciones "; 
+			$query  = "SELECT a.id, b.id as id_estado, b.estado, a.fecha_venta, a.fecha_validacion, j.id as id_agent, j.agent_matriz, concat(k.nombre,' ',k.apellido1,' ',k.apellido2) as nombre_asesor, a.cedula_cliente, d.id as id_tipo_servicio, d.tipo_servicio, c.id as id_motivo, c.motivo, e.id as id_usuario, e.usuario_red, a.observaciones "; 
 			$query .= "FROM va_validador as a "; 
 			$query .= "INNER JOIN va_estado as b ON a.id_estado=b.id "; 
 			$query .= "INNER JOIN va_motivo_principal as c ON  a.id_estado=c.id "; 
@@ -220,7 +220,7 @@ class Validacion{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT a.id, d.tipo_servicio, concat (j.agent_matriz,' - ',k.nombres,' ',k.apellidos) as agent, a.fecha_validacion, b.estado "; 
+			$query  = "SELECT a.id, d.tipo_servicio, concat (j.agent_matriz,' - ',k.nombre,' ',k.apellido1,' ',k.apellido2) as agent, a.fecha_validacion, b.estado "; 
 			$query .= "FROM va_validador as a "; 
 			$query .= "INNER JOIN va_estado as b ON a.id_estado=b.id "; 
 			$query .= "INNER JOIN va_motivo_principal as c ON  a.id_estado=c.id "; 
