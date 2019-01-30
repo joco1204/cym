@@ -72,7 +72,7 @@
     <?php } ?>
     <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'){ ?>
         <li class="treeview">
-            <a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos-');">
+            <a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos');">
                 <i class="glyphicon glyphicon-ok-circle"></i> <span>VALIDACIÓN CITI</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>

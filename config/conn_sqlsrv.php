@@ -5,15 +5,10 @@ class SQLSRV extends PDO{
 	//Parametros de conexión a la base de datos
 	private $type = MOTOR_SQLSRV;
 	private $host = HOST_SQLSRV;
-	private $user = USER_SQLSRV_VAL;
-	private $pass = PASS_SQLSRV_VAL;
-	private $db = DB_SQLSRV_VAL;
 	//Constructor de conexión a la pase de datos
-	public function __construct(){
+	public function __construct($user, $pass, $db){
 		//Definicion del string de conexión a la base de datos
-		$strc = $this->type.':server='.$this->host.';database='.$this->db;
-		$user = $this->user;
-		$pass = $this->pass;
+		$strc = $this->type.':server='.$this->host.';database='.$db;
 		//conexión a la base de datos
 		try{
 			$conn = parent::__construct($strc, $user, $pass);
