@@ -29,7 +29,7 @@ define('MOTOR_SQLSRV', 'sqlsrv');
 //Host de la base de datos
 define('HOST_SQLSRV', '192.168.100.168\BI_ICC, 51473');
 
-
+/***** parametro de conexion para validación ******/
 //Usuario de la base de datos
 define('USER_SQLSRV_VAL', 'SWCITIVALVENTA');
 //Contraseña de base de datos
@@ -37,6 +37,7 @@ define('PASS_SQLSRV_VAL', 'ValidaV3nt4Sc0ti4$2019');
 //Nombre de la base de datos
 define('DB_SQLSRV_VAL', 'DATA_CITIBANK');
 
+/***** parametro de conexion para calidad ******/
 //Usuario de la base de datos
 define('USER_SQLSRV_CAL', '');
 //Contraseña de base de datos
