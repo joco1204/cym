@@ -16,8 +16,16 @@ if($id_empresa == '0'){ ?>
 		});
 	</script>
 <?php } else { ?>
-	<input type="hidden" name="id_empresa" id="id_empresa" value="<?= $id_empresa; ?>">
-	<input type="hidden" name="id_campana" id="id_campana" value="<?= $id_campana; ?>">
+    <?php if($id_campana == '0'){ ?>
+        <script type="text/javascript">
+            $(function(){
+                pageContent('contenido');
+            });
+        </script>
+    <?php } else { ?>
+        <input type="hidden" name="id_empresa" id="id_empresa" value="<?= $id_empresa; ?>">
+        <input type="hidden" name="id_campana" id="id_campana" value="<?= $id_campana; ?>">
+    <?php } ?>
 <?php } ?>
 <input type="hidden" name="id_perfil" id="id_perfil" value="<?= $id_perfil; ?>">
 <section class="content-header">

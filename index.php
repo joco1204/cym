@@ -21,6 +21,7 @@
                 </div>
             </div>
         </div>
+        <br>
         <div class="container">
             <form id="login" autocomplete="off">
                 <div class="row">
@@ -29,6 +30,7 @@
                             <div class="panel-heading">
                                 <h5 class="text-center">
                                     <b>CYBERACTIVO</b>
+                                    <input type="hidden" name="action" id="action" value="">
                                 </h5>
                             </div>
                             <div class="panel-body">

@@ -1,4 +1,5 @@
 <?php 
+error_reporting(1);
 class Campana{
 	function __construct(){
 		$this->business = new Business();
@@ -83,10 +84,29 @@ class Campana{
 	public function campanas_analista($data){
 		$mysql = $this->business->mysql;
 		$db_mysql = $this->business->db_mysql;
+		$session = $this->business->session;
+		//Recibe las campañas asignadas
+		$session->start();
+		$arr_campana = $session->getSession('campana');
+		$num_campanas = $session->getSession('num_campanas');
+		$obj_campana = ((object) $arr_campana);
+		$obj_campana = new stdClass();
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayCampana = array();
-			$query   = "SELECT id, campana FROM ca_campana WHERE id_empresa = '".$data->id_empresa."'; "; 
+			$query   = "SELECT id, campana FROM ca_campana ";
+			$query  .= "WHERE id_empresa = '".$data->id_empresa."' AND id IN(";
+			//Bucle para construir las campañas asignadas
+			foreach($arr_campana as $key => $valor){
+				$i = $key+1;
+			    $campana = $obj_campana->$key = $valor;
+			    if($i == $num_campanas){
+			    	$query .= $campana;	
+			    } else {
+			    	$query .= $campana.", ";
+			    }
+			}
+			$query .= "); ";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){

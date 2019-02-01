@@ -8,14 +8,24 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
     $session->destroy();
     header('location: ../../index.php');
 }
+
+$arr_empresas = $session->getSession('empresa');
+$obj_empresas = ((object) $arr_empresas);
+$obj_empresas = new stdClass();
+
 ?>
 <section class="content-header">
-	<input type="hidden" name="empresa" id="empresa" value="<?php echo $session->getSession('empresa'); ?>">
-	<?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2'){ ?>
-		<h1><b>LISTA DE EMPRESAS</b></h1>
-	<?php } else { ?>
-		<h1><b>EMPRESA: </b> <label id="nombre_empresa"></label></h1>
-	<?php } ?>
+	<input type="hidden" name="num_empresas" id="num_empresas" value="<?php echo $session->getSession('num_empresas'); ?>">
+	<?php 
+		foreach ($arr_empresas as $key => $valor){
+			$i = ($key + 1);
+		    $obj_empresas->$key = $valor;
+		    echo '<input type="hidden" name="empresa_'.$i.'" id="empresa_'.$i.'" value="'.$obj_empresas->$key.'">';
+		}
+	?>
+	<h1>
+		<b>EMPRESAS</b>
+	</h1>
 </section>
 <section class="content">
     <div class="container" id="container_panel"></div>

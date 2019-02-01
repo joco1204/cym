@@ -13,7 +13,7 @@ $(function(){
 			var html = "";
 			html += '<div class="row text-center">';
 			$.each(data, function(i, row){
-				var i=i+1;
+				var i = i+1;
 				html += '<div class="col-lg-3 text-center">';
 				html += '<div class="small-box bg-blue" onclick="javascript: pageContent(\'analista/plan_monitoreo\',\'id_empresa='+$('#id_empresa').val()+'&id_campana='+row.id+'\');" style="cursor:pointer; height: 150px;">';
 				html += '<div class="inner">';
@@ -28,6 +28,7 @@ $(function(){
 			});
 			html += '</div>';
 			$('#container_panel').html(html);
+
 		} else {
 			console.log('Error: '+result.msg);
 		}

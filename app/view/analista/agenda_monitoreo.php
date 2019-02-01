@@ -42,7 +42,7 @@ if($id_asesor == '0'){ ?>
                         <span id="nombre_asesor"></span>
                     </div>
                     <div class="col col-md-3">
-                        <span><b>IDENTIFICAICÓN:</b></span>
+                        <span><b>IDENTIFICACIÓN:</b></span>
                     </div>
                     <div class="col col-md-3">
                         <span id="identificacion_asesor"></span>

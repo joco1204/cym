@@ -39,14 +39,15 @@ class PlanMonitoreo{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query  = "SELECT a.id, a.identificacion, a.nombre, a.apellido1, a.apellido2, b.empresa, c.campana, a.estado ";
+			$query  = "SELECT a.id, a.identificacion, a.nombre, a.apellido1, a.apellido2, c.empresa, d.campana, a.estado ";
 			$query .= "FROM ca_asesores AS a ";
-			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id ";
-			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id ";
-			$query .= "WHERE a.id_empresa = '".$data->id_empresa."' ";
-			$query .= "AND a.id_campana = '".$data->id_campana."' ";
+			$query .= "LEFT JOIN ca_asesores_ec AS b ON a.id = b.id_asesor ";
+			$query .= "LEFT JOIN ca_empresa AS c ON b.id_empresa = c.id ";
+			$query .= "LEFT JOIN ca_campana AS d ON b.id_campana = d.id ";
+			$query .= "WHERE b.id_empresa = '".$data->id_empresa."' ";
+			$query .= "AND b.id_campana = '".$data->id_campana."' ";
 			$query .= "AND a.estado = 'activo' ";
-			$query .= "ORDER BY b.empresa, c.campana;";
+			$query .= "ORDER BY c.empresa, d.campana;";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){

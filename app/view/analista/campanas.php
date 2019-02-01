@@ -3,9 +3,7 @@ include '../../../config/session.php';
 $session = new Session();
 $session->start();
 $get = ((object) $_GET);
-
 isset($get->id_empresa) ? $id_empresa = $get->id_empresa : $id_empresa = '0';
-
 if($id_empresa == '0'){ ?>
 	<script type="text/javascript">
 		$(function(){

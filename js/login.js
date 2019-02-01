@@ -1,16 +1,14 @@
 $(function(){
 	$('#login').submit(function(e){
+		$('#action').val('login');
 		e.preventDefault();
+		var data = $(this).serialize();
 		//Ajax that executes the login
 		if ($('#user').val() != "" && $('#pass').val() != ""){
 			$.ajax({
 				type: 'POST',
 				url: 'app/controller/ctrloginldap.php',
-				data: {
-						action: 'login',
-						user: $('#user').val(), 
-						pass: $('#pass').val()
-					},
+				data: data,
 				dataType: 'json'
 			}).done(function(result){
 				if(result.bool){
@@ -21,7 +19,7 @@ $(function(){
 						url: 'app/controller/ctrloginldap.php',
 						data: {
 								action: 'session',
-								iduser: data.iduser,
+								id_user: data.id_user,
 								token: data.token
 							},
 						dataType: 'json'
@@ -40,9 +38,11 @@ $(function(){
 							sessionStorage.setItem('identificacion', data2.identificacion);
 							sessionStorage.setItem('email', data2.email);
 							sessionStorage.setItem('estado', data2.estado);
+							sessionStorage.setItem('token', data2.token);
+							sessionStorage.setItem('num_empresas', data2.num_empresas);
+							sessionStorage.setItem('num_campanas', data2.num_campanas);
 							sessionStorage.setItem('empresa', data2.empresa);
 							sessionStorage.setItem('campana', data2.campana);
-							sessionStorage.setItem('token', data2.token);
 							//entry to the platform
 							window.location.href = "app/view/index.php";
 						} else {

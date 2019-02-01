@@ -10,10 +10,11 @@ class AgendaMonitoreo{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT a.id, a.identificacion, a.nombre, a.apellido1, a.apellido2, b.empresa, c.campana ";
+			$query  = "SELECT a.id, a.identificacion, a.nombre, a.apellido1, a.apellido2, c.empresa, d.campana ";
 			$query .= "FROM ca_asesores AS a ";
-			$query .= "JOIN ca_empresa AS b ON a.id_empresa = b.id ";
-			$query .= "JOIN ca_campana AS c ON a.id_campana = c.id ";
+			$query .= "LEFT JOIN ca_asesores_ec AS b ON a.id = b.id_asesor ";
+			$query .= "LEFT JOIN ca_empresa AS c ON b.id_empresa = c.id ";
+			$query .= "LEFT JOIN ca_campana AS d ON b.id_campana = d.id ";
 			$query .= "WHERE a.id = '".$data->id_asesor."'; ";
 			$result = $mysql->query($query);
 			if($result){
