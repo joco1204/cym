@@ -94,6 +94,55 @@ class Campana{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayCampana = array();
+			if($arr_campana[0] == 0) {
+				$query   = "SELECT id, campana FROM ca_campana ";
+				$query  .= "WHERE id_empresa = '".$data->id_empresa."'; ";
+			} else {
+				$query   = "SELECT id, campana FROM ca_campana ";
+				$query  .= "WHERE id_empresa = '".$data->id_empresa."' AND id IN(";
+				//Bucle para construir las campañas asignadas
+				foreach($arr_campana as $key => $valor){
+					$i = $key+1;
+				    $campana = $obj_campana->$key = $valor;
+				    if($i == $num_campanas){
+				    	$query .= $campana;	
+				    } else {
+				    	$query .= $campana.", ";
+				    }
+				}
+				$query .= "); ";
+			}
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayCampana, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayCampana);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function campanas_asesor($data){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		$session = $this->business->session;
+		//Recibe las campañas asignadas
+		$session->start();
+		$arr_campana = $session->getSession('campana');
+		$num_campanas = $session->getSession('num_campanas');
+		$obj_campana = ((object) $arr_campana);
+		$obj_campana = new stdClass();
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayCampana = array();
 			$query   = "SELECT id, campana FROM ca_campana ";
 			$query  .= "WHERE id_empresa = '".$data->id_empresa."' AND id IN(";
 			//Bucle para construir las campañas asignadas

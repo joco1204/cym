@@ -102,6 +102,31 @@ class Empresa{
 		return $this->business->return;
 	}
 
+	public function empresa_asesor(){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayEmpresa = array();
+			$query  = "SELECT id, empresa, imagen, estado FROM ca_empresa; ";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayEmpresa, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayEmpresa);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
 	public function data_empresa($data){
 		$mysql = $this->business->mysql;
 		$db_mysql = $this->business->db_mysql;

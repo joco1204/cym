@@ -22,6 +22,10 @@ if(isset($post->action)){
 			$result = $campana->campanas_analista($post);
 			$business->return = $result;
 		break;
+		case 'campanas_asesor':
+			$result = $campana->campanas_asesor($post);
+			$business->return = $result;
+		break;
 		case 'data_campana':
 			$result = $campana->data_campana($post);
 			$business->return = $result;

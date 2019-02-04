@@ -26,6 +26,10 @@ if(isset($post->action)){
 			$result = $empresa->empresa_analista();
 			$business->return = $result;
 		break;
+		case 'empresa_asesor':
+			$result = $empresa->empresa_asesor();
+			$business->return = $result;
+		break;
 		case 'data_empresa':
 			$result = $empresa->data_empresa($post);
 			$business->return = $result;

@@ -1,4 +1,5 @@
 <?php
+error_reporting(1);
 class Asesor{
 	function __construct(){
 		$this->business = new Business();
@@ -280,21 +281,24 @@ class Asesor{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query_asesor  = "SELECT id FROM ca_asesores WHERE identificacion = '".$data->identificacion."' AND id_empresa = '".$data->empresa."' AND id_campana = '".$data->campana."'; ";
+			//Consulta que muestra el id del asesor
+			$query_asesor  = "SELECT DISTINCT a.id FROM ca_asesores AS a LEFT JOIN ca_asesores_ec AS b ON a.id = b.id_asesor WHERE a.identificacion = '".$data->identificacion."' AND b.id_empresa = '".$data->empresa."' AND b.id_campana = '".$data->campana."';";
 			$result_asesor = $mysql->query($query_asesor);
 			if($result_asesor){
 				while($row_asesor = $result_asesor->fetch(PDO::FETCH_OBJ)){
-					$query_num = "SELECT COUNT(*) AS num_monitoreos FROM ca_monitoreo_asesor WHERE id_asesor = '".$row_asesor->id."' AND fecha_registro BETWEEN '".$data->desde."' AND '".$data->hasta."';";
+					//Consulta que muestra los numeros de monitoreos
+					$query_num = "SELECT COUNT(*) AS num_monitoreos FROM ca_monitoreo_asesor WHERE id_asesor = '".$row_asesor->id."' AND fecha_registro BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."';";
 					$result_num = $mysql->query($query_num);
-					while($row_num = $result_num->fetch(PDO::FETCH_OBJ)){
-						$query_total  = "SELECT a.id_asesor,  b.id_error, d.error, c.calculo_valor, FORMAT(SUM(b.valor_porcentaje_cumplimiento)/".$row_num->num_monitoreos.",0) AS valor_porcentaje_cumplimiento ";
-						$query_total .= "FROM ca_monitoreo_asesor AS a ";
-						$query_total .= "INNER JOIN ca_monitoreo_asesor_detallado AS b ON a.id = b.id_monitoreo_asesor ";
-						$query_total .= "INNER JOIN ca_error AS c ON b.id_error = c.id ";
-						$query_total .= "INNER JOIN pa_tipo_error AS d ON c.tipo_error = d.id ";
-						$query_total .= "WHERE a.id_asesor = '".$row_asesor->id."' AND a.fecha_registro BETWEEN '".$data->desde."' AND '".$data->hasta."' AND c.calculo_valor = 'sum' ";
-						$query_total .= "GROUP BY a.id_asesor,  b.id_error, d.error, c.calculo_valor; ";
-
+					while ($row_num = $result_num->fetch(PDO::FETCH_OBJ)){
+						//Consulta que muestra la información del monitoreo
+						$query_total  = "SELECT a.id_asesor, a.id_error, a.error, a.siglas, a.tipo_error, a.color_informe, FORMAT((SUM(a.porcentaje)/".$row_num->num_monitoreos."), 0) AS porcentaje ";
+						$query_total .= "FROM ca_monitoreo_asesor_detallado_general AS a ";
+						$query_total .= "WHERE id_asesor = '".$row_asesor->id."' AND a.fecha_llamada BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
+						$query_total .= "GROUP BY a.id_asesor, a.id_error, a.error, a.siglas, a.tipo_error, a.color_informe; ";
+						$result_total = $mysql->query($query_total);
+						while($row_total = $result_total->fetch(PDO::FETCH_OBJ)){
+							array_push($arrayTabla, $row_total);
+						}
 					}
 				}
 				$this->business->return->bool = true;
@@ -309,5 +313,139 @@ class Asesor{
 		}
 		return $this->business->return;
 	}
+
+	public function informe_detallado_asesor($data){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayDetallado = array();
+			//Consulta reporte detallado
+			$query  = "SELECT DISTINCT a.id_asesor, a.id_error, a.error, a.siglas, a.tipo_error, a.color_informe, a.porcentaje  ";
+			$query .= "FROM ca_monitoreo_asesor_detallado_general AS a ";
+			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
+			$query .= "WHERE b.identificacion = '".$data->identificacion."' AND a.fecha_llamada = '".$data->fecha."';";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){	
+					array_push($arrayDetallado, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayDetallado);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	//
+	public function ultima_fecha_monitoreo($data){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayUltimaFecha = array();
+			//Consulta reporte detallado
+			$query  = "SELECT MAX(a.id) AS id_monitoreo, MAX(a.fecha_llamada) AS ultima_fecha ";
+			$query .= "FROM ca_monitoreo_asesor AS a LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
+			$query .= "WHERE b.identificacion = '".$data->identificacion."' AND a.fecha_llamada BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayUltimaFecha, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayUltimaFecha);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+	
+	//
+	public function fechas_monitoreo($data){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayFechas = array();
+			//Consulta reporte detallado
+			$query  = "SELECT a.id AS id_monitoreo, a.fecha_llamada ";
+			$query .= "FROM ca_monitoreo_asesor AS a ";
+			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
+			$query .= "WHERE b.identificacion = '".$data->identificacion."' AND a.fecha_llamada BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
+			$query .= "ORDER BY a.id DESC";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){	
+					array_push($arrayFechas, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayFechas);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	//
+	public function descripcion_error($data){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayFechas = array();
+			//Consulta reporte detallado
+			$query  = "SELECT a.id_error, b.error, a.id_punto_entrenamiento, c.punto_entrenamiento ";
+			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
+			$query .= "LEFT JOIN pa_tipo_error AS b ON a.id_error = b.id ";
+			$query .= "LEFT JOIN ca_punto_entrenamiento AS c ON a.id_punto_entrenamiento = c.id ";
+			$query .= "WHERE a.id_punto_entrenamiento <> '0' AND a.id_monitoreo_asesor = '".$data->id_monitoreo."';";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){	
+					array_push($arrayFechas, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayFechas);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function primer_dia(){
+		$month = date('m');
+		$year = date('Y');
+		return date('Y-m-d', mktime(0,0,0, $month, 1, $year));
+	}
+
+	public function ultimo_dia(){ 
+		$month = date('m');
+		$year = date('Y');
+		$day = date("d", mktime(0,0,0, $month+1, 0, $year));
+		return date('Y-m-d', mktime(0,0,0, $month, $day, $year));
+	}
+
 }
 ?>
