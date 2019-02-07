@@ -42,6 +42,8 @@ $(function(){
 							html += '<span class="info-box-icon">';
 							if(row.imagen != ''){
 								html += '<center><img src="'+row.imagen+'" class="img-responsive" alt="'+row.empresa+'" style="width: 90px; height: 90px;"></center>';
+							} else {
+								html += '<center><img src="../../img/logo.png" class="img-responsive" alt="'+row.empresa+'" style="width: 90px; height: 90px;"></center>';
 							}
 							html += '</span>';
 							html += '<div class="info-box-content">';

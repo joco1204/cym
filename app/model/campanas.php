@@ -94,6 +94,7 @@ class Campana{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayCampana = array();
+			$query = "";
 			if($arr_campana[0] == 0) {
 				$query   = "SELECT id, campana FROM ca_campana ";
 				$query  .= "WHERE id_empresa = '".$data->id_empresa."'; ";

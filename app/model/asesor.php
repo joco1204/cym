@@ -384,7 +384,7 @@ class Asesor{
 			$query .= "FROM ca_monitoreo_asesor AS a ";
 			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
 			$query .= "WHERE b.identificacion = '".$data->identificacion."' AND a.fecha_llamada BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
-			$query .= "ORDER BY a.id DESC";
+			$query .= "ORDER BY a.id DESC;";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){	
