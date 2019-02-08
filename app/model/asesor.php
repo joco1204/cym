@@ -103,85 +103,119 @@ class Asesor{
 				$file_tmp_name = $file->tmp_name;
 				$handle = fopen($file_tmp_name, "r");
 				while($data = fgetcsv($handle, 1000, ";")){
-					$query_existencia = "SELECT identificacion FROM ca_asesores WHERE identificacion = '".$data[2]."';";
+					$query_existencia = "SELECT identificacion FROM ca_asesores WHERE identificacion = '".$data[3]."';";
 					$result_existencia = $mysql->query($query_existencia);
 					if($result_existencia){
 						$num_asesor = $result_existencia->rowCount();
 						if($num_asesor == '0'){
-							$query  = "INSERT INTO ca_asesores (nombre, apellido1, apellido2, identificacion, id_empresa, id_campana, estado) VALUES ( ";
-							$query .= "'".$data[0]."', ";
-							$query .= "'".$data[1]."', ";
-							$query .= "'".$data[2]."', ";
-							$query .= "'".$data[4]."', ";
-							$query .= "'".$data[6]."', ";
-							$query .= "'".$data[7]."', ";
-							$query .= "'".$data[8]."'); ";
+							$query = "INSERT INTO ca_asesores (nombre, apellido1, apellido2, identificacion, estado) VALUES ('".$data[0]."', '".$data[1]."', '".$data[2]."', '".$data[3]."', '".$data[7]."');";
 							$result = $mysql->query($query);
 							if($result){
-								$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, estado) ";
-								$query_usuario .= "VALUES ('".$data[5]."', '".$data[3]."', '".$data[4]."', '".$data[0]."', '".$data[1]."', '".$data[2]."', 'activo');";
-								$result_usuario = $mysql->query($query_usuario);
-								if($result_usuario){
-									$id_usaurio = $mysql->lastInsertId();
-									//Inserta en usuarios perfil
-									$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '8'); ";
-									$result_perfil = $mysql->query($query_perfil);
-									if($result_perfil){
-										//Inserta en usuarios empresa campaña
-										$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '8', '".$data[6]."', '".$data[7]."');";
-										$result_ec = $mysql->query($query_ec);
-										if($result_ec){
-											$this->business->return->bool = true;
-											$this->business->return->msg = 'Se realizó el cargue del archivo correctamente';
+								$id_asesor = $mysql->lastInsertId();
+								$query_campana = "INSERT INTO ca_asesores_ec (id_asesor, id_empresa, id_campana, estado) VALUES ('".$id_asesor."', '".$data[5]."', '".$data[6]."', '".$data[7]."');";
+								$result_campana = $mysql->query($query_campana);
+								if($result_campana){
+									$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, estado) ";
+									$query_usuario .= "VALUES ('".$data[4]."', '1', '".$data[3]."', '".$data[0]."', '".$data[1]."', '".$data[2]."', '".$data[7]."');";
+									$result_usuario = $mysql->query($query_usuario);
+									if($result_usuario){
+										$id_usuario = $mysql->lastInsertId();
+										$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usuario."', '8'); ";
+										$result_perfil = $mysql->query($query_perfil);
+										if($result_perfil){
+											$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana, estado) VALUES ('".$id_usaurio."', '8', '".$data[5]."', '".$data[6]."', '".$data[7]."');";
+											$result_ec = $mysql->query($query_ec);
+											if($result_ec){
+												$this->business->return->bool = true;
+												$this->business->return->msg = 'Se realizó el cargue del archivo correctamente';
+											} else {
+												$this->business->return->bool = false;
+												$this->business->return->msg = 'Error al asociar la campaña al usuario del asesor';
+											}
 										} else {
 											$this->business->return->bool = false;
-											$this->business->return->msg = 'Error al asociar la campaña al usuario';
+											$this->business->return->msg = 'Error al asociar el perfil al usuario';
 										}
 									} else {
 										$this->business->return->bool = false;
-										$this->business->return->msg = 'Error al crear el perfil';
+										$this->business->return->msg = 'Error al crear el usuario';
 									}
 								} else {
 									$this->business->return->bool = false;
-									$this->business->return->msg = 'Error en la creación de usuario';
+									$this->business->return->msg = 'Error asociar la campaña al asesor';
+
 								}
 							} else {
 								$this->business->return->bool = false;
 								$this->business->return->msg = 'Error en la creación de asesor';
 							}
-
 						} else {
-							$query  = "UPDATE ca_asesores SET nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', id_empresa = '".$data[6]."', id_campana = '".$data[7]."', estado = '".$data[8]."' WHERE identificacion = '".$data[4]."'; ";
+							$query  = "UPDATE ca_asesores SET nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."' estado = '".$data[7]."' WHERE identificacion = '".$data[3]."'; ";
 							$result = $mysql->query($query);
 							if($result){
-								$query_usuario  = "UPDATE re_usuarios SET usuario_red = '".$data[5]."', tipo_identificacion = '".$data[3]."', nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[8]."' WHERE identificacion = '".$data[4]."'; ";
-								$result_usuario = $mysql->query($query_usuario);
-								if($result_usuario){
-									$query_id_usuario = "SELECT id FROM re_usuarios WHERE identificacion = '".$data[4]."';";
-									$result_id_usuario = $mysql->query($query_id_usuario);
-									if($result_id_usuario){
-										$row = $result->fetch(PDO::FETCH_OBJ);
-										$query_perfil_ec = "UPDATE re_usaurio_ec SET id_empresa = '".$data[6]."', id_campana = '".$data[7]."' where id_usuario = '".$row->id."';";
-										$result_perfil_ec = $mysql->query($query_perfil_ec);
-										if($result_perfil_ec){
-											$this->business->return->bool = true;
-											$this->business->return->msg = 'Perfil de usuario actualizado con éxito';
-										} else {
-											$this->business->return->bool = false;
-											$this->business->return->msg = 'Error al actualizar empresa y campaña';	
+								$query_existencia = "SELECT id FROM ca_asesores WHERE identificacion = '".$data[3]."';";
+								$result_existencia = $mysql->query($query_existencia);
+								if($result_existencia){
+									$num_asesor = $result_existencia->rowCount();
+									if($num_asesor == '1'){
+										while($row_existencia = $result_existencia->fetch(PDO::FETCH_OBJ)){
+											$query_existencia_ec = "SELECT id FROM ca_asesores_ec WHERE id_asesor = '".$row_existencia->id."';";
+											$result_existencia_ec = $mysql->query($query_existencia_ec);
+											if($result_existencia_ec){
+												while($row_existencia_ec = $result_existencia_ec->fetch(PDO::FETCH_OBJ)){													
+													$query_asesor_ec = "UPDATE ca_asesores_ec SET id_empresa = '".$row[5]."', id_campana = '"..$row[6]."', estado = '"..$row[7]."' WHERE id = '".$row_existencia_ec->id."' AND id_asesor = '".$row_existencia->id."';";
+													$result_asesor_ec = $mysql->query($query_asesor_ec);
+													if($result_asesor_ec){
+														$query_usuario  = "UPDATE re_usuarios SET usuario_red = '".$data[4]."', tipo_identificacion = '1', nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$data[4]."'; ";
+														$result_usuario = $mysql->query($query_usuario);
+														if($result_usuario){
+															$query_id_usuario = "SELECT id FROM re_usuarios WHERE identificacion = '".$data[3]."';";
+															$result_id_usuario = $mysql->query($query_id_usuario);
+															if($result_id_usuario){
+																while($row_id_usuario = $result_id_usuario->fetch(PDO::FETCH_OBJ)){
+																	$query_id_ec = "SELECT id FROM re_usuarios_ec WHERE id_usuario = '".$row_id_usuario->id."'";
+																	$result_id_ec = $mysql->query($query_id_ec);
+																	while ($row_id_ec = $result_id_ec->fetch()){
+																		$query_perfil_ec = "UPDATE re_usaurio_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', estado = '".$data[7]."'  WHERE id = '".$row_id_ec->id."' AND id_usuario = '".$row_id_usuario->id."';";
+																		$result_perfil_ec = $mysql->query($query_perfil_ec);
+																		if($result_perfil_ec){
+																			$this->business->return->bool = true;
+																			$this->business->return->msg = 'Perfil de usuario actualizado con éxito';
+																		} else {
+																			$this->business->return->bool = false;
+																			$this->business->return->msg = 'Error al actualizar empresa y campaña';	
+																		}
+																	}
+																}
+															} else {
+																$this->business->return->bool = false;
+																$this->business->return->msg = 'Error query';
+															}
+														} else {
+															$this->business->return->bool = false;
+															$this->business->return->msg = 'Error al actualizar la campaña del asesor';
+														}
+													} else {
+														$this->business->return->bool = false;
+														$this->business->return->msg = 'Error al actualizar la campaña del asesor';
+													}
+												}
+											} else {
+												$this->business->return->bool = false;
+												$this->business->return->msg = 'Error al consultar la campaña del asesor';
+											}
 										}
 									} else {
 										$this->business->return->bool = false;
-										$this->business->return->msg = 'Error query';
+										$this->business->return->msg = 'El asesor se encuentra creado mas de 1 vez. Consulte con el administrador';
 									}
 								} else {
 									$this->business->return->bool = false;
-									$this->business->return->msg = 'Error query';
+									$this->business->return->msg = 'Error al consultar al asesor';
 								}
-
 							} else {
 								$this->business->return->bool = false;
-								$this->business->return->msg = 'Error query';
+								$this->business->return->msg = 'Error al actualizar al asesor';
 							}
 						}
 					} else {
