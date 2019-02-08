@@ -143,7 +143,6 @@ class Asesor{
 								} else {
 									$this->business->return->bool = false;
 									$this->business->return->msg = 'Error asociar la campaña al asesor';
-
 								}
 							} else {
 								$this->business->return->bool = false;
@@ -162,8 +161,8 @@ class Asesor{
 											$query_existencia_ec = "SELECT id FROM ca_asesores_ec WHERE id_asesor = '".$row_existencia->id."';";
 											$result_existencia_ec = $mysql->query($query_existencia_ec);
 											if($result_existencia_ec){
-												while($row_existencia_ec = $result_existencia_ec->fetch(PDO::FETCH_OBJ)){													
-													$query_asesor_ec = "UPDATE ca_asesores_ec SET id_empresa = '".$row[5]."', id_campana = '"..$row[6]."', estado = '"..$row[7]."' WHERE id = '".$row_existencia_ec->id."' AND id_asesor = '".$row_existencia->id."';";
+												while($row_existencia_ec = $result_existencia_ec->fetch(PDO::FETCH_OBJ)){
+													$query_asesor_ec = "UPDATE ca_asesores_ec SET id_empresa = '".$row[5]."', id_campana = '".$row[6]."', estado = '".$row[7]."' WHERE id = '".$row_existencia_ec->id."' AND id_asesor = '".$row_existencia->id."';";
 													$result_asesor_ec = $mysql->query($query_asesor_ec);
 													if($result_asesor_ec){
 														$query_usuario  = "UPDATE re_usuarios SET usuario_red = '".$data[4]."', tipo_identificacion = '1', nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$data[4]."'; ";
@@ -176,7 +175,7 @@ class Asesor{
 																	$query_id_ec = "SELECT id FROM re_usuarios_ec WHERE id_usuario = '".$row_id_usuario->id."'";
 																	$result_id_ec = $mysql->query($query_id_ec);
 																	while ($row_id_ec = $result_id_ec->fetch()){
-																		$query_perfil_ec = "UPDATE re_usaurio_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', estado = '".$data[7]."'  WHERE id = '".$row_id_ec->id."' AND id_usuario = '".$row_id_usuario->id."';";
+																		$query_perfil_ec = "UPDATE re_usaurio_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', estado = '".$data[7]."' WHERE id = '".$row_id_ec->id."' AND id_usuario = '".$row_id_usuario->id."';";
 																		$result_perfil_ec = $mysql->query($query_perfil_ec);
 																		if($result_perfil_ec){
 																			$this->business->return->bool = true;
@@ -191,6 +190,7 @@ class Asesor{
 																$this->business->return->bool = false;
 																$this->business->return->msg = 'Error query';
 															}
+
 														} else {
 															$this->business->return->bool = false;
 															$this->business->return->msg = 'Error al actualizar la campaña del asesor';
