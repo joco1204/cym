@@ -36,20 +36,8 @@ if(isset($post->action)){
 			$result = $asesor->informe_general_asesor($post);
 			$business->return = $result;
 		break;
-		case 'ultima_fecha_monitoreo':
-			$result = $asesor->ultima_fecha_monitoreo($post);
-			$business->return = $result;
-		break;
-		case 'informe_detallado_asesor':
-			$result = $asesor->informe_detallado_asesor($post);
-			$business->return = $result;
-		break;
 		case 'fechas_monitoreo':
 			$result = $asesor->fechas_monitoreo($post);
-			$business->return = $result;
-		break;
-		case 'descripcion_error':
-			$result = $asesor->descripcion_error($post);
 			$business->return = $result;
 		break;
 		default:

@@ -56,6 +56,7 @@ class Asesor{
 				if($result_usuario){
 					$id_usaurio = $mysql->lastInsertId();
 					//Inserta en usuarios perfil
+					
 					$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '8'); ";
 					$result_perfil = $mysql->query($query_perfil);
 					if($result_perfil){
@@ -77,6 +78,7 @@ class Asesor{
 						$this->business->return->bool = false;
 						$this->business->return->msg = 'Error al crear el perfil';
 					}
+
 				} else {
 					$this->business->return->bool = false;
 					$this->business->return->msg = 'Error en la creación de usuario';
@@ -123,7 +125,7 @@ class Asesor{
 										$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usuario."', '8'); ";
 										$result_perfil = $mysql->query($query_perfil);
 										if($result_perfil){
-											$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana, estado) VALUES ('".$id_usaurio."', '8', '".$data[5]."', '".$data[6]."', '".$data[7]."');";
+											$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana, estado) VALUES ('".$id_usuario."', '8', '".$data[5]."', '".$data[6]."', '".$data[7]."');";
 											$result_ec = $mysql->query($query_ec);
 											if($result_ec){
 												$this->business->return->bool = true;
@@ -149,7 +151,7 @@ class Asesor{
 								$this->business->return->msg = 'Error en la creación de asesor';
 							}
 						} else {
-							$query  = "UPDATE ca_asesores SET nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."' estado = '".$data[7]."' WHERE identificacion = '".$data[3]."'; ";
+							$query  = "UPDATE ca_asesores SET nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$data[3]."'; ";
 							$result = $mysql->query($query);
 							if($result){
 								$query_existencia = "SELECT id FROM ca_asesores WHERE identificacion = '".$data[3]."';";
@@ -162,7 +164,7 @@ class Asesor{
 											$result_existencia_ec = $mysql->query($query_existencia_ec);
 											if($result_existencia_ec){
 												while($row_existencia_ec = $result_existencia_ec->fetch(PDO::FETCH_OBJ)){
-													$query_asesor_ec = "UPDATE ca_asesores_ec SET id_empresa = '".$row[5]."', id_campana = '".$row[6]."', estado = '".$row[7]."' WHERE id = '".$row_existencia_ec->id."' AND id_asesor = '".$row_existencia->id."';";
+													$query_asesor_ec = "UPDATE ca_asesores_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', estado = '".$data[7]."' WHERE id = '".$row_existencia_ec->id."' AND id_asesor = '".$row_existencia->id."';";
 													$result_asesor_ec = $mysql->query($query_asesor_ec);
 													if($result_asesor_ec){
 														$query_usuario  = "UPDATE re_usuarios SET usuario_red = '".$data[4]."', tipo_identificacion = '1', nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$data[4]."'; ";
@@ -172,9 +174,9 @@ class Asesor{
 															$result_id_usuario = $mysql->query($query_id_usuario);
 															if($result_id_usuario){
 																while($row_id_usuario = $result_id_usuario->fetch(PDO::FETCH_OBJ)){
-																	$query_id_ec = "SELECT id FROM re_usuarios_ec WHERE id_usuario = '".$row_id_usuario->id."'";
+																	$query_id_ec = "SELECT id FROM re_usaurio_ec WHERE id_usuario = '".$row_id_usuario->id."'";
 																	$result_id_ec = $mysql->query($query_id_ec);
-																	while ($row_id_ec = $result_id_ec->fetch()){
+																	while ($row_id_ec = $result_id_ec->fetch(PDO::FETCH_OBJ)){
 																		$query_perfil_ec = "UPDATE re_usaurio_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', estado = '".$data[7]."' WHERE id = '".$row_id_ec->id."' AND id_usuario = '".$row_id_usuario->id."';";
 																		$result_perfil_ec = $mysql->query($query_perfil_ec);
 																		if($result_perfil_ec){
@@ -184,7 +186,9 @@ class Asesor{
 																			$this->business->return->bool = false;
 																			$this->business->return->msg = 'Error al actualizar empresa y campaña';	
 																		}
+
 																	}
+
 																}
 															} else {
 																$this->business->return->bool = false;
@@ -347,64 +351,6 @@ class Asesor{
 		}
 		return $this->business->return;
 	}
-
-	public function informe_detallado_asesor($data){
-		$mysql = $this->business->mysql;
-		$db_mysql = $this->business->db_mysql;
-		//Valida conexión a base de datos
-		if($mysql){
-			$arrayDetallado = array();
-			//Consulta reporte detallado
-			$query  = "SELECT DISTINCT a.id_asesor, a.id_error, a.error, a.siglas, a.tipo_error, a.color_informe, a.porcentaje  ";
-			$query .= "FROM ca_monitoreo_asesor_detallado_general AS a ";
-			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
-			$query .= "WHERE b.identificacion = '".$data->identificacion."' AND a.fecha_llamada = '".$data->fecha."';";
-			$result = $mysql->query($query);
-			if($result){
-				while($row = $result->fetch(PDO::FETCH_OBJ)){	
-					array_push($arrayDetallado, $row);
-				}
-				$this->business->return->bool = true;
-				$this->business->return->msg = json_encode($arrayDetallado);
-			} else {
-				$this->business->return->bool = false;
-				$this->business->return->msg = 'Error query';
-			}
-		} else {
-			$this->business->return->bool = false;
-			$this->business->return->msg = 'Error de conexión de base de datos';
-		}
-		return $this->business->return;
-	}
-
-	//
-	public function ultima_fecha_monitoreo($data){
-		$mysql = $this->business->mysql;
-		$db_mysql = $this->business->db_mysql;
-		//Valida conexión a base de datos
-		if($mysql){
-			$arrayUltimaFecha = array();
-			//Consulta reporte detallado
-			$query  = "SELECT MAX(a.id) AS id_monitoreo, MAX(a.fecha_llamada) AS ultima_fecha ";
-			$query .= "FROM ca_monitoreo_asesor AS a LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
-			$query .= "WHERE b.identificacion = '".$data->identificacion."' AND a.fecha_llamada BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
-			$result = $mysql->query($query);
-			if($result){
-				while($row = $result->fetch(PDO::FETCH_OBJ)){
-					array_push($arrayUltimaFecha, $row);
-				}
-				$this->business->return->bool = true;
-				$this->business->return->msg = json_encode($arrayUltimaFecha);
-			} else {
-				$this->business->return->bool = false;
-				$this->business->return->msg = 'Error query';
-			}
-		} else {
-			$this->business->return->bool = false;
-			$this->business->return->msg = 'Error de conexión de base de datos';
-		}
-		return $this->business->return;
-	}
 	
 	//
 	public function fechas_monitoreo($data){
@@ -414,42 +360,11 @@ class Asesor{
 		if($mysql){
 			$arrayFechas = array();
 			//Consulta reporte detallado
-			$query  = "SELECT a.id AS id_monitoreo, a.fecha_llamada ";
+			$query  = "SELECT a.fecha_llamada ";
 			$query .= "FROM ca_monitoreo_asesor AS a ";
 			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
 			$query .= "WHERE b.identificacion = '".$data->identificacion."' AND a.fecha_llamada BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
-			$query .= "ORDER BY a.id DESC;";
-			$result = $mysql->query($query);
-			if($result){
-				while($row = $result->fetch(PDO::FETCH_OBJ)){	
-					array_push($arrayFechas, $row);
-				}
-				$this->business->return->bool = true;
-				$this->business->return->msg = json_encode($arrayFechas);
-			} else {
-				$this->business->return->bool = false;
-				$this->business->return->msg = 'Error query';
-			}
-		} else {
-			$this->business->return->bool = false;
-			$this->business->return->msg = 'Error de conexión de base de datos';
-		}
-		return $this->business->return;
-	}
-
-	//
-	public function descripcion_error($data){
-		$mysql = $this->business->mysql;
-		$db_mysql = $this->business->db_mysql;
-		//Valida conexión a base de datos
-		if($mysql){
-			$arrayFechas = array();
-			//Consulta reporte detallado
-			$query  = "SELECT a.id_error, b.error, a.id_punto_entrenamiento, c.punto_entrenamiento ";
-			$query .= "FROM ca_monitoreo_asesor_detallado AS a ";
-			$query .= "LEFT JOIN pa_tipo_error AS b ON a.id_error = b.id ";
-			$query .= "LEFT JOIN ca_punto_entrenamiento AS c ON a.id_punto_entrenamiento = c.id ";
-			$query .= "WHERE a.id_punto_entrenamiento <> '0' AND a.id_monitoreo_asesor = '".$data->id_monitoreo."';";
+			$query .= "ORDER BY a.id ASC;";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){	

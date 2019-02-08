@@ -662,3 +662,7 @@ function deleteCampanasModifica(count){
 	$('.campanas_m').val(count);
 	$('#numero_campanas_m').val(count);
 }
+
+function formato_cargue(){
+	window.location.href = "../../formato_cargue.csv";
+}

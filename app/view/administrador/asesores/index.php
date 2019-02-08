@@ -21,6 +21,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
             <section class='content'>
                 <div class="row">
                     <div class="col col-md-12 text-center">
+                        <button type="button" class="btn btn-info btn-sm" onclick="javascript: formato_cargue()">Formato Cargue (.CSV o .Txt)</button>
                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#crear_asesor">Crear Asesor</button>
                         <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#cargar_asesores">
                             Cargar Asesores
