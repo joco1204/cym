@@ -137,7 +137,7 @@ class Usuario{
 						$result_perfil = $mysql->query($query_perfil);
 						if($result_perfil){
 							if ($data->numero_campanas == '0'){
-								$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '".$data->perfil."', '0', '0');";
+								$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana, estado) VALUES ('".$id_usaurio."', '".$data->perfil."', '0', '0', 'activo');";
 								$mysql->query($query_ec);
 							} else {
 								for ($i=1; $i <= $data->numero_campanas; $i++){
@@ -175,7 +175,7 @@ class Usuario{
 												<table>
 													<tr>
 														<td><img src="https://www.interactivo.com.co/logo.png"></td>
-														<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co">www.interctivo.com.co</a></p></td>
+														<td><p><h3>Cyberactivo ICC</h3><a href="www.interctivo.com.co">www.interctivo.com.co</a></p></td>
 													</tr>
 												</table>
 												<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
