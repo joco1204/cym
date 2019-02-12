@@ -196,15 +196,21 @@ $(function(){
 								html2 += '</div>';
 								html2 += '<div class="panel-body">';
 									html2 += '<div class="row">';
-										html2 += '<div class="col col-md-6">';
+										html2 += '<div class="col col-md-4">';
 											html2 += '<div class="form-group">';
 												html2 += '<label for="nombre_item_error_'+count+'_'+count2+'" class="control-label">Item</label>';
 												html2 += '<input type="text" name="nombre_item_error_'+count+'_'+count2+'" id="nombre_item_error_'+count+'_'+count2+'" class="form-control" required="" value="'+row2.item+'">';
 											html2 += '</div>';
 										html2 += '</div>';
+
 										html2 += '<div class="col col-md-2">';
-											html2 += '<label for="valor_'+count+'_'+count2+'" class="control-label">Valor cumplimiento item</label>';
+											html2 += '<label for="valor_'+count+'_'+count2+'" class="control-label">Valor Cumplimiento item</label>';
 											html2 += '<input type="number" name="valor_'+count+'_'+count2+'" id="valor_'+count+'_'+count2+'" class="form-control" required="" min="1" max="100" value="'+row2.valor+'">';
+										html2 += '</div>';
+
+										html2 += '<div class="col col-md-2">';
+											html2 += '<label for="strike_'+count+'_'+count2+'" class="control-label"># Strikes</label>';
+											html2 += '<input type="number" name="strike_'+count+'_'+count2+'" id="strike_'+count+'_'+count2+'" class="form-control" required="" min="1" max="100" value="'+row2.valor+'">';
 										html2 += '</div>';
 
 										html2 += '<div class="col col-md-2">';

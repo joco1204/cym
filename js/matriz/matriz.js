@@ -169,8 +169,9 @@ function ver_matriz(id){
 									html2 += '<div class="panel panel-success">';
 									html2 += '<div class="panel-heading">';
 									html2 += '<div class="row">';
-								    html2 += '<div class="col-md-6"><b>ITEM '+k+':</b> '+row3.item+'</div>';
-								    html2 += '<div class="col-md-6"><b>VALOR:</b> '+row3.valor+' %</div>';
+								    html2 += '<div class="col-md-4"><b>ITEM '+k+':</b> '+row3.item+'</div>';
+								    html2 += '<div class="col-md-4"><b>VALOR:</b> '+row3.valor+' %</div>';
+								    html2 += '<div class="col-md-4"><b># STRIKES:</b> '+row3.strike+'</div>';
 								    html2 += '</div>';
 									html2 += '</div>';
 									html2 += '<div class="panel-body">';

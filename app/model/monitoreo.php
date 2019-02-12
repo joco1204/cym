@@ -140,7 +140,7 @@ class Monitoreo{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query   = "SELECT id, item, valor FROM ca_item WHERE id_matriz = '".$data->id_matriz."' AND id_error = '".$data->id_error."' AND estado = 'activo'; ";
+			$query   = "SELECT id, item, valor, strike FROM ca_item WHERE id_matriz = '".$data->id_matriz."' AND id_error = '".$data->id_error."' AND estado = 'activo'; ";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){

@@ -126,7 +126,7 @@ class Matriz{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT id, id_matriz, id_error, item, valor, estado ";
+			$query  = "SELECT id, id_matriz, id_error, item, valor, strike, estado ";
 			$query .= "FROM ca_item ";
 			$query .= "WHERE id_matriz = '".$data->id_matriz."' AND id_error = '".$data->id_error."';";
 			$result = $mysql->query($query);
@@ -276,8 +276,9 @@ class Matriz{
 							//Variables item
 							$nombre_item_error = "nombre_item_error_".$i."_".$j;
 							$valor = "valor_".$i."_".$j;
+							$strike = "strike_".$i."_".$j;
 							//Insert item
-							$query_item = "INSERT INTO ca_item (id_matriz, id_error, item, valor, estado) VALUES ('".$id_matriz."', '".$id_error."', '".$data->$nombre_item_error."', '".$data->$valor."', 'activo'); ";
+							$query_item = "INSERT INTO ca_item (id_matriz, id_error, item, valor, strike, estado) VALUES ('".$id_matriz."', '".$id_error."', '".$data->$nombre_item_error."', '".$data->$valor."', '".$data->$strike."', 'activo'); ";
 							$result_item = $mysql->query($query_item);
 							if($result_item){
 								$id_item = $mysql->lastInsertId();
