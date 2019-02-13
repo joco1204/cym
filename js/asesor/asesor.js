@@ -32,7 +32,7 @@ $(function(){
 						html += '</div>';
 						html += '</div>';
 						html += '</div>';
-						if(i%3 == 0){
+						if(i%4 == 0){
 							html += '</div><div class="row text-center">';
 						}
 					} else {
@@ -50,7 +50,7 @@ $(function(){
 							html += '</div>';
 							html += '</div>';
 							html += '</div>';
-							if(i%3 == 0){
+							if(i%4 == 0){
 								html += '</div><div class="row text-center">';
 							}
 						}

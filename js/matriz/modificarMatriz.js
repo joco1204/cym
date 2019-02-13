@@ -202,24 +202,20 @@ $(function(){
 												html2 += '<input type="text" name="nombre_item_error_'+count+'_'+count2+'" id="nombre_item_error_'+count+'_'+count2+'" class="form-control" required="" value="'+row2.item+'">';
 											html2 += '</div>';
 										html2 += '</div>';
-
 										html2 += '<div class="col col-md-2">';
 											html2 += '<label for="valor_'+count+'_'+count2+'" class="control-label">Valor Cumplimiento item</label>';
 											html2 += '<input type="number" name="valor_'+count+'_'+count2+'" id="valor_'+count+'_'+count2+'" class="form-control" required="" min="1" max="100" value="'+row2.valor+'">';
 										html2 += '</div>';
-
 										html2 += '<div class="col col-md-2">';
 											html2 += '<label for="strike_'+count+'_'+count2+'" class="control-label"># Strikes</label>';
 											html2 += '<input type="number" name="strike_'+count+'_'+count2+'" id="strike_'+count+'_'+count2+'" class="form-control" required="" min="1" max="100" value="'+row2.valor+'">';
 										html2 += '</div>';
-
 										html2 += '<div class="col col-md-2">';
 											html2 += '<div class="form-group">';
 												html2 += '<label for="estado_item_'+count+'_'+count2+'" class="control-label">Estado</label>';
 												html2 += '<select name="estado_item_'+count+'_'+count2+'" id="estado_item_'+count+'_'+count2+'" class="form-control" required="" style="width:100%;"></select>';
 											html2 += '</div>';
 										html2 += '</div>';
-
 										html2 += '<div class="col col-md-2">';
 											html2 += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: puntoEntrenamiento('+count+', '+count2+');">';
 												html2 += 'Punto <span class="glyphicon glyphicon-plus"></span>';

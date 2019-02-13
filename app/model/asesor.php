@@ -64,16 +64,19 @@ class Asesor{
 							$empresa = 'empresa_'.$i;
 							$campana = 'campana_'.$i;
 							//Inserta en usuarios empresa campaña
-							$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana) VALUES ('".$id_usaurio."', '8', '".$data->$empresa."', '".$data->$campana."');";
+							$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana, estado) VALUES ('".$id_usaurio."', '8', '".$data->$empresa."', '".$data->$campana."', 'activo');";
 							$result_ec = $mysql->query($query_ec);
+
+							if($result_ec){
+								$this->business->return->bool = true;
+								$this->business->return->msg = 'Se ha creado el asesor '.$data->nombre.' '.$data->apellido1.' correctamente';
+							} else {
+								$this->business->return->bool = false;
+								$this->business->return->msg = 'Error al asociar la campaña al usuario';
+							}
+
 						}
-						if($result_ec){
-							$this->business->return->bool = true;
-							$this->business->return->msg = 'Se ha creado el asesor '.$data->nombre.' '.$data->apellido1.' correctamente';
-						} else {
-							$this->business->return->bool = false;
-							$this->business->return->msg = 'Error al asociar la campaña al usuario';
-						}
+						
 					} else {
 						$this->business->return->bool = false;
 						$this->business->return->msg = 'Error al crear el perfil';
