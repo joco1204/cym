@@ -96,9 +96,8 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                             </div>
                         </div>
                     </div>
-
+                    <input type="hidden" id="numero_campanas" name="numero_campanas" value="1">
                     <div id="canvas_empresa_campana">
-                        <input type="hidden" id="numero_campanas" name="numero_campanas">
                         <div class="row campanas">
                             <div class="col col-md-3">
                                 <div class="form-group has-feedback">
@@ -177,7 +176,6 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <input type="hidden" name="action" id="action" value="modificar_asesor">
                     <input type="hidden" name="id_asesor_m" id="id_asesor_m">
                 </div>
-
                 <div class="modal-body">
                     <div class="row">
                         <div class="col col-md-4">
@@ -234,8 +232,8 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" id="numero_campanas_m" name="numero_campanas_m" value="1">
                     <div id="canvas_empresa_campana_m">
-                        <input type="hidden" id="numero_campanas_m" name="numero_campanas_m">
                         <div class="row campanas_m">
                             <div class="col col-md-3">
                                 <div class="form-group has-feedback">

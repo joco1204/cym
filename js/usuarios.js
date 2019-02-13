@@ -158,22 +158,22 @@ $(function(){
 			html += '<div class="row campanas">';
                 html += '<div class="col col-md-3">';
                     html += '<div class="form-group has-feedback">';
-                        html += '<label class="control-label" for="empresa_1">EMPRESA:</label>';
-                        html += '<select class="form-control" id="empresa_1" name="empresa_1" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
+                        html += '<label class="control-label" for="empresa_'+j+'">EMPRESA:</label>';
+                        html += '<select class="form-control" id="empresa_'+j+'" name="empresa_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
                         html += '<div class="help-block with-errors"></div>';
                     html += '</div>';
                 html += '</div>';
                 html += '<div class="col col-md-3">';
                     html += '<div class="form-group has-feedback">';
-                        html += '<label class="control-label" for="campana_1">CAMPAÑA:</label>';
-                        html += '<select class="form-control" id="campana_1" name="campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+                        html += '<label class="control-label" for="campana_'+j+'">CAMPAÑA:</label>';
+                        html += '<select class="form-control" id="campana_'+j+'" name="campana_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
                         html += '<div class="help-block with-errors"></div>';
                     html += '</div>';
                 html += '</div>';
                 html += '<div class="col col-md-3">';
                     html += '<div class="form-group has-feedback">';
-                        html += '<label class="control-label" for="estado_campana_1">ESTADO:</label>';
-                        html += '<select class="form-control" id="estado_campana_1" name="estado_campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+                        html += '<label class="control-label" for="estado_campana_'+j+'">ESTADO:</label>';
+                        html += '<select class="form-control" id="estado_campana_'+j+'" name="estado_campana_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
                         html += '<div class="help-block with-errors"></div>';
                     html += '</div>';
                 html += '</div>';
@@ -203,13 +203,13 @@ $(function(){
 					$.each(data, function(i, row){
 						html += '<option value="'+row.id+'">'+row.empresa+'</option>';
 					});
-					$('#empresa_1').html(html);
+					$('#empresa_'+j+'').html(html);
 				} else {
 					console.log('Error: '+result.msg);
 				}
 			});
 
-			$('#empresa_1').change(function(){
+			$('#empresa_'+j+'').change(function(){
 				//campanas
 				$.ajax({
 					type: 'post',
@@ -227,7 +227,7 @@ $(function(){
 						$.each(data, function(i, row){
 							html += '<option value="'+row.id+'">'+row.campana+'</option>';
 						});
-						$('#campana_1').html(html);
+						$('#campana_'+j+'').html(html);
 					} else {
 						console.log('Error: '+result.msg);
 					}
@@ -235,15 +235,15 @@ $(function(){
 			});
 
 			//Estado campaña
-			$('#estado_campana_1').append($('<option>', {
+			$('#estado_campana_'+j+'').append($('<option>', {
 				value: '',
 				text: '',
 			}).attr("selected", true));
-			$('#estado_campana_1').append($('<option>', {
+			$('#estado_campana_'+j+'').append($('<option>', {
 				value: 'activo',
 				text: 'activo',
 			}));
-			$('#estado_campana_1').append($('<option>', {
+			$('#estado_campana_'+j+'').append($('<option>', {
 				value: 'inactivo',
 				text: 'inactivo',
 			}));
@@ -324,6 +324,7 @@ function ver_usuario(id_usuario){
 		},
 		dataType: 'json'
 	}).done(function(result){
+
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
 			$.each(data, function(i, row){
@@ -341,29 +342,139 @@ function ver_usuario(id_usuario){
 					$('#empresa_m').prop('disabled', false);
 					$('#campana_m').prop('disabled', false);
 
-					//Ajax empresas
-					$('#empresa_m').empty();
 					$.ajax({
 						type: 'post',
-						url: '../controller/ctrempresas.php',
+						url: '../controller/ctrusuarios.php',
 						data: {
-							action: 'empresas',
+							action: 'usuario_ec',
+							id_usuario: id_usuario,
 						},
 						dataType: 'json'
 					}).done(function(result2){
 						if(result2.bool){
 							var data2 = $.parseJSON(result2.msg);
-							$.each(data2, function(i, row2){
-
-								if (row.id_empresa == row2.id){
-									$('#empresa_m').append($('<option>', {
-										value: row2.id,
-										text: row2.empresa, 
+							var html  = '';
+							var num_campanas = 0;
+							$('#canvas_empresa_campana_m').empty();
+							$.each(data2, function(j, row2){
+								j++;
+								num_campanas = j;
+								html += '<div class="row campanas_m">';
+								html += '<div class="col col-md-3">';
+								html += '<div class="form-group has-feedback">';
+								html += '<label class="control-label" for="empresa_m_'+j+'">EMPRESA:</label>';
+								html += '<select class="form-control" id="empresa_m_'+j+'" name="empresa_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
+								html += '<div class="help-block with-errors"></div>';
+								html += '</div>';
+								html += '</div>';
+								html += '<div class="col col-md-3">';
+								html += '<div class="form-group has-feedback">';
+								html += '<label class="control-label" for="campana_m_'+j+'">CAMPAÑA:</label>';
+								html += '<select class="form-control" id="campana_m_'+j+'" name="campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+								html += '<div class="help-block with-errors"></div>';
+								html += '</div>';
+								html += '</div>';
+								html += '<div class="col col-md-3">';
+								html += '<div class="form-group has-feedback">';
+								html += '<label class="control-label" for="estado_campana_m_'+j+'">ESTADO:</label>';
+								html += '<select class="form-control" id="estado_campana_m_'+j+'" name="estado_campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+								html += '<div class="help-block with-errors"></div>';
+								html += '</div>';
+								html += '</div>';
+								html += '<div class="col col-md-3">';
+								html += '<br>';
+								html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampanaModificacion();" title="Añadir Campaña">';
+								html += '<span class="glyphicon glyphicon-plus"></span>';
+								html += '</button>';
+								html += '</div>';
+								html += '</div>';
+							});
+							$('#canvas_empresa_campana_m').html(html);
+							$("select").select2();
+							$('#numero_campanas_m').val(num_campanas);
+							$.each(data2, function(j, row2){
+								j++;
+								var empresa = '#empresa_m_'+j;
+								var campana = '#campana_m_'+j;
+								var estado = '#estado_campana_m_'+j;
+								//Ajax empresas
+								$(empresa).empty();
+								$.ajax({
+									type: 'post',
+									url: '../controller/ctrempresas.php',
+									data: {
+										action: 'empresas',
+									},
+									dataType: 'json'
+								}).done(function(result3){
+									if(result3.bool){
+										var data3 = $.parseJSON(result3.msg);
+										$.each(data3, function(k, row3){
+											if (row2.id_empresa == row3.id){
+												$(empresa).append($('<option>', {
+													value: row3.id,
+													text: row3.empresa, 
+												}).attr("selected", true));
+											} else {	
+												$(empresa).append($('<option>', {
+													value: row3.id,
+													text: row3.empresa, 
+												}));
+											}
+										});
+									} else {
+										console.log('Error: '+result2.msg);
+									}
+								});
+								//Ajax campañas
+								$(campana).empty();
+								$.ajax({
+									type: 'post',
+									url: '../controller/ctrcampanas.php',
+									data: {
+										action: 'campanas',
+										id_empresa: row2.id_empresa,
+									},
+									dataType: 'json'
+								}).done(function(result3){
+									if(result3.bool){
+										var data3 = $.parseJSON(result3.msg);
+										$.each(data3, function(i, row3){
+											if (row2.id_campana == row3.id){
+												$(campana).append($('<option>', {
+													value: row3.id,
+													text: row3.campana, 
+												}).attr("selected", true));
+											} else {	
+												$(campana).append($('<option>', {
+													value: row3.id,
+													text: row3.campana, 
+												}));
+											}
+										});
+									} else {
+										console.log('Error: '+result2.msg);
+									}
+								});
+								//Estado campañas
+								$(estado).empty();
+								if (row2.estado == 'activo'){
+									$(estado).append($('<option>', {
+										value: 'activo',
+										text: 'activo', 
 									}).attr("selected", true));
+									$(estado).append($('<option>', {
+										value: 'inactivo',
+										text: 'inactivo', 
+									}));
 								} else {	
-									$('#empresa_m').append($('<option>', {
-										value: row2.id,
-										text: row2.empresa, 
+									$(estado).append($('<option>', {
+										value: 'inactivo',
+										text: 'inactivo', 
+									}).attr("selected", true));
+									$(estado).append($('<option>', {
+										value: 'activo',
+										text: 'activo', 
 									}));
 								}
 							});
@@ -371,38 +482,6 @@ function ver_usuario(id_usuario){
 							console.log('Error: '+result2.msg);
 						}
 					});
-
-					//Ajax campañas
-					$('#campana_m').empty();
-					$.ajax({
-						type: 'post',
-						url: '../controller/ctrcampanas.php',
-						data: {
-							action: 'campanas',
-							id_empresa: row.id_empresa,
-						},
-						dataType: 'json'
-					}).done(function(result2){
-						if(result2.bool){
-							var data2 = $.parseJSON(result2.msg);
-							$.each(data2, function(i, row2){
-								if (row.id == row2.id){
-									$('#campana_m').append($('<option>', {
-										value: row2.id,
-										text: row2.campana, 
-									}).attr("selected", true));
-								} else {	
-									$('#campana_m').append($('<option>', {
-										value: row2.id,
-										text: row2.campana, 
-									}));
-								}
-							});
-						} else {
-							console.log('Error: '+result2.msg);
-						}
-					});
-
 				} else {
 					$('#empresa_campana_m').hide();
 					$('#empresa_m').prop('disabled', true);

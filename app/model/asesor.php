@@ -41,6 +41,7 @@ class Asesor{
 			$query_asesor  = "INSERT INTO ca_asesores (nombre, apellido1, apellido2, identificacion, estado) VALUES ('".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', '".$data->identificacion."', 'activo'); ";
 			$result_asesor = $mysql->query($query_asesor);
 			if($result_asesor){
+				
 				$id_asesor = $mysql->lastInsertId();
 				for ($i=1; $i <= $data->numero_campanas; $i++){
 					$empresa = 'empresa_'.$i;
@@ -53,6 +54,7 @@ class Asesor{
 				$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, email, estado) ";
 				$query_usuario .= "VALUES ('".$data->usuario."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', '', 'activo');";
 				$result_usuario = $mysql->query($query_usuario);
+
 				if($result_usuario){
 					$id_usaurio = $mysql->lastInsertId();
 					//Inserta en usuarios perfil
@@ -271,6 +273,38 @@ class Asesor{
 		}
 		return $this->business->return;
 	}
+
+
+	public function asesor_ec($data){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayTabla = array();
+			$query  = "SELECT a.id_asesor, a.id_empresa, b.empresa, a.id_campana, c.campana, a.estado ";
+			$query .= "FROM ca_asesores_ec AS a ";
+			$query .= "LEFT JOIN ca_empresa AS b ON a.id_empresa = b.id  ";
+			$query .= "LEFT JOIN ca_campana AS c ON a.id_campana = c.id ";
+			$query .= "WHERE a.id_asesor = '".$data->id."';";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayTabla, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayTabla);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+
 
 	public function modificar_asesor($data){
 		$mysql = $this->business->mysql;

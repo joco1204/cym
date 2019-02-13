@@ -14,6 +14,8 @@ $(function(){
 			html += '<div class="row text-center">';
 			for(var j = 1; j <= num_empresas; j++){
 				var empresa = $('#empresa_'+j).val();
+				
+				alert()
 				$.each(data, function(i, row){
 					var i = i+1;
 					if(empresa == 0){

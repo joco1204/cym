@@ -217,11 +217,39 @@ class Usuario{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT a.id, a.usuario_red AS usuario, a.tipo_identificacion, a.identificacion, a.nombre, a.apellido1, a.apellido2, b.id_perfil AS perfil, a.email, a.estado, c.id_empresa, c.id_campana ";
+			$query  = "SELECT a.id, a.usuario_red AS usuario, a.tipo_identificacion, a.identificacion, a.nombre, a.apellido1, a.apellido2, b.id_perfil AS perfil, a.email, a.estado ";
 			$query .= "FROM re_usuarios AS a ";
 			$query .= "LEFT JOIN re_usuario_perfil AS b ON a.id = b.id_usuario ";
-			$query .= "LEFT JOIN re_usaurio_ec AS c ON a.id = c.id_usuario ";
 			$query .= "WHERE a.id = '".$data->id_usuario."';";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function usuario_ec($data){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayData = array();
+			$query  = "SELECT a.id_usuario, a.id_perfil, a.id_empresa, b.empresa, a.id_campana, c.campana, a.estado ";
+			$query .= "FROM re_usaurio_ec AS a ";
+			$query .= "LEFT JOIN ca_empresa AS b ON a.id_empresa = b.id ";
+			$query .= "LEFT JOIN ca_campana AS c ON a.id_campana = c.id ";
+			$query .= "WHERE a.id_usuario = '".$data->id_usuario."';";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){

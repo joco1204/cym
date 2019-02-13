@@ -28,6 +28,10 @@ if(isset($post->action)){
 			$result = $asesor->data_asesor($post);
 			$business->return = $result;
 		break;
+		case 'asesor_ec':
+			$result = $asesor->asesor_ec($post);
+			$business->return = $result;
+		break;
 		case 'modificar_asesor':
 			$result = $asesor->modificar_asesor($post);
 			$business->return = $result;

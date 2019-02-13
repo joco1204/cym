@@ -42,6 +42,10 @@ if(isset($post->action)){
 			$result = $usuario->data_usuario($post);
 			$business->return = $result;
 		break;
+		case 'usuario_ec':
+			$result = $usuario->usuario_ec($post);
+			$business->return = $result;
+		break;		
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';
