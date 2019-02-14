@@ -156,6 +156,7 @@ class Matriz{
 			$query  = "SELECT id, id_item, punto_entrenamiento ";
 			$query .= "FROM ca_punto_entrenamiento ";
 			$query .= "WHERE id_item = '".$data->id_item."';";
+			var_dump($query);
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){

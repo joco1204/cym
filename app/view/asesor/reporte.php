@@ -39,39 +39,40 @@ function ultimo_dia(){
 $query  = "SELECT MAX(b.fecha_llamada) AS fecha_llamada, MAX(b.fecha_registro) AS fecha_registro FROM ca_asesores AS a ";
 $query .= "LEFT JOIN ca_monitoreo_asesor AS b ON a.id = b.id_asesor ";
 $query .= "WHERE a.identificacion = '".$session->getSession('identificacion')."' ";
-$query .= "AND b.fecha_llamada BETWEEN '".primer_dia()."' AND '".ultimo_dia()."'; ";
+$query .= "AND b.fecha_registro BETWEEN '".primer_dia()."' AND '".ultimo_dia()."'; ";
 $result = $mysql->query($query);
 $row = $result->fetch(PDO::FETCH_OBJ);
 
-if(isset($_GET['fecha_llamada'])) {
-    $fecha_llamada = $get->fecha_llamada;
+if(isset($_GET['fecha_registro'])) {
+    $fecha_registro = $get->fecha_registro;
 } else {
-    $fecha_llamada = $row->fecha_llamada;
+    $fecha_registro = $row->fecha_registro;
 }
 
 $query_general  = "SELECT DISTINCT a.id_asesor, a.id_error, a.error, a.siglas, a.tipo_error, a.color_informe, a.porcentaje ";
 $query_general .= "FROM ca_monitoreo_asesor_detallado_general AS a ";
 $query_general .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
-$query_general .= "WHERE b.identificacion = '".$session->getSession('identificacion')."' AND a.fecha_llamada = '".$fecha_llamada."';";
+$query_general .= "WHERE b.identificacion = '".$session->getSession('identificacion')."' AND a.fecha_registro = '".$fecha_registro."';";
 $result_general = $mysql->query($query_general);
 
 $query_general2  = "SELECT DISTINCT a.id_asesor, a.id_error, a.error, a.siglas, a.tipo_error, a.color_informe, a.porcentaje ";
 $query_general2 .= "FROM ca_monitoreo_asesor_detallado_general AS a ";
 $query_general2 .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
-$query_general2 .= "WHERE b.identificacion = '".$session->getSession('identificacion')."' AND a.fecha_llamada = '".$fecha_llamada."';";
+$query_general2 .= "WHERE b.identificacion = '".$session->getSession('identificacion')."' AND a.fecha_registro = '".$fecha_registro."';";
 $result_general2 = $mysql->query($query_general2);
 
 $query_general3  = "SELECT DISTINCT a.id_monitoreo ";
 $query_general3 .= "FROM ca_monitoreo_asesor_detallado_general AS a ";
 $query_general3 .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
-$query_general3 .= "WHERE b.identificacion = '".$session->getSession('identificacion')."' AND a.fecha_llamada = '".$fecha_llamada."';";
+$query_general3 .= "WHERE b.identificacion = '".$session->getSession('identificacion')."' AND a.fecha_registro = '".$fecha_registro."'; ";
 $result_general3 = $mysql->query($query_general3);
 $row_general3 = $result_general3->fetch(PDO::FETCH_OBJ);
 
-$query_info  = "SELECT a.id_error, b.error,  b.siglas, a.id_punto_entrenamiento, c.punto_entrenamiento ";
+$query_info  = "SELECT a.id_error, c.error, c.siglas, a.id_punto_entrenamiento, d.punto_entrenamiento ";
 $query_info .= "FROM ca_monitoreo_asesor_detallado AS a ";
-$query_info .= "LEFT JOIN pa_tipo_error AS b ON a.id_error = b.id ";
-$query_info .= "LEFT JOIN ca_punto_entrenamiento AS c ON a.id_punto_entrenamiento = c.id ";
+$query_info .= "LEFT JOIN ca_error AS b ON a.id_error = b.id ";
+$query_info .= "LEFT JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
+$query_info .= "LEFT JOIN ca_punto_entrenamiento AS d ON a.id_punto_entrenamiento = d.id ";
 $query_info .= "WHERE a.id_punto_entrenamiento <> '0' AND a.id_monitoreo_asesor = '".$row_general3->id_monitoreo."'; ";
 $result_info = $mysql->query($query_info);
 
@@ -104,7 +105,7 @@ $result_info = $mysql->query($query_info);
             </div>
         </div>
         <div class="col-md-2">
-            <button type="button" class="btn btn-primary" onclick="javascript: pageContent('asesor/reporte','empresa=<?php echo $get->empresa; ?>&campana=<?php echo $get->campana; ?>&fecha_llamada='+$('#fecha').val());" title="Buscar">
+            <button type="button" class="btn btn-primary" onclick="javascript: pageContent('asesor/reporte','empresa=<?php echo $get->empresa; ?>&campana=<?php echo $get->campana; ?>&fecha_registro='+$('#fecha').val());" title="Buscar">
                 <span class="glyphicon glyphicon-search"></span>
             </button>
         </div>
@@ -168,12 +169,12 @@ $result_info = $mysql->query($query_info);
                             </span>
                         </div>
                         <div class="col-md-8">
-                            <span><?php echo $fecha_llamada; ?></span>
+                            <span><?php echo $fecha_registro; ?></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-					       <div class="chart" id="repo_detallado"></div>
+					       <div class="chart" id="repo_detallado" style="height: 250px;"></div>
                         </div>
                     </div>
 				</div>
@@ -188,8 +189,8 @@ $(document).ready(function(){
         element: 'repo_detallado',
         resize: true,
         data: [
-        <?php while($row = $result_general->fetch(PDO::FETCH_OBJ)){ ?>
-            {x: '<?php echo $row->siglas; ?>', y: '<?php echo $row->porcentaje; ?>'},
+        <?php while($row_general = $result_general->fetch(PDO::FETCH_OBJ)){ ?>
+            {x: '<?php echo $row_general->siglas; ?>', y: '<?php echo $row_general->porcentaje; ?>'},
         <?php } ?>
         ],
         xkey: 'x',

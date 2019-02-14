@@ -148,38 +148,41 @@ $(function(){
 
 	$('#perfil').change(function(){
 		$('#empresa_campana').hide();
-		$('#numero_campanas').val('0')
+		$('#numero_campanas').val('0');
+
 		if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6' || $(this).val() == '7'){
-			$('#empresa_campana').show();
+			
 			$('#numero_campanas').val('1');
+			$('#empresa_campana').show();
 			$('#canvas_empresa_campana').empty();
 
 			var html = '';
-			html += '<div class="row campanas">';
+			html += '<div class="row campanas" id="empresa_campana_1">';
                 html += '<div class="col col-md-3">';
                     html += '<div class="form-group has-feedback">';
-                        html += '<label class="control-label" for="empresa_'+j+'">EMPRESA:</label>';
-                        html += '<select class="form-control" id="empresa_'+j+'" name="empresa_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
+                        html += '<label class="control-label" for="empresa_1">EMPRESA:</label>';
+                        html += '<input type="hidden" name="id_usuario_ec_1" id="id_usuario_ec_1" value="">';
+                        html += '<select class="form-control" id="empresa_1" name="empresa_1" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
                         html += '<div class="help-block with-errors"></div>';
                     html += '</div>';
                 html += '</div>';
                 html += '<div class="col col-md-3">';
                     html += '<div class="form-group has-feedback">';
-                        html += '<label class="control-label" for="campana_'+j+'">CAMPAÑA:</label>';
-                        html += '<select class="form-control" id="campana_'+j+'" name="campana_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+                        html += '<label class="control-label" for="campana_1">CAMPAÑA:</label>';
+                        html += '<select class="form-control" id="campana_1" name="campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
                         html += '<div class="help-block with-errors"></div>';
                     html += '</div>';
                 html += '</div>';
                 html += '<div class="col col-md-3">';
                     html += '<div class="form-group has-feedback">';
-                        html += '<label class="control-label" for="estado_campana_'+j+'">ESTADO:</label>';
-                        html += '<select class="form-control" id="estado_campana_'+j+'" name="estado_campana_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+                        html += '<label class="control-label" for="estado_campana_1">ESTADO:</label>';
+                        html += '<select class="form-control" id="estado_campana_1" name="estado_campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
                         html += '<div class="help-block with-errors"></div>';
                     html += '</div>';
                 html += '</div>';
                 html += '<div class="col col-md-3">';
                     html += '<br>';
-                    html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampana();" title="Añadir Campaña">';
+                	html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampana();" title="Añadir Campaña">';
                         html += '<span class="glyphicon glyphicon-plus"></span>';
                     html += '</button>';
                 html += '</div>';
@@ -188,6 +191,7 @@ $(function(){
             $("select").select2();
 
 			//empresas
+			$('#empresa_1').empty();
 			$.ajax({
 				type: 'post',
 				url: '../controller/ctrempresas.php',
@@ -203,13 +207,15 @@ $(function(){
 					$.each(data, function(i, row){
 						html += '<option value="'+row.id+'">'+row.empresa+'</option>';
 					});
-					$('#empresa_'+j+'').html(html);
+					$('#empresa_1').html(html);
 				} else {
 					console.log('Error: '+result.msg);
 				}
 			});
 
-			$('#empresa_'+j+'').change(function(){
+			$('#campana_1').empty();
+			$('#empresa_1').change(function(){
+				$('#campana_1').empty();
 				//campanas
 				$.ajax({
 					type: 'post',
@@ -227,7 +233,7 @@ $(function(){
 						$.each(data, function(i, row){
 							html += '<option value="'+row.id+'">'+row.campana+'</option>';
 						});
-						$('#campana_'+j+'').html(html);
+						$('#campana_1').html(html);
 					} else {
 						console.log('Error: '+result.msg);
 					}
@@ -235,20 +241,23 @@ $(function(){
 			});
 
 			//Estado campaña
-			$('#estado_campana_'+j+'').append($('<option>', {
+			$('#estado_campana_1').append($('<option>', {
 				value: '',
 				text: '',
 			}).attr("selected", true));
-			$('#estado_campana_'+j+'').append($('<option>', {
+			$('#estado_campana_1').append($('<option>', {
 				value: 'activo',
 				text: 'activo',
 			}));
-			$('#estado_campana_'+j+'').append($('<option>', {
+			$('#estado_campana_1').append($('<option>', {
 				value: 'inactivo',
 				text: 'inactivo',
 			}));
+
 		} else {
+			$('#numero_campanas').val('0');
 			$('#empresa_campana').hide();
+			$('#canvas_empresa_campana').empty();
 		}
 	});
 
@@ -336,8 +345,189 @@ function ver_usuario(id_usuario){
 				$('#identificacion_m').val(row.identificacion);
 				$('#email_m').val(row.email);
 				$('#usaurio_m').val(row.usuario);
+
+				//Ajax de identificacion
+				$('#tipo_identificacion_m').empty();
+				$.ajax({
+					type: 'post',
+					url: '../controller/ctrusuarios.php',
+					data: {
+						action: 'tipo_identificacion',
+					},
+					dataType: 'json',
+				}).done(function(result2){
+					if(result2.bool){
+						var data2 = $.parseJSON(result2.msg);
+						$.each(data2, function(i, row2){
+							if (row.tipo_identificacion == row2.id){
+								$('#tipo_identificacion_m').append($('<option>', {
+									value: row2.id,
+									text: row2.tipo_identificacion, 
+								}).attr("selected", true));
+							} else {	
+								$('#tipo_identificacion_m').append($('<option>', {
+									value: row2.id,
+									text: row2.tipo_identificacion, 
+								}));
+							}
+						});
+					} else {
+						console.log('Error: '+result2.msg);
+					}
+				});
+
+				//Ajax de perfil
+				$('#perfil_m').empty();
+				$.ajax({
+					type: 'post',
+					url: '../controller/ctrusuarios.php',
+					data: {
+						action: 'perfil',
+					},
+					dataType: 'json',
+				}).done(function(result2){
+					if(result2.bool){
+						var data2 = $.parseJSON(result2.msg);
+						$('#perfil_m').append($('<option>', {
+							value: '',
+							text: '', 
+						}));
+						$.each(data2, function(i, row2){
+							if (row.perfil == row2.id){
+								$('#perfil_m').append($('<option>', {
+									value: row2.id,
+									text: row2.perfil, 
+								}).attr("selected", true));
+							} else {	
+								$('#perfil_m').append($('<option>', {
+									value: row2.id,
+									text: row2.perfil, 
+								}));
+							}
+						});
+					} else {
+						console.log('Error: '+result2.msg);
+					}
+				});
+
+				//Muestra las opciones de activo e inactivo
+				$('#estado_m').empty();
+				if(row.estado == 'activo'){
+					$('#estado_m').append($('<option>', {
+						value: 'activo',
+						text: 'activo',
+					}).attr("selected", true));
+					$('#estado_m').append($('<option>', {
+						value: 'inactivo',
+						text: 'inactivo',
+					}));
+				} else {
+					$('#estado_m').append($('<option>', {
+						value: 'inactivo',
+						text: 'inactivo',
+					}).attr("selected", true));
+					$('#estado_m').append($('<option>', {
+						value: 'activo',
+						text: 'activo',
+					}));
+				}
+
+				//CUando hay un campio en el perfil
+				$('#perfil_m').change(function(e){
+					//Cuando el perfil es de analista o lider
+					if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6' || $(this).val() == '8'){
+						$('#empresa_campana_m').show();
+						$('#empresa_m_1').prop('disabled', false);
+						$('#campana_m_1').prop('disabled', false);
+						$('#estado_campana_m_1').prop('disabled', false);
+						$('#numero_campanas_m').val('1');
+						$('#id_usuario_ec_1').val('');
+
+						//Ajax de la empresa
+						$('#empresa_m_1').empty();
+						$.ajax({
+							type: 'post',
+							url: '../controller/ctrempresas.php',
+							data: {
+								action: 'empresas',
+							},
+							dataType: 'json'
+						}).done(function(result2){
+							if(result2.bool){
+								var data2 = $.parseJSON(result2.msg);
+								$('#empresa_m_1').append($('<option>', {
+									value: '',
+									text: '', 
+								}));
+								$.each(data2, function(i, row2){
+									$('#empresa_m_1').append($('<option>', {
+										value: row2.id,
+										text: row2.empresa, 
+									}));
+								});
+							} else {
+								console.log('Error: '+result2.msg);
+							}
+						});
+						$('#campana_m_1').empty();
+						//CUando cambia la empresa
+						$('#empresa_m_1').change(function(){
+							//Ajax campañas
+							$('#campana_m_1').empty();
+							$.ajax({
+								type: 'post',
+								url: '../controller/ctrcampanas.php',
+								data: {
+									action: 'campanas',
+									id_empresa: $('#empresa_m_1').val(),
+								},
+								dataType: 'json'
+							}).done(function(result2){
+								if(result2.bool){
+									var data2 = $.parseJSON(result2.msg);
+									$('#campana_m_1').append($('<option>', {
+										value: '',
+										text: '', 
+									}));
+									$.each(data2, function(i, row2){
+										$('#campana_m_1').append($('<option>', {
+											value: row2.id,
+											text: row2.campana, 
+										}));
+									});
+								} else {
+									console.log('Error: '+result2.msg);
+								}
+							});
+						});
+						//Estado campaña
+						$('#estado_campana_m_1').append($('<option>', {
+							value: 'activo',
+							text: 'activo',
+						}).attr("selected", true));
+						$('#estado_campana_m_1').append($('<option>', {
+							value: 'inactivo',
+							text: 'inactivo',
+						}));
+					} else {
+						//Limpia de deshabilita todas las opciones de empresa y campaña
+						$('#numero_campanas_m').val('0');
+						$('#id_usuario_ec_1').val('');
+						$('#empresa_m_1').val('');
+						$('#campana_m_1').val('');
+						$('#estado_campana_m_1').val('');
+						$('#empresa_m_1').prop('disabled', true);
+						$('#campana_m_1').prop('disabled', true);
+						$('#estado_campana_m_1').prop('disabled', true);
+						$('#empresa_m_1').empty();
+						$('#campana_m_1').empty();
+						$('#estado_campana_m_1').empty();
+						$('#empresa_campana_m').hide();
+					}
+				});
+
 				//Valida si el perfil es analista o lider
-				if (row.perfil == '3' || row.perfil == '4' || row.perfil == '6'){
+				if(row.perfil == '3' || row.perfil == '4' || row.perfil == '6'){
 					$('#empresa_campana_m').show();
 					$('#empresa_m').prop('disabled', false);
 					$('#campana_m').prop('disabled', false);
@@ -360,33 +550,36 @@ function ver_usuario(id_usuario){
 								j++;
 								num_campanas = j;
 								html += '<div class="row campanas_m">';
-								html += '<div class="col col-md-3">';
-								html += '<div class="form-group has-feedback">';
-								html += '<label class="control-label" for="empresa_m_'+j+'">EMPRESA:</label>';
-								html += '<select class="form-control" id="empresa_m_'+j+'" name="empresa_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
-								html += '<div class="help-block with-errors"></div>';
-								html += '</div>';
-								html += '</div>';
-								html += '<div class="col col-md-3">';
-								html += '<div class="form-group has-feedback">';
-								html += '<label class="control-label" for="campana_m_'+j+'">CAMPAÑA:</label>';
-								html += '<select class="form-control" id="campana_m_'+j+'" name="campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
-								html += '<div class="help-block with-errors"></div>';
-								html += '</div>';
-								html += '</div>';
-								html += '<div class="col col-md-3">';
-								html += '<div class="form-group has-feedback">';
-								html += '<label class="control-label" for="estado_campana_m_'+j+'">ESTADO:</label>';
-								html += '<select class="form-control" id="estado_campana_m_'+j+'" name="estado_campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
-								html += '<div class="help-block with-errors"></div>';
-								html += '</div>';
-								html += '</div>';
-								html += '<div class="col col-md-3">';
-								html += '<br>';
-								html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampanaModificacion();" title="Añadir Campaña">';
-								html += '<span class="glyphicon glyphicon-plus"></span>';
-								html += '</button>';
-								html += '</div>';
+									html += '<div class="col col-md-3">';
+										html += '<div class="form-group has-feedback">';
+											html += '<label class="control-label" for="empresa_m_'+j+'">EMPRESA:</label>';
+											html += '<input type="hidden" name="id_usuario_ec_'+j+'" id="id_usuario_ec_'+j+'" value="'+row2.id+'">';
+											html += '<select class="form-control" id="empresa_m_'+j+'" name="empresa_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
+											html += '<div class="help-block with-errors"></div>';
+										html += '</div>';
+									html += '</div>';
+									html += '<div class="col col-md-3">';
+										html += '<div class="form-group has-feedback">';
+											html += '<label class="control-label" for="campana_m_'+j+'">CAMPAÑA:</label>';
+											html += '<select class="form-control" id="campana_m_'+j+'" name="campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+											html += '<div class="help-block with-errors"></div>';
+										html += '</div>';
+									html += '</div>';
+									html += '<div class="col col-md-3">';
+										html += '<div class="form-group has-feedback">';
+											html += '<label class="control-label" for="estado_campana_m_'+j+'">ESTADO:</label>';
+											html += '<select class="form-control" id="estado_campana_m_'+j+'" name="estado_campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+											html += '<div class="help-block with-errors"></div>';
+										html += '</div>';
+									html += '</div>';
+									html += '<div class="col col-md-3">';
+										html += '<br>';
+										if(j == 1){
+											html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampanaModificacion();" title="Añadir Campaña">';
+												html += '<span class="glyphicon glyphicon-plus"></span>';
+											html += '</button>';
+										}
+									html += '</div>';
 								html += '</div>';
 							});
 							$('#canvas_empresa_campana_m').html(html);
@@ -488,172 +681,6 @@ function ver_usuario(id_usuario){
 					$('#campana_m').prop('disabled', true);
 				}
 
-				//Ajax de identificacion
-				$('#tipo_identificacion_m').empty();
-				$.ajax({
-					type: 'post',
-					url: '../controller/ctrusuarios.php',
-					data: {
-						action: 'tipo_identificacion',
-					},
-					dataType: 'json',
-				}).done(function(result2){
-					if(result2.bool){
-						var data2 = $.parseJSON(result2.msg);
-						$.each(data2, function(i, row2){
-							if (row.tipo_identificacion == row2.id){
-								$('#tipo_identificacion_m').append($('<option>', {
-									value: row2.id,
-									text: row2.tipo_identificacion, 
-								}).attr("selected", true));
-							} else {	
-								$('#tipo_identificacion_m').append($('<option>', {
-									value: row2.id,
-									text: row2.tipo_identificacion, 
-								}));
-							}
-						});
-					} else {
-						console.log('Error: '+result2.msg);
-					}
-				});
-
-				//Ajax de perfil
-				$('#perfil_m').empty();
-				$.ajax({
-					type: 'post',
-					url: '../controller/ctrusuarios.php',
-					data: {
-						action: 'perfil',
-					},
-					dataType: 'json',
-				}).done(function(result2){
-					if(result2.bool){
-						var data2 = $.parseJSON(result2.msg);
-						$('#perfil_m').append($('<option>', {
-							value: '',
-							text: '', 
-						}));
-						$.each(data2, function(i, row2){
-							if (row.perfil == row2.id){
-								$('#perfil_m').append($('<option>', {
-									value: row2.id,
-									text: row2.perfil, 
-								}).attr("selected", true));
-							} else {	
-								$('#perfil_m').append($('<option>', {
-									value: row2.id,
-									text: row2.perfil, 
-								}));
-							}
-						});
-					} else {
-						console.log('Error: '+result2.msg);
-					}
-				});
-
-				//Muestra las opciones de activo e inactivo
-				$('#estado_m').empty();
-				if(row.estado == 'activo'){
-					$('#estado_m').append($('<option>', {
-						value: 'activo',
-						text: 'activo',
-					}).attr("selected", true));
-					$('#estado_m').append($('<option>', {
-						value: 'inactivo',
-						text: 'inactivo',
-					}));
-				} else {
-					$('#estado_m').append($('<option>', {
-						value: 'inactivo',
-						text: 'inactivo',
-					}).attr("selected", true));
-					$('#estado_m').append($('<option>', {
-						value: 'activo',
-						text: 'activo',
-					}));
-				}
-
-				//CUando hay un campio en el perfil
-				$('#perfil_m').change(function(e){
-					//Cuando el perfil es de analista o lider
-					if($(this).val() == '3' || $(this).val() == '4' || $(this).val() == '6' || $(this).val() == '8'){
-						$('#empresa_campana_m').show();
-						$('#empresa_m').prop('disabled', false);
-						$('#campana_m').prop('disabled', false);
-						//Ajax de la empresa
-						$('#empresa_m').empty();
-						$.ajax({
-							type: 'post',
-							url: '../controller/ctrempresas.php',
-							data: {
-								action: 'empresas',
-							},
-							dataType: 'json'
-						}).done(function(result2){
-							if(result2.bool){
-								var data2 = $.parseJSON(result2.msg);
-								$.each(data2, function(i, row2){
-									$('#empresa_m').append($('<option>', {
-										value: '',
-										text: '', 
-									}));
-									$('#empresa_m').append($('<option>', {
-										value: row2.id,
-										text: row2.empresa, 
-									}));
-								});
-							} else {
-								console.log('Error: '+result2.msg);
-							}
-						});
-						//Limpia las opciones de la campaña
-						$('#campana_m').empty();
-						$('#campana_m').append($('<option>', {
-							value: '',
-							text: '', 
-						}));
-					} else {
-						//Limpia de deshabilita todas las opciones de empresa y campaña
-						$('#empresa_m').empty();
-						$('#campana_m').empty();
-						$('#empresa_m').prop('disabled', true);
-						$('#campana_m').prop('disabled', true);
-						$('#empresa_campana_m').hide();
-					}
-				});
-
-				//CUando cambia la empresa
-				$('#empresa_m').change(function(){
-					//Ajax campañas
-					$('#campana_m').empty();
-					$.ajax({
-						type: 'post',
-						url: '../controller/ctrcampanas.php',
-						data: {
-							action: 'campanas',
-							id_empresa: $('#empresa_m').val(),
-						},
-						dataType: 'json'
-					}).done(function(result2){
-						if(result2.bool){
-							var data2 = $.parseJSON(result2.msg);
-							$.each(data2, function(i, row2){
-								$('#campana_m').append($('<option>', {
-									value: '',
-									text: '', 
-								}));
-								$('#campana_m').append($('<option>', {
-									value: row2.id,
-									text: row2.campana, 
-								}));
-							});
-						} else {
-							console.log('Error: '+result2.msg);
-						}
-					});
-				});
-
 			});
 		} else {
 			console.log('Error: '+result.msg);
@@ -696,10 +723,9 @@ function addCampana(){
             html += '</button>';
         html += '</div>';
     html += '</div>';
-    //
 	$('#canvas_empresa_campana').append(html); 
 	$("select").select2();
-	//empresas
+	
 	$.ajax({
 		type: 'post',
 		url: '../controller/ctrempresas.php',
@@ -720,6 +746,7 @@ function addCampana(){
 			console.log('Error: '+result.msg);
 		}
 	});
+
 	//Muestra campañas cuando se modifica empresa
 	$('#empresa_'+count).change(function(){
 		//campanas
@@ -745,6 +772,7 @@ function addCampana(){
 			}
 		});
 	});
+
 	//Estado campaña
 	$('#estado_campana_'+count).append($('<option>', {
 		value: '',

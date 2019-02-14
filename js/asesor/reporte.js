@@ -15,8 +15,8 @@ $(function(){
 			var html = '';
 			html += '<div class="row">';
 			$.each(data, function(i, row){
-				html += '<div class="col-xs-6 col-md-3 text-center">';
-				html += '<input type="text" class="knob" value="'+row.porcentaje+'" data-width="150" data-height="150" data-bgColor="#e6e6e6" data-fgColor="'+row.color_informe+'" readonly="">';
+				html += '<div class="col-md-3 text-center">';
+				html += '<input type="text" class="knob" value="'+row.porcentaje+'" data-width="100" data-height="100" data-bgColor="#e6e6e6" data-fgColor="'+row.color_informe+'" readonly="">';
 				html += '<div class="knob-label"><b>'+row.error+' ('+row.siglas+')</b></div>';
 				html += '</div>';
 			});
@@ -42,7 +42,7 @@ $(function(){
 			var html = '';
 			html += '<option></option>'
 			$.each(data, function(i, row){
-				html += '<option value="'+row.fecha_llamada+'">'+row.fecha_llamada+'</option>'
+				html += '<option value="'+row.fecha_registro+'">'+row.fecha_registro+'</option>'
 			});
 			$('#fecha').html(html);
 		} else {

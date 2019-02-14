@@ -397,10 +397,10 @@ class Asesor{
 		if($mysql){
 			$arrayFechas = array();
 			//Consulta reporte detallado
-			$query  = "SELECT a.fecha_llamada ";
+			$query  = "SELECT a.fecha_registro ";
 			$query .= "FROM ca_monitoreo_asesor AS a ";
 			$query .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
-			$query .= "WHERE b.identificacion = '".$data->identificacion."' AND a.fecha_llamada BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
+			$query .= "WHERE b.identificacion = '".$data->identificacion."' ";
 			$query .= "ORDER BY a.id ASC;";
 			$result = $mysql->query($query);
 			if($result){

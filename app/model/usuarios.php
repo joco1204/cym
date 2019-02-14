@@ -245,7 +245,7 @@ class Usuario{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT a.id_usuario, a.id_perfil, a.id_empresa, b.empresa, a.id_campana, c.campana, a.estado ";
+			$query  = "SELECT a.id, a.id_usuario, a.id_perfil, a.id_empresa, b.empresa, a.id_campana, c.campana, a.estado ";
 			$query .= "FROM re_usaurio_ec AS a ";
 			$query .= "LEFT JOIN ca_empresa AS b ON a.id_empresa = b.id ";
 			$query .= "LEFT JOIN ca_campana AS c ON a.id_campana = c.id ";
@@ -271,9 +271,6 @@ class Usuario{
 	public function modificar_usuario($data){
 		$mysql = $this->business->mysql;
 		$db_mysql = $this->business->db_mysql;
-		//valida que campo empresa y campaña no esté vacío
-		isset($data->empresa_m) ? $empresa = $data->empresa_m : $empresa = '0';
-		isset($data->campana_m) ? $campana = $data->campana_m : $campana = '0';
 		//Valida conexión a base de datos
 		if($mysql){
 			$query  = "UPDATE re_usuarios SET usuario_red = '".$data->usaurio_m."', tipo_identificacion = '".$data->tipo_identificacion_m."', identificacion = '".$data->identificacion_m."', nombre = '".$data->nombres_m."', apellido1 = '".$data->apellidos1_m."', apellido2 = '".$data->apellidos2_m."', email = '".$data->email_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_usuario_m."'; ";
@@ -282,14 +279,68 @@ class Usuario{
 				$query_perfil = "UPDATE re_usuario_perfil SET id_perfil = '".$data->perfil_m."' WHERE id_usuario = '".$data->id_usuario_m."';";
 				$result_perfil = $mysql->query($query_perfil);
 				if($result_perfil){
-					$query_perfil_ec = "UPDATE re_usaurio_ec SET id_perfil = '".$data->perfil_m."', id_empresa  = '".$empresa."', id_campana  = '".$campana."' where id_usuario = '".$data->id_usuario_m."';";
-					$result_perfil_ec = $mysql->query($query_perfil_ec);
-					if($result_perfil_ec){
+					if($data->perfil_m == '1' || $data->perfil_m == '2' || $data->perfil_m == '5'){
+						if ($data->numero_campanas_m == '0'){
+							$query_id_ec = "SELECT id FROM re_usaurio_ec WHERE id_usuario = '".$data->id_usuario_m."';";
+							$result_id_ec = $mysql->query($query_id_ec);
+							
+							while($row_id_ec = $result_id_ec->fetch(PDO::FETCH_OBJ)){
+								$query_max_id_ec = "SELECT MAX(id) AS id FROM re_usaurio_ec WHERE id_usuario = '".$data->id_usuario_m."' AND id = '".$row_id_ec->id."';";
+								$result_max_id_ec = $mysql->query($query_max_id_ec);
+								while ($row_max_id_ec = $result_max_id_ec->fetch(PDO::FETCH_OBJ)){
+									if($row_max_id_ec->id == $row_id_ec->id){
+										$query_perfil_ec = "UPDATE re_usaurio_ec SET id_perfil = '".$data->perfil_m."', id_empresa  = '0', id_campana  = '0' WHERE id_usuario = '".$data->id_usuario_m."' AND id = '".$row_id_ec->id."';";
+										$result_perfil_ec = $mysql->query($query_perfil_ec);
+									} else {
+										$query_perfil_ec = "UPDATE re_usaurio_ec SET id_perfil = '".$data->perfil_m."', id_empresa  = '0', id_campana  = '0', estado = 'inactivo' WHERE id_usuario = '".$data->id_usuario_m."' AND id = '".$row_id_ec->id."';";
+										$result_perfil_ec = $mysql->query($query_perfil_ec);
+									}									
+								}
+							}
+
+							$this->business->return->bool = true;
+							$this->business->return->msg = 'Perfil de usuario actualizado con éxito';
+						} else {
+							$this->business->return->bool = false;
+							$this->business->return->msg = 'Error al actualizar perfil usuario';	
+						}
+					} else {
+						$query_num_ec = "SELECT COUNT(*) AS num FROM re_usaurio_ec WHERE id_usuario = '".$data->id_usuario_m."';";
+						$result_num_ec = $mysql->query($query_num_ec);
+						$row_num_ec = $result_num_ec->fetch(PDO::FETCH_OBJ);
+						if($row_num_ec->num == $data->numero_campanas_m){
+							$query_id_ec = "SELECT id FROM re_usaurio_ec WHERE id_usuario = '".$data->id_usuario_m."';";
+							$result_id_ec = $mysql->query($query_id_ec);
+							while($row_id_ec = $result_id_ec->fetch(PDO::FETCH_OBJ)){
+								for($i = 1; $i <= $data->numero_campanas_m; $i++){
+									$id_usuario_ec = 'id_usuario_ec_'.$i;
+									$empresa_m = 'empresa_m_'.$i;
+									$campana_m = 'campana_m_'.$i;
+									$estado_campana_m = 'estado_campana_m_'.$i;
+									
+									$query_perfil_ec = "UPDATE re_usaurio_ec SET id_perfil = '".$data->perfil_m."', id_empresa  = '".$data->$empresa_m."', id_campana  = '".$data->$campana_m."', estado = '".$data->$estado_campana_m."' WHERE id_usuario = '".$data->id_usuario_m."' AND id = '".$data->$id_usuario_ec."';";
+									$result_perfil_ec = $mysql->query($query_perfil_ec);
+								}
+							}
+							$this->business->return->bool = true;
+							$this->business->return->msg = 'Perfil de usuario actualizado con éxito';
+						} else {
+							for($i = 1; $i <= $data->numero_campanas_m; $i++){
+								$id_usuario_ec = 'id_usuario_ec_'.$i;
+								$empresa_m = 'empresa_m_'.$i;
+								$campana_m = 'campana_m_'.$i;
+								$estado_campana_m = 'estado_campana_m_'.$i;
+								if($data->$id_usuario_ec == ''){
+									$query_perfil_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana, estado) VALUES ('".$data->id_usuario_m."', '".$data->perfil_m."', '".$data->$empresa_m."', '".$data->$campana_m."', '".$data->$estado_campana_m."');";
+									$result_perfil_ec = $mysql->query($query_perfil_ec);
+								} else {
+									$query_perfil_ec = "UPDATE re_usaurio_ec SET id_perfil = '".$data->perfil_m."', id_empresa  = '".$data->$empresa_m."', id_campana  = '".$data->$campana_m."', estado = '".$data->$estado_campana_m."' WHERE id_usuario = '".$data->id_usuario_m."' AND id = '".$data->$id_usuario_ec."';";
+									$result_perfil_ec = $mysql->query($query_perfil_ec);
+								}
+							}
+						}
 						$this->business->return->bool = true;
 						$this->business->return->msg = 'Perfil de usuario actualizado con éxito';
-					} else {
-						$this->business->return->bool = false;
-						$this->business->return->msg = 'Error al actualizar empresa y campaña';	
 					}
 				} else {
 					$this->business->return->bool = false;

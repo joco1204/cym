@@ -198,10 +198,11 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     <input type="hidden" id="numero_campanas_m" name="numero_campanas_m" value="0">
                     <div id="empresa_campana_m" style="display: none;">
                         <div id="canvas_empresa_campana_m">
-                            <div class="row campanas_m">
+                            <div class="row campanas_m" id="empresa_campana_m_1">
                                 <div class="col col-md-3">
                                     <div class="form-group has-feedback">
                                         <label class="control-label" for="empresa_m_1">EMPRESA:</label>
+                                        <input type="hidden" name="id_usuario_ec_1" id="id_usuario_ec_1" value="">
                                         <select class="form-control" id="empresa_m_1" name="empresa_m_1" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
                                         <div class="help-block with-errors"></div>
                                     </div>
