@@ -333,7 +333,6 @@ function ver_usuario(id_usuario){
 		},
 		dataType: 'json'
 	}).done(function(result){
-
 		if(result.bool){
 			var data = $.parseJSON(result.msg);
 			$.each(data, function(i, row){
@@ -527,7 +526,7 @@ function ver_usuario(id_usuario){
 				});
 
 				//Valida si el perfil es analista o lider
-				if(row.perfil == '3' || row.perfil == '4' || row.perfil == '6'){
+				if(row.perfil == '3' || row.perfil == '4' || row.perfil == '6' || row.perfil == '8'){
 					$('#empresa_campana_m').show();
 					$('#empresa_m').prop('disabled', false);
 					$('#campana_m').prop('disabled', false);
@@ -874,9 +873,13 @@ function addCampanaModificacion(){
 	});
 	//Estado campaña
 	$('#estado_campana_m_'+count).append($('<option>', {
+		value: '',
+		text: '',
+	}).attr("selected", true));
+	$('#estado_campana_m_'+count).append($('<option>', {
 		value: 'activo',
 		text: 'activo',
-	}).attr("selected", true));
+	}));
 	$('#estado_campana_m_'+count).append($('<option>', {
 		value: 'inactivo',
 		text: 'inactivo',
@@ -886,7 +889,6 @@ function addCampanaModificacion(){
 function deleteCampanas(count){
 	var campana = '.campanas';
 	var empresa_campana = '#empresa_campana_'+count;
-	var error_actual = $(campana).length;
 	$(empresa_campana).remove();
 	var count = $(campana).length;
 	$('.campanas').val(count);
@@ -896,7 +898,6 @@ function deleteCampanas(count){
 function deleteCampanasModifica(count){
 	var campana = '.campanas_m';
 	var empresa_campana = '#empresa_campana_m_'+count;
-	var error_actual = $(campana).length;
 	$(empresa_campana).remove();
 	var count = $(campana).length;
 	$('.campanas_m').val(count);

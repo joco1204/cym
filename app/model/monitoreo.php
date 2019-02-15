@@ -262,6 +262,13 @@ class Monitoreo{
 						$result_item = $mysql->query($query_item);
 					}
 				}
+
+				$query_historico  = "SELECT id_monitoreo, id_asesor, id_error, porcentaje, fecha_registro FROM ca_monitoreo_asesor_detallado_general ";
+				$query_historico .= "WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."' AND porcentaje = '0';";
+				$result_historico = $mysql->query($query_historico);
+				
+
+
 				$this->business->return->bool = true;
 				$this->business->return->msg = $id_monitoreo;
 			} else {
@@ -460,6 +467,19 @@ class Monitoreo{
 			$this->business->return->msg = 'Error de conexión de base de datos';
 		}
 		return $this->business->return;
+	}
+
+	public function periodo_tiempo_inicio(){
+		$month = date('m');
+		$year = date('Y');
+		return date('Y-m-d', mktime(0,0,0, $month-2, 1, $year));
+	}
+
+	public function periodo_tiempo_fin(){ 
+		$month = date('m');
+		$year = date('Y');
+		$day = date("d", mktime(0,0,0, $month+1, 0, $year));
+		return date('Y-m-d', mktime(0,0,0, $month, $day, $year));
 	}
 }
 ?>
