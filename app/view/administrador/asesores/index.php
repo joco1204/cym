@@ -98,37 +98,54 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     </div>
                     <input type="hidden" id="numero_campanas" name="numero_campanas" value="1">
                     <div id="canvas_empresa_campana">
-                        <div class="row campanas">
-                            <div class="col col-md-3">
-                                <div class="form-group has-feedback">
-                                    <label class="control-label" for="empresa_1">EMPRESA:</label>
-                                    <select class="form-control" id="empresa_1" name="empresa_1" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
-                                    <div class="help-block with-errors"></div>
+                        <div class="campanas" id="empresa_campana_1">
+                            <div class="row" >
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="empresa_1">EMPRESA:</label>
+                                        <select class="form-control" id="empresa_1" name="empresa_1" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="campana_1">CAMPAÑA:</label>
+                                        <select class="form-control" id="campana_1" name="campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="lider_1">LIDER:</label>
+                                        <select class="form-control" id="lider_1" name="lider_1" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col col-md-3">
-                                <div class="form-group has-feedback">
-                                    <label class="control-label" for="campana_1">CAMPAÑA:</label>
-                                    <select class="form-control" id="campana_1" name="campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
-                                    <div class="help-block with-errors"></div>
+                            <div class="row">
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="formador_1">FORMADOR:</label>
+                                        <select class="form-control" id="formador_1" name="formador_1" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col col-md-3">
-                                <div class="form-group has-feedback">
-                                    <label class="control-label" for="estado_campana_1">ESTADO:</label>
-                                    <select class="form-control" id="estado_campana_1" name="estado_campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
-                                    <div class="help-block with-errors"></div>
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="estado_campana_1">ESTADO:</label>
+                                        <select class="form-control" id="estado_campana_1" name="estado_campana_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col col-md-3">
-                                <br>
-                                <button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampana();" title="Añadir Campaña">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                </button>
+                                <div class="col col-md-4">
+                                    <br>
+                                    <button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampana();" title="Añadir Campaña">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success btn-sm" >GUARDAR</button>
@@ -234,33 +251,51 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                     </div>
                     <input type="hidden" id="numero_campanas_m" name="numero_campanas_m" value="1">
                     <div id="canvas_empresa_campana_m">
-                        <div class="row campanas_m">
-                            <div class="col col-md-3">
-                                <div class="form-group has-feedback">
-                                    <label class="control-label" for="empresa_m_1">EMPRESA:</label>
-                                    <select class="form-control" id="empresa_m_1" name="empresa_m_1" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
-                                    <div class="help-block with-errors"></div>
+                        <div class="campanas_m" id="empresa_campana_m_1">
+                            <div class="row" >
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="empresa_m_1">EMPRESA:</label>
+                                        <select class="form-control" id="empresa_m_1" name="empresa_m_1" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="campana_m_1">CAMPAÑA:</label>
+                                        <select class="form-control" id="campana_m_1" name="campana_m_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="lider_m_1">LIDER:</label>
+                                        <select class="form-control" id="lider_m_1" name="lider_m_1" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col col-md-3">
-                                <div class="form-group has-feedback">
-                                    <label class="control-label" for="campana_m_1">CAMPAÑA:</label>
-                                    <select class="form-control" id="campana_m_1" name="campana_m_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
-                                    <div class="help-block with-errors"></div>
+                            <div class="row">
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="formador_m_1">FORMADOR:</label>
+                                        <select class="form-control" id="formador_m_1" name="formador_m_1" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col col-md-3">
-                                <div class="form-group has-feedback">
-                                    <label class="control-label" for="estado_campana_m_1">ESTADO:</label>
-                                    <select class="form-control" id="estado_campana_m_1" name="estado_campana_m_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
-                                    <div class="help-block with-errors"></div>
+                                <div class="col col-md-4">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="estado_campana_m_1">ESTADO:</label>
+                                        <select class="form-control" id="estado_campana_m_1" name="estado_campana_m_1" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col col-md-3">
-                                <br>
-                                <button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampanaModificacion();" title="Añadir Campaña">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                </button>
+                                <div class="col col-md-4">
+                                    <br>
+                                    <button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampana();" title="Añadir Campaña">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

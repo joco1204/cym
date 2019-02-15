@@ -166,6 +166,53 @@
 		});
 	});
 
+	$('#campana_1').change(function(){
+		//
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrasesor.php',
+			data: {
+				action: 'lider_info',
+				id_campana: $(this).val(),
+			},
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				var data = $.parseJSON(result.msg);
+				var html = '';
+				html += '<option value=""></option>';
+				$.each(data, function(i, row){
+					html += '<option value="'+row.id_usuario+'">'+row.nombre_usuario+'</option>';
+				});
+				$('#lider_1').html(html);
+			} else {
+				console.log('Error: '+result.msg);
+			}
+		});
+		//
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrasesor.php',
+			data: {
+				action: 'formador_info',
+				id_campana: $(this).val(),
+			},
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				var data = $.parseJSON(result.msg);
+				var html = '';
+				html += '<option value=""></option>';
+				$.each(data, function(i, row){
+					html += '<option value="'+row.id_usuario+'">'+row.nombre_usuario+'</option>';
+				});
+				$('#formador_1').html(html);
+			} else {
+				console.log('Error: '+result.msg);
+			}
+		});
+	});
+
 	//Estado campaña
 	$('#estado_campana_1').append($('<option>', {
 		value: '',
@@ -369,43 +416,65 @@ function ver_asesor(id_asesor){
 						$.each(data2, function(j, row2){
 							j++;
 							num_campanas = j;
-							html += '<div class="row campanas_m">';
-							html += '<div class="col col-md-3">';
-							html += '<div class="form-group has-feedback">';
-							html += '<label class="control-label" for="empresa_m_'+j+'">EMPRESA:</label>';
-							html += '<select class="form-control" id="empresa_m_'+j+'" name="empresa_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
-							html += '<div class="help-block with-errors"></div>';
-							html += '</div>';
-							html += '</div>';
-							html += '<div class="col col-md-3">';
-							html += '<div class="form-group has-feedback">';
-							html += '<label class="control-label" for="campana_m_'+j+'">CAMPAÑA:</label>';
-							html += '<select class="form-control" id="campana_m_'+j+'" name="campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
-							html += '<div class="help-block with-errors"></div>';
-							html += '</div>';
-							html += '</div>';
-							html += '<div class="col col-md-3">';
-							html += '<div class="form-group has-feedback">';
-							html += '<label class="control-label" for="estado_campana_m_'+j+'">ESTADO:</label>';
-							html += '<select class="form-control" id="estado_campana_m_'+j+'" name="estado_campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
-							html += '<div class="help-block with-errors"></div>';
-							html += '</div>';
-							html += '</div>';
-							html += '<div class="col col-md-3">';
-							html += '<br>';
-							html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampanaModificacion();" title="Añadir Campaña">';
-							html += '<span class="glyphicon glyphicon-plus"></span>';
-							html += '</button>';
-							html += '</div>';
-							html += '</div>';
+							html += '<div class="campanas_m" id="empresa_campana_m_'+j+'">';
+						        html += '<div class="row" >';
+						            html += '<div class="col col-md-4">';
+						                html += '<div class="form-group has-feedback">';
+						                    html += '<label class="control-label" for="empresa_m_'+j+'">EMPRESA:</label>';
+						                    html += '<select class="form-control" id="empresa_m_'+j+'" name="empresa_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
+						                    html += '<div class="help-block with-errors"></div>';
+						                html += '</div>';
+						            html += '</div>';
+						            html += '<div class="col col-md-4">';
+						                html += '<div class="form-group has-feedback">';
+						                    html += '<label class="control-label" for="campana_m_'+j+'">CAMPAÑA:</label>';
+						                    html += '<select class="form-control" id="campana_m_'+j+'" name="campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+						                    html += '<div class="help-block with-errors"></div>';
+						                html += '</div>';
+						            html += '</div>';
+						            html += '<div class="col col-md-4">';
+						                html += '<div class="form-group has-feedback">';
+						                    html += '<label class="control-label" for="lider_m_'+j+'">LIDER:</label>';
+						                    html += '<select class="form-control" id="lider_m_'+j+'" name="lider_m_'+j+'" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>';
+						                    html += '<div class="help-block with-errors"></div>';
+						                html += '</div>';
+						            html += '</div>';
+						        html += '</div>';
+						        html += '<div class="row">';
+						            html += '<div class="col col-md-4">';
+						                html += '<div class="form-group has-feedback">';
+						                    html += '<label class="control-label" for="formador_m_'+j+'">FORMADOR:</label>';
+						                    html += '<select class="form-control" id="formador_m_'+j+'" name="formador_m_'+j+'" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>';
+						                    html += '<div class="help-block with-errors"></div>';
+						                html += '</div>';
+						            html += '</div>';
+						            html += '<div class="col col-md-4">';
+						                html += '<div class="form-group has-feedback">';
+						                    html += '<label class="control-label" for="estado_campana_m_'+j+'">ESTADO:</label>';
+						                    html += '<select class="form-control" id="estado_campana_m_'+j+'" name="estado_campana_m_'+j+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+						                    html += '<div class="help-block with-errors"></div>';
+						                html += '</div>';
+						            html += '</div>';
+						            html += '<div class="col col-md-4">';
+						                html += '<br>';
+						                html += '<button type="button" class="btn btn-success btn-sm" onclick="javascript: addCampanaModificacion();" title="Añadir Campaña">'
+						                	html += '<span class="glyphicon glyphicon-plus"></span>';
+						            	html += '</button>';
+						            html += '</div>';
+						        html += '</div>';
+						    html += '</div>';
 						});
+
 						$('#canvas_empresa_campana_m').html(html);
 						$("select").select2();
 						$('#numero_campanas_m').val(num_campanas);
+
 						$.each(data2, function(j, row2){
 							j++;
 							var empresa = '#empresa_m_'+j;
 							var campana = '#campana_m_'+j;
+							var lider = '#lider_m_'+j;
+							var formador = '#formador_m_'+j;
 							var estado = '#estado_campana_m_'+j;
 							//Ajax empresas
 							$(empresa).empty();
@@ -466,6 +535,176 @@ function ver_asesor(id_asesor){
 									console.log('Error: '+result2.msg);
 								}
 							});
+							
+							//
+							$(lider).empty();
+							$.ajax({
+								type: 'post',
+								url: '../controller/ctrasesor.php',
+								data: {
+									action: 'lider_info',
+									id_campana: row2.id_campana,
+								},
+								dataType: 'json'
+							}).done(function(result3){
+								if(result3.bool){
+									var data3 = $.parseJSON(result3.msg);
+									$.each(data3, function(i, row3){
+										if (row2.id_lider == row3.id_usuario){
+											$(lider).append($('<option>', {
+												value: row3.id,
+												text: row3.nombre_usuario, 
+											}).attr("selected", true));
+										} else {
+											$(lider).append($('<option>', {
+												value: row3.id_usuario,
+												text: row3.nombre_usuario, 
+											}));
+										}
+									});
+								} else {
+									console.log('Error: '+result2.msg);
+								}
+							});
+
+							//
+							$(formador).empty();
+							$.ajax({
+								type: 'post',
+								url: '../controller/ctrasesor.php',
+								data: {
+									action: 'formador_info',
+									id_campana: row2.id_campana,
+								},
+								dataType: 'json'
+							}).done(function(result3){
+								if(result3.bool){
+									var data3 = $.parseJSON(result3.msg);
+									$.each(data3, function(i, row3){
+										if (row2.id_formador == row3.id_usuario){
+											$(formador).append($('<option>', {
+												value: row3.id,
+												text: row3.nombre_usuario, 
+											}).attr("selected", true));
+										} else {
+											$(formador).append($('<option>', {
+												value: row3.id_usuario,
+												text: row3.nombre_usuario, 
+											}));
+										}
+									});
+								} else {
+									console.log('Error: '+result2.msg);
+								}
+							});
+
+							//Muestra campañas cuando se modifica empresa
+							$(empresa).change(function(){
+								$(campana).empty();
+								$(lider).empty();
+								$(formador).empty();
+								$(estado).empty();
+								//campanas
+								$.ajax({
+									type: 'post',
+									url: '../controller/ctrcampanas.php',
+									data: {
+										action: 'campanas',
+										id_empresa: $(this).val(),
+									},
+									dataType: 'json'
+								}).done(function(result){
+									if(result.bool){
+										var data = $.parseJSON(result.msg);
+										var html = '';
+										html += '<option value=""></option>';
+										$.each(data, function(i, row){
+											html += '<option value="'+row.id+'">'+row.campana+'</option>';
+										});
+										$('#campana_m_'+count).html(html);
+									} else {
+										console.log('Error: '+result.msg);
+									}
+								});
+
+								$(estado).append($('<option>', {
+									value: '',
+									text: '', 
+								}).attr("selected", true));
+								$(estado).append($('<option>', {
+									value: 'activo',
+									text: 'activo', 
+								}));
+								$(estado).append($('<option>', {
+									value: 'inactivo',
+									text: 'inactivo', 
+								}));
+
+							});
+
+							//Muestra lideres y formadores cuandp
+							$(campana).change(function(){
+								$(lider).empty();
+								$(formador).empty();
+								$(estado).empty();
+								//Lider y formador
+								$.ajax({
+									type: 'post',
+									url: '../controller/ctrasesor.php',
+									data: {
+										action: 'lider_info',
+										id_campana: $(this).val(),
+									},
+									dataType: 'json'
+								}).done(function(result){
+									if(result.bool){
+										var data = $.parseJSON(result.msg);
+										var html = '';
+										html += '<option value=""></option>';
+										$.each(data, function(i, row){
+											html += '<option value="'+row.id_usuario+'">'+row.nombre_usuario+'</option>';
+										});
+										$('#lider_m_'+count).html(html);
+									} else {
+										console.log('Error: '+result.msg);
+									}
+								});
+								//
+								$.ajax({
+									type: 'post',
+									url: '../controller/ctrasesor.php',
+									data: {
+										action: 'formador_info',
+										id_campana: $(this).val(),
+									},
+									dataType: 'json'
+								}).done(function(result){
+									if(result.bool){
+										var data = $.parseJSON(result.msg);
+										var html = '';
+										html += '<option value=""></option>';
+										$.each(data, function(i, row){
+											html += '<option value="'+row.id_usuario+'">'+row.nombre_usuario+'</option>';
+										});
+										$('#formador_m_'+count).html(html);
+									} else {
+										console.log('Error: '+result.msg);
+									}
+								});
+								//
+								$(estado).append($('<option>', {
+									value: '',
+									text: '', 
+								}).attr("selected", true));
+								$(estado).append($('<option>', {
+									value: 'activo',
+									text: 'activo', 
+								}));
+								$(estado).append($('<option>', {
+									value: 'inactivo',
+									text: 'inactivo', 
+								}));
+							});
 							//Estado campañas
 							$(estado).empty();
 							if (row2.estado == 'activo'){
@@ -505,35 +744,54 @@ function addCampana(){
 	$('.campanas').val(count);
 	$('#numero_campanas').val(count);
 
-	html += '<div class="row campanas" id="empresa_campana_'+count+'">';
-        html += '<div class="col col-md-3">';
-            html += '<div class="form-group has-feedback">';
-                html += '<label class="control-label" for="empresa_'+count+'">EMPRESA:</label>';
-                html += '<select class="form-control" id="empresa_'+count+'" name="empresa_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
-                html += '<div class="help-block with-errors"></div>';
-            html += '</div>';
-        html += '</div>';
-        html += '<div class="col col-md-3">';
-            html += '<div class="form-group has-feedback">';
-                html += '<label class="control-label" for="campana_'+count+'">CAMPAÑA:</label>';
-                html += '<select class="form-control" id="campana_'+count+'" name="campana_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
-                html += '<div class="help-block with-errors"></div>';
-            html += '</div>';
-        html += '</div>';
-        html += '<div class="col col-md-3">';
-            html += '<div class="form-group has-feedback">';
-                html += '<label class="control-label" for="estado_campana_'+count+'">ESTADO:</label>';
-                html += '<select class="form-control" id="estado_campana_'+count+'" name="estado_campana_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
-                html += '<div class="help-block with-errors"></div>';
-            html += '</div>';
-        html += '</div>';
-        html += '<div class="col col-md-3">';
-        	html += '<br>';
-            html += '<button type="button" class="btn btn-danger btn-sm" onclick="javascript: deleteCampanas('+count+');" title="Eliminar Campaña">';
-                html += '<span class="glyphicon glyphicon-remove"></span>';
-            html += '</button>';
-        html += '</div>';
-    html += '</div>';
+	html += '<div class="campanas" id="empresa_campana_'+count+'">';
+		html += '<div class="row">';
+			html += '<div class="col col-md-4">';
+			    html += '<div class="form-group has-feedback">';
+			        html += '<label class="control-label" for="empresa_'+count+'">EMPRESA:</label>';
+			        html += '<select class="form-control" id="empresa_'+count+'" name="empresa_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
+			        html += '<div class="help-block with-errors"></div>';
+			    html += '</div>';
+			html += '</div>';
+			html += '<div class="col col-md-4">';
+			    html += '<div class="form-group has-feedback">';
+			        html += '<label class="control-label" for="campana_'+count+'">CAMPAÑA:</label>';
+			        html += '<select class="form-control" id="campana_'+count+'" name="campana_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+			        html += '<div class="help-block with-errors"></div>';
+			    html += '</div>';
+			html += '</div>';
+			html += '<div class="col col-md-4">';
+			    html += '<div class="form-group has-feedback">';
+			        html += '<label class="control-label" for="lider_'+count+'">LIDER:</label>';
+			        html += '<select class="form-control" id="lider_'+count+'" name="lider_'+count+'" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>';
+			        html += '<div class="help-block with-errors"></div>';
+			    html += '</div>';
+			html += '</div>';
+	    html += '</div>';
+	    html += '<div class="row">';
+			html += '<div class="col col-md-4">';
+				html += '<div class="form-group has-feedback">';
+					html += '<label class="control-label" for="formador_'+count+'">FORMADOR:</label>';
+					html += '<select class="form-control" id="formador_'+count+'" name="formador_'+count+'" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>';
+					html += '<div class="help-block with-errors"></div>';
+				html += '</div>';
+			html += '</div>';
+			html += '<div class="col col-md-4">';
+				html += '<div class="form-group has-feedback">';
+					html += '<label class="control-label" for="estado_campana_'+count+'">ESTADO:</label>';
+					html += '<select class="form-control" id="estado_campana_'+count+'" name="estado_campana_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+					html += '<div class="help-block with-errors"></div>';
+				html += '</div>';
+			html += '</div>';
+			html += '<div class="col col-md-4">';
+				html += '<br>';
+				html += '<button type="button" class="btn btn-danger btn-sm" onclick="javascript: deleteCampanas('+count+');" title="Eliminar Campaña">';
+	                html += '<span class="glyphicon glyphicon-remove"></span>';
+	            html += '</button>';
+			html += '</div>';
+	    html += '</div>';
+	html += '</div>';
+
     //
 	$('#canvas_empresa_campana').append(html); 
 	$("select").select2();
@@ -603,34 +861,51 @@ function addCampanaModificacion(){
 	var count = ($('.campanas_m').length)+1;
 	$('.campanas_m').val(count);
 	$('#numero_campanas_m').val(count);
-
-	html += '<div class="row campanas_m" id="empresa_campana_m_'+count+'">';
-        html += '<div class="col col-md-3">';
-            html += '<div class="form-group has-feedback">';
-                html += '<label class="control-label" for="empresa_m_'+count+'">EMPRESA:</label>';
-                html += '<select class="form-control" id="empresa_m_'+count+'" name="empresa_m_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
-                html += '<div class="help-block with-errors"></div>';
+	html += '<div class="campanas_m" id="empresa_campana_m_'+count+'">';
+        html += '<div class="row" >';
+            html += '<div class="col col-md-4">';
+                html += '<div class="form-group has-feedback">';
+                    html += '<label class="control-label" for="empresa_m_'+count+'">EMPRESA:</label>';
+                    html += '<select class="form-control" id="empresa_m_'+count+'" name="empresa_m_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una empresa"></select>';
+                    html += '<div class="help-block with-errors"></div>';
+                html += '</div>';
+            html += '</div>';
+            html += '<div class="col col-md-4">';
+                html += '<div class="form-group has-feedback">';
+                    html += '<label class="control-label" for="campana_m_'+count+'">CAMPAÑA:</label>';
+                    html += '<select class="form-control" id="campana_m_'+count+'" name="campana_m_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+                    html += '<div class="help-block with-errors"></div>';
+                html += '</div>';
+            html += '</div>';
+            html += '<div class="col col-md-4">';
+                html += '<div class="form-group has-feedback">';
+                    html += '<label class="control-label" for="lider_m_'+count+'">LIDER:</label>';
+                    html += '<select class="form-control" id="lider_m_'+count+'" name="lider_m_'+count+'" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>';
+                    html += '<div class="help-block with-errors"></div>';
+                html += '</div>';
             html += '</div>';
         html += '</div>';
-        html += '<div class="col col-md-3">';
-            html += '<div class="form-group has-feedback">';
-                html += '<label class="control-label" for="campana_m_'+count+'">CAMPAÑA:</label>';
-                html += '<select class="form-control" id="campana_m_'+count+'" name="campana_m_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
-                html += '<div class="help-block with-errors"></div>';
+        html += '<div class="row">';
+            html += '<div class="col col-md-4">';
+                html += '<div class="form-group has-feedback">';
+                    html += '<label class="control-label" for="formador_m_'+count+'">FORMADOR:</label>';
+                    html += '<select class="form-control" id="formador_m_'+count+'" name="formador_m_'+count+'" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>';
+                    html += '<div class="help-block with-errors"></div>';
+                html += '</div>';
             html += '</div>';
-        html += '</div>';
-        html += '<div class="col col-md-3">';
-            html += '<div class="form-group has-feedback">';
-                html += '<label class="control-label" for="estado_campana_m_'+count+'">ESTADO:</label>';
-                html += '<select class="form-control" id="estado_campana_m_'+count+'" name="estado_campana_m_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
-                html += '<div class="help-block with-errors"></div>';
+            html += '<div class="col col-md-4">';
+                html += '<div class="form-group has-feedback">';
+                    html += '<label class="control-label" for="estado_campana_m_'+count+'">ESTADO:</label>';
+                    html += '<select class="form-control" id="estado_campana_m_'+count+'" name="estado_campana_m_'+count+'" style="width: 100%" required="" data-error="Debe seccionar una campaña"></select>';
+                    html += '<div class="help-block with-errors"></div>';
+                html += '</div>';
             html += '</div>';
-        html += '</div>';
-        html += '<div class="col col-md-3">';
-        	html += '<br>';
-            html += '<button type="button" class="btn btn-danger btn-sm" onclick="javascript: deleteCampanasModifica('+count+');" title="Eliminar Campaña">';
+            html += '<div class="col col-md-4">';
+                html += '<br>';
+                html += '<button type="button" class="btn btn-danger btn-sm" onclick="javascript: deleteCampanasModifica('+count+');" title="Eliminar Campaña">';
                 html += '<span class="glyphicon glyphicon-remove"></span>';
             html += '</button>';
+            html += '</div>';
         html += '</div>';
     html += '</div>';
     //
@@ -657,6 +932,7 @@ function addCampanaModificacion(){
 			console.log('Error: '+result.msg);
 		}
 	});
+
 	//Muestra campañas cuando se modifica empresa
 	$('#empresa_m_'+count).change(function(){
 		//campanas
@@ -682,11 +958,64 @@ function addCampanaModificacion(){
 			}
 		});
 	});
+
+	//Muestra lideres y formadores cuandp
+	$('#campana_m_'+count).change(function(){
+		//Muestra lider
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrasesor.php',
+			data: {
+				action: 'lider_info',
+				id_campana: $(this).val(),
+			},
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				var data = $.parseJSON(result.msg);
+				var html = '';
+				html += '<option value=""></option>';
+				$.each(data, function(i, row){
+					html += '<option value="'+row.id_usuario+'">'+row.nombre_usuario+'</option>';
+				});
+				$('#lider_m_'+count).html(html);
+			} else {
+				console.log('Error: '+result.msg);
+			}
+		});
+		//Muestra formador
+		$.ajax({
+			type: 'post',
+			url: '../controller/ctrasesor.php',
+			data: {
+				action: 'formador_info',
+				id_campana: $(this).val(),
+			},
+			dataType: 'json'
+		}).done(function(result){
+			if(result.bool){
+				var data = $.parseJSON(result.msg);
+				var html = '';
+				html += '<option value=""></option>';
+				$.each(data, function(i, row){
+					html += '<option value="'+row.id_usuario+'">'+row.nombre_usuario+'</option>';
+				});
+				$('#formador_m_'+count).html(html);
+			} else {
+				console.log('Error: '+result.msg);
+			}
+		});
+	});
+
 	//Estado campaña
+	$('#estado_campana_m_'+count).append($('<option>', {
+		value: '',
+		text: '',
+	}).attr("selected", true));
 	$('#estado_campana_m_'+count).append($('<option>', {
 		value: 'activo',
 		text: 'activo',
-	}).attr("selected", true));
+	}));
 	$('#estado_campana_m_'+count).append($('<option>', {
 		value: 'inactivo',
 		text: 'inactivo',

@@ -44,6 +44,14 @@ if(isset($post->action)){
 			$result = $asesor->fechas_monitoreo($post);
 			$business->return = $result;
 		break;
+		case 'lider_info':
+			$result = $asesor->lider_info($post);
+			$business->return = $result;
+		break;
+		case 'formador_info':
+			$result = $asesor->formador_info($post);
+			$business->return = $result;
+		break;
 		default:
 			$business->return->bool = false;
 			$business->return->msg = 'Acción No Encontrada';

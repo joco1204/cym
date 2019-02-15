@@ -46,9 +46,11 @@ class Asesor{
 				for ($i=1; $i <= $data->numero_campanas; $i++){
 					$empresa = 'empresa_'.$i;
 					$campana = 'campana_'.$i;
+					$lider = 'lider_'.$i;
+					$formador = 'formador_'.$i;
 					$estado = 'estado_campana_'.$i;
 					//Inserta en asesor empresa campaña
-					$query_asesor_ec = "INSERT INTO ca_asesores_ec (id_asesor, id_empresa, id_campana, estado) VALUES ('".$id_asesor."', '".$data->$empresa."', '".$data->$campana."', '".$data->$estado."');";
+					$query_asesor_ec = "INSERT INTO ca_asesores_ec (id_asesor, id_empresa, id_campana, id_lider, id_formador, estado) VALUES ('".$id_asesor."', '".$data->$empresa."', '".$data->$campana."', '".$data->$lider."', '".$data->$formador."', '".$data->$estado."');";
 					$mysql->query($query_asesor_ec);
 				}
 				$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, email, estado) ";
@@ -119,7 +121,7 @@ class Asesor{
 							$result = $mysql->query($query);
 							if($result){
 								$id_asesor = $mysql->lastInsertId();
-								$query_campana = "INSERT INTO ca_asesores_ec (id_asesor, id_empresa, id_campana, estado) VALUES ('".$id_asesor."', '".$data[5]."', '".$data[6]."', '".$data[7]."');";
+								$query_campana = "INSERT INTO ca_asesores_ec (id_asesor, id_empresa, id_campana, id_lider, id_formador, estado) VALUES ('".$id_asesor."', '".$data[5]."', '".$data[6]."', '".$data[8]."', '".$data[9]."', '".$data[7]."');";
 								$result_campana = $mysql->query($query_campana);
 								if($result_campana){
 									$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, estado) ";
@@ -169,7 +171,7 @@ class Asesor{
 											$result_existencia_ec = $mysql->query($query_existencia_ec);
 											if($result_existencia_ec){
 												while($row_existencia_ec = $result_existencia_ec->fetch(PDO::FETCH_OBJ)){
-													$query_asesor_ec = "UPDATE ca_asesores_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', estado = '".$data[7]."' WHERE id = '".$row_existencia_ec->id."' AND id_asesor = '".$row_existencia->id."';";
+													$query_asesor_ec = "UPDATE ca_asesores_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', id_lider = '".$data[8]."', id_formador = '".$data[9]."', estado = '".$data[7]."' WHERE id = '".$row_existencia_ec->id."' AND id_asesor = '".$row_existencia->id."';";
 													$result_asesor_ec = $mysql->query($query_asesor_ec);
 													if($result_asesor_ec){
 														$query_usuario  = "UPDATE re_usuarios SET usuario_red = '".$data[4]."', tipo_identificacion = '1', nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$data[4]."'; ";
@@ -281,10 +283,12 @@ class Asesor{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayTabla = array();
-			$query  = "SELECT a.id_asesor, a.id_empresa, b.empresa, a.id_campana, c.campana, a.estado ";
+			$query  = "SELECT a.id_asesor, a.id_empresa, b.empresa, a.id_campana, c.campana, a.estado, a.id_lider, CONCAT(d.nombre,' ',d.apellido1,' ',d.apellido2) AS nombre_lider, a.id_formador, CONCAT(e.nombre,' ',e.apellido1,' ',e.apellido2) AS nombre_lider ";
 			$query .= "FROM ca_asesores_ec AS a ";
-			$query .= "LEFT JOIN ca_empresa AS b ON a.id_empresa = b.id  ";
+			$query .= "LEFT JOIN ca_empresa AS b ON a.id_empresa = b.id ";
 			$query .= "LEFT JOIN ca_campana AS c ON a.id_campana = c.id ";
+			$query .= "LEFT JOIN re_usuarios AS d ON a.id_lider = d.id ";
+			$query .= "LEFT JOIN re_usuarios AS e ON a.id_formador = e.id ";
 			$query .= "WHERE a.id_asesor = '".$data->id."';";
 			$result = $mysql->query($query);
 			if($result){
@@ -303,8 +307,6 @@ class Asesor{
 		}
 		return $this->business->return;
 	}
-
-
 
 	public function modificar_asesor($data){
 		$mysql = $this->business->mysql;
@@ -409,6 +411,64 @@ class Asesor{
 				}
 				$this->business->return->bool = true;
 				$this->business->return->msg = json_encode($arrayFechas);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function lider_info($data){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayData = array();
+			//Consulta reporte detallado
+			$query  = "SELECT a.id AS id_usuario, CONCAT(a.nombre, ' ',a.apellido1,' ',a.apellido2) AS nombre_usuario ";
+			$query .= "FROM re_usuarios AS a ";
+			$query .= "LEFT JOIN re_usaurio_ec AS b ON a.id = b.id_usuario ";
+			$query .= "WHERE b.id_perfil IN (1, 2, 4) AND b.id_campana IN (0, 0, ".$data->id_campana.") AND a.estado = 'activo';";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){	
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
+			} else {
+				$this->business->return->bool = false;
+				$this->business->return->msg = 'Error query';
+			}
+		} else {
+			$this->business->return->bool = false;
+			$this->business->return->msg = 'Error de conexión de base de datos';
+		}
+		return $this->business->return;
+	}
+
+	public function formador_info($data){
+		$mysql = $this->business->mysql;
+		$db_mysql = $this->business->db_mysql;
+		//Valida conexión a base de datos
+		if($mysql){
+			$arrayData = array();
+			//Consulta reporte detallado
+			$query  = "SELECT a.id AS id_usuario, CONCAT(a.nombre, ' ',a.apellido1,' ',a.apellido2) AS nombre_usuario ";
+			$query .= "FROM re_usuarios AS a ";
+			$query .= "LEFT JOIN re_usaurio_ec AS b ON a.id = b.id_usuario ";
+			$query .= "WHERE b.id_perfil IN (1, 2, 6) AND b.id_campana IN (0, ".$data->id_campana.") AND a.estado = 'activo';";
+			$result = $mysql->query($query);
+			if($result){
+				while($row = $result->fetch(PDO::FETCH_OBJ)){	
+					array_push($arrayData, $row);
+				}
+				$this->business->return->bool = true;
+				$this->business->return->msg = json_encode($arrayData);
 			} else {
 				$this->business->return->bool = false;
 				$this->business->return->msg = 'Error query';
