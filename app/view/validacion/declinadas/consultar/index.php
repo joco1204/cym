@@ -1,5 +1,5 @@
 <?php 
-include '../../../../config/session.php';
+include '../../../../../config/session.php';
 $session = new Session();
 $session->start();
 $get = ((object) $_GET);
@@ -33,4 +33,4 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
         </div>
     </div>
 </section>
-<script src="../../js/validacion/ventas_declinadas.js"></script>
+<script src="../../js/validacion/declinadas/ventas.js"></script>

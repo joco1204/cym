@@ -114,7 +114,7 @@ class Validacion{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT id,agent_matriz FROM va_usuarios_agent"; 
+			$query  = "SELECT id, agent_matriz FROM va_usuarios_agent"; 
 
 			$result = $mysql->query($query);
 			if($result){
@@ -140,7 +140,7 @@ class Validacion{
 		//Valida conexión a base de datos
 		if($mysql){
 			$arrayData = array();
-			$query  = "SELECT l.id_asesor as id_asesor,concat(nombres,' ',apellidos) as nombre_asesor FROM va_usuarios_agent as l LEFT JOIN ca_asesores as m ON l.id_asesor=m.id where l.id= '".$data->id_asesor."';"; 
+			$query  = "SELECT l.id_asesor as id_asesor,concat(nombre,' ',apellido1,' ',apellido2) as nombre_asesor FROM va_usuarios_agent as l LEFT JOIN ca_asesores as m ON l.id_asesor=m.id where l.id= '".$data->id_asesor."';"; 
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){

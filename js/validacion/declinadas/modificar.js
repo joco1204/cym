@@ -80,7 +80,7 @@ $(function(){
 		}
 	});
 
-		$('#validacion_form').submit(function(e){
+	$('#validacion_form').submit(function(e){
 		e.preventDefault();
 		var data=$(this).serialize();
 		$.ajax({
@@ -99,7 +99,7 @@ $(function(){
 					confirmButtonText: "Aceptar",
 					closeOnConfirm: true,
 				},function(){
-					pageContent('validacion/validacion.php','id_declinada='+result.msg);
+					pageContent('validacion/declinadas/consultar/index');
 				});
 			} else {
 				swal('Error!',result.msg,'error');

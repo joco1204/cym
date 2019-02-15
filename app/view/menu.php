@@ -54,14 +54,6 @@
             </a>
         </li>
     <?php } ?>
-    <?php if($session->getSession('id_perfil') == '1'){ ?>
-        <li class="treeview">
-            <a href="#" onclick="javascript: pageContent('validacion/validacion');">
-                <i class="glyphicon glyphicon-ok-circle"></i>
-                <span>VALIDACIÓN</span>
-            </a>
-        </li>
-    <?php } ?>
     <?php if($session->getSession('id_perfil') == '8'){ ?>
         <li class="treeview">
             <a href="#" onclick="javascript: pageContent('asesor/asesor');">
@@ -70,17 +62,12 @@
             </a>
         </li>
     <?php } ?>
-    <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '7'){ ?>
+    <?php if($session->getSession('id_perfil') == '1'){ ?>
         <li class="treeview">
-            <a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos');">
-                <i class="glyphicon glyphicon-ok-circle"></i> <span>VALIDACIÓN CITI</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <a href="#" onclick="javascript: pageContent('validacion/validacion');">
+                <i class="glyphicon glyphicon-ok-circle"></i>
+                <span>VALIDACIÓN</span>
             </a>
-            <ul class="treeview-menu">
-                <li><a href="#" onclick="javascript: pageContent('validacion_citi/validacion_rediferidos/index');"><i class="glyphicon glyphicon-ok-circle"></i> Validacion rediferidos</a></li>
-            </ul>
         </li>
     <?php } ?>
 </ul>

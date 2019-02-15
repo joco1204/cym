@@ -100,20 +100,5 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                 </div>
             </div>
         <?php } ?>
-        <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2'){ ?>
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-blue">
-                    <div class="inner">
-                        <h3>7</h3>
-                        <p>Agenda</p>
-                    </div>
-                    <div class="icon">
-                        <i class=""></i>
-                    </div>
-                    <a href="#" onclick="javascript: pageContent('administrador/agenda/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-        <?php } ?>
     </div>
 </section>

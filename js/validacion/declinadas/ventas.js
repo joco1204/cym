@@ -32,11 +32,11 @@ $(function(){
 				html += '<td>'+row.fecha_validacion+'</td>';
 				html += '<td>'+row.estado+'</td>';
 				html += '<td>';
-				html += '<button type="button" class="btn btn-primary btn-sm" title="Ver" onclick="javascript: pageContent(\'validacion/consultar_declinadas/consultar_declinadas\',\'id_declinada='+row.id+'\');">';
+				html += '<button type="button" class="btn btn-primary btn-sm" title="Ver" onclick="javascript: pageContent(\'validacion/declinadas/consultar/index\',\'id_declinada='+row.id+'\');">';
 				html += '<span class="glyphicon glyphicon-eye-open"></span>';
 				html += '</button>';
 				html += ' ';
-				html += '<button type="button" class="btn btn-success btn-sm" title="Modificar" onclick="javascript: pageContent(\'validacion/agregar_declinadas/index\',\'id_declinada='+row.id+'\');">';
+				html += '<button type="button" class="btn btn-success btn-sm" title="Modificar" onclick="javascript: pageContent(\'validacion/declinadas/crear/index\',\'id_declinada='+row.id+'\');">';
 				html += '<span class="glyphicon glyphicon-pencil"></span>';
 				html += '</button>';					
 				html += '</td>';

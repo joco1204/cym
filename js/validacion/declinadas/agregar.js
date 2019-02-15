@@ -146,7 +146,7 @@ $(function(){
 					confirmButtonText: "Aceptar",
 					closeOnConfirm: true,
 				},function(){
-					pageContent('validacion/consultar_declinadas/consultar_declinadas','id_declinada='+result.msg);
+					pageContent('validacion/declinadas/consultar/consultar','id_declinada='+result.msg);
 				});
 			} else {
 				swal('Error!',result.msg,'error');

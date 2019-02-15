@@ -1,5 +1,5 @@
 <?php 
-include '../../../../config/session.php';
+include '../../../../../config/session.php';
 $session = new Session();
 $session->start();
 $get = ((object) $_GET);
@@ -25,7 +25,7 @@ if ($get->id_declinada == ''){
         <div class='box-body'>
                 <div class="row">
                     <div class="col col-md-12 text-center">
-                        <button type="button" class="btn btn-danger" onclick="javascript: pageContent('validacion/consultar_declinadas/index'); ">Volver</button>
+                        <button type="button" class="btn btn-danger" onclick="javascript: pageContent('validacion/declinadas/consultar/index'); ">Volver</button>
                     </div>
                 </div>
                 <br>        
@@ -132,5 +132,5 @@ if ($get->id_declinada == ''){
         </div>
     </div>
 </section>                        
- <script src="../../js/validacion/consulta_declinada.js"></script>
+ <script src="../../js/validacion/declinadas/consultar.js"></script>
 

@@ -1,5 +1,5 @@
 <?php 
-include '../../../config/session.php'; 
+include '../../../../config/session.php'; 
 $session = new Session();
 $session->start();
 
@@ -19,22 +19,22 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                 <div class="small-box bg-blue">
                     <div class="inner">
                         <h3>1</h3>
-                        <p>VALIDACIÓN REDIFERIDOS</p>
+                        <p>Validación</p>
                     </div>
                     <div class="icon">
                         <i class=""></i>
                     </div>
-                    <a href="#" onclick="javascript: pageContent('validacion/consultar_declinadas/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="#" onclick="javascript: pageContent('validacion/rediferidos/index');" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         <?php } ?>
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-12" id="pruebasconst"></div>
+        <!-- Aquí debe seguir el código -->
     </div>
 </section>
-<script src="../../js/pruebassqlsrv.js"></script>
+<script src="../../js/validacion/rediferidos/rediferidos.js"></script>
 
 
 
