@@ -78,9 +78,7 @@ class Asesor{
 								$this->business->return->bool = false;
 								$this->business->return->msg = 'Error al asociar la campaña al usuario';
 							}
-
 						}
-						
 					} else {
 						$this->business->return->bool = false;
 						$this->business->return->msg = 'Error al crear el perfil';
