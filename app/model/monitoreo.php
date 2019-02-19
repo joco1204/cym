@@ -265,6 +265,7 @@ class Monitoreo{
 
 				$query_historico  = "SELECT id_monitoreo, id_asesor, id_error, porcentaje, fecha_registro FROM ca_monitoreo_asesor_detallado_general ";
 				$query_historico .= "WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."' AND porcentaje = '0';";
+				var_dump($query_historico);
 				$result_historico = $mysql->query($query_historico);
 				
 
