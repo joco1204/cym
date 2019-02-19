@@ -112,7 +112,7 @@ class Asesor{
 				$file_tmp_name = $file->tmp_name;
 				$handle = fopen($file_tmp_name, "r");
 				while($data = fgetcsv($handle, 10000, ";")){
-					$query_existencia = "SELECT identificacion FROM ca_asesores WHERE identificacion = '".$data[3]."';";
+					$query_existencia = "SELECT id, identificacion FROM ca_asesores WHERE identificacion = '".$data[3]."';";
 					$result_existencia = $mysql->query($query_existencia);
 					if($result_existencia){
 						$num_asesor = $result_existencia->rowCount();
@@ -158,76 +158,50 @@ class Asesor{
 								$this->business->return->msg = 'Error en la creación de asesor';
 							}
 						} else {
-							/*$query  = "UPDATE ca_asesores SET nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$data[3]."'; ";
-							$result = $mysql->query($query);
-							if($result){
-								$query_existencia = "SELECT id FROM ca_asesores WHERE identificacion = '".$data[3]."';";
-								$result_existencia = $mysql->query($query_existencia);
-								if($result_existencia){
-									$num_asesor = $result_existencia->rowCount();
-									if($num_asesor == '1'){
-										while($row_existencia = $result_existencia->fetch(PDO::FETCH_OBJ)){
-											$query_existencia_ec = "SELECT id FROM ca_asesores_ec WHERE id_asesor = '".$row_existencia->id."';";
-											$result_existencia_ec = $mysql->query($query_existencia_ec);
-											if($result_existencia_ec){
-												while($row_existencia_ec = $result_existencia_ec->fetch(PDO::FETCH_OBJ)){
-													$query_asesor_ec = "UPDATE ca_asesores_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', id_lider = '".$data[8]."', id_formador = '".$data[9]."', estado = '".$data[7]."' WHERE id = '".$row_existencia_ec->id."' AND id_asesor = '".$row_existencia->id."';";
-													$result_asesor_ec = $mysql->query($query_asesor_ec);
-													if($result_asesor_ec){
-														$query_usuario  = "UPDATE re_usuarios SET usuario_red = '".$data[4]."', tipo_identificacion = '1', nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$data[4]."'; ";
-														$result_usuario = $mysql->query($query_usuario);
-														if($result_usuario){
-															$query_id_usuario = "SELECT id FROM re_usuarios WHERE identificacion = '".$data[3]."';";
-															$result_id_usuario = $mysql->query($query_id_usuario);
-															if($result_id_usuario){
-																while($row_id_usuario = $result_id_usuario->fetch(PDO::FETCH_OBJ)){
-																	$query_id_ec = "SELECT id FROM re_usaurio_ec WHERE id_usuario = '".$row_id_usuario->id."'";
-																	$result_id_ec = $mysql->query($query_id_ec);
-																	while ($row_id_ec = $result_id_ec->fetch(PDO::FETCH_OBJ)){
-																		$query_perfil_ec = "UPDATE re_usaurio_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', estado = '".$data[7]."' WHERE id = '".$row_id_ec->id."' AND id_usuario = '".$row_id_usuario->id."';";
-																		$result_perfil_ec = $mysql->query($query_perfil_ec);
-																		if($result_perfil_ec){
-																			$this->business->return->bool = true;
-																			$this->business->return->msg = 'Perfil de usuario actualizado con éxito';
-																		} else {
-																			$this->business->return->bool = false;
-																			$this->business->return->msg = 'Error al actualizar empresa y campaña';	
-																		}
-
-																	}
-
-																}
-															} else {
-																$this->business->return->bool = false;
-																$this->business->return->msg = 'Error query';
-															}
-
+							while($row_existencia = $result_existencia->fetch(PDO::FETCH_OBJ)){
+								$query  = "UPDATE ca_asesores SET nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$row_existencia->identificacion."'; ";
+								$result = $mysql->query($query);
+								if($result){
+									$query_ec = "SELECT id FROM ca_asesores_ec WHERE id_asesor = '".$row_existencia->id."';";
+									$result_ec = $mysql->query($query_ec);
+									while($row_ec = $result_ec->fetch(PDO::FETCH_OBJ)){
+										$query_update_ec = "UPDATE ca_asesores_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', id_lider = '".$data[8]."', id_formador = '".$data[9]."', estado = '".$data[7]."' WHERE id = '".$row_ec->id."' AND id_asesor = '".$row_existencia->id."';";
+										$result_update_ec = $mysql->query($query_update_ec);
+										if($result_update_ec){
+											$query_usuario  = "UPDATE re_usuarios SET usuario_red = '".$data[4]."', nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$row_existencia->identificacion."'; ";
+											$result_usuario = $mysql->query($query_usuario);
+											if($result_usuario){
+												$query_usuario_c = "SELECT id FROM re_usuarios WHERE identificacion = '".$row_existencia->identificacion."';";
+												$result_usuario_c = $mysql->query($query_usuario_c);
+												while($row_usuario_c = $result_usuario_c->fetch(PDO::FETCH_OBJ)){
+													$query_ec = "SELECT id FROM re_usaurio_ec WHERE id_usuario = '".$row_usuario_c->id."'";
+													$result_ec = $mysql->query($query_ec);
+													while($row_ec = $result_ec->fetch(PDO::FETCH_OBJ)){
+														$query_perfil_ec = "UPDATE re_usaurio_ec SET id_empresa = '".$data[5]."', id_campana = '".$data[6]."', estado = '".$data[7]."' WHERE id = '".$row_ec->id."' AND id_usuario = '".$row_usuario_c->id."';";
+														$result_perfil_ec = $mysql->query($query_perfil_ec);
+														if($result_perfil_ec){
+															$this->business->return->bool = true;
+															$this->business->return->msg = 'Perfil de usuario actualizado con éxito';
 														} else {
 															$this->business->return->bool = false;
-															$this->business->return->msg = 'Error al actualizar la campaña del asesor';
+															$this->business->return->msg = 'Error al actualizar empresa y campaña';	
 														}
-													} else {
-														$this->business->return->bool = false;
-														$this->business->return->msg = 'Error al actualizar la campaña del asesor';
 													}
 												}
 											} else {
 												$this->business->return->bool = false;
-												$this->business->return->msg = 'Error al consultar la campaña del asesor';
+												$this->business->return->msg = 'Error al actualziar el usaurio del asesor';
 											}
+										} else {
+											$this->business->return->bool = false;
+											$this->business->return->msg = 'Error al actualizar la campaña del asesor';
 										}
-									} else {
-										$this->business->return->bool = false;
-										$this->business->return->msg = 'El asesor se encuentra creado mas de 1 vez. Consulte con el administrador';
 									}
 								} else {
 									$this->business->return->bool = false;
-									$this->business->return->msg = 'Error al consultar al asesor';
+									$this->business->return->msg = 'Error al actualizar al asesor';
 								}
-							} else {
-								$this->business->return->bool = false;
-								$this->business->return->msg = 'Error al actualizar al asesor';
-							}*/
+							}
 						}
 					} else {
 						$this->business->return->bool = false;

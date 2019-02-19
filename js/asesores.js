@@ -276,7 +276,7 @@
 		}).done(function(result){
 			if(result.bool){
 				swal({
-					title: "Success!",
+					title: "Correcto!",
 					text: result.msg,
 					type: 'success',
 					showCancelButton: false,
