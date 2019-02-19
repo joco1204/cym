@@ -111,7 +111,7 @@ class Asesor{
 			if(strtolower(end($ext)) == "csv" || strtolower(end($ext)) == "txt"){
 				$file_tmp_name = $file->tmp_name;
 				$handle = fopen($file_tmp_name, "r");
-				while($data = fgetcsv($handle, 1000, ";")){
+				while($data = fgetcsv($handle, 10000, ";")){
 					$query_existencia = "SELECT identificacion FROM ca_asesores WHERE identificacion = '".$data[3]."';";
 					$result_existencia = $mysql->query($query_existencia);
 					if($result_existencia){
@@ -124,8 +124,8 @@ class Asesor{
 								$query_campana = "INSERT INTO ca_asesores_ec (id_asesor, id_empresa, id_campana, id_lider, id_formador, estado) VALUES ('".$id_asesor."', '".$data[5]."', '".$data[6]."', '".$data[8]."', '".$data[9]."', '".$data[7]."');";
 								$result_campana = $mysql->query($query_campana);
 								if($result_campana){
-									$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, estado) ";
-									$query_usuario .= "VALUES ('".$data[4]."', '1', '".$data[3]."', '".$data[0]."', '".$data[1]."', '".$data[2]."', '".$data[7]."');";
+									$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, email, estado) ";
+									$query_usuario .= "VALUES ('".$data[4]."', '1', '".$data[3]."', '".$data[0]."', '".$data[1]."', '".$data[2]."', '', '".$data[7]."');";
 									$result_usuario = $mysql->query($query_usuario);
 									if($result_usuario){
 										$id_usuario = $mysql->lastInsertId();
@@ -158,7 +158,7 @@ class Asesor{
 								$this->business->return->msg = 'Error en la creación de asesor';
 							}
 						} else {
-							$query  = "UPDATE ca_asesores SET nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$data[3]."'; ";
+							/*$query  = "UPDATE ca_asesores SET nombre = '".$data[0]."', apellido1 = '".$data[1]."', apellido2 = '".$data[2]."', estado = '".$data[7]."' WHERE identificacion = '".$data[3]."'; ";
 							$result = $mysql->query($query);
 							if($result){
 								$query_existencia = "SELECT id FROM ca_asesores WHERE identificacion = '".$data[3]."';";
@@ -227,7 +227,7 @@ class Asesor{
 							} else {
 								$this->business->return->bool = false;
 								$this->business->return->msg = 'Error al actualizar al asesor';
-							}
+							}*/
 						}
 					} else {
 						$this->business->return->bool = false;
