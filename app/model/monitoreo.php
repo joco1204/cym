@@ -229,35 +229,27 @@ class Monitoreo{
 		if($mysql){
 			$query  = "INSERT INTO ca_monitoreo_asesor (id_agenda_monitoreo, id_asesor, id_analista, fecha_llamada, hora_llamada, tipificacion, id_llamada, observacion, solucion, fallas_audio) VALUES ('".$data->id_agenda."', '".$data->id_asesor."', '".$data->id_analista."', '".$data->fechas_llamada."', '".$data->hora_llamada."', '".$data->tipificacion."', '".$data->id_llamada."', '".$data->observacion."', '".$data->solucion."', '".$data->audio."'); ";
 			$result = $mysql->query($query);
-			
 			//Obtiene el id del último monitoreo insertado
 			$id_monitoreo = $mysql->lastInsertId();
-
 			//Actualiza el estado del monitoreo realizado
 			$query_agenda = "UPDATE ca_agenda_monitoreo SET estado = '1' WHERE id = '".$data->id_agenda."';";
 			$mysql->query($query_agenda);
 			if($result){
 				$num_error = $data->num_error;
 				for($i = 1; $i <= $num_error; $i++){
-					//
 					$item 		= 'num_item_'.$i;
 					$id_error 	= 'id_num_error_'.$i;
 					$num_item 	= $data->$item;
-					//
 					for($j = 1; $j <= $num_item; $j++){
-						
-						//
 						$id_num_item					= 'id_num_item_'.$i.'_'.$j;
 						$valor_cumplimiento 			= 'valor_cumplimiento_'.$i.'_'.$j;
 						$valor_porcentaje_cumplimiento 	= 'valor_porcentaje_cumplimiento_'.$i.'_'.$j;
 						$punto_item 					= 'punto_item_'.$i.'_'.$j;
 						
-						//
 						isset($data->$valor_cumplimiento) ? $valor_cumplimiento = $data->$valor_cumplimiento : $valor_cumplimiento = '0';
 						isset($data->$valor_porcentaje_cumplimiento) ? $valor_porcentaje = $data->$valor_porcentaje_cumplimiento : $valor_porcentaje = '0';
 						isset($data->$punto_item) ? $punto_entrenamiento = $data->$punto_item : $punto_entrenamiento = '0';
 
-						//
 						$query_item = "INSERT INTO ca_monitoreo_asesor_detallado (id_monitoreo_asesor, id_error, id_item, valor_cumplimiento, valor_porcentaje_cumplimiento, id_punto_entrenamiento) VALUES ('".$id_monitoreo."', '".$data->$id_error."', '".$data->$id_num_item."', '".$valor_cumplimiento."', '".$valor_porcentaje."', '".$punto_entrenamiento."');";
 						$result_item = $mysql->query($query_item);
 					}
@@ -265,10 +257,7 @@ class Monitoreo{
 
 				$query_historico  = "SELECT id_monitoreo, id_asesor, id_error, porcentaje, fecha_registro FROM ca_monitoreo_asesor_detallado_general ";
 				$query_historico .= "WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."' AND porcentaje = '0';";
-				var_dump($query_historico);
 				$result_historico = $mysql->query($query_historico);
-				
-
 
 				$this->business->return->bool = true;
 				$this->business->return->msg = $id_monitoreo;

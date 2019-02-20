@@ -242,7 +242,6 @@ class Asesor{
 		return $this->business->return;
 	}
 
-
 	public function asesor_ec($data){
 		$mysql = $this->business->mysql;
 		$db_mysql = $this->business->db_mysql;
@@ -333,12 +332,14 @@ class Asesor{
 					$query_num = "SELECT COUNT(*) AS num_monitoreos FROM ca_monitoreo_asesor WHERE id_asesor = '".$row_asesor->id."' AND fecha_registro BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."';";
 					$result_num = $mysql->query($query_num);
 					while ($row_num = $result_num->fetch(PDO::FETCH_OBJ)){
+						
 						//Consulta que muestra la información del monitoreo
 						$query_total  = "SELECT a.id_asesor, a.id_error, a.error, a.siglas, a.tipo_error, a.color_informe, FORMAT((SUM(a.porcentaje)/".$row_num->num_monitoreos."), 0) AS porcentaje ";
 						$query_total .= "FROM ca_monitoreo_asesor_detallado_general AS a ";
 						$query_total .= "WHERE id_asesor = '".$row_asesor->id."' AND a.fecha_llamada BETWEEN '".$this->primer_dia()."' AND '".$this->ultimo_dia()."' ";
 						$query_total .= "GROUP BY a.id_asesor, a.id_error, a.error, a.siglas, a.tipo_error, a.color_informe; ";
 						$result_total = $mysql->query($query_total);
+
 						while($row_total = $result_total->fetch(PDO::FETCH_OBJ)){
 							array_push($arrayTabla, $row_total);
 						}
