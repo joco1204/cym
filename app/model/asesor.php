@@ -41,7 +41,6 @@ class Asesor{
 			$query_asesor  = "INSERT INTO ca_asesores (nombre, apellido1, apellido2, identificacion, estado) VALUES ('".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', '".$data->identificacion."', 'activo'); ";
 			$result_asesor = $mysql->query($query_asesor);
 			if($result_asesor){
-				
 				$id_asesor = $mysql->lastInsertId();
 				for ($i=1; $i <= $data->numero_campanas; $i++){
 					$empresa = 'empresa_'.$i;
@@ -56,11 +55,9 @@ class Asesor{
 				$query_usuario  = "INSERT INTO re_usuarios (usuario_red, tipo_identificacion, identificacion, nombre, apellido1, apellido2, email, estado) ";
 				$query_usuario .= "VALUES ('".$data->usuario."', '".$data->tipo_identificacion."', '".$data->identificacion."', '".$data->nombre."', '".$data->apellido1."', '".$data->apellido2."', '', 'activo');";
 				$result_usuario = $mysql->query($query_usuario);
-
 				if($result_usuario){
 					$id_usaurio = $mysql->lastInsertId();
 					//Inserta en usuarios perfil
-					
 					$query_perfil = "INSERT INTO re_usuario_perfil (id_usuario, id_perfil) VALUES ('".$id_usaurio."', '8'); ";
 					$result_perfil = $mysql->query($query_perfil);
 					if($result_perfil){
@@ -70,7 +67,6 @@ class Asesor{
 							//Inserta en usuarios empresa campaña
 							$query_ec = "INSERT INTO re_usaurio_ec (id_usuario, id_perfil, id_empresa, id_campana, estado) VALUES ('".$id_usaurio."', '8', '".$data->$empresa."', '".$data->$campana."', 'activo');";
 							$result_ec = $mysql->query($query_ec);
-
 							if($result_ec){
 								$this->business->return->bool = true;
 								$this->business->return->msg = 'Se ha creado el asesor '.$data->nombre.' '.$data->apellido1.' correctamente';
@@ -83,7 +79,6 @@ class Asesor{
 						$this->business->return->bool = false;
 						$this->business->return->msg = 'Error al crear el perfil';
 					}
-
 				} else {
 					$this->business->return->bool = false;
 					$this->business->return->msg = 'Error en la creación de usuario';
@@ -98,7 +93,6 @@ class Asesor{
 		}
 		return $this->business->return;
 	}
-
 
 	public function cargar_asesores($file){
 		$mysql = $this->business->mysql;
