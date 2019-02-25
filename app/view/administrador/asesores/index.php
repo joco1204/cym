@@ -91,7 +91,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="usuario">USUARIO DE RED:</label>
-                                <input type="text" id="usuario" name="usuario" class="form-control" required="" data-error="Debe ingresar usuario de red">
+                                <input type="text" id="usuario" name="usuario" class="form-control" data-error="Debe ingresar usuario de red">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                 <div class="col col-md-4">
                                     <div class="form-group has-feedback">
                                         <label class="control-label" for="lider_1">LIDER:</label>
-                                        <select class="form-control" id="lider_1" name="lider_1" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>
+                                        <select class="form-control" id="lider_1" name="lider_1" style="width: 100%" data-error="Debe un lider de la campaña"></select>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                 <div class="col col-md-4">
                                     <div class="form-group has-feedback">
                                         <label class="control-label" for="formador_1">FORMADOR:</label>
-                                        <select class="form-control" id="formador_1" name="formador_1" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>
+                                        <select class="form-control" id="formador_1" name="formador_1" style="width: 100%" data-error="Debe un lider de la campaña"></select>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -212,7 +212,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="apellido2_m">APELLIDO 2:</label>
-                                <input type="text" id="apellido2_m" name="apellido2_m" class="form-control" required="" data-error="Debe ingresar apellido 2">
+                                <input type="text" id="apellido2_m" name="apellido2_m" class="form-control" data-error="Debe ingresar apellido 2">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -235,7 +235,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                         <div class="col col-md-4">
                             <div class="form-group has-feedback">
                                 <label class="control-label" for="usuario_m">USUARIO DE RED:</label>
-                                <input type="text" id="usuario_m" name="usuario_m" class="form-control" required="" data-error="Debe ingresar usuario de red">
+                                <input type="text" id="usuario_m" name="usuario_m" class="form-control" data-error="Debe ingresar usuario de red">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -270,7 +270,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                 <div class="col col-md-4">
                                     <div class="form-group has-feedback">
                                         <label class="control-label" for="lider_m_1">LIDER:</label>
-                                        <select class="form-control" id="lider_m_1" name="lider_m_1" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>
+                                        <select class="form-control" id="lider_m_1" name="lider_m_1" style="width: 100%" data-error="Debe un lider de la campaña"></select>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -279,7 +279,7 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
                                 <div class="col col-md-4">
                                     <div class="form-group has-feedback">
                                         <label class="control-label" for="formador_m_1">FORMADOR:</label>
-                                        <select class="form-control" id="formador_m_1" name="formador_m_1" style="width: 100%" required="" data-error="Debe un lider de la campaña"></select>
+                                        <select class="form-control" id="formador_m_1" name="formador_m_1" style="width: 100%" data-error="Debe un lider de la campaña"></select>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
