@@ -191,7 +191,7 @@ class Asesor{
 									}
 								} else {
 									$this->business->return->bool = false;
-									$this->business->return->msg = 'Error al actualizar al asesor';
+									$this->business->return->msg = 'Error al actualizar al asesor ';
 								}
 							}
 						}
