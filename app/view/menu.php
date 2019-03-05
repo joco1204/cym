@@ -48,7 +48,7 @@
     <?php if($session->getSession('id_perfil') == '1' || $session->getSession('id_perfil') == '2' || $session->getSession('id_perfil') == '4'){ ?>
         <li class="treeview">
             <a href="#" onclick="javascript: pageContent('analista/analista');">
-                <i class="glyphicon glyphicon-knight"></i>
+                <i class="glyphicon glyphicon-flag"></i>
                 <span>LIDER</span>
             </a>
         </li>
