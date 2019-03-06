@@ -278,7 +278,7 @@ class Asesor{
 		$db_mysql = $this->business->db_mysql;
 		//Valida conexión a base de datos
 		if($mysql){
-			$query  = "UPDATE ca_asesores SET nombre = '".$data->nombre_m."', apellido1 = '".$data->apellido1_m."', apellido2 = '".$data->apellido2_m."', identificacion = '".$data->identificacion_m."', id_empresa = '".$data->empresa_m."', id_campana = '".$data->campana_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_asesor_m."'; ";
+			$query  = "UPDATE ca_asesores SET nombre = '".$data->nombre_m."', apellido1 = '".$data->apellido1_m."', apellido2 = '".$data->apellido2_m."', identificacion = '".$data->identificacion_m."', estado = '".$data->estado_m."' WHERE id = '".$data->id_asesor_m."'; ";
 			$result = $mysql->query($query);
 			if($result){
 				$query_usuario  = "UPDATE re_usuarios SET usuario_red = '".$data->usuario_m."', tipo_identificacion = '".$data->tipo_identificacion_m."', nombre = '".$data->nombre_m."', apellido1 = '".$data->apellido1_m."', apellido2 = '".$data->apellido2_m."', estado = '".$data->estado_m."' WHERE identificacion = '".$data->identificacion_m."'; ";
@@ -299,17 +299,16 @@ class Asesor{
 						}
 					} else {
 						$this->business->return->bool = false;
-						$this->business->return->msg = 'Error query';
+						$this->business->return->msg = 'Error al consultar usuario de asersor';
 					}
 				} else {
 					$this->business->return->bool = false;
-					$this->business->return->msg = 'Error query';
+					$this->business->return->msg = 'Error al actualizar usaurio de asesor';
 				}
 			} else {
 				$this->business->return->bool = false;
-				$this->business->return->msg = 'Error query';
+				$this->business->return->msg = 'Error al actualizar al asesor';
 			}
-
 		} else {
 			$this->business->return->bool = false;
 			$this->business->return->msg = 'Error de conexión de base de datos';
