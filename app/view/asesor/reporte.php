@@ -1,6 +1,8 @@
 <?php 
 include '../../../config/conn_mysql.php';
 include '../../../config/session.php';
+date_default_timezone_set('America/Bogota');
+setlocale(LC_ALL,"es_CO");
 
 $session = new Session();
 $mysql = new Mysql();
@@ -20,7 +22,11 @@ $obj_empresas = new stdClass();
 $anio = date('Y');
 $mes = date('m');
 $dia_fin = date("d", mktime(0,0,0, $mes+1, 0, $anio));
-$fecha_fin = date('F Y', mktime(0,0,0, $mes, $dia_fin, $anio));
+$fecha_fin = date('m Y', mktime(0,0,0, $mes, $dia_fin, $anio));
+/********/
+$mes_actual = strftime('%B %Y', date('Y-m-d', mktime(0,0,0, $mes, $dia_fin, $anio)));
+$mes_anterior_1 = strftime('%B %Y', date('Y-m-d', mktime(0,0,0, $mes -1, $dia_fin, $anio)));
+$mes_anterior_2 = strftime('%B %Y', date('Y-m-d', mktime(0,0,0, $mes -2, $dia_fin, $anio)));
 
 function primer_dia(){
     $month = date('m');
@@ -79,10 +85,34 @@ $result_info = $mysql->query($query_info);
 ?>
 <section class="content"> 
     <div class="row">
+        <div class="col-md-1">
+            <span>
+                <label>Mes: </label>
+            </span>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="form-group has-feedback">
+                    <select name="mes" id="mes" class="form-control">
+                        <option></option>
+                        <option value="<?php echo $mes_actual; ?>"><?php echo $mes_actual; ?></option>
+                        <option value="<?php echo $mes_anterior_1; ?>"><?php echo $mes_anterior_1; ?></option>
+                        <option value="<?php echo $mes_anterior_2; ?>"><?php echo $mes_anterior_2; ?></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" onclick="" title="Buscar">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Reporte General <?php echo $fecha_fin; ?></h3>
+                    <h3 class="box-title">Reporte General <?php echo $mes_actual; ?></h3>
                     <input type="hidden" name="identificacion" id="identificacion" value="<?php echo $session->getSession('identificacion'); ?>">
                     <input type="hidden" name="empresa" id="empresa" value="<?php echo $get->empresa; ?>">
                     <input type="hidden" name="campana" id="campana" value="<?php echo $get->campana; ?>">
@@ -114,7 +144,7 @@ $result_info = $mysql->query($query_info);
         <div class="col-md-4">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h5 class="box-title">Reporte Detallado: <?php echo $fecha_fin; ?></h5>
+                    <h5 class="box-title">Reporte Detallado: <?php echo $mes_actual; ?></h5>
                 </div>
                 <div class="box-body chart-responsive">
                     <?php while ($row_info = $result_info->fetch(PDO::FETCH_OBJ)){ ?>

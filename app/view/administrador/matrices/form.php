@@ -20,7 +20,7 @@ if(isset($get->accion_matriz)){
 </section>
 <form id="matriz_form" autocomplete="off">
     <section class="content">
-        <div class='box box-primary'>
+        <div class='box box-primary' style="font-size: 11px;">
             <?php if($id_matriz == '0'){ ?>
                 <div class='box-header with-border'>
                     <h3 class='box-title'>AÑADIR MATRIZ</h3>
