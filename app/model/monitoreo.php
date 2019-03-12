@@ -288,6 +288,7 @@ class Monitoreo{
 				$result_alarma_monitoreo = $mysql->query($query_alarma_monitoreo);
 
 				$i = 0;
+				
 				while($row_alarma_monitoreo = $result_alarma_monitoreo->fetch(PDO::FETCH_OBJ)){
 					$i++;
 					$query_count_alarma = "SELECT COUNT(*) AS num_monitoreos FROM ca_alarma_monitoreo WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."'; ";
@@ -296,7 +297,8 @@ class Monitoreo{
 
 					if($i == '1'){
 						if(($i == $row_count_alarma->num_monitoreos) && ($row_alarma_monitoreo->estado == 'registrado')){
-							//Datos de email
+							
+							//Email de alarma del analista
 							$correo1  = $row_alarma_monitoreo->email_analista;
 							$nombre1  = $row_alarma_monitoreo->analista;
 							$archivo1 = '';
@@ -332,7 +334,8 @@ class Monitoreo{
 									</body>
 								</html>';
 							$email_analista->send($correo1, $nombre1, $subject1, $body1, $archivo1);
-							//Datos de email
+							
+							//Email de alarma del lider
 							$correo2  = $row_alarma_monitoreo->email_lider;
 							$nombre2  = $row_alarma_monitoreo->lider;
 							$archivo2 = '';
@@ -368,7 +371,8 @@ class Monitoreo{
 									</body>
 								</html>';
 							$email_lider->send($correo2, $nombre2, $subject2, $body2, $archivo2);
-							//Datos de email
+							
+							//Email de alarma del formador
 							$correo3  = $row_alarma_monitoreo->email_formador;
 							$nombre3  = $row_alarma_monitoreo->formador;
 							$archivo3 = '';
@@ -409,7 +413,8 @@ class Monitoreo{
 
 					if($i == '2'){
 						if(($i == $row_count_alarma->num_monitoreos) && ($row_alarma_monitoreo->estado == 'registrado')){
-							//Datos de email
+							
+							//Email de alarma del analista
 							$correo1  = $row_alarma_monitoreo->email_analista;
 							$nombre1  = $row_alarma_monitoreo->analista;
 							$archivo1 = '';
@@ -445,7 +450,8 @@ class Monitoreo{
 									</body>
 								</html>';
 							$email_analista->send($correo1, $nombre1, $subject1, $body1, $archivo1);
-							//Datos de email
+							
+							//Email de alarma del lider
 							$correo2  = $row_alarma_monitoreo->email_lider;
 							$nombre2  = $row_alarma_monitoreo->lider;
 							$archivo2 = '';
@@ -481,7 +487,8 @@ class Monitoreo{
 									</body>
 								</html>';
 							$email_lider->send($correo2, $nombre2, $subject2, $body2, $archivo2);
-							//Datos de email
+							
+							//Email de alarma del formador
 							$correo3  = $row_alarma_monitoreo->email_formador;
 							$nombre3  = $row_alarma_monitoreo->formador;
 							$archivo3 = '';
@@ -522,7 +529,7 @@ class Monitoreo{
 
 					if($i >= '3'){
 						if(($i == $row_count_alarma->num_monitoreos) && ($row_alarma_monitoreo->estado == 'registrado')){
-
+							//Email de alarma del analista
 							$correo1  = $row_alarma_monitoreo->email_analista;
 							$nombre1  = $row_alarma_monitoreo->analista;
 							$archivo1 = '';
@@ -559,8 +566,7 @@ class Monitoreo{
 								</html>';
 							$email_analista->send($correo1, $nombre1, $subject1, $body1, $archivo1);
 							
-
-							//Datos de email
+							//Email de alarma del lider
 							$correo2  = $row_alarma_monitoreo->email_lider;
 							$nombre2  = $row_alarma_monitoreo->lider;
 							$archivo2 = '';
@@ -597,8 +603,7 @@ class Monitoreo{
 								</html>';
 							$email_lider->send($correo2, $nombre2, $subject2, $body2, $archivo2);
 
-
-							//Datos de email
+							//Email de alarma del formador
 							$correo3  = $row_alarma_monitoreo->email_formador;
 							$nombre3  = $row_alarma_monitoreo->formador;
 							$archivo3 = '';
@@ -636,7 +641,7 @@ class Monitoreo{
 							$email_formador->send($correo3, $nombre3, $subject3, $body3, $archivo3);
 						}
 					}
-
+					//Actualiza el estado de la alarma a notificado
 					$query_update_alarma = "UPDATE ca_alarma_monitoreo SET estado = 'notificado' WHERE id = '".$row_alarma_monitoreo->id."';";
 					$mysql->query($query_update_alarma);
 				}
