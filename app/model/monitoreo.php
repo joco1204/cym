@@ -288,7 +288,7 @@ class Monitoreo{
 				$result_alarma_monitoreo = $mysql->query($query_alarma_monitoreo);
 
 				$i = 0;
-				
+
 				while($row_alarma_monitoreo = $result_alarma_monitoreo->fetch(PDO::FETCH_OBJ)){
 					$i++;
 					$query_count_alarma = "SELECT COUNT(*) AS num_monitoreos FROM ca_alarma_monitoreo WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."'; ";
@@ -314,11 +314,16 @@ class Monitoreo{
 											<title>Notificación de alarma</title>
 										</head>
 									<body>
-										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en '; 
-										$query_error1 = "SELECT b.error FROM ca_monitoreo_asesor_detallado AS a LEFT JOIN pa_tipo_error AS b ON a.id_error = b.id  AND a.id_monitoreo_asesor = '".$row_alarma_monitore->id_monitoreo."'; ";
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en <br>'; 
+										$query_error1  = "SELECT  c.error, d.item ";
+										$query_error1 .= "FROM ca_monitoreo_asesor_detallado AS a ";
+										$query_error1 .= "LEFT JOIN ca_error AS b ON a.id_error = b.id ";
+										$query_error1 .= "LEFT JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
+										$query_error1 .= "LEFT JOIN ca_item AS d ON a.id_item = d.id ";
+										$query_error1 .= "WHERE a.id_monitoreo_asesor = '".$row_alarma_monitoreo->id_monitoreo."' AND a.valor_porcentaje_cumplimiento = '0';";
 										$result_error1 = $mysql->query($query_error1);
 										while($row_error1 = $result_error1->fetch(PDO::FETCH_OBJ)){
-											$body1  	 .= $row_error1->error.'';
+											$body1  	 .= $row_error1->error.', '.$row_error1->item.'<br>';
 										}
 							$body1  	 .= '</p>
 										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
@@ -326,7 +331,7 @@ class Monitoreo{
 										<table>
 											<tr>
 												<td><img src="http://www.interactivo.com.co/logo.png"></td>
-												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+												<td><p><h3>CYBERACTIVO</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
 											</tr>
 										</table>
 										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
@@ -351,11 +356,16 @@ class Monitoreo{
 											<title>Notificación de alarma</title>
 										</head>
 									<body>
-										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en '; 
-										$query_error2 = "SELECT b.error FROM ca_monitoreo_asesor_detallado AS a LEFT JOIN pa_tipo_error AS b ON a.id_error = b.id  AND a.id_monitoreo_asesor = '".$row_alarma_monitore->id_monitoreo."'; ";
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en <br>'; 
+										$query_error2  = "SELECT  c.error, d.item ";
+										$query_error2 .= "FROM ca_monitoreo_asesor_detallado AS a ";
+										$query_error2 .= "LEFT JOIN ca_error AS b ON a.id_error = b.id ";
+										$query_error2 .= "LEFT JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
+										$query_error2 .= "LEFT JOIN ca_item AS d ON a.id_item = d.id ";
+										$query_error2 .= "WHERE a.id_monitoreo_asesor = '".$row_alarma_monitoreo->id_monitoreo."' AND a.valor_porcentaje_cumplimiento = '0';";
 										$result_error2 = $mysql->query($query_error2);
-										while($row_error2 = $result_error1->fetch(PDO::FETCH_OBJ)){
-											$body2  	 .= $row_error2->error.'';
+										while($row_error2 = $result_error2->fetch(PDO::FETCH_OBJ)){
+											$body2  	 .= $row_error2->error.', '.$row_error2->item.'<br>';
 										}
 							$body2  	 .= '</p>
 										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
@@ -363,7 +373,7 @@ class Monitoreo{
 										<table>
 											<tr>
 												<td><img src="http://www.interactivo.com.co/logo.png"></td>
-												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+												<td><p><h3>CYBERACTIVO</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
 											</tr>
 										</table>
 										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
@@ -388,11 +398,16 @@ class Monitoreo{
 											<title>Notificación de alarma</title>
 										</head>
 									<body>
-										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en '; 
-										$query_error3 = "SELECT b.error FROM ca_monitoreo_asesor_detallado AS a LEFT JOIN pa_tipo_error AS b ON a.id_error = b.id  AND a.id_monitoreo_asesor = '".$row_alarma_monitore->id_monitoreo."'; ";
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en <br>'; 
+										$query_error3  = "SELECT  c.error, d.item ";
+										$query_error3 .= "FROM ca_monitoreo_asesor_detallado AS a ";
+										$query_error3 .= "LEFT JOIN ca_error AS b ON a.id_error = b.id ";
+										$query_error3 .= "LEFT JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
+										$query_error3 .= "LEFT JOIN ca_item AS d ON a.id_item = d.id ";
+										$query_error3 .= "WHERE a.id_monitoreo_asesor = '".$row_alarma_monitoreo->id_monitoreo."' AND a.valor_porcentaje_cumplimiento = '0';";
 										$result_error3 = $mysql->query($query_error3);
 										while($row_error3 = $result_error3->fetch(PDO::FETCH_OBJ)){
-											$body3  	 .= $row_error3->error.'';
+											$body3  	 .= $row_error3->error.', '.$row_error3->item.'<br>';
 										}
 							$body3  	 .= '</p>
 										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
@@ -400,7 +415,7 @@ class Monitoreo{
 										<table>
 											<tr>
 												<td><img src="http://www.interactivo.com.co/logo.png"></td>
-												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+												<td><p><h3>CYBERACTIVO</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
 											</tr>
 										</table>
 										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
@@ -430,11 +445,16 @@ class Monitoreo{
 											<title>Notificación de alarma</title>
 										</head>
 									<body>
-										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en '; 
-										$query_error1 = "SELECT b.error FROM ca_monitoreo_asesor_detallado AS a LEFT JOIN pa_tipo_error AS b ON a.id_error = b.id  AND a.id_monitoreo_asesor = '".$row_alarma_monitore->id_monitoreo."'; ";
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en <br>'; 
+										$query_error1  = "SELECT  c.error, d.item ";
+										$query_error1 .= "FROM ca_monitoreo_asesor_detallado AS a ";
+										$query_error1 .= "LEFT JOIN ca_error AS b ON a.id_error = b.id ";
+										$query_error1 .= "LEFT JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
+										$query_error1 .= "LEFT JOIN ca_item AS d ON a.id_item = d.id ";
+										$query_error1 .= "WHERE a.id_monitoreo_asesor = '".$row_alarma_monitoreo->id_monitoreo."' AND a.valor_porcentaje_cumplimiento = '0';";
 										$result_error1 = $mysql->query($query_error1);
 										while($row_error1 = $result_error1->fetch(PDO::FETCH_OBJ)){
-											$body1  	 .= $row_error1->error.'';
+											$body1  	 .= $row_error1->error.', '.$row_error1->item.'<br>';
 										}
 							$body1  	 .= '</p>
 										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
@@ -442,7 +462,7 @@ class Monitoreo{
 										<table>
 											<tr>
 												<td><img src="http://www.interactivo.com.co/logo.png"></td>
-												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+												<td><p><h3>CYBERACTIVO</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
 											</tr>
 										</table>
 										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
@@ -467,11 +487,16 @@ class Monitoreo{
 											<title>Notificación de alarma</title>
 										</head>
 									<body>
-										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en '; 
-										$query_error2 = "SELECT b.error FROM ca_monitoreo_asesor_detallado AS a LEFT JOIN pa_tipo_error AS b ON a.id_error = b.id  AND a.id_monitoreo_asesor = '".$row_alarma_monitore->id_monitoreo."'; ";
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en <br>'; 
+										$query_error2  = "SELECT  c.error, d.item ";
+										$query_error2 .= "FROM ca_monitoreo_asesor_detallado AS a ";
+										$query_error2 .= "LEFT JOIN ca_error AS b ON a.id_error = b.id ";
+										$query_error2 .= "LEFT JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
+										$query_error2 .= "LEFT JOIN ca_item AS d ON a.id_item = d.id ";
+										$query_error2 .= "WHERE a.id_monitoreo_asesor = '".$row_alarma_monitoreo->id_monitoreo."' AND a.valor_porcentaje_cumplimiento = '0';";
 										$result_error2 = $mysql->query($query_error2);
 										while($row_error2 = $result_error2->fetch(PDO::FETCH_OBJ)){
-											$body2  	 .= $row_error2->error.'';
+											$body2  	 .= $row_error2->error.', '.$row_error2->item.'<br>';
 										}
 							$body2  	 .= '</p>
 										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
@@ -479,7 +504,7 @@ class Monitoreo{
 										<table>
 											<tr>
 												<td><img src="http://www.interactivo.com.co/logo.png"></td>
-												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+												<td><p><h3>CYBERACTIVO</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
 											</tr>
 										</table>
 										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
@@ -504,11 +529,16 @@ class Monitoreo{
 											<title>Notificación de alarma</title>
 										</head>
 									<body>
-										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en '; 
-										$query_error3 = "SELECT b.error FROM ca_monitoreo_asesor_detallado AS a LEFT JOIN pa_tipo_error AS b ON a.id_error = b.id  AND a.id_monitoreo_asesor = '".$row_alarma_monitore->id_monitoreo."'; ";
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en <br>'; 
+										$query_error3  = "SELECT  c.error, d.item ";
+										$query_error3 .= "FROM ca_monitoreo_asesor_detallado AS a ";
+										$query_error3 .= "LEFT JOIN ca_error AS b ON a.id_error = b.id ";
+										$query_error3 .= "LEFT JOIN pa_tipo_error AS c ON b.tipo_error = c.id ";
+										$query_error3 .= "LEFT JOIN ca_item AS d ON a.id_item = d.id ";
+										$query_error3 .= "WHERE a.id_monitoreo_asesor = '".$row_alarma_monitoreo->id_monitoreo."' AND a.valor_porcentaje_cumplimiento = '0';";
 										$result_error3 = $mysql->query($query_error3);
 										while($row_error3 = $result_error3->fetch(PDO::FETCH_OBJ)){
-											$body3  	 .= $row_error3->error.'';
+											$body3  	 .= $row_error3->error.', '.$row_error3->item.'<br>';
 										}
 							$body3  	 .= '</p>
 										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
@@ -516,7 +546,7 @@ class Monitoreo{
 										<table>
 											<tr>
 												<td><img src="http://www.interactivo.com.co/logo.png"></td>
-												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+												<td><p><h3>CYBERACTIVO</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
 											</tr>
 										</table>
 										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
@@ -547,7 +577,7 @@ class Monitoreo{
 									<body>
 										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' quien tuvo una tercera afectaci&oacute;n  en EC, motivo por el cual se solicita Aplicar proceso Jur&iacute;dico en caso tal que el asesor lleve m&aacute;s de 2 meses de vinculaci&oacute;n en la Campa&ntilde;a.</p>
 										<p>Fechas de afectaci&oacute;n: ';
-										$query_fechas1 = "SELECT fecha_registro FROM ca_alarma_monitoreo WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."' AND estado = 'notificado'; ";
+										$query_fechas1 = "SELECT fecha_registro FROM ca_alarma_monitoreo WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."'; ";
 										$result_fechas1 = $mysql->query($query_fechas1);
 										while($row_fecha1 = $result_fechas1->fetch(PDO::FETCH_OBJ)){
 											$body1  .= $row_fecha1->fecha_registro.', ';
@@ -557,7 +587,7 @@ class Monitoreo{
 										<table>
 											<tr>
 												<td><img src="http://www.interactivo.com.co/logo.png"></td>
-												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+												<td><p><h3>CYBERACTIVO</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
 											</tr>
 										</table>
 										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
@@ -584,7 +614,7 @@ class Monitoreo{
 									<body>
 										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' quien tuvo una tercera afectaci&oacute;n  en EC, motivo por el cual se solicita Aplicar proceso Jur&iacute;dico en caso tal que el asesor lleve m&aacute;s de 2 meses de vinculaci&oacute;n en la Campa&ntilde;a.</p>
 										<p>Fechas de afectaci&oacute;n: ';
-										$query_fechas2 = "SELECT fecha_registro FROM ca_alarma_monitoreo WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."' AND estado = 'notificado'; ";
+										$query_fechas2 = "SELECT fecha_registro FROM ca_alarma_monitoreo WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."'; ";
 										$result_fechas2 = $mysql->query($query_fechas2);
 										while($row_fecha2 = $result_fechas2->fetch(PDO::FETCH_OBJ)){
 											$body2  .= $row_fecha2->fecha_registro.', ';
@@ -594,7 +624,7 @@ class Monitoreo{
 										<table>
 											<tr>
 												<td><img src="http://www.interactivo.com.co/logo.png"></td>
-												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+												<td><p><h3>CYBERACTIVO</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
 											</tr>
 										</table>
 										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
@@ -621,17 +651,16 @@ class Monitoreo{
 									<body>
 										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&oacute;n '.$row_alarma_monitoreo->identificacion_asesor.' quien tuvo una tercera afectaci&oacute;n  en EC, motivo por el cual se solicita Aplicar proceso Jur&iacute;dico en caso tal que el asesor lleve m&aacute;s de 2 meses de vinculaci&oacute;n en la Campa&ntilde;a.</p>
 										<p>Fechas de afectaci&oacute;n: ';
-										$query_fechas3 = "SELECT fecha_registro FROM ca_alarma_monitoreo WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."' AND estado = 'notificado'; ";
+										$query_fechas3 = "SELECT fecha_registro FROM ca_alarma_monitoreo WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."'; ";
 										$result_fechas3 = $mysql->query($query_fechas3);
 										while($row_fecha3 = $result_fechas3->fetch(PDO::FETCH_OBJ)){
 											$body3  .= $row_fecha3->fecha_registro.', ';
-											
 										}
 							$body3 		.= '</p><p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
 										<table>
 											<tr>
 												<td><img src="http://www.interactivo.com.co/logo.png"></td>
-												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+												<td><p><h3>CYBERACTIVO</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
 											</tr>
 										</table>
 										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
@@ -641,6 +670,7 @@ class Monitoreo{
 							$email_formador->send($correo3, $nombre3, $subject3, $body3, $archivo3);
 						}
 					}
+
 					//Actualiza el estado de la alarma a notificado
 					$query_update_alarma = "UPDATE ca_alarma_monitoreo SET estado = 'notificado' WHERE id = '".$row_alarma_monitoreo->id."';";
 					$mysql->query($query_update_alarma);
