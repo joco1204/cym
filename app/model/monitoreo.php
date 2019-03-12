@@ -225,6 +225,9 @@ class Monitoreo{
 	public function inserta_monitoreo($data){
 		$mysql = $this->business->mysql;
 		$db_mysql = $this->business->db_mysql;
+		$email_analista = $this->business->email;
+		$email_lider = $this->business->email;
+		$email_formador = $this->business->email;
 		//Valida conexión a base de datos
 		if($mysql){
 			$query  = "INSERT INTO ca_monitoreo_asesor (id_agenda_monitoreo, id_asesor, id_analista, fecha_llamada, hora_llamada, tipificacion, id_llamada, observacion, solucion, fallas_audio) VALUES ('".$data->id_agenda."', '".$data->id_asesor."', '".$data->id_analista."', '".$data->fechas_llamada."', '".$data->hora_llamada."', '".$data->tipificacion."', '".$data->id_llamada."', '".$data->observacion."', '".$data->solucion."', '".$data->audio."'); ";
@@ -271,17 +274,314 @@ class Monitoreo{
 					}
 				}
 
+				$query_count_alarma = "SELECT COUNT(*) AS num_monitoreos FROM ca_alarma_monitoreo WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."' AND estado = 'registrado'; ";
+				$result_count_alarma = $mysql->query($query_count_alarma);
+				$row_count_alarma = $result_count_alarma->fetch(PDO::FETCH_OBJ);
+
 				$query_alarma_monitoreo  = "SELECT a.id, a.id_monitoreo, a.id_empresa, a.id_campana, a.fecha_registro, a.estado, ";
-				$query_alarma_monitoreo  = "a.id_asesor, CONCAT(b.nombre,' ',b.apellido1,' ',b.apellido2) AS asesor, b.identificacion AS identificacion_asesor, ";
-				$query_alarma_monitoreo  = "a.id_analista, CONCAT(c.nombre,' ',c.apellido1,' ',c.apellido2) AS analista, c.email AS email_analista, ";
-				$query_alarma_monitoreo  = "a.id_lider, CONCAT(d.nombre,' ',d.apellido1,' ',d.apellido2) AS lider, d.email AS email_lider, ";
-				$query_alarma_monitoreo  = "a.id_formador, CONCAT(e.nombre,' ',e.apellido1,' ',e.apellido2) AS formador, e.email AS email_formador ";
-				$query_alarma_monitoreo  = "FROM ca_alarma_monitoreo AS a ";
-				$query_alarma_monitoreo  = "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
-				$query_alarma_monitoreo  = "LEFT JOIN re_usuarios AS c ON a.id_analista = c.id ";
-				$query_alarma_monitoreo  = "LEFT JOIN re_usuarios AS d ON a.id_lider = d.id ";
-				$query_alarma_monitoreo  = "LEFT JOIN re_usuarios AS e ON a.id_formador = e.id ";
-				$query_alarma_monitoreo  = "WHERE a.id_asesor = '".$data->id_asesor."' AND a.estado = 'registrado';";
+				$query_alarma_monitoreo .= "a.id_asesor, CONCAT(b.nombre,' ',b.apellido1,' ',b.apellido2) AS asesor, b.identificacion AS identificacion_asesor, ";
+				$query_alarma_monitoreo .= "a.id_analista, CONCAT(c.nombre,' ',c.apellido1,' ',c.apellido2) AS analista, c.email AS email_analista, ";
+				$query_alarma_monitoreo .= "a.id_lider, CONCAT(d.nombre,' ',d.apellido1,' ',d.apellido2) AS lider, d.email AS email_lider, ";
+				$query_alarma_monitoreo .= "a.id_formador, CONCAT(e.nombre,' ',e.apellido1,' ',e.apellido2) AS formador, e.email AS email_formador ";
+				$query_alarma_monitoreo .= "FROM ca_alarma_monitoreo AS a ";
+				$query_alarma_monitoreo .= "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
+				$query_alarma_monitoreo .= "LEFT JOIN re_usuarios AS c ON a.id_analista = c.id ";
+				$query_alarma_monitoreo .= "LEFT JOIN re_usuarios AS d ON a.id_lider = d.id ";
+				$query_alarma_monitoreo .= "LEFT JOIN re_usuarios AS e ON a.id_formador = e.id ";
+				$query_alarma_monitoreo .= "WHERE a.id_asesor = '".$data->id_asesor."' AND a.estado = 'registrado';";				
+				$result_alarma_monitoreo = $mysql->query($query_alarma_monitoreo);
+
+				$i = 1;
+				while($row_alarma_monitoreo = $result_alarma_monitoreo->fetch(PDO::FETCH_OBJ)){
+
+					if($i == '1'){
+						if($row_count_alarma->num_monitoreos == $i){
+							//Datos de email
+							$correo1  = $row_alarma_monitoreo->email_analista;
+							$nombre1  = $row_alarma_monitoreo->analista;
+							$archivo1 = '';
+							$subject1 = 'Notificación de Alarma Cyberactivo (Primera vez)';
+							$body1  	 = '
+								<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Notificación de alarma</title>
+										</head>
+									<body>
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&iacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en </p>
+										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
+										<p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
+										<table>
+											<tr>
+												<td><img src="http://www.interactivo.com.co/logo.png"></td>
+												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+											</tr>
+										</table>
+										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+										<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+									</body>
+								</html>';
+							$email_analista->send($correo1, $nombre1, $subject1, $body1, $archivo1);
+							//Datos de email
+							$correo2  = $row_alarma_monitoreo->email_lider;
+							$nombre2  = $row_alarma_monitoreo->lider;
+							$archivo2 = '';
+							$subject2 = 'Notificación de Alarma Cyberactivo (Primera vez)';
+							$body2  	 = '
+								<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Notificación de alarma</title>
+										</head>
+									<body>
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&iacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en </p>
+										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
+										<p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
+										<table>
+											<tr>
+												<td><img src="http://www.interactivo.com.co/logo.png"></td>
+												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+											</tr>
+										</table>
+										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+										<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+									</body>
+								</html>';
+							$email_lider->send($correo2, $nombre2, $subject2, $body2, $archivo2);
+							//Datos de email
+							$correo3  = $row_alarma_monitoreo->email_formador;
+							$nombre3  = $row_alarma_monitoreo->formador;
+							$archivo3 = '';
+							$subject3 = 'Notificación de Alarma Cyberactivo (Primera vez)';
+							$body3  	 = '
+								<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Notificación de alarma</title>
+										</head>
+									<body>
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&iacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en </p>
+										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
+										<p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
+										<table>
+											<tr>
+												<td><img src="http://www.interactivo.com.co/logo.png"></td>
+												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+											</tr>
+										</table>
+										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+										<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+									</body>
+								</html>';
+							$email_formador->send($correo3, $nombre3, $subject3, $body3, $archivo3);
+						}
+					}
+
+					if($i == '2'){
+						if($row_count_alarma->num_monitoreos == $i){
+							//Datos de email
+							$correo1  = $row_alarma_monitoreo->email_analista;
+							$nombre1  = $row_alarma_monitoreo->analista;
+							$archivo1 = '';
+							$subject1 = 'Notificación de Alarma Cyberactivo (Primera vez)';
+							$body1  	 = '
+								<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Notificación de alarma</title>
+										</head>
+									<body>
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&iacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en </p>
+										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
+										<p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
+										<table>
+											<tr>
+												<td><img src="http://www.interactivo.com.co/logo.png"></td>
+												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+											</tr>
+										</table>
+										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+										<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+									</body>
+								</html>';
+							$email_analista->send($correo1, $nombre1, $subject1, $body1, $archivo1);
+							//Datos de email
+							$correo2  = $row_alarma_monitoreo->email_lider;
+							$nombre2  = $row_alarma_monitoreo->lider;
+							$archivo2 = '';
+							$subject2 = 'Notificación de Alarma Cyberactivo (Primera vez)';
+							$body2  	 = '
+								<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Notificación de alarma</title>
+										</head>
+									<body>
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&iacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en </p>
+										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
+										<p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
+										<table>
+											<tr>
+												<td><img src="http://www.interactivo.com.co/logo.png"></td>
+												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+											</tr>
+										</table>
+										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+										<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+									</body>
+								</html>';
+							$email_lider->send($correo2, $nombre2, $subject2, $body2, $archivo2);
+							//Datos de email
+							$correo3  = $row_alarma_monitoreo->email_formador;
+							$nombre3  = $row_alarma_monitoreo->formador;
+							$archivo3 = '';
+							$subject3 = 'Notificación de Alarma Cyberactivo (Primera vez)';
+							$body3  	 = '
+								<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Notificación de alarma</title>
+										</head>
+									<body>
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&iacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en </p>
+										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
+										<p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
+										<table>
+											<tr>
+												<td><img src="http://www.interactivo.com.co/logo.png"></td>
+												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+											</tr>
+										</table>
+										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+										<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+									</body>
+								</html>';
+							$email_formador->send($correo3, $nombre3, $subject3, $body3, $archivo3);
+						}
+					}
+
+					if($i == '3'){
+						if($row_count_alarma->num_monitoreos == $i){
+							$correo1  = $row_alarma_monitoreo->email_analista;
+							$nombre1  = $row_alarma_monitoreo->analista;
+							$archivo1 = '';
+							$subject1 = 'Notificación de Alarma Cyberactivo (Primera vez)';
+							$body1  	 = '
+								<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Notificación de alarma</title>
+										</head>
+									<body>
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&iacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en </p>
+										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
+										<p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
+										<table>
+											<tr>
+												<td><img src="http://www.interactivo.com.co/logo.png"></td>
+												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+											</tr>
+										</table>
+										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+										<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+									</body>
+								</html>';
+							$email_analista->send($correo1, $nombre1, $subject1, $body1, $archivo1);
+							//Datos de email
+							$correo2  = $row_alarma_monitoreo->email_lider;
+							$nombre2  = $row_alarma_monitoreo->lider;
+							$archivo2 = '';
+							$subject2 = 'Notificación de Alarma Cyberactivo (Primera vez)';
+							$body2  	 = '
+								<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Notificación de alarma</title>
+										</head>
+									<body>
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&iacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en </p>
+										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
+										<p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
+										<table>
+											<tr>
+												<td><img src="http://www.interactivo.com.co/logo.png"></td>
+												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+											</tr>
+										</table>
+										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+										<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+									</body>
+								</html>';
+							$email_lider->send($correo2, $nombre2, $subject2, $body2, $archivo2);
+							//Datos de email
+							$correo3  = $row_alarma_monitoreo->email_formador;
+							$nombre3  = $row_alarma_monitoreo->formador;
+							$archivo3 = '';
+							$subject3 = 'Notificación de Alarma Cyberactivo (Primera vez)';
+							$body3  	 = '
+								<!DOCTYPE html>
+									<html>
+										<head>
+											<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+											<meta name="author" content="Interactivo Contact Center"/>
+											<meta name="description" content="Interactivo Contact Center"/>
+											<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+											<title>Notificación de alarma</title>
+										</head>
+									<body>
+										<p>Buen d&iacute;a, se realiza auditor&iacute;a al asesor '.$row_alarma_monitoreo->asesor.' con identificaci&iacute;n '.$row_alarma_monitoreo->identificacion_asesor.' el d&iacute;a '.$row_alarma_monitoreo->fecha_registro.' quien tuvo afectaci&oacute;n  en </p>
+										<p>Se realizar&aacute; feedback dentro de las pr&oacute;ximas 24 Hrs.</p>
+										<p>Cordialmente, '.$row_alarma_monitoreo->analista.'</p>
+										<table>
+											<tr>
+												<td><img src="http://www.interactivo.com.co/logo.png"></td>
+												<td><p><h3>Calidad ICC</h3><a href="www.interctivo.com.co ">www.interctivo.com.co </a></p></td>
+											</tr>
+										</table>
+										<p>NOTA CONFIDENCIAL: La informaci&oacute;n contenida en este e-mail y en todos sus archivos anexos, es confidencial y constituye un secreto empresarial de INTERACTIVO CONTACT CENTER S.A. Por lo tanto solo es  ara uso individual del destinatario o entidad a quienes est&aacute; dirigido. Si usted no es el destinatario, cualquier almacenamiento, distribuci&oacute;n, divulgaci&oacute;n o copia de este mensaje est&aacute; estrictamente prohibida y sancionada por la ley. Si por error recibe este mensaje, presentamos disculpas, por favor elim&iacute;nelo de inmediato y notifique a la persona que lo envi&oacute;, absteni&eacute;ndose de divulgar su contenido o anexos.</p>
+										<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
+									</body>
+								</html>';
+							$email_formador->send($correo3, $nombre3, $subject3, $body3, $archivo3);
+						}
+					}
+
+					$query_update_alarma = "UPDATE ca_alarma_monitoreo SET estado = 'notificado' WHERE id = '".$row_alarma_monitoreo->id."';";
+					$mysql->query($query_update_alarma);
+					$i++;
+				}
 
 				$this->business->return->bool = true;
 				$this->business->return->msg = $id_monitoreo;
