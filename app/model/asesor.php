@@ -398,7 +398,7 @@ class Asesor{
 			$query  = "SELECT a.id AS id_usuario, CONCAT(a.nombre, ' ',a.apellido1,' ',a.apellido2) AS nombre_usuario ";
 			$query .= "FROM re_usuarios AS a ";
 			$query .= "LEFT JOIN re_usaurio_ec AS b ON a.id = b.id_usuario ";
-			$query .= "WHERE b.id_perfil IN (4, 9) AND b.id_campana IN (".$data->id_campana.", 0) AND a.estado = 'activo';";
+			$query .= "WHERE b.id_perfil IN (1, 2, 4, 9) AND b.id_campana IN (".$data->id_campana.", 0) AND a.estado = 'activo';";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){	
@@ -427,7 +427,7 @@ class Asesor{
 			$query  = "SELECT a.id AS id_usuario, CONCAT(a.nombre, ' ',a.apellido1,' ',a.apellido2) AS nombre_usuario ";
 			$query .= "FROM re_usuarios AS a ";
 			$query .= "LEFT JOIN re_usaurio_ec AS b ON a.id = b.id_usuario ";
-			$query .= "WHERE b.id_perfil IN (6, 9) AND b.id_campana IN (".$data->id_campana.", 0) AND a.estado = 'activo';";
+			$query .= "WHERE b.id_perfil IN (1, 2, 6, 9) AND b.id_campana IN (".$data->id_campana.", 0) AND a.estado = 'activo';";
 			$result = $mysql->query($query);
 			if($result){
 				while($row = $result->fetch(PDO::FETCH_OBJ)){	

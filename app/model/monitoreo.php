@@ -254,10 +254,34 @@ class Monitoreo{
 						$result_item = $mysql->query($query_item);
 					}
 				}
-
-				$query_historico  = "SELECT id_monitoreo, id_asesor, id_error, porcentaje, fecha_registro FROM ca_monitoreo_asesor_detallado_general ";
-				$query_historico .= "WHERE id_asesor = '".$data->id_asesor."' AND fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."' AND porcentaje = '0';";
+				$query_historico  = "SELECT DISTINCT a.id_monitoreo, a.id_asesor, b.id_empresa, b.id_campana, b.id_lider, b.id_formador, a.porcentaje, a.fecha_registro ";
+				$query_historico .= "FROM ca_monitoreo_asesor_detallado_general AS a ";
+				$query_historico .= "LEFT JOIN ca_asesores_ec AS b ON a.id_asesor = b.id_asesor ";
+				$query_historico .= "WHERE a.id_asesor = '".$data->id_asesor."' AND a.fecha_registro BETWEEN '".$this->periodo_tiempo_inicio()."' AND '".$this->periodo_tiempo_fin()."' AND a.porcentaje = '0';";
 				$result_historico = $mysql->query($query_historico);
+				while($row_historico = $result_historico->fetch(PDO::FETCH_OBJ)){
+					$query_num_alarma  = "SELECT COUNT(*) AS num_alarma ";
+					$query_num_alarma .= "FROM ca_alarma_monitoreo WHERE id_monitoreo = '".$row_historico->id_monitoreo."'; ";
+					$result_num_alarma = $mysql->query($query_num_alarma);
+					$row_num_alarma = $result_num_alarma->fetch(PDO::FETCH_OBJ);
+					if($row_num_alarma->num_alarma == 0){
+						$query_insert_alarma  = "INSERT INTO ca_alarma_monitoreo (id_monitoreo, id_asesor, id_empresa, id_campana, id_analista, id_lider, id_formador, fecha_registro, estado) ";
+						$query_insert_alarma .= "VALUES ('".$row_historico->id_monitoreo."', '".$row_historico->id_asesor."', '".$row_historico->id_empresa."', '".$row_historico->id_campana."', '".$data->id_analista."', '".$row_historico->id_lider."', '".$row_historico->id_formador."', '".$row_historico->fecha_registro."', 'registrado');";
+						$mysql->query($query_insert_alarma);
+					}
+				}
+
+				$query_alarma_monitoreo  = "SELECT a.id, a.id_monitoreo, a.id_empresa, a.id_campana, a.fecha_registro, a.estado, ";
+				$query_alarma_monitoreo  = "a.id_asesor, CONCAT(b.nombre,' ',b.apellido1,' ',b.apellido2) AS asesor, b.identificacion AS identificacion_asesor, ";
+				$query_alarma_monitoreo  = "a.id_analista, CONCAT(c.nombre,' ',c.apellido1,' ',c.apellido2) AS analista, c.email AS email_analista, ";
+				$query_alarma_monitoreo  = "a.id_lider, CONCAT(d.nombre,' ',d.apellido1,' ',d.apellido2) AS lider, d.email AS email_lider, ";
+				$query_alarma_monitoreo  = "a.id_formador, CONCAT(e.nombre,' ',e.apellido1,' ',e.apellido2) AS formador, e.email AS email_formador ";
+				$query_alarma_monitoreo  = "FROM ca_alarma_monitoreo AS a ";
+				$query_alarma_monitoreo  = "LEFT JOIN ca_asesores AS b ON a.id_asesor = b.id ";
+				$query_alarma_monitoreo  = "LEFT JOIN re_usuarios AS c ON a.id_analista = c.id ";
+				$query_alarma_monitoreo  = "LEFT JOIN re_usuarios AS d ON a.id_lider = d.id ";
+				$query_alarma_monitoreo  = "LEFT JOIN re_usuarios AS e ON a.id_formador = e.id ";
+				$query_alarma_monitoreo  = "WHERE a.id_asesor = '".$data->id_asesor."' AND a.estado = 'registrado';";
 
 				$this->business->return->bool = true;
 				$this->business->return->msg = $id_monitoreo;
@@ -462,7 +486,7 @@ class Monitoreo{
 	public function periodo_tiempo_inicio(){
 		$month = date('m');
 		$year = date('Y');
-		return date('Y-m-d', mktime(0,0,0, $month-2, 1, $year));
+		return date('Y-m-d', mktime(0,0,0, $month-1, 1, $year));
 	}
 
 	public function periodo_tiempo_fin(){ 

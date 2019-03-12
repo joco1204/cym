@@ -15,7 +15,7 @@ if($id_empresa == '0'){ ?>
         });
     </script>
 <?php } else { ?>
-    <form id="monitoreo_form" role="form">
+    <form id="monitoreo_form" role="form" autocomplete="off">
         <input type="hidden" name="id_empresa" id="id_empresa" value="<?= $id_empresa; ?>">
         <input type="hidden" name="id_campana" id="id_campana" value="<?= $id_campana; ?>">
         <input type="hidden" name="id_asesor" id="id_asesor" value="<?= $id_asesor; ?>">

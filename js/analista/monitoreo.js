@@ -1,6 +1,13 @@
 $(function(){
 	$("select").select2();
 
+	var date = new Date();
+	var dd 		= date.getDate();
+	var mm 		= date.getMonth();
+	var yy 		= date.getFullYear();
+	var ini = new Date(yy, mm, dd -2);
+	var end = new Date(yy, mm, dd);
+
 	//Datepicker de fechas
 	$.fn.datepicker.dates['es'] = {
 		days: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],
@@ -17,9 +24,10 @@ $(function(){
 		pickTime: true,
 		autoclose: true,
 		language: 'es',
-		opens: "center"
+		opens: "center",
+		startDate: ini,
+		endDate: end,
 	});
-
 	//
 	$.ajax({
 		type: 'post', 

@@ -101,7 +101,7 @@ class AgendaMonitoreo{
 			$query  = "INSERT INTO ca_agenda_monitoreo (id_empresa, id_campana, id_asesor, fecha_monitoreo, estado) VALUES ('".$data->id_empresa."', '".$data->id_campana."', '".$data->id_asesor."', '".$data->fecha_monitoreo."', '0'); ";
 			$result = $mysql->query($query);
 			if($result){
-				$id_agenda = $mysql->lastInsertId();
+				/*$id_agenda = $mysql->lastInsertId();
 				$query_agenda  = "SELECT a.id, b.empresa, c.campana, d.identificacion, d.nombre, d.apellido1, a.fecha_monitoreo ";
 				$query_agenda .= "FROM ca_agenda_monitoreo AS a ";
 				$query_agenda .= "LEFT JOIN ca_empresa AS b ON a.id_empresa = b.id ";
@@ -145,9 +145,9 @@ class AgendaMonitoreo{
 								<p>Por favor piense en el medio ambiente ante de imprimir este mensaje</p>
 							</body>
 						</html>';
-					//Envío de email
+					
 					$email->send($correo, $nombre, $subject, $body, $archivo);
-				}
+				}*/
 
 				$this->business->return->bool = true;
 				$this->business->return->msg = 'Se agendó el monitoreo para la fecha '.$data->fecha_monitoreo;
