@@ -1,16 +1,14 @@
 $(function(){
 	$('#login').submit(function(e){
+		$('#action').val('login');
 		e.preventDefault();
+		var data = $(this).serialize();
 		//Ajax that executes the login
 		if ($('#user').val() != "" && $('#pass').val() != ""){
 			$.ajax({
 				type: 'POST',
-				url: 'app/controller/ctrlogin.php',
-				data: {
-						action: 'login',
-						user: $('#user').val(), 
-						pass: $('#pass').val()
-					},
+				url: 'app/controller/ctrloginldap.php',
+				data: data,
 				dataType: 'json'
 			}).done(function(result){
 				if(result.bool){
@@ -18,11 +16,10 @@ $(function(){
 					//Ajax building the session
 					$.ajax({
 						type: 'POST',
-						url: 'app/controller/ctrlogin.php',
+						url: 'app/controller/ctrloginldap.php',
 						data: {
 								action: 'session',
-								iduser: data.iduser,
-								idcompany: data.idcompany,
+								id_user: data.id_user,
 								token: data.token
 							},
 						dataType: 'json'
@@ -30,52 +27,43 @@ $(function(){
 						if(result2.bool){
 							var data2 = $.parseJSON(result2.msg);
 							//Session storage generator
-							sessionStorage.setItem('iduser', data2.iduser);
-							sessionStorage.setItem('idprofile', data2.idprofile);
-							sessionStorage.setItem('userprofile', data2.userprofile);
-							sessionStorage.setItem('username', data2.username);
-							sessionStorage.setItem('lastname', data2.lastname);
-							sessionStorage.setItem('ncompany', data2.ncompany);
-							sessionStorage.setItem('company', data2.company);
-							sessionStorage.setItem('companyweb', data2.companyweb);
-							sessionStorage.setItem('companylogo', data2.companylogo);
-							sessionStorage.setItem('headquarters', data2.headquarters);
-							sessionStorage.setItem('country', data2.country);
-							sessionStorage.setItem('city', data2.city);
-							sessionStorage.setItem('position', data2.position);
+							sessionStorage.setItem('id_usaurio', data2.id_usaurio);
+							sessionStorage.setItem('usuario', data2.usuario);
+							sessionStorage.setItem('id_perfil', data2.id_perfil);
+							sessionStorage.setItem('perfil', data2.perfil);
+							sessionStorage.setItem('nombre', data2.nombre);
+							sessionStorage.setItem('apellido1', data2.apellido1);
+							sessionStorage.setItem('apellido2', data2.apellido2);
+							sessionStorage.setItem('tipo_identificacion', data2.tipo_identificacion);
+							sessionStorage.setItem('identificacion', data2.identificacion);
+							sessionStorage.setItem('email', data2.email);
+							sessionStorage.setItem('estado', data2.estado);
 							sessionStorage.setItem('token', data2.token);
+							sessionStorage.setItem('num_empresas', data2.num_empresas);
+							sessionStorage.setItem('num_campanas', data2.num_campanas);
+							sessionStorage.setItem('empresa', data2.empresa);
+							sessionStorage.setItem('campana', data2.campana);
 							//entry to the platform
 							window.location.href = "app/view/index.php";
 						} else {
-							$('#warning-login').fadeIn(1000);
 							$('#warning-login').css('display','block');
 							$('#warning-login').html(result2.msg);
-							$('#warning-login').fadeOut(7000);
 						}
 					});
 				} else {
-					$('#warning-login').fadeIn(1000);
 					$('#warning-login').css('display','block');
 					$('#warning-login').html(result.msg);
-					$('#warning-login').fadeOut(7000);
 				}
 			});
 		} else if ($('#user').val() != "" && $('#pass').val() == "") {
-			$('#warning-login').fadeIn(500);
 			$('#warning-login').css('display','block');
 			$('#warning-login').html("Contraseña Incorrecta");
-			$('#warning-login').fadeOut(6000);
 		} else if ($('#user').val() == "" && $('#pass').val() != ""){
-			$('#warning-login').fadeIn(500);
 			$('#warning-login').css('display','block');
 			$('#warning-login').html("Usuario Incorrecto");
-			$('#warning-login').fadeOut(6000);
 		} else {
-			$('#warning-login').fadeIn(500);
 			$('#warning-login').css('display','block');
 			$('#warning-login').html("Usuario y contraseña incorrectos");
-			$('#warning-login').fadeOut(6000);
 		}
 	});
-
 });

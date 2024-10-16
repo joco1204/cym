@@ -1,20 +1,20 @@
 <?php
 class Logout{
 	function __construct(){
-		$this->bsn = new Business();
+		$this->business = new Business();
 	}
 	//logout method
 	public function logout(){
-		$session = $this->bsn->session;
+		$session = $this->business->session;
 		$session->start();
 		if($session->destroy()){
-			$this->bsn->return->bool = true;
-			$this->bsn->return->msg = json_encode('Logout');
+			$this->business->return->bool = true;
+			$this->business->return->msg = json_encode('Logout');
 		} else {
-			$this->bsn->return->bool = false;
-			$this->bsn->return->msg = json_encode('No Logout');
+			$this->business->return->bool = false;
+			$this->business->return->msg = json_encode('No Logout');
 		}
-		return $this->bsn->return;
+		return $this->business->return;
 	}
 }
 ?>

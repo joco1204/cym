@@ -5,34 +5,57 @@
         <?php include 'config/plugins.php'; ?>
         <script src="js/login.js"></script>
     </head>
-    <body class="hold-transition login-page">
-        <div class="login-box">
-            <div class="login-logo">
-                <img src="img/logo.png" style="width: 50%; height: 50%">
-                <br>
-                <a href="#"><b>Calidad ICC</b></a>
+    <body class="hold-transition skin-blue layout-top-nav" onload="javascript: sessionStorage.removeItem('tockent');">
+        <div class="container">
+            <div class="row">
+                <div style="height: 60px;"></div>
             </div>
             <div class="row">
-                <div class="col-md-12 text-center" style="height: 60px;">
+                <div class="col-md-4 col-md-offset-4" align="center">
+                    <img src="img/logo.png" alt="Interactivo Contact Center" class="img-rounded">  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center" style="height: 60px;">
                      <div class="alert alert-danger text-center" id="warning-login" style="display: none;"></div>
                 </div>
             </div>
-            <div class="login-box-body">
-                <form id="login">
-                    <div class="form-group has-feedback">
-                        <input type="text" name="user" id="user" class="form-control" placeholder="Usuario:">
-                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input type="password" name="pass" id="pass" class="form-control" placeholder="Contraseña:">
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4 col-xs-offset-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+        </div>
+        <br>
+        <div class="container">
+            <form id="login" autocomplete="off">
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h5 class="text-center">
+                                    <b>CYBERACTIVO</b>
+                                    <input type="hidden" name="action" id="action" value="">
+                                </h5>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group has-feedback">
+                                    <input type="text" name="user" id="user" class="form-control" placeholder="Usuario:">
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <input type="password" name="pass" id="pass" class="form-control" placeholder="Contraseña:">
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <p class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div style="height: 60px;"></div>
             </div>
         </div>
     </body>

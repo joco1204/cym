@@ -39,23 +39,26 @@ var pageContent = function(page, settings){
 		});
 	}
 }
-//Función para cerrar session de la aplicación
-var logout = function(){
-	sessionStorage.removeItem('iduser');
-	sessionStorage.removeItem('idprofile');
-	sessionStorage.removeItem('userprofile');
-	sessionStorage.removeItem('username');
-	sessionStorage.removeItem('lastname');
-	sessionStorage.removeItem('ncompany');
-	sessionStorage.removeItem('company');
-	sessionStorage.removeItem('companyweb');
-	sessionStorage.removeItem('companylogo');
-	sessionStorage.removeItem('headquarters');
-	sessionStorage.removeItem('country');
-	sessionStorage.removeItem('city');
-	sessionStorage.removeItem('position');
+
+//Remove Session Storage 
+var removeSession = function(){
+	sessionStorage.removeItem('id_usaurio');
+	sessionStorage.removeItem('usuario');
+	sessionStorage.removeItem('id_perfil');
+	sessionStorage.removeItem('perfil');
+	sessionStorage.removeItem('nombre');
+	sessionStorage.removeItem('apellido1');
+	sessionStorage.removeItem('apellido2');
+	sessionStorage.removeItem('tipo_identificacion');
+	sessionStorage.removeItem('identificacion');
+	sessionStorage.removeItem('email');
+	sessionStorage.removeItem('estado');
 	sessionStorage.removeItem('token');
 	sessionStorage.clear();
+}
+
+//Function to close session of the application
+var logout = function(){
 	$.ajax({
 		type: "POST", 
 		url: "../controller/ctrlogout.php",
@@ -65,12 +68,53 @@ var logout = function(){
 		dataType: 'json'
 	}).done(function(result){
 		if (result.bool){
-			location.href = "../../index.php";	
+			removeSession();
+			window.location.href = "../../";
 		} else {
-			swal("Error!",result.msg,"error");
+			console.log('Error: '+result.msg)
 		}
-		
 	});	
 };
 
+//Start timeout
+var timeout;
+function startTimeOut() {
+	timeout = setTimeout(function(){redirectTimeOut()}, 1200000);
+}
+
+function stopTimeOut(){
+	clearTimeout(timeout);
+	timeout = setTimeout('location="../../"', 1200000);
+	sessionStorage.removeItem('id_usaurio');
+	sessionStorage.removeItem('usuario');
+	sessionStorage.removeItem('id_perfil');
+	sessionStorage.removeItem('perfil');
+	sessionStorage.removeItem('nombre');
+	sessionStorage.removeItem('apellido1');
+	sessionStorage.removeItem('apellido2');
+	sessionStorage.removeItem('tipo_identificacion');
+	sessionStorage.removeItem('identificacion');
+	sessionStorage.removeItem('email');
+	sessionStorage.removeItem('estado');
+	sessionStorage.removeItem('token');
+	sessionStorage.clear();
+}
+
+//
+function redirectTimeOut(){
+	$.ajax({
+		type: "POST", 
+		url: "../controller/ctrlogout.php",
+		data: {
+			action: 'logout',
+		},
+		dataType: 'json',
+	}).done(function(result){
+		if (result.bool){
+			window.location.href = "../../";
+		} else {
+			console.log('Error: '+result.msg)
+		}
+	});	
+}
 

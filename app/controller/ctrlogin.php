@@ -11,7 +11,7 @@ if(isset($ps->action)){
 			$bsn->return = $result;
 		break;
 		case 'session':
-			$result = $login->session($ps->iduser, $ps->idcompany, $ps->token);
+			$result = $login->session($ps->iduser, $ps->token);
 			$bsn->return = $result;
 		break;
 		default:

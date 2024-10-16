@@ -16,12 +16,9 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
     <head>
         <!-- definición de las metas para el sitio de SMART SOLUTION SERVICE-->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="author" content="SMART SOLUTION SERVICE"/>
-        <meta name="description" content="SMART SOLUTION SERVICE"/>
-        <meta name="author" content="SMART SOLUTION SERVICE"/>
+        <meta name="author" content="Interactivo Contact Center"/>
+        <meta name="description" content="Interactivo Contact Center"/>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <!-- definición de ícono de ventana -->
-        <link rel="shortcut icon" type="image/x-icon" href="" />
         <!-- librerías js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
@@ -42,6 +39,15 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
         <script src="../../libs/plugins/fastclick/fastclick.js"></script>
         <script src="../../libs/plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="../../libs/plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+        <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+
         <script src="../../libs/plugins/sweetalert/dist/sweetalert.min.js"></script>
         <script src="../../libs/plugins/sweetalert/dist/sweetalert-dev.js"></script>
         <script src="../../libs/plugins/autonumeric/autonumeric.js" ></script>
@@ -66,7 +72,6 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
         <link rel="stylesheet" href="../../libs/plugins/datatables/jquery.dataTables.min.css">
         <link rel="stylesheet" href="../../libs/plugins/datatables/dataTables.bootstrap.css">
         <link rel="stylesheet" href="../../libs/plugins/sweetalert/dist/sweetalert.css">
-        <link rel="stylesheet" type="text/css" href="../../css/styles.css">
         <!--Select-->
         <link href="../../libs/plugins/select2/select2.min.css" rel="stylesheet"/>
         <script src="../../libs/plugins/select2/select2.min.js"></script>
@@ -76,8 +81,9 @@ if(!$session->getSession('token') || $session->getSession('token') == ''){
             });
         </script>
         <!-- Titulo de aplicación -->
-        <title>CALIDAD ICC</title>
+        <title>CYBERACTIVO</title>
         <!-- js globales -->
         <script src="../../js/business.js"></script>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini" onload="startTimeOut();" onkeypress="stopTimeOut();" onclick="stopTimeOut();">
+    <!--<body class="hold-transition skin-blue sidebar-mini" onload="startTimeOut();" onkeypress="stopTimeOut();" onclick="stopTimeOut();">-->
+    <body class="hold-transition skin-blue sidebar-mini">
